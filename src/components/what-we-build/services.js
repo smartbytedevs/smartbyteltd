@@ -1,0 +1,138 @@
+export const services = [
+  {
+    id: "business-websites",
+    title: "Business Websites",
+    description:
+      "High-performance corporate and marketing websites built with modern frameworks — engineered for conversions, SEO dominance, and effortless scalability from day one.",
+    benefits: [
+      "SEO-optimized architecture for top search rankings",
+      "Conversion-driven layouts tested for maximum engagement",
+      "Lightning-fast performance with Core Web Vitals",
+      "Headless CMS integration for easy content management",
+    ],
+    techStack: ["Next.js", "Tailwind CSS", "Motion"],
+    delivery: "5–10 Days",
+    price: "$499+",
+    ctaText: "Launch Your Site",
+    previewType: "website",
+  },
+  {
+    id: "custom-software",
+    title: "Custom Software",
+    description:
+      "Bespoke applications purpose-built to automate your workflows, eliminate operational bottlenecks, and scale seamlessly alongside your growing business.",
+    benefits: [
+      "Tailored architecture designed around your exact needs",
+      "Seamless API integration with your existing tools",
+      "Cloud-native deployment with auto-scaling infrastructure",
+      "Dedicated dashboard with real-time analytics and control",
+    ],
+    techStack: ["React", "Node.js", "Postgres"],
+    delivery: "Custom",
+    price: "$2,000+",
+    ctaText: "Build Your Software",
+    previewType: "dashboard",
+  },
+  {
+    id: "saas-development",
+    title: "SaaS Development",
+    description:
+      "End-to-end SaaS platform development featuring multi-tenant isolation, subscription billing infrastructure, and cloud-native deployment out of the box.",
+    benefits: [
+      "Multi-tenant architecture with full data isolation",
+      "Integrated subscription billing via Stripe or LemonSqueezy",
+      "Built-in analytics dashboards for usage and revenue",
+      "Role-based access control for teams and customers",
+    ],
+    techStack: ["Next.js", "Stripe", "Prisma"],
+    delivery: "4–8 Weeks",
+    price: "$5,000+",
+    ctaText: "Start Your SaaS",
+    previewType: "saas",
+  },
+  {
+    id: "ai-automation",
+    title: "AI Automation",
+    description:
+      "Intelligent automation solutions combining LLMs, document processing pipelines, and predictive models to eliminate manual work and surface actionable insights.",
+    benefits: [
+      "Custom-trained AI models fine-tuned on your data",
+      "Automated document processing with OCR and extraction",
+      "Predictive analytics for demand forecasting and trends",
+      "Conversational chatbots with retrieval-augmented generation",
+    ],
+    techStack: ["Python", "TensorFlow", "OpenAI"],
+    delivery: "Custom",
+    price: "$3,000+",
+    ctaText: "Automate With AI",
+    previewType: "ai",
+  },
+  {
+    id: "ecommerce",
+    title: "E-Commerce",
+    description:
+      "Full-featured online stores with product management, secure payment orchestration, inventory synchronization, and built-in marketing automation tools.",
+    benefits: [
+      "Product catalog with variants, bundles, and custom fields",
+      "Multi-gateway payment processing with fraud protection",
+      "Real-time inventory sync across warehouses and channels",
+      "Built-in SEO, email campaigns, and upsell engine",
+    ],
+    techStack: ["Next.js", "Stripe", "Tailwind"],
+    delivery: "7–14 Days",
+    price: "$1,999+",
+    ctaText: "Open Your Store",
+    previewType: "ecommerce",
+  },
+  {
+    id: "inventory-systems",
+    title: "Inventory Systems",
+    description:
+      "Complete inventory management platforms with barcode scanning, multi-warehouse tracking, low-stock alerts, and deep sales analytics dashboards.",
+    benefits: [
+      "Barcode and QR code scanning for rapid stock management",
+      "Multi-warehouse inventory with transfer and reconciliation",
+      "Automated low-stock alerts and purchase order generation",
+      "Sales reporting with margin analysis and demand trends",
+    ],
+    techStack: ["Next.js", "Node.js", "MongoDB"],
+    delivery: "7–14 Days",
+    price: "$1,500+",
+    ctaText: "Track Inventory",
+    previewType: "inventory",
+  },
+  {
+    id: "restaurant-solutions",
+    title: "Restaurant Solutions",
+    description:
+      "Modern restaurant technology platforms with online ordering, QR code menus, POS integration, delivery orchestration, and real-time order management.",
+    benefits: [
+      "Online ordering system with scheduled pickup and delivery",
+      "QR code menus with dynamic pricing and item management",
+      "POS integration with major hardware providers",
+      "Order tracking dashboard for kitchen and front-of-house",
+    ],
+    techStack: ["React", "Node.js", "Stripe"],
+    delivery: "5–10 Days",
+    price: "$999+",
+    ctaText: "Digitize Your Restaurant",
+    previewType: "restaurant",
+  },
+  {
+    id: "mobile-applications",
+    title: "Mobile Applications",
+    description:
+      "Native-feeling cross-platform mobile apps delivered with push notifications, offline support, biometric security, and full App Store readiness.",
+    benefits: [
+      "Cross-platform development for iOS and Android simultaneously",
+      "Push notification infrastructure with segmentation and A/B testing",
+      "Offline-first architecture with background sync capabilities",
+      "Biometric authentication and secure enclave data storage",
+    ],
+    techStack: ["React Native", "Expo", "Firebase"],
+    delivery: "4–6 Weeks",
+    price: "$3,000+",
+    ctaText: "Build Your App",
+    previewType: "mobile",
+  },
+]
