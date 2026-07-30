@@ -2,11 +2,13 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion, useReducedMotion } from "motion/react"
-import { Calendar, ArrowRight } from "lucide-react"
+import { Calendar } from "lucide-react"
 import { services } from "./services"
 import { ServiceCard } from "./ServiceCard"
 import { BackgroundEffects } from "./BackgroundEffects"
 import { Particles } from "@/components/why-smartbyte/Particles"
+import { PremiumCTA } from "@/components/ui/PremiumCTA"
+import { SectionHeading } from "@/components/ui/SectionHeading"
 
 export function WhatWeBuild() {
   const [activeService, setActiveService] = useState(services[0])
@@ -59,44 +61,19 @@ export function WhatWeBuild() {
           {/* ═══ LEFT - Sticky ═══ */}
           <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:items-center lg:col-start-1">
             <div className="w-full py-12 lg:py-0 lg:pr-4">
-              {/* Section label */}
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-xs sm:text-sm font-semibold tracking-label uppercase bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent mb-5 block"
-              >
-                Our Services
-              </motion.span>
-
-              {/* Title */}
-              <motion.h2
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="font-display text-section-title font-bold"
-              >
-                What
-                <br />
-                We
-                <br />
-                <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
-                  Build.
-                </span>
-              </motion.h2>
-
-              {/* Description */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.15, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="relative mt-6 text-base sm:text-lg text-muted leading-relaxed max-w-[460px]"
-              >
-                We create digital products that help businesses launch faster,
-                automate operations and scale confidently.
-              </motion.p>
+              <SectionHeading
+                label="Our Services"
+                title={
+                  <>
+                    What<br />We<br />
+                    <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
+                      Build.
+                    </span>
+                  </>
+                }
+                description="We create digital products that help businesses launch faster, automate operations and scale confidently."
+                maxWidth="460px"
+              />
 
               {/* Service Navigation */}
               <motion.nav
@@ -176,37 +153,15 @@ export function WhatWeBuild() {
                 transition={{ delay: 0.35, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="relative mt-8"
               >
-                <a
-                  href="#contact"
-                  className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full px-8 py-4 font-semibold text-sm tracking-nav transition-all duration-500"
-                >
-                  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
-                  <span
-                    className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                    style={{
-                      boxShadow:
-                        "0 0 30px rgba(0, 194, 168, 0.3), 0 0 60px rgba(56, 189, 248, 0.15)",
-                    }}
-                  />
-                  <span className="relative z-10 text-background flex items-center gap-2">
-                    <Calendar className="w-4 h-4" />
-                    Start Your Project
-                  </span>
-                  <motion.span
-                    className="relative z-10"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 4 }}
-                    transition={{ duration: 0.2 }}
+                  <PremiumCTA
+                    href="#contact"
+                    icon={Calendar}
+                    showArrow
+                    arrowMotion
+                    scaleOnHover
                   >
-                    <ArrowRight className="w-4 h-4 text-background" />
-                  </motion.span>
-                  <motion.div
-                    className="absolute inset-0 rounded-full"
-                    whileHover={{ scale: 1.04 }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    style={{ pointerEvents: "none" }}
-                  />
-                </a>
+                    Start Your Project
+                  </PremiumCTA>
               </motion.div>
             </div>
           </div>

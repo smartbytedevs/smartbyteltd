@@ -2,51 +2,62 @@
 
 import { motion } from "motion/react"
 import { cn } from "@/lib/utils"
+import { fadeUpSimple } from "@/lib/animations"
+import { SafeSlideUp } from "@/components/common/SafeMotion"
 
 export function SectionHeading({
   label,
   title,
   description,
-  align = "center",
+  align = "left",
   className,
+  asSafe = false,
+  maxWidth = "640px",
+  labelGradient = true,
+  as = "h2",
 }) {
+  const MotionWrapper = asSafe ? SafeSlideUp : motion.div
+  const Tag = as
+
+  const labelClasses = cn(
+    "text-xs sm:text-sm font-semibold tracking-label uppercase mb-5 block",
+    labelGradient
+      ? "bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent"
+      : "text-accent"
+  )
+
+  const descriptionClasses = cn(
+    "relative mt-6 text-base sm:text-lg text-muted leading-relaxed",
+    align === "center" && "mx-auto"
+  )
+
+  const maxWidthStyle = align === "center" ? {} : { maxWidth }
+
   return (
     <div
       className={cn(
-        "max-w-3xl mb-16",
-        align === "center" && "mx-auto text-center",
+        align === "center" && "text-center",
         className
       )}
     >
       {label && (
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="inline-block text-sm font-medium tracking-widest uppercase text-blue-400 mb-4"
-        >
-          {label}
-        </motion.span>
+        <MotionWrapper {...(asSafe ? { delay: 0 } : fadeUpSimple(0))}>
+          <span className={labelClasses}>{label}</span>
+        </MotionWrapper>
       )}
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-        className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
-      >
-        {title}
-      </motion.h2>
+
+      {title && (
+        <MotionWrapper {...(asSafe ? { delay: 0.1 } : fadeUpSimple(0.1))}>
+          <Tag className="font-display text-section-title font-bold">{title}</Tag>
+        </MotionWrapper>
+      )}
+
       {description && (
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="mt-6 text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto"
-        >
-          {description}
-        </motion.p>
+        <MotionWrapper {...(asSafe ? { delay: 0.15 } : fadeUpSimple(0.15))}>
+          <p className={descriptionClasses} style={maxWidthStyle}>
+            {description}
+          </p>
+        </MotionWrapper>
       )}
     </div>
   )

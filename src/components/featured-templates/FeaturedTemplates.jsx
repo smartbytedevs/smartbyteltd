@@ -1,9 +1,10 @@
 "use client"
 
 import { motion, useReducedMotion } from "motion/react"
-import { Calendar, ArrowRight } from "lucide-react"
+import { Calendar } from "lucide-react"
 import { TemplateCarousel } from "./TemplateCarousel"
 import { Particles } from "@/components/why-smartbyte/Particles"
+import { PremiumCTA } from "@/components/ui/PremiumCTA"
 
 const templates = [
   {
@@ -237,37 +238,15 @@ export function FeaturedTemplates() {
               transition={{ delay: 0.2, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="mt-6"
             >
-              <a
+              <PremiumCTA
                 href="#templates"
-                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full px-8 py-4 font-semibold text-sm tracking-nav transition-all duration-500"
+                icon={Calendar}
+                showArrow
+                arrowMotion
+                scaleOnHover
               >
-                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
-                <span
-                  className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                  style={{
-                    boxShadow:
-                      "0 0 30px rgba(0, 194, 168, 0.3), 0 0 60px rgba(56, 189, 248, 0.15)",
-                  }}
-                />
-                <span className="relative z-10 text-background flex items-center gap-2">
-                  <Calendar className="w-4 h-4" />
-                  Browse All Templates
-                </span>
-                <motion.span
-                  className="relative z-10"
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 4 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <ArrowRight className="w-4 h-4 text-background" />
-                </motion.span>
-                <motion.div
-                  className="absolute inset-0 rounded-full"
-                  whileHover={{ scale: 1.04 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  style={{ pointerEvents: "none" }}
-                />
-              </a>
+                Browse All Templates
+              </PremiumCTA>
             </motion.div>
           </div>
         </div>

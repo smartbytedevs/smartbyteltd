@@ -11,16 +11,16 @@ export function Typewriter({
   cursor = true,
   className = "",
 }) {
-  const [mounted, setMounted] = useState(false)
   const [displayText, setDisplayText] = useState(words[0] || "")
   const wordIndex = useRef(0)
   const charIndex = useRef(words[0] ? words[0].length : 0)
   const isDeleting = useRef(false)
   const timeout = useRef(null)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-  }, [])
+  }, [setMounted])
 
   useEffect(() => {
     if (!mounted) return

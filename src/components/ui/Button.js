@@ -12,9 +12,9 @@ const Button = forwardRef(function Button(
     "inline-flex items-center justify-center font-medium rounded-full transition-all duration-300 cursor-pointer"
 
   const variants = {
-    primary: "bg-white text-black hover:bg-white/90 shadow-lg shadow-white/10",
-    secondary: "border border-white/10 text-white hover:bg-white/5 hover:border-white/20",
-    ghost: "text-white/70 hover:text-white hover:bg-white/5",
+    primary: "bg-accent text-background hover:bg-accent-hover shadow-lg shadow-accent/10",
+    secondary: "border border-white/10 text-foreground hover:bg-white/5 hover:border-white/20",
+    ghost: "text-muted-foreground hover:text-foreground hover:bg-white/5",
   }
 
   const sizes = {

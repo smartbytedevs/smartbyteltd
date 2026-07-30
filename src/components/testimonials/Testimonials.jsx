@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useCallback } from "react"
-import { motion } from "motion/react"
 import { SafeSlideUp } from "@/components/common/SafeMotion"
-import { Calendar, ArrowRight } from "lucide-react"
+import { Calendar } from "lucide-react"
 import { testimonials } from "./testimonials"
 import { TestimonialCard } from "./TestimonialCard"
 import { TestimonialStats } from "./TestimonialStats"
 import { Particles } from "@/components/why-smartbyte/Particles"
+import { PremiumCTA } from "@/components/ui/PremiumCTA"
+import { SectionHeading } from "@/components/ui/SectionHeading"
 
 const columnLayout = {
   left: [testimonials[0], testimonials[2], testimonials[4], testimonials[6]],
@@ -103,32 +104,21 @@ export function Testimonials() {
           {/* ═══ LEFT — Sticky ═══ */}
           <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:items-center lg:col-start-1">
             <div className="w-full py-12 lg:py-0 lg:pr-4">
-              {/* Label */}
-              <SafeSlideUp>
-                <span className="text-xs sm:text-sm font-semibold tracking-label uppercase bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent mb-5 block">
-                  Client Success
-                </span>
-              </SafeSlideUp>
-
-              {/* Title */}
-              <SafeSlideUp delay={0.1}>
-                <h2 className="font-display text-section-title font-bold">
-                  Trusted By
-                  <br />
-                  Growing
-                  <br />
-                  <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
-                    Businesses.
-                  </span>
-                </h2>
-              </SafeSlideUp>
-
-              {/* Description */}
-              <SafeSlideUp delay={0.15}>
-                <p className="relative mt-6 text-base sm:text-lg text-muted leading-relaxed max-w-[460px]">
-                  We help startups and businesses launch digital products that customers love.
-                </p>
-              </SafeSlideUp>
+              <SectionHeading
+                asSafe
+                label="Client Success"
+                title={
+                  <>
+                    Trusted By<br />
+                    Growing<br />
+                    <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
+                      Businesses.
+                    </span>
+                  </>
+                }
+                description="We help startups and businesses launch digital products that customers love."
+                maxWidth="460px"
+              />
 
               {/* Stats */}
               <TestimonialStats />
@@ -136,37 +126,15 @@ export function Testimonials() {
               {/* CTA */}
               <SafeSlideUp delay={0.5}>
                 <div className="relative mt-10">
-                  <a
+                  <PremiumCTA
                     href="#contact"
-                    className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full px-8 py-4 font-semibold text-sm tracking-nav transition-all duration-500"
+                    icon={Calendar}
+                    showArrow
+                    arrowMotion
+                    scaleOnHover
                   >
-                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
-                    <span
-                      className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                      style={{
-                        boxShadow:
-                          "0 0 30px rgba(0, 194, 168, 0.3), 0 0 60px rgba(56, 189, 248, 0.15)",
-                      }}
-                    />
-                    <span className="relative z-10 text-background flex items-center gap-2">
-                      <Calendar className="w-4 h-4" />
-                      Start Your Project
-                    </span>
-                    <motion.span
-                      className="relative z-10"
-                      initial={{ x: 0 }}
-                      whileHover={{ x: 4 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <ArrowRight className="w-4 h-4 text-background" />
-                    </motion.span>
-                    <motion.div
-                      className="absolute inset-0 rounded-full"
-                      whileHover={{ scale: 1.04 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                      style={{ pointerEvents: "none" }}
-                    />
-                  </a>
+                    Start Your Project
+                  </PremiumCTA>
                 </div>
               </SafeSlideUp>
             </div>

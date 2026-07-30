@@ -1,16 +1,15 @@
 "use client"
 
-import { motion, useReducedMotion } from "motion/react"
+import { motion } from "motion/react"
 import { milestones, values, team } from "@/components/about/aboutData"
 import { AboutTimeline } from "@/components/about/AboutTimeline"
 import { AboutValues } from "@/components/about/AboutValues"
 import { TeamGrid } from "@/components/about/TeamGrid"
 import { CtaBanner } from "@/components/about/CtaBanner"
 import { Particles } from "@/components/why-smartbyte/Particles"
+import { SectionHeading } from "@/components/ui/SectionHeading"
 
 export function About() {
-  const prefersReduced = useReducedMotion()
-
   return (
     <section
       id="about"
@@ -82,43 +81,20 @@ export function About() {
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* ═══ Section Header ═══ */}
         <div className="mb-12 lg:mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xs sm:text-sm font-semibold tracking-label uppercase bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent mb-5 block"
-          >
-            About SmartByte
-          </motion.span>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-section-title font-bold"
-          >
-            More Than
-            <br />
-            Developers.
-            <br />
-            <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
-              We're Your Technology Partner.
-            </span>
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="relative mt-6 text-base sm:text-lg text-muted leading-relaxed max-w-[640px]"
-          >
-            We don't just build websites. We help businesses launch, grow and scale
-            with modern technology. From business websites and SaaS products to inventory
-            systems, restaurant platforms, AI automation and digital branding — we become
-            your long-term technology partner.
-          </motion.p>
+          <SectionHeading
+            label="About SmartByte"
+            title={
+              <>
+                More Than<br />
+                Developers.<br />
+                <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
+                  We&apos;re Your Technology Partner.
+                </span>
+              </>
+            }
+            description="We don't just build websites. We help businesses launch, grow and scale with modern technology. From business websites and SaaS products to inventory systems, restaurant platforms, AI automation and digital branding — we become your long-term technology partner."
+            maxWidth="640px"
+          />
         </div>
 
         {/* ═══ Main Grid ═══ */}

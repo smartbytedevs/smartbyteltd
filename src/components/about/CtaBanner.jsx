@@ -1,7 +1,8 @@
 "use client"
 
-import { ArrowRight, MessageCircle } from "lucide-react"
+import { MessageCircle } from "lucide-react"
 import { SafeReveal, SafeSlideUp } from "@/components/common/SafeMotion"
+import { PremiumCTA } from "@/components/ui/PremiumCTA"
 
 export function CtaBanner() {
   return (
@@ -63,26 +64,9 @@ export function CtaBanner() {
 
         <SafeSlideUp delay={0.3} viewportMargin="-80px">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-            {/* Primary CTA */}
-            <a
-              href="#contact"
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full px-8 py-4 font-semibold text-sm tracking-nav transition-all duration-500"
-            >
-              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
-              <span
-                className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                style={{
-                  boxShadow:
-                    "0 0 30px rgba(0, 194, 168, 0.3), 0 0 60px rgba(56, 189, 248, 0.15)",
-                }}
-              />
-              <span className="relative z-10 text-background flex items-center gap-2">
-                Start Your Project
-              </span>
-              <span className="relative z-10">
-                <ArrowRight className="w-4 h-4 text-background group-hover:translate-x-0.5 transition-transform duration-200" />
-              </span>
-            </a>
+            <PremiumCTA href="#contact" showArrow>
+              Start Your Project
+            </PremiumCTA>
 
             {/* Secondary CTA */}
             <a

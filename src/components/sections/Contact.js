@@ -1,17 +1,15 @@
 "use client"
 
-import { motion, useReducedMotion } from "motion/react"
-import { ArrowRight } from "lucide-react"
+import { motion } from "motion/react"
 import { Particles } from "@/components/why-smartbyte/Particles"
 import { ConversationPanel } from "@/components/contact/ConversationPanel"
 import { ContactForm } from "@/components/contact/ContactForm"
 import { FAQ } from "@/components/contact/FAQ"
 import { TrustBar } from "@/components/contact/TrustBar"
 import { FinalCTA } from "@/components/contact/FinalCTA"
+import { PremiumCTA } from "@/components/ui/PremiumCTA"
 
 export function Contact() {
-  const prefersReduced = useReducedMotion()
-
   return (
     <section
       id="contact"
@@ -123,23 +121,9 @@ export function Contact() {
             transition={{ delay: 0.25, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="mt-8"
           >
-            <a
-              href="#contact-form"
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full px-8 py-4 text-sm font-semibold tracking-nav transition-all duration-500"
-            >
-              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
-              <span
-                className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-700 group-hover:opacity-100"
-                style={{
-                  boxShadow:
-                    "0 0 30px rgba(0, 194, 168, 0.3), 0 0 60px rgba(56, 189, 248, 0.15)",
-                }}
-              />
-              <span className="relative z-10 flex items-center gap-2 text-background">
-                Schedule Free Consultation
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </span>
-            </a>
+            <PremiumCTA href="#contact-form" showArrow>
+              Schedule Free Consultation
+            </PremiumCTA>
           </motion.div>
         </div>
 

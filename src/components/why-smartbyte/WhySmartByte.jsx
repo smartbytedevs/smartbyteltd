@@ -1,10 +1,12 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { motion, useMotionValue, useSpring, useReducedMotion } from "motion/react"
-import { Calendar, ArrowRight } from "lucide-react"
+import { motion, useReducedMotion } from "motion/react"
+import { Calendar } from "lucide-react"
 import { Panel } from "./Panel"
 import { Particles } from "./Particles"
+import { PremiumCTA } from "@/components/ui/PremiumCTA"
+import { SectionHeading } from "@/components/ui/SectionHeading"
 
 const panels = [
   {
@@ -171,48 +173,20 @@ export function WhySmartByte() {
                   }}
                 />
 
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="relative text-xs sm:text-sm font-semibold tracking-label uppercase text-accent mb-5 block"
-                >
-                  Why Smartbyte
-                </motion.span>
-
-                <motion.h2
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: 0.1,
-                    duration: 0.8,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="font-display text-section-title font-bold"
-                >
-                  Why Businesses
-                  <br />
-                  <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
-                    Trust SmartByte.
-                  </span>
-                </motion.h2>
-
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: 0.15,
-                    duration: 0.7,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="relative mt-6 text-base sm:text-lg text-muted leading-relaxed max-w-[450px]"
-                >
-                  We combine deep technical expertise with genuine business
-                  understanding — delivering software that doesn&apos;t just work,
-                  but drives real growth.
-                </motion.p>
+                <SectionHeading
+                  label="Why Smartbyte"
+                  labelGradient={false}
+                  title={
+                    <>
+                      Why Businesses<br />
+                      <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
+                        Trust SmartByte.
+                      </span>
+                    </>
+                  }
+                  description="We combine deep technical expertise with genuine business understanding — delivering software that doesn't just work, but drives real growth."
+                  maxWidth="450px"
+                />
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -225,37 +199,15 @@ export function WhySmartByte() {
                   }}
                   className="relative mt-10"
                 >
-                  <a
+                  <PremiumCTA
                     href="#contact"
-                    className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full px-8 py-4 font-semibold text-sm tracking-nav transition-all duration-500"
+                    icon={Calendar}
+                    showArrow
+                    arrowMotion
+                    scaleOnHover
                   >
-                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
-                    <span
-                      className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                      style={{
-                        boxShadow:
-                          "0 0 30px rgba(0, 194, 168, 0.3), 0 0 60px rgba(56, 189, 248, 0.15)",
-                      }}
-                    />
-                    <span className="relative z-10 text-background flex items-center gap-2">
-                      <Calendar className="w-4 h-4" />
-                      Start Your Project
-                    </span>
-                    <motion.span
-                      className="relative z-10"
-                      initial={{ x: 0 }}
-                      whileHover={{ x: 4 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <ArrowRight className="w-4 h-4 text-background" />
-                    </motion.span>
-                    <motion.div
-                      className="absolute inset-0 rounded-full"
-                      whileHover={{ scale: 1.04 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                      style={{ pointerEvents: "none" }}
-                    />
-                  </a>
+                    Start Your Project
+                  </PremiumCTA>
                 </motion.div>
               </div>
             </div>

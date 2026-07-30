@@ -1,17 +1,15 @@
 "use client"
 
-import { motion, useReducedMotion } from "motion/react"
-import { ArrowRight } from "lucide-react"
+import { motion } from "motion/react"
 import { Particles } from "@/components/why-smartbyte/Particles"
 import { plans } from "@/components/pricing/pricingData"
 import { PricingCard } from "@/components/pricing/PricingCard"
 import { PricingFeatureCompare } from "@/components/pricing/PricingFeatureCompare"
 import { PricingNote } from "@/components/pricing/PricingNote"
 import { PricingTrust } from "@/components/pricing/PricingTrust"
+import { PremiumCTA } from "@/components/ui/PremiumCTA"
 
 export function Pricing() {
-  const prefersReduced = useReducedMotion()
-
   return (
     <section
       id="pricing"
@@ -117,23 +115,9 @@ export function Pricing() {
             transition={{ delay: 0.25, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="shrink-0"
           >
-            <a
-              href="#contact"
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-6 py-3 font-semibold text-sm tracking-nav transition-all duration-500"
-            >
-              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
-              <span
-                className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                style={{
-                  boxShadow:
-                    "0 0 30px rgba(0, 194, 168, 0.3), 0 0 60px rgba(56, 189, 248, 0.15)",
-                }}
-              />
-              <span className="relative z-10 text-background flex items-center gap-2">
-                Get Free Consultation
-                <ArrowRight className="w-4 h-4" />
-              </span>
-            </a>
+            <PremiumCTA href="#contact" size="sm" showArrow>
+              Get Free Consultation
+            </PremiumCTA>
           </motion.div>
         </div>
 

@@ -12,14 +12,7 @@ import { Logo } from "./Logo"
 import { DesktopNav } from "./DesktopNav"
 import { CTAButton } from "./CTAButton"
 import { MobileNav } from "./MobileNav"
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/templates", label: "Templates" },
-  { href: "/works", label: "Our Works" },
-  { href: "/services", label: "Services" },
-  { href: "/blog", label: "Blog" },
-]
+import { navLinks } from "@/data/navigation"
 
 function MobileToggle({ isOpen, onClick }) {
   return (

@@ -60,7 +60,7 @@ export function NavItem({ href, label, isActive, onClick }) {
         className={`relative inline-block text-xs font-semibold tracking-label uppercase ${
           isActive
             ? "text-white"
-            : "text-zinc-400"
+            : "text-muted-foreground"
         }`}
         animate={
           prefersReduced

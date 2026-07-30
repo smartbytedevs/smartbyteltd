@@ -20,7 +20,7 @@ export function AnimatedCounter({ value, suffix = "", label }) {
         <motion.span>{springValue}</motion.span>
         <span className="gradient-text">{suffix}</span>
       </motion.div>
-      <p className="text-zinc-400 text-lg">{label}</p>
+      <p className="text-muted text-lg">{label}</p>
     </div>
   )
 }

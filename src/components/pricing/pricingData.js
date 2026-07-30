@@ -7,7 +7,7 @@ export const plans = [
     priceLabel: "Starting from",
     cta: "Start Project",
     popular: false,
-    accent: "from-accent to-teal-400",
+    accent: "from-accent to-accent-secondary",
     features: [
       "Responsive Website",
       "Contact Form",
@@ -63,7 +63,7 @@ export const plans = [
     priceLabel: "",
     cta: "Book Strategy Call",
     popular: false,
-    accent: "from-blue-400 to-accent-secondary",
+    accent: "from-accent-secondary to-accent",
     features: [
       "SaaS",
       "AI",

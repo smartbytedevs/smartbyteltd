@@ -1,10 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "motion/react"
-import { SafeSlideUp, SafeReveal } from "@/components/common/SafeMotion"
+import { SafeSlideUp } from "@/components/common/SafeMotion"
 import {
-  ArrowRight,
   ArrowUpRight,
   Mail,
   Phone,
@@ -12,6 +10,7 @@ import {
   Clock,
   Send,
 } from "lucide-react"
+import { PremiumCTA } from "@/components/ui/PremiumCTA"
 
 const services = [
   "Business Websites",
@@ -217,31 +216,9 @@ export function Footer() {
           </p>
 
           <div className="mt-8">
-            <a
-              href="#contact"
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full px-10 py-4 text-sm font-semibold tracking-nav text-background transition-all duration-500"
-            >
-              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
-              <span
-                className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-700 group-hover:opacity-100"
-                style={{
-                  boxShadow:
-                    "0 0 40px rgba(0, 194, 168, 0.3), 0 0 80px rgba(56, 189, 248, 0.15)",
-                }}
-              />
-                  <span
-                    className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100"
-                    style={{
-                      boxShadow:
-                        "0 0 60px rgba(0, 194, 168, 0.15), 0 0 100px rgba(56, 189, 248, 0.08)",
-                      animation: "pulse-glow 3s ease-in-out infinite 1s",
-                    }}
-                  />
-              <span className="relative z-10 flex items-center gap-2">
-                Start Your Project
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </span>
-            </a>
+            <PremiumCTA href="#contact" size="lg" glow="lg" showArrow extraGlow>
+              Start Your Project
+            </PremiumCTA>
           </div>
         </SafeSlideUp>
 

@@ -7,7 +7,7 @@ import { featureCompare } from "./pricingData"
 import { SafeSlideUp } from "@/components/common/SafeMotion"
 
 const planLabels = ["Starter", "Business", "Software", "Custom"]
-const planColors = ["text-accent", "text-accent-secondary", "text-accent", "text-blue-400"]
+const planColors = ["text-accent", "text-accent-secondary", "text-accent", "text-accent-secondary"]
 
 function FeatureRow({ row, index, isInView }) {
   const statusIcon = (val) => {

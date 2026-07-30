@@ -1,17 +1,15 @@
 "use client"
 
 import { useState, useCallback } from "react"
-import { motion, useReducedMotion } from "motion/react"
-import { Calendar, ArrowRight } from "lucide-react"
+import { motion } from "motion/react"
 import { ecosystemNodes } from "@/components/business-solution/ecosystemData"
 import { EcosystemVisualization } from "@/components/business-solution/EcosystemVisualization"
 import { SolutionPanel } from "@/components/business-solution/SolutionPanel"
 import { Particles } from "@/components/why-smartbyte/Particles"
+import { SectionHeading } from "@/components/ui/SectionHeading"
 
 export function BusinessSolution() {
   const [activeId, setActiveId] = useState(ecosystemNodes[0].id)
-  const prefersReduced = useReducedMotion()
-
   const activeNode = ecosystemNodes.find((n) => n.id === activeId) || ecosystemNodes[0]
 
   const handleNodeSelect = useCallback((id) => {
@@ -94,40 +92,19 @@ export function BusinessSolution() {
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* ═══ Section Header ═══ */}
         <div className="max-w-3xl mb-12 lg:mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xs sm:text-sm font-semibold tracking-label uppercase bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent mb-5 block"
-          >
-            ALL-IN-ONE BUSINESS SOLUTION
-          </motion.span>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-section-title font-bold"
-          >
-            Everything Your
-            <br />
-            Business Needs.
-            <br />
-            <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
-              One Partner.
-            </span>
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="relative mt-6 text-base sm:text-lg text-muted leading-relaxed max-w-[640px]"
-          >
-            We transform business ideas into complete digital ecosystems — from branding and websites to custom software, automation, online marketing and long-term technical support.
-          </motion.p>
+          <SectionHeading
+            label="ALL-IN-ONE BUSINESS SOLUTION"
+            title={
+              <>
+                Everything Your<br />
+                Business Needs.<br />
+                <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
+                  One Partner.
+                </span>
+              </>
+            }
+            description="We transform business ideas into complete digital ecosystems — from branding and websites to custom software, automation, online marketing and long-term technical support."
+          />
         </div>
 
         {/* ═══ Main Grid ═══ */}
