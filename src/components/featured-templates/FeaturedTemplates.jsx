@@ -239,7 +239,7 @@ export function FeaturedTemplates() {
               className="mt-6"
             >
               <PremiumCTA
-                href="#templates"
+                href="/templates"
                 icon={Calendar}
                 showArrow
                 arrowMotion

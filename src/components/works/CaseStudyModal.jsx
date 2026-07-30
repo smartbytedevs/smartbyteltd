@@ -228,7 +228,7 @@ export function CaseStudyModal({ project, open, onClose }) {
                   Want Similar Results?
                 </p>
                 <a
-                  href="#contact"
+                  href="/contact?source=works"
                   className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl text-sm font-medium bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
                 >
                   Let&rsquo;s Build Yours

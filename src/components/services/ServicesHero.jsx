@@ -103,7 +103,7 @@ export function ServicesHero({ onExplore }) {
                     Explore Services
                   </PremiumCTA>
                   <a
-                    href="#contact"
+                    href="/contact?source=services"
                     className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-white/10 text-foreground hover:bg-white/5 hover:border-white/20 transition-all duration-300"
                   >
                     Get Free Consultation

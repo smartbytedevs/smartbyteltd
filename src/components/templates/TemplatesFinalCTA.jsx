@@ -56,11 +56,11 @@ export function TemplatesFinalCTA() {
 
           <SafeSlideUp delay={0.4}>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <PremiumCTA href="#contact" icon={MessageSquare} showArrow>
+              <PremiumCTA href="/contact?source=templates" icon={MessageSquare} showArrow>
                 Book Consultation
               </PremiumCTA>
               <a
-                href="#contact"
+                href="/contact?source=templates"
                 className="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium rounded-full border border-white/10 text-foreground hover:bg-white/5 hover:border-white/20 transition-all duration-300"
               >
                 <Send className="w-4 h-4" />

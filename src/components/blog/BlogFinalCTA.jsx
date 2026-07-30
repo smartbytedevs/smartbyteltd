@@ -3,8 +3,9 @@
 import { motion } from "motion/react"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
 import { SafeSlideUp } from "@/components/common/SafeMotion"
+import { ArrowRight } from "lucide-react"
 
-export function WorksFinalCTA() {
+export function BlogFinalCTA() {
   return (
     <section className="relative py-32 md:py-40 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
@@ -36,55 +37,38 @@ export function WorksFinalCTA() {
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8 text-center">
         <SafeSlideUp>
           <span className="text-xs sm:text-sm font-semibold tracking-label uppercase bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent mb-6 block">
-            Let&rsquo;s Work Together
+            Need More Than Advice?
           </span>
         </SafeSlideUp>
 
         <SafeSlideUp delay={0.1}>
           <h2 className="font-display text-hero font-bold tracking-display leading-[0.95] mb-6">
-            Ready To Become
+            Let&rsquo;s Build
             <br />
             <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
-              Our Next Success Story?
+              Your Business Together.
             </span>
           </h2>
         </SafeSlideUp>
 
         <SafeSlideUp delay={0.2}>
           <p className="text-base sm:text-lg text-muted max-w-xl mx-auto leading-relaxed mb-10">
-            Every project starts with a conversation. Tell us about your vision, and we&rsquo;ll
-            show you how we can bring it to life.
+            Ready to turn insights into action? Partner with SmartByte and build digital products that drive real results.
           </p>
         </SafeSlideUp>
 
         <SafeSlideUp delay={0.3}>
           <div className="flex flex-wrap justify-center gap-4">
-            <PremiumCTA href="/contact?source=works" showArrow size="lg">
-              Start Your Project
+            <PremiumCTA href="/contact?source=blog" showArrow size="lg">
+              Book Consultation
             </PremiumCTA>
             <a
-              href="/templates"
+              href="/services"
               className="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium rounded-full border border-white/10 text-foreground hover:bg-white/5 hover:border-white/20 transition-all duration-300"
             >
-              Browse Templates
+              Explore Services
+              <ArrowRight className="w-4 h-4" />
             </a>
-          </div>
-        </SafeSlideUp>
-
-        <SafeSlideUp delay={0.4}>
-          <div className="mt-16 flex items-center justify-center gap-8 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              No commitment required
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              Free consultation
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              Transparent pricing
-            </span>
           </div>
         </SafeSlideUp>
       </div>

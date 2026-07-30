@@ -96,7 +96,7 @@ export function Works() {
 
           {/* CTA */}
           <SafeSlideUp delay={0.25} className="shrink-0">
-            <PremiumCTA href="#" showArrow>
+            <PremiumCTA href="/works" showArrow>
               View All Projects
             </PremiumCTA>
           </SafeSlideUp>

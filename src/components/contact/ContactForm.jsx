@@ -1,11 +1,12 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import { useState, useCallback, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import {
   ArrowRight,
   Loader2,
   CheckCircle,
+  AlertCircle,
   User,
   Building2,
   Mail,
@@ -71,14 +72,28 @@ export function ContactForm() {
   const [data, setData] = useState(initialData)
   const [touched, setTouched] = useState({})
   const [formStatus, setFormStatus] = useState("idle")
+  const [serverError, setServerError] = useState("")
   const [ripples, setRipples] = useState([])
+  const formRef = useRef(null)
+  const announceRef = useRef(null)
 
   const errors = validate(data)
+
+  useEffect(() => {
+    if (formStatus === "error" && announceRef.current) {
+      announceRef.current.textContent = "Form submission failed. " + (serverError || "Please try again.")
+    }
+    if (formStatus === "success" && announceRef.current) {
+      announceRef.current.textContent = "Message sent successfully."
+    }
+  }, [formStatus, serverError])
 
   const handleChange = (field) => (e) => {
     const val =
       e.target.type === "checkbox" ? e.target.checked : e.target.value
     setData((prev) => ({ ...prev, [field]: val }))
+    if (formStatus === "error") setFormStatus("idle")
+    if (serverError) setServerError("")
   }
 
   const handleBlur = (field) => () => {
@@ -96,18 +111,58 @@ export function ContactForm() {
       )
 
       const formErrors = validate(data)
-      if (Object.keys(formErrors).length > 0) return
+      if (Object.keys(formErrors).length > 0) {
+        const firstErrorField = Object.keys(formErrors)[0]
+        const el = document.getElementById(`contact-${firstErrorField}`)
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" })
+          el.focus()
+        }
+        return
+      }
 
       setFormStatus("submitting")
+      setServerError("")
 
-      await new Promise((resolve) => setTimeout(resolve, 2000))
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        })
 
-      setFormStatus("success")
-      setTimeout(() => {
-        setFormStatus("idle")
-        setData(initialData)
-        setTouched({})
-      }, 4000)
+        const result = await res.json()
+
+        if (!res.ok) {
+          if (result.errors) {
+            setTouched(
+              Object.keys(initialData).reduce(
+                (acc, key) => ({ ...acc, [key]: true }),
+                {}
+              )
+            )
+            const firstField = Object.keys(result.errors)[0]
+            const el = document.getElementById(`contact-${firstField}`)
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth", block: "center" })
+              el.focus()
+            }
+            setFormStatus("idle")
+            return
+          }
+          throw new Error(result.error || "Failed to send message")
+        }
+
+        setFormStatus("success")
+        setTimeout(() => {
+          setFormStatus("idle")
+          setData(initialData)
+          setTouched({})
+        }, 5000)
+      } catch (err) {
+        setServerError(err.message || "Something went wrong. Please try again.")
+        setFormStatus("error")
+      }
     },
     [data]
   )
@@ -142,6 +197,13 @@ export function ContactForm() {
         aria-hidden="true"
       />
 
+      <div
+        ref={announceRef}
+        role="status"
+        aria-live="polite"
+        className="sr-only"
+      />
+
       <h3 className="mb-8 font-display text-xl font-bold text-foreground sm:text-2xl">
         Send Us Your Project Details
       </h3>
@@ -167,16 +229,29 @@ export function ContactForm() {
               Message Sent Successfully!
             </h4>
             <p className="mt-2 text-sm text-muted">
-              We&apos;ll get back to you within 2 hours.
+              We&apos;ve received your project inquiry and will review it shortly.
             </p>
           </motion.div>
         ) : (
           <motion.form
             key="form"
+            ref={formRef}
             onSubmit={handleSubmit}
             noValidate
             className="space-y-5"
           >
+            {formStatus === "error" && serverError && (
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-start gap-3 rounded-2xl border border-red-500/20 bg-red-500/5 p-4"
+                role="alert"
+              >
+                <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-400" />
+                <p className="text-sm text-red-300">{serverError}</p>
+              </motion.div>
+            )}
+
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               <Input
                 id="contact-fullname"
@@ -291,7 +366,7 @@ export function ContactForm() {
                 type="submit"
                 disabled={formStatus === "submitting"}
                 onClick={addRipple}
-                className="group relative w-full overflow-hidden rounded-full py-4 text-sm font-semibold tracking-nav text-background transition-all duration-500 disabled:cursor-not-allowed"
+                className="group relative w-full overflow-hidden rounded-full py-4 text-sm font-semibold tracking-nav text-background transition-all duration-500 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
                 <span

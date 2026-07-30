@@ -103,7 +103,7 @@ export function ProjectDetails({ project, index, isHovered }) {
         <div className="flex items-center gap-3">
           {/* Primary */}
         <a
-          href="#"
+          href="/contact?source=works"
           className="group/btn relative inline-flex items-center gap-2 overflow-hidden rounded-full px-5 py-2.5 font-semibold text-xs tracking-nav transition-all duration-500"
         >
           <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 group-hover/btn:opacity-100 transition-opacity duration-500" />
@@ -128,7 +128,7 @@ export function ProjectDetails({ project, index, isHovered }) {
 
         {/* Secondary */}
         <a
-          href="#"
+          href="/works"
           className="group/btn inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/[0.08] font-semibold text-xs tracking-nav text-muted hover:text-foreground hover:border-white/20 transition-all duration-500"
         >
           <BookOpen className="w-3.5 h-3.5" />

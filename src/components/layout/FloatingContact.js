@@ -62,7 +62,11 @@ const contactOptions = [
     title: "Book Consultation",
     subtitle: "Free 30-minute discussion.",
     action: () => {
-      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+      if (document.getElementById("contact")) {
+        document.getElementById("contact").scrollIntoView({ behavior: "smooth" })
+      } else {
+        window.location.href = "/contact"
+      }
     },
     gradient: "from-[#8B5CF6]/20 to-[#6366F1]/10",
     iconColor: "text-[#8B5CF6]",

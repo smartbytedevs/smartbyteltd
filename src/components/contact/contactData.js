@@ -1,6 +1,6 @@
 export const contactInfo = {
   email: "hello@smartbyte.com",
-  phone: "+880 XXX XXX XXXX",
+  phone: "+8801XXXXXXXXX",
   location: "Chattogram, Bangladesh",
   hours: "Sat \u2013 Thu \u2022 10 AM \u2013 8 PM",
 }
@@ -11,11 +11,11 @@ export const quickResponse = {
 }
 
 export const socialLinks = [
-  { name: "GitHub", url: "#" },
-  { name: "LinkedIn", url: "#" },
-  { name: "Facebook", url: "#" },
-  { name: "Instagram", url: "#" },
-  { name: "Behance", url: "#" },
+  { name: "GitHub", url: "https://github.com/smartbyte" },
+  { name: "LinkedIn", url: "https://linkedin.com/company/smartbyte" },
+  { name: "Facebook", url: "https://facebook.com/smartbyte" },
+  { name: "Instagram", url: "https://instagram.com/smartbyte" },
+  { name: "Behance", url: "https://behance.net/smartbyte" },
 ]
 
 export const faqItems = [

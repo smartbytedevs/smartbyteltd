@@ -99,7 +99,7 @@ export function PricingPhilosophy() {
                   </div>
 
                   <a
-                    href="#contact"
+                    href="/contact?source=services"
                     className={cn(
                       "group flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-medium transition-all duration-300",
                       tier.id === "growth"
