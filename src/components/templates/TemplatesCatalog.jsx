@@ -1,20 +1,16 @@
 "use client"
 
-import React, { useMemo, useState, useEffect, useCallback } from "react"
-import { motion } from "motion/react"
+import { useMemo, useState, useEffect, useRef, useCallback } from "react"
+import { motion, AnimatePresence } from "motion/react"
 import { cn } from "@/lib/utils"
 import { fadeUpSimple } from "@/lib/animations"
 import { useFilters } from "./FilterContext"
-import { templates, industries, priceRanges, sortOptions, categories } from "@/data/templates"
+import { FilterDrawer } from "./FilterDrawer"
+import { templates, industries, sortOptions, categories, technologyOptions, matchFeature, matchTechnology } from "@/data/templates"
 import {
-  Search,
-  ChevronDown,
-  Eye,
-  ShoppingCart,
-  Check,
-  Clock,
-  Layout,
+  Search, X, Eye, ShoppingCart, Check, Clock, Layout, ChevronDown, SlidersHorizontal, RotateCcw,
 } from "lucide-react"
+import { SafeSlideUp } from "@/components/common/SafeMotion"
 
 const categoryGradients = {
   restaurant: "from-emerald-500/30 to-green-600/30",
@@ -46,12 +42,135 @@ function useDebounce(value, delay) {
   return debounced
 }
 
+const placeholders = [
+  "Search templates, industries, technologies...",
+  "Search by business type...",
+  "Search by technology...",
+  "Search by feature...",
+]
+
+function SearchBar({ value, onChange, onFocus, onBlur, focused }) {
+  const [placeholderIdx, setPlaceholderIdx] = useState(0)
+  const [isMac, setIsMac] = useState(false)
+  const inputRef = useRef(null)
+
+  useEffect(() => {
+    setIsMac(typeof navigator !== "undefined" && navigator.platform.includes("Mac"))
+  }, [])
+
+  useEffect(() => {
+    if (focused) return
+    const interval = setInterval(() => {
+      setPlaceholderIdx((i) => (i + 1) % placeholders.length)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [focused])
+
+  return (
+    <div className={cn(
+      "relative flex-1 rounded-2xl border transition-all duration-500",
+      focused
+        ? "bg-white/[0.04] border-accent/40 shadow-lg shadow-accent/10"
+        : "bg-white/[0.02] border-white/[0.06] hover:bg-white/[0.03] hover:border-white/[0.12]"
+    )}>
+      <div className="relative flex items-center">
+        <Search className={cn(
+          "absolute left-4 w-4 h-4 transition-colors duration-300 pointer-events-none",
+          focused ? "text-accent" : "text-muted-foreground"
+        )} />
+        <input
+          ref={inputRef}
+          type="text"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          placeholder={placeholders[placeholderIdx]}
+          className="w-full bg-transparent pl-10 pr-20 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none rounded-2xl"
+          aria-label="Search templates"
+        />
+        <span className="absolute right-4 text-[10px] font-medium text-muted-foreground/40 bg-white/[0.04] px-1.5 py-0.5 rounded border border-white/[0.06] pointer-events-none">
+          {isMac ? "⌘K" : "Ctrl+K"}
+        </span>
+      </div>
+    </div>
+  )
+}
+
+function SortDropdown({ value, onChange }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef(null)
+  const selected = sortOptions.find((o) => o.value === value)
+
+  useEffect(() => {
+    const handleClick = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false) }
+    document.addEventListener("mousedown", handleClick)
+    return () => document.removeEventListener("mousedown", handleClick)
+  }, [])
+
+  return (
+    <div ref={ref} className="relative shrink-0">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className={cn(
+          "flex items-center gap-2 px-4 py-3.5 rounded-2xl text-sm font-medium transition-all duration-300",
+          "bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-white/[0.12]",
+          "focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50",
+          open && "border-accent/30"
+        )}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label="Sort by"
+      >
+        <SlidersHorizontal className="w-4 h-4 text-muted-foreground" />
+        <span className="text-muted-foreground hidden sm:inline">Sort</span>
+        <span className="text-foreground">{selected?.label || "Popular"}</span>
+        <ChevronDown className={cn("w-4 h-4 text-muted-foreground transition-transform", open && "rotate-180")} />
+      </button>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -8, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.96 }}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute right-0 top-full mt-2 z-30 w-56 rounded-2xl border border-white/[0.06] bg-card shadow-2xl overflow-hidden"
+            role="listbox"
+          >
+            {sortOptions.map((opt) => (
+              <button
+                key={opt.value}
+                type="button"
+                role="option"
+                aria-selected={value === opt.value}
+                onClick={() => { onChange(opt.value); setOpen(false) }}
+                className={cn(
+                  "w-full text-left px-4 py-3 text-sm transition-colors hover:bg-white/[0.04] flex items-center justify-between",
+                  value === opt.value ? "text-accent" : "text-muted-foreground"
+                )}
+              >
+                {opt.label}
+                {value === opt.value && <Check className="w-3.5 h-3.5 text-accent" />}
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
+
 function TemplateCard({ template, index, highlight }) {
   const gradient = categoryGradients[template.category] || categoryGradients.default
 
   return (
     <motion.div
-      {...fadeUpSimple(index * 0.05)}
+      layout
+      initial={{ opacity: 0, y: 20, scale: 0.97 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.4, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
         "group relative rounded-2xl overflow-hidden transition-all duration-500",
         "bg-white/[0.02] border border-white/[0.06]",
@@ -74,30 +193,18 @@ function TemplateCard({ template, index, highlight }) {
         </div>
       )}
 
-      <div className={cn(
-        "relative h-48 sm:h-56 overflow-hidden bg-gradient-to-br",
-        gradient
-      )}>
+      <div className={cn("relative h-48 sm:h-56 overflow-hidden bg-gradient-to-br", gradient)}>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
             <Layout className="w-8 h-8 text-white/40" />
           </div>
         </div>
-
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40 flex items-center justify-center">
           <div className="flex gap-3">
-            <button
-              type="button"
-              className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all hover:scale-105"
-              aria-label="Preview template"
-            >
+            <button type="button" className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all hover:scale-105" aria-label="Preview template">
               <Eye className="w-4 h-4" />
             </button>
-            <button
-              type="button"
-              className="p-3 rounded-xl bg-accent text-background hover:bg-accent-hover transition-all hover:scale-105"
-              aria-label="Get this template"
-            >
+            <button type="button" className="p-3 rounded-xl bg-accent text-background hover:bg-accent-hover transition-all hover:scale-105" aria-label="Get this template">
               <ShoppingCart className="w-4 h-4" />
             </button>
           </div>
@@ -114,13 +221,8 @@ function TemplateCard({ template, index, highlight }) {
           </span>
         </div>
 
-        <h3 className="font-display text-lg font-bold text-foreground group-hover:text-accent transition-colors">
-          {template.name}
-        </h3>
-
-        <p className="mt-2 text-sm text-muted leading-relaxed line-clamp-2">
-          {template.description}
-        </p>
+        <h3 className="font-display text-lg font-bold text-foreground group-hover:text-accent transition-colors">{template.name}</h3>
+        <p className="mt-2 text-sm text-muted leading-relaxed line-clamp-2">{template.description}</p>
 
         <div className="mt-4 space-y-1.5">
           {template.features.slice(0, 3).map((feat) => (
@@ -133,54 +235,26 @@ function TemplateCard({ template, index, highlight }) {
 
         <div className="mt-4 flex flex-wrap gap-1.5">
           {template.techStack.map((tech) => (
-            <span
-              key={tech}
-              className="px-2 py-0.5 text-[10px] font-medium rounded-md bg-white/[0.04] text-muted-foreground border border-white/[0.06]"
-            >
-              {tech}
-            </span>
+            <span key={tech} className="px-2 py-0.5 text-[10px] font-medium rounded-md bg-white/[0.04] text-muted-foreground border border-white/[0.06]">{tech}</span>
           ))}
         </div>
 
         <div className="mt-4 pt-4 border-t border-white/[0.06] flex items-center justify-between">
           <div className="flex items-center gap-3 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1">
-              <Clock className="w-3.5 h-3.5" />
-              {template.delivery}
-            </span>
+            <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{template.delivery}</span>
           </div>
           <div className="text-right">
             <span className="text-xs text-muted-foreground">From</span>
-            <div className="text-lg font-bold text-foreground">
-              ${template.price.toLocaleString()}
-            </div>
+            <div className="text-lg font-bold text-foreground">${template.price.toLocaleString()}</div>
           </div>
         </div>
 
         <div className="mt-4 grid grid-cols-2 gap-2">
-          <button
-            type="button"
-            className={cn(
-              "flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all",
-              "bg-white/[0.04] border border-white/[0.08] text-muted-foreground",
-              "hover:bg-white/[0.08] hover:text-foreground hover:border-white/[0.15]",
-              "group-hover:scale-[1.02]"
-            )}
-          >
-            <Eye className="w-3.5 h-3.5" />
-            Preview
+          <button type="button" className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all bg-white/[0.04] border border-white/[0.08] text-muted-foreground hover:bg-white/[0.08] hover:text-foreground hover:border-white/[0.15] group-hover:scale-[1.02]">
+            <Eye className="w-3.5 h-3.5" /> Preview
           </button>
-          <button
-            type="button"
-            className={cn(
-              "flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all",
-              "bg-gradient-to-r from-accent to-accent-secondary text-background",
-              "shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30",
-              "hover:scale-[1.02] active:scale-[0.98]"
-            )}
-          >
-            <ShoppingCart className="w-3.5 h-3.5" />
-            Get Template
+          <button type="button" className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98]">
+            <ShoppingCart className="w-3.5 h-3.5" /> Get Template
           </button>
         </div>
       </div>
@@ -188,41 +262,17 @@ function TemplateCard({ template, index, highlight }) {
   )
 }
 
-function Select({ label, options, value, onChange }) {
-  return (
-    <div className="relative">
-      <select
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className={cn(
-          "w-full appearance-none px-4 py-2.5 rounded-xl text-sm transition-colors cursor-pointer",
-          "bg-white/[0.03] border border-white/[0.06] text-foreground",
-          "hover:border-white/[0.12] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50",
-          "pr-10"
-        )}
-        aria-label={label}
-      >
-        {options.map((opt) => (
-          <option key={opt.value} value={opt.value}>{opt.label}</option>
-        ))}
-      </select>
-      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
-    </div>
-  )
-}
-
 export function TemplatesCatalog() {
-  const { filters, updateFilter } = useFilters()
+  const { filters, updateFilter, clearFilters, activeCount } = useFilters()
   const [searchInput, setSearchInput] = useState(filters.search)
+  const [searchFocused, setSearchFocused] = useState(false)
+  const [drawerOpen, setDrawerOpen] = useState(false)
   const debouncedSearch = useDebounce(searchInput, 300)
+  const searchRef = useRef(null)
+  const gridRef = useRef(null)
 
-  useEffect(() => {
-    updateFilter("search", debouncedSearch)
-  }, [debouncedSearch, updateFilter])
-
-  useEffect(() => {
-    setSearchInput(filters.search)
-  }, [filters.search])
+  useEffect(() => { updateFilter("search", debouncedSearch) }, [debouncedSearch, updateFilter])
+  useEffect(() => { setSearchInput(filters.search) }, [filters.search])
 
   const filtered = useMemo(() => {
     let result = [...templates]
@@ -232,19 +282,16 @@ export function TemplatesCatalog() {
       result = result.filter((t) =>
         t.name.toLowerCase().includes(q) ||
         t.description.toLowerCase().includes(q) ||
-        t.techStack.some((tech) => tech.toLowerCase().includes(q))
+        t.techStack.some((tech) => tech.toLowerCase().includes(q)) ||
+        t.features.some((f) => f.toLowerCase().includes(q))
       )
     }
 
     if (filters.solutionType && filters.solutionType !== "other") {
       result = result.filter((t) => t.category === filters.solutionType || t.industry === filters.solutionType)
     } else {
-      if (filters.category !== "all") {
-        result = result.filter((t) => t.category === filters.category)
-      }
-      if (filters.industry !== "all") {
-        result = result.filter((t) => t.industry === filters.industry)
-      }
+      if (filters.category !== "all") result = result.filter((t) => t.category === filters.category)
+      if (filters.industry !== "all") result = result.filter((t) => t.industry === filters.industry)
     }
 
     if (filters.priceRange !== "all") {
@@ -254,6 +301,21 @@ export function TemplatesCatalog() {
         if (filters.priceRange === "enterprise") return t.price > 2499
         return true
       })
+    }
+
+    if (filters.technologies.length > 0) {
+      result = result.filter((t) =>
+        filters.technologies.some((techId) => {
+          const opt = technologyOptions.find((o) => o.value === techId)
+          return opt && matchTechnology(opt, t.techStack)
+        })
+      )
+    }
+
+    if (filters.features.length > 0) {
+      result = result.filter((t) =>
+        filters.features.some((featId) => matchFeature(featId, t.features))
+      )
     }
 
     const sortFn = sortFunctions[filters.sort] || sortFunctions.popular
@@ -266,118 +328,184 @@ export function TemplatesCatalog() {
     if (!filters.solutionType || filters.solutionType === "other") return {}
     const map = {}
     filtered.forEach((t) => {
-      if (t.category === filters.solutionType || t.industry === filters.solutionType) {
-        map[t.id] = true
-      }
+      if (t.category === filters.solutionType || t.industry === filters.solutionType) map[t.id] = true
     })
     return map
   }, [filtered, filters.solutionType])
 
+  const activeFilters = useMemo(() => {
+    const chips = []
+    if (filters.category !== "all") chips.push({ key: "category", label: categories.find((c) => c.id === filters.category)?.label || filters.category })
+    if (filters.industry !== "all") chips.push({ key: "industry", label: industries.find((i) => i.value === filters.industry)?.label || filters.industry })
+    if (filters.priceRange !== "all") {
+      const labels = { starter: "Under $999", growing: "$999-$2,499", enterprise: "$2,500+" }
+      chips.push({ key: "priceRange", label: labels[filters.priceRange] || filters.priceRange })
+    }
+    if (filters.timeline !== "all") chips.push({ key: "timeline", label: filters.timeline })
+    filters.technologies.forEach((t) => chips.push({ key: `tech-${t}`, label: t }))
+    filters.features.forEach((f) => chips.push({ key: `feat-${f}`, label: f }))
+    return chips
+  }, [filters])
+
+  const count = activeCount()
+
   return (
-    <section id="templates-grid" className="relative py-24 md:py-32 overflow-hidden bg-background">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }} />
-        <div className="absolute top-[20%] -left-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(0, 194, 168, 0.04), transparent 70%)",
-          filter: "blur(120px)",
-        }} />
-        <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-          backgroundSize: "256px 256px",
-        }} />
-      </div>
+    <>
+      <FilterDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        {/* Filter Toolbar */}
-        <div className="glass rounded-2xl p-4 md:p-6 mb-10">
-          <div className="flex flex-col lg:flex-row gap-3 lg:items-end">
-            <div className="flex-1 relative">
-              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
-              <input
-                type="text"
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                placeholder="Search templates..."
-                className={cn(
-                  "w-full pl-10 pr-4 py-2.5 rounded-xl text-sm transition-colors",
-                  "bg-white/[0.03] border border-white/[0.06] text-foreground placeholder:text-muted-foreground",
-                  "hover:border-white/[0.12] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
-                )}
-                aria-label="Search templates"
-              />
-            </div>
-
-            <Select
-              label="Category"
-              options={[{ value: "all", label: "All Categories" }, ...categories.map((c) => ({ value: c.id, label: c.label }))]}
-              value={filters.category}
-              onChange={(v) => updateFilter("category", v)}
-            />
-
-            <Select
-              label="Industry"
-              options={industries}
-              value={filters.industry}
-              onChange={(v) => updateFilter("industry", v)}
-            />
-
-            <Select
-              label="Price Range"
-              options={priceRanges}
-              value={filters.priceRange}
-              onChange={(v) => updateFilter("priceRange", v)}
-            />
-
-            <Select
-              label="Sort By"
-              options={sortOptions}
-              value={filters.sort}
-              onChange={(v) => updateFilter("sort", v)}
-            />
-          </div>
-
-          {/* Results count */}
-          <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
-            <span>
-              Showing <span className="text-foreground font-medium">{filtered.length}</span> template{filtered.length !== 1 ? "s" : ""}
-            </span>
-          </div>
+      <section id="templates-grid" className="relative py-24 md:py-32 overflow-hidden bg-background">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <div className="absolute inset-0 opacity-[0.015]" style={{
+            backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }} />
+          <div className="absolute top-[20%] -left-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
+            background: "radial-gradient(circle, rgba(0, 194, 168, 0.04), transparent 70%)",
+            filter: "blur(120px)",
+          }} />
+          <div className="absolute inset-0 opacity-[0.015]" style={{
+            backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+            backgroundSize: "256px 256px",
+          }} />
         </div>
 
-        {/* Grid */}
-        {filtered.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {filtered.map((template, i) => (
-              <TemplateCard
-                key={template.id}
-                template={template}
-                index={i}
-                highlight={highlightMap[template.id]}
+        <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+          {/* ── Toolbar ── */}
+          <SafeSlideUp delay={0.1}>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-6">
+              <SearchBar
+                value={searchInput}
+                onChange={setSearchInput}
+                focused={searchFocused}
+                onFocus={() => setSearchFocused(true)}
+                onBlur={() => setSearchFocused(false)}
               />
-            ))}
-          </div>
-        ) : (
-          <motion.div
-            {...fadeUpSimple(0.2)}
-            className="text-center py-20"
-          >
-            <div className="w-16 h-16 rounded-2xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center mx-auto mb-4">
-              <Search className="w-6 h-6 text-muted-foreground" />
+
+              <button
+                type="button"
+                onClick={() => setDrawerOpen(true)}
+                className={cn(
+                  "flex items-center gap-2 px-5 py-3.5 rounded-2xl text-sm font-medium transition-all duration-300 shrink-0",
+                  "bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-white/[0.12]",
+                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50",
+                  count > 0 && "border-accent/30 text-accent"
+                )}
+                aria-label="Open filters"
+              >
+                <SlidersHorizontal className="w-4 h-4" />
+                <span>Filters</span>
+                {count > 0 && (
+                  <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-background text-[10px] font-bold">
+                    {count}
+                  </span>
+                )}
+              </button>
+
+              <SortDropdown value={filters.sort} onChange={(v) => updateFilter("sort", v)} />
             </div>
-            <p className="text-lg text-muted-foreground">No templates match your criteria.</p>
-            <button
-              type="button"
-              onClick={() => updateFilter("solutionType", null)}
-              className="mt-4 text-sm text-accent hover:text-accent-hover transition-colors underline underline-offset-4"
+          </SafeSlideUp>
+
+          {/* ── Active Filter Chips ── */}
+          <AnimatePresence>
+            {activeFilters.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                className="flex flex-wrap items-center gap-2 mb-6"
+              >
+                {activeFilters.map((chip) => (
+                  <motion.span
+                    key={chip.key}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20"
+                  >
+                    {chip.label}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (chip.key.startsWith("tech-")) {
+                          updateFilter("technologies", filters.technologies.filter((t) => t !== chip.key.replace("tech-", "")))
+                        } else if (chip.key.startsWith("feat-")) {
+                          updateFilter("features", filters.features.filter((f) => f !== chip.key.replace("feat-", "")))
+                        } else {
+                          updateFilter(chip.key, "all")
+                        }
+                      }}
+                      className="hover:text-foreground transition-colors"
+                      aria-label={`Remove ${chip.label} filter`}
+                    >
+                      <X className="w-3 h-3" />
+                    </button>
+                  </motion.span>
+                ))}
+                <button
+                  type="button"
+                  onClick={clearFilters}
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium text-muted-foreground hover:text-foreground border border-white/[0.06] hover:border-white/[0.15] transition-all"
+                >
+                  <RotateCcw className="w-3 h-3" />
+                  Clear All
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* ── Result Count ── */}
+          <div className="flex items-center justify-between mb-8">
+            <p className="text-sm text-muted">
+              Showing{' '}
+              <motion.span
+                key={filtered.length}
+                initial={{ opacity: 0, y: -8, scale: 0.8 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 8, scale: 0.8 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                className="text-foreground font-semibold tabular-nums"
+              >
+                {filtered.length}
+              </motion.span>{' '}
+              template{filtered.length !== 1 ? "s" : ""}
+            </p>
+          </div>
+
+          {/* ── Grid ── */}
+          {filtered.length > 0 ? (
+            <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {filtered.map((template, i) => (
+                <TemplateCard key={template.id} template={template} index={i} highlight={highlightMap[template.id]} />
+              ))}
+            </div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center py-24"
             >
-              Clear filters
-            </button>
-          </motion.div>
-        )}
-      </div>
-    </section>
+              <div className="w-20 h-20 rounded-2xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center mx-auto mb-6">
+                <Search className="w-8 h-8 text-muted-foreground" />
+              </div>
+              <h3 className="font-display text-xl font-bold text-foreground mb-2">No templates found</h3>
+              <p className="text-sm text-muted mb-6">Try changing your filters to discover more solutions.</p>
+              <button
+                type="button"
+                onClick={clearFilters}
+                className={cn(
+                  "inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300",
+                  "bg-gradient-to-r from-accent to-accent-secondary text-background",
+                  "shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30",
+                  "hover:scale-[1.02] active:scale-[0.98]"
+                )}
+              >
+                <RotateCcw className="w-4 h-4" />
+                Reset Filters
+              </button>
+            </motion.div>
+          )}
+        </div>
+      </section>
+    </>
   )
 }

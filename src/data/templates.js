@@ -419,29 +419,89 @@ export const templates = [
 ]
 
 export const businessTypes = [
-  { value: "restaurant", label: "Restaurant" },
-  { value: "realestate", label: "Real Estate" },
-  { value: "healthcare", label: "Healthcare" },
-  { value: "education", label: "Education" },
-  { value: "corporate", label: "Corporate" },
-  { value: "agency", label: "Agency" },
-  { value: "ecommerce", label: "E-Commerce" },
-  { value: "portfolio", label: "Portfolio" },
-  { value: "startup", label: "Startup" },
-  { value: "other", label: "Other" },
+  { value: "restaurant", label: "Restaurant", desc: "Digital menus, online ordering, and reservation systems" },
+  { value: "realestate", label: "Real Estate", desc: "Property listings, virtual tours, and agent profiles" },
+  { value: "healthcare", label: "Healthcare", desc: "Patient portals, appointment booking, and records" },
+  { value: "education", label: "Education", desc: "Course management, student portals, and e-learning" },
+  { value: "corporate", label: "Corporate", desc: "Company websites, intranets, and investor relations" },
+  { value: "agency", label: "Agency", desc: "Portfolios, case studies, and client management" },
+  { value: "ecommerce", label: "E-Commerce", desc: "Online stores, inventory, and payment processing" },
+  { value: "portfolio", label: "Portfolio", desc: "Creative showcases, galleries, and client proofing" },
+  { value: "startup", label: "Startup", desc: "MVP landing pages, waitlists, and investor decks" },
+  { value: "other", label: "Other", desc: "Something unique? We've got you covered" },
 ]
 
 export const budgetOptions = [
-  { value: "starter", label: "Starter", desc: "Under $999" },
-  { value: "growing", label: "Growing Business", desc: "$999 – $2,499" },
-  { value: "enterprise", label: "Enterprise", desc: "$2,500+" },
+  { value: "starter", label: "Starter", desc: "Under $999", sub: "Best for early-stage businesses and personal projects. Includes essential features to get you online quickly." },
+  { value: "growing", label: "Growing Business", desc: "$999 – $2,499", sub: "Ideal for established businesses needing advanced features, integrations, and scalability." },
+  { value: "enterprise", label: "Enterprise", desc: "$2,500+", sub: "Full-featured solutions with custom development, dedicated support, and enterprise-grade infrastructure." },
 ]
 
 export const timelineOptions = [
-  { value: "asap", label: "ASAP", desc: "Need it urgently" },
-  { value: "month", label: "Within 1 Month", desc: "Standard timeline" },
-  { value: "flexible", label: "Flexible", desc: "No rush" },
+  { value: "asap", label: "ASAP", desc: "Need it urgently", sub: "We prioritize your project and deliver on an accelerated timeline." },
+  { value: "month", label: "Within 30 Days", desc: "Standard timeline", sub: "Our most common delivery window — thorough development with quality assurance." },
+  { value: "flexible", label: "Flexible", desc: "No rush", sub: "Take your time with planning and iterations. Perfect for complex projects." },
 ]
+
+export const technologyOptions = [
+  { value: "nextjs", label: "Next.js", match: "Next.js" },
+  { value: "react", label: "React", match: "React" },
+  { value: "typescript", label: "TypeScript", match: "TypeScript" },
+  { value: "tailwind", label: "Tailwind", match: "Tailwind" },
+  { value: "node", label: "Node", match: "Node" },
+  { value: "postgres", label: "Postgres", match: "Postgres" },
+  { value: "prisma", label: "Prisma", match: "Prisma" },
+  { value: "stripe", label: "Stripe", match: "Stripe" },
+  { value: "motion", label: "Motion", match: "Motion" },
+  { value: "django", label: "Django", match: "Django" },
+  { value: "vue", label: "Vue", match: "Vue" },
+]
+
+export const featureOptions = [
+  { value: "cms", label: "CMS" },
+  { value: "authentication", label: "Authentication" },
+  { value: "dashboard", label: "Dashboard" },
+  { value: "booking", label: "Booking" },
+  { value: "payment", label: "Payment" },
+  { value: "inventory", label: "Inventory" },
+  { value: "analytics", label: "Analytics" },
+  { value: "crm", label: "CRM" },
+  { value: "gallery", label: "Gallery" },
+  { value: "blog", label: "Blog" },
+  { value: "waitlist", label: "Waitlist" },
+  { value: "portal", label: "Portal" },
+  { value: "ordering", label: "Online Ordering" },
+  { value: "scheduling", label: "Scheduling" },
+  { value: "seo", label: "SEO" },
+]
+
+const featureKeywords = {
+  cms: ["cms", "built-in cms", "content management"],
+  authentication: ["authentication", "login", "sign up", "role-based access", "patient portal", "tenant portal", "student enrollment portal", "employee intranet"],
+  dashboard: ["dashboard", "analytics", "analytics integration", "property analytics", "progress tracking"],
+  booking: ["booking", "appointment", "reservation", "consultation", "schedule", "online reservation system", "table reservation portal"],
+  payment: ["payment", "stripe", "checkout", "shopping cart", "rent payment", "multi-currency"],
+  inventory: ["inventory", "product catalog", "product catalog management"],
+  analytics: ["analytics", "analytics integration", "property analytics"],
+  crm: ["crm", "client portal", "client gallery", "client proofing", "contact & booking"],
+  gallery: ["gallery", "photo gallery", "lightbox gallery", "project showcase", "gallery & events section"],
+  blog: ["blog", "news & press room", "health resources blog"],
+  waitlist: ["waitlist", "early access", "lead capture", "lead capture forms"],
+  portal: ["portal", "patient portal", "student enrollment portal", "tenant portal", "client portal", "employee intranet", "investor relations portal"],
+  ordering: ["ordering", "online ordering system", "shopping cart & checkout", "order tracking system"],
+  scheduling: ["scheduling", "appointment scheduling", "online consultation booking"],
+  seo: ["seo", "seo optimized"],
+}
+
+export function matchFeature(featureId, templateFeatures) {
+  const keywords = featureKeywords[featureId]
+  if (!keywords) return false
+  return templateFeatures.some((f) => keywords.some((kw) => f.toLowerCase().includes(kw)))
+}
+
+export function matchTechnology(techOption, templateTech) {
+  return templateTech.some((t) => t.toLowerCase() === techOption.match.toLowerCase())
+}
 
 export const faqItems = [
   {
