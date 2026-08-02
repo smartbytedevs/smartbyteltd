@@ -358,11 +358,6 @@ export function Footer() {
               &copy; {year} SmartByte. All Rights Reserved.
             </p>
 
-            <p className="text-xs text-muted-foreground/50 sm:text-sm">
-              Made with <span className="text-red-400/80">&hearts;</span> in
-              Bangladesh
-            </p>
-
             <div className="flex items-center gap-4">
               {[{ label: "Privacy Policy", href: "/privacy-policy" }, { label: "Terms", href: "/terms" }, { label: "Cookies", href: "/cookies" }].map((item) => (
                 <a

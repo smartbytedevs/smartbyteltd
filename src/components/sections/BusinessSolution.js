@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react"
 import { motion } from "motion/react"
 import { ecosystemNodes } from "@/components/business-solution/ecosystemData"
-import { EcosystemVisualization } from "@/components/business-solution/EcosystemVisualization"
+import { EcosystemGrid } from "@/components/business-solution/EcosystemGrid"
 import { SolutionPanel } from "@/components/business-solution/SolutionPanel"
 import { Particles } from "@/components/why-smartbyte/Particles"
 import { SectionHeading } from "@/components/ui/SectionHeading"
@@ -90,9 +90,10 @@ export function BusinessSolution() {
 
       {/* ═══ Content ═══ */}
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        {/* ═══ Section Header ═══ */}
-        <div className="max-w-3xl mb-12 lg:mb-16">
+        {/* ═══ Section Header — centered ═══ */}
+        <div className="max-w-3xl mx-auto mb-14 lg:mb-20 text-center">
           <SectionHeading
+            align="center"
             label="ALL-IN-ONE BUSINESS SOLUTION"
             title={
               <>
@@ -107,33 +108,25 @@ export function BusinessSolution() {
           />
         </div>
 
-        {/* ═══ Main Grid ═══ */}
-        <div className="lg:grid lg:grid-cols-2 lg:gap-12 xl:gap-16">
-          {/* ═══ LEFT — Ecosystem Visualization ═══ */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.25, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <EcosystemVisualization
-              activeNodeId={activeId}
-              onNodeSelect={handleNodeSelect}
-              nodes={ecosystemNodes}
-            />
-          </motion.div>
+        {/* ═══ Ecosystem — responsive card grid ═══ */}
+        <EcosystemGrid
+          activeNodeId={activeId}
+          onNodeSelect={handleNodeSelect}
+          nodes={ecosystemNodes}
+        />
 
-          {/* ═══ RIGHT — Solution Panel ═══ */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.35, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-10 lg:mt-0"
-          >
+        {/* ═══ Active Solution Panel — below the ecosystem ═══ */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-12 lg:mt-16"
+        >
+          <div className="max-w-3xl mx-auto">
             <SolutionPanel activeNode={activeNode} />
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

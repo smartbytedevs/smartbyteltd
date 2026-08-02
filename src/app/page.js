@@ -18,9 +18,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <FeaturedTemplates />
         <WhatWeBuild />
         <WhySmartByte />
+        <FeaturedTemplates />
         <Testimonials />
         <BusinessSolution />
         <About />

@@ -1,9 +1,11 @@
 "use client"
 
 import { useRef, useState, useEffect, useCallback } from "react"
-import { motion, useReducedMotion, animate } from "motion/react"
+import { motion, useReducedMotion } from "motion/react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { TemplateCard } from "./TemplateCard"
+
+const navEase = [0.16, 1, 0.3, 1]
 
 function NavArrow({ direction, onClick, disabled }) {
   const Icon = direction === "left" ? ChevronLeft : ChevronRight
@@ -25,7 +27,6 @@ function NavArrow({ direction, onClick, disabled }) {
         scale: disabled ? 0.9 : 1,
         pointerEvents: disabled ? "none" : "auto",
       }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
       whileHover={{
         y: -3,
         borderColor: "rgba(0, 194, 168, 0.3)",
@@ -50,171 +51,98 @@ function NavArrow({ direction, onClick, disabled }) {
   )
 }
 
-function getCardTarget(container, index) {
-  const cards = [...container.children[0].children].filter(
-    (c) => c.getAttribute("role") === "button"
-  )
-  const card = cards[index]
-  if (!card) return container.scrollLeft
-  const cr = container.getBoundingClientRect()
-  const cardRect = card.getBoundingClientRect()
-  return container.scrollLeft + cardRect.left - cr.left
-}
-
 export function TemplateCarousel({ templates }) {
-  const containerRef = useRef(null)
+  const regionRef = useRef(null)
+  const rowRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
-  const [canScrollLeft, setCanScrollLeft] = useState(false)
-  const [canScrollRight, setCanScrollRight] = useState(true)
+  const [offsets, setOffsets] = useState([])
   const prefersReduced = useReducedMotion()
 
-  const touchStartX = useRef(0)
-  const isSwiping = useRef(false)
-
-  /* ── Scroll state ── */
-  const updateScrollState = useCallback(() => {
-    const el = containerRef.current
-    if (!el) return
-    setCanScrollLeft(el.scrollLeft > 20)
-    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 20)
-  }, [])
-
-  const updateActiveIndex = useCallback(() => {
-    const el = containerRef.current
-    if (!el) return
-    const cards = [...el.children[0].children].filter(
-      (c) => c.getAttribute("role") === "button"
-    )
-    const cr = el.getBoundingClientRect()
-    const center = cr.left + cr.width / 2
-    for (let i = 0; i < cards.length; i++) {
-      const r = cards[i].getBoundingClientRect()
-      if (center >= r.left && center < r.right) {
-        setActiveIndex(i)
-        break
-      }
-    }
-  }, [])
-
-  /* ── Spring-powered scroll ── */
-  const springScrollTo = useCallback(
-    (target) => {
-      const el = containerRef.current
-      if (!el) return
-      const start = el.scrollLeft
-      if (Math.abs(target - start) < 2) return
-      animate(start, target, {
-        type: "spring",
-        stiffness: 180,
-        damping: 28,
-        mass: 1,
-        onUpdate: (v) => {
-          el.scrollLeft = v
-        },
+  const goTo = useCallback(
+    (index) => {
+      setActiveIndex((current) => {
+        const next = Math.max(0, Math.min(templates.length - 1, index))
+        return next === current ? current : next
       })
     },
-    []
+    [templates.length]
   )
 
-  const scrollTo = useCallback(
-    (direction) => {
-      const idx = direction === "left" ? activeIndex - 1 : activeIndex + 1
-      if (idx < 0 || idx >= templates.length) return
-      const el = containerRef.current
-      if (!el) return
-      springScrollTo(getCardTarget(el, idx))
-    },
-    [activeIndex, templates.length, springScrollTo]
-  )
+  const prev = useCallback(() => goTo(activeIndex - 1), [goTo, activeIndex])
+  const next = useCallback(() => goTo(activeIndex + 1), [goTo, activeIndex])
 
-  /* ── Wheel → horizontal scroll ── */
-  const handleWheel = useCallback((e) => {
-    const el = containerRef.current
-    if (!el) return
-    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-      e.preventDefault()
-      el.scrollBy({ left: e.deltaY, behavior: "auto" })
+  /* ── Measure the natural layout offsets so the row can slide without scrolling ── */
+  const measureOffsets = useCallback(() => {
+    const row = rowRef.current
+    if (!row) return
+    const cards = [...row.querySelectorAll("[data-card-root]")]
+    if (cards.length !== templates.length) return
+    setOffsets((current) => {
+      const next = cards.map((card) => card.offsetLeft)
+      if (current.length === next.length && current.every((v, i) => v === next[i])) return current
+      return next
+    })
+  }, [templates.length])
+
+  useEffect(() => {
+    measureOffsets()
+    const region = regionRef.current
+    if (!region) return
+    const observer = new ResizeObserver(measureOffsets)
+    observer.observe(region)
+    window.addEventListener("resize", measureOffsets)
+    return () => {
+      observer.disconnect()
+      window.removeEventListener("resize", measureOffsets)
     }
-  }, [])
+  }, [measureOffsets])
 
-  /* ── Swipe support ── */
-  const handleTouchStart = useCallback((e) => {
-    touchStartX.current = e.touches[0].clientX
-    isSwiping.current = false
-  }, [])
-
-  const handleTouchMove = useCallback((e) => {
-    const dx = Math.abs(e.touches[0].clientX - touchStartX.current)
-    if (dx > 10) isSwiping.current = true
-  }, [])
-
-  const handleTouchEnd = useCallback(
-    (e) => {
-      if (!isSwiping.current) return
-      const dx = e.changedTouches[0].clientX - touchStartX.current
-      if (Math.abs(dx) < 50) return
-      scrollTo(dx > 0 ? "left" : "right")
-    },
-    [scrollTo]
-  )
-
-  /* ── Keyboard navigation ── */
+  /* ── Keyboard navigation (button-equivalent) ── */
   const handleKeyDown = useCallback(
     (e) => {
       if (e.key === "ArrowLeft") {
         e.preventDefault()
-        scrollTo("left")
+        prev()
       } else if (e.key === "ArrowRight") {
         e.preventDefault()
-        scrollTo("right")
+        next()
       }
     },
-    [scrollTo]
+    [prev, next]
   )
 
-  /* ── Event listeners ── */
-  useEffect(() => {
-    const el = containerRef.current
-    if (!el) return
+  /* Row transform — the active card always lands in the first card's slot.
+     Purely transform-based, so the user can never scroll this section. */
+  const rowX = offsets.length ? offsets[0] - offsets[activeIndex] : 0
+  const navTransition = prefersReduced
+    ? { duration: 0 }
+    : { duration: 0.55, ease: navEase }
 
-    const onScroll = () => {
-      updateScrollState()
-      updateActiveIndex()
-    }
-
-    el.addEventListener("scroll", onScroll, { passive: true })
-    el.addEventListener("wheel", handleWheel, { passive: false })
-    updateScrollState()
-
-    return () => {
-      el.removeEventListener("scroll", onScroll)
-      el.removeEventListener("wheel", handleWheel)
-    }
-  }, [handleWheel, updateScrollState, updateActiveIndex])
+  const hasPrev = activeIndex > 0
+  const hasNext = activeIndex < templates.length - 1
 
   return (
     <div
+      ref={regionRef}
       className="relative"
       onKeyDown={handleKeyDown}
       tabIndex={0}
       role="region"
-      aria-label="Template carousel"
+      aria-label="Template showcase"
       aria-roledescription="carousel"
     >
       {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" aria-hidden="true" />
+      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" aria-hidden="true" />
 
-      {/* Carousel */}
-      <div
-        ref={containerRef}
-        className="overflow-x-auto no-scrollbar snap-x snap-mandatory"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        <div className="flex gap-4 md:gap-14 px-8">
+      {/* Showcase row — clipped, no overflow scrolling */}
+      <div className="overflow-hidden">
+        <motion.div
+          ref={rowRef}
+          className="flex gap-4 md:gap-14 px-8"
+          animate={{ x: rowX }}
+          transition={navTransition}
+        >
           {templates.map((template, i) => (
             <TemplateCard
               key={template.id}
@@ -223,19 +151,18 @@ export function TemplateCarousel({ templates }) {
               isActive={activeIndex === i}
             />
           ))}
-          <div className="flex-shrink-0 w-4" />
-        </div>
+        </motion.div>
       </div>
 
       {/* Navigation Arrows — overlaid on sides */}
       <div className="absolute inset-y-0 left-4 md:left-6 flex items-center z-20 pointer-events-none">
         <div className="pointer-events-auto">
-          <NavArrow direction="left" onClick={() => scrollTo("left")} disabled={!canScrollLeft} />
+          <NavArrow direction="left" onClick={prev} disabled={!hasPrev} />
         </div>
       </div>
       <div className="absolute inset-y-0 right-4 md:right-6 flex items-center z-20 pointer-events-none">
         <div className="pointer-events-auto">
-          <NavArrow direction="right" onClick={() => scrollTo("right")} disabled={!canScrollRight} />
+          <NavArrow direction="right" onClick={next} disabled={!hasNext} />
         </div>
       </div>
 
@@ -244,17 +171,14 @@ export function TemplateCarousel({ templates }) {
         {templates.map((_, i) => (
           <button
             key={i}
-            className={`h-1 rounded-full transition-all duration-500 ${
+            className={`h-1 rounded-full transition-all duration-500 outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
               i === activeIndex
                 ? "w-8 bg-gradient-to-r from-accent to-accent-secondary"
                 : "w-2 bg-white/10 hover:bg-white/20"
             }`}
-            onClick={() => {
-              const el = containerRef.current
-              if (!el) return
-              springScrollTo(getCardTarget(el, i))
-            }}
+            onClick={() => goTo(i)}
             aria-label={`Go to template ${i + 1}`}
+            aria-current={i === activeIndex}
           />
         ))}
       </div>
