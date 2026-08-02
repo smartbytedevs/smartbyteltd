@@ -1,11 +1,11 @@
 "use client"
 
 import { useMemo } from "react"
-import { motion, useReducedMotion } from "motion/react"
+import { motion } from "motion/react"
 
 const PARTICLE_COUNT = 20
 
-function ParticleDot({ p, animate }) {
+function ParticleDot({ p }) {
   return (
     <motion.div
       className="absolute rounded-full bg-white"
@@ -16,27 +16,21 @@ function ParticleDot({ p, animate }) {
         height: p.size,
         opacity: p.opacity,
       }}
-      {...(animate
-        ? {
-            animate: {
-              y: [0, -30, 0, 20, 0],
-              opacity: [p.opacity, p.opacity * 2, p.opacity, p.opacity * 0.5, p.opacity],
-            },
-            transition: {
-              duration: p.duration,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: p.delay,
-            },
-          }
-        : {})}
+      animate={{
+        y: [0, -30, 0, 20, 0],
+        opacity: [p.opacity, p.opacity * 2, p.opacity, p.opacity * 0.5, p.opacity],
+      }}
+      transition={{
+        duration: p.duration,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: p.delay,
+      }}
     />
   )
 }
 
 export function Particles() {
-  const prefersReduced = useReducedMotion()
-
   const particles = useMemo(() => {
     return Array.from({ length: PARTICLE_COUNT }, (_, i) => ({
       id: i,
@@ -52,7 +46,7 @@ export function Particles() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
       {particles.map((p) => (
-        <ParticleDot key={p.id} p={p} animate={!prefersReduced} />
+        <ParticleDot key={p.id} p={p} />
       ))}
     </div>
   )

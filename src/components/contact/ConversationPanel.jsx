@@ -1,13 +1,11 @@
 "use client"
 
-import { motion, useReducedMotion } from "motion/react"
+import { motion } from "motion/react"
 import { Mail, Phone, MapPin, Clock, Zap } from "lucide-react"
 import { contactInfo, quickResponse, socialLinks } from "./contactData"
 import { useMousePosition } from "@/hooks/useMousePosition"
 
 function ContactMethod({ icon: Icon, title, value, index }) {
-  const prefersReduced = useReducedMotion()
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -34,8 +32,6 @@ function ContactMethod({ icon: Icon, title, value, index }) {
 }
 
 function SocialIcon({ name, url, index }) {
-  const prefersReduced = useReducedMotion()
-
   const iconMap = {
     GitHub: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
@@ -82,8 +78,6 @@ function SocialIcon({ name, url, index }) {
 }
 
 export function ConversationPanel() {
-  const prefersReduced = useReducedMotion()
-
   const methods = [
     { icon: Mail, title: "Email", value: contactInfo.email },
     { icon: Phone, title: "Phone", value: contactInfo.phone },

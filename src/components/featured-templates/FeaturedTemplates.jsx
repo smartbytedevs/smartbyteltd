@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useReducedMotion } from "motion/react"
+import { motion } from "motion/react"
 import { Calendar } from "lucide-react"
 import { TemplateCarousel } from "./TemplateCarousel"
 import { Particles } from "@/components/why-smartbyte/Particles"
@@ -146,8 +146,6 @@ const templates = [
 ]
 
 export function FeaturedTemplates() {
-  const prefersReduced = useReducedMotion()
-
   return (
     <section
       id="featured-templates"

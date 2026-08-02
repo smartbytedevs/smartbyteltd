@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useReducedMotion } from "motion/react"
+import { motion } from "motion/react"
 
 const labelStyles = {
   "BEST SELLER": "bg-gradient-to-r from-amber-500 to-orange-500 text-black",
@@ -11,21 +11,15 @@ const labelStyles = {
 }
 
 export function FloatingLabel({ label, style }) {
-  const prefersReduced = useReducedMotion()
-
   return (
     <motion.span
       className={`absolute text-[11px] font-bold tracking-[0.1em] uppercase px-3 py-1.5 rounded-full shadow-lg ${labelStyles[label] || labelStyles.NEW}`}
       initial={{ opacity: 0, y: -10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      animate={
-        prefersReduced
-          ? {}
-          : {
-              y: [0, -6, 0],
-            }
-      }
+      animate={{
+        y: [0, -6, 0],
+      }}
       transition={{
         y: {
           duration: 4,

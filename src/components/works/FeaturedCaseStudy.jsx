@@ -1,9 +1,11 @@
 "use client"
 
 import { motion } from "motion/react"
+import Link from "next/link"
 import { SafeSlideUp, SafeReveal } from "@/components/common/SafeMotion"
 import { SectionHeading } from "@/components/ui/SectionHeading"
 import { featuredProject } from "@/data/works"
+import { siteUrl } from "@/lib/portfolio-data"
 import { ArrowRight, CheckCircle, Clock, BarChart3 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -13,7 +15,7 @@ const iconMap = {
   BarChart3,
 }
 
-function BrowserMockup() {
+function BrowserMockup({ url }) {
   return (
     <div className="w-full h-full flex flex-col overflow-hidden rounded-[18px] bg-[#0D1117] border border-white/[0.06]">
       <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06] bg-[#0D1117]/80">
@@ -24,7 +26,7 @@ function BrowserMockup() {
         </div>
         <div className="flex-1 mx-4">
           <div className="h-6 rounded-md bg-white/[0.04] border border-white/[0.04] flex items-center px-3">
-            <span className="text-[9px] text-white/20 truncate">https://smartbyte.agency/work/restaurant-pro</span>
+            <span className="text-[9px] text-white/20 truncate">{url}</span>
           </div>
         </div>
       </div>
@@ -120,7 +122,7 @@ export function FeaturedCaseStudy() {
               />
               <div className="relative rounded-[28px] overflow-hidden border border-white/[0.06]">
                 <div style={{ aspectRatio: "16/10" }}>
-                  <BrowserMockup />
+                  <BrowserMockup url={p.liveLink || `${siteUrl}/work/${p.slug}`} />
                 </div>
               </div>
             </div>
@@ -207,13 +209,21 @@ export function FeaturedCaseStudy() {
             </SafeReveal>
 
             <SafeReveal delay={0.4}>
-              <a
-                href="#portfolio-grid"
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
-              >
-                View All Projects
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </a>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  href={`/works/${p.slug}`}
+                  className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  Read Case Study
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+                <a
+                  href="#portfolio-grid"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-white/[0.08] text-muted hover:text-foreground hover:border-white/20 transition-all"
+                >
+                  View All Projects
+                </a>
+              </div>
             </SafeReveal>
           </div>
         </div>

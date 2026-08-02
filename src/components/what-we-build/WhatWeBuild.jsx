@@ -46,13 +46,9 @@ export function WhatWeBuild() {
       {/* Spotlight */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
-        animate={
-          prefersReduced
-            ? {}
-            : {
-                background: `radial-gradient(circle at ${mousePos.x * 100}% ${mousePos.y * 100}%, rgba(0, 194, 168, 0.02), transparent 60%)`,
-              }
-        }
+        animate={{
+          background: `radial-gradient(circle at ${mousePos.x * 100}% ${mousePos.y * 100}%, rgba(0, 194, 168, 0.02), transparent 60%)`,
+        }}
         transition={{ type: "spring", stiffness: 50, damping: 30 }}
       />
 

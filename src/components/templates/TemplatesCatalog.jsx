@@ -1,6 +1,7 @@
 "use client"
 
 import { useMemo, useState, useEffect, useRef, useCallback } from "react"
+import Link from "next/link"
 import { motion, AnimatePresence } from "motion/react"
 import { cn } from "@/lib/utils"
 import { fadeUpSimple } from "@/lib/animations"
@@ -201,12 +202,12 @@ function TemplateCard({ template, index, highlight }) {
         </div>
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40 flex items-center justify-center">
           <div className="flex gap-3">
-            <button type="button" className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all hover:scale-105" aria-label="Preview template">
+            <Link href={`/templates/${template.slug}`} className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all hover:scale-105" aria-label={`Preview ${template.name} template`}>
               <Eye className="w-4 h-4" />
-            </button>
-            <button type="button" className="p-3 rounded-xl bg-accent text-background hover:bg-accent-hover transition-all hover:scale-105" aria-label="Get this template">
+            </Link>
+            <Link href={`/templates/${template.slug}`} className="p-3 rounded-xl bg-accent text-background hover:bg-accent-hover transition-all hover:scale-105" aria-label={`Get ${template.name} template`}>
               <ShoppingCart className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -250,12 +251,12 @@ function TemplateCard({ template, index, highlight }) {
         </div>
 
         <div className="mt-4 grid grid-cols-2 gap-2">
-          <button type="button" className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all bg-white/[0.04] border border-white/[0.08] text-muted-foreground hover:bg-white/[0.08] hover:text-foreground hover:border-white/[0.15] group-hover:scale-[1.02]">
+          <Link href={`/templates/${template.slug}`} className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all bg-white/[0.04] border border-white/[0.08] text-muted-foreground hover:bg-white/[0.08] hover:text-foreground hover:border-white/[0.15] group-hover:scale-[1.02]">
             <Eye className="w-3.5 h-3.5" /> Preview
-          </button>
-          <button type="button" className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98]">
+          </Link>
+          <Link href={`/templates/${template.slug}`} className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98]">
             <ShoppingCart className="w-3.5 h-3.5" /> Get Template
-          </button>
+          </Link>
         </div>
       </div>
     </motion.div>

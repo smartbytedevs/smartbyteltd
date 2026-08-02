@@ -1,8 +1,8 @@
 "use client"
 
 import { motion } from "motion/react"
-import { milestones, values, team } from "@/components/about/aboutData"
-import { AboutTimeline } from "@/components/about/AboutTimeline"
+import { values, team } from "@/components/about/aboutData"
+import { TransformationJourney } from "@/components/about/TransformationJourney"
 import { AboutValues } from "@/components/about/AboutValues"
 import { TeamGrid } from "@/components/about/TeamGrid"
 import { CtaBanner } from "@/components/about/CtaBanner"
@@ -101,7 +101,7 @@ export function About() {
         <div className="lg:grid lg:grid-cols-[38%_58%] lg:gap-12 xl:gap-16">
           {/* ═══ LEFT — Story & Values (38%) ═══ */}
           <div>
-            <AboutTimeline milestones={milestones} />
+            <TransformationJourney />
             <AboutValues values={values} />
           </div>
 

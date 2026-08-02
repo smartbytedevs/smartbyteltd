@@ -1,7 +1,7 @@
 "use client"
 
 import { memo, useState } from "react"
-import { motion, useReducedMotion } from "motion/react"
+import { motion } from "motion/react"
 import { SafeSlideUp } from "@/components/common/SafeMotion"
 import { Check, ArrowRight } from "lucide-react"
 import { PreviewWindow } from "./PreviewWindow"
@@ -24,7 +24,6 @@ const techColors = {
 export const TemplateCard = memo(function TemplateCard({ template, index, isActive }) {
   const [isHovered, setIsHovered] = useState(false)
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 })
-  const prefersReduced = useReducedMotion()
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect()
@@ -56,11 +55,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
           opacity: isActive ? 1 : 0.8,
           scale: isActive ? 1 : 0.97,
         }}
-        transition={
-          prefersReduced
-            ? { duration: 0 }
-            : { duration: 0.55, ease: [0.16, 1, 0.3, 1] }
-        }
+        transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
       >
         <div
           className="group relative w-full h-full outline-none"

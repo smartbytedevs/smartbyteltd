@@ -1,12 +1,10 @@
 "use client"
 
-import { motion, useReducedMotion } from "motion/react"
+import { motion } from "motion/react"
 
 const EASE = [0.16, 1, 0.3, 1]
 
 export function EcosystemGrid({ activeNodeId, onNodeSelect, nodes }) {
-  const reduced = useReducedMotion()
-
   return (
     <div
       role="group"
@@ -21,8 +19,8 @@ export function EcosystemGrid({ activeNodeId, onNodeSelect, nodes }) {
           return (
             <motion.div
               key={node.id}
-              initial={reduced ? undefined : { opacity: 0, y: 16 }}
-              whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ delay: (i % 4) * 0.06, duration: 0.5, ease: EASE }}
             >
@@ -31,8 +29,8 @@ export function EcosystemGrid({ activeNodeId, onNodeSelect, nodes }) {
                 onClick={() => onNodeSelect(node.id)}
                 onMouseEnter={() => onNodeSelect(node.id)}
                 aria-pressed={isActive}
-                whileHover={reduced ? undefined : { y: -4 }}
-                whileTap={reduced ? undefined : { scale: 0.98 }}
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="group relative w-full flex flex-col items-center gap-3 rounded-2xl border px-4 py-5 text-center outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 transition-colors duration-300"
                 style={{

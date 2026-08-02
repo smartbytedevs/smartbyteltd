@@ -152,14 +152,10 @@ export function WhySmartByte() {
               <div className="relative">
                 <motion.div
                   className="absolute -top-24 -left-24 w-[400px] h-[400px] rounded-full pointer-events-none"
-                  animate={
-                    prefersReduced
-                      ? {}
-                      : {
-                          x: (mousePos.x - 0.5) * 30,
-                          y: (mousePos.y - 0.5) * 30,
-                        }
-                  }
+                  animate={{
+                    x: (mousePos.x - 0.5) * 30,
+                    y: (mousePos.y - 0.5) * 30,
+                  }}
                   transition={{
                     type: "spring",
                     stiffness: 50,

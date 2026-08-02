@@ -1,0 +1,1562 @@
+{
+  "projects": [
+    {
+      "id": "restaurant-pro",
+      "slug": "restaurant-pro",
+      "title": "Restaurant Pro",
+      "client": "Flavaro Restaurant",
+      "category": "restaurant",
+      "industry": "Restaurant",
+      "description": "Complete digital transformation for a high-end restaurant chain — online ordering, table reservations, and a dynamic menu platform.",
+      "challenge": "Manual order taking, slow reservation management, and no online presence were causing significant revenue loss and customer churn.",
+      "solution": "We built a comprehensive digital platform featuring QR-code menus, real-time order management, table booking with instant confirmation, payment gateway integration, and an admin dashboard with analytics.",
+      "result": "48% increase in online orders, 62% faster reservation processing, and 35% growth in returning customers within the first quarter.",
+      "technologies": ["Next.js", "Tailwind", "Node", "Stripe"],
+      "servicesProvided": ["Discovery & Strategy", "UI/UX Design", "Web Development", "Payment Integration", "QA & Launch"],
+      "duration": "6 weeks",
+      "year": "2026",
+      "location": "Remote",
+      "teamSize": "5",
+      "featured": true,
+      "thumbnail": "",
+      "gallery": [],
+      "coverImage": "",
+      "statistics": [
+        { "value": 48, "suffix": "%", "label": "More Online Orders" },
+        { "value": 62, "suffix": "%", "label": "Faster Reservations" },
+        { "value": 35, "suffix": "%", "label": "Returning Customers" }
+      ],
+      "testimonial": {
+        "quote": "SmartByte completely transformed how customers order from us. Online sales increased immediately, and our staff can finally focus on delivering great service instead of managing paper orders.",
+        "author": "Marco Rossi",
+        "role": "Owner, Flavaro Restaurant"
+      },
+      "branding": { "tagline": "A taste of modern dining" },
+      "colors": { "primary": "#00C2A8", "secondary": "#38BDF8", "background": "#0B1020" },
+      "typography": { "heading": "IBM Plex Sans", "body": "IBM Plex Sans" },
+      "seo": {
+        "title": "Restaurant Pro Case Study | SmartByte",
+        "description": "How SmartByte rebuilt Flavaro Restaurant's digital presence with QR menus, online ordering, and instant table booking.",
+        "keywords": ["restaurant case study", "online ordering", "restaurant website"],
+        "ogImage": ""
+      },
+      "liveLink": "",
+      "githubLink": "",
+      "status": "Live",
+      "rating": 4.9,
+      "caseStudy": {
+        "overview": "Flavaro is a high-end restaurant chain that was losing revenue to manual order taking and a non-existent online presence. SmartByte delivered a full digital platform that unified online ordering, table reservations, and real-time kitchen management.",
+        "clientProblem": "Staff spent hours on paper orders, reservations were managed over the phone, and there was no way to capture demand after opening hours. The result was lost orders, no-shows, and an outdated brand image.",
+        "research": [
+          "Interviewed front-of-house and kitchen staff to map the order flow bottleneck",
+          "Analyzed competitor restaurant platforms for feature parity and gaps",
+          "Studied customer behavior to prioritize mobile-first ordering UX"
+        ],
+        "strategy": [
+          "Launch a QR-code-first menu so tables order without an app",
+          "Automate reservations with instant confirmation and reminders",
+          "Equip management with a real-time analytics dashboard"
+        ],
+        "designProcess": [
+          "Mapped the complete customer and staff journey",
+          "Designed a mobile-first interface with a clear ordering flow",
+          "Prototyped the admin dashboard and iterated with the operations team"
+        ],
+        "development": [
+          "Built the platform with Next.js and a Node API",
+          "Integrated Stripe for secure payments and refunds",
+          "Shipped the admin dashboard with live order tracking"
+        ],
+        "features": ["QR-Code Menus", "Online Ordering", "Table Booking", "Payment Gateway", "Admin Dashboard", "Real-time Analytics"],
+        "technicalChallenges": [
+          { "title": "Real-time order sync", "detail": "Orders from web, QR, and in-person had to converge in one kitchen queue without duplicates." },
+          { "title": "Reservation conflict handling", "detail": "Built an optimistic concurrency model so double-bookings are impossible even under peak load." }
+        ],
+        "results": "Within the first quarter, online orders rose 48%, reservation processing became 62% faster, and returning customers grew 35%. The platform now handles peak-time traffic without degradation.",
+        "metrics": [
+          { "value": 48, "suffix": "%", "label": "More Online Orders" },
+          { "value": 62, "suffix": "%", "label": "Faster Reservations" },
+          { "value": 35, "suffix": "%", "label": "Returning Customers" },
+          { "value": 15, "suffix": "K+", "label": "Monthly Users" }
+        ],
+        "testimonial": {
+          "quote": "SmartByte completely transformed how customers order from us. Online sales increased immediately, and our staff can finally focus on delivering great service instead of managing paper orders.",
+          "author": "Marco Rossi",
+          "role": "Owner, Flavaro Restaurant"
+        },
+        "gallery": [],
+        "beforeAfter": [
+          {
+            "label": "Before",
+            "points": ["Phone-only reservations and no-shows", "Paper order tickets manually routed", "No online visibility after hours", "No insight into menu performance"]
+          },
+          {
+            "label": "After",
+            "points": ["Instant table booking with confirmations", "Unified digital kitchen queue", "Orders captured 24/7 across channels", "Live analytics on best sellers"]
+          }
+        ],
+        "timeline": [
+          { "phase": "Discovery", "duration": "Week 1", "detail": "Stakeholder interviews and journey mapping" },
+          { "phase": "Design", "duration": "Weeks 2-3", "detail": "Mobile-first UI and admin dashboard prototypes" },
+          { "phase": "Development", "duration": "Weeks 3-5", "detail": "Ordering, booking, and payment integration" },
+          { "phase": "Launch", "duration": "Week 6", "detail": "Staff training, go-live, and monitoring" }
+        ],
+        "lessonsLearned": [
+          "QR-code-first ordering removes the biggest adoption barrier for dine-in customers",
+          "Staff early access to the dashboard drives trust and daily usage",
+          "Auto-reminders are the cheapest way to cut no-shows"
+        ],
+        "futurePlans": [
+          "Loyalty and rewards engine",
+          "Multi-location menu management"
+        ],
+        "faq": [
+          { "question": "How long did the build take?", "answer": "Six weeks from discovery to launch, including staff training and a one-week stabilization period." },
+          { "question": "What does the client manage themselves?", "answer": "Menu items, pricing, and reservations are all managed from an admin dashboard with no developer involvement." }
+        ],
+        "relatedProjects": [],
+        "CTA": {
+          "title": "Want Results Like These?",
+          "description": "Let's build a digital experience that grows your revenue the way Restaurant Pro did for Flavaro.",
+          "buttonText": "Let's Build Yours",
+          "href": "/contact?source=case-study"
+        }
+      }
+    },
+    {
+      "id": "dentalcare-pro",
+      "slug": "dentalcare-pro",
+      "title": "DentalCare Pro",
+      "client": "DentalCare Clinic",
+      "category": "medical",
+      "industry": "Medical",
+      "description": "Premium dental clinic platform with online booking, patient portals, telemedicine, and automated recall system.",
+      "challenge": "The clinic was losing patients due to inconvenient phone-only booking, no online presence, and manual reminder calls that consumed staff hours daily.",
+      "solution": "We delivered a full-featured platform including online appointment scheduling, patient portal with medical history, telemedicine video calls, automated SMS/email reminders, and a service showcase.",
+      "result": "180% increase in appointments, 45% faster booking, and 4.9-star patient rating across review platforms.",
+      "technologies": ["Next.js", "TypeScript", "Tailwind", "Postgres"],
+      "servicesProvided": ["Discovery & Strategy", "UI/UX Design", "Web Development", "Telemedicine Integration", "QA & Launch"],
+      "duration": "8 weeks",
+      "year": "2026",
+      "location": "Remote",
+      "teamSize": "6",
+      "featured": false,
+      "thumbnail": "",
+      "gallery": [],
+      "coverImage": "",
+      "statistics": [
+        { "value": 180, "suffix": "%", "label": "More Appointments" },
+        { "value": 45, "suffix": "%", "label": "Faster Booking" },
+        { "value": 4.9, "suffix": "", "label": "Patient Rating" }
+      ],
+      "testimonial": {
+        "quote": "Our patients love the online booking system. We've eliminated phone tag and reduced no-shows by 70%. The telemedicine feature was a game-changer during flu season.",
+        "author": "Dr. Sarah Chen",
+        "role": "Owner, DentalCare Clinic"
+      },
+      "branding": { "tagline": "Care that fits your calendar" },
+      "colors": { "primary": "#00C2A8", "secondary": "#38BDF8", "background": "#0B1020" },
+      "typography": { "heading": "IBM Plex Sans", "body": "IBM Plex Sans" },
+      "seo": {
+        "title": "DentalCare Pro Case Study | SmartByte",
+        "description": "How SmartByte grew DentalCare Clinic appointments by 180% with online booking, patient portals, and telemedicine.",
+        "keywords": ["dental clinic website", "medical case study", "online booking"],
+        "ogImage": ""
+      },
+      "liveLink": "",
+      "githubLink": "",
+      "status": "Live",
+      "rating": 4.9,
+      "caseStudy": {
+        "overview": "DentalCare Clinic operated with phone-only bookings and manual reminder calls. SmartByte delivered a premium patient platform that automated scheduling, reminders, and recall — while adding telemedicine during peak flu season.",
+        "clientProblem": "Patients couldn't book after hours, staff spent hours on reminder calls, and no-shows drained the schedule. The clinic had no digital presence to match the quality of its care.",
+        "research": [
+          "Shadowed front desk staff to quantify booking and reminder workloads",
+          "Surveyed patients on their preferred scheduling channels",
+          "Benchmarked competitor clinic platforms for patient experience"
+        ],
+        "strategy": [
+          "Make booking self-serve with automated confirmations and reminders",
+          "Introduce a patient portal for history and documents",
+          "Add telemedicine to capture demand beyond in-person visits"
+        ],
+        "designProcess": [
+          "Designed a calming, clinical interface that builds trust",
+          "Prototyped the booking flow with real front-desk staff",
+          "Iterated the patient portal with a small pilot group"
+        ],
+        "development": [
+          "Built booking and recall automation on Next.js",
+          "Integrated secure video sessions for telemedicine",
+          "Connected SMS/email reminder providers with failover"
+        ],
+        "features": ["Online Booking", "Patient Portal", "Telemedicine", "Automated Reminders", "Service Showcase"],
+        "technicalChallenges": [
+          { "title": "HIPAA-style data handling", "detail": "All patient data is encrypted at rest and in transit with role-based access controls." },
+          { "title": "Reminder deliverability", "detail": "Built provider failover so reminders always reach patients even if one channel fails." }
+        ],
+        "results": "Appointments grew 180%, booking time dropped 45%, and automated reminders cut no-shows by 70%. Patients rate the clinic 4.9 stars on review platforms.",
+        "metrics": [
+          { "value": 180, "suffix": "%", "label": "More Appointments" },
+          { "value": 45, "suffix": "%", "label": "Faster Booking" },
+          { "value": 70, "suffix": "%", "label": "Fewer No-Shows" },
+          { "value": 4.9, "suffix": "", "label": "Patient Rating" }
+        ],
+        "testimonial": {
+          "quote": "Our patients love the online booking system. We've eliminated phone tag and reduced no-shows by 70%. The telemedicine feature was a game-changer during flu season.",
+          "author": "Dr. Sarah Chen",
+          "role": "Owner, DentalCare Clinic"
+        },
+        "gallery": [],
+        "beforeAfter": [
+          {
+            "label": "Before",
+            "points": ["Phone-only booking with frequent missed calls", "Manual reminder calls each day", "Paper records scattered across rooms", "No telemedicine capability"]
+          },
+          {
+            "label": "After",
+            "points": ["Self-serve booking 24/7 with confirmations", "Automated SMS/email reminders", "Central digital patient history", "Secure video consultations"]
+          }
+        ],
+        "timeline": [
+          { "phase": "Discovery", "duration": "Week 1", "detail": "Clinic workflow audit and patient survey" },
+          { "phase": "Design", "duration": "Weeks 2-3", "detail": "Booking flow and portal prototypes" },
+          { "phase": "Development", "duration": "Weeks 4-7", "detail": "Automations, telemedicine, and records" },
+          { "phase": "Launch", "duration": "Week 8", "detail": "Staff onboarding and go-live support" }
+        ],
+        "lessonsLearned": [
+          "Automated reminders deliver the fastest ROI of any feature",
+          "Designing with front-desk staff prevents workflow friction",
+          "Phased rollout of the portal builds patient confidence"
+        ],
+        "futurePlans": [
+          "Insurance eligibility checking at booking time",
+          "Post-treatment care follow-up flows"
+        ],
+        "faq": [
+          { "question": "Is patient data secure?", "answer": "Yes — data is encrypted in transit and at rest with role-based access, audit logs, and automatic backups." },
+          { "question": "Can staff still book for patients?", "answer": "Absolutely. Staff have a scheduling console while patients use the self-serve flow." }
+        ],
+        "relatedProjects": [],
+        "CTA": {
+          "title": "Want Results Like These?",
+          "description": "Automate your practice and delight patients the way we did for DentalCare Clinic.",
+          "buttonText": "Let's Build Yours",
+          "href": "/contact?source=case-study"
+        }
+      }
+    },
+    {
+      "id": "edumanage",
+      "slug": "edumanage",
+      "title": "EduManage",
+      "client": "Oakridge Academy",
+      "category": "education",
+      "industry": "Education",
+      "description": "Comprehensive school management system handling admissions, attendance, grades, fees, and parent communication.",
+      "challenge": "The school relied on paper records and spreadsheets, leading to data loss, delayed reporting, and frustrated parents unable to track their children's progress.",
+      "solution": "We created an all-in-one platform with student enrollment, attendance tracking, grade books, fee collection, parent portal, and automated report cards.",
+      "result": "70% reduction in paperwork, 50% increase in parent engagement, and 99% staff adoption rate within two weeks.",
+      "technologies": ["React", "TypeScript", "Node", "Postgres"],
+      "servicesProvided": ["Discovery & Strategy", "UI/UX Design", "Web Development", "Data Migration", "Staff Training"],
+      "duration": "10 weeks",
+      "year": "2025",
+      "location": "Remote",
+      "teamSize": "7",
+      "featured": false,
+      "thumbnail": "",
+      "gallery": [],
+      "coverImage": "",
+      "statistics": [
+        { "value": 70, "suffix": "%", "label": "Less Paperwork" },
+        { "value": 50, "suffix": "%", "label": "Parent Engagement" },
+        { "value": 99, "suffix": "%", "label": "Staff Adoption" }
+      ],
+      "testimonial": {
+        "quote": "EduManage transformed how we run our school. What used to take days now takes minutes. Parents love the real-time updates on their children's progress.",
+        "author": "James Mitchell",
+        "role": "Principal, Oakridge Academy"
+      },
+      "branding": { "tagline": "Every student. Every moment. Accounted for." },
+      "colors": { "primary": "#00C2A8", "secondary": "#38BDF8", "background": "#0B1020" },
+      "typography": { "heading": "IBM Plex Sans", "body": "IBM Plex Sans" },
+      "seo": {
+        "title": "EduManage Case Study | SmartByte",
+        "description": "How SmartByte built a school management system for Oakridge Academy, cutting paperwork by 70% and boosting parent engagement.",
+        "keywords": ["school management system", "education case study", "school portal"],
+        "ogImage": ""
+      },
+      "liveLink": "",
+      "githubLink": "",
+      "status": "Live",
+      "rating": 4.8,
+      "caseStudy": {
+        "overview": "Oakridge Academy ran on paper records and spreadsheets. SmartByte delivered a unified school management platform covering admissions, attendance, grades, fees, and parent communication.",
+        "clientProblem": "Records were siloed and loss-prone, reporting took days, and parents had no visibility into their children's progress. Staff were buried in repetitive administrative work.",
+        "research": [
+          "Audited the paper and spreadsheet workflows across all departments",
+          "Interviewed teachers, admin staff, and parents",
+          "Studied K-12 management systems for reporting requirements"
+        ],
+        "strategy": [
+          "Digitize the core records first, then layer on reporting",
+          "Design a simple parent portal that requires zero training",
+          "Automate report cards and fee collection end to end"
+        ],
+        "designProcess": [
+          "Mapped department workflows into a shared data model",
+          "Designed role-based dashboards for staff and parents",
+          "Prototyped the report card generator with admin input"
+        ],
+        "development": [
+          "Built the platform with React and Node on Postgres",
+          "Migrated years of paper records with validation",
+          "Shipped attendance, grade book, and fee modules"
+        ],
+        "features": ["Student Portal", "Attendance Tracking", "Grade Book", "Fee Collection", "Parent Communication"],
+        "technicalChallenges": [
+          { "title": "Legacy data migration", "detail": "Transcribed and validated years of paper records into a consistent digital schema without loss." },
+          { "title": "Permission model", "detail": "Designed granular roles so staff, parents, and admins only see what they should." }
+        ],
+        "results": "Paperwork dropped 70%, parent engagement rose 50%, and staff adoption reached 99% within two weeks of launch.",
+        "metrics": [
+          { "value": 70, "suffix": "%", "label": "Less Paperwork" },
+          { "value": 50, "suffix": "%", "label": "Parent Engagement" },
+          { "value": 99, "suffix": "%", "label": "Staff Adoption" },
+          { "value": 2, "suffix": "wks", "label": "To Full Adoption" }
+        ],
+        "testimonial": {
+          "quote": "EduManage transformed how we run our school. What used to take days now takes minutes. Parents love the real-time updates on their children's progress.",
+          "author": "James Mitchell",
+          "role": "Principal, Oakridge Academy"
+        },
+        "gallery": [],
+        "beforeAfter": [
+          {
+            "label": "Before",
+            "points": ["Handwritten registers and grade sheets", "Report cards assembled by hand", "Parents uninformed until meetings", "Fees tracked in spreadsheets"]
+          },
+          {
+            "label": "After",
+            "points": ["One-click digital attendance", "Automated report cards", "Real-time parent updates", "Online fee collection"]
+          }
+        ],
+        "timeline": [
+          { "phase": "Discovery", "duration": "Weeks 1-2", "detail": "Workflow audit and data model design" },
+          { "phase": "Design", "duration": "Weeks 3-4", "detail": "Role-based dashboards and portal UX" },
+          { "phase": "Development", "duration": "Weeks 5-9", "detail": "Core modules, migration, and testing" },
+          { "phase": "Launch", "duration": "Week 10", "detail": "Staff training and full go-live" }
+        ],
+        "lessonsLearned": [
+          "Migrating data early de-risks the entire rollout",
+          "Simple role-based views dramatically reduce training time",
+          "Real-time parent updates become the school's best marketing"
+        ],
+        "futurePlans": [
+          "Messaging and notification center",
+          "Curriculum and timetable modules"
+        ],
+        "faq": [
+          { "question": "How was the data migrated?", "answer": "Our team digitized and validated every paper record before go-live, with rollback snapshots for safety." },
+          { "question": "Do parents need an app?", "answer": "No — the parent portal is fully responsive and works in any browser." }
+        ],
+        "relatedProjects": [],
+        "CTA": {
+          "title": "Want Results Like These?",
+          "description": "Modernize your school or institution with a system built around your workflows.",
+          "buttonText": "Let's Build Yours",
+          "href": "/contact?source=case-study"
+        }
+      }
+    },
+    {
+      "id": "stocksync",
+      "slug": "stocksync",
+      "title": "StockSync",
+      "client": "MetroSupply",
+      "category": "corporate",
+      "industry": "Corporate",
+      "description": "Real-time inventory management platform with barcode scanning, multi-warehouse support, and predictive analytics.",
+      "challenge": "The client was experiencing stockouts and overstocking due to manual inventory tracking across three warehouses with no centralized system.",
+      "solution": "We developed a real-time inventory platform with barcode scanning, multi-warehouse support, low-stock alerts, demand forecasting, and a supplier portal.",
+      "result": "60% faster inventory tracking, 35% improvement in stock accuracy, and 12 hours saved per week on manual counts.",
+      "technologies": ["Next.js", "Node", "MongoDB", "Tailwind"],
+      "servicesProvided": ["Discovery & Strategy", "UI/UX Design", "Web Development", "Barcode Integration", "Analytics"],
+      "duration": "12 weeks",
+      "year": "2025",
+      "location": "Remote",
+      "teamSize": "8",
+      "featured": false,
+      "thumbnail": "",
+      "gallery": [],
+      "coverImage": "",
+      "statistics": [
+        { "value": 60, "suffix": "%", "label": "Faster Tracking" },
+        { "value": 35, "suffix": "%", "label": "Stock Accuracy" },
+        { "value": 12, "suffix": "h", "label": "Saved Weekly" }
+      ],
+      "testimonial": {
+        "quote": "StockSync eliminated our inventory nightmares. We went from guessing to knowing exactly what we have, where it is, and when we need to reorder.",
+        "author": "Robert Kim",
+        "role": "Operations Director, MetroSupply"
+      },
+      "branding": { "tagline": "Know your stock. Always." },
+      "colors": { "primary": "#00C2A8", "secondary": "#38BDF8", "background": "#0B1020" },
+      "typography": { "heading": "IBM Plex Sans", "body": "IBM Plex Sans" },
+      "seo": {
+        "title": "StockSync Case Study | SmartByte",
+        "description": "How SmartByte built a real-time inventory platform for MetroSupply with barcode scanning and demand forecasting.",
+        "keywords": ["inventory management", "warehouse case study", "stock management"],
+        "ogImage": ""
+      },
+      "liveLink": "",
+      "githubLink": "",
+      "status": "Live",
+      "rating": 4.7,
+      "caseStudy": {
+        "overview": "MetroSupply tracked inventory manually across three warehouses. SmartByte built a real-time platform with barcode scanning, demand forecasting, and a supplier portal to end stockouts and overstocking.",
+        "clientProblem": "No centralized system meant stock levels were always a guess. Stockouts lost sales while overstocking tied up cash, and weekly counts consumed hours of staff time.",
+        "research": [
+          "Observed picking, counting, and reordering workflows in all three warehouses",
+          "Analyzed six months of stockout and overstock events",
+          "Interviewed suppliers on ordering and lead-time patterns"
+        ],
+        "strategy": [
+          "Introduce barcode scanning at every stock movement",
+          "Centralize all warehouses into one live inventory ledger",
+          "Predict reorder needs with simple demand forecasting"
+        ],
+        "designProcess": [
+          "Designed a scanner-first workflow for warehouse staff",
+          "Built a live multi-warehouse dashboard for operations",
+          "Prototyped supplier-facing ordering flows"
+        ],
+        "development": [
+          "Built the platform on Next.js with a Node API",
+          "Integrated barcode hardware across handheld devices",
+          "Implemented low-stock alerts and forecast reports"
+        ],
+        "features": ["Barcode Scanning", "Multi-Warehouse", "Low Stock Alerts", "Demand Forecasting", "Supplier Portal"],
+        "technicalChallenges": [
+          { "title": "Offline scanning", "detail": "Scanners must keep working during Wi-Fi gaps and sync when connectivity returns." },
+          { "title": "Forecast accuracy", "detail": "Balanced statistical smoothing with seasonality so reorder suggestions stay practical." }
+        ],
+        "results": "Tracking is 60% faster, stock accuracy improved 35%, and weekly manual counts now take a fraction of the time — saving 12 staff-hours per week.",
+        "metrics": [
+          { "value": 60, "suffix": "%", "label": "Faster Tracking" },
+          { "value": 35, "suffix": "%", "label": "Stock Accuracy" },
+          { "value": 12, "suffix": "h", "label": "Saved Weekly" },
+          { "value": 3, "suffix": "", "label": "Warehouses Live" }
+        ],
+        "testimonial": {
+          "quote": "StockSync eliminated our inventory nightmares. We went from guessing to knowing exactly what we have, where it is, and when we need to reorder.",
+          "author": "Robert Kim",
+          "role": "Operations Director, MetroSupply"
+        },
+        "gallery": [],
+        "beforeAfter": [
+          {
+            "label": "Before",
+            "points": ["Spreadsheet tracking per warehouse", "Stockouts and overstocking by guess", "Weekly manual counts", "Reorder decisions from gut feel"]
+          },
+          {
+            "label": "After",
+            "points": ["One live inventory ledger", "Forecast-driven reorder alerts", "Barcode-scan movements", "Supplier portal for ordering"]
+          }
+        ],
+        "timeline": [
+          { "phase": "Discovery", "duration": "Weeks 1-2", "detail": "Warehouse workflow analysis" },
+          { "phase": "Design", "duration": "Weeks 3-4", "detail": "Scanner workflow and dashboard UX" },
+          { "phase": "Development", "duration": "Weeks 5-11", "detail": "Integration, forecasting, and hardware" },
+          { "phase": "Launch", "duration": "Week 12", "detail": "Rollout across all warehouses" }
+        ],
+        "lessonsLearned": [
+          "Scanner-first design gets staff adoption quickly",
+          "Forecasting is only useful when integrated into the reorder flow",
+          "Multi-warehouse visibility changes how leadership plans"
+        ],
+        "futurePlans": [
+          "ERP integration",
+          "AI-powered anomaly detection on stock movements"
+        ],
+        "faq": [
+          { "question": "Does it work with existing barcode hardware?", "answer": "Yes — the platform supports standard barcode scanners and works with common handheld devices." },
+          { "question": "Can it handle multiple warehouses?", "answer": "It was built for it. Every movement is tracked per warehouse with cross-location transfers." }
+        ],
+        "relatedProjects": [],
+        "CTA": {
+          "title": "Want Results Like These?",
+          "description": "Take control of your inventory with a platform built around your operations.",
+          "buttonText": "Let's Build Yours",
+          "href": "/contact?source=case-study"
+        }
+      }
+    },
+    {
+      "id": "homevista",
+      "slug": "homevista",
+      "title": "HomeVista",
+      "client": "HomeVista Realty",
+      "category": "realestate",
+      "industry": "Real Estate",
+      "description": "Modern property listing platform with interactive maps, virtual tours, mortgage calculators, and agent dashboards.",
+      "challenge": "The real estate agency struggled with outdated listings, no virtual tour capability, and agents spending hours on manual lead follow-up.",
+      "solution": "We built a feature-rich platform with interactive property maps, 360 virtual tours, automated mortgage calculator, agent dashboards with lead scoring, and instant inquiry notifications.",
+      "result": "150% increase in property views, 55% lead conversion rate, and 4.8-star user rating.",
+      "technologies": ["Next.js", "TypeScript", "Postgres", "Mapbox"],
+      "servicesProvided": ["Discovery & Strategy", "UI/UX Design", "Web Development", "Map Integration", "CRM Integration"],
+      "duration": "10 weeks",
+      "year": "2026",
+      "location": "Remote",
+      "teamSize": "7",
+      "featured": true,
+      "thumbnail": "",
+      "gallery": [],
+      "coverImage": "",
+      "statistics": [
+        { "value": 150, "suffix": "%", "label": "Property Views" },
+        { "value": 55, "suffix": "%", "label": "Lead Conversion" },
+        { "value": 4.8, "suffix": "", "label": "User Rating" }
+      ],
+      "testimonial": {
+        "quote": "The virtual tours and interactive maps set us apart from every other agency. Our agents are closing deals faster because leads come in pre-qualified.",
+        "author": "Emily Torres",
+        "role": "CEO, HomeVista Realty"
+      },
+      "branding": { "tagline": "Find home without the guesswork" },
+      "colors": { "primary": "#00C2A8", "secondary": "#38BDF8", "background": "#0B1020" },
+      "typography": { "heading": "IBM Plex Sans", "body": "IBM Plex Sans" },
+      "seo": {
+        "title": "HomeVista Case Study | SmartByte",
+        "description": "How SmartByte built a real estate platform for HomeVista with interactive maps, virtual tours, and lead scoring.",
+        "keywords": ["real estate platform", "property website", "virtual tours"],
+        "ogImage": ""
+      },
+      "liveLink": "",
+      "githubLink": "",
+      "status": "Live",
+      "rating": 4.8,
+      "caseStudy": {
+        "overview": "HomeVista Realty needed a digital platform that matched its ambition. SmartByte delivered interactive property maps, 360 virtual tours, mortgage calculators, and agent dashboards with lead scoring.",
+        "clientProblem": "Listings were outdated, buyers couldn't preview homes remotely, and agents manually chased leads — slowing down the entire sales cycle.",
+        "research": [
+          "Analyzed buyer search behavior on competing portals",
+          "Interviewed agents about lead follow-up pain points",
+          "Studied map and virtual tour adoption in the market"
+        ],
+        "strategy": [
+          "Make search visual with interactive maps and filters",
+          "Let buyers take virtual tours before visiting",
+          "Score and route leads instantly to the right agent"
+        ],
+        "designProcess": [
+          "Designed a map-first search experience",
+          "Prototyped the listing detail flow with 360 tours",
+          "Iterated the agent dashboard with a pilot team"
+        ],
+        "development": [
+          "Built the platform on Next.js with Mapbox",
+          "Integrated virtual tour hosting and embedding",
+          "Shipped lead scoring with instant notifications"
+        ],
+        "features": ["Property Listings", "Virtual Tours", "Mortgage Calculator", "Agent Dashboard", "Lead Scoring"],
+        "technicalChallenges": [
+          { "title": "Map performance", "detail": "Thousands of pins had to render smoothly while staying fully interactive on mobile." },
+          { "title": "Lead routing", "detail": "Built scoring rules that match inquiries to the best-fitting agent automatically." }
+        ],
+        "results": "Property views rose 150%, lead conversion reached 55%, and the platform maintains a 4.8-star user rating.",
+        "metrics": [
+          { "value": 150, "suffix": "%", "label": "Property Views" },
+          { "value": 55, "suffix": "%", "label": "Lead Conversion" },
+          { "value": 4.8, "suffix": "", "label": "User Rating" },
+          { "value": 60, "suffix": "%", "label": "Faster Lead Response" }
+        ],
+        "testimonial": {
+          "quote": "The virtual tours and interactive maps set us apart from every other agency. Our agents are closing deals faster because leads come in pre-qualified.",
+          "author": "Emily Torres",
+          "role": "CEO, HomeVista Realty"
+        },
+        "gallery": [],
+        "beforeAfter": [
+          {
+            "label": "Before",
+            "points": ["Static, outdated listings", "No remote viewing options", "Manual lead chasing", "No insight into listing performance"]
+          },
+          {
+            "label": "After",
+            "points": ["Interactive map search", "360 virtual tours", "Instant scored lead routing", "Per-listing analytics"]
+          }
+        ],
+        "timeline": [
+          { "phase": "Discovery", "duration": "Week 1", "detail": "Buyer and agent research" },
+          { "phase": "Design", "duration": "Weeks 2-3", "detail": "Map-first search and tours UX" },
+          { "phase": "Development", "duration": "Weeks 4-9", "detail": "Maps, tours, calculators, lead scoring" },
+          { "phase": "Launch", "duration": "Week 10", "detail": "Agent onboarding and go-live" }
+        ],
+        "lessonsLearned": [
+          "Virtual tours more than double time-on-page",
+          "Instant lead routing is what agents feel every day",
+          "Map-based search becomes the signature experience"
+        ],
+        "futurePlans": [
+          "AI property match recommendations",
+          "Buyer-seller chat on listings"
+        ],
+        "faq": [
+          { "question": "Can listings be managed in-house?", "answer": "Yes — agents manage listings, photos, and tours from their dashboard without developer support." },
+          { "question": "Do the tours work on mobile?", "answer": "Yes, the 360 tours are fully responsive and optimized for mobile browsers." }
+        ],
+        "relatedProjects": [],
+        "CTA": {
+          "title": "Want Results Like These?",
+          "description": "Give your buyers an experience that outshines every other agency.",
+          "buttonText": "Let's Build Yours",
+          "href": "/contact?source=case-study"
+        }
+      }
+    },
+    {
+      "id": "flavororder",
+      "slug": "flavororder",
+      "title": "FlavorOrder",
+      "client": "FlavorOrder Group",
+      "category": "restaurant",
+      "industry": "Restaurant",
+      "description": "Complete restaurant ordering ecosystem with QR menus, kitchen display, driver dispatch, and real-time tracking.",
+      "challenge": "A growing restaurant group needed to unify ordering across multiple locations while maintaining brand consistency and operational efficiency.",
+      "solution": "We delivered an end-to-end ordering platform with QR code menus, kitchen display system, automated driver dispatch, real-time order tracking, and centralized reporting.",
+      "result": "3x more orders, 200% increase in online sales, and 99.9% platform uptime since launch.",
+      "technologies": ["React", "Node", "Postgres", "Stripe"],
+      "servicesProvided": ["Discovery & Strategy", "UI/UX Design", "Web Development", "Kitchen Display System", "Dispatch Integration"],
+      "duration": "8 weeks",
+      "year": "2026",
+      "location": "Remote",
+      "teamSize": "9",
+      "featured": true,
+      "thumbnail": "",
+      "gallery": [],
+      "coverImage": "",
+      "statistics": [
+        { "value": 3, "suffix": "x", "label": "More Orders" },
+        { "value": 200, "suffix": "%", "label": "Online Sales" },
+        { "value": 99.9, "suffix": "%", "label": "Uptime" }
+      ],
+      "testimonial": {
+        "quote": "The unified system across all our locations is incredible. We can see real-time performance, manage menus centrally, and our customers love the seamless experience.",
+        "author": "Ana Patel",
+        "role": "COO, FlavorOrder Group"
+      },
+      "branding": { "tagline": "One brand. Every table. Every delivery." },
+      "colors": { "primary": "#00C2A8", "secondary": "#38BDF8", "background": "#0B1020" },
+      "typography": { "heading": "IBM Plex Sans", "body": "IBM Plex Sans" },
+      "seo": {
+        "title": "FlavorOrder Case Study | SmartByte",
+        "description": "How SmartByte built a multi-location restaurant ordering platform with kitchen display and driver dispatch.",
+        "keywords": ["restaurant ordering system", "food delivery platform", "kitchen display"],
+        "ogImage": ""
+      },
+      "liveLink": "",
+      "githubLink": "",
+      "status": "Live",
+      "rating": 4.9,
+      "caseStudy": {
+        "overview": "A multi-location restaurant group needed to unify ordering across its brands. SmartByte delivered a full ordering ecosystem with QR menus, kitchen displays, driver dispatch, and live tracking.",
+        "clientProblem": "Each location ran its own ordering flow, making brand consistency and reporting impossible. Growth was capped by operational chaos.",
+        "research": [
+          "Mapped ordering workflows across every location and brand",
+          "Analyzed delivery aggregator dependency and costs",
+          "Interviewed kitchen and dispatch teams for friction points"
+        ],
+        "strategy": [
+          "Centralize menus and ordering under one platform",
+          "Bring delivery in-house with smart driver dispatch",
+          "Give customers real-time order tracking"
+        ],
+        "designProcess": [
+          "Designed a consistent brand experience across all locations",
+          "Prototyped the kitchen display with line cooks",
+          "Iterated dispatch logic with operations leadership"
+        ],
+        "development": [
+          "Built the platform with React and Node on Postgres",
+          "Integrated kitchen display and order routing",
+          "Shipped driver dispatch and real-time tracking"
+        ],
+        "features": ["QR Menus", "Kitchen Display", "Driver Dispatch", "Real-time Tracking", "Central Reporting"],
+        "technicalChallenges": [
+          { "title": "Order routing", "detail": "Orders from every channel must route to the correct kitchen with zero duplication." },
+          { "title": "Dispatch optimization", "detail": "Built distance-aware assignment so drivers are never idle or overloaded." }
+        ],
+        "results": "Orders tripled, online sales rose 200%, and the platform has maintained 99.9% uptime since launch.",
+        "metrics": [
+          { "value": 3, "suffix": "x", "label": "More Orders" },
+          { "value": 200, "suffix": "%", "label": "Online Sales" },
+          { "value": 99.9, "suffix": "%", "label": "Uptime" },
+          { "value": 5, "suffix": "", "label": "Brands Unified" }
+        ],
+        "testimonial": {
+          "quote": "The unified system across all our locations is incredible. We can see real-time performance, manage menus centrally, and our customers love the seamless experience.",
+          "author": "Ana Patel",
+          "role": "COO, FlavorOrder Group"
+        },
+        "gallery": [],
+        "beforeAfter": [
+          {
+            "label": "Before",
+            "points": ["Separate ordering per location", "Aggregator fees on every order", "Kitchen tickets printed by hand", "No customer tracking"]
+          },
+          {
+            "label": "After",
+            "points": ["One unified ordering platform", "In-house dispatch and lower fees", "Digital kitchen display", "Live order tracking"]
+          }
+        ],
+        "timeline": [
+          { "phase": "Discovery", "duration": "Week 1", "detail": "Multi-location workflow mapping" },
+          { "phase": "Design", "duration": "Weeks 2-3", "detail": "Brand system and kitchen display UX" },
+          { "phase": "Development", "duration": "Weeks 4-7", "detail": "Ordering, dispatch, tracking" },
+          { "phase": "Launch", "duration": "Week 8", "detail": "Rollout across all locations" }
+        ],
+        "lessonsLearned": [
+          "Unifying the brand makes every location stronger",
+          "In-house dispatch pays for itself quickly",
+          "Live tracking becomes the feature customers mention most"
+        ],
+        "futurePlans": [
+          "Customer loyalty and subscriptions",
+          "AI demand forecasting per location"
+        ],
+        "faq": [
+          { "question": "How many locations can it handle?", "answer": "The platform was built for multi-brand groups and scales by adding locations and menus centrally." },
+          { "question": "What about delivery aggregators?", "answer": "Orders from aggregators can be imported into the same kitchen queue for consistency." }
+        ],
+        "relatedProjects": [],
+        "CTA": {
+          "title": "Want Results Like These?",
+          "description": "Unify your ordering across every location with a platform built for scale.",
+          "buttonText": "Let's Build Yours",
+          "href": "/contact?source=case-study"
+        }
+      }
+    },
+    {
+      "id": "insightai",
+      "slug": "insightai",
+      "title": "InsightAI",
+      "client": "InnovateCorp",
+      "category": "corporate",
+      "industry": "Corporate",
+      "description": "AI-powered business analytics dashboard with predictive modeling, automated reporting, and real-time visualization.",
+      "challenge": "The client was drowning in data from multiple sources with no unified view, making it impossible to make data-driven decisions in real time.",
+      "solution": "We created an AI-powered analytics platform with automated data ingestion, predictive modeling, customizable dashboards, anomaly detection, and scheduled report delivery.",
+      "result": "180% sales growth attributed to data-driven decisions, 40% cost reduction through predictive maintenance, and 3x faster insight generation.",
+      "technologies": ["Python", "TensorFlow", "React", "D3.js"],
+      "servicesProvided": ["Data Strategy", "ML Engineering", "Dashboard Design", "Automation", "Training"],
+      "duration": "16 weeks",
+      "year": "2025",
+      "location": "Remote",
+      "teamSize": "10",
+      "featured": true,
+      "thumbnail": "",
+      "gallery": [],
+      "coverImage": "",
+      "statistics": [
+        { "value": 180, "suffix": "%", "label": "Sales Growth" },
+        { "value": 40, "suffix": "%", "label": "Cost Reduction" },
+        { "value": 3, "suffix": "x", "label": "Faster Insights" }
+      ],
+      "testimonial": {
+        "quote": "InsightAI gave us a crystal ball into our business. We've identified opportunities we never knew existed and saved millions through predictive maintenance alone.",
+        "author": "David Park",
+        "role": "CTO, InnovateCorp"
+      },
+      "branding": { "tagline": "Decisions backed by data" },
+      "colors": { "primary": "#00C2A8", "secondary": "#38BDF8", "background": "#0B1020" },
+      "typography": { "heading": "IBM Plex Sans", "body": "IBM Plex Sans" },
+      "seo": {
+        "title": "InsightAI Case Study | SmartByte",
+        "description": "How SmartByte built an AI analytics platform for InnovateCorp with predictive modeling and automated reporting.",
+        "keywords": ["AI analytics", "business intelligence", "predictive modeling"],
+        "ogImage": ""
+      },
+      "liveLink": "",
+      "githubLink": "",
+      "status": "Live",
+      "rating": 4.9,
+      "caseStudy": {
+        "overview": "InnovateCorp had data everywhere and insight nowhere. SmartByte built an AI-powered analytics platform with automated ingestion, predictive modeling, and real-time dashboards.",
+        "clientProblem": "Decisions were slow because data lived in disconnected sources. Teams couldn't see the full picture, and predictive work required manual data science effort.",
+        "research": [
+          "Audited all internal and external data sources",
+          "Interviewed analysts on reporting bottlenecks",
+          "Identified the highest-value prediction use cases"
+        ],
+        "strategy": [
+          "Automate ingestion so fresh data flows continuously",
+          "Start with two high-impact prediction models",
+          "Deliver insights in dashboards leaders already use"
+        ],
+        "designProcess": [
+          "Designed role-specific dashboards for executives and analysts",
+          "Prototyped anomaly detection with the finance team",
+          "Iterated report automation with the operations team"
+        ],
+        "development": [
+          "Built the ML pipeline in Python with TensorFlow",
+          "Created real-time dashboards with React and D3.js",
+          "Automated scheduled report delivery"
+        ],
+        "features": ["Data Ingestion", "Predictive Modeling", "Custom Dashboards", "Anomaly Detection", "Scheduled Reports"],
+        "technicalChallenges": [
+          { "title": "Data quality", "detail": "Built validation and reconciliation layers so models never train on bad data." },
+          { "title": "Model explainability", "detail": "Every prediction surfaces its drivers so leaders trust and act on it." }
+        ],
+        "results": "Data-driven decisions contributed to 180% sales growth, predictive maintenance cut costs 40%, and insights now arrive 3x faster.",
+        "metrics": [
+          { "value": 180, "suffix": "%", "label": "Sales Growth" },
+          { "value": 40, "suffix": "%", "label": "Cost Reduction" },
+          { "value": 3, "suffix": "x", "label": "Faster Insights" },
+          { "value": 100, "suffix": "%", "label": "Report Automation" }
+        ],
+        "testimonial": {
+          "quote": "InsightAI gave us a crystal ball into our business. We've identified opportunities we never knew existed and saved millions through predictive maintenance alone.",
+          "author": "David Park",
+          "role": "CTO, InnovateCorp"
+        },
+        "gallery": [],
+        "beforeAfter": [
+          {
+            "label": "Before",
+            "points": ["Data siloed across sources", "Manual reporting cycles", "Reactive decision-making", "Predictions required data scientists"]
+          },
+          {
+            "label": "After",
+            "points": ["Continuous automated ingestion", "Scheduled automated reports", "Real-time predictive dashboards", "Self-serve analytics"]
+          }
+        ],
+        "timeline": [
+          { "phase": "Discovery", "duration": "Weeks 1-2", "detail": "Data audit and use case selection" },
+          { "phase": "Modeling", "duration": "Weeks 3-7", "detail": "Pipeline, models, and validation" },
+          { "phase": "Product", "duration": "Weeks 8-14", "detail": "Dashboards, anomalies, report automation" },
+          { "phase": "Launch", "duration": "Weeks 15-16", "detail": "Team training and rollout" }
+        ],
+        "lessonsLearned": [
+          "Model explainability is what earns leadership trust",
+          "Start with two use cases, not a platform fantasy",
+          "Automating reports frees analysts for real analysis"
+        ],
+        "futurePlans": [
+          "Generative AI natural-language queries",
+          "External benchmark data enrichment"
+        ],
+        "faq": [
+          { "question": "What data sources are supported?", "answer": "The ingestion layer handles SQL databases, cloud storage, APIs, and spreadsheet exports." },
+          { "question": "Do we need data scientists to use it?", "answer": "No — dashboards and reports are self-serve. Model outputs are explained in plain language." }
+        ],
+        "relatedProjects": [],
+        "CTA": {
+          "title": "Want Results Like These?",
+          "description": "Turn your data into decisions with an analytics platform built around your business.",
+          "buttonText": "Let's Build Yours",
+          "href": "/contact?source=case-study"
+        }
+      }
+    },
+    {
+      "id": "beautystudio",
+      "slug": "beautystudio",
+      "title": "BeauSty",
+      "client": "BeauSty Salons",
+      "category": "portfolio",
+      "industry": "Beauty",
+      "description": "Elegant beauty salon platform with online booking, service catalog, product e-commerce, and stylist portfolios.",
+      "challenge": "A luxury salon chain needed a digital presence matching their premium brand, with online booking, retail e-commerce, and individual stylist branding.",
+      "solution": "We crafted a sophisticated platform featuring online appointment booking, service catalog with pricing, product e-commerce, stylist portfolio pages, and a loyalty program.",
+      "result": "120% increase in online bookings, 80% of retail sales moved online, and 4.9-star average review.",
+      "technologies": ["Next.js", "Tailwind", "Stripe", "Postgres"],
+      "servicesProvided": ["Discovery & Strategy", "UI/UX Design", "Web Development", "E-Commerce", "Loyalty Program"],
+      "duration": "6 weeks",
+      "year": "2026",
+      "location": "Remote",
+      "teamSize": "5",
+      "featured": false,
+      "thumbnail": "",
+      "gallery": [],
+      "coverImage": "",
+      "statistics": [
+        { "value": 120, "suffix": "%", "label": "Online Bookings" },
+        { "value": 80, "suffix": "%", "label": "Online Sales" },
+        { "value": 4.9, "suffix": "", "label": "Avg. Review" }
+      ],
+      "testimonial": {
+        "quote": "Our website finally reflects the quality of our services. Clients book online constantly, and the e-commerce feature has opened a whole new revenue stream.",
+        "author": "Sophie Laurent",
+        "role": "Founder, BeauSty Salons"
+      },
+      "branding": { "tagline": "Beauty, online and offline" },
+      "colors": { "primary": "#00C2A8", "secondary": "#38BDF8", "background": "#0B1020" },
+      "typography": { "heading": "IBM Plex Sans", "body": "IBM Plex Sans" },
+      "seo": {
+        "title": "BeauSty Case Study | SmartByte",
+        "description": "How SmartByte built a luxury salon platform for BeauSty with online booking, retail, and stylist portfolios.",
+        "keywords": ["salon website", "beauty case study", "online booking salon"],
+        "ogImage": ""
+      },
+      "liveLink": "",
+      "githubLink": "",
+      "status": "Live",
+      "rating": 4.9,
+      "caseStudy": {
+        "overview": "BeauSty is a luxury salon chain whose digital presence lagged far behind its brand. SmartByte delivered a sophisticated platform with online booking, product retail, stylist portfolios, and a loyalty program.",
+        "clientProblem": "The website didn't reflect the premium in-salon experience, bookings were phone-only, retail was in-store only, and stylists had no individual brand presence.",
+        "research": [
+          "Interviewed clients about their booking and buying behavior",
+          "Analyzed premium salon competitors' digital experiences",
+          "Workshopped the stylist brand identity with the team"
+        ],
+        "strategy": [
+          "Elevate the digital brand to match the in-store experience",
+          "Make booking self-serve across services and stylists",
+          "Sell retail products online with a loyalty loop"
+        ],
+        "designProcess": [
+          "Designed an elegant, editorial visual system",
+          "Prototyped the booking flow with the front desk team",
+          "Crafted stylist portfolio templates that feel personal"
+        ],
+        "development": [
+          "Built the platform on Next.js with Stripe",
+          "Integrated booking with calendar and reminders",
+          "Shipped e-commerce with a loyalty program"
+        ],
+        "features": ["Online Booking", "Service Catalog", "Product E-commerce", "Stylist Portfolios", "Loyalty Program"],
+        "technicalChallenges": [
+          { "title": "Stylist conflict handling", "detail": "Booking must prevent double-bookings across services, chairs, and stylists." },
+          { "title": "Retail + appointment sync", "detail": "Online retail inventory stays consistent with in-store availability." }
+        ],
+        "results": "Online bookings rose 120%, 80% of retail moved online, and the salon maintains a 4.9-star average review.",
+        "metrics": [
+          { "value": 120, "suffix": "%", "label": "Online Bookings" },
+          { "value": 80, "suffix": "%", "label": "Online Sales" },
+          { "value": 4.9, "suffix": "", "label": "Avg. Review" },
+          { "value": 30, "suffix": "+", "label": "Stylist Profiles" }
+        ],
+        "testimonial": {
+          "quote": "Our website finally reflects the quality of our services. Clients book online constantly, and the e-commerce feature has opened a whole new revenue stream.",
+          "author": "Sophie Laurent",
+          "role": "Founder, BeauSty Salons"
+        },
+        "gallery": [],
+        "beforeAfter": [
+          {
+            "label": "Before",
+            "points": ["Phone-only bookings", "Retail locked to the salon", "Stylists without individual pages", "Generic brand presence"]
+          },
+          {
+            "label": "After",
+            "points": ["Self-serve online booking", "Online retail with loyalty", "Personal stylist portfolios", "Premium digital brand"]
+          }
+        ],
+        "timeline": [
+          { "phase": "Discovery", "duration": "Week 1", "detail": "Brand and workflow research" },
+          { "phase": "Design", "duration": "Weeks 2-3", "detail": "Editorial visual system and booking UX" },
+          { "phase": "Development", "duration": "Weeks 4-5", "detail": "Booking, retail, loyalty" },
+          { "phase": "Launch", "duration": "Week 6", "detail": "Stylist onboarding and go-live" }
+        ],
+        "lessonsLearned": [
+          "Brand consistency online drives booking confidence",
+          "Stylist portfolios create personal client loyalty",
+          "Loyalty ties retail back to in-salon visits"
+        ],
+        "futurePlans": [
+          "Subscription retail boxes",
+          "Client self-service rescheduling"
+        ],
+        "faq": [
+          { "question": "Can clients book any stylist?", "answer": "Yes — availability and pricing are shown per stylist, with conflict-free booking built in." },
+          { "question": "Does the loyalty program integrate with retail?", "answer": "Yes — points earned in-store or online apply across both channels." }
+        ],
+        "relatedProjects": [],
+        "CTA": {
+          "title": "Want Results Like These?",
+          "description": "Build a digital experience as premium as your services.",
+          "buttonText": "Let's Build Yours",
+          "href": "/contact?source=case-study"
+        }
+      }
+    },
+    {
+      "id": "fitleap",
+      "slug": "fitleap",
+      "title": "FitLeap",
+      "client": "FitLeap Studios",
+      "category": "portfolio",
+      "industry": "Fitness",
+      "description": "Modern fitness platform with class scheduling, membership management, trainer profiles, and virtual workout streaming.",
+      "challenge": "A boutique fitness studio needed to manage class bookings, memberships, and expand to virtual classes without losing their community feel.",
+      "solution": "We built an integrated platform with class scheduling and booking, membership tiers, trainer profiles with ratings, virtual class streaming, and community features.",
+      "result": "90% class capacity achieved, 3x membership growth, and seamless hybrid in-person/virtual operations.",
+      "technologies": ["Next.js", "TypeScript", "Tailwind", "Mux"],
+      "servicesProvided": ["Discovery & Strategy", "UI/UX Design", "Web Development", "Video Streaming", "Community Features"],
+      "duration": "8 weeks",
+      "year": "2026",
+      "location": "Remote",
+      "teamSize": "6",
+      "featured": false,
+      "thumbnail": "",
+      "gallery": [],
+      "coverImage": "",
+      "statistics": [
+        { "value": 90, "suffix": "%", "label": "Class Capacity" },
+        { "value": 3, "suffix": "x", "label": "Membership Growth" },
+        { "value": 100, "suffix": "%", "label": "Hybrid Ready" }
+      ],
+      "testimonial": {
+        "quote": "The hybrid platform saved our business during the shift to virtual. Now we reach members worldwide while maintaining our local community feel.",
+        "author": "Jake Morrison",
+        "role": "Founder, FitLeap Studios"
+      },
+      "branding": { "tagline": "Train anywhere, together" },
+      "colors": { "primary": "#00C2A8", "secondary": "#38BDF8", "background": "#0B1020" },
+      "typography": { "heading": "IBM Plex Sans", "body": "IBM Plex Sans" },
+      "seo": {
+        "title": "FitLeap Case Study | SmartByte",
+        "description": "How SmartByte built a hybrid fitness platform for FitLeap with class booking and virtual streaming.",
+        "keywords": ["fitness platform", "gym booking", "virtual fitness streaming"],
+        "ogImage": ""
+      },
+      "liveLink": "",
+      "githubLink": "",
+      "status": "Live",
+      "rating": 4.8,
+      "caseStudy": {
+        "overview": "FitLeap Studios needed to run class bookings, memberships, and a new virtual offering without losing its community feel. SmartByte built a hybrid platform with streaming and community features.",
+        "clientProblem": "Class capacity was hard to manage, memberships were tracked manually, and the shift to virtual was impossible with the existing tooling.",
+        "research": [
+          "Studied member usage and attendance patterns",
+          "Interviewed trainers about class format preferences",
+          "Benchmarked hybrid fitness platforms"
+        ],
+        "strategy": [
+          "Build booking and memberships into one flow",
+          "Add virtual streaming that mirrors in-studio energy",
+          "Keep community features front and center"
+        ],
+        "designProcess": [
+          "Designed class cards that work for in-person and virtual",
+          "Prototyped trainer profiles with ratings",
+          "Iterated the streaming experience with live classes"
+        ],
+        "development": [
+          "Built the platform on Next.js with Mux streaming",
+          "Implemented membership tiers and billing",
+          "Shipped community feeds and class booking"
+        ],
+        "features": ["Class Booking", "Membership Tiers", "Trainer Profiles", "Virtual Streaming", "Community Feed"],
+        "technicalChallenges": [
+          { "title": "Streaming at scale", "detail": "Live classes must stay low-latency for hundreds of concurrent members." },
+          { "title": "Capacity management", "detail": "Hybrid classes need separate caps for in-studio and virtual seats." }
+        ],
+        "results": "Class capacity reached 90%, memberships grew 3x, and the studio now runs seamless hybrid operations.",
+        "metrics": [
+          { "value": 90, "suffix": "%", "label": "Class Capacity" },
+          { "value": 3, "suffix": "x", "label": "Membership Growth" },
+          { "value": 100, "suffix": "%", "label": "Hybrid Ready" },
+          { "value": 40, "suffix": "+", "label": "Weekly Live Classes" }
+        ],
+        "testimonial": {
+          "quote": "The hybrid platform saved our business during the shift to virtual. Now we reach members worldwide while maintaining our local community feel.",
+          "author": "Jake Morrison",
+          "role": "Founder, FitLeap Studios"
+        },
+        "gallery": [],
+        "beforeAfter": [
+          {
+            "label": "Before",
+            "points": ["Manual class sign-ups", "Memberships in spreadsheets", "No virtual offering", "Community limited to the studio"]
+          },
+          {
+            "label": "After",
+            "points": ["Self-serve class booking", "Automated membership tiers", "Live virtual streaming", "Members worldwide"]
+          }
+        ],
+        "timeline": [
+          { "phase": "Discovery", "duration": "Week 1", "detail": "Member and trainer research" },
+          { "phase": "Design", "duration": "Weeks 2-3", "detail": "Booking and streaming UX" },
+          { "phase": "Development", "duration": "Weeks 4-7", "detail": "Memberships, streaming, community" },
+          { "phase": "Launch", "duration": "Week 8", "detail": "Hybrid rollout and onboarding" }
+        ],
+        "lessonsLearned": [
+          "Hybrid capacity rules need their own design",
+          "Community features retain members between classes",
+          "Trainer ratings improve class quality naturally"
+        ],
+        "futurePlans": [
+          "On-demand workout library",
+          "Referral and challenges programs"
+        ],
+        "faq": [
+          { "question": "Can members attend both in-person and virtual?", "answer": "Yes — every class shows separate in-studio and virtual availability." },
+          { "question": "How are live classes delivered?", "answer": "Through a built-in low-latency streaming experience — no third-party links." }
+        ],
+        "relatedProjects": [],
+        "CTA": {
+          "title": "Want Results Like These?",
+          "description": "Grow your studio with a hybrid platform your members will love.",
+          "buttonText": "Let's Build Yours",
+          "href": "/contact?source=case-study"
+        }
+      }
+    },
+    {
+      "id": "lawfirm-pro",
+      "slug": "lawfirm-pro",
+      "title": "LawFirm Pro",
+      "client": "Torres & Associates",
+      "category": "corporate",
+      "industry": "Legal",
+      "description": "Professional law firm website with case management portal, attorney profiles, client intake, and document automation.",
+      "challenge": "A mid-sized law firm was drowning in paper, struggling with client intake, and losing potential clients due to a dated website with no online presence.",
+      "solution": "We developed a comprehensive platform with attorney profiles, practice area pages, online client intake, secure document portal, appointment scheduling, and blog.",
+      "result": "65% increase in client inquiries, 50% faster intake process, and 4.8-star client satisfaction rating.",
+      "technologies": ["Next.js", "TypeScript", "Tailwind", "Prisma"],
+      "servicesProvided": ["Discovery & Strategy", "UI/UX Design", "Web Development", "Secure Portal", "Document Automation"],
+      "duration": "8 weeks",
+      "year": "2025",
+      "location": "Remote",
+      "teamSize": "7",
+      "featured": false,
+      "thumbnail": "",
+      "gallery": [],
+      "coverImage": "",
+      "statistics": [
+        { "value": 65, "suffix": "%", "label": "Client Inquiries" },
+        { "value": 50, "suffix": "%", "label": "Faster Intake" },
+        { "value": 4.8, "suffix": "", "label": "Satisfaction" }
+      ],
+      "testimonial": {
+        "quote": "The client portal alone was worth the investment. Clients can upload documents securely, sign digitally, and track their case progress in real time.",
+        "author": "Michael Torres",
+        "role": "Managing Partner, Torres & Associates"
+      },
+      "branding": { "tagline": "Counsel in the digital age" },
+      "colors": { "primary": "#00C2A8", "secondary": "#38BDF8", "background": "#0B1020" },
+      "typography": { "heading": "IBM Plex Sans", "body": "IBM Plex Sans" },
+      "seo": {
+        "title": "LawFirm Pro Case Study | SmartByte",
+        "description": "How SmartByte built a secure client portal and intake system for Torres & Associates law firm.",
+        "keywords": ["law firm website", "legal case study", "client portal"],
+        "ogImage": ""
+      },
+      "liveLink": "",
+      "githubLink": "",
+      "status": "Live",
+      "rating": 4.8,
+      "caseStudy": {
+        "overview": "Torres & Associates ran on paper and a dated website. SmartByte delivered a professional platform with online intake, a secure client portal, and document automation.",
+        "clientProblem": "Client intake was manual and slow, paper documents were a security risk, and the outdated website sent potential clients elsewhere.",
+        "research": [
+          "Mapped the intake and case workflow from first call to resolution",
+          "Interviewed attorneys and support staff",
+          "Benchmarked competitor law firm digital experiences"
+        ],
+        "strategy": [
+          "Make a strong first impression with a modern, credible site",
+          "Digitize intake and document exchange securely",
+          "Give clients transparency with case progress tracking"
+        ],
+        "designProcess": [
+          "Designed an authoritative visual system for the practice",
+          "Prototyped the client intake flow end to end",
+          "Iterated the secure portal with a pilot client group"
+        ],
+        "development": [
+          "Built the platform on Next.js with Prisma",
+          "Implemented secure document upload and signing",
+          "Shipped appointment scheduling and case tracking"
+        ],
+        "features": ["Attorney Profiles", "Client Intake", "Document Portal", "Appointment Scheduling", "Case Tracking"],
+        "technicalChallenges": [
+          { "title": "Secure document exchange", "detail": "Documents must be encrypted, access-controlled, and auditable at every step." },
+          { "title": "Intake triage", "detail": "Automated intake routes inquiries to the right practice area immediately." }
+        ],
+        "results": "Client inquiries rose 65%, intake is 50% faster, and client satisfaction sits at 4.8 stars.",
+        "metrics": [
+          { "value": 65, "suffix": "%", "label": "Client Inquiries" },
+          { "value": 50, "suffix": "%", "label": "Faster Intake" },
+          { "value": 4.8, "suffix": "", "label": "Satisfaction" },
+          { "value": 90, "suffix": "%", "label": "Portal Adoption" }
+        ],
+        "testimonial": {
+          "quote": "The client portal alone was worth the investment. Clients can upload documents securely, sign digitally, and track their case progress in real time.",
+          "author": "Michael Torres",
+          "role": "Managing Partner, Torres & Associates"
+        },
+        "gallery": [],
+        "beforeAfter": [
+          {
+            "label": "Before",
+            "points": ["Dated website with no presence", "Paper-based client intake", "Documents sent by mail or email", "No case visibility for clients"]
+          },
+          {
+            "label": "After",
+            "points": ["Modern, credible web presence", "Online intake and triage", "Secure digital document portal", "Real-time case tracking"]
+          }
+        ],
+        "timeline": [
+          { "phase": "Discovery", "duration": "Week 1", "detail": "Intake workflow mapping" },
+          { "phase": "Design", "duration": "Weeks 2-3", "detail": "Visual system and portal UX" },
+          { "phase": "Development", "duration": "Weeks 4-7", "detail": "Intake, portal, automation" },
+          { "phase": "Launch", "duration": "Week 8", "detail": "Pilot rollout and training" }
+        ],
+        "lessonsLearned": [
+          "A credible website is a revenue channel for firms",
+          "Security is a selling point, not just a requirement",
+          "Portal transparency reduces admin calls dramatically"
+        ],
+        "futurePlans": [
+          "E-signature workflow expansion",
+          "Client-facing case timeline automation"
+        ],
+        "faq": [
+          { "question": "How secure is the client portal?", "answer": "Documents are encrypted at rest and in transit with granular access controls and full audit trails." },
+          { "question": "Can clients sign documents digitally?", "answer": "Yes — digital signing is built into the secure document flow." }
+        ],
+        "relatedProjects": [],
+        "CTA": {
+          "title": "Want Results Like These?",
+          "description": "Modernize your practice with a platform clients trust.",
+          "buttonText": "Let's Build Yours",
+          "href": "/contact?source=case-study"
+        }
+      }
+    },
+    {
+      "id": "cloudkitchen",
+      "slug": "cloudkitchen",
+      "title": "CloudCook",
+      "client": "CloudKitchen Group",
+      "category": "restaurant",
+      "industry": "Restaurant",
+      "description": "Cloud kitchen management platform with multi-brand support, delivery aggregator integration, and real-time analytics.",
+      "challenge": "A cloud kitchen operator running 5 virtual brands needed to consolidate orders from multiple delivery apps and optimize kitchen operations.",
+      "solution": "We created a centralized platform with multi-brand menu management, automatic order routing from all major delivery apps, kitchen display, and real-time profitability analytics.",
+      "result": "40% reduction in operational costs, 3x brand scalability, and 25% increase in profit margins.",
+      "technologies": ["Next.js", "Node", "Postgres", "Redis"],
+      "servicesProvided": ["Discovery & Strategy", "UI/UX Design", "Web Development", "Aggregator Integration", "Analytics"],
+      "duration": "10 weeks",
+      "year": "2025",
+      "location": "Remote",
+      "teamSize": "8",
+      "featured": false,
+      "thumbnail": "",
+      "gallery": [],
+      "coverImage": "",
+      "statistics": [
+        { "value": 40, "suffix": "%", "label": "Cost Reduction" },
+        { "value": 3, "suffix": "x", "label": "Brand Scale" },
+        { "value": 25, "suffix": "%", "label": "Profit Margin" }
+      ],
+      "testimonial": {
+        "quote": "Managing 5 brands was chaos until CloudCook unified everything. Now we onboard new brands in days, not months, and our margins have never been better.",
+        "author": "Lisa Wong",
+        "role": "CEO, CloudKitchen Group"
+      },
+      "branding": { "tagline": "Many brands, one kitchen" },
+      "colors": { "primary": "#00C2A8", "secondary": "#38BDF8", "background": "#0B1020" },
+      "typography": { "heading": "IBM Plex Sans", "body": "IBM Plex Sans" },
+      "seo": {
+        "title": "CloudCook Case Study | SmartByte",
+        "description": "How SmartByte unified a 5-brand cloud kitchen with aggregator integration and profitability analytics.",
+        "keywords": ["cloud kitchen", "food tech", "delivery aggregator integration"],
+        "ogImage": ""
+      },
+      "liveLink": "",
+      "githubLink": "",
+      "status": "Live",
+      "rating": 4.7,
+      "caseStudy": {
+        "overview": "CloudKitchen Group ran 5 virtual brands on scattered tools. SmartByte centralized menu management, order routing, and profitability analytics into one platform.",
+        "clientProblem": "Orders arrived from multiple apps with no unified view, brand onboarding took months, and margins were invisible at the brand level.",
+        "research": [
+          "Mapped order flows across every delivery app and brand",
+          "Analyzed kitchen throughput and idle time",
+          "Interviewed managers on reporting gaps"
+        ],
+        "strategy": [
+          "Route all orders into one kitchen queue automatically",
+          "Centralize menu management per brand",
+          "Expose brand-level profitability in real time"
+        ],
+        "designProcess": [
+          "Designed a multi-brand workspace for managers",
+          "Prototyped the kitchen display for speed",
+          "Iterated profitability analytics with finance"
+        ],
+        "development": [
+          "Built the platform on Next.js with Redis for speed",
+          "Integrated major delivery aggregators",
+          "Shipped real-time profitability reporting"
+        ],
+        "features": ["Multi-Brand Menu", "Order Aggregation", "Kitchen Display", "Profit Analytics", "Brand Onboarding"],
+        "technicalChallenges": [
+          { "title": "Aggregator variance", "detail": "Each delivery app has different APIs and payloads; all must normalize into one queue." },
+          { "title": "Cost attribution", "detail": "Shared kitchen costs must map accurately to each brand for true margins." }
+        ],
+        "results": "Operational costs dropped 40%, brand onboarding went from months to days, and profit margins rose 25%.",
+        "metrics": [
+          { "value": 40, "suffix": "%", "label": "Cost Reduction" },
+          { "value": 3, "suffix": "x", "label": "Brand Scale" },
+          { "value": 25, "suffix": "%", "label": "Profit Margin" },
+          { "value": 5, "suffix": "", "label": "Brands Unified" }
+        ],
+        "testimonial": {
+          "quote": "Managing 5 brands was chaos until CloudCook unified everything. Now we onboard new brands in days, not months, and our margins have never been better.",
+          "author": "Lisa Wong",
+          "role": "CEO, CloudKitchen Group"
+        },
+        "gallery": [],
+        "beforeAfter": [
+          {
+            "label": "Before",
+            "points": ["Orders scattered across apps", "Months to launch a brand", "Kitchen juggling paper tickets", "Margins invisible"]
+          },
+          {
+            "label": "After",
+            "points": ["Unified order queue", "Days to onboard a brand", "Digital kitchen display", "Real-time brand margins"]
+          }
+        ],
+        "timeline": [
+          { "phase": "Discovery", "duration": "Weeks 1-2", "detail": "Order flow and margin audit" },
+          { "phase": "Design", "duration": "Weeks 3-4", "detail": "Multi-brand workspace UX" },
+          { "phase": "Development", "duration": "Weeks 5-9", "detail": "Aggregators, queue, analytics" },
+          { "phase": "Launch", "duration": "Week 10", "detail": "All brands migrated and live" }
+        ],
+        "lessonsLearned": [
+          "Normalizing aggregator data is the hidden unlock",
+          "Real-time margins change how brands are managed",
+          "Fast brand onboarding is a growth lever"
+        ],
+        "futurePlans": [
+          "AI menu pricing suggestions",
+          "Aggregator ad performance tracking"
+        ],
+        "faq": [
+          { "question": "Which delivery apps are integrated?", "answer": "All major aggregators are supported, with new integrations added through the same adapter layer." },
+          { "question": "Can new brands launch quickly?", "answer": "Yes — brand onboarding is template-based and takes days, not months." }
+        ],
+        "relatedProjects": [],
+        "CTA": {
+          "title": "Want Results Like These?",
+          "description": "Run multiple brands profitably from one platform.",
+          "buttonText": "Let's Build Yours",
+          "href": "/contact?source=case-study"
+        }
+      }
+    },
+    {
+      "id": "construx",
+      "slug": "construx",
+      "title": "ConstrUX",
+      "client": "Harrison Construction",
+      "category": "corporate",
+      "industry": "Construction",
+      "description": "Construction project management platform with bid management, crew scheduling, material tracking, and compliance documentation.",
+      "challenge": "A construction company was losing bids due to slow responses, struggling with crew scheduling across multiple job sites, and facing compliance audit issues.",
+      "solution": "We built a comprehensive platform with bid management and automated proposals, crew scheduling with skills matching, material inventory tracking, and automated compliance documentation.",
+      "result": "50% faster bid responses, 35% improvement in crew utilization, and zero compliance findings in the next audit.",
+      "technologies": ["React", "Node", "MongoDB", "Tailwind"],
+      "servicesProvided": ["Discovery & Strategy", "UI/UX Design", "Web Development", "Scheduling Engine", "Compliance Automation"],
+      "duration": "14 weeks",
+      "year": "2025",
+      "location": "Remote",
+      "teamSize": "10",
+      "featured": false,
+      "thumbnail": "",
+      "gallery": [],
+      "coverImage": "",
+      "statistics": [
+        { "value": 50, "suffix": "%", "label": "Faster Bids" },
+        { "value": 35, "suffix": "%", "label": "Crew Utilization" },
+        { "value": 0, "suffix": "", "label": "Compliance Issues" }
+      ],
+      "testimonial": {
+        "quote": "ConstrUX revolutionized how we manage projects. We're winning more bids, our crews are always where they need to be, and our compliance is bulletproof.",
+        "author": "Tom Harrison",
+        "role": "President, Harrison Construction"
+      },
+      "branding": { "tagline": "Built on better operations" },
+      "colors": { "primary": "#00C2A8", "secondary": "#38BDF8", "background": "#0B1020" },
+      "typography": { "heading": "IBM Plex Sans", "body": "IBM Plex Sans" },
+      "seo": {
+        "title": "ConstrUX Case Study | SmartByte",
+        "description": "How SmartByte built a construction project management platform for Harrison Construction with bid and crew automation.",
+        "keywords": ["construction software", "project management", "crew scheduling"],
+        "ogImage": ""
+      },
+      "liveLink": "",
+      "githubLink": "",
+      "status": "Live",
+      "rating": 4.7,
+      "caseStudy": {
+        "overview": "Harrison Construction was losing bids and juggling crews across sites with spreadsheets. SmartByte built a platform covering bids, crew scheduling, materials, and compliance.",
+        "clientProblem": "Slow bid responses lost contracts, crews were scheduled by gut feel, materials went missing, and compliance paperwork was a recurring audit headache.",
+        "research": [
+          "Shadowed estimators, project managers, and site crews",
+          "Analyzed bid win/loss data for the previous year",
+          "Audited compliance documentation workflows"
+        ],
+        "strategy": [
+          "Automate bid generation to respond in hours",
+          "Match crews to sites by skills and availability",
+          "Automate compliance documentation continuously"
+        ],
+        "designProcess": [
+          "Designed dashboards for the office and the field",
+          "Prototyped crew scheduling with a skills matrix",
+          "Iterated compliance checks with the safety team"
+        ],
+        "development": [
+          "Built the platform with React and Node on MongoDB",
+          "Implemented bid templates and automated proposals",
+          "Shipped scheduling, materials, and compliance modules"
+        ],
+        "features": ["Bid Management", "Crew Scheduling", "Material Tracking", "Compliance Docs", "Project Timeline"],
+        "technicalChallenges": [
+          { "title": "Field-first design", "detail": "Crews use the platform on phones at noisy job sites, so the UI must be fast and readable." },
+          { "title": "Compliance traceability", "detail": "Every document and signature must be timestamped and immutable for auditors." }
+        ],
+        "results": "Bid responses are 50% faster, crew utilization improved 35%, and the next compliance audit found zero findings.",
+        "metrics": [
+          { "value": 50, "suffix": "%", "label": "Faster Bids" },
+          { "value": 35, "suffix": "%", "label": "Crew Utilization" },
+          { "value": 0, "suffix": "", "label": "Compliance Issues" },
+          { "value": 12, "suffix": "+", "label": "Sites Managed" }
+        ],
+        "testimonial": {
+          "quote": "ConstrUX revolutionized how we manage projects. We're winning more bids, our crews are always where they need to be, and our compliance is bulletproof.",
+          "author": "Tom Harrison",
+          "role": "President, Harrison Construction"
+        },
+        "gallery": [],
+        "beforeAfter": [
+          {
+            "label": "Before",
+            "points": ["Bids took days to prepare", "Crews scheduled by gut feel", "Materials tracked on site", "Compliance paper piled up"]
+          },
+          {
+            "label": "After",
+            "points": ["Automated bid proposals", "Skills-based crew matching", "Central material tracking", "Automated compliance records"]
+          }
+        ],
+        "timeline": [
+          { "phase": "Discovery", "duration": "Weeks 1-2", "detail": "Bid and site workflow audit" },
+          { "phase": "Design", "duration": "Weeks 3-4", "detail": "Field-first dashboards and scheduling UX" },
+          { "phase": "Development", "duration": "Weeks 5-13", "detail": "Bids, scheduling, materials, compliance" },
+          { "phase": "Launch", "duration": "Week 14", "detail": "Office and field rollout" }
+        ],
+        "lessonsLearned": [
+          "Speed to bid is the fastest revenue lever",
+          "Skills-based scheduling wins crew trust",
+          "Automated compliance turns audits into a formality"
+        ],
+        "futurePlans": [
+          "Material cost forecasting",
+          "Photo-based site progress reports"
+        ],
+        "faq": [
+          { "question": "Can crews use it from the field?", "answer": "Yes — the platform is designed mobile-first for noisy, on-the-go job sites." },
+          { "question": "Does it prepare compliance documents automatically?", "answer": "It captures and timestamps everything as work happens, so audit documentation is always ready." }
+        ],
+        "relatedProjects": [],
+        "CTA": {
+          "title": "Want Results Like These?",
+          "description": "Run more bids, better crews, and airtight compliance.",
+          "buttonText": "Let's Build Yours",
+          "href": "/contact?source=case-study"
+        }
+      }
+    }
+  ],
+  "stats": [
+    { "value": 50, "suffix": "+", "label": "Projects Delivered" },
+    { "value": 98, "suffix": "%", "label": "Client Satisfaction" },
+    { "value": 12, "suffix": "+", "label": "Industries Served" },
+    { "value": 24, "suffix": "/7", "label": "Support" }
+  ],
+  "industries": [
+    { "id": "restaurant", "label": "Restaurant", "icon": "UtensilsCrossed", "count": 8 },
+    { "id": "medical", "label": "Medical", "icon": "HeartPulse", "count": 6 },
+    { "id": "education", "label": "Education", "icon": "GraduationCap", "count": 5 },
+    { "id": "realestate", "label": "Real Estate", "icon": "Home", "count": 4 },
+    { "id": "corporate", "label": "Corporate", "icon": "Building2", "count": 10 },
+    { "id": "portfolio", "label": "Portfolio", "icon": "Briefcase", "count": 7 },
+    { "id": "ecommerce", "label": "E-Commerce", "icon": "ShoppingCart", "count": 6 },
+    { "id": "construction", "label": "Construction", "icon": "HardHat", "count": 3 },
+    { "id": "law", "label": "Law Firm", "icon": "Scale", "count": 4 },
+    { "id": "beauty", "label": "Beauty", "icon": "Sparkles", "count": 5 },
+    { "id": "fitness", "label": "Fitness", "icon": "Dumbbell", "count": 4 },
+    { "id": "hospitality", "label": "Hospitality", "icon": "Hotel", "count": 5 }
+  ],
+  "processSteps": [
+    { "step": 1, "title": "Discovery", "description": "We dive deep into your business, goals, and challenges to define project scope and success metrics.", "icon": "Search" },
+    { "step": 2, "title": "Research", "description": "Market analysis, competitor research, and user behavior studies inform our strategic direction.", "icon": "BookOpen" },
+    { "step": 3, "title": "Design", "description": "Wireframes, prototypes, and visual designs that align with your brand and delight your users.", "icon": "Palette" },
+    { "step": 4, "title": "Development", "description": "Agile development with regular sprints, code reviews, and continuous integration.", "icon": "Code" },
+    { "step": 5, "title": "Testing", "description": "Rigorous QA including performance testing, security audits, and user acceptance testing.", "icon": "CheckCircle" },
+    { "step": 6, "title": "Launch", "description": "Smooth deployment with zero downtime, monitoring setup, and post-launch optimization.", "icon": "Rocket" },
+    { "step": 7, "title": "Support", "description": "Ongoing maintenance, updates, and dedicated support to ensure long-term success.", "icon": "HeadphonesIcon" }
+  ],
+  "awards": [
+    { "label": "50+ Projects", "icon": "Briefcase" },
+    { "label": "98% Satisfaction", "icon": "Star" },
+    { "label": "Fast Delivery", "icon": "Zap" },
+    { "label": "Premium UI", "icon": "Palette" },
+    { "label": "Modern Stack", "icon": "Code" },
+    { "label": "SEO Optimized", "icon": "Search" },
+    { "label": "Fully Responsive", "icon": "Smartphone" },
+    { "label": "Business Focused", "icon": "TrendingUp" }
+  ],
+  "categories": [
+    { "id": "all", "label": "All Projects" },
+    { "id": "restaurant", "label": "Restaurant" },
+    { "id": "medical", "label": "Medical" },
+    { "id": "education", "label": "Education" },
+    { "id": "corporate", "label": "Corporate" },
+    { "id": "realestate", "label": "Real Estate" },
+    { "id": "portfolio", "label": "Portfolio & Other" }
+  ],
+  "sortOptions": [
+    { "value": "newest", "label": "Newest" },
+    { "value": "popular", "label": "Most Popular" },
+    { "value": "rating", "label": "Highest Rated" },
+    { "value": "alpha", "label": "A-Z" }
+  ],
+  "industryOptions": [
+    { "value": "all", "label": "All Industries" },
+    { "value": "Restaurant", "label": "Restaurant" },
+    { "value": "Medical", "label": "Medical" },
+    { "value": "Education", "label": "Education" },
+    { "value": "Real Estate", "label": "Real Estate" },
+    { "value": "Corporate", "label": "Corporate" },
+    { "value": "Beauty", "label": "Beauty" },
+    { "value": "Fitness", "label": "Fitness" },
+    { "value": "Legal", "label": "Legal" },
+    { "value": "Construction", "label": "Construction" }
+  ],
+  "technologyOptions": [
+    { "value": "nextjs", "label": "Next.js", "match": "Next.js" },
+    { "value": "react", "label": "React", "match": "React" },
+    { "value": "typescript", "label": "TypeScript", "match": "TypeScript" },
+    { "value": "tailwind", "label": "Tailwind CSS", "match": "Tailwind" },
+    { "value": "node", "label": "Node.js", "match": "Node" },
+    { "value": "postgres", "label": "PostgreSQL", "match": "Postgres" },
+    { "value": "mongodb", "label": "MongoDB", "match": "MongoDB" },
+    { "value": "stripe", "label": "Stripe", "match": "Stripe" },
+    { "value": "python", "label": "Python", "match": "Python" },
+    { "value": "tensorflow", "label": "TensorFlow", "match": "TensorFlow" },
+    { "value": "mapbox", "label": "Mapbox", "match": "Mapbox" },
+    { "value": "prisma", "label": "Prisma", "match": "Prisma" },
+    { "value": "redis", "label": "Redis", "match": "Redis" },
+    { "value": "mux", "label": "Mux", "match": "Mux" }
+  ]
+}

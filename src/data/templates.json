@@ -1,0 +1,1386 @@
+{
+  "categories": [
+    {
+      "id": "restaurant",
+      "label": "Restaurant",
+      "icon": "UtensilsCrossed"
+    },
+    {
+      "id": "medical",
+      "label": "Medical",
+      "icon": "HeartPulse"
+    },
+    {
+      "id": "education",
+      "label": "Education",
+      "icon": "GraduationCap"
+    },
+    {
+      "id": "corporate",
+      "label": "Corporate",
+      "icon": "Building2"
+    },
+    {
+      "id": "portfolio",
+      "label": "Portfolio",
+      "icon": "Briefcase"
+    },
+    {
+      "id": "ecommerce",
+      "label": "E-Commerce",
+      "icon": "ShoppingCart"
+    },
+    {
+      "id": "agency",
+      "label": "Agency",
+      "icon": "Sparkles"
+    },
+    {
+      "id": "realestate",
+      "label": "Real Estate",
+      "icon": "Home"
+    }
+  ],
+  "industries": [
+    {
+      "value": "all",
+      "label": "All Industries"
+    },
+    {
+      "value": "restaurant",
+      "label": "Restaurant"
+    },
+    {
+      "value": "medical",
+      "label": "Medical"
+    },
+    {
+      "value": "education",
+      "label": "Education"
+    },
+    {
+      "value": "corporate",
+      "label": "Corporate"
+    },
+    {
+      "value": "portfolio",
+      "label": "Portfolio"
+    },
+    {
+      "value": "ecommerce",
+      "label": "E-Commerce"
+    },
+    {
+      "value": "agency",
+      "label": "Agency"
+    },
+    {
+      "value": "realestate",
+      "label": "Real Estate"
+    },
+    {
+      "value": "startup",
+      "label": "Startup"
+    },
+    {
+      "value": "landing",
+      "label": "Landing Page"
+    }
+  ],
+  "priceRanges": [
+    {
+      "value": "all",
+      "label": "All Prices"
+    },
+    {
+      "value": "starter",
+      "label": "Under $999"
+    },
+    {
+      "value": "growing",
+      "label": "$999 – $2,499"
+    },
+    {
+      "value": "enterprise",
+      "label": "$2,500+"
+    }
+  ],
+  "sortOptions": [
+    {
+      "value": "popular",
+      "label": "Most Popular"
+    },
+    {
+      "value": "newest",
+      "label": "Newest"
+    },
+    {
+      "value": "price-low",
+      "label": "Price: Low to High"
+    },
+    {
+      "value": "price-high",
+      "label": "Price: High to Low"
+    }
+  ],
+  "templates": [
+    {
+      "id": "restaurant-pro",
+      "slug": "restaurant-pro",
+      "title": "Restaurant Pro",
+      "category": "restaurant",
+      "industry": "restaurant",
+      "shortDescription": "Complete digital presence for restaurants with online ordering, reservation management, and dynamic menu displays.",
+      "fullDescription": "Restaurant Pro gives your restaurant a complete digital presence in days. It includes a fully-featured online ordering system, a table reservation portal with instant confirmation, dynamic menu management, and a gallery & events section — everything a modern food business needs to convert hungry visitors into loyal customers.",
+      "price": 1499,
+      "oldPrice": 1799,
+      "deliveryTime": "7 days",
+      "rating": 4.9,
+      "purchaseCount": 186,
+      "featured": true,
+      "featuredOrder": 1,
+      "technologies": [
+        "Next.js",
+        "Tailwind",
+        "Node",
+        "Stripe"
+      ],
+      "features": [
+        "Online ordering system",
+        "Table reservation portal",
+        "Dynamic menu management",
+        "Gallery & events section"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "BEST SELLER",
+      "priceLabel": "Starter",
+      "createdAt": "2025-11-10",
+      "seo": {
+        "title": "Restaurant Pro — Restaurant Website Template | SmartByte",
+        "description": "Restaurant website template with online ordering, table reservations, and dynamic menu management. Launch ready in 7 days.",
+        "keywords": [
+          "restaurant website template",
+          "restaurant website",
+          "online ordering template"
+        ],
+        "ogImage": ""
+      },
+      "popular": true,
+      "newest": false
+    },
+    {
+      "id": "medicare",
+      "slug": "medicare",
+      "title": "MediCare",
+      "category": "medical",
+      "industry": "medical",
+      "shortDescription": "Professional healthcare platform with patient portals, appointment scheduling, and telemedicine integration.",
+      "fullDescription": "MediCare is a professional healthcare platform built for clinics and medical practices. It ships with patient portals and profiles, appointment scheduling, telemedicine integration, and medical records management so your practice can operate smoothly and securely online.",
+      "price": 2299,
+      "oldPrice": 2699,
+      "deliveryTime": "14 days",
+      "rating": 4.8,
+      "purchaseCount": 142,
+      "featured": true,
+      "featuredOrder": 3,
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Postgres"
+      ],
+      "features": [
+        "Patient portal & profiles",
+        "Appointment scheduling",
+        "Telemedicine integration",
+        "Medical records management"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "POPULAR",
+      "priceLabel": "Growing",
+      "createdAt": "2025-12-02",
+      "seo": {
+        "title": "MediCare — Healthcare Website Template | SmartByte",
+        "description": "Healthcare website template with patient portals, appointment scheduling, and telemedicine integration. Launch in 14 days.",
+        "keywords": [
+          "medical website template",
+          "healthcare website",
+          "patient portal template"
+        ],
+        "ogImage": ""
+      },
+      "popular": true,
+      "newest": true
+    },
+    {
+      "id": "edulearn",
+      "slug": "edulearn",
+      "title": "EduLearn",
+      "category": "education",
+      "industry": "education",
+      "shortDescription": "Modern learning management platform with course creation, student tracking, and interactive content delivery.",
+      "fullDescription": "EduLearn is a modern learning management platform for schools and online educators. It includes a course management system, student enrollment portal, progress tracking, and interactive quizzes that keep learners engaged from day one.",
+      "price": 1899,
+      "oldPrice": 2299,
+      "deliveryTime": "14 days",
+      "rating": 4.8,
+      "purchaseCount": 98,
+      "featured": true,
+      "featuredOrder": 6,
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Prisma"
+      ],
+      "features": [
+        "Course management system",
+        "Student enrollment portal",
+        "Progress tracking",
+        "Interactive quizzes"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "NEW",
+      "priceLabel": "Growing",
+      "createdAt": "2026-02-18",
+      "seo": {
+        "title": "EduLearn — Education Website Template | SmartByte",
+        "description": "Learning management template with course creation, student enrollment, and progress tracking. Launch in 14 days.",
+        "keywords": [
+          "education website template",
+          "LMS template",
+          "learning management system"
+        ],
+        "ogImage": ""
+      },
+      "popular": false,
+      "newest": true
+    },
+    {
+      "id": "corpsite",
+      "slug": "corpsite",
+      "title": "CorpSite",
+      "category": "corporate",
+      "industry": "corporate",
+      "shortDescription": "Enterprise-grade corporate website with team pages, investor relations, and integrated newsroom capabilities.",
+      "fullDescription": "CorpSite is an enterprise-grade corporate website solution. It includes team and leadership pages, an investor relations portal, a news and press room, and career listings — everything an established company needs to project credibility and attract talent.",
+      "price": 2699,
+      "oldPrice": 3199,
+      "deliveryTime": "14 days",
+      "rating": 4.9,
+      "purchaseCount": 164,
+      "featured": true,
+      "featuredOrder": 2,
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Postgres"
+      ],
+      "features": [
+        "Team & leadership pages",
+        "Investor relations portal",
+        "News & press room",
+        "Career listings"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "TRENDING",
+      "priceLabel": "Enterprise",
+      "createdAt": "2025-12-20",
+      "seo": {
+        "title": "CorpSite — Corporate Website Template | SmartByte",
+        "description": "Enterprise corporate website template with team pages, investor relations, and newsroom capabilities. Launch in 14 days.",
+        "keywords": [
+          "corporate website template",
+          "business website",
+          "company website template"
+        ],
+        "ogImage": ""
+      },
+      "popular": true,
+      "newest": false
+    },
+    {
+      "id": "portfolio-pro",
+      "slug": "portfolio-pro",
+      "title": "Portfolio Pro",
+      "category": "portfolio",
+      "industry": "portfolio",
+      "shortDescription": "Stunning portfolio platform for creatives with project showcases, client galleries, and built-in CMS.",
+      "fullDescription": "Portfolio Pro helps creatives and freelancers look world-class online. It includes a project showcase grid, client gallery, a built-in CMS for easy content updates, and contact and booking sections to turn visitors into clients.",
+      "price": 899,
+      "oldPrice": 999,
+      "deliveryTime": "5 days",
+      "rating": 4.8,
+      "purchaseCount": 121,
+      "featured": false,
+      "featuredOrder": 0,
+      "technologies": [
+        "Next.js",
+        "Tailwind",
+        "Motion"
+      ],
+      "features": [
+        "Project showcase grid",
+        "Client gallery",
+        "Built-in CMS",
+        "Contact & booking"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "",
+      "priceLabel": "Starter",
+      "createdAt": "2025-10-05",
+      "seo": {
+        "title": "Portfolio Pro — Portfolio Website Template | SmartByte",
+        "description": "Portfolio website template for creatives with project showcases, client galleries, and a built-in CMS. Launch in 5 days.",
+        "keywords": [
+          "portfolio template",
+          "creative portfolio website",
+          "freelancer website template"
+        ],
+        "ogImage": ""
+      },
+      "popular": false,
+      "newest": false
+    },
+    {
+      "id": "shopswift",
+      "slug": "shopswift",
+      "title": "ShopSwift",
+      "category": "ecommerce",
+      "industry": "ecommerce",
+      "shortDescription": "Feature-rich e-commerce platform with inventory management, payment processing, and order tracking.",
+      "fullDescription": "ShopSwift is a feature-rich e-commerce platform for growing online stores. It includes product catalog management, a complete shopping cart and checkout flow, payment integration, and an order tracking system so you can sell with confidence.",
+      "price": 2999,
+      "oldPrice": 3499,
+      "deliveryTime": "21 days",
+      "rating": 4.9,
+      "purchaseCount": 203,
+      "featured": true,
+      "featuredOrder": 4,
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Stripe",
+        "Tailwind"
+      ],
+      "features": [
+        "Product catalog management",
+        "Shopping cart & checkout",
+        "Payment integration",
+        "Order tracking system"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "BEST SELLER",
+      "priceLabel": "Enterprise",
+      "createdAt": "2025-11-28",
+      "seo": {
+        "title": "ShopSwift — E-Commerce Website Template | SmartByte",
+        "description": "E-commerce website template with inventory management, payment processing, and order tracking. Launch in 21 days.",
+        "keywords": [
+          "ecommerce template",
+          "online store template",
+          "shop website template"
+        ],
+        "ogImage": ""
+      },
+      "popular": true,
+      "newest": false
+    },
+    {
+      "id": "agency-pro",
+      "slug": "agency-pro",
+      "title": "Agency Pro",
+      "category": "agency",
+      "industry": "agency",
+      "shortDescription": "Full-featured agency website showcasing services, case studies, client testimonials, and team culture.",
+      "fullDescription": "Agency Pro gives agencies a full-featured website that wins clients. It includes a case study portfolio, service showcase, client testimonials, and a team culture page that builds trust before the first conversation.",
+      "price": 1599,
+      "oldPrice": 1899,
+      "deliveryTime": "10 days",
+      "rating": 4.8,
+      "purchaseCount": 87,
+      "featured": false,
+      "featuredOrder": 0,
+      "technologies": [
+        "Next.js",
+        "Tailwind",
+        "Motion",
+        "Prisma"
+      ],
+      "features": [
+        "Case study portfolio",
+        "Service showcase",
+        "Client testimonials",
+        "Team culture page"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "",
+      "priceLabel": "Growing",
+      "createdAt": "2025-09-14",
+      "seo": {
+        "title": "Agency Pro — Agency Website Template | SmartByte",
+        "description": "Agency website template with case studies, service showcase, and client testimonials. Launch in 10 days.",
+        "keywords": [
+          "agency website template",
+          "digital agency website",
+          "creative agency template"
+        ],
+        "ogImage": ""
+      },
+      "popular": false,
+      "newest": false
+    },
+    {
+      "id": "estateview",
+      "slug": "estateview",
+      "title": "EstateView",
+      "category": "realestate",
+      "industry": "realestate",
+      "shortDescription": "Premium real estate platform with property listings, virtual tours, mortgage calculator, and agent profiles.",
+      "fullDescription": "EstateView is a premium real estate platform for agencies and property portals. It includes a property listing manager, virtual tour integration, a mortgage calculator, and agent profile pages that help you list smarter and sell faster.",
+      "price": 2399,
+      "oldPrice": 2799,
+      "deliveryTime": "14 days",
+      "rating": 4.9,
+      "purchaseCount": 176,
+      "featured": true,
+      "featuredOrder": 5,
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Postgres"
+      ],
+      "features": [
+        "Property listing manager",
+        "Virtual tour integration",
+        "Mortgage calculator",
+        "Agent profile pages"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "POPULAR",
+      "priceLabel": "Enterprise",
+      "createdAt": "2025-12-15",
+      "seo": {
+        "title": "EstateView — Real Estate Website Template | SmartByte",
+        "description": "Real estate website template with property listings, virtual tours, and mortgage calculators. Launch in 14 days.",
+        "keywords": [
+          "real estate template",
+          "property website template",
+          "realty website"
+        ],
+        "ogImage": ""
+      },
+      "popular": true,
+      "newest": true
+    },
+    {
+      "id": "startup-launch",
+      "slug": "startup-launch",
+      "title": "Startup Launch",
+      "category": "startup",
+      "industry": "startup",
+      "shortDescription": "High-impact landing page for startups with waitlist capture, investor decks, and product showcase sections.",
+      "fullDescription": "Startup Launch is a high-impact landing page built for early-stage startups. It includes waitlist and early access capture, an investor deck section, product feature showcases, and analytics integration to validate demand from day one.",
+      "price": 699,
+      "oldPrice": 799,
+      "deliveryTime": "5 days",
+      "rating": 4.9,
+      "purchaseCount": 233,
+      "featured": true,
+      "featuredOrder": 7,
+      "technologies": [
+        "Next.js",
+        "Tailwind",
+        "Motion"
+      ],
+      "features": [
+        "Waitlist & early access",
+        "Investor deck section",
+        "Product feature showcase",
+        "Analytics integration"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "NEW",
+      "priceLabel": "Starter",
+      "createdAt": "2026-03-01",
+      "seo": {
+        "title": "Startup Launch — Startup Landing Page Template | SmartByte",
+        "description": "Startup landing page template with waitlist capture, investor decks, and product showcases. Launch in 5 days.",
+        "keywords": [
+          "startup landing page",
+          "waitlist landing page",
+          "launch page template"
+        ],
+        "ogImage": ""
+      },
+      "popular": false,
+      "newest": true
+    },
+    {
+      "id": "landing-pro",
+      "slug": "landing-pro",
+      "title": "Landing Pro",
+      "category": "landing",
+      "industry": "landing",
+      "shortDescription": "Conversion-optimized landing page template with A/B testing, lead capture forms, and analytics dashboards.",
+      "fullDescription": "Landing Pro is a conversion-optimized landing page template for marketing teams. It includes lead capture forms, A/B testing readiness, analytics integration, and flexible multi-section layouts so every campaign can be measured and improved.",
+      "price": 599,
+      "oldPrice": 699,
+      "deliveryTime": "4 days",
+      "rating": 4.7,
+      "purchaseCount": 154,
+      "featured": false,
+      "featuredOrder": 0,
+      "technologies": [
+        "Next.js",
+        "Tailwind",
+        "Motion"
+      ],
+      "features": [
+        "Lead capture forms",
+        "A/B testing ready",
+        "Analytics integration",
+        "Multi-section layouts"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "",
+      "priceLabel": "Starter",
+      "createdAt": "2025-08-22",
+      "seo": {
+        "title": "Landing Pro — Conversion Landing Page Template | SmartByte",
+        "description": "Conversion-optimized landing page template with lead capture and A/B testing. Launch in 4 days.",
+        "keywords": [
+          "landing page template",
+          "conversion landing page",
+          "lead capture template"
+        ],
+        "ogImage": ""
+      },
+      "popular": false,
+      "newest": false
+    },
+    {
+      "id": "bistro",
+      "slug": "bistro",
+      "title": "Bistro",
+      "category": "cafe",
+      "industry": "restaurant",
+      "shortDescription": "Charming cafe website with online reservations, photo galleries, and seasonal menu updates.",
+      "fullDescription": "Bistro is a charming cafe website template with a warm, inviting feel. It includes an online reservation system, a photo gallery, seasonal menu updates, and clear location and hours information so customers always know when to visit.",
+      "price": 999,
+      "oldPrice": 0,
+      "deliveryTime": "7 days",
+      "rating": 4.7,
+      "purchaseCount": 64,
+      "featured": false,
+      "featuredOrder": 0,
+      "technologies": [
+        "Next.js",
+        "Tailwind",
+        "Node"
+      ],
+      "features": [
+        "Online reservation system",
+        "Photo gallery",
+        "Seasonal menu updates",
+        "Location & hours"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "",
+      "priceLabel": "Starter",
+      "createdAt": "2025-09-30",
+      "seo": {
+        "title": "Bistro — Cafe Website Template | SmartByte",
+        "description": "Cafe website template with online reservations, photo galleries, and seasonal menus. Launch in 7 days.",
+        "keywords": [
+          "cafe website template",
+          "coffee shop website",
+          "bistro website"
+        ],
+        "ogImage": ""
+      },
+      "popular": false,
+      "newest": false
+    },
+    {
+      "id": "healthplus",
+      "slug": "healthplus",
+      "title": "HealthPlus",
+      "category": "medical",
+      "industry": "medical",
+      "shortDescription": "Wellness clinic platform with service listings, practitioner profiles, and online consultation booking.",
+      "fullDescription": "HealthPlus is a wellness clinic platform that connects patients with the right care. It includes service and treatment pages, practitioner profiles, online consultation booking, and a health resources blog to keep patients informed and engaged.",
+      "price": 1799,
+      "oldPrice": 2099,
+      "deliveryTime": "10 days",
+      "rating": 4.8,
+      "purchaseCount": 112,
+      "featured": false,
+      "featuredOrder": 0,
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Postgres"
+      ],
+      "features": [
+        "Service & treatment pages",
+        "Practitioner profiles",
+        "Online consultation booking",
+        "Health resources blog"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "",
+      "priceLabel": "Growing",
+      "createdAt": "2025-11-05",
+      "seo": {
+        "title": "HealthPlus — Wellness Clinic Website Template | SmartByte",
+        "description": "Wellness clinic website template with service listings, practitioner profiles, and online booking. Launch in 10 days.",
+        "keywords": [
+          "clinic website template",
+          "wellness website",
+          "health clinic template"
+        ],
+        "ogImage": ""
+      },
+      "popular": false,
+      "newest": false
+    },
+    {
+      "id": "coursehub",
+      "slug": "coursehub",
+      "title": "CourseHub",
+      "category": "education",
+      "industry": "education",
+      "shortDescription": "Online course marketplace with instructor dashboards, student reviews, and video content delivery.",
+      "fullDescription": "CourseHub is an online course marketplace for platforms and educators. It includes instructor dashboards, a student review system, video content delivery, and certificate generation so you can run a complete learning business.",
+      "price": 2499,
+      "oldPrice": 2899,
+      "deliveryTime": "21 days",
+      "rating": 4.8,
+      "purchaseCount": 79,
+      "featured": false,
+      "featuredOrder": 0,
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Prisma"
+      ],
+      "features": [
+        "Instructor dashboard",
+        "Student review system",
+        "Video content delivery",
+        "Certificate generation"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "",
+      "priceLabel": "Enterprise",
+      "createdAt": "2025-10-18",
+      "seo": {
+        "title": "CourseHub — Course Marketplace Template | SmartByte",
+        "description": "Online course marketplace template with instructor dashboards, reviews, and video delivery. Launch in 21 days.",
+        "keywords": [
+          "course marketplace template",
+          "online course website",
+          "e-learning platform template"
+        ],
+        "ogImage": ""
+      },
+      "popular": false,
+      "newest": false
+    },
+    {
+      "id": "enterprise-plus",
+      "slug": "enterprise-plus",
+      "title": "Enterprise Plus",
+      "category": "corporate",
+      "industry": "corporate",
+      "shortDescription": "Full enterprise portal with employee intranet, document management, and internal communication tools.",
+      "fullDescription": "Enterprise Plus is a full enterprise portal for organizations that need more than a website. It includes an employee intranet, document management, internal communications tools, and role-based access control to keep every team aligned and secure.",
+      "price": 3999,
+      "oldPrice": 4599,
+      "deliveryTime": "21 days",
+      "rating": 4.9,
+      "purchaseCount": 45,
+      "featured": false,
+      "featuredOrder": 0,
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Postgres"
+      ],
+      "features": [
+        "Employee intranet",
+        "Document management",
+        "Internal communications",
+        "Role-based access"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "",
+      "priceLabel": "Enterprise",
+      "createdAt": "2025-07-19",
+      "seo": {
+        "title": "Enterprise Plus — Enterprise Portal Template | SmartByte",
+        "description": "Enterprise portal template with employee intranet, document management, and internal communications. Launch in 21 days.",
+        "keywords": [
+          "enterprise portal",
+          "intranet template",
+          "corporate portal template"
+        ],
+        "ogImage": ""
+      },
+      "popular": false,
+      "newest": false
+    },
+    {
+      "id": "showcase",
+      "slug": "showcase",
+      "title": "Showcase",
+      "category": "portfolio",
+      "industry": "portfolio",
+      "shortDescription": "Minimal yet powerful portfolio for photographers and designers with lightbox galleries and client proofing.",
+      "fullDescription": "Showcase is a minimal yet powerful portfolio template designed for photographers and designers. It includes a lightbox gallery, client proofing, a download store, and social integration so your work always looks its best.",
+      "price": 799,
+      "oldPrice": 899,
+      "deliveryTime": "5 days",
+      "rating": 4.7,
+      "purchaseCount": 130,
+      "featured": false,
+      "featuredOrder": 0,
+      "technologies": [
+        "Next.js",
+        "Tailwind",
+        "Motion"
+      ],
+      "features": [
+        "Lightbox gallery",
+        "Client proofing",
+        "Download store",
+        "Social integration"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "",
+      "priceLabel": "Starter",
+      "createdAt": "2025-08-09",
+      "seo": {
+        "title": "Showcase — Photography Portfolio Template | SmartByte",
+        "description": "Portfolio template for photographers and designers with lightbox galleries and client proofing. Launch in 5 days.",
+        "keywords": [
+          "photography portfolio template",
+          "designer portfolio website",
+          "portfolio template"
+        ],
+        "ogImage": ""
+      },
+      "popular": false,
+      "newest": false
+    },
+    {
+      "id": "storefront",
+      "slug": "storefront",
+      "title": "StoreFront",
+      "category": "ecommerce",
+      "industry": "ecommerce",
+      "shortDescription": "Streamlined online store with inventory management, discount codes, and multi-currency support.",
+      "fullDescription": "StoreFront is a streamlined online store for brands that want to sell quickly and simply. It includes inventory management, discount and promo codes, multi-currency support, and abandoned cart recovery to maximize every checkout.",
+      "price": 1999,
+      "oldPrice": 2399,
+      "deliveryTime": "14 days",
+      "rating": 4.8,
+      "purchaseCount": 92,
+      "featured": false,
+      "featuredOrder": 0,
+      "technologies": [
+        "Next.js",
+        "Stripe",
+        "Tailwind",
+        "Postgres"
+      ],
+      "features": [
+        "Inventory management",
+        "Discount & promo codes",
+        "Multi-currency support",
+        "Abandoned cart recovery"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "",
+      "priceLabel": "Growing",
+      "createdAt": "2025-11-22",
+      "seo": {
+        "title": "StoreFront — Online Store Template | SmartByte",
+        "description": "Online store template with inventory management, discount codes, and multi-currency support. Launch in 14 days.",
+        "keywords": [
+          "online store template",
+          "ecommerce website",
+          "shop template"
+        ],
+        "ogImage": ""
+      },
+      "popular": false,
+      "newest": false
+    },
+    {
+      "id": "creative-co",
+      "slug": "creative-co",
+      "title": "Creative Co.",
+      "category": "agency",
+      "industry": "agency",
+      "shortDescription": "Creative agency website with award showcases, process storytelling, and interactive service pricing.",
+      "fullDescription": "Creative Co. is a website template for creative agencies that sell ideas. It includes an award showcase, process storytelling sections, interactive service pricing, and a client portal so every proposal feels premium.",
+      "price": 1399,
+      "oldPrice": 1599,
+      "deliveryTime": "10 days",
+      "rating": 4.9,
+      "purchaseCount": 108,
+      "featured": true,
+      "featuredOrder": 8,
+      "technologies": [
+        "Next.js",
+        "Tailwind",
+        "Motion",
+        "Prisma"
+      ],
+      "features": [
+        "Award showcase",
+        "Process storytelling",
+        "Interactive pricing",
+        "Client portal"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "NEW",
+      "priceLabel": "Growing",
+      "createdAt": "2026-01-27",
+      "seo": {
+        "title": "Creative Co. — Creative Agency Template | SmartByte",
+        "description": "Creative agency website template with award showcases and interactive pricing. Launch in 10 days.",
+        "keywords": [
+          "creative agency template",
+          "agency website",
+          "creative studio template"
+        ],
+        "ogImage": ""
+      },
+      "popular": false,
+      "newest": true
+    },
+    {
+      "id": "property-pro",
+      "slug": "property-pro",
+      "title": "Property Pro",
+      "category": "realestate",
+      "industry": "realestate",
+      "shortDescription": "Property management platform with tenant portals, maintenance requests, and rent payment processing.",
+      "fullDescription": "Property Pro is a property management platform for landlords and agencies. It includes a tenant portal, maintenance request handling, rent payment processing, and property analytics so you can manage every unit from one dashboard.",
+      "price": 2799,
+      "oldPrice": 3199,
+      "deliveryTime": "21 days",
+      "rating": 4.8,
+      "purchaseCount": 58,
+      "featured": false,
+      "featuredOrder": 0,
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Postgres"
+      ],
+      "features": [
+        "Tenant portal",
+        "Maintenance requests",
+        "Rent payment processing",
+        "Property analytics"
+      ],
+      "thumbnail": "",
+      "gallery": [],
+      "previewImages": [],
+      "status": "Live",
+      "liveLink": "",
+      "githubLink": "",
+      "demoAvailable": true,
+      "comingSoon": false,
+      "badge": "",
+      "priceLabel": "Enterprise",
+      "createdAt": "2025-09-08",
+      "seo": {
+        "title": "Property Pro — Property Management Template | SmartByte",
+        "description": "Property management template with tenant portals, maintenance requests, and rent processing. Launch in 21 days.",
+        "keywords": [
+          "property management template",
+          "tenant portal",
+          "rental management website"
+        ],
+        "ogImage": ""
+      },
+      "popular": false,
+      "newest": false
+    }
+  ],
+  "businessTypes": [
+    {
+      "value": "restaurant",
+      "label": "Restaurant",
+      "desc": "Digital menus, online ordering, and reservation systems"
+    },
+    {
+      "value": "realestate",
+      "label": "Real Estate",
+      "desc": "Property listings, virtual tours, and agent profiles"
+    },
+    {
+      "value": "healthcare",
+      "label": "Healthcare",
+      "desc": "Patient portals, appointment booking, and records"
+    },
+    {
+      "value": "education",
+      "label": "Education",
+      "desc": "Course management, student portals, and e-learning"
+    },
+    {
+      "value": "corporate",
+      "label": "Corporate",
+      "desc": "Company websites, intranets, and investor relations"
+    },
+    {
+      "value": "agency",
+      "label": "Agency",
+      "desc": "Portfolios, case studies, and client management"
+    },
+    {
+      "value": "ecommerce",
+      "label": "E-Commerce",
+      "desc": "Online stores, inventory, and payment processing"
+    },
+    {
+      "value": "portfolio",
+      "label": "Portfolio",
+      "desc": "Creative showcases, galleries, and client proofing"
+    },
+    {
+      "value": "startup",
+      "label": "Startup",
+      "desc": "MVP landing pages, waitlists, and investor decks"
+    },
+    {
+      "value": "other",
+      "label": "Other",
+      "desc": "Something unique? We've got you covered"
+    }
+  ],
+  "budgetOptions": [
+    {
+      "value": "starter",
+      "label": "Starter",
+      "desc": "Under $999",
+      "sub": "Best for early-stage businesses and personal projects. Includes essential features to get you online quickly."
+    },
+    {
+      "value": "growing",
+      "label": "Growing Business",
+      "desc": "$999 – $2,499",
+      "sub": "Ideal for established businesses needing advanced features, integrations, and scalability."
+    },
+    {
+      "value": "enterprise",
+      "label": "Enterprise",
+      "desc": "$2,500+",
+      "sub": "Full-featured solutions with custom development, dedicated support, and enterprise-grade infrastructure."
+    }
+  ],
+  "timelineOptions": [
+    {
+      "value": "asap",
+      "label": "ASAP",
+      "desc": "Need it urgently",
+      "sub": "We prioritize your project and deliver on an accelerated timeline."
+    },
+    {
+      "value": "month",
+      "label": "Within 30 Days",
+      "desc": "Standard timeline",
+      "sub": "Our most common delivery window — thorough development with quality assurance."
+    },
+    {
+      "value": "flexible",
+      "label": "Flexible",
+      "desc": "No rush",
+      "sub": "Take your time with planning and iterations. Perfect for complex projects."
+    }
+  ],
+  "technologyOptions": [
+    {
+      "value": "nextjs",
+      "label": "Next.js",
+      "match": "Next.js"
+    },
+    {
+      "value": "react",
+      "label": "React",
+      "match": "React"
+    },
+    {
+      "value": "typescript",
+      "label": "TypeScript",
+      "match": "TypeScript"
+    },
+    {
+      "value": "tailwind",
+      "label": "Tailwind",
+      "match": "Tailwind"
+    },
+    {
+      "value": "node",
+      "label": "Node",
+      "match": "Node"
+    },
+    {
+      "value": "postgres",
+      "label": "Postgres",
+      "match": "Postgres"
+    },
+    {
+      "value": "prisma",
+      "label": "Prisma",
+      "match": "Prisma"
+    },
+    {
+      "value": "stripe",
+      "label": "Stripe",
+      "match": "Stripe"
+    },
+    {
+      "value": "motion",
+      "label": "Motion",
+      "match": "Motion"
+    },
+    {
+      "value": "django",
+      "label": "Django",
+      "match": "Django"
+    },
+    {
+      "value": "vue",
+      "label": "Vue",
+      "match": "Vue"
+    }
+  ],
+  "featureOptions": [
+    {
+      "value": "cms",
+      "label": "CMS"
+    },
+    {
+      "value": "authentication",
+      "label": "Authentication"
+    },
+    {
+      "value": "dashboard",
+      "label": "Dashboard"
+    },
+    {
+      "value": "booking",
+      "label": "Booking"
+    },
+    {
+      "value": "payment",
+      "label": "Payment"
+    },
+    {
+      "value": "inventory",
+      "label": "Inventory"
+    },
+    {
+      "value": "analytics",
+      "label": "Analytics"
+    },
+    {
+      "value": "crm",
+      "label": "CRM"
+    },
+    {
+      "value": "gallery",
+      "label": "Gallery"
+    },
+    {
+      "value": "blog",
+      "label": "Blog"
+    },
+    {
+      "value": "waitlist",
+      "label": "Waitlist"
+    },
+    {
+      "value": "portal",
+      "label": "Portal"
+    },
+    {
+      "value": "ordering",
+      "label": "Online Ordering"
+    },
+    {
+      "value": "scheduling",
+      "label": "Scheduling"
+    },
+    {
+      "value": "seo",
+      "label": "SEO"
+    }
+  ],
+  "featureKeywords": {
+    "cms": [
+      "cms",
+      "built-in cms",
+      "content management"
+    ],
+    "authentication": [
+      "authentication",
+      "login",
+      "sign up",
+      "role-based access",
+      "patient portal",
+      "tenant portal",
+      "student enrollment portal",
+      "employee intranet"
+    ],
+    "dashboard": [
+      "dashboard",
+      "analytics",
+      "analytics integration",
+      "property analytics",
+      "progress tracking"
+    ],
+    "booking": [
+      "booking",
+      "appointment",
+      "reservation",
+      "consultation",
+      "schedule",
+      "online reservation system",
+      "table reservation portal"
+    ],
+    "payment": [
+      "payment",
+      "stripe",
+      "checkout",
+      "shopping cart",
+      "rent payment",
+      "multi-currency"
+    ],
+    "inventory": [
+      "inventory",
+      "product catalog",
+      "product catalog management"
+    ],
+    "analytics": [
+      "analytics",
+      "analytics integration",
+      "property analytics"
+    ],
+    "crm": [
+      "crm",
+      "client portal",
+      "client gallery",
+      "client proofing",
+      "contact & booking"
+    ],
+    "gallery": [
+      "gallery",
+      "photo gallery",
+      "lightbox gallery",
+      "project showcase",
+      "gallery & events section"
+    ],
+    "blog": [
+      "blog",
+      "news & press room",
+      "health resources blog"
+    ],
+    "waitlist": [
+      "waitlist",
+      "early access",
+      "lead capture",
+      "lead capture forms"
+    ],
+    "portal": [
+      "portal",
+      "patient portal",
+      "student enrollment portal",
+      "tenant portal",
+      "client portal",
+      "employee intranet",
+      "investor relations portal"
+    ],
+    "ordering": [
+      "ordering",
+      "online ordering system",
+      "shopping cart & checkout",
+      "order tracking system"
+    ],
+    "scheduling": [
+      "scheduling",
+      "appointment scheduling",
+      "online consultation booking"
+    ],
+    "seo": [
+      "seo",
+      "seo optimized"
+    ]
+  },
+  "faqItems": [
+    {
+      "question": "Can I customize the templates after purchase?",
+      "answer": "Absolutely. Every template comes with full source code access and detailed documentation. Our team can also handle customizations for you — just reach out to discuss your requirements."
+    },
+    {
+      "question": "How long does it take to launch my template?",
+      "answer": "Delivery times range from 4 to 21 days depending on the complexity of the template. During your onboarding call, we'll establish a clear timeline and keep you updated throughout the process."
+    },
+    {
+      "question": "Do you provide support after launch?",
+      "answer": "Yes. Every template includes 30 days of post-launch support for bug fixes and minor adjustments. Extended maintenance and support plans are available for businesses that need ongoing assistance."
+    },
+    {
+      "question": "Is hosting included with the template?",
+      "answer": "Templates are delivered as ready-to-deploy projects. We recommend and can set up hosting on Vercel, AWS, or your preferred provider. Hosting setup and configuration can be included as an add-on service."
+    },
+    {
+      "question": "What payment options are available?",
+      "answer": "We accept all major credit cards, bank transfers, and PayPal. For enterprise templates ($2,500+), we offer flexible payment plans with 50% upfront and 50% upon delivery."
+    },
+    {
+      "question": "Can I switch templates after purchasing?",
+      "answer": "Yes. If you change your mind within 14 days of purchase, we can switch you to a different template of equal or lesser value. Any price difference for upgrades will be quoted transparently."
+    },
+    {
+      "question": "Do templates work on mobile devices?",
+      "answer": "Every SmartByte template is built mobile-first and fully responsive across all screen sizes, from 320px mobile displays to 4K desktop screens. We test extensively before delivery."
+    },
+    {
+      "question": "Can I get a refund if I'm not satisfied?",
+      "answer": "We stand behind our work. If the delivered template doesn't match the specified requirements, we'll make it right. Custom-tailored templates are non-refundable, but we guarantee they meet agreed specifications."
+    }
+  ]
+}

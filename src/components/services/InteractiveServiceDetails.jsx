@@ -140,8 +140,6 @@ function ServiceNav({ services, activeId, onSelect, layout }) {
 }
 
 function ServiceDetailCard({ service, compact }) {
-  const prefersReduced = useReducedMotion()
-
   const animProps = compact ? {} : {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -211,11 +209,9 @@ function ServiceDetailCard({ service, compact }) {
                   {service.features.map((feat, i) => (
                     <motion.span
                       key={feat}
-                      {...(!prefersReduced ? {
-                        initial: { opacity: 0, scale: 0.9 },
-                        animate: { opacity: 1, scale: 1 },
-                        transition: { delay: i * 0.03 },
-                      } : {})}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: i * 0.03 }}
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/[0.04] border border-white/[0.06] text-muted-foreground"
                     >
                       <CheckCircle className="w-3 h-3 text-accent" />

@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState, useEffect, useCallback } from "react"
-import { motion, useReducedMotion } from "motion/react"
+import { motion } from "motion/react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { TemplateCard } from "./TemplateCard"
 
@@ -56,7 +56,6 @@ export function TemplateCarousel({ templates }) {
   const rowRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
   const [offsets, setOffsets] = useState([])
-  const prefersReduced = useReducedMotion()
 
   const goTo = useCallback(
     (index) => {
@@ -114,9 +113,7 @@ export function TemplateCarousel({ templates }) {
   /* Row transform — the active card always lands in the first card's slot.
      Purely transform-based, so the user can never scroll this section. */
   const rowX = offsets.length ? offsets[0] - offsets[activeIndex] : 0
-  const navTransition = prefersReduced
-    ? { duration: 0 }
-    : { duration: 0.55, ease: navEase }
+  const navTransition = { duration: 0.55, ease: navEase }
 
   const hasPrev = activeIndex > 0
   const hasNext = activeIndex < templates.length - 1

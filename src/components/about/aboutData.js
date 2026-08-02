@@ -1,38 +1,5 @@
 import { Lightbulb, ShieldCheck, HeartHandshake, TrendingUp } from "lucide-react"
 
-export const milestones = [
-  {
-    year: "2024",
-    title: "The Beginning",
-    description:
-      "SmartByte was founded with one goal: Help local businesses become digital. Starting with a small team and big ambitions.",
-  },
-  {
-    year: "2025",
-    title: "First Clients",
-    description:
-      "Delivered our first wave of business websites and inventory systems. Built lasting relationships with local enterprises.",
-  },
-  {
-    year: "2026",
-    title: "Growing Team",
-    description:
-      "Expanded to a full-service team spanning development, design, marketing, and client success across multiple industries.",
-  },
-  {
-    year: "2027",
-    title: "Multiple Solutions",
-    description:
-      "Launched SaaS products, AI automation, restaurant platforms, and e-commerce solutions for businesses worldwide.",
-  },
-  {
-    year: "Future",
-    title: "Future Vision",
-    description:
-      "Continuing to innovate and scale — building the next generation of digital tools that empower businesses everywhere.",
-  },
-]
-
 export const values = [
   {
     id: "innovation",

@@ -1,6 +1,7 @@
 "use client"
 
 import { useMemo, useState, useEffect, useRef } from "react"
+import Link from "next/link"
 import { motion, AnimatePresence } from "motion/react"
 import { cn } from "@/lib/utils"
 import { useWorksFilters } from "./WorksFilterContext"
@@ -160,8 +161,9 @@ function SortDropdown({ value, onChange }) {
   )
 }
 
-function ProjectCard({ project, index, onOpenModal }) {
+function ProjectCard({ project, index }) {
   const gradient = categoryGradients[project.category] || categoryGradients.default
+  const liveHref = project.liveLink || ""
 
   return (
     <motion.div
@@ -202,14 +204,13 @@ function ProjectCard({ project, index, onOpenModal }) {
         </div>
 
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40 flex items-center justify-center">
-          <button
-            type="button"
-            onClick={() => onOpenModal(project)}
+          <Link
+            href={`/works/${project.slug}`}
             className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all hover:scale-105"
             aria-label={`View case study for ${project.title}`}
           >
             <Eye className="w-4 h-4" />
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -247,26 +248,33 @@ function ProjectCard({ project, index, onOpenModal }) {
         </div>
 
         <div className="mt-4 grid grid-cols-2 gap-2">
-          <button
-            type="button"
-            onClick={() => onOpenModal(project)}
+          <Link
+            href={`/works/${project.slug}`}
             className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all bg-white/[0.04] border border-white/[0.08] text-muted-foreground hover:bg-white/[0.08] hover:text-foreground hover:border-white/[0.15] group-hover:scale-[1.02]"
           >
             <Eye className="w-3.5 h-3.5" /> Case Study
-          </button>
-          <button
-            type="button"
-            className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98]"
-          >
-            <ArrowUpRight className="w-3.5 h-3.5" /> Live Preview
-          </button>
+          </Link>
+          {liveHref ? (
+            <a
+              href={liveHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <ArrowUpRight className="w-3.5 h-3.5" /> Live Preview
+            </a>
+          ) : (
+            <span className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium bg-white/[0.02] border border-white/[0.06] text-muted-foreground/60 cursor-not-allowed">
+              Coming Soon
+            </span>
+          )}
         </div>
       </div>
     </motion.div>
   )
 }
 
-export function PortfolioGrid({ onOpenModal }) {
+export function PortfolioGrid() {
   const { filters, updateFilter, clearFilters, activeCount } = useWorksFilters()
   const [searchInput, setSearchInput] = useState(filters.search)
   const [searchFocused, setSearchFocused] = useState(false)
@@ -437,7 +445,7 @@ export function PortfolioGrid({ onOpenModal }) {
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {filtered.map((project, i) => (
-                <ProjectCard key={project.id} project={project} index={i} onOpenModal={onOpenModal} />
+                <ProjectCard key={project.id} project={project} index={i} />
               ))}
             </div>
           ) : (
