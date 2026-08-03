@@ -13,7 +13,7 @@ export default function NotFound() {
       <Navbar />
       <main className="bg-background min-h-screen flex items-center justify-center">
         <div className="text-center px-4 max-w-lg">
-          <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-accent/20 to-accent-secondary/10 border border-white/[0.06] flex items-center justify-center mx-auto mb-8">
+          <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-accent/20 to-accent-secondary/10 border border-border/30 flex items-center justify-center mx-auto mb-8">
             <span className="font-display text-5xl font-bold bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
               404
             </span>
@@ -33,7 +33,7 @@ export default function NotFound() {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 text-foreground hover:bg-white/5 hover:border-white/20 transition-all text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border/40 text-foreground hover:bg-white/455 hover:border-border/55 transition-all text-sm"
             >
               Contact Us
             </Link>

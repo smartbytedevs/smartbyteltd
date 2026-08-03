@@ -12,9 +12,9 @@ const sizes = {
 }
 
 const glowShadows = {
-  sm: "0 0 20px rgba(0, 194, 168, 0.2), 0 0 40px rgba(56, 189, 248, 0.1)",
-  md: "0 0 30px rgba(0, 194, 168, 0.3), 0 0 60px rgba(56, 189, 248, 0.15)",
-  lg: "0 0 40px rgba(0, 194, 168, 0.3), 0 0 80px rgba(56, 189, 248, 0.15)",
+  sm: "0 0 20px rgba(180, 83, 9, 0.2), 0 0 40px rgba(160, 58, 30, 0.1)",
+  md: "0 0 30px rgba(180, 83, 9, 0.3), 0 0 60px rgba(160, 58, 30, 0.15)",
+  lg: "0 0 40px rgba(180, 83, 9, 0.3), 0 0 80px rgba(160, 58, 30, 0.15)",
 }
 
 const PremiumCTA = forwardRef(function PremiumCTA(
@@ -49,7 +49,7 @@ const PremiumCTA = forwardRef(function PremiumCTA(
           className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100"
           style={{
             boxShadow:
-              "0 0 60px rgba(0, 194, 168, 0.15), 0 0 100px rgba(56, 189, 248, 0.08)",
+              "0 0 60px rgba(180, 83, 9, 0.15), 0 0 100px rgba(160, 58, 30, 0.08)",
             animation: "pulse-glow 3s ease-in-out infinite 1s",
           }}
         />

@@ -46,7 +46,7 @@ export function CTAButton({ onClick, mobile }) {
         className="absolute inset-0 rounded-full"
         style={{
           background:
-            "linear-gradient(135deg, rgba(0, 194, 168, 0.12), rgba(56, 189, 248, 0.08))",
+            "linear-gradient(135deg, rgba(180, 83, 9, 0.16), rgba(160, 58, 30, 0.12))",
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
         }}
@@ -61,11 +61,11 @@ export function CTAButton({ onClick, mobile }) {
           className="w-full h-full rounded-full"
           animate={
             prefersReduced
-              ? { background: "linear-gradient(135deg, rgba(0,194,168,0.3), rgba(56,189,248,0.3))" }
+              ? { background: "linear-gradient(135deg, rgba(180,83,9,0.35), rgba(160,58,30,0.35))" }
               : {
                   background: isHovered
-                    ? "linear-gradient(135deg, rgba(0,194,168,0.6), rgba(56,189,248,0.6), rgba(0,194,168,0.6))"
-                    : "linear-gradient(135deg, rgba(0,194,168,0.3), rgba(56,189,248,0.3), rgba(0,194,168,0.3))",
+                    ? "linear-gradient(135deg, rgba(180,83,9,0.6), rgba(160,58,30,0.6), rgba(180,83,9,0.6))"
+                    : "linear-gradient(135deg, rgba(180,83,9,0.35), rgba(160,58,30,0.35), rgba(180,83,9,0.35))",
                   backgroundSize: "200% 200%",
                   backgroundPosition: isHovered ? "100% 50%" : "0% 50%",
                 }
@@ -85,7 +85,7 @@ export function CTAButton({ onClick, mobile }) {
         animate={{
           opacity: isHovered ? 1 : 0,
           background: isHovered
-            ? `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(0, 194, 168, 0.15), transparent 60%)`
+            ? `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(180, 83, 9, 0.18), transparent 60%)`
             : "transparent",
         }}
         transition={{ duration: 0.3 }}
@@ -97,7 +97,7 @@ export function CTAButton({ onClick, mobile }) {
         animate={{
           opacity: isHovered ? 1 : 0,
           boxShadow: isHovered
-            ? "0 0 30px rgba(0, 194, 168, 0.2), 0 0 60px rgba(56, 189, 248, 0.1)"
+            ? "0 0 30px rgba(180, 83, 9, 0.25), 0 0 60px rgba(160, 58, 30, 0.15)"
             : "0 0 0px transparent",
         }}
         transition={{ duration: 0.4 }}
@@ -105,7 +105,7 @@ export function CTAButton({ onClick, mobile }) {
 
       {/* Button content */}
       <motion.span
-        className="relative z-10 text-white"
+        className="relative z-10 text-foreground"
         animate={
           prefersReduced
             ? {}

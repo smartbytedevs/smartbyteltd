@@ -20,7 +20,7 @@ export function Contact() {
           className="absolute inset-0 opacity-[0.015]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+              "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -29,7 +29,7 @@ export function Contact() {
           className="absolute -left-48 top-[5%] h-[700px] w-[700px] rounded-full opacity-20"
           style={{
             background:
-              "radial-gradient(circle, rgba(0, 194, 168, 0.06), transparent 70%)",
+              "radial-gradient(circle, rgba(180, 83, 9, 0.06), transparent 70%)",
             filter: "blur(120px)",
           }}
         />
@@ -37,7 +37,7 @@ export function Contact() {
           className="absolute -right-48 top-[25%] h-[500px] w-[500px] rounded-full opacity-15"
           style={{
             background:
-              "radial-gradient(circle, rgba(56, 189, 248, 0.04), transparent 70%)",
+              "radial-gradient(circle, rgba(160, 58, 30, 0.04), transparent 70%)",
             filter: "blur(120px)",
           }}
         />
@@ -45,7 +45,7 @@ export function Contact() {
           className="absolute bottom-[20%] left-[20%] h-[400px] w-[400px] rounded-full opacity-10"
           style={{
             background:
-              "radial-gradient(circle, rgba(0, 194, 168, 0.03), transparent 70%)",
+              "radial-gradient(circle, rgba(180, 83, 9, 0.03), transparent 70%)",
             filter: "blur(120px)",
           }}
         />
@@ -54,14 +54,14 @@ export function Contact() {
           className="absolute left-[40%] top-0 h-full w-px opacity-[0.02]"
           style={{
             background:
-              "linear-gradient(to bottom, transparent, rgba(0, 194, 168, 0.15), transparent)",
+              "linear-gradient(to bottom, transparent, rgba(180, 83, 9, 0.15), transparent)",
           }}
         />
         <div
           className="absolute right-[15%] top-0 h-full w-px opacity-[0.015]"
           style={{
             background:
-              "linear-gradient(to bottom, transparent, rgba(56, 189, 248, 0.1), transparent)",
+              "linear-gradient(to bottom, transparent, rgba(160, 58, 30, 0.1), transparent)",
           }}
         />
 

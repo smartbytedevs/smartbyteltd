@@ -26,7 +26,7 @@ function MobileToggle({ isOpen, onClick }) {
       {[0, 1, 2].map((i) => (
         <motion.span
           key={i}
-          className="block h-[2px] rounded-full bg-white"
+          className="block h-[2px] rounded-full bg-foreground"
           style={{
             width: i === 1 ? "60%" : "100%",
             transformOrigin: "center",
@@ -118,7 +118,7 @@ export function Navbar() {
             opacity: go,
             WebkitBackdropFilter: backDrop,
             backdropFilter: backDrop,
-            background: "rgba(11, 16, 32, 0.85)",
+            background: "rgba(255, 255, 255, 0.78)",
           }}
         />
 
@@ -152,9 +152,9 @@ export function Navbar() {
             className="absolute inset-0"
             animate={{
               background: [
-                "linear-gradient(135deg, transparent, rgba(0,194,168,0.03), transparent)",
-                "linear-gradient(135deg, transparent, rgba(56,189,248,0.03), transparent)",
-                "linear-gradient(135deg, transparent, rgba(0,194,168,0.03), transparent)",
+                "linear-gradient(135deg, transparent, rgba(180,83,9,0.06), transparent)",
+                "linear-gradient(135deg, transparent, rgba(160,58,30,0.06), transparent)",
+                "linear-gradient(135deg, transparent, rgba(180,83,9,0.06), transparent)",
               ],
             }}
             transition={{
@@ -180,7 +180,7 @@ export function Navbar() {
           <div
             className="w-full h-full"
             style={{
-              background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(0, 194, 168, 0.04), transparent 60%)`,
+              background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(180, 83, 9, 0.08), transparent 60%)`,
             }}
           />
         </motion.div>
@@ -192,7 +192,7 @@ export function Navbar() {
             borderRadius: "inherit",
             opacity: scrolled,
             boxShadow: useTransform(si, (v) =>
-              `inset 0 0 0 1px rgba(255,255,255,${v * 0.06}), 0 8px 40px rgba(0,0,0,${v * 0.4})`
+              `inset 0 0 0 1px rgba(43,33,24,${v * 0.1}), 0 8px 40px rgba(43,33,24,${v * 0.16})`
             ),
           }}
         />

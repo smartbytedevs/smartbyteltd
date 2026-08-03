@@ -21,7 +21,7 @@ function FloatingCard({ step, index }) {
       initial={{ opacity: 0, x: 60, y: 20 }}
       animate={{ opacity: 1, x: 0, y: 0 }}
       transition={{ duration: 0.6, delay: 0.5 + index * 0.15, ease: [0.16, 1, 0.3, 1] }}
-      className="relative flex items-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-4 backdrop-blur-xl"
+      className="relative flex items-center gap-3 rounded-2xl border border-border/35 bg-white/40 p-4 backdrop-blur-xl"
       style={{ width: 200 }}
     >
       <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center shrink-0`}>
@@ -55,15 +55,15 @@ export function ServicesHero({ onExplore }) {
     <section ref={ref} className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[5%] -left-48 w-[700px] h-[700px] rounded-full opacity-20" style={{
-          background: "radial-gradient(circle, rgba(0, 194, 168, 0.07), transparent 70%)",
+          background: "radial-gradient(circle, rgba(180, 83, 9, 0.07), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute bottom-[10%] -right-48 w-[500px] h-[500px] rounded-full opacity-15" style={{
-          background: "radial-gradient(circle, rgba(56, 189, 248, 0.05), transparent 70%)",
+          background: "radial-gradient(circle, rgba(160, 58, 30, 0.05), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute inset-0 opacity-[0.015]" style={{
@@ -107,7 +107,7 @@ export function ServicesHero({ onExplore }) {
                   <button
                     type="button"
                     onClick={() => openQuoteModal({ source: "services" })}
-                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-white/10 text-foreground hover:bg-white/5 hover:border-white/20 transition-all duration-300"
+                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-white/455 hover:border-border/55 transition-all duration-300"
                   >
                     Get Free Consultation
                   </button>

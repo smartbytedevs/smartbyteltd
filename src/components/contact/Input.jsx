@@ -33,17 +33,17 @@ export function Input({
           "bg-[rgba(12,18,34,0.55)] backdrop-blur-xl",
           "border",
           focused
-            ? "border-accent/60 shadow-[0_0_40px_rgba(0,194,168,0.18)]"
+            ? "border-accent/60 shadow-[0_0_40px_rgba(180,83,9,0.18)]"
             : showError
               ? "border-red-500/50"
-              : "border-white/[0.08] hover:border-white/[0.15]"
+              : "border-border/35 hover:border-border/55"
         )}
       >
         {withIcon && (
           <div
             className={cn(
               "pointer-events-none absolute left-[20px] top-1/2 -translate-y-1/2 transition-colors duration-200",
-              focused ? "text-accent" : "text-[rgba(255,255,255,0.28)]"
+              focused ? "text-accent" : "text-[rgba(43,33,24,0.35)]"
             )}
             aria-hidden="true"
           >
@@ -88,11 +88,11 @@ export function Input({
               ? [
                   "-top-[10px] translate-y-0 text-[12px] font-medium",
                   "bg-background px-2 rounded-full",
-                  focused ? "text-accent" : showError ? "text-red-400" : "text-accent",
+                  focused ? "text-accent" : showError ? "text-red-600" : "text-accent",
                 ]
               : [
                   "top-1/2 -translate-y-1/2 text-sm",
-                  showError ? "text-red-400/70" : "text-[rgba(255,255,255,0.28)]",
+                  showError ? "text-red-600/80" : "text-[rgba(43,33,24,0.35)]",
                 ]
           )}
         >
@@ -115,7 +115,7 @@ export function Input({
             animate={{ scale: 1, opacity: 1 }}
             className="absolute right-[16px] top-1/2 -translate-y-1/2"
           >
-            <AlertCircle className="h-[18px] w-[18px] text-red-400" />
+            <AlertCircle className="h-[18px] w-[18px] text-red-600" />
           </motion.div>
         )}
       </div>
@@ -126,7 +126,7 @@ export function Input({
           animate={{ opacity: 1, y: 0 }}
           id={`${id}-error`}
           role="alert"
-          className="ml-[22px] mt-1.5 text-xs text-red-400"
+          className="ml-[22px] mt-1.5 text-xs text-red-600"
         >
           {error}
         </motion.p>

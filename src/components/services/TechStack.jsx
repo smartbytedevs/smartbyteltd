@@ -32,7 +32,7 @@ export function TechStack() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
       </div>
@@ -51,7 +51,7 @@ export function TechStack() {
             const CategoryIcon = categoryIcons[category]
             return (
               <SafeSlideUp key={category} delay={catIdx * 0.08}>
-                <div className="relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 h-full hover:border-accent/20 transition-all duration-300">
+                <div className="relative rounded-2xl border border-border/30 bg-white/30 p-6 h-full hover:border-accent/20 transition-all duration-300">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent/10 to-accent-secondary/10 border border-accent/10 flex items-center justify-center">
                       {CategoryIcon && <CategoryIcon className="w-5 h-5 text-accent" />}
@@ -66,12 +66,12 @@ export function TechStack() {
                         whileHover={{ y: -2, scale: 1.02 }}
                         className={cn(
                           "rounded-xl p-3 text-center border transition-all duration-300 cursor-default",
-                          "bg-white/[0.02] border-white/[0.06]",
-                          "hover:bg-white/[0.06] hover:border-accent/30 hover:shadow-md"
+                          "bg-white/30 border-border/30",
+                          "hover:bg-white/450 hover:border-accent/30 hover:shadow-md"
                         )}
                       >
                         <div className={cn("w-8 h-8 rounded-lg bg-gradient-to-br mx-auto mb-2 flex items-center justify-center", tech.color)}>
-                          <span className="text-[8px] font-bold text-white/80">{tech.name.substring(0, 3)}</span>
+                          <span className="text-[8px] font-bold text-foreground/80">{tech.name.substring(0, 3)}</span>
                         </div>
                         <p className="text-[10px] font-medium text-muted-foreground leading-tight">{tech.name}</p>
                       </motion.div>

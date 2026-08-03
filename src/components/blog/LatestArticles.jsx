@@ -68,11 +68,11 @@ export function LatestArticles() {
     <section id="latest-articles" className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[20%] -left-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(0, 194, 168, 0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(180, 83, 9, 0.04), transparent 70%)",
           filter: "blur(120px)",
         }} />
       </div>
@@ -107,8 +107,8 @@ export function LatestArticles() {
                   transition={{ duration: 0.4, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
                   className={cn(
                     "group relative rounded-2xl overflow-hidden transition-all duration-500",
-                    "bg-white/[0.02] border border-white/[0.06]",
-                    "hover:bg-white/[0.04] hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5",
+                    "bg-white/30 border border-border/30",
+                    "hover:bg-white/4555 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5",
                     "hover:-translate-y-1"
                   )}
                 >
@@ -122,7 +122,7 @@ export function LatestArticles() {
                       {article.categories.slice(0, 1).map((catId) => {
                         const cat = categories.find((c) => c.id === catId)
                         return cat ? (
-                          <span key={catId} className="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-label uppercase bg-background/60 backdrop-blur-sm border border-white/[0.08] text-foreground">
+                          <span key={catId} className="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-label uppercase bg-background/60 backdrop-blur-sm border border-border/35 text-foreground">
                             {cat.label}
                           </span>
                         ) : null
@@ -149,7 +149,7 @@ export function LatestArticles() {
                       {article.excerpt}
                     </p>
 
-                    <div className="flex items-center justify-between pt-4 border-t border-white/[0.06]">
+                    <div className="flex items-center justify-between pt-4 border-t border-border/30">
                       {author && (
                         <span className="flex items-center gap-2 text-xs text-muted-foreground">
                           <span className="w-6 h-6 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-[8px] font-bold text-background">
@@ -173,7 +173,7 @@ export function LatestArticles() {
           </div>
         ) : (
           <div className="text-center py-24">
-            <div className="w-20 h-20 rounded-2xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center mx-auto mb-6">
+            <div className="w-20 h-20 rounded-2xl bg-white/40 border border-border/30 flex items-center justify-center mx-auto mb-6">
               <BookOpen className="w-8 h-8 text-muted-foreground" />
             </div>
             <h3 className="font-display text-xl font-bold text-foreground mb-2">No articles found</h3>

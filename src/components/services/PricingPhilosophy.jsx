@@ -15,11 +15,11 @@ export function PricingPhilosophy() {
     <section id="request-quote" className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[20%] -right-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(56, 189, 248, 0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(160, 58, 30, 0.04), transparent 70%)",
           filter: "blur(100px)",
         }} />
       </div>
@@ -35,7 +35,7 @@ export function PricingPhilosophy() {
 
         <SafeSlideUp delay={0.1}>
           <div className="max-w-3xl mx-auto mb-16">
-            <div className="relative rounded-2xl p-6 md:p-8 border border-white/[0.06] bg-white/[0.02]">
+            <div className="relative rounded-2xl p-6 md:p-8 border border-border/30 bg-white/30">
               <p className="text-sm text-muted leading-relaxed mb-6">
                 Pricing depends on several factors that we discuss during your free consultation:
               </p>
@@ -68,8 +68,8 @@ export function PricingPhilosophy() {
                 whileHover={{ y: -6 }}
                 className={cn(
                   "relative rounded-2xl overflow-hidden transition-all duration-500",
-                  "bg-white/[0.02] border border-white/[0.06]",
-                  "hover:bg-white/[0.04] hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5",
+                  "bg-white/30 border border-border/30",
+                  "hover:bg-white/4555 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5",
                   tier.id === "growth" && "md:scale-105 border-accent/20"
                 )}
               >
@@ -108,7 +108,7 @@ export function PricingPhilosophy() {
                       "group flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-medium transition-all duration-300",
                       tier.id === "growth"
                         ? "bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30"
-                        : "border border-white/[0.08] text-muted-foreground hover:text-foreground hover:bg-white/[0.04] hover:border-white/[0.15]"
+                        : "border border-border/35 text-muted-foreground hover:text-foreground hover:bg-white/4555 hover:border-border/55"
                     )}
                   >
                     Request Custom Quote

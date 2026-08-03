@@ -8,17 +8,17 @@ import { PreviewWindow } from "./PreviewWindow"
 import { CategoryBadge } from "./CategoryBadge"
 
 const techColors = {
-  "Next.js": "bg-white/10 text-white",
-  React: "bg-sky-500/20 text-sky-300",
-  Tailwind: "bg-cyan-500/20 text-cyan-300",
-  Stripe: "bg-purple-500/20 text-purple-300",
-  Node: "bg-green-500/20 text-green-300",
-  Postgres: "bg-blue-500/20 text-blue-300",
-  Django: "bg-emerald-500/20 text-emerald-300",
-  Vue: "bg-emerald-500/20 text-emerald-300",
-  TypeScript: "bg-blue-500/20 text-blue-300",
-  Prisma: "bg-indigo-500/20 text-indigo-300",
-  Motion: "bg-pink-500/20 text-pink-300",
+  "Next.js": "bg-white/50 text-foreground",
+  React: "bg-sky-500/20 text-sky-700",
+  Tailwind: "bg-cyan-500/20 text-cyan-700",
+  Stripe: "bg-purple-500/20 text-purple-700",
+  Node: "bg-green-500/20 text-green-700",
+  Postgres: "bg-blue-500/20 text-blue-700",
+  Django: "bg-emerald-500/20 text-emerald-700",
+  Vue: "bg-emerald-500/20 text-emerald-700",
+  TypeScript: "bg-blue-500/20 text-blue-700",
+  Prisma: "bg-indigo-500/20 text-indigo-700",
+  Motion: "bg-pink-500/20 text-pink-700",
 }
 
 export const TemplateCard = memo(function TemplateCard({ template, index, isActive }) {
@@ -78,14 +78,14 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
         >
           {/* ── Card Body ── */}
           <motion.div
-            className="relative w-full h-full rounded-2xl overflow-hidden bg-card border border-white/[0.06]"
+            className="relative w-full h-full rounded-2xl overflow-hidden bg-card border border-border/30"
             style={{ transformStyle: "preserve-3d" }}
             animate={{
               rotateX,
               rotateY,
               scale: isHovered ? 1.02 : 1,
               boxShadow: isHovered
-                ? "0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(0,194,168,0.06)"
+                ? "0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(180,83,9,0.06)"
                 : "0 4px 20px rgba(0,0,0,0.2)",
             }}
             transition={{
@@ -101,7 +101,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
               animate={{
                 opacity: isHovered ? 1 : 0,
                 background: isHovered
-                  ? `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(0, 194, 168, 0.08), transparent 60%)`
+                  ? `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(180, 83, 9, 0.08), transparent 60%)`
                   : "transparent",
               }}
               transition={{ duration: 0.3 }}
@@ -113,7 +113,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
               animate={{
                 opacity: isHovered ? 1 : 0,
                 background: isHovered
-                  ? "linear-gradient(135deg, rgba(0,194,168,0.2), rgba(56,189,248,0.2), rgba(0,194,168,0.2))"
+                  ? "linear-gradient(135deg, rgba(180,83,9,0.2), rgba(160,58,30,0.2), rgba(180,83,9,0.2))"
                   : "transparent",
               }}
               transition={{
@@ -220,7 +220,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
                   <span
                     key={tech}
                     className={`px-2 py-0.5 text-[9px] sm:text-[10px] font-semibold rounded-md ${
-                      techColors[tech] || "bg-white/5 text-white/70"
+                      techColors[tech] || "bg-white/45 text-foreground/70"
                     }`}
                   >
                     {tech}
@@ -229,7 +229,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
               </div>
 
               {/* Divider */}
-              <div className="border-t border-white/[0.06] -mx-5 sm:-mx-6 lg:-mx-7 mb-2" />
+              <div className="border-t border-border/30 -mx-5 sm:-mx-6 lg:-mx-7 mb-2" />
 
               {/* Bottom row */}
               <div className="flex items-center justify-between">
@@ -238,7 +238,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
                     className="text-base sm:text-lg font-bold text-foreground"
                     animate={{
                       textShadow: isHovered
-                        ? "0 0 20px rgba(0, 194, 168, 0.3)"
+                        ? "0 0 20px rgba(180, 83, 9, 0.3)"
                         : "0 0 0px transparent",
                     }}
                     transition={{ duration: 0.3 }}

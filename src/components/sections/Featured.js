@@ -79,7 +79,7 @@ function FeatureCard({ feature, index }) {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -5, scale: 1.01 }}
-      className="group relative overflow-hidden rounded-2xl border border-white/5 bg-card p-6 md:p-8 transition-all duration-500 hover:border-white/10 hover:shadow-2xl hover:shadow-blue-500/5"
+      className="group relative overflow-hidden rounded-2xl border border-border/25 bg-card p-6 md:p-8 transition-all duration-500 hover:border-border/40 hover:shadow-2xl hover:shadow-blue-500/5"
       style={{
         gridColumn:
           feature.size === "lg"
@@ -104,12 +104,12 @@ function FeatureCard({ feature, index }) {
         >
           <Icon className="w-6 h-6 text-white" />
         </div>
-        <h3 className="text-xl font-semibold mb-3 text-white">
+        <h3 className="text-xl font-semibold mb-3 text-foreground">
           {feature.title}
         </h3>
-        <p className="text-zinc-400 leading-relaxed">{feature.description}</p>
+        <p className="text-muted leading-relaxed">{feature.description}</p>
 
-        <div className="mt-6 flex items-center gap-2 text-sm text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="mt-6 flex items-center gap-2 text-sm text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <span>Learn more</span>
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </div>

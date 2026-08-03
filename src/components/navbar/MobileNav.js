@@ -74,7 +74,7 @@ export function MobileNav({ isOpen, onClose, links, activeHref }) {
                       onClick={onClose}
                       className={`block font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight transition-colors duration-300 outline-none focus-visible:ring-2 focus-visible:ring-accent/50 rounded-md px-2 ${
                         isActive
-                          ? "text-white"
+                          ? "text-accent"
                           : "text-muted-foreground hover:text-foreground"
                       }`}
                       aria-current={isActive ? "page" : undefined}

@@ -48,8 +48,8 @@ function TimelineStep({ step, index, isLast }) {
         transition={{ duration: 0.5, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
         className={cn(
           "flex-1 pb-12",
-          "relative rounded-2xl p-6 border border-white/[0.06] bg-white/[0.02]",
-          "hover:bg-white/[0.04] hover:border-accent/20 transition-all duration-300",
+          "relative rounded-2xl p-6 border border-border/30 bg-white/30",
+          "hover:bg-white/4555 hover:border-accent/20 transition-all duration-300",
           "group-hover:shadow-lg group-hover:shadow-accent/5"
         )}
       >
@@ -65,11 +65,11 @@ export function DevProcessTimeline() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[40%] left-[20%] w-[400px] h-[400px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(0, 194, 168, 0.03), transparent 70%)",
+          background: "radial-gradient(circle, rgba(180, 83, 9, 0.03), transparent 70%)",
           filter: "blur(100px)",
         }} />
       </div>

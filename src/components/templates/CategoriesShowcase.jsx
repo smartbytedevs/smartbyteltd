@@ -64,8 +64,8 @@ export function CategoriesShowcase() {
                 onClick={() => updateFilter("industry", isActive ? "all" : cat.id)}
                 className={cn(
                   "group relative flex flex-col items-center justify-center gap-3 p-6 md:p-8 rounded-2xl transition-all duration-300",
-                  "bg-white/[0.02] border border-white/[0.06]",
-                  "hover:bg-white/[0.04] hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5",
+                  "bg-white/30 border border-border/30",
+                  "hover:bg-white/4555 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5",
                   isActive && "bg-accent/[0.04] border-accent/30 shadow-lg shadow-accent/10"
                 )}
                 aria-label={`Show ${cat.label} templates`}
@@ -73,7 +73,7 @@ export function CategoriesShowcase() {
               >
                 <div className={cn(
                   "w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300",
-                  "bg-white/[0.04] border border-white/[0.08]",
+                  "bg-white/45 border border-border/35",
                   "group-hover:bg-accent/10 group-hover:border-accent/20 group-hover:shadow-lg group-hover:shadow-accent/10",
                   isActive && "bg-accent/10 border-accent/20 shadow-lg shadow-accent/10"
                 )}>

@@ -8,7 +8,7 @@ export function PricingNote() {
     <SafeReveal viewportMargin="-60px" className="relative mt-24 lg:mt-28 overflow-hidden rounded-3xl">
       {/* Glass background */}
       <div
-        className="absolute inset-0 rounded-3xl border border-white/[0.06]"
+        className="absolute inset-0 rounded-3xl border border-border/30"
         style={{
           background: "rgba(11, 18, 40, 0.35)",
           backdropFilter: "blur(24px)",
@@ -21,7 +21,7 @@ export function PricingNote() {
         className="absolute -top-32 -right-32 w-[400px] h-[400px] rounded-full opacity-[0.12]"
         style={{
           background:
-            "radial-gradient(circle, rgba(0, 194, 168, 0.06), transparent 70%)",
+            "radial-gradient(circle, rgba(180, 83, 9, 0.06), transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -29,7 +29,7 @@ export function PricingNote() {
         className="absolute -bottom-32 -left-32 w-[300px] h-[300px] rounded-full opacity-[0.08]"
         style={{
           background:
-            "radial-gradient(circle, rgba(56, 189, 248, 0.04), transparent 70%)",
+            "radial-gradient(circle, rgba(160, 58, 30, 0.04), transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -39,7 +39,7 @@ export function PricingNote() {
         className="absolute inset-0 opacity-[0.015] rounded-3xl"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            "linear-gradient(rgba(43,33,24,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.06) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -50,9 +50,9 @@ export function PricingNote() {
           {/* Icon */}
           <div className="shrink-0">
             <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center border border-white/[0.06]"
+              className="w-14 h-14 rounded-2xl flex items-center justify-center border border-border/30"
               style={{
-                background: "rgba(0, 194, 168, 0.06)",
+                background: "rgba(180, 83, 9, 0.06)",
                 backdropFilter: "blur(12px)",
                 WebkitBackdropFilter: "blur(12px)",
               }}
@@ -80,9 +80,9 @@ export function PricingNote() {
           {/* Hint */}
           <SafeSlideUp delay={0.3} viewportMargin="-60px" className="shrink-0">
             <div
-              className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/[0.06]"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-border/30"
               style={{
-                background: "rgba(255, 255, 255, 0.03)",
+                background: "rgba(255, 247, 236, 0.6)",
                 backdropFilter: "blur(12px)",
                 WebkitBackdropFilter: "blur(12px)",
               }}

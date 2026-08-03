@@ -20,7 +20,7 @@ export function TrustBar() {
   return (
     <SafeReveal className="mt-20 lg:mt-24">
       <div
-        className="relative overflow-hidden rounded-3xl border border-white/[0.04]"
+        className="relative overflow-hidden rounded-3xl border border-border/25"
         style={{
           background: "rgba(11, 18, 40, 0.2)",
           backdropFilter: "blur(12px)",
@@ -28,9 +28,9 @@ export function TrustBar() {
         }}
       >
         <div className="pointer-events-none absolute inset-0 grid grid-cols-2 lg:grid-cols-4">
-          <div className="border-r border-white/[0.04]" />
-          <div className="hidden border-r border-white/[0.04] lg:block" />
-          <div className="hidden border-r border-white/[0.04] lg:block" />
+          <div className="border-r border-border/25" />
+          <div className="hidden border-r border-border/25 lg:block" />
+          <div className="hidden border-r border-border/25 lg:block" />
         </div>
 
         <div className="relative z-10 grid grid-cols-2 gap-8 px-8 py-10 lg:grid-cols-4 sm:px-12 sm:py-14">

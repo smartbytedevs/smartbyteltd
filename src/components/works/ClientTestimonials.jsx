@@ -14,11 +14,11 @@ export function ClientTestimonials() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[20%] -right-48 w-[600px] h-[600px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(0, 194, 168, 0.03), transparent 70%)",
+          background: "radial-gradient(circle, rgba(180, 83, 9, 0.03), transparent 70%)",
           filter: "blur(120px)",
         }} />
       </div>
@@ -38,7 +38,7 @@ export function ClientTestimonials() {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="relative rounded-2xl p-6 h-full border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-accent/30 transition-all duration-300 group"
+                className="relative rounded-2xl p-6 h-full border border-border/30 bg-white/30 hover:bg-white/4555 hover:border-accent/30 transition-all duration-300 group"
               >
                 <Quote className="w-6 h-6 text-accent/20 mb-4" />
 
@@ -49,8 +49,8 @@ export function ClientTestimonials() {
                       className={cn(
                         "w-3.5 h-3.5",
                         s < Math.round(project.rating)
-                          ? "fill-amber-400 text-amber-400"
-                          : "text-white/[0.08]"
+                          ? "fill-amber-500 text-amber-600"
+                          : "text-foreground/15"
                       )}
                     />
                   ))}
@@ -60,7 +60,7 @@ export function ClientTestimonials() {
                   &ldquo;{project.testimonial.quote}&rdquo;
                 </blockquote>
 
-                <div className="mt-auto pt-4 border-t border-white/[0.06]">
+                <div className="mt-auto pt-4 border-t border-border/30">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-background font-bold text-sm shrink-0">
                       {project.testimonial.author.charAt(0)}

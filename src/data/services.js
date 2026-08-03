@@ -209,14 +209,14 @@ export const processSteps = [
 
 export const techStack = {
   frontend: [
-    { name: "Next.js", icon: "NextJs", color: "from-white/20 to-white/10" },
+    { name: "Next.js", icon: "NextJs", color: "from-white/60 to-white/40" },
     { name: "React", icon: "React", color: "from-sky-400/20 to-sky-600/10" },
     { name: "Tailwind CSS", icon: "Tailwind", color: "from-cyan-400/20 to-cyan-600/10" },
     { name: "Framer Motion", icon: "Motion", color: "from-pink-400/20 to-pink-600/10" },
   ],
   backend: [
     { name: "Node.js", icon: "NodeJs", color: "from-green-400/20 to-green-600/10" },
-    { name: "Express", icon: "Express", color: "from-white/20 to-white/10" },
+    { name: "Express", icon: "Express", color: "from-white/60 to-white/40" },
     { name: "Prisma", icon: "Prisma", color: "from-emerald-400/20 to-emerald-600/10" },
     { name: "NextAuth", icon: "Shield", color: "from-blue-400/20 to-blue-600/10" },
   ],
@@ -227,7 +227,7 @@ export const techStack = {
     { name: "Redis", icon: "Redis", color: "from-red-400/20 to-red-600/10" },
   ],
   cloud: [
-    { name: "Vercel", icon: "Vercel", color: "from-white/20 to-white/10" },
+    { name: "Vercel", icon: "Vercel", color: "from-white/60 to-white/40" },
     { name: "AWS", icon: "Aws", color: "from-orange-400/20 to-orange-600/10" },
     { name: "Cloudinary", icon: "Cloud", color: "from-blue-400/20 to-blue-600/10" },
     { name: "Resend", icon: "Mail", color: "from-black/20 to-black/10" },
@@ -236,7 +236,7 @@ export const techStack = {
     { name: "Stripe", icon: "Stripe", color: "from-purple-400/20 to-purple-600/10" },
     { name: "SSLCommerz", icon: "Shield", color: "from-green-400/20 to-green-600/10" },
     { name: "PayPal", icon: "DollarSign", color: "from-blue-400/20 to-blue-600/10" },
-    { name: "Square", icon: "CreditCard", color: "from-white/20 to-white/10" },
+    { name: "Square", icon: "CreditCard", color: "from-white/60 to-white/40" },
   ],
   auth: [
     { name: "NextAuth", icon: "Shield", color: "from-blue-400/20 to-blue-600/10" },

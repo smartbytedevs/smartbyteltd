@@ -33,17 +33,17 @@ export function Select({
           "bg-[rgba(12,18,34,0.55)] backdrop-blur-xl",
           "border",
           focused
-            ? "border-accent/60 shadow-[0_0_40px_rgba(0,194,168,0.18)]"
+            ? "border-accent/60 shadow-[0_0_40px_rgba(180,83,9,0.18)]"
             : showError
               ? "border-red-500/50"
-              : "border-white/[0.08] hover:border-white/[0.15]"
+              : "border-border/35 hover:border-border/55"
         )}
       >
         {withIcon && (
           <div
             className={cn(
               "pointer-events-none absolute left-[20px] top-1/2 -translate-y-1/2 transition-colors duration-200",
-              focused ? "text-accent" : "text-[rgba(255,255,255,0.28)]"
+              focused ? "text-accent" : "text-[rgba(43,33,24,0.35)]"
             )}
             aria-hidden="true"
           >
@@ -71,7 +71,7 @@ export function Select({
               ? "text-foreground"
               : float
                 ? "text-transparent"
-                : "text-[rgba(255,255,255,0.28)]",
+                : "text-[rgba(43,33,24,0.35)]",
             "caret-accent"
           )}
           aria-invalid={showError ? "true" : "false"}
@@ -92,7 +92,7 @@ export function Select({
             "pointer-events-none absolute right-[20px] top-1/2 -translate-y-1/2 h-[18px] w-[18px] transition-all duration-200",
             float
               ? "rotate-180 text-accent"
-              : "text-[rgba(255,255,255,0.28)]"
+              : "text-[rgba(43,33,24,0.35)]"
           )}
           aria-hidden="true"
         />
@@ -109,7 +109,7 @@ export function Select({
                   focused
                     ? "text-accent"
                     : showError
-                      ? "text-red-400"
+                      ? "text-red-600"
                       : "text-accent",
                 ]
               : [
@@ -136,7 +136,7 @@ export function Select({
             animate={{ scale: 1, opacity: 1 }}
             className="absolute right-[44px] top-1/2 -translate-y-1/2"
           >
-            <AlertCircle className="h-[18px] w-[18px] text-red-400" />
+            <AlertCircle className="h-[18px] w-[18px] text-red-600" />
           </motion.div>
         )}
       </div>
@@ -147,7 +147,7 @@ export function Select({
           animate={{ opacity: 1, y: 0 }}
           id={`${id}-error`}
           role="alert"
-          className="ml-[22px] mt-1.5 text-xs text-red-400"
+          className="ml-[22px] mt-1.5 text-xs text-red-600"
         >
           {error}
         </motion.p>

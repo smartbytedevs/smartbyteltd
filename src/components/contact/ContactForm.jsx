@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { useState, useCallback, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
@@ -191,13 +191,13 @@ export function ContactForm({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className="relative overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] p-6 backdrop-blur-xl sm:p-8 lg:p-10"
+      className="relative overflow-hidden rounded-3xl border border-border/30 bg-white/30 p-6 backdrop-blur-xl sm:p-8 lg:p-10"
     >
       <div
         className="pointer-events-none absolute -left-20 -top-20 h-60 w-60 rounded-full opacity-10"
         style={{
           background:
-            "radial-gradient(circle, rgba(56, 189, 248, 0.15), transparent 70%)",
+            "radial-gradient(circle, rgba(160, 58, 30, 0.15), transparent 70%)",
           filter: "blur(60px)",
         }}
         aria-hidden="true"
@@ -253,8 +253,8 @@ export function ContactForm({
                 className="flex items-start gap-3 rounded-2xl border border-red-500/20 bg-red-500/5 p-4"
                 role="alert"
               >
-                <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-400" />
-                <p className="text-sm text-red-300">{serverError}</p>
+                <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-600" />
+                <p className="text-sm text-red-700">{serverError}</p>
               </motion.div>
             )}
 
@@ -379,7 +379,7 @@ export function ContactForm({
                   className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-700 group-hover:opacity-100"
                   style={{
                     boxShadow:
-                      "0 0 40px rgba(0, 194, 168, 0.3), 0 0 80px rgba(56, 189, 248, 0.15)",
+                      "0 0 40px rgba(180, 83, 9, 0.3), 0 0 80px rgba(160, 58, 30, 0.15)",
                   }}
                 />
                 {ripples.map((r) => (

@@ -49,8 +49,8 @@ export function BlogToolbar() {
         <div className={cn(
           "relative flex-1 rounded-2xl border transition-all duration-500",
           searchFocused
-            ? "bg-white/[0.04] border-accent/40 shadow-lg shadow-accent/10"
-            : "bg-white/[0.02] border-white/[0.06] hover:bg-white/[0.03] hover:border-white/[0.12]"
+            ? "bg-white/45 border-accent/40 shadow-lg shadow-accent/10"
+            : "bg-white/30 border-border/30 hover:bg-white/45 hover:border-border/50"
         )}>
           <div className="relative flex items-center">
             <Search className={cn(
@@ -67,7 +67,7 @@ export function BlogToolbar() {
               className="w-full bg-transparent pl-10 pr-20 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none rounded-2xl"
               aria-label="Search articles"
             />
-            <span className="absolute right-4 text-[10px] font-medium text-muted-foreground/40 bg-white/[0.04] px-1.5 py-0.5 rounded border border-white/[0.06] pointer-events-none">
+            <span className="absolute right-4 text-[10px] font-medium text-muted-foreground/40 bg-white/45 px-1.5 py-0.5 rounded border border-border/30 pointer-events-none">
               {isMac ? "\u2318K" : "Ctrl+K"}
             </span>
           </div>
@@ -79,7 +79,7 @@ export function BlogToolbar() {
             onClick={() => setDrawerOpen(true)}
             className={cn(
               "flex items-center gap-2 px-5 py-3.5 rounded-2xl text-sm font-medium transition-all duration-300",
-              "bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-white/[0.12]",
+              "bg-white/30 border border-border/30 hover:bg-white/4555 hover:border-border/50",
               "focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
             )}
             aria-label="Open categories"
@@ -113,7 +113,7 @@ function SortDropdown({ value, onChange }) {
         onClick={() => setOpen(!open)}
         className={cn(
           "flex items-center gap-2 px-4 py-3.5 rounded-2xl text-sm font-medium transition-all duration-300",
-          "bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-white/[0.12]",
+          "bg-white/30 border border-border/30 hover:bg-white/4555 hover:border-border/50",
           "focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50",
           open && "border-accent/30"
         )}
@@ -132,7 +132,7 @@ function SortDropdown({ value, onChange }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.96 }}
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute right-0 top-full mt-2 z-30 w-40 rounded-2xl border border-white/[0.06] bg-card shadow-2xl overflow-hidden"
+            className="absolute right-0 top-full mt-2 z-30 w-40 rounded-2xl border border-border/30 bg-card shadow-2xl overflow-hidden"
             role="listbox"
           >
             {sortOptions.map((opt) => (
@@ -143,7 +143,7 @@ function SortDropdown({ value, onChange }) {
                 aria-selected={value === opt.value}
                 onClick={() => { onChange(opt.value); setOpen(false) }}
                 className={cn(
-                  "w-full text-left px-4 py-3 text-sm transition-colors hover:bg-white/[0.04] flex items-center justify-between",
+                  "w-full text-left px-4 py-3 text-sm transition-colors hover:bg-white/4555 flex items-center justify-between",
                   value === opt.value ? "text-accent" : "text-muted-foreground"
                 )}
               >

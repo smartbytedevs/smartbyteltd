@@ -25,10 +25,10 @@ export function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-8"
           >
-            <Sparkles className="w-4 h-4 text-blue-400" />
-            <span className="text-sm text-blue-400">Let&apos;s work together</span>
+            <Sparkles className="w-4 h-4 text-accent" />
+            <span className="text-sm text-accent">Let&apos;s work together</span>
           </motion.div>
 
           <motion.h2
@@ -48,7 +48,7 @@ export function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="text-lg text-zinc-400 max-w-2xl mx-auto mb-10"
+            className="text-lg text-muted max-w-2xl mx-auto mb-10"
           >
             Let&apos;s discuss your project and create something extraordinary together.
             No commitment required.

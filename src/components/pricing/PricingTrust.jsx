@@ -20,7 +20,7 @@ export function PricingTrust() {
   return (
     <SafeReveal className="mt-20 lg:mt-24">
       <div
-        className="relative rounded-3xl border border-white/[0.04] overflow-hidden"
+        className="relative rounded-3xl border border-border/25 overflow-hidden"
         style={{
           background: "rgba(11, 18, 40, 0.2)",
           backdropFilter: "blur(12px)",
@@ -28,9 +28,9 @@ export function PricingTrust() {
         }}
       >
         <div className="absolute inset-0 grid grid-cols-2 lg:grid-cols-4 pointer-events-none">
-          <div className="border-r border-white/[0.04] lg:border-r-0" />
-          <div className="hidden lg:block border-r border-white/[0.04]" />
-          <div className="hidden lg:block border-r border-white/[0.04]" />
+          <div className="border-r border-border/25 lg:border-r-0" />
+          <div className="hidden lg:block border-r border-border/25" />
+          <div className="hidden lg:block border-r border-border/25" />
         </div>
 
         <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-8 px-8 py-10 sm:px-12 sm:py-14">

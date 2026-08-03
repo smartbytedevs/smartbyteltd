@@ -22,9 +22,9 @@ export function AboutValues({ values }) {
               className={`group relative overflow-hidden rounded-2xl p-6 ${offset}`}
             >
               <div
-                className="absolute inset-0 rounded-2xl border border-white/[0.06] transition-colors duration-500"
+                className="absolute inset-0 rounded-2xl border border-border/30 transition-colors duration-500"
                 style={{
-                  background: "rgba(15, 23, 42, 0.35)",
+                  background: "rgba(255, 247, 236, 0.7)",
                   backdropFilter: "blur(20px)",
                   WebkitBackdropFilter: "blur(20px)",
                 }}
@@ -32,21 +32,21 @@ export function AboutValues({ values }) {
 
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{
-                  background: "radial-gradient(circle at 50% 0%, rgba(0, 194, 168, 0.04), transparent 70%)",
+                  background: "radial-gradient(circle at 50% 0%, rgba(180, 83, 9, 0.04), transparent 70%)",
                 }}
               />
 
               <div
                 className="absolute -inset-2 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{
-                  background: "linear-gradient(135deg, rgba(0, 194, 168, 0.06), rgba(56, 189, 248, 0.03))",
+                  background: "linear-gradient(135deg, rgba(180, 83, 9, 0.06), rgba(160, 58, 30, 0.03))",
                   filter: "blur(16px)",
                   zIndex: -1,
                 }}
               />
 
               <div className="relative z-10">
-                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-accent/15 to-accent-secondary/15 border border-white/5 flex items-center justify-center mb-4">
+                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-accent/15 to-accent-secondary/15 border border-border/25 flex items-center justify-center mb-4">
                   <Icon className="w-4.5 h-4.5 text-accent" />
                 </div>
 

@@ -39,12 +39,12 @@ const features = [
 ]
 
 const iconColors = [
-  "from-emerald-500/20 to-emerald-500/5 text-emerald-400",
-  "from-sky-500/20 to-sky-500/5 text-sky-400",
-  "from-violet-500/20 to-violet-500/5 text-violet-400",
-  "from-amber-500/20 to-amber-500/5 text-amber-400",
-  "from-pink-500/20 to-pink-500/5 text-pink-400",
-  "from-cyan-500/20 to-cyan-500/5 text-cyan-400",
+  "from-emerald-500/20 to-emerald-500/5 text-emerald-600",
+  "from-sky-500/20 to-sky-500/5 text-sky-600",
+  "from-violet-500/20 to-violet-500/5 text-violet-600",
+  "from-amber-500/20 to-amber-500/5 text-amber-600",
+  "from-pink-500/20 to-pink-500/5 text-pink-600",
+  "from-cyan-500/20 to-cyan-500/5 text-cyan-600",
 ]
 
 export function WhyTemplates() {
@@ -52,11 +52,11 @@ export function WhyTemplates() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute bottom-[10%] -right-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(56, 189, 248, 0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(160, 58, 30, 0.04), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute inset-0 opacity-[0.015]" style={{
@@ -92,7 +92,7 @@ export function WhyTemplates() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative rounded-2xl p-6 md:p-8 bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-300"
+                className="group relative rounded-2xl p-6 md:p-8 bg-white/30 border border-border/30 hover:bg-white/4555 hover:border-border/40 transition-all duration-300"
               >
                 <div className={cn(
                   "w-12 h-12 rounded-xl bg-gradient-to-br flex items-center justify-center mb-5",

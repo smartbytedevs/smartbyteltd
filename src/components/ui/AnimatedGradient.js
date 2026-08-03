@@ -28,7 +28,7 @@ export function AnimatedGradient({ className, size = "md" }) {
       })}
       style={{
         background:
-          "radial-gradient(circle, rgba(0,194,168,0.4) 0%, rgba(56,189,248,0.3) 40%, rgba(0,194,168,0.2) 70%, transparent 100%)",
+          "radial-gradient(circle, rgba(180,83,9,0.4) 0%, rgba(160,58,30,0.3) 40%, rgba(180,83,9,0.2) 70%, transparent 100%)",
       }}
     />
   )

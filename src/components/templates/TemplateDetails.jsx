@@ -28,10 +28,10 @@ const categoryGradients = {
 }
 
 const badgeStyles = {
-  "BEST SELLER": "bg-amber-500/20 text-amber-300 border-amber-500/30",
+  "BEST SELLER": "bg-amber-500/20 text-amber-700 border-amber-500/30",
   POPULAR: "bg-accent/20 text-accent border-accent/30",
-  NEW: "bg-sky-500/20 text-sky-300 border-sky-500/30",
-  TRENDING: "bg-purple-500/20 text-purple-300 border-purple-500/30",
+  NEW: "bg-sky-500/20 text-sky-700 border-sky-500/30",
+  TRENDING: "bg-purple-500/20 text-purple-700 border-purple-500/30",
 }
 
 function TemplatePreview({ template, gradient }) {
@@ -41,9 +41,9 @@ function TemplatePreview({ template, gradient }) {
   const images = [...(thumbnail ? [thumbnail] : []), ...previewImages, ...gallery]
 
   return (
-    <div className="relative rounded-[28px] overflow-hidden border border-white/[0.06] bg-[#0D1117]">
+    <div className="relative rounded-[28px] overflow-hidden border border-border/30 bg-[#0D1117]">
       <div className="absolute -inset-[2px] rounded-[28px] opacity-40 pointer-events-none" style={{
-        background: "linear-gradient(135deg, rgba(0, 194, 168, 0.12), rgba(56, 189, 248, 0.06))",
+        background: "linear-gradient(135deg, rgba(180, 83, 9, 0.12), rgba(160, 58, 30, 0.06))",
         filter: "blur(8px)",
       }} />
       <div className="relative" style={{ aspectRatio: "16/10" }}>
@@ -52,8 +52,8 @@ function TemplatePreview({ template, gradient }) {
         ) : (
           <div className={cn("absolute inset-0 bg-gradient-to-br", gradient)}>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center">
-                <Layout className="w-10 h-10 text-white/40" />
+              <div className="w-20 h-20 rounded-3xl bg-white/45 border border-border/40 flex items-center justify-center">
+                <Layout className="w-10 h-10 text-foreground/40" />
               </div>
             </div>
             <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[rgba(11,16,32,0.6)] to-transparent" />
@@ -70,17 +70,17 @@ function RelatedTemplateCard({ template, index }) {
     <SafeReveal delay={index * 0.08}>
       <Link
         href={`/templates/${template.slug}`}
-        className="group block rounded-2xl overflow-hidden bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-accent/30 hover:-translate-y-1 transition-all duration-500 h-full"
+        className="group block rounded-2xl overflow-hidden bg-white/30 border border-border/30 hover:bg-white/4555 hover:border-accent/30 hover:-translate-y-1 transition-all duration-500 h-full"
       >
         <div className={cn("relative h-40 overflow-hidden bg-gradient-to-br", gradient)}>
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
-              <Layout className="w-7 h-7 text-white/40" />
+            <div className="w-14 h-14 rounded-2xl bg-white/45 border border-border/40 flex items-center justify-center">
+              <Layout className="w-7 h-7 text-foreground/40" />
             </div>
           </div>
           {template.badge && (
             <div className="absolute top-3 left-3">
-              <span className={cn("inline-block px-2 py-0.5 rounded-full text-[9px] font-bold tracking-label uppercase border", badgeStyles[template.badge] || "bg-white/10 text-white border-white/20")}>
+              <span className={cn("inline-block px-2 py-0.5 rounded-full text-[9px] font-bold tracking-label uppercase border", badgeStyles[template.badge] || "bg-white/50 text-foreground border-border/50")}>
                 {template.badge}
               </span>
             </div>
@@ -101,7 +101,7 @@ function RelatedTemplateCard({ template, index }) {
 function FaqItem({ item, index }) {
   return (
     <SafeReveal delay={index * 0.05}>
-      <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5 sm:p-6 hover:border-accent/20 transition-colors">
+      <div className="rounded-2xl border border-border/30 bg-white/30 p-5 sm:p-6 hover:border-accent/20 transition-colors">
         <h3 className="font-display text-sm sm:text-base font-bold text-foreground mb-2">{item.question}</h3>
         <p className="text-sm text-muted leading-relaxed">{item.answer}</p>
       </div>
@@ -156,7 +156,7 @@ export function TemplateDetails({ template }) {
         <section className="relative py-10 md:py-16 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
             <div className="absolute top-[20%] -left-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-              background: "radial-gradient(circle, rgba(0, 194, 168, 0.04), transparent 70%)",
+              background: "radial-gradient(circle, rgba(180, 83, 9, 0.04), transparent 70%)",
               filter: "blur(120px)",
             }} />
           </div>
@@ -166,11 +166,11 @@ export function TemplateDetails({ template }) {
                 <SafeSlideUp>
                   <div className="flex flex-wrap items-center gap-2 mb-5">
                     {template.badge && (
-                      <span className={cn("inline-block px-2.5 py-1 rounded-full text-[10px] font-bold tracking-label uppercase border", badgeStyles[template.badge] || "bg-white/10 text-white border-white/20")}>
+                      <span className={cn("inline-block px-2.5 py-1 rounded-full text-[10px] font-bold tracking-label uppercase border", badgeStyles[template.badge] || "bg-white/50 text-foreground border-border/50")}>
                         {template.badge}
                       </span>
                     )}
-                    <span className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-white/[0.06] text-muted-foreground border border-white/[0.06]">{categoryLabel}</span>
+                    <span className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-white/450 text-muted-foreground border border-border/30">{categoryLabel}</span>
                     <span className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-accent/10 text-accent border border-accent/20">{industryLabel}</span>
                   </div>
                 </SafeSlideUp>
@@ -189,7 +189,7 @@ export function TemplateDetails({ template }) {
 
                 <SafeSlideUp delay={0.2}>
                   <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                    <span className="flex items-center gap-1.5"><Star className="w-4 h-4 text-amber-400 fill-amber-400" />{template.rating || "4.9"}</span>
+                    <span className="flex items-center gap-1.5"><Star className="w-4 h-4 text-amber-600 fill-amber-500" />{template.rating || "4.9"}</span>
                     <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-accent" />{template.deliveryTime}</span>
                     <span className="flex items-center gap-1.5"><Zap className="w-4 h-4 text-accent" />{(template.purchaseCount || 0).toLocaleString()} purchases</span>
                   </div>
@@ -214,7 +214,7 @@ export function TemplateDetails({ template }) {
                       ) : (
                         <span className={cn(
                           "inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border cursor-not-allowed",
-                          showComingSoon ? "bg-white/[0.02] border-white/[0.08] text-muted-foreground" : "bg-white/[0.02] border-white/[0.08] text-muted-foreground/60"
+                          showComingSoon ? "bg-white/30 border-border/35 text-muted-foreground" : "bg-white/30 border-border/35 text-muted-foreground/60"
                         )}>
                           <Eye className="w-4 h-4" /> {showComingSoon || showUnavailable ? "Coming Soon" : "Unavailable"}
                         </span>
@@ -222,7 +222,7 @@ export function TemplateDetails({ template }) {
                       <button
                         type="button"
                         onClick={buyThisTemplate}
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-white/[0.08] text-foreground hover:bg-white/5 hover:border-white/20 transition-all"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-border/35 text-foreground hover:bg-white/455 hover:border-border/55 transition-all"
                       >
                         <ShoppingCart className="w-4 h-4 text-accent" /> Get This Template
                       </button>
@@ -253,17 +253,17 @@ export function TemplateDetails({ template }) {
                     {template.fullDescription}
                   </p>
                   <div className="grid sm:grid-cols-3 gap-4">
-                    <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5">
+                    <div className="rounded-2xl border border-border/30 bg-white/30 p-5">
                       <Clock className="w-5 h-5 text-accent mb-2" />
                       <p className="text-xs text-muted-foreground">Delivery</p>
                       <p className="text-sm font-semibold text-foreground">{template.deliveryTime}</p>
                     </div>
-                    <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5">
+                    <div className="rounded-2xl border border-border/30 bg-white/30 p-5">
                       <Zap className="w-5 h-5 text-accent mb-2" />
                       <p className="text-xs text-muted-foreground">Tech Stack</p>
                       <p className="text-sm font-semibold text-foreground">{template.technologies.length} technologies</p>
                     </div>
-                    <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5">
+                    <div className="rounded-2xl border border-border/30 bg-white/30 p-5">
                       <Check className="w-5 h-5 text-accent mb-2" />
                       <p className="text-xs text-muted-foreground">Features</p>
                       <p className="text-sm font-semibold text-foreground">{template.features.length} included</p>
@@ -289,7 +289,7 @@ export function TemplateDetails({ template }) {
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
                 {template.features.map((feat, i) => (
                   <SafeReveal key={feat} delay={i * 0.05}>
-                    <div className="flex items-start gap-3 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5 h-full hover:border-accent/25 transition-colors">
+                    <div className="flex items-start gap-3 rounded-2xl border border-border/30 bg-white/30 p-5 h-full hover:border-accent/25 transition-colors">
                       <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent/20 to-accent-secondary/20 border border-accent/20 flex items-center justify-center shrink-0">
                         <Check className="w-4 h-4 text-accent" />
                       </span>
@@ -315,7 +315,7 @@ export function TemplateDetails({ template }) {
                 />
               <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
                 {template.technologies.map((tech) => (
-                  <span key={tech} className="px-4 py-2 text-xs font-medium rounded-full bg-white/[0.04] border border-white/[0.06] text-muted-foreground">
+                  <span key={tech} className="px-4 py-2 text-xs font-medium rounded-full bg-white/45 border border-border/30 text-muted-foreground">
                     {tech}
                   </span>
                 ))}
@@ -363,7 +363,7 @@ export function TemplateDetails({ template }) {
         <section className="relative py-20 md:py-28 overflow-hidden bg-background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
             <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+              backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
               backgroundSize: "60px 60px",
             }} />
           </div>
@@ -386,7 +386,7 @@ export function TemplateDetails({ template }) {
                 </button>
                 <Link
                   href="/templates"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/[0.08] text-foreground font-semibold text-sm hover:bg-white/5 hover:border-white/20 transition-all"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border/35 text-foreground font-semibold text-sm hover:bg-white/455 hover:border-border/55 transition-all"
                 >
                   Browse All Templates
                 </Link>

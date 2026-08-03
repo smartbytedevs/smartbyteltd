@@ -60,7 +60,7 @@ export function HeroAnimation() {
         className="absolute inset-0 opacity-20"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
+            "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
         initial={{ opacity: 0 }}
@@ -86,8 +86,8 @@ export function HeroAnimation() {
         ))}
         <defs>
           <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#00C2A8" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#38BDF8" stopOpacity="0" />
+            <stop offset="0%" stopColor="#B45309" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#A03A1E" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -97,7 +97,7 @@ export function HeroAnimation() {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(0, 194, 168, 0.08), transparent 70%)",
+            "radial-gradient(circle, rgba(180, 83, 9, 0.08), transparent 70%)",
           filter: "blur(40px)",
         }}
         initial={{ opacity: 0, scale: 0.8 }}
@@ -115,7 +115,7 @@ export function HeroAnimation() {
         return (
           <motion.div
             key={i}
-            className={`absolute ${el.width} rounded-xl border border-white/5 bg-card/40 backdrop-blur-sm flex items-center justify-center ${
+            className={`absolute ${el.width} rounded-xl border border-border/25 bg-card/40 backdrop-blur-sm flex items-center justify-center ${
               el.label ? "" : ""
             }`}
             style={{ left: el.x, top: el.y }}
@@ -151,7 +151,7 @@ export function HeroAnimation() {
 
       {/* Central glass panel */}
       <motion.div
-        className="absolute top-1/3 right-[10%] w-[180px] h-[100px] rounded-2xl border border-white/5 bg-card/30 backdrop-blur-sm p-4"
+        className="absolute top-1/3 right-[10%] w-[180px] h-[100px] rounded-2xl border border-border/25 bg-card/30 backdrop-blur-sm p-4"
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
@@ -162,14 +162,14 @@ export function HeroAnimation() {
           <div className="w-2 h-2 rounded-full bg-accent/30" />
         </div>
         <div className="space-y-1.5">
-          <div className="h-1.5 w-3/4 rounded-full bg-white/5" />
-          <div className="h-1.5 w-1/2 rounded-full bg-white/5" />
+          <div className="h-1.5 w-3/4 rounded-full bg-white/45" />
+          <div className="h-1.5 w-1/2 rounded-full bg-white/45" />
         </div>
       </motion.div>
 
       {/* Right side pill */}
       <motion.div
-        className="absolute bottom-[20%] right-[5%] px-4 py-2 rounded-full border border-white/5 bg-card/20 backdrop-blur-sm"
+        className="absolute bottom-[20%] right-[5%] px-4 py-2 rounded-full border border-border/25 bg-card/20 backdrop-blur-sm"
         initial={{ opacity: 0, x: 20 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.6, delay: 2.2, ease: [0.16, 1, 0.3, 1] }}

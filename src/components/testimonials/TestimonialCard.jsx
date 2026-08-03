@@ -33,7 +33,7 @@ export function TestimonialCard({ testimonial, index, onHover, isDimmed }) {
         style={{ opacity: isDimmed ? 0.5 : 1 }}
       >
         <div
-          className="relative h-full rounded-2xl p-6 sm:p-7 border border-white/[0.06] transition-all duration-500"
+          className="relative h-full rounded-2xl p-6 sm:p-7 border border-border/30 transition-all duration-500"
           style={{
             background: "rgba(19, 26, 50, 0.4)",
             backdropFilter: "blur(20px)",
@@ -44,7 +44,7 @@ export function TestimonialCard({ testimonial, index, onHover, isDimmed }) {
           <div
             className="w-9 h-9 rounded-lg flex items-center justify-center mb-4"
             style={{
-              background: "rgba(0, 194, 168, 0.06)",
+              background: "rgba(180, 83, 9, 0.06)",
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
             }}
@@ -71,11 +71,11 @@ export function TestimonialCard({ testimonial, index, onHover, isDimmed }) {
           </p>
 
           {/* Author */}
-          <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
+          <div className="flex items-center gap-3 pt-4 border-t border-border/30">
             <div
               className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-foreground shrink-0"
               style={{
-                background: "linear-gradient(135deg, rgba(0, 194, 168, 0.2), rgba(56, 189, 248, 0.1))",
+                background: "linear-gradient(135deg, rgba(180, 83, 9, 0.2), rgba(160, 58, 30, 0.1))",
               }}
             >
               {testimonial.initials}
@@ -88,7 +88,7 @@ export function TestimonialCard({ testimonial, index, onHover, isDimmed }) {
                 {testimonial.role}
                 {testimonial.company && (
                   <>
-                    <span className="mx-1.5 text-white/[0.06]">·</span>
+                    <span className="mx-1.5 text-foreground/15">·</span>
                     {testimonial.company}
                   </>
                 )}

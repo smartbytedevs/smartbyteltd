@@ -76,13 +76,13 @@ export function QuoteModal({ isOpen, data, onClose }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 24 }}
             transition={{ type: "spring", stiffness: 300, damping: 28, mass: 0.9 }}
-            className="relative my-auto w-full max-w-2xl overflow-hidden rounded-3xl border border-white/[0.08] bg-[rgba(11,16,32,0.95)] shadow-2xl backdrop-blur-2xl"
+            className="relative my-auto w-full max-w-2xl overflow-hidden rounded-3xl border border-border/35 bg-[rgba(255,247,236,0.97)] shadow-2xl backdrop-blur-2xl"
           >
             <div
               className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full opacity-10"
               style={{
                 background:
-                  "radial-gradient(circle, rgba(0, 194, 168, 0.15), transparent 70%)",
+                  "radial-gradient(circle, rgba(180, 83, 9, 0.15), transparent 70%)",
                 filter: "blur(60px)",
               }}
               aria-hidden="true"
@@ -91,7 +91,7 @@ export function QuoteModal({ isOpen, data, onClose }) {
               className="pointer-events-none absolute -bottom-24 -left-24 h-56 w-56 rounded-full opacity-10"
               style={{
                 background:
-                  "radial-gradient(circle, rgba(56, 189, 248, 0.12), transparent 70%)",
+                  "radial-gradient(circle, rgba(160, 58, 30, 0.12), transparent 70%)",
                 filter: "blur(60px)",
               }}
               aria-hidden="true"
@@ -117,7 +117,7 @@ export function QuoteModal({ isOpen, data, onClose }) {
                   type="button"
                   onClick={onClose}
                   aria-label="Close order form"
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.03] text-muted backdrop-blur-xl transition-all duration-300 hover:rotate-90 hover:border-accent/30 hover:text-accent"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border/35 bg-white/40 text-muted backdrop-blur-xl transition-all duration-300 hover:rotate-90 hover:border-accent/30 hover:text-accent"
                 >
                   <X className="h-4 w-4" />
                 </button>

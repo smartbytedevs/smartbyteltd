@@ -29,8 +29,8 @@ function NavArrow({ direction, onClick, disabled }) {
       }}
       whileHover={{
         y: -3,
-        borderColor: "rgba(0, 194, 168, 0.3)",
-        boxShadow: "0 0 24px rgba(0, 194, 168, 0.1)",
+        borderColor: "rgba(180, 83, 9, 0.3)",
+        boxShadow: "0 0 24px rgba(180, 83, 9, 0.1)",
         background: "rgba(11, 16, 32, 0.55)",
       }}
       whileTap={{ scale: 0.93, y: 0 }}
@@ -40,7 +40,7 @@ function NavArrow({ direction, onClick, disabled }) {
       {/* Glow behind arrow on hover */}
       <motion.div
         className="absolute inset-0 rounded-2xl"
-        whileHover={{ boxShadow: "inset 0 0 20px rgba(0, 194, 168, 0.06)" }}
+        whileHover={{ boxShadow: "inset 0 0 20px rgba(180, 83, 9, 0.06)" }}
         transition={{ duration: 0.3 }}
       />
 
@@ -171,7 +171,7 @@ export function TemplateCarousel({ templates }) {
             className={`h-1 rounded-full transition-all duration-500 outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
               i === activeIndex
                 ? "w-8 bg-gradient-to-r from-accent to-accent-secondary"
-                : "w-2 bg-white/10 hover:bg-white/20"
+                : "w-2 bg-white/450 hover:bg-white/65"
             }`}
             onClick={() => goTo(i)}
             aria-label={`Go to template ${i + 1}`}

@@ -13,8 +13,8 @@ const Button = forwardRef(function Button(
 
   const variants = {
     primary: "bg-accent text-background hover:bg-accent-hover shadow-lg shadow-accent/10",
-    secondary: "border border-white/10 text-foreground hover:bg-white/5 hover:border-white/20",
-    ghost: "text-muted-foreground hover:text-foreground hover:bg-white/5",
+    secondary: "border border-border/40 text-foreground hover:bg-white/455 hover:border-border/55",
+    ghost: "text-muted-foreground hover:text-foreground hover:bg-white/455",
   }
 
   const sizes = {

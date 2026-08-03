@@ -35,20 +35,20 @@ export function NewsletterSection() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[30%] left-[30%] w-[400px] h-[400px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(0, 194, 168, 0.05), transparent 70%)",
+          background: "radial-gradient(circle, rgba(180, 83, 9, 0.05), transparent 70%)",
           filter: "blur(100px)",
         }} />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[800px] px-4 sm:px-6 lg:px-8">
         <SafeSlideUp>
-          <div className="relative rounded-3xl border border-white/[0.06] bg-gradient-to-br from-accent/[0.02] to-accent-secondary/[0.02] p-8 sm:p-12 md:p-16 text-center overflow-hidden">
+          <div className="relative rounded-3xl border border-border/30 bg-gradient-to-br from-accent/[0.02] to-accent-secondary/[0.02] p-8 sm:p-12 md:p-16 text-center overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 rounded-full opacity-10 pointer-events-none" style={{
-              background: "radial-gradient(circle, rgba(0, 194, 168, 0.15), transparent 70%)",
+              background: "radial-gradient(circle, rgba(180, 83, 9, 0.15), transparent 70%)",
               filter: "blur(60px)",
             }} />
 
@@ -88,10 +88,10 @@ export function NewsletterSection() {
                         onChange={(e) => { setEmail(e.target.value); setStatus("idle"); setError("") }}
                         placeholder="Enter your email"
                         className={cn(
-                          "w-full px-5 py-3.5 rounded-xl text-sm bg-white/[0.04] border outline-none transition-all duration-300",
+                          "w-full px-5 py-3.5 rounded-xl text-sm bg-white/45 border outline-none transition-all duration-300",
                           "placeholder:text-muted-foreground/60 text-foreground",
                           "focus:ring-2 focus:ring-accent/50",
-                          error ? "border-red-500/50" : "border-white/[0.08] hover:border-white/[0.15]"
+                          error ? "border-red-500/50" : "border-border/35 hover:border-border/55"
                         )}
                         aria-label="Email address"
                         aria-invalid={!!error}
@@ -102,7 +102,7 @@ export function NewsletterSection() {
                           id="email-error"
                           initial={{ opacity: 0, y: -4 }}
                           animate={{ opacity: 1, y: 0 }}
-                          className="absolute -bottom-6 left-0 text-xs text-red-400"
+                          className="absolute -bottom-6 left-0 text-xs text-red-600"
                         >
                           {error}
                         </motion.p>

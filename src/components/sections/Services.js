@@ -74,12 +74,12 @@ export function Services() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
-                className="group relative overflow-hidden rounded-2xl border border-white/5 bg-card p-8 transition-all duration-500 hover:border-white/10"
+                className="group relative overflow-hidden rounded-2xl border border-border/25 bg-card p-8 transition-all duration-500 hover:border-border/40"
               >
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{
-                    background: "radial-gradient(600px at 50% 0%, rgba(59,130,246,0.08), transparent)",
+                    background: "radial-gradient(600px at 50% 0%, rgba(180,83,9,0.08), transparent)",
                   }}
                 />
 
@@ -90,15 +90,15 @@ export function Services() {
                     <Icon className="w-6 h-6 text-white" />
                   </div>
 
-                  <h3 className="text-xl font-semibold mb-3 text-white group-hover:gradient-text transition-all">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:gradient-text transition-all">
                     {service.title}
                   </h3>
 
-                  <p className="text-zinc-400 leading-relaxed mb-6">
+                  <p className="text-muted leading-relaxed mb-6">
                     {service.description}
                   </p>
 
-                  <div className="flex items-center gap-2 text-sm text-zinc-500 group-hover:text-blue-400 transition-colors">
+                  <div className="flex items-center gap-2 text-sm text-muted group-hover:text-accent transition-colors">
                     <span>Learn more</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -106,7 +106,7 @@ export function Services() {
 
                 <div className="absolute -bottom-24 -right-24 w-48 h-48 rounded-full opacity-0 group-hover:opacity-10 transition-all duration-700 blur-3xl"
                   style={{
-                    background: "radial-gradient(circle, rgba(59,130,246,0.4), transparent)",
+                    background: "radial-gradient(circle, rgba(180,83,9,0.4), transparent)",
                   }}
                 />
               </motion.div>

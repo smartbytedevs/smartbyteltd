@@ -34,11 +34,11 @@ export function Logo({ scale }) {
         className="flex items-center h-full tracking-[-0.03em] leading-none"
         style={{ scale }}
       >
-        <span className="font-display text-[20px] sm:text-[24px] lg:text-[28px] font-bold text-white">
+        <span className="font-display text-[20px] sm:text-[24px] lg:text-[28px] font-bold text-foreground">
           Smart
         </span>
         <span
-          className="font-display text-[20px] sm:text-[24px] lg:text-[28px] font-bold bg-gradient-to-r from-[#14F1D9] to-[#38BDF8] bg-clip-text text-transparent"
+          className="font-display text-[20px] sm:text-[24px] lg:text-[28px] font-bold bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent"
           style={{
             transition: "filter 0.25s ease",
           }}

@@ -52,7 +52,7 @@ function ConnectionLines({ cardRefs, containerRef }) {
           key={p.key}
           d={p.d}
           fill="none"
-          stroke="rgba(0, 194, 168, 0.04)"
+          stroke="rgba(180, 83, 9, 0.04)"
           strokeWidth="1"
           strokeDasharray="4 4"
         />

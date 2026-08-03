@@ -36,13 +36,13 @@ export function FeaturedArticle() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        <SafeReveal className="relative rounded-3xl overflow-hidden border border-white/[0.06] bg-white/[0.02] group hover:border-accent/30 transition-all duration-500">
+        <SafeReveal className="relative rounded-3xl overflow-hidden border border-border/30 bg-white/30 group hover:border-accent/30 transition-all duration-500">
           <div className="grid lg:grid-cols-2 gap-0">
             <div className={cn("relative h-64 sm:h-80 lg:h-full min-h-[300px] overflow-hidden bg-gradient-to-br", gradient)}>
               <div className="absolute inset-0 flex items-center justify-center">
@@ -64,7 +64,7 @@ export function FeaturedArticle() {
                 {article.categories.slice(0, 2).map((catId) => {
                   const cat = categories.find((c) => c.id === catId)
                   return cat ? (
-                    <span key={catId} className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-white/[0.06] text-muted-foreground border border-white/[0.06]">
+                    <span key={catId} className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-white/450 text-muted-foreground border border-border/30">
                       {cat.label}
                     </span>
                   ) : null
@@ -108,7 +108,7 @@ export function FeaturedArticle() {
                 </a>
                 <button
                   type="button"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium border border-white/[0.08] text-muted-foreground hover:text-foreground hover:bg-white/[0.04] hover:border-white/[0.15] transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium border border-border/35 text-muted-foreground hover:text-foreground hover:bg-white/4555 hover:border-border/55 transition-all"
                 >
                   <Share2 className="w-4 h-4" />
                   Share

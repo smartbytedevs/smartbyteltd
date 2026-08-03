@@ -30,8 +30,8 @@ function ServiceCard({ service, index, onSelect }) {
       whileHover={{ y: -6 }}
       className={cn(
         "group relative rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer",
-        "bg-white/[0.02] border border-white/[0.06]",
-        "hover:bg-white/[0.04] hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5"
+        "bg-white/30 border border-border/30",
+        "hover:bg-white/4555 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5"
       )}
       onClick={() => onSelect(service.id)}
     >
@@ -45,16 +45,16 @@ function ServiceCard({ service, index, onSelect }) {
 
         <div className="flex flex-wrap gap-1.5 mb-4">
           {service.features.slice(0, 3).map((feat) => (
-            <span key={feat} className="px-2 py-0.5 text-[10px] font-medium rounded-md bg-white/[0.04] text-muted-foreground border border-white/[0.06]">
+            <span key={feat} className="px-2 py-0.5 text-[10px] font-medium rounded-md bg-white/45 text-muted-foreground border border-border/30">
               {feat}
             </span>
           ))}
           {service.features.length > 3 && (
-            <span className="px-2 py-0.5 text-[10px] font-medium rounded-md bg-white/[0.04] text-muted">+{service.features.length - 3}</span>
+            <span className="px-2 py-0.5 text-[10px] font-medium rounded-md bg-white/45 text-muted">+{service.features.length - 3}</span>
           )}
         </div>
 
-        <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
+        <div className="pt-4 border-t border-border/30 flex items-center justify-between">
           <div className="flex items-center gap-3 text-xs text-muted-foreground">
             <span className="flex items-center gap-1">
               <Clock className="w-3.5 h-3.5" />
@@ -66,7 +66,7 @@ function ServiceCard({ service, index, onSelect }) {
             </span>
           </div>
           <motion.div
-            className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center group-hover:bg-accent group-hover:border-accent group-hover:text-background transition-all duration-300"
+            className="w-8 h-8 rounded-lg bg-white/45 border border-border/35 flex items-center justify-center group-hover:bg-accent group-hover:border-accent group-hover:text-background transition-all duration-300"
           >
             <ArrowRight className="w-4 h-4" />
           </motion.div>
@@ -81,11 +81,11 @@ export function WhatWeBuild({ onSelectService }) {
     <section id="services-grid" className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[20%] -left-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(0, 194, 168, 0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(180, 83, 9, 0.04), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute inset-0 opacity-[0.015]" style={{

@@ -10,15 +10,15 @@ function ProjectThumb({ project, priority }) {
 
   if (!src) {
     return (
-      <div className="relative w-full h-full flex flex-col items-center justify-center gap-4 rounded-[18px] bg-[#0D1117] border border-white/[0.06] overflow-hidden">
+      <div className="relative w-full h-full flex flex-col items-center justify-center gap-4 rounded-[18px] bg-[#0D1117] border border-border/30 overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(135deg, rgba(0, 194, 168, 0.05), rgba(56, 189, 248, 0.03))",
+              "linear-gradient(135deg, rgba(180, 83, 9, 0.05), rgba(160, 58, 30, 0.03))",
           }}
         />
-        <div className="relative z-10 w-16 h-16 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center font-display text-2xl font-bold text-accent/70">
+        <div className="relative z-10 w-16 h-16 rounded-2xl bg-white/45 border border-border/35 flex items-center justify-center font-display text-2xl font-bold text-accent/70">
           {project.title?.charAt(0)}
         </div>
         <span className="relative z-10 text-xs font-semibold text-muted/70 uppercase tracking-label">
@@ -71,7 +71,7 @@ export function ProjectImage({ project, index }) {
           isHovered ? "opacity-100" : ""
         }`}
         style={{
-          background: "linear-gradient(135deg, rgba(0, 194, 168, 0.12), rgba(56, 189, 248, 0.06))",
+          background: "linear-gradient(135deg, rgba(180, 83, 9, 0.12), rgba(160, 58, 30, 0.06))",
           filter: "blur(8px)",
         }}
       />
@@ -90,7 +90,7 @@ export function ProjectImage({ project, index }) {
         {/* Border */}
         <div
           className={`absolute inset-0 rounded-[28px] border transition-colors duration-500 z-10 pointer-events-none ${
-            isHovered ? "border-accent/25" : "border-white/[0.06]"
+            isHovered ? "border-accent/25" : "border-border/30"
           }`}
         />
 
@@ -116,7 +116,7 @@ export function ProjectImage({ project, index }) {
             animate={{ opacity: isHovered ? 0.4 : 0 }}
             transition={{ duration: 0.4 }}
             style={{
-              background: "linear-gradient(135deg, rgba(0, 194, 168, 0.08), rgba(11, 16, 32, 0.5))",
+              background: "linear-gradient(135deg, rgba(180, 83, 9, 0.08), rgba(11, 16, 32, 0.5))",
             }}
           />
         </motion.div>
@@ -127,7 +127,7 @@ export function ProjectImage({ project, index }) {
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/60 backdrop-blur-md border border-white/[0.08]">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/60 backdrop-blur-md border border-border/35">
             <span className="text-xs font-semibold text-foreground">View Project</span>
             <ArrowRight className="w-3.5 h-3.5 text-accent" />
           </div>

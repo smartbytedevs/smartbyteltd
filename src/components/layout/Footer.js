@@ -134,7 +134,7 @@ function ContactRow({ icon: Icon, label, value, index }) {
       delay={index * 0.08}
       className="group flex items-start gap-3"
     >
-      <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/[0.03] text-muted transition-all duration-300 group-hover:bg-accent/10 group-hover:text-accent">
+      <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/40 text-muted transition-all duration-300 group-hover:bg-accent/10 group-hover:text-accent">
         <Icon className="h-4 w-4" />
       </div>
       <div>
@@ -155,7 +155,7 @@ function SocialIcon({ name, url, path, index }) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={name}
-        className="flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.03] text-muted backdrop-blur-xl transition-all duration-500 hover:scale-110 hover:border-accent/30 hover:text-accent hover:shadow-[0_0_20px_rgba(0,194,168,0.1)]"
+        className="flex h-10 w-10 items-center justify-center rounded-full border border-border/35 bg-white/40 text-muted backdrop-blur-xl transition-all duration-500 hover:scale-110 hover:border-accent/30 hover:text-accent hover:shadow-[0_0_20px_rgba(180,83,9,0.1)]"
       >
         {path}
       </a>
@@ -176,7 +176,7 @@ export function Footer() {
           className="absolute inset-0 opacity-[0.015]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+              "linear-gradient(rgba(43,33,24,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.06) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -185,7 +185,7 @@ export function Footer() {
           className="absolute -right-48 -top-48 h-[700px] w-[700px] rounded-full opacity-10"
           style={{
             background:
-              "radial-gradient(circle, rgba(0, 194, 168, 0.08), transparent 70%)",
+              "radial-gradient(circle, rgba(180, 83, 9, 0.08), transparent 70%)",
             filter: "blur(120px)",
           }}
         />
@@ -193,13 +193,13 @@ export function Footer() {
           className="absolute -bottom-48 -left-48 h-[600px] w-[600px] rounded-full opacity-10"
           style={{
             background:
-              "radial-gradient(circle, rgba(56, 189, 248, 0.06), transparent 70%)",
+              "radial-gradient(circle, rgba(160, 58, 30, 0.06), transparent 70%)",
             filter: "blur(120px)",
           }}
         />
 
         <div
-          className="absolute left-1/2 top-0 -translate-x-1/2 select-none text-[200px] font-display font-bold leading-none text-white/5 sm:text-[300px] lg:text-[500px]"
+          className="absolute left-1/2 top-0 -translate-x-1/2 select-none text-[200px] font-display font-bold leading-none text-foreground/5 sm:text-[300px] lg:text-[500px]"
           style={{ filter: "blur(4px)" }}
           aria-hidden="true"
         >
@@ -299,13 +299,13 @@ export function Footer() {
         {/* ═══ Newsletter ═══ */}
         <SafeSlideUp
           delay={0.3}
-          className="relative mx-auto mt-20 max-w-2xl overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] p-8 backdrop-blur-xl sm:p-10 lg:mt-24"
+          className="relative mx-auto mt-20 max-w-2xl overflow-hidden rounded-3xl border border-border/30 bg-white/30 p-8 backdrop-blur-xl sm:p-10 lg:mt-24"
         >
           <div
             className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full opacity-10"
             style={{
               background:
-                "radial-gradient(circle, rgba(0, 194, 168, 0.15), transparent 70%)",
+                "radial-gradient(circle, rgba(180, 83, 9, 0.15), transparent 70%)",
               filter: "blur(40px)",
             }}
           />
@@ -329,7 +329,7 @@ export function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email Address"
-                className="w-full rounded-full border border-white/[0.1] bg-white/[0.03] px-6 py-3 text-sm text-foreground outline-none backdrop-blur-xl transition-all duration-300 placeholder:text-muted-foreground/50 focus:border-accent/50 focus:shadow-[0_0_30px_rgba(0,194,168,0.1)]"
+                className="w-full rounded-full border border-border/40 bg-white/40 px-6 py-3 text-sm text-foreground outline-none backdrop-blur-xl transition-all duration-300 placeholder:text-muted-foreground/50 focus:border-accent/50 focus:shadow-[0_0_30px_rgba(180,83,9,0.1)]"
                 required
               />
             </div>
@@ -342,7 +342,7 @@ export function Footer() {
                 className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-700 group-hover:opacity-100"
                 style={{
                   boxShadow:
-                    "0 0 30px rgba(0, 194, 168, 0.3), 0 0 60px rgba(56, 189, 248, 0.15)",
+                    "0 0 30px rgba(180, 83, 9, 0.3), 0 0 60px rgba(160, 58, 30, 0.15)",
                 }}
               />
               <span className="relative z-10 flex items-center gap-2">

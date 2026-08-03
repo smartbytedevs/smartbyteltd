@@ -12,7 +12,7 @@ function PanelContent({ node }) {
     <SafeSlideUp className="flex flex-col" key={node.id}>
       {/* Icon + Label */}
       <div className="flex items-center gap-3 mb-5">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent/15 to-accent-secondary/15 border border-white/5 flex items-center justify-center shrink-0">
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent/15 to-accent-secondary/15 border border-border/25 flex items-center justify-center shrink-0">
           <Icon className="w-5 h-5 text-accent" />
         </div>
         <span className="text-xs font-semibold tracking-label uppercase text-accent">
@@ -47,7 +47,7 @@ function PanelContent({ node }) {
               >
                 <path
                   d="M11.5 3.5L5.25 10.5L2.5 7.5"
-                  stroke="#00C2A8"
+                  stroke="#B45309"
                   strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -61,7 +61,7 @@ function PanelContent({ node }) {
 
       {/* Meta grid */}
       <div className="grid grid-cols-2 gap-4 mb-6">
-        <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.04]">
+        <div className="p-3.5 rounded-xl bg-white/30 border border-border/25">
           <span className="text-[10px] font-semibold tracking-label uppercase text-muted/60 block mb-1">
             Timeline
           </span>
@@ -69,7 +69,7 @@ function PanelContent({ node }) {
             {node.timeline}
           </span>
         </div>
-        <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.04]">
+        <div className="p-3.5 rounded-xl bg-white/30 border border-border/25">
           <span className="text-[10px] font-semibold tracking-label uppercase text-muted/60 block mb-1">
             Starting Price
           </span>

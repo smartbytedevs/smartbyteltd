@@ -12,9 +12,9 @@ export function CtaBanner() {
     <SafeReveal viewportMargin="-80px" className="relative mt-24 overflow-hidden rounded-3xl">
       {/* Background */}
       <div
-        className="absolute inset-0 rounded-3xl border border-white/[0.06]"
+        className="absolute inset-0 rounded-3xl border border-border/30"
         style={{
-          background: "rgba(15, 23, 42, 0.4)",
+          background: "rgba(255, 247, 236, 0.7)",
           backdropFilter: "blur(24px)",
           WebkitBackdropFilter: "blur(24px)",
         }}
@@ -25,7 +25,7 @@ export function CtaBanner() {
         className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full opacity-20"
         style={{
           background:
-            "radial-gradient(circle, rgba(0, 194, 168, 0.08), transparent 70%)",
+            "radial-gradient(circle, rgba(180, 83, 9, 0.08), transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -33,7 +33,7 @@ export function CtaBanner() {
         className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full opacity-15"
         style={{
           background:
-            "radial-gradient(circle, rgba(56, 189, 248, 0.05), transparent 70%)",
+            "radial-gradient(circle, rgba(160, 58, 30, 0.05), transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -43,7 +43,7 @@ export function CtaBanner() {
         className="absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            "linear-gradient(rgba(43,33,24,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.06) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -75,7 +75,7 @@ export function CtaBanner() {
             <button
               type="button"
               onClick={() => openQuoteModal({ source: "about" })}
-              className="group inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/[0.08] font-semibold text-sm tracking-nav text-muted hover:text-foreground hover:border-white/20 transition-all duration-500"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border/35 font-semibold text-sm tracking-nav text-muted hover:text-foreground hover:border-border/55 transition-all duration-500"
             >
               <MessageCircle className="w-4 h-4" />
               Let&apos;s Talk

@@ -17,7 +17,7 @@ export function BlogFinalCTA() {
           animate={{ x: [0, 30, -20, 10, 0], y: [0, -20, 30, -10, 0] }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
           style={{
-            background: "radial-gradient(circle, rgba(0, 194, 168, 0.08), transparent 70%)",
+            background: "radial-gradient(circle, rgba(180, 83, 9, 0.08), transparent 70%)",
             filter: "blur(100px)",
           }}
         />
@@ -26,13 +26,13 @@ export function BlogFinalCTA() {
           animate={{ x: [0, -30, 20, -10, 0], y: [0, 20, -30, 10, 0] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
           style={{
-            background: "radial-gradient(circle, rgba(56, 189, 248, 0.06), transparent 70%)",
+            background: "radial-gradient(circle, rgba(160, 58, 30, 0.06), transparent 70%)",
             filter: "blur(100px)",
           }}
         />
 
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
       </div>
@@ -67,7 +67,7 @@ export function BlogFinalCTA() {
             </PremiumCTA>
             <a
               href="/services"
-              className="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium rounded-full border border-white/10 text-foreground hover:bg-white/5 hover:border-white/20 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-white/455 hover:border-border/55 transition-all duration-300"
             >
               Explore Services
               <ArrowRight className="w-4 h-4" />

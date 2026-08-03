@@ -61,13 +61,13 @@ export function Panel({ item, index }) {
         }}
       >
         {/* ── Panel Background ── */}
-        <div className="relative rounded-3xl border border-white/[0.04] bg-white/[0.015] backdrop-blur-sm overflow-hidden">
+        <div className="relative rounded-3xl border border-border/25 bg-white/25 backdrop-blur-sm overflow-hidden">
           {/* Liquid gradient overlay - expands from left */}
           <motion.div
             className="absolute inset-0 rounded-3xl"
             style={{
               background:
-                "linear-gradient(135deg, rgba(0, 194, 168, 0.08), rgba(56, 189, 248, 0.04))",
+                "linear-gradient(135deg, rgba(180, 83, 9, 0.08), rgba(160, 58, 30, 0.04))",
             }}
             animate={{
               clipPath: isHovered
@@ -88,7 +88,7 @@ export function Panel({ item, index }) {
             className="absolute inset-0 rounded-3xl pointer-events-none"
             animate={{
               boxShadow: isHovered
-                ? "inset 0 0 60px rgba(0, 194, 168, 0.06), 0 0 80px rgba(56, 189, 248, 0.04)"
+                ? "inset 0 0 60px rgba(180, 83, 9, 0.06), 0 0 80px rgba(160, 58, 30, 0.04)"
                 : "inset 0 0 0px transparent",
             }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -117,7 +117,7 @@ export function Panel({ item, index }) {
               >
                 <div
                   className={cn(
-                    "w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-accent/15 to-accent-secondary/10 border border-white/[0.06] flex items-center justify-center",
+                    "w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-accent/15 to-accent-secondary/10 border border-border/30 flex items-center justify-center",
                     shapes[index]
                   )}
                 >
@@ -133,7 +133,7 @@ export function Panel({ item, index }) {
                 <span
                   className={cn(
                     "font-display block text-[5rem] sm:text-[7rem] lg:text-[9rem] font-bold leading-[0.75] tracking-[-0.06em] select-none",
-                    "text-white/[0.03]"
+                    "text-foreground/10"
                   )}
                 >
                   {item.number}
@@ -216,7 +216,7 @@ export function Panel({ item, index }) {
           animate={{
             opacity: isHovered ? 1 : 0,
             boxShadow: isHovered
-              ? "0 0 30px rgba(0, 194, 168, 0.08), 0 0 60px rgba(56, 189, 248, 0.04)"
+              ? "0 0 30px rgba(180, 83, 9, 0.08), 0 0 60px rgba(160, 58, 30, 0.04)"
               : "0 0 0px transparent",
           }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}

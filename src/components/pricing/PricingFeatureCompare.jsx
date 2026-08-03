@@ -19,7 +19,7 @@ function FeatureRow({ row, index, isInView }) {
       return <span className="text-[9px] font-semibold text-muted/40 uppercase tracking-label">Basic</span>
     if (val === "advanced")
       return <span className="text-[9px] font-semibold text-accent uppercase tracking-label">Adv</span>
-    return <Minus className="w-3 h-3 text-white/[0.06]" />
+    return <Minus className="w-3 h-3 text-foreground/15" />
   }
 
   return (
@@ -63,7 +63,7 @@ export function PricingFeatureCompare() {
       {/* Desktop table */}
       <div className="hidden lg:block">
         <div
-          className="relative rounded-2xl overflow-hidden border border-white/[0.06]"
+          className="relative rounded-2xl overflow-hidden border border-border/30"
           style={{
             background: "rgba(11, 18, 40, 0.35)",
             backdropFilter: "blur(16px)",
@@ -72,7 +72,7 @@ export function PricingFeatureCompare() {
         >
           <table className="w-full">
             <thead>
-              <tr className="border-b border-white/[0.06]">
+              <tr className="border-b border-border/30">
                 <th className="text-left py-4 pr-6">
                   <span className="text-[10px] font-semibold tracking-label uppercase text-muted/40">
                     Feature
@@ -106,7 +106,7 @@ export function PricingFeatureCompare() {
               initial={false}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
               transition={{ delay: i * 0.03, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-3 px-4 py-3 rounded-xl border border-white/[0.04]"
+              className="flex items-center gap-3 px-4 py-3 rounded-xl border border-border/25"
               style={{
                 background: "rgba(11, 18, 40, 0.3)",
                 backdropFilter: "blur(12px)",
@@ -130,7 +130,7 @@ export function PricingFeatureCompare() {
                       ) : val === "advanced" ? (
                         <span className="text-[8px] font-semibold text-accent">Adv</span>
                       ) : (
-                        <Minus className="w-2.5 h-2.5 text-white/[0.06]" />
+                        <Minus className="w-2.5 h-2.5 text-foreground/15" />
                       )}
                     </div>
                   </div>

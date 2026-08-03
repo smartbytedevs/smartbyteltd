@@ -14,15 +14,15 @@ export function TemplatesFinalCTA() {
     <section className="relative py-32 md:py-40 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-20" style={{
-          background: "radial-gradient(circle, rgba(0, 194, 168, 0.06), transparent 70%)",
+          background: "radial-gradient(circle, rgba(180, 83, 9, 0.06), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute top-1/3 right-[10%] w-[400px] h-[400px] rounded-full opacity-15" style={{
-          background: "radial-gradient(circle, rgba(56, 189, 248, 0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(160, 58, 30, 0.04), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute inset-0 opacity-[0.015]" style={{
@@ -35,7 +35,7 @@ export function TemplatesFinalCTA() {
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <SafeSlideUp delay={0.1}>
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-accent-secondary/20 border border-white/[0.06] flex items-center justify-center mx-auto mb-8">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-accent-secondary/20 border border-border/30 flex items-center justify-center mx-auto mb-8">
               <MessageSquare className="w-8 h-8 text-accent" />
             </div>
           </SafeSlideUp>
@@ -81,7 +81,7 @@ export function TemplatesFinalCTA() {
                     heading: "Book a Free Consultation",
                   })
                 }
-                className="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium rounded-full border border-white/10 text-foreground hover:bg-white/5 hover:border-white/20 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-white/455 hover:border-border/55 transition-all duration-300"
               >
                 <Send className="w-4 h-4" />
                 Contact SmartByte

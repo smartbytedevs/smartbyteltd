@@ -83,7 +83,7 @@ export default function BlogArticlePage() {
 
           <div className="mx-auto max-w-[800px] px-4 sm:px-6 lg:px-8 -mt-20 relative z-10">
             <SafeSlideUp>
-              <div className="rounded-3xl border border-white/[0.06] bg-background p-6 sm:p-8 md:p-10 shadow-2xl">
+              <div className="rounded-3xl border border-border/30 bg-background p-6 sm:p-8 md:p-10 shadow-2xl">
                 <Link
                   href="/blog"
                   className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground mb-6 transition-colors"
@@ -116,7 +116,7 @@ export default function BlogArticlePage() {
                   {article.title}
                 </h1>
 
-                <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground pb-6 border-b border-white/[0.06] mb-6">
+                <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground pb-6 border-b border-border/30 mb-6">
                   {author && (
                     <span className="flex items-center gap-2">
                       <span className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-[10px] font-bold text-background">
@@ -142,7 +142,7 @@ export default function BlogArticlePage() {
                   <p className="text-base sm:text-lg text-muted leading-relaxed mb-8">
                     {article.excerpt}
                   </p>
-                  <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 sm:p-8 text-center">
+                  <div className="rounded-2xl border border-border/30 bg-white/30 p-6 sm:p-8 text-center">
                     <BookOpen className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
                     <h3 className="font-display text-lg font-bold text-foreground mb-2">Full Article Coming Soon</h3>
                     <p className="text-sm text-muted max-w-md mx-auto">
@@ -152,14 +152,14 @@ export default function BlogArticlePage() {
                 </div>
 
                 {article.tags.length > 0 && (
-                  <div className="mt-8 pt-6 border-t border-white/[0.06]">
+                  <div className="mt-8 pt-6 border-t border-border/30">
                     <h3 className="text-sm font-semibold text-foreground mb-3">Tags</h3>
                     <div className="flex flex-wrap gap-2">
                       {article.tags.map((tag) => (
                         <Link
                           key={tag}
                           href={`/blog?topic=${tag.toLowerCase()}`}
-                          className="text-xs font-medium px-3 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.03] text-muted hover:text-foreground hover:border-accent/30 transition-colors"
+                          className="text-xs font-medium px-3 py-1.5 rounded-full border border-border/30 bg-white/40 text-muted hover:text-foreground hover:border-accent/30 transition-colors"
                         >
                           {tag}
                         </Link>
@@ -180,7 +180,7 @@ export default function BlogArticlePage() {
                       <Link
                         key={related.id}
                         href={`/blog/${related.slug}`}
-                        className="group p-5 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:border-accent/30 hover:bg-white/[0.04] transition-all duration-300"
+                        className="group p-5 rounded-2xl border border-border/30 bg-white/30 hover:border-accent/30 hover:bg-white/4555 transition-all duration-300"
                       >
                         <h3 className="font-display text-sm font-bold text-foreground group-hover:text-accent transition-colors line-clamp-2 mb-2">
                           {related.title}

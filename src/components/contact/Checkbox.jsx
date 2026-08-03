@@ -36,8 +36,8 @@ export function Checkbox({
               checked
                 ? "border-accent bg-accent/20"
                 : showError
-                  ? "border-red-500/50 bg-white/[0.03]"
-                  : "border-white/[0.2] bg-white/[0.03] group-hover:border-white/[0.35]"
+                  ? "border-red-500/50 bg-white/40"
+                  : "border-white/[0.2] bg-white/40 group-hover:border-white/[0.35]"
             )}
           >
             {checked && (
@@ -63,7 +63,7 @@ export function Checkbox({
           animate={{ opacity: 1, y: 0 }}
           id={`${id}-error`}
           role="alert"
-          className="ml-[32px] mt-1 text-xs text-red-400"
+          className="ml-[32px] mt-1 text-xs text-red-600"
         >
           {error}
         </motion.p>

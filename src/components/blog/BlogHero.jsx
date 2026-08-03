@@ -19,23 +19,23 @@ export function BlogHero({ onBrowse }) {
     <section ref={ref} className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[5%] -left-48 w-[700px] h-[700px] rounded-full opacity-20" style={{
-          background: "radial-gradient(circle, rgba(0, 194, 168, 0.07), transparent 70%)",
+          background: "radial-gradient(circle, rgba(180, 83, 9, 0.07), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute bottom-[10%] -right-48 w-[500px] h-[500px] rounded-full opacity-15" style={{
-          background: "radial-gradient(circle, rgba(56, 189, 248, 0.05), transparent 70%)",
+          background: "radial-gradient(circle, rgba(160, 58, 30, 0.05), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute top-[40%] right-[20%] w-[400px] h-[400px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(0, 194, 168, 0.03), transparent 70%)",
+          background: "radial-gradient(circle, rgba(180, 83, 9, 0.03), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute top-0 left-[20%] w-px h-full opacity-[0.02]" style={{
-          background: "linear-gradient(to bottom, transparent, rgba(0, 194, 168, 0.2), transparent)",
+          background: "linear-gradient(to bottom, transparent, rgba(180, 83, 9, 0.2), transparent)",
         }} />
         <div className="absolute inset-0 opacity-[0.015]" style={{
           backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
@@ -77,7 +77,7 @@ export function BlogHero({ onBrowse }) {
                 <button
                   type="button"
                   onClick={() => openQuoteModal({ source: "blog" })}
-                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-white/10 text-foreground hover:bg-white/5 hover:border-white/20 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-white/455 hover:border-border/55 transition-all duration-300"
                 >
                   Start Your Project
                 </button>

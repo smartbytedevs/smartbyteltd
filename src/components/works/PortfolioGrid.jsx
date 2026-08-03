@@ -12,8 +12,8 @@ import { Search, X, Eye, ArrowUpRight, SlidersHorizontal, RotateCcw, Star, Clock
 import { SafeSlideUp } from "@/components/common/SafeMotion"
 
 const statusColors = {
-  Live: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20",
-  "In Progress": "bg-amber-500/10 text-amber-300 border-amber-500/20",
+  Live: "bg-emerald-500/10 text-emerald-700 border-emerald-500/20",
+  "In Progress": "bg-amber-500/10 text-amber-700 border-amber-500/20",
   Completed: "bg-accent/10 text-accent border-accent/20",
 }
 
@@ -72,8 +72,8 @@ function SearchBar({ value, onChange, onFocus, onBlur, focused }) {
     <div className={cn(
       "relative flex-1 rounded-2xl border transition-all duration-500",
       focused
-        ? "bg-white/[0.04] border-accent/40 shadow-lg shadow-accent/10"
-        : "bg-white/[0.02] border-white/[0.06] hover:bg-white/[0.03] hover:border-white/[0.12]"
+        ? "bg-white/45 border-accent/40 shadow-lg shadow-accent/10"
+        : "bg-white/30 border-border/30 hover:bg-white/45 hover:border-border/50"
     )}>
       <div className="relative flex items-center">
         <Search className={cn(
@@ -90,7 +90,7 @@ function SearchBar({ value, onChange, onFocus, onBlur, focused }) {
           className="w-full bg-transparent pl-10 pr-20 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none rounded-2xl"
           aria-label="Search projects"
         />
-        <span className="absolute right-4 text-[10px] font-medium text-muted-foreground/40 bg-white/[0.04] px-1.5 py-0.5 rounded border border-white/[0.06] pointer-events-none">
+        <span className="absolute right-4 text-[10px] font-medium text-muted-foreground/40 bg-white/45 px-1.5 py-0.5 rounded border border-border/30 pointer-events-none">
           {isMac ? "\u2318K" : "Ctrl+K"}
         </span>
       </div>
@@ -116,7 +116,7 @@ function SortDropdown({ value, onChange }) {
         onClick={() => setOpen(!open)}
         className={cn(
           "flex items-center gap-2 px-4 py-3.5 rounded-2xl text-sm font-medium transition-all duration-300",
-          "bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-white/[0.12]",
+          "bg-white/30 border border-border/30 hover:bg-white/4555 hover:border-border/50",
           "focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50",
           open && "border-accent/30"
         )}
@@ -136,7 +136,7 @@ function SortDropdown({ value, onChange }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.96 }}
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute right-0 top-full mt-2 z-30 w-48 rounded-2xl border border-white/[0.06] bg-card shadow-2xl overflow-hidden"
+            className="absolute right-0 top-full mt-2 z-30 w-48 rounded-2xl border border-border/30 bg-card shadow-2xl overflow-hidden"
             role="listbox"
           >
             {sortOptions.map((opt) => (
@@ -147,7 +147,7 @@ function SortDropdown({ value, onChange }) {
                 aria-selected={value === opt.value}
                 onClick={() => { onChange(opt.value); setOpen(false) }}
                 className={cn(
-                  "w-full text-left px-4 py-3 text-sm transition-colors hover:bg-white/[0.04] flex items-center justify-between",
+                  "w-full text-left px-4 py-3 text-sm transition-colors hover:bg-white/4555 flex items-center justify-between",
                   value === opt.value ? "text-accent" : "text-muted-foreground"
                 )}
               >
@@ -175,8 +175,8 @@ function ProjectCard({ project, index }) {
       transition={{ duration: 0.4, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
         "group relative rounded-2xl overflow-hidden transition-all duration-500",
-        "bg-white/[0.02] border border-white/[0.06]",
-        "hover:bg-white/[0.04] hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5",
+        "bg-white/30 border border-border/30",
+        "hover:bg-white/4555 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5",
         "hover:-translate-y-1"
       )}
     >
@@ -191,8 +191,8 @@ function ProjectCard({ project, index }) {
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
-              <Star className="w-8 h-8 text-white/40" />
+            <div className="w-16 h-16 rounded-2xl bg-white/45 border border-border/40 flex items-center justify-center">
+              <Star className="w-8 h-8 text-foreground/40" />
             </div>
           </div>
         )}
@@ -201,7 +201,7 @@ function ProjectCard({ project, index }) {
         <div className="absolute top-3 left-3 z-10">
           <span className={cn(
             "inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-label uppercase border",
-            statusColors[project.status] || "bg-white/10 text-white border-white/20"
+            statusColors[project.status] || "bg-white/50 text-foreground border-border/50"
           )}>
             <CheckCircle className="w-3 h-3" />
             {project.status}
@@ -209,8 +209,8 @@ function ProjectCard({ project, index }) {
         </div>
 
         <div className="absolute top-3 right-3 z-10">
-          <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">
-            <Star className="w-3 h-3 fill-amber-300" />
+          <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-bold bg-amber-500/10 text-amber-700 border border-amber-500/20">
+            <Star className="w-3 h-3 fill-amber-500" />
             {project.rating}
           </span>
         </div>
@@ -218,7 +218,7 @@ function ProjectCard({ project, index }) {
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40 flex items-center justify-center">
           <Link
             href={`/works/${project.slug}`}
-            className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all hover:scale-105"
+            className="p-3 rounded-xl bg-white/50 backdrop-blur-sm border border-border/50 text-white hover:bg-white/65 transition-all hover:scale-105"
             aria-label={`View case study for ${project.title}`}
           >
             <Eye className="w-4 h-4" />
@@ -228,7 +228,7 @@ function ProjectCard({ project, index }) {
 
       <div className="p-5 md:p-6">
         <div className="flex items-center gap-2 mb-2">
-          <span className="text-[10px] font-bold tracking-label uppercase px-2 py-0.5 rounded-full bg-white/[0.06] text-muted-foreground border border-white/[0.06]">
+          <span className="text-[10px] font-bold tracking-label uppercase px-2 py-0.5 rounded-full bg-white/450 text-muted-foreground border border-border/30">
             {project.industry}
           </span>
           <span className="flex items-center gap-1 text-[10px] text-muted-foreground">
@@ -241,14 +241,14 @@ function ProjectCard({ project, index }) {
 
         <div className="mt-4 flex flex-wrap gap-1.5">
           {project.techStack.slice(0, 4).map((tech) => (
-            <span key={tech} className="px-2 py-0.5 text-[10px] font-medium rounded-md bg-white/[0.04] text-muted-foreground border border-white/[0.06]">{tech}</span>
+            <span key={tech} className="px-2 py-0.5 text-[10px] font-medium rounded-md bg-white/45 text-muted-foreground border border-border/30">{tech}</span>
           ))}
           {project.techStack.length > 4 && (
-            <span className="px-2 py-0.5 text-[10px] font-medium rounded-md bg-white/[0.04] text-muted">+{project.techStack.length - 4}</span>
+            <span className="px-2 py-0.5 text-[10px] font-medium rounded-md bg-white/45 text-muted">+{project.techStack.length - 4}</span>
           )}
         </div>
 
-        <div className="mt-4 pt-4 border-t border-white/[0.06]">
+        <div className="mt-4 pt-4 border-t border-border/30">
           <div className="grid grid-cols-3 gap-2">
             {project.metrics.slice(0, 3).map((m) => (
               <div key={m.label} className="text-center">
@@ -262,7 +262,7 @@ function ProjectCard({ project, index }) {
         <div className="mt-4 grid grid-cols-2 gap-2">
           <Link
             href={`/works/${project.slug}`}
-            className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all bg-white/[0.04] border border-white/[0.08] text-muted-foreground hover:bg-white/[0.08] hover:text-foreground hover:border-white/[0.15] group-hover:scale-[1.02]"
+            className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all bg-white/45 border border-border/35 text-muted-foreground hover:bg-white/60 hover:text-foreground hover:border-border/55 group-hover:scale-[1.02]"
           >
             <Eye className="w-3.5 h-3.5" /> Case Study
           </Link>
@@ -276,7 +276,7 @@ function ProjectCard({ project, index }) {
               <ArrowUpRight className="w-3.5 h-3.5" /> Live Preview
             </a>
           ) : (
-            <span className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium bg-white/[0.02] border border-white/[0.06] text-muted-foreground/60 cursor-not-allowed">
+            <span className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium bg-white/30 border border-border/30 text-muted-foreground/60 cursor-not-allowed">
               Coming Soon
             </span>
           )}
@@ -350,11 +350,11 @@ export function PortfolioGrid() {
       <section id="portfolio-grid" className="relative py-24 md:py-32 overflow-hidden bg-background">
         <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <div className="absolute inset-0 opacity-[0.015]" style={{
-            backgroundImage: "linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)",
+            backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }} />
           <div className="absolute top-[20%] -left-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-            background: "radial-gradient(circle, rgba(0, 194, 168, 0.04), transparent 70%)",
+            background: "radial-gradient(circle, rgba(180, 83, 9, 0.04), transparent 70%)",
             filter: "blur(120px)",
           }} />
           <div className="absolute inset-0 opacity-[0.015]" style={{
@@ -379,7 +379,7 @@ export function PortfolioGrid() {
                 onClick={() => setDrawerOpen(true)}
                 className={cn(
                   "flex items-center gap-2 px-5 py-3.5 rounded-2xl text-sm font-medium transition-all duration-300 shrink-0",
-                  "bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-white/[0.12]",
+                  "bg-white/30 border border-border/30 hover:bg-white/4555 hover:border-border/50",
                   "focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50",
                   count > 0 && "border-accent/30 text-accent"
                 )}
@@ -428,7 +428,7 @@ export function PortfolioGrid() {
                 <button
                   type="button"
                   onClick={clearFilters}
-                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium text-muted-foreground hover:text-foreground border border-white/[0.06] hover:border-white/[0.15] transition-all"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium text-muted-foreground hover:text-foreground border border-border/30 hover:border-border/55 transition-all"
                 >
                   <RotateCcw className="w-3 h-3" />
                   Clear All
@@ -466,7 +466,7 @@ export function PortfolioGrid() {
               animate={{ opacity: 1, y: 0 }}
               className="text-center py-24"
             >
-              <div className="w-20 h-20 rounded-2xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 rounded-2xl bg-white/40 border border-border/30 flex items-center justify-center mx-auto mb-6">
                 <Search className="w-8 h-8 text-muted-foreground" />
               </div>
               <h3 className="font-display text-xl font-bold text-foreground mb-2">No projects found</h3>
