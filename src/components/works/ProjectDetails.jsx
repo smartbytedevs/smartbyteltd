@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { motion } from "motion/react"
 import { SafeSlideUp } from "@/components/common/SafeMotion"
 import { ArrowRight, BookOpen } from "lucide-react"
@@ -50,12 +51,17 @@ export function ProjectDetails({ project, index, isHovered }) {
   const containerDelay = isLeft ? 0.15 : 0
   const stagger = 0.08
 
+  const caseStudyHref = `/works/${project.slug}`
+  const liveHref = project.liveLink || caseStudyHref
+  const hasLiveLink = Boolean(project.liveLink)
+  const metrics = Array.isArray(project.metrics) ? project.metrics.slice(0, 3) : []
+
   return (
     <div className="flex flex-col justify-center h-full">
       {/* Category */}
       <SafeSlideUp delay={containerDelay}>
         <span className="text-[11px] font-semibold tracking-label uppercase text-accent mb-3 block">
-          {project.category}
+          {project.industry || project.category}
         </span>
       </SafeSlideUp>
 
@@ -78,7 +84,7 @@ export function ProjectDetails({ project, index, isHovered }) {
       {/* Tech Stack */}
       <SafeSlideUp delay={containerDelay + stagger * 3}>
         <div className="flex flex-wrap gap-1.5 mb-6">
-          {project.techStack.map((tech) => (
+          {(project.techStack || []).map((tech) => (
             <TechPill key={tech} tech={tech} isHovered={isHovered} />
           ))}
         </div>
@@ -87,10 +93,10 @@ export function ProjectDetails({ project, index, isHovered }) {
       {/* Result Metrics */}
       <SafeSlideUp delay={containerDelay + stagger * 4}>
         <div className="grid grid-cols-3 gap-3 mb-6">
-          {project.metrics.map((metric, i) => (
+          {metrics.map((metric, i) => (
             <MetricCard
               key={metric.label}
-              value={metric.value}
+              value={`${metric.value}${metric.suffix || ""}`}
               label={metric.label}
               delay={containerDelay + stagger * 4 + i * 0.06}
             />
@@ -100,40 +106,41 @@ export function ProjectDetails({ project, index, isHovered }) {
 
       {/* Action Buttons */}
       <SafeSlideUp delay={containerDelay + stagger * 5}>
-        <div className="flex items-center gap-3">
-          {/* Primary */}
-        <a
-          href="/contact?source=works"
-          className="group/btn relative inline-flex items-center gap-2 overflow-hidden rounded-full px-5 py-2.5 font-semibold text-xs tracking-nav transition-all duration-500"
-        >
-          <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 group-hover/btn:opacity-100 transition-opacity duration-500" />
-          <span
-            className="absolute inset-0 rounded-full opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700"
-            style={{
-              boxShadow: "0 0 20px rgba(0, 194, 168, 0.2), 0 0 40px rgba(56, 189, 248, 0.1)",
-            }}
-          />
-          <span className="relative z-10 text-background flex items-center gap-1.5">
-            View Live
-            <motion.span
-              className="inline-flex"
-              initial={{ x: 0 }}
-              whileHover={{ x: 3 }}
-              transition={{ duration: 0.2 }}
-            >
-              <ArrowRight className="w-3.5 h-3.5" />
-            </motion.span>
-          </span>
-        </a>
+        <div className="flex flex-wrap items-center gap-3">
+          {/* Live link (falls back to case study so it is never empty) */}
+          <a
+            href={liveHref}
+            {...(hasLiveLink ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            className="group/btn relative inline-flex items-center gap-2 overflow-hidden rounded-full px-5 py-2.5 font-semibold text-xs tracking-nav transition-all duration-500"
+          >
+            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 group-hover/btn:opacity-100 transition-opacity duration-500" />
+            <span
+              className="absolute inset-0 rounded-full opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700"
+              style={{
+                boxShadow: "0 0 20px rgba(0, 194, 168, 0.2), 0 0 40px rgba(56, 189, 248, 0.1)",
+              }}
+            />
+            <span className="relative z-10 text-background flex items-center gap-1.5">
+              {hasLiveLink ? "View Live" : "View Project"}
+              <motion.span
+                className="inline-flex"
+                initial={{ x: 0 }}
+                whileHover={{ x: 3 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ArrowRight className="w-3.5 h-3.5" />
+              </motion.span>
+            </span>
+          </a>
 
-        {/* Secondary */}
-        <a
-          href="/works"
-          className="group/btn inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/[0.08] font-semibold text-xs tracking-nav text-muted hover:text-foreground hover:border-white/20 transition-all duration-500"
-        >
-          <BookOpen className="w-3.5 h-3.5" />
-          Case Study
-        </a>
+          {/* Secondary */}
+          <Link
+            href={caseStudyHref}
+            className="group/btn inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/[0.08] font-semibold text-xs tracking-nav text-muted hover:text-foreground hover:border-white/20 transition-all duration-500"
+          >
+            <BookOpen className="w-3.5 h-3.5" />
+            Case Study
+          </Link>
         </div>
       </SafeSlideUp>
     </div>

@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react"
 import { Calendar } from "lucide-react"
-import { projects } from "@/components/works/worksData"
+import { projects } from "@/data/works"
 import { ProjectImage } from "@/components/works/ProjectImage"
 import { ProjectDetails } from "@/components/works/ProjectDetails"
 import { Particles } from "@/components/why-smartbyte/Particles"
@@ -121,20 +121,20 @@ export function Works() {
                 <div className="hidden lg:grid lg:grid-cols-2 lg:gap-10 xl:gap-16 items-center">
                   {isLeft ? (
                     <>
-                      <ProjectImage accent={project.accent} index={i} />
+                      <ProjectImage project={project} index={i} />
                       <ProjectDetails project={project} index={i} isHovered={isHovered} />
                     </>
                   ) : (
                     <>
                       <ProjectDetails project={project} index={i} isHovered={isHovered} />
-                      <ProjectImage accent={project.accent} index={i} />
+                      <ProjectImage project={project} index={i} />
                     </>
                   )}
                 </div>
 
                 {/* Tablet/ Mobile: stacked — image first */}
                 <div className="lg:hidden space-y-6">
-                  <ProjectImage accent={project.accent} index={i} />
+                  <ProjectImage project={project} index={i} />
                   <ProjectDetails project={project} index={i} isHovered={isHovered} />
                 </div>
               </SafeReveal>

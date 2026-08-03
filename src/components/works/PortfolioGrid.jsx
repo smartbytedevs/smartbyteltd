@@ -1,6 +1,7 @@
 "use client"
 
 import { useMemo, useState, useEffect, useRef } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "motion/react"
 import { cn } from "@/lib/utils"
@@ -164,6 +165,7 @@ function SortDropdown({ value, onChange }) {
 function ProjectCard({ project, index }) {
   const gradient = categoryGradients[project.category] || categoryGradients.default
   const liveHref = project.liveLink || ""
+  const imageSrc = project.thumbnail || project.coverImage || ""
 
   return (
     <motion.div
@@ -178,12 +180,22 @@ function ProjectCard({ project, index }) {
         "hover:-translate-y-1"
       )}
     >
-      <div className={cn("relative h-48 sm:h-56 overflow-hidden bg-gradient-to-br", gradient)}>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
-            <Star className="w-8 h-8 text-white/40" />
+      <div className={cn("relative h-48 sm:h-56 overflow-hidden", imageSrc ? "bg-[#0D1117]" : cn("bg-gradient-to-br", gradient))}>
+        {imageSrc ? (
+          <Image
+            src={imageSrc}
+            alt={`${project.title} project screenshot`}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+              <Star className="w-8 h-8 text-white/40" />
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Status badge */}
         <div className="absolute top-3 left-3 z-10">

@@ -1,87 +1,46 @@
 "use client"
 
 import { useRef, useState, useCallback } from "react"
+import Image from "next/image"
 import { motion } from "motion/react"
 import { ArrowRight } from "lucide-react"
 
-function BrowserMockup({ accent }) {
-  return (
-    <div className="w-full h-full flex flex-col overflow-hidden rounded-[18px] bg-[#0D1117] border border-white/[0.06]">
-      {/* Browser chrome */}
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06] bg-[#0D1117]/80">
-        <div className="flex items-center gap-1.5">
-          <div className="w-3 h-3 rounded-full bg-red-500/60" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
-          <div className="w-3 h-3 rounded-full bg-green-500/60" />
-        </div>
-        <div className="flex-1 mx-4">
-          <div className="h-6 rounded-md bg-white/[0.04] border border-white/[0.04] flex items-center px-3">
-            <span className="text-[9px] text-white/20 truncate">
-              https://smartbyte.agency/project
-            </span>
-          </div>
-        </div>
-      </div>
+function ProjectThumb({ project, priority }) {
+  const src = project.thumbnail || project.coverImage
 
-      {/* Page content — gradient + UI mockup */}
-      <div className="flex-1 relative overflow-hidden">
-        {/* Gradient background */}
+  if (!src) {
+    return (
+      <div className="relative w-full h-full flex flex-col items-center justify-center gap-4 rounded-[18px] bg-[#0D1117] border border-white/[0.06] overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
-            background: `linear-gradient(135deg, ${accent.includes("accent") ? "rgba(0, 194, 168, 0.04)" : "rgba(56, 189, 248, 0.04)"}, rgba(11, 16, 32, 0.6))`,
+            background:
+              "linear-gradient(135deg, rgba(0, 194, 168, 0.05), rgba(56, 189, 248, 0.03))",
           }}
         />
-
-        {/* Decorative shapes */}
-        <div className="absolute inset-0 p-4 sm:p-6 flex flex-col gap-3">
-          {/* Header bar */}
-          <div className="flex items-center gap-3">
-            <div className="h-3 w-20 rounded-full bg-white/[0.04]" />
-            <div className="h-3 w-14 rounded-full bg-white/[0.02]" />
-            <div className="flex-1" />
-            <div className="h-6 w-16 rounded-md border border-white/[0.04]" />
-          </div>
-
-          {/* Hero area */}
-          <div className="flex-1 grid grid-cols-5 gap-3">
-            {/* Main content area */}
-            <div className="col-span-3 flex flex-col gap-3">
-              <div className="h-5 w-3/4 rounded-full bg-white/[0.04]" />
-              <div className="h-5 w-1/2 rounded-full bg-white/[0.03]" />
-              <div className="flex-1 grid grid-cols-2 gap-2 mt-2">
-                <div className="rounded-lg bg-white/[0.03] border border-white/[0.04] p-2 flex flex-col gap-1.5">
-                  <div className="h-2 w-12 rounded-full bg-white/[0.04]" />
-                  <div className="h-5 w-full rounded-md bg-gradient-to-r from-accent/10 to-accent-secondary/10" />
-                </div>
-                <div className="rounded-lg bg-white/[0.03] border border-white/[0.04] p-2 flex flex-col gap-1.5">
-                  <div className="h-2 w-12 rounded-full bg-white/[0.04]" />
-                  <div className="h-5 w-full rounded-md bg-gradient-to-r from-accent-secondary/10 to-blue-400/10" />
-                </div>
-              </div>
-            </div>
-
-            {/* Sidebar */}
-            <div className="col-span-2 flex flex-col gap-2">
-              <div className="flex-1 rounded-lg bg-white/[0.02] border border-white/[0.04] p-3 flex flex-col gap-2">
-                <div className="h-2 w-16 rounded-full bg-white/[0.04]" />
-                <div className="h-2 w-12 rounded-full bg-white/[0.03]" />
-                <div className="h-2 w-14 rounded-full bg-white/[0.03]" />
-                <div className="flex-1" />
-                <div className="h-6 rounded-md bg-gradient-to-r from-accent/15 to-accent-secondary/15" />
-              </div>
-            </div>
-          </div>
+        <div className="relative z-10 w-16 h-16 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center font-display text-2xl font-bold text-accent/70">
+          {project.title?.charAt(0)}
         </div>
-
-        {/* Bottom gradient overlay */}
-        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[rgba(11,16,32,0.5)] to-transparent pointer-events-none" />
+        <span className="relative z-10 text-xs font-semibold text-muted/70 uppercase tracking-label">
+          {project.title}
+        </span>
       </div>
-    </div>
+    )
+  }
+
+  return (
+    <Image
+      src={src}
+      alt={`${project.title} project screenshot`}
+      fill
+      priority={priority}
+      sizes="(min-width: 1024px) 50vw, 100vw"
+      className="object-cover"
+    />
   )
 }
 
-export function ProjectImage({ accent, index }) {
+export function ProjectImage({ project, index }) {
   const containerRef = useRef(null)
   const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 })
   const [isHovered, setIsHovered] = useState(false)
@@ -149,7 +108,7 @@ export function ProjectImage({ accent, index }) {
             y: { type: "spring", stiffness: 80, damping: 25, mass: 0.5 },
           }}
         >
-          <BrowserMockup accent={accent} />
+          <ProjectThumb project={project} priority={index === 0} />
 
           {/* Dark overlay on hover */}
           <motion.div

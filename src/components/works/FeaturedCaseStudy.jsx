@@ -1,83 +1,17 @@
 "use client"
 
 import { motion } from "motion/react"
+import Image from "next/image"
 import Link from "next/link"
 import { SafeSlideUp, SafeReveal } from "@/components/common/SafeMotion"
 import { SectionHeading } from "@/components/ui/SectionHeading"
 import { featuredProject } from "@/data/works"
-import { siteUrl } from "@/lib/portfolio-data"
 import { ArrowRight, CheckCircle, Clock, BarChart3 } from "lucide-react"
-import { cn } from "@/lib/utils"
 
 const iconMap = {
   CheckCircle,
   Clock,
   BarChart3,
-}
-
-function BrowserMockup({ url }) {
-  return (
-    <div className="w-full h-full flex flex-col overflow-hidden rounded-[18px] bg-[#0D1117] border border-white/[0.06]">
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06] bg-[#0D1117]/80">
-        <div className="flex items-center gap-1.5">
-          <div className="w-3 h-3 rounded-full bg-red-500/60" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
-          <div className="w-3 h-3 rounded-full bg-green-500/60" />
-        </div>
-        <div className="flex-1 mx-4">
-          <div className="h-6 rounded-md bg-white/[0.04] border border-white/[0.04] flex items-center px-3">
-            <span className="text-[9px] text-white/20 truncate">{url}</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex-1 relative overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "linear-gradient(135deg, rgba(0, 194, 168, 0.04), rgba(11, 16, 32, 0.6))",
-          }}
-        />
-
-        <div className="absolute inset-0 p-4 sm:p-6 flex flex-col gap-3">
-          <div className="flex items-center gap-3">
-            <div className="h-3 w-24 rounded-full bg-white/[0.04]" />
-            <div className="flex-1" />
-            <div className="h-6 w-20 rounded-md border border-white/[0.04]" />
-          </div>
-
-          <div className="flex-1 grid grid-cols-5 gap-3">
-            <div className="col-span-3 flex flex-col gap-3">
-              <div className="h-6 w-3/4 rounded-full bg-white/[0.04]" />
-              <div className="h-4 w-1/2 rounded-full bg-white/[0.03]" />
-              <div className="flex-1 grid grid-cols-2 gap-2 mt-2">
-                <div className="rounded-lg bg-white/[0.03] border border-white/[0.04] p-2 flex flex-col gap-1.5">
-                  <div className="h-2 w-12 rounded-full bg-white/[0.04]" />
-                  <div className="h-5 w-full rounded-md bg-gradient-to-r from-accent/10 to-accent-secondary/10" />
-                </div>
-                <div className="rounded-lg bg-white/[0.03] border border-white/[0.04] p-2 flex flex-col gap-1.5">
-                  <div className="h-2 w-12 rounded-full bg-white/[0.04]" />
-                  <div className="h-5 w-full rounded-md bg-gradient-to-r from-accent-secondary/10 to-blue-400/10" />
-                </div>
-              </div>
-            </div>
-
-            <div className="col-span-2 flex flex-col gap-2">
-              <div className="flex-1 rounded-lg bg-white/[0.02] border border-white/[0.04] p-3 flex flex-col gap-2">
-                <div className="h-2 w-16 rounded-full bg-white/[0.04]" />
-                <div className="h-2 w-12 rounded-full bg-white/[0.03]" />
-                <div className="h-2 w-14 rounded-full bg-white/[0.03]" />
-                <div className="flex-1" />
-                <div className="h-6 rounded-md bg-gradient-to-r from-accent/15 to-accent-secondary/15" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[rgba(11,16,32,0.5)] to-transparent pointer-events-none" />
-      </div>
-    </div>
-  )
 }
 
 export function FeaturedCaseStudy() {
@@ -121,8 +55,23 @@ export function FeaturedCaseStudy() {
                 }}
               />
               <div className="relative rounded-[28px] overflow-hidden border border-white/[0.06]">
-                <div style={{ aspectRatio: "16/10" }}>
-                  <BrowserMockup url={p.liveLink || `${siteUrl}/work/${p.slug}`} />
+                <div className="relative" style={{ aspectRatio: "16/10" }}>
+                  {p.thumbnail || p.coverImage ? (
+                    <Image
+                      src={p.thumbnail || p.coverImage}
+                      alt={`${p.title} project screenshot`}
+                      fill
+                      priority
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-[#0D1117] flex items-center justify-center">
+                      <span className="font-display text-2xl font-bold text-accent/70">
+                        {p.title?.charAt(0)}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
