@@ -6,9 +6,11 @@ import { Particles } from "@/components/why-smartbyte/Particles"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
 import { SafeSlideUp } from "@/components/common/SafeMotion"
 import { ArrowDown } from "lucide-react"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 export function WorksHero({ onBrowse }) {
   const ref = useRef(null)
+  const { openQuoteModal } = useQuoteModal()
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] })
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
   const y = useTransform(scrollYProgress, [0, 0.8], [0, 80])
@@ -79,12 +81,13 @@ export function WorksHero({ onBrowse }) {
                 <PremiumCTA href="#portfolio-grid" showArrow onClick={onBrowse}>
                   View Projects
                 </PremiumCTA>
-                <a
-                  href="/contact?source=works"
+                <button
+                  type="button"
+                  onClick={() => openQuoteModal({ source: "works" })}
                   className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-white/10 text-foreground hover:bg-white/5 hover:border-white/20 transition-all duration-300"
                 >
                   Start Your Project
-                </a>
+                </button>
               </div>
             </SafeSlideUp>
           </div>

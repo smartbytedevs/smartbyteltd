@@ -6,6 +6,7 @@ import { Particles } from "@/components/why-smartbyte/Particles"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
 import { SafeSlideUp } from "@/components/common/SafeMotion"
 import { ArrowDown, Globe, ArrowDownToLine, TrendingUp, CheckCircle, Sparkles } from "lucide-react"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 const steps = [
   { icon: Globe, label: "Website", color: "from-accent to-accent-secondary" },
@@ -45,6 +46,7 @@ function FloatingCard({ step, index }) {
 
 export function ServicesHero({ onExplore }) {
   const ref = useRef(null)
+  const { openQuoteModal } = useQuoteModal()
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] })
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
   const y = useTransform(scrollYProgress, [0, 0.8], [0, 80])
@@ -102,12 +104,13 @@ export function ServicesHero({ onExplore }) {
                   <PremiumCTA href="#services-grid" showArrow onClick={onExplore}>
                     Explore Services
                   </PremiumCTA>
-                  <a
-                    href="/contact?source=services"
+                  <button
+                    type="button"
+                    onClick={() => openQuoteModal({ source: "services" })}
                     className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-white/10 text-foreground hover:bg-white/5 hover:border-white/20 transition-all duration-300"
                   >
                     Get Free Consultation
-                  </a>
+                  </button>
                 </div>
               </SafeSlideUp>
             </div>

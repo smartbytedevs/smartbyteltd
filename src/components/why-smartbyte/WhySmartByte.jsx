@@ -7,6 +7,7 @@ import { Panel } from "./Panel"
 import { Particles } from "./Particles"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
 import { SectionHeading } from "@/components/ui/SectionHeading"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 const panels = [
   {
@@ -50,6 +51,7 @@ const panels = [
 export function WhySmartByte() {
   const prefersReduced = useReducedMotion()
   const sectionRef = useRef(null)
+  const { openQuoteModal } = useQuoteModal()
   const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 })
 
   useEffect(() => {
@@ -196,11 +198,11 @@ export function WhySmartByte() {
                   className="relative mt-10"
                 >
                   <PremiumCTA
-                    href="#contact"
                     icon={Calendar}
                     showArrow
                     arrowMotion
                     scaleOnHover
+                    onClick={() => openQuoteModal({ source: "home" })}
                   >
                     Start Your Project
                   </PremiumCTA>

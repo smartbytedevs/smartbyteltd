@@ -2,8 +2,11 @@
 
 import { motion } from "motion/react"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 export function FinalCTA() {
+  const { openQuoteModal } = useQuoteModal()
+
   return (
     <section className="relative mt-[120px] overflow-hidden py-[100px] sm:mt-[140px] sm:py-[120px] lg:py-[150px]">
       <div
@@ -58,7 +61,12 @@ export function FinalCTA() {
           transition={{ delay: 0.25, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="mt-10"
         >
-          <PremiumCTA href="#contact" size="lg" glow="lg" showArrow>
+          <PremiumCTA
+            size="lg"
+            glow="lg"
+            showArrow
+            onClick={() => openQuoteModal({ source: "final-cta" })}
+          >
             Start Your Project
           </PremiumCTA>
         </motion.div>

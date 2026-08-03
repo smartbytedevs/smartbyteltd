@@ -2,9 +2,11 @@
 
 import { SafeSlideUp } from "@/components/common/SafeMotion"
 import { ArrowRight } from "lucide-react"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 function PanelContent({ node }) {
   const Icon = node.icon
+  const { openQuoteModal } = useQuoteModal()
 
   return (
     <SafeSlideUp className="flex flex-col" key={node.id}>
@@ -31,7 +33,7 @@ function PanelContent({ node }) {
       {/* Deliverables */}
       <div className="mb-6">
         <span className="text-xs font-semibold tracking-label uppercase text-foreground/60 mb-3 block">
-          What's Included
+          What&apos;s Included
         </span>
         <div className="grid grid-cols-2 gap-x-4 gap-y-2">
           {node.deliverables.map((item) => (
@@ -84,13 +86,20 @@ function PanelContent({ node }) {
       </p>
 
       {/* CTA */}
-      <a
-        href="#contact"
-        className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-hover transition-colors duration-300"
+      <button
+        type="button"
+        onClick={() =>
+          openQuoteModal({
+            source: "home",
+            heading: "Explore This Service",
+            subtitle: node.description,
+          })
+        }
+        className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-hover transition-colors duration-300 cursor-pointer"
       >
         Explore Service
         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-      </a>
+      </button>
     </SafeSlideUp>
   )
 }

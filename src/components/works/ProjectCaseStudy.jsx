@@ -13,6 +13,7 @@ import {
   Target, Users,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 const categoryGradients = {
   restaurant: "from-emerald-500/30 to-green-600/30",
@@ -163,6 +164,15 @@ export function ProjectCaseStudy({ project }) {
 
   const liveHref = project.liveLink || ""
   const githubHref = project.githubLink || ""
+  const { openQuoteModal } = useQuoteModal()
+
+  const startSimilarProject = () =>
+    openQuoteModal({
+      source: "project",
+      heading: "Start a Similar Project",
+      subtitle: `Tell us about a project like ${project.title} — we'll bring the same care and craft.`,
+      description: `I'd like to start a project similar to "${project.title}"${project.client ? ` (built for ${project.client})` : ""}. Here's what I have in mind:`,
+    })
 
   const heroMeta = [
     { icon: Clock, label: project.duration },
@@ -267,12 +277,13 @@ export function ProjectCaseStudy({ project }) {
                         <Code className="w-4 h-4 text-accent" /> View Source
                       </a>
                     )}
-                    <Link
-                      href={`/contact?source=project&project=${project.slug}`}
+                    <button
+                      type="button"
+                      onClick={startSimilarProject}
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-white/[0.08] text-foreground hover:bg-white/5 hover:border-white/20 transition-all"
                     >
                       Start a Similar Project
-                    </Link>
+                    </button>
                   </div>
                 </SafeSlideUp>
               </div>
@@ -592,13 +603,14 @@ export function ProjectCaseStudy({ project }) {
                 {cs.CTA?.description || `Let's build a digital experience that grows your revenue the way ${project.title} did for ${project.client}.`}
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href={cs.CTA?.href || "/contact?source=case-study"}
+                <button
+                  type="button"
+                  onClick={startSimilarProject}
                   className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-background font-semibold text-sm shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
                 >
                   {cs.CTA?.buttonText || "Let's Build Yours"}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                </Link>
+                </button>
                 <Link
                   href="/works"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/[0.08] text-foreground font-semibold text-sm hover:bg-white/5 hover:border-white/20 transition-all"

@@ -3,8 +3,11 @@
 import { motion, AnimatePresence } from "motion/react"
 import { Check, ArrowRight } from "lucide-react"
 import { CardPreview } from "./CardPreview"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 export function ServiceCard({ service }) {
+  const { openQuoteModal } = useQuoteModal()
+
   return (
     <div className="h-[540px] rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.03] to-white/[0.01] backdrop-blur-sm overflow-hidden">
       <AnimatePresence mode="wait">
@@ -104,13 +107,20 @@ export function ServiceCard({ service }) {
             transition={{ duration: 0.3, delay: 0.15 }}
             className="shrink-0"
           >
-            <a
-              href="#contact"
-              className="group inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold bg-accent text-background hover:bg-accent-hover transition-colors duration-300"
+            <button
+              type="button"
+              onClick={() =>
+                openQuoteModal({
+                  source: "home",
+                  heading: service.ctaText,
+                  subtitle: `Let's discuss your ${service.title.toLowerCase()} project.`,
+                })
+              }
+              className="group inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold bg-accent text-background hover:bg-accent-hover transition-colors duration-300 cursor-pointer"
             >
               {service.ctaText}
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-300" />
-            </a>
+            </button>
           </motion.div>
         </motion.div>
       </AnimatePresence>

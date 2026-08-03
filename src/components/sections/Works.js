@@ -8,9 +8,11 @@ import { ProjectDetails } from "@/components/works/ProjectDetails"
 import { Particles } from "@/components/why-smartbyte/Particles"
 import { SafeSlideUp, SafeReveal } from "@/components/common/SafeMotion"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 export function Works() {
   const [hoveredId, setHoveredId] = useState(null)
+  const { openQuoteModal } = useQuoteModal()
 
   const handleHover = useCallback((id) => setHoveredId(id), [])
   const handleLeave = useCallback(() => setHoveredId(null), [])
@@ -144,7 +146,7 @@ export function Works() {
 
         {/* ═══ Bottom CTA ═══ */}
         <SafeReveal className="mt-20 text-center">
-          <PremiumCTA href="#contact" icon={Calendar} showArrow>
+          <PremiumCTA icon={Calendar} showArrow onClick={() => openQuoteModal({ source: "home" })}>
             Start Your Project
           </PremiumCTA>
         </SafeReveal>

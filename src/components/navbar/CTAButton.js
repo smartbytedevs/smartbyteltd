@@ -2,14 +2,15 @@
 
 import { useState, useRef } from "react"
 import { motion, useReducedMotion } from "motion/react"
-import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 export function CTAButton({ onClick, mobile }) {
   const [isHovered, setIsHovered] = useState(false)
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 })
   const buttonRef = useRef(null)
   const prefersReduced = useReducedMotion()
+  const { openQuoteModal } = useQuoteModal()
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect()
@@ -24,10 +25,13 @@ export function CTAButton({ onClick, mobile }) {
     : "px-6 py-2.5 text-xs"
 
   return (
-    <Link
-      href="/contact"
-      onClick={onClick}
+    <button
+      type="button"
       ref={buttonRef}
+      onClick={() => {
+        onClick?.()
+        openQuoteModal({ source: "navbar" })
+      }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false)
@@ -127,6 +131,6 @@ export function CTAButton({ onClick, mobile }) {
       >
         <ArrowRight className={`${mobile ? "w-4 h-4" : "w-3.5 h-3.5"} text-accent`} />
       </motion.span>
-    </Link>
+    </button>
   )
 }

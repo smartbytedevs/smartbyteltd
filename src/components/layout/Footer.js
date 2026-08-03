@@ -11,6 +11,7 @@ import {
   Send,
 } from "lucide-react"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 const services = [
   "Business Websites",
@@ -165,6 +166,7 @@ function SocialIcon({ name, url, path, index }) {
 export function Footer() {
   const [year] = useState(() => new Date().getFullYear())
   const [email, setEmail] = useState("")
+  const { openQuoteModal } = useQuoteModal()
 
   return (
     <footer className="relative overflow-hidden bg-[#090F1F]">
@@ -221,7 +223,7 @@ export function Footer() {
           </p>
 
           <div className="mt-8">
-            <PremiumCTA href="/contact" size="lg" glow="lg" showArrow extraGlow>
+            <PremiumCTA size="lg" glow="lg" showArrow extraGlow onClick={() => openQuoteModal({ source: "footer" })}>
               Start Your Project
             </PremiumCTA>
           </div>

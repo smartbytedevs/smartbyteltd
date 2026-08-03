@@ -3,8 +3,11 @@
 import { MessageCircle } from "lucide-react"
 import { SafeReveal, SafeSlideUp } from "@/components/common/SafeMotion"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 export function CtaBanner() {
+  const { openQuoteModal } = useQuoteModal()
+
   return (
     <SafeReveal viewportMargin="-80px" className="relative mt-24 overflow-hidden rounded-3xl">
       {/* Background */}
@@ -58,24 +61,25 @@ export function CtaBanner() {
         <SafeSlideUp delay={0.25} viewportMargin="-80px">
           <p className="mt-4 text-sm sm:text-base text-muted leading-relaxed max-w-xl mx-auto">
             Whether you need a business website, custom software or a complete digital
-            transformation — we're ready to help.
+            transformation — we&apos;re ready to help.
           </p>
         </SafeSlideUp>
 
         <SafeSlideUp delay={0.3} viewportMargin="-80px">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-            <PremiumCTA href="#contact" showArrow>
+            <PremiumCTA showArrow onClick={() => openQuoteModal({ source: "about" })}>
               Start Your Project
             </PremiumCTA>
 
             {/* Secondary CTA */}
-            <a
-              href="#contact"
+            <button
+              type="button"
+              onClick={() => openQuoteModal({ source: "about" })}
               className="group inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/[0.08] font-semibold text-sm tracking-nav text-muted hover:text-foreground hover:border-white/20 transition-all duration-500"
             >
               <MessageCircle className="w-4 h-4" />
-              Let's Talk
-            </a>
+              Let&apos;s Talk
+            </button>
           </div>
         </SafeSlideUp>
       </div>

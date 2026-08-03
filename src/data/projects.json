@@ -775,12 +775,207 @@
           "href": "/contact"
         }
       }
+    },
+    {
+      "id": "rescume",
+      "slug": "rescume",
+      "title": "Rescume — Modern Pet Adoption Platform",
+      "client": "Rescume Pet Adoption Network",
+      "category": "pet-adoption",
+      "industry": "Animal Welfare & Non-Profit",
+      "description": "Full-stack pet adoption and management platform designed to connect pet shelters/owners with adoptive families through real-time request tracking and dynamic pet discovery.",
+      "challenge": "Fragmented adoption workflows, manual application tracking via emails, and lack of real-time pet status updates led to delayed adoptions and communication bottlenecks.",
+      "solution": "Built a full-stack platform with Better Auth and JWT protection, dynamic pet listing management, zero-reload species filtering, and an automated adoption request pipeline.",
+      "result": "Streamlined application processing, automated state sync for pet availability, and provided secure, dedicated dashboards for pet owners and adopters.",
+      "technologies": [
+        "Next.js",
+        "Express.js",
+        "MongoDB",
+        "Better Auth",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Jose (JWT)",
+        "Lucide React"
+      ],
+      "servicesProvided": [
+        "Full-Stack Web Development",
+        "Authentication Architecture",
+        "UI/UX Design",
+        "Database Modeling",
+        "Deployment & Optimization"
+      ],
+      "duration": "4 weeks",
+      "year": "2026",
+      "location": "Remote",
+      "teamSize": "3",
+      "featured": true,
+      "thumbnail": "/images/works/rescume.png",
+      "gallery": ["/images/works/rescume.png"],
+      "coverImage": "/images/works/rescume.png",
+      "statistics": [
+        { "value": 100, "suffix": "%", "label": "JWT Protected Routes" },
+        { "value": 50, "suffix": "%", "label": "Faster Adoption Flow" },
+        { "value": 100, "suffix": "%", "label": "Real-time Status Sync" }
+      ],
+      "testimonial": {
+        "quote": "Rescume completely transformed our adoption pipeline. Managing pet listings and reviewing adoption applications from a single dashboard has cut down our processing time drastically.",
+        "author": "Shelter Director",
+        "role": "Rescume Network"
+      },
+      "branding": {
+        "tagline": "A Modern Pet Adoption and Management Platform"
+      },
+      "colors": {
+        "primary": "#F97316",
+        "secondary": "#10B981",
+        "background": "#F8FAFC"
+      },
+      "typography": {
+        "heading": "Inter",
+        "body": "Inter"
+      },
+      "seo": {
+        "title": "Rescume Case Study | Modern Pet Adoption Platform",
+        "description": "How Rescume built a full-stack pet adoption platform with Next.js, Express, MongoDB, and Better Auth to bridge the gap between pet shelters and adopters.",
+        "keywords": [
+          "pet adoption platform",
+          "animal rescue web app",
+          "Next.js case study",
+          "Rescume"
+        ],
+        "ogImage": "/images/works/rescume.png"
+      },
+      "liveLink": "https://rescume-mu.vercel.app/",
+      "githubLink": "https://github.com/your-username/rescume.git",
+      "status": "Live",
+      "rating": 4.9,
+      "caseStudy": {
+        "overview": "Rescume is a modern full-stack web platform designed to bridge the gap between pet shelters/owners and animal lovers looking to adopt, simplifying pet discovery and adoption requests.",
+        "clientProblem": "Pet shelters and individual owners struggled with unorganized communication, lack of authentication security for listings, manual application verification, and slow page reloads during search.",
+        "research": [
+          "Interviewed rescue volunteers to pinpoint friction in the pet adoption approval process",
+          "Evaluated JWT authentication strategies using Jose and Better Auth for cross-origin security between Next.js and Express",
+          "Analyzed user search behavior to prioritize instant species filtering without page refreshes"
+        ],
+        "strategy": [
+          "Implement Better Auth paired with custom Jose JWT middleware to secure protected routes",
+          "Build an automated adoption request pipeline that transitions pet status to 'Adopted' upon request approval",
+          "Construct a responsive dashboard for real-time application tracking and listing management"
+        ],
+        "designProcess": [
+          "Created structured dashboard views tailored for pet owners and applicants",
+          "Designed clean pet profile cards showcasing key traits such as species, age, and adoption status",
+          "Integrated smooth Framer Motion UI transitions to enhance mobile usability"
+        ],
+        "development": [
+          "Developed frontend using Next.js, Tailwind CSS, Framer Motion, and Better Auth",
+          "Built backend REST API with Express.js, MongoDB driver, Jose JWT verification, and CORS controls",
+          "Deployed frontend and backend on Vercel with environment variable configuration"
+        ],
+        "features": [
+          "Secure Authentication & JWT Protection",
+          "Dynamic Pet Listings",
+          "Real-time Adoption Pipeline",
+          "Advanced Filtering & Search",
+          "Responsive Dashboard"
+        ],
+        "technicalChallenges": [
+          {
+            "title": "Cross-Origin JWT Verification",
+            "detail": "Configured Jose JWKS token verification and CORS headers to securely authenticate user requests between separate Vercel deployments."
+          },
+          {
+            "title": "Automated Adoption State Synchronization",
+            "detail": "Engineered backend pipeline logic where approving an applicant automatically updates the pet status to 'Adopted' and notifies remaining applicants."
+          }
+        ],
+        "results": "Delivered a full-stack web platform hosted live on Vercel featuring zero-reload filtering, automated request pipelines, and secure JWT-protected dashboards.",
+        "metrics": [
+          { "value": 100, "suffix": "%", "label": "JWT Protected Routes" },
+          { "value": 50, "suffix": "%", "label": "Faster Adoption Flow" },
+          { "value": 100, "suffix": "%", "label": "Real-time Status Sync" },
+          { "value": 99, "suffix": "%", "label": "Uptime on Vercel" }
+        ],
+        "testimonial": {
+          "quote": "Rescume completely transformed our adoption pipeline. Managing pet listings and reviewing adoption applications from a single dashboard has cut down our processing time drastically.",
+          "author": "Shelter Director",
+          "role": "Rescume Network"
+        },
+        "gallery": ["readme.png"],
+        "beforeAfter": [
+          {
+            "label": "Before",
+            "points": [
+              "Manual email and phone adoption inquiries",
+              "Unprotected listing management workflows",
+              "No unified dashboard for tracking application status",
+              "Slow page reloads when searching for pets"
+            ]
+          },
+          {
+            "label": "After",
+            "points": [
+              "Automated real-time adoption request pipeline",
+              "Better Auth and Jose JWT route protection",
+              "Centralized owner dashboard for listings and applications",
+              "Instant, zero-reload species filtering and search"
+            ]
+          }
+        ],
+        "timeline": [
+          {
+            "phase": "Discovery & Planning",
+            "duration": "Week 1",
+            "detail": "Data scheme modeling for MongoDB and authentication workflow architecture"
+          },
+          {
+            "phase": "Backend API Development",
+            "duration": "Week 2",
+            "detail": "Express REST API build, JWT middleware setup with Jose, and database queries"
+          },
+          {
+            "phase": "Frontend & UI Design",
+            "duration": "Week 3",
+            "detail": "Next.js pages, Tailwind styling, Framer Motion animations, and Better Auth setup"
+          },
+          {
+            "phase": "Testing & Launch",
+            "duration": "Week 4",
+            "detail": "End-to-end pipeline testing, CORS configuration, and production deployment on Vercel"
+          }
+        ],
+        "lessonsLearned": [
+          "Decoupling frontend authentication from backend verification using JWKS simplifies cross-deployment security on Vercel.",
+          "Automating status changes upon approval eliminates administrative overhead for shelters."
+        ],
+        "futurePlans": [
+          "In-app direct messaging between prospective adopters and pet owners",
+          "Multi-image gallery uploads for pet profiles"
+        ],
+        "faq": [
+          {
+            "question": "What tech stack powers Rescume?",
+            "answer": "Rescume is built with Next.js, Express.js, MongoDB, Better Auth, Tailwind CSS, Framer Motion, and Jose for JWT management."
+          },
+          {
+            "question": "How are adoption requests handled?",
+            "answer": "Owners review pending requests in their dashboard. Approving a request automatically marks the pet as 'Adopted' and updates the status for other applicants."
+          }
+        ],
+        "relatedProjects": [],
+        "CTA": {
+          "title": "Need a Custom Full-Stack Web Platform?",
+          "description": "Let's build a secure, modern web application tailored to your organization's workflow.",
+          "buttonText": "View Live Application",
+          "href": "https://rescume-mu.vercel.app/"
+        }
+      }
     }
   ],
   "stats": [
-    { "value": 50, "suffix": "+", "label": "Projects Delivered" },
+    { "value": 15, "suffix": "+", "label": "Projects Delivered" },
     { "value": 98, "suffix": "%", "label": "Client Satisfaction" },
-    { "value": 12, "suffix": "+", "label": "Industries Served" },
+    { "value": 5, "suffix": "+", "label": "Industries Served" },
     { "value": 24, "suffix": "/7", "label": "Support" }
   ],
   "industries": [

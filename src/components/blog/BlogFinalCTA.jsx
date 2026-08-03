@@ -4,8 +4,11 @@ import { motion } from "motion/react"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
 import { SafeSlideUp } from "@/components/common/SafeMotion"
 import { ArrowRight } from "lucide-react"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 export function BlogFinalCTA() {
+  const { openQuoteModal } = useQuoteModal()
+
   return (
     <section className="relative py-32 md:py-40 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
@@ -59,7 +62,7 @@ export function BlogFinalCTA() {
 
         <SafeSlideUp delay={0.3}>
           <div className="flex flex-wrap justify-center gap-4">
-            <PremiumCTA href="/contact?source=blog" showArrow size="lg">
+            <PremiumCTA showArrow size="lg" onClick={() => openQuoteModal({ source: "blog" })}>
               Book Consultation
             </PremiumCTA>
             <a

@@ -2,6 +2,7 @@ import { IBM_Plex_Sans, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { FloatingContact } from "@/components/layout/FloatingContact"
 import { MotionProvider } from "@/components/common/MotionProvider"
+import { QuoteModalProvider } from "@/components/quote/QuoteModalProvider"
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-ibm-plex-sans",
@@ -36,8 +37,10 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <MotionProvider>
-          {children}
-          <FloatingContact />
+          <QuoteModalProvider>
+            {children}
+            <FloatingContact />
+          </QuoteModalProvider>
         </MotionProvider>
       </body>
     </html>

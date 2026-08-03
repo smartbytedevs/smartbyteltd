@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useSyncExternalStore } from "react"
 import { motion, AnimatePresence } from "motion/react"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 import {
   Rocket,
   Globe,
@@ -28,7 +29,7 @@ const messages = [
 
 const DISPLAY_DURATION = 6000
 
-const contactOptions = [
+const getContactOptions = (openQuoteModal) => [
   {
     icon: MessageCircle,
     title: "WhatsApp",
@@ -61,13 +62,7 @@ const contactOptions = [
     icon: Calendar,
     title: "Book Consultation",
     subtitle: "Free 30-minute discussion.",
-    action: () => {
-      if (document.getElementById("contact")) {
-        document.getElementById("contact").scrollIntoView({ behavior: "smooth" })
-      } else {
-        window.location.href = "/contact"
-      }
-    },
+    action: () => openQuoteModal({ source: "floating" }),
     gradient: "from-[#8B5CF6]/20 to-[#6366F1]/10",
     iconColor: "text-[#8B5CF6]",
   },
@@ -165,7 +160,9 @@ function Orb({ icon: Icon, currentIndex, reducedMotion }) {
   )
 }
 
-function PanelContent({ onClose }) {
+function PanelContent({ onClose, openQuoteModal }) {
+  const contactOptions = getContactOptions(openQuoteModal)
+
   return (
     <div className="relative p-5">
       <div
@@ -290,6 +287,7 @@ export function FloatingContact() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
   const reducedMotion = useReducedMotion()
+  const { openQuoteModal } = useQuoteModal()
 
   const isPaused = isHovered || isOpen
   const currentMessage = messages[currentIndex]
@@ -355,7 +353,7 @@ export function FloatingContact() {
             }}
             className="fixed inset-x-0 bottom-0 z-[9999] block overflow-hidden rounded-t-3xl border border-white/[0.08] bg-[rgba(12,18,34,0.92)] shadow-2xl backdrop-blur-2xl md:hidden"
           >
-            <PanelContent onClose={close} />
+            <PanelContent onClose={close} openQuoteModal={openQuoteModal} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -377,7 +375,7 @@ export function FloatingContact() {
               className="hidden overflow-hidden rounded-3xl border border-white/[0.08] bg-[rgba(12,18,34,0.92)] shadow-2xl backdrop-blur-2xl md:block md:w-[380px]"
               style={{ marginBottom: "calc(56px + 16px)" }}
             >
-              <PanelContent onClose={close} />
+              <PanelContent onClose={close} openQuoteModal={openQuoteModal} />
             </motion.div>
           ) : (
             <motion.button

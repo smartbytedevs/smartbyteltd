@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState, useCallback, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
@@ -68,8 +68,13 @@ function Ripple({ x, y, size, onComplete }) {
   )
 }
 
-export function ContactForm() {
-  const [data, setData] = useState(initialData)
+export function ContactForm({
+  initialValues = {},
+  title = "Send Us Your Project Details",
+  idPrefix = "contact",
+  onSuccess,
+}) {
+  const [data, setData] = useState(() => ({ ...initialData, ...initialValues }))
   const [touched, setTouched] = useState({})
   const [formStatus, setFormStatus] = useState("idle")
   const [serverError, setServerError] = useState("")
@@ -113,7 +118,7 @@ export function ContactForm() {
       const formErrors = validate(data)
       if (Object.keys(formErrors).length > 0) {
         const firstErrorField = Object.keys(formErrors)[0]
-        const el = document.getElementById(`contact-${firstErrorField}`)
+        const el = document.getElementById(`${idPrefix}-${firstErrorField}`)
         if (el) {
           el.scrollIntoView({ behavior: "smooth", block: "center" })
           el.focus()
@@ -142,7 +147,7 @@ export function ContactForm() {
               )
             )
             const firstField = Object.keys(result.errors)[0]
-            const el = document.getElementById(`contact-${firstField}`)
+            const el = document.getElementById(`${idPrefix}-${firstField}`)
             if (el) {
               el.scrollIntoView({ behavior: "smooth", block: "center" })
               el.focus()
@@ -154,6 +159,7 @@ export function ContactForm() {
         }
 
         setFormStatus("success")
+        onSuccess?.()
         setTimeout(() => {
           setFormStatus("idle")
           setData(initialData)
@@ -164,7 +170,7 @@ export function ContactForm() {
         setFormStatus("error")
       }
     },
-    [data]
+    [data, idPrefix, onSuccess]
   )
 
   const addRipple = useCallback((e) => {
@@ -205,7 +211,7 @@ export function ContactForm() {
       />
 
       <h3 className="mb-8 font-display text-xl font-bold text-foreground sm:text-2xl">
-        Send Us Your Project Details
+        {title}
       </h3>
 
       <AnimatePresence mode="wait">
@@ -254,7 +260,7 @@ export function ContactForm() {
 
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               <Input
-                id="contact-fullname"
+                id={`${idPrefix}-fullname`}
                 label="Full Name"
                 value={data.fullName}
                 onChange={handleChange("fullName")}
@@ -265,7 +271,7 @@ export function ContactForm() {
                 icon={User}
               />
               <Input
-                id="contact-company"
+                id={`${idPrefix}-company`}
                 label="Company Name"
                 value={data.companyName}
                 onChange={handleChange("companyName")}
@@ -279,7 +285,7 @@ export function ContactForm() {
 
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               <Input
-                id="contact-email"
+                id={`${idPrefix}-email`}
                 label="Email"
                 type="email"
                 value={data.email}
@@ -291,7 +297,7 @@ export function ContactForm() {
                 icon={Mail}
               />
               <Input
-                id="contact-phone"
+                id={`${idPrefix}-phone`}
                 label="Phone"
                 type="tel"
                 value={data.phone}
@@ -306,7 +312,7 @@ export function ContactForm() {
 
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
               <Select
-                id="contact-project-type"
+                id={`${idPrefix}-project-type`}
                 label="Project Type"
                 value={data.projectType}
                 onChange={handleChange("projectType")}
@@ -317,7 +323,7 @@ export function ContactForm() {
                 options={projectTypes}
               />
               <Select
-                id="contact-budget"
+                id={`${idPrefix}-budget`}
                 label="Budget"
                 value={data.budget}
                 onChange={handleChange("budget")}
@@ -328,7 +334,7 @@ export function ContactForm() {
                 options={budgetRanges}
               />
               <Select
-                id="contact-timeline"
+                id={`${idPrefix}-timeline`}
                 label="Timeline"
                 value={data.timeline}
                 onChange={handleChange("timeline")}
@@ -341,7 +347,7 @@ export function ContactForm() {
             </div>
 
             <Textarea
-              id="contact-description"
+              id={`${idPrefix}-description`}
               label="Project Description"
               value={data.description}
               onChange={handleChange("description")}
@@ -352,7 +358,7 @@ export function ContactForm() {
             />
 
             <Checkbox
-              id="contact-agreed"
+              id={`${idPrefix}-agreed`}
               checked={data.agreed}
               onChange={handleChange("agreed")}
               onBlur={handleBlur("agreed")}

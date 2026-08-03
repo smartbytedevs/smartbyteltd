@@ -11,6 +11,7 @@ import {
   ArrowLeft, ArrowUpRight, Check, Clock, Eye, Layout, ShoppingCart, Star, Zap,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 const categoryGradients = {
   restaurant: "from-emerald-500/30 to-green-600/30",
@@ -114,6 +115,16 @@ export function TemplateDetails({ template }) {
   const industryLabel = industries.find((i) => i.value === template.industry)?.label || template.industry
   const price = getTemplatePriceDisplay(template)
   const related = getRelatedTemplates(template, 3)
+  const { openQuoteModal } = useQuoteModal()
+
+  const buyThisTemplate = () =>
+    openQuoteModal({
+      source: "template",
+      projectType: "Website Template",
+      template: template.title,
+      heading: "Get This Template",
+      subtitle: `Order "${template.title}" — we'll set it up and customize it for your business.`,
+    })
 
   const liveHref = template.liveLink || ""
   const showLive = Boolean(liveHref)
@@ -208,12 +219,13 @@ export function TemplateDetails({ template }) {
                           <Eye className="w-4 h-4" /> {showComingSoon || showUnavailable ? "Coming Soon" : "Unavailable"}
                         </span>
                       )}
-                      <Link
-                        href={`/contact?source=template&template=${template.slug}`}
+                      <button
+                        type="button"
+                        onClick={buyThisTemplate}
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-white/[0.08] text-foreground hover:bg-white/5 hover:border-white/20 transition-all"
                       >
                         <ShoppingCart className="w-4 h-4 text-accent" /> Get This Template
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </SafeSlideUp>
@@ -365,12 +377,13 @@ export function TemplateDetails({ template }) {
                 Get the template delivered and customized for your business — starting at {price}.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href={`/contact?source=template&template=${template.slug}`}
+                <button
+                  type="button"
+                  onClick={buyThisTemplate}
                   className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-background font-semibold text-sm shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
                 >
                   <ShoppingCart className="w-4 h-4" /> Get This Template
-                </Link>
+                </button>
                 <Link
                   href="/templates"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/[0.08] text-foreground font-semibold text-sm hover:bg-white/5 hover:border-white/20 transition-all"

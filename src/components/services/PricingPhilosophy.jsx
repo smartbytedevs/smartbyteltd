@@ -6,8 +6,11 @@ import { SectionHeading } from "@/components/ui/SectionHeading"
 import { pricingTiers } from "@/data/services"
 import { cn } from "@/lib/utils"
 import { ArrowRight, CheckCircle, Clock, DollarSign, Users } from "lucide-react"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 export function PricingPhilosophy() {
+  const { openQuoteModal } = useQuoteModal()
+
   return (
     <section id="request-quote" className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
@@ -98,8 +101,9 @@ export function PricingPhilosophy() {
                     ))}
                   </div>
 
-                  <a
-                    href="/contact?source=services"
+                  <button
+                    type="button"
+                    onClick={() => openQuoteModal({ source: "services" })}
                     className={cn(
                       "group flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-medium transition-all duration-300",
                       tier.id === "growth"
@@ -109,7 +113,7 @@ export function PricingPhilosophy() {
                   >
                     Request Custom Quote
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </a>
+                  </button>
                 </div>
               </motion.div>
             </SafeSlideUp>

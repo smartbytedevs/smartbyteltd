@@ -4,6 +4,7 @@ import { useRef, useState, useCallback } from "react"
 import { motion } from "motion/react"
 import { Check } from "lucide-react"
 import { SafeScale, SafeSlideUp } from "@/components/common/SafeMotion"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 function MagneticButton({ children, className }) {
   const ref = useRef(null)
@@ -40,6 +41,7 @@ export function PricingCard({ plan, index }) {
   const cardRef = useRef(null)
   const [isHovered, setIsHovered] = useState(false)
   const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 })
+  const { openQuoteModal } = useQuoteModal()
 
   const handleMouseMove = useCallback((e) => {
     const rect = cardRef.current?.getBoundingClientRect()
@@ -228,9 +230,10 @@ export function PricingCard({ plan, index }) {
 
             {/* CTA */}
             <MagneticButton>
-              <a
-                href="#contact"
-                className={`group/btn relative flex items-center justify-center gap-2 overflow-hidden rounded-full px-5 py-3 font-semibold text-xs tracking-nav transition-all duration-500 ${
+              <button
+                type="button"
+                onClick={() => openQuoteModal({ source: "pricing", heading: plan.cta })}
+                className={`group/btn relative flex items-center justify-center gap-2 overflow-hidden rounded-full px-5 py-3 font-semibold text-xs tracking-nav transition-all duration-500 cursor-pointer ${
                   plan.id === "custom"
                     ? "border border-white/[0.08] text-muted hover:text-foreground hover:border-white/20"
                     : ""
@@ -259,7 +262,7 @@ export function PricingCard({ plan, index }) {
                     </span>
                   </span>
                 )}
-              </a>
+              </button>
             </MagneticButton>
           </div>
         </motion.div>

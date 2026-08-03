@@ -9,6 +9,7 @@ import { TestimonialStats } from "./TestimonialStats"
 import { Particles } from "@/components/why-smartbyte/Particles"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
 import { SectionHeading } from "@/components/ui/SectionHeading"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 const columnLayout = {
   left: [testimonials[0], testimonials[2], testimonials[4], testimonials[6]],
@@ -17,6 +18,7 @@ const columnLayout = {
 
 export function Testimonials() {
   const [activeCard, setActiveCard] = useState(null)
+  const { openQuoteModal } = useQuoteModal()
 
   const handleHover = useCallback((id) => {
     setActiveCard(id)
@@ -127,11 +129,11 @@ export function Testimonials() {
               <SafeSlideUp delay={0.5}>
                 <div className="relative mt-10">
                   <PremiumCTA
-                    href="#contact"
                     icon={Calendar}
                     showArrow
                     arrowMotion
                     scaleOnHover
+                    onClick={() => openQuoteModal({ source: "home" })}
                   >
                     Start Your Project
                   </PremiumCTA>

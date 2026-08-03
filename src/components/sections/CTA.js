@@ -4,8 +4,11 @@ import { motion } from "motion/react"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 import { AnimatedGradient } from "@/components/ui/AnimatedGradient"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 export function CTA() {
+  const { openQuoteModal } = useQuoteModal()
+
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">
       <AnimatedGradient className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" size="lg" />
@@ -58,11 +61,20 @@ export function CTA() {
             transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button variant="primary" size="lg" className="gap-2 group">
+            <Button
+              variant="primary"
+              size="lg"
+              className="gap-2 group"
+              onClick={() => openQuoteModal({ source: "home" })}
+            >
               Start Your Project
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="secondary" size="lg">
+            <Button
+              variant="secondary"
+              size="lg"
+              onClick={() => openQuoteModal({ source: "home" })}
+            >
               Schedule a Call
             </Button>
           </motion.div>

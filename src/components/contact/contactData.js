@@ -56,6 +56,7 @@ export const trustStats = [
 export const projectTypes = [
   "Business Website",
   "E-commerce",
+  "Website Template",
   "Custom Software",
   "Inventory",
   "Restaurant",

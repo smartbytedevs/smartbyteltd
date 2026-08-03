@@ -5,8 +5,11 @@ import { SafeSlideUp } from "@/components/common/SafeMotion"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
 import { Particles } from "@/components/why-smartbyte/Particles"
 import { MessageSquare, ArrowRight, Send } from "lucide-react"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 export function TemplatesFinalCTA() {
+  const { openQuoteModal } = useQuoteModal()
+
   return (
     <section className="relative py-32 md:py-40 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
@@ -56,16 +59,33 @@ export function TemplatesFinalCTA() {
 
           <SafeSlideUp delay={0.4}>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <PremiumCTA href="/contact?source=templates" icon={MessageSquare} showArrow>
+              <PremiumCTA
+                icon={MessageSquare}
+                showArrow
+                onClick={() =>
+                  openQuoteModal({
+                    source: "templates",
+                    projectType: "Website Template",
+                    heading: "Book a Free Consultation",
+                  })
+                }
+              >
                 Book Consultation
               </PremiumCTA>
-              <a
-                href="/contact?source=templates"
+              <button
+                type="button"
+                onClick={() =>
+                  openQuoteModal({
+                    source: "templates",
+                    projectType: "Website Template",
+                    heading: "Book a Free Consultation",
+                  })
+                }
                 className="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium rounded-full border border-white/10 text-foreground hover:bg-white/5 hover:border-white/20 transition-all duration-300"
               >
                 <Send className="w-4 h-4" />
                 Contact SmartByte
-              </a>
+              </button>
             </div>
           </SafeSlideUp>
         </div>

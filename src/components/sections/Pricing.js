@@ -8,8 +8,11 @@ import { PricingFeatureCompare } from "@/components/pricing/PricingFeatureCompar
 import { PricingNote } from "@/components/pricing/PricingNote"
 import { PricingTrust } from "@/components/pricing/PricingTrust"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 export function Pricing() {
+  const { openQuoteModal } = useQuoteModal()
+
   return (
     <section
       id="pricing"
@@ -115,7 +118,7 @@ export function Pricing() {
             transition={{ delay: 0.25, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="shrink-0"
           >
-            <PremiumCTA href="#contact" size="sm" showArrow>
+            <PremiumCTA size="sm" showArrow onClick={() => openQuoteModal({ source: "pricing" })}>
               Get Free Consultation
             </PremiumCTA>
           </motion.div>

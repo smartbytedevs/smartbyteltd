@@ -9,11 +9,13 @@ import { BackgroundEffects } from "./BackgroundEffects"
 import { Particles } from "@/components/why-smartbyte/Particles"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
 import { SectionHeading } from "@/components/ui/SectionHeading"
+import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 export function WhatWeBuild() {
   const [activeService, setActiveService] = useState(services[0])
   const prefersReduced = useReducedMotion()
   const sectionRef = useRef(null)
+  const { openQuoteModal } = useQuoteModal()
   const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 })
 
   useEffect(() => {
@@ -150,11 +152,11 @@ export function WhatWeBuild() {
                 className="relative mt-8"
               >
                   <PremiumCTA
-                    href="#contact"
                     icon={Calendar}
                     showArrow
                     arrowMotion
                     scaleOnHover
+                    onClick={() => openQuoteModal({ source: "home" })}
                   >
                     Start Your Project
                   </PremiumCTA>
