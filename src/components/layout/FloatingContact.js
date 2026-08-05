@@ -96,7 +96,7 @@ function Orb({ icon: Icon, currentIndex, reducedMotion }) {
         className="absolute inset-[-2px] rounded-full"
         style={{
           background:
-            "conic-gradient(from 0deg, #B45309, #A03A1E, #B45309, #A03A1E, #B45309)",
+            "conic-gradient(from 0deg, #0F766E, #0E7490, #0F766E, #0E7490, #0F766E)",
           WebkitMask:
             "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 0.5px))",
           mask: "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 0.5px))",
@@ -108,9 +108,9 @@ function Orb({ icon: Icon, currentIndex, reducedMotion }) {
         className="absolute inset-[-6px] rounded-full"
         animate={{
           boxShadow: [
-            "0 0 0px rgba(180,83,9,0)",
-            "0 0 25px rgba(180,83,9,0.12)",
-            "0 0 0px rgba(180,83,9,0)",
+            "0 0 0px rgba(15,118,110,0)",
+            "0 0 25px rgba(15,118,110,0.12)",
+            "0 0 0px rgba(15,118,110,0)",
           ],
         }}
         transition={{
@@ -124,7 +124,7 @@ function Orb({ icon: Icon, currentIndex, reducedMotion }) {
         className="absolute inset-[-4px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle at 30% 30%, rgba(180,83,9,0.08), transparent 70%)",
+            "radial-gradient(circle at 30% 30%, rgba(15,118,110,0.08), transparent 70%)",
         }}
         animate={reducedMotion ? { scale: 1 } : { scale: [1, 1.08, 1] }}
         transition={{
@@ -141,7 +141,7 @@ function Orb({ icon: Icon, currentIndex, reducedMotion }) {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="relative flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-secondary p-[1.5px] shadow-lg"
       >
-        <div className="flex h-full w-full items-center justify-center rounded-full bg-[#0B1020]/90 backdrop-blur-sm">
+        <div className="flex h-full w-full items-center justify-center rounded-full bg-foreground/90 backdrop-blur-sm">
           <motion.div
             key={currentIndex}
             initial={{ scale: 1, rotate: 0 }}
@@ -169,7 +169,7 @@ function PanelContent({ onClose, openQuoteModal }) {
         className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full opacity-8"
         style={{
           background:
-            "radial-gradient(circle, rgba(180, 83, 9, 0.12), transparent 70%)",
+            "radial-gradient(circle, rgba(15, 118, 110, 0.12), transparent 70%)",
           filter: "blur(50px)",
         }}
       />
@@ -177,7 +177,7 @@ function PanelContent({ onClose, openQuoteModal }) {
         className="pointer-events-none absolute -bottom-16 -left-16 h-36 w-36 rounded-full opacity-8"
         style={{
           background:
-            "radial-gradient(circle, rgba(160, 58, 30, 0.1), transparent 70%)",
+            "radial-gradient(circle, rgba(14, 116, 144, 0.1), transparent 70%)",
           filter: "blur(50px)",
         }}
       />
@@ -224,7 +224,7 @@ function PanelContent({ onClose, openQuoteModal }) {
                 className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(180,83,9,0.03), rgba(160,58,30,0.03))",
+                    "linear-gradient(135deg, rgba(15,118,110,0.03), rgba(14,116,144,0.03))",
                 }}
               />
               <div className="relative flex items-center gap-3.5">
@@ -246,7 +246,7 @@ function PanelContent({ onClose, openQuoteModal }) {
             </motion.button>
           ))}
         </div>
-        <div className="mt-4 border-t border-white/[0.05] pt-3">
+        <div className="mt-4 border-t border-border/40 pt-3">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
@@ -351,7 +351,7 @@ export function FloatingContact() {
               damping: 28,
               mass: 0.9,
             }}
-            className="fixed inset-x-0 bottom-0 z-[9999] block overflow-hidden rounded-t-3xl border border-border/35 bg-[rgba(12,18,34,0.92)] shadow-2xl backdrop-blur-2xl md:hidden"
+            className="fixed inset-x-0 bottom-0 z-[9999] block overflow-hidden rounded-t-3xl border border-border/35 bg-white/90 shadow-2xl backdrop-blur-2xl md:hidden"
           >
             <PanelContent onClose={close} openQuoteModal={openQuoteModal} />
           </motion.div>
@@ -372,7 +372,7 @@ export function FloatingContact() {
                 damping: 28,
                 mass: 0.9,
               }}
-              className="hidden overflow-hidden rounded-3xl border border-border/35 bg-[rgba(12,18,34,0.92)] shadow-2xl backdrop-blur-2xl md:block md:w-[380px]"
+              className="hidden overflow-hidden rounded-3xl border border-border/35 bg-white/90 shadow-2xl backdrop-blur-2xl md:block md:w-[380px]"
               style={{ marginBottom: "calc(56px + 16px)" }}
             >
               <PanelContent onClose={close} openQuoteModal={openQuoteModal} />
@@ -421,7 +421,7 @@ export function FloatingContact() {
 
               <div
                 className="relative hidden h-[56px] items-center overflow-hidden rounded-full border border-border/35 px-4 backdrop-blur-xl md:flex"
-                style={{ background: "rgba(12,18,32,0.82)" }}
+                style={{ background: "rgba(255, 255, 255, 0.85)" }}
               >
                 <motion.div
                   animate={
@@ -460,7 +460,7 @@ export function FloatingContact() {
                                   mass: 1,
                                 }
                           }
-                          className="inline-block whitespace-nowrap text-[16px] font-semibold leading-none text-[#F8FAFC]"
+                          className="inline-block whitespace-nowrap text-[16px] font-semibold leading-none text-foreground"
                         >
                           <HighlightedText
                             text={currentMessage.text}
@@ -472,7 +472,7 @@ export function FloatingContact() {
                   </div>
                 </motion.div>
 
-                <div className="absolute bottom-0 left-4 right-4 h-[2px] overflow-hidden rounded-full bg-white/45">
+                <div className="absolute bottom-0 left-4 right-4 h-[2px] overflow-hidden rounded-full bg-foreground/10">
                   <div
                     key={currentIndex}
                     className="h-full rounded-full bg-gradient-to-r from-accent to-accent-secondary"

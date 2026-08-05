@@ -21,11 +21,11 @@ export function FeaturedCaseStudy() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[30%] -right-48 w-[600px] h-[600px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(160, 58, 30, 0.05), transparent 70%)",
+          background: "radial-gradient(circle, rgba(14, 116, 144, 0.05), transparent 70%)",
           filter: "blur(120px)",
         }} />
       </div>
@@ -50,7 +50,7 @@ export function FeaturedCaseStudy() {
               <div
                 className="absolute -inset-[2px] rounded-[28px] opacity-40 pointer-events-none"
                 style={{
-                  background: "linear-gradient(135deg, rgba(180, 83, 9, 0.12), rgba(160, 58, 30, 0.06))",
+                  background: "linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(14, 116, 144, 0.06))",
                   filter: "blur(8px)",
                 }}
               />
@@ -66,7 +66,7 @@ export function FeaturedCaseStudy() {
                       className="object-cover"
                     />
                   ) : (
-                    <div className="absolute inset-0 bg-[#0D1117] flex items-center justify-center">
+                    <div className="absolute inset-0 bg-[#1C1917] flex items-center justify-center">
                       <span className="font-display text-2xl font-bold text-accent/70">
                         {p.title?.charAt(0)}
                       </span>
@@ -109,7 +109,7 @@ export function FeaturedCaseStudy() {
                     <div
                       className="absolute inset-0 rounded-xl border border-border/30 transition-colors duration-300 group-hover/metric:border-accent/15"
                       style={{
-                        background: "rgba(255, 247, 236, 0.7)",
+                        background: "rgba(255, 253, 246, 0.7)",
                         backdropFilter: "blur(12px)",
                         WebkitBackdropFilter: "blur(12px)",
                       }}
@@ -161,7 +161,7 @@ export function FeaturedCaseStudy() {
               <div className="flex flex-wrap items-center gap-4">
                 <Link
                   href={`/works/${p.slug}`}
-                  className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                  className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-gradient-to-r from-accent to-accent-secondary text-white shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
                 >
                   Read Case Study
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

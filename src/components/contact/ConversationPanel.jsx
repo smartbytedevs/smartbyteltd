@@ -12,7 +12,7 @@ function ContactMethod({ icon: Icon, title, value, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: 0.3 + index * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative overflow-hidden rounded-2xl border border-border/30 bg-white/40 p-4 backdrop-blur-xl transition-all duration-500 hover:border-accent/20 hover:shadow-[0_0_30px_rgba(180,83,9,0.06)]"
+      className="group relative overflow-hidden rounded-2xl border border-border/30 bg-white/40 p-4 backdrop-blur-xl transition-all duration-500 hover:border-accent/20 hover:shadow-[0_0_30px_rgba(15,118,110,0.06)]"
     >
       <div className="flex items-start gap-4">
         <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent/10 to-accent-secondary/10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-8deg]">
@@ -70,7 +70,7 @@ function SocialIcon({ name, url, index }) {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay: 0.5 + index * 0.08, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-border/35 bg-white/40 text-muted backdrop-blur-xl transition-all duration-500 hover:scale-110 hover:border-accent/30 hover:text-accent hover:shadow-[0_0_20px_rgba(180,83,9,0.1)]"
+      className="flex h-10 w-10 items-center justify-center rounded-full border border-border/35 bg-white/40 text-muted backdrop-blur-xl transition-all duration-500 hover:scale-110 hover:border-accent/30 hover:text-accent hover:shadow-[0_0_20px_rgba(15,118,110,0.1)]"
     >
       {iconMap[name]}
     </motion.a>
@@ -98,7 +98,7 @@ export function ConversationPanel() {
           className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full opacity-10"
           style={{
             background:
-              "radial-gradient(circle, rgba(180, 83, 9, 0.2), transparent 70%)",
+              "radial-gradient(circle, rgba(15, 118, 110, 0.2), transparent 70%)",
             filter: "blur(40px)",
           }}
         />

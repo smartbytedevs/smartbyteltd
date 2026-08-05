@@ -109,7 +109,7 @@ function ProfileImage({ index }) {
         className="absolute inset-0 opacity-[0.04] transition-opacity duration-700"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+            "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
           backgroundSize: "20px 20px",
         }}
       />
@@ -162,11 +162,11 @@ export function TeamCard({ member, index, featured }) {
             className="absolute inset-0 rounded-[24px] border transition-colors duration-500"
             style={{
               borderColor: isHovered
-                ? "rgba(180, 83, 9, 0.25)"
-                : "rgba(43, 33, 24, 0.08)",
+                ? "rgba(15, 118, 110, 0.25)"
+                : "rgba(28, 25, 23, 0.08)",
               background: isHovered
-                ? "rgba(255, 247, 236, 0.9)"
-                : "rgba(255, 247, 236, 0.7)",
+                ? "rgba(255, 253, 246, 0.9)"
+                : "rgba(255, 253, 246, 0.7)",
               backdropFilter: "blur(24px)",
               WebkitBackdropFilter: "blur(24px)",
             }}
@@ -176,7 +176,7 @@ export function TeamCard({ member, index, featured }) {
             className="absolute inset-0 rounded-[24px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
             style={{
               background:
-                "radial-gradient(circle at 50% 0%, rgba(180, 83, 9, 0.08), transparent 70%)",
+                "radial-gradient(circle at 50% 0%, rgba(15, 118, 110, 0.08), transparent 70%)",
             }}
           />
 
@@ -184,7 +184,7 @@ export function TeamCard({ member, index, featured }) {
             className="absolute -inset-4 rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
             style={{
               background:
-                "linear-gradient(135deg, rgba(180, 83, 9, 0.1), rgba(160, 58, 30, 0.05))",
+                "linear-gradient(135deg, rgba(15, 118, 110, 0.1), rgba(14, 116, 144, 0.05))",
               filter: "blur(24px)",
               zIndex: -1,
             }}

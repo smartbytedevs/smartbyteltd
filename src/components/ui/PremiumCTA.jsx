@@ -12,9 +12,9 @@ const sizes = {
 }
 
 const glowShadows = {
-  sm: "0 0 20px rgba(180, 83, 9, 0.2), 0 0 40px rgba(160, 58, 30, 0.1)",
-  md: "0 0 30px rgba(180, 83, 9, 0.3), 0 0 60px rgba(160, 58, 30, 0.15)",
-  lg: "0 0 40px rgba(180, 83, 9, 0.3), 0 0 80px rgba(160, 58, 30, 0.15)",
+  sm: "0 0 20px rgba(15, 118, 110, 0.2), 0 0 40px rgba(14, 116, 144, 0.1)",
+  md: "0 0 30px rgba(15, 118, 110, 0.3), 0 0 60px rgba(14, 116, 144, 0.15)",
+  lg: "0 0 40px rgba(15, 118, 110, 0.3), 0 0 80px rgba(14, 116, 144, 0.15)",
 }
 
 const PremiumCTA = forwardRef(function PremiumCTA(
@@ -49,13 +49,13 @@ const PremiumCTA = forwardRef(function PremiumCTA(
           className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100"
           style={{
             boxShadow:
-              "0 0 60px rgba(180, 83, 9, 0.15), 0 0 100px rgba(160, 58, 30, 0.08)",
+              "0 0 60px rgba(15, 118, 110, 0.15), 0 0 100px rgba(14, 116, 144, 0.08)",
             animation: "pulse-glow 3s ease-in-out infinite 1s",
           }}
         />
       )}
 
-      <span className="relative z-10 text-background flex items-center gap-2">
+      <span className="relative z-10 text-white flex items-center gap-2">
         {Icon && <Icon className="w-4 h-4 shrink-0" />}
         {children}
       </span>
@@ -67,13 +67,13 @@ const PremiumCTA = forwardRef(function PremiumCTA(
           whileHover={{ x: 4 }}
           transition={{ duration: 0.2 }}
         >
-          <ArrowRight className="w-4 h-4 text-background shrink-0" />
+          <ArrowRight className="w-4 h-4 text-white shrink-0" />
         </motion.span>
       )}
 
       {showArrow && !arrowMotion && (
         <span className="relative z-10">
-          <ArrowRight className="w-4 h-4 text-background shrink-0 group-hover:translate-x-0.5 transition-transform duration-200" />
+          <ArrowRight className="w-4 h-4 text-white shrink-0 group-hover:translate-x-0.5 transition-transform duration-200" />
         </span>
       )}
 

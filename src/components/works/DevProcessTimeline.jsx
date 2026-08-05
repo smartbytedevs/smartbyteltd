@@ -32,7 +32,7 @@ function TimelineStep({ step, index, isLast }) {
           transition={{ duration: 0.4, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="relative z-10 w-16 h-16 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center shadow-lg shadow-accent/20"
         >
-          {Icon && <Icon className="w-6 h-6 text-background" />}
+          {Icon && <Icon className="w-6 h-6 text-white" />}
           <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-background border border-accent/30 flex items-center justify-center text-[10px] font-bold text-accent">
             {step.step}
           </span>
@@ -73,7 +73,7 @@ export function DevProcessTimeline() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
       </div>
@@ -104,7 +104,7 @@ export function DevProcessTimeline() {
                 >
                   {(() => {
                     const Icon = iconMap[step.icon]
-                    return Icon && <Icon className="w-6 h-6 text-background" />
+                    return Icon && <Icon className="w-6 h-6 text-white" />
                   })()}
                   <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-background border border-accent/30 flex items-center justify-center text-[10px] font-bold text-accent">
                     {step.step}

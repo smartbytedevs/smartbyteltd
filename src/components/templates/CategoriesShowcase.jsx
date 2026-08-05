@@ -65,7 +65,7 @@ export function CategoriesShowcase() {
                 className={cn(
                   "group relative flex flex-col items-center justify-center gap-3 p-6 md:p-8 rounded-2xl transition-all duration-300",
                   "bg-white/30 border border-border/30",
-                  "hover:bg-white/4555 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5",
+                  "hover:bg-white/55 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5",
                   isActive && "bg-accent/[0.04] border-accent/30 shadow-lg shadow-accent/10"
                 )}
                 aria-label={`Show ${cat.label} templates`}

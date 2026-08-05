@@ -68,11 +68,11 @@ export function LatestArticles() {
     <section id="latest-articles" className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[20%] -left-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(180, 83, 9, 0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(15, 118, 110, 0.04), transparent 70%)",
           filter: "blur(120px)",
         }} />
       </div>
@@ -108,7 +108,7 @@ export function LatestArticles() {
                   className={cn(
                     "group relative rounded-2xl overflow-hidden transition-all duration-500",
                     "bg-white/30 border border-border/30",
-                    "hover:bg-white/4555 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5",
+                    "hover:bg-white/55 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5",
                     "hover:-translate-y-1"
                   )}
                 >
@@ -152,7 +152,7 @@ export function LatestArticles() {
                     <div className="flex items-center justify-between pt-4 border-t border-border/30">
                       {author && (
                         <span className="flex items-center gap-2 text-xs text-muted-foreground">
-                          <span className="w-6 h-6 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-[8px] font-bold text-background">
+                          <span className="w-6 h-6 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-[8px] font-bold text-white">
                             {author.avatar}
                           </span>
                           {author.name}

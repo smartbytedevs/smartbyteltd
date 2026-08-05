@@ -22,13 +22,13 @@ export default function Error({ error, reset }) {
           <div className="flex flex-wrap justify-center gap-4">
             <button
               onClick={reset}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-background font-medium text-sm hover:scale-[1.02] transition-all shadow-lg shadow-accent/20 cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-white font-medium text-sm hover:scale-[1.02] transition-all shadow-lg shadow-accent/20 cursor-pointer"
             >
               Try Again
             </button>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border/40 text-foreground hover:bg-white/455 hover:border-border/55 transition-all text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border/40 text-foreground hover:bg-white/55 hover:border-border/55 transition-all text-sm"
             >
               Back to Home
             </Link>

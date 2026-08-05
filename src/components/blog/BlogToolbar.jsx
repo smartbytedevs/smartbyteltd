@@ -79,7 +79,7 @@ export function BlogToolbar() {
             onClick={() => setDrawerOpen(true)}
             className={cn(
               "flex items-center gap-2 px-5 py-3.5 rounded-2xl text-sm font-medium transition-all duration-300",
-              "bg-white/30 border border-border/30 hover:bg-white/4555 hover:border-border/50",
+              "bg-white/30 border border-border/30 hover:bg-white/55 hover:border-border/50",
               "focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
             )}
             aria-label="Open categories"
@@ -113,7 +113,7 @@ function SortDropdown({ value, onChange }) {
         onClick={() => setOpen(!open)}
         className={cn(
           "flex items-center gap-2 px-4 py-3.5 rounded-2xl text-sm font-medium transition-all duration-300",
-          "bg-white/30 border border-border/30 hover:bg-white/4555 hover:border-border/50",
+          "bg-white/30 border border-border/30 hover:bg-white/55 hover:border-border/50",
           "focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50",
           open && "border-accent/30"
         )}
@@ -143,7 +143,7 @@ function SortDropdown({ value, onChange }) {
                 aria-selected={value === opt.value}
                 onClick={() => { onChange(opt.value); setOpen(false) }}
                 className={cn(
-                  "w-full text-left px-4 py-3 text-sm transition-colors hover:bg-white/4555 flex items-center justify-between",
+                  "w-full text-left px-4 py-3 text-sm transition-colors hover:bg-white/55 flex items-center justify-between",
                   value === opt.value ? "text-accent" : "text-muted-foreground"
                 )}
               >

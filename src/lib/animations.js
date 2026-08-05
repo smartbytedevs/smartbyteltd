@@ -72,9 +72,9 @@ export const floating = {
 export const glow = {
   animate: {
     boxShadow: [
-      "0 0 0px rgba(180,83,9,0)",
-      "0 0 30px rgba(180,83,9,0.15)",
-      "0 0 0px rgba(180,83,9,0)",
+      "0 0 0px rgba(15,118,110,0)",
+      "0 0 30px rgba(15,118,110,0.15)",
+      "0 0 0px rgba(15,118,110,0)",
     ],
   },
   transition: {

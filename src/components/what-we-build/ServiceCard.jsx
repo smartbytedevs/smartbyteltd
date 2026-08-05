@@ -116,7 +116,7 @@ export function ServiceCard({ service }) {
                   subtitle: `Let's discuss your ${service.title.toLowerCase()} project.`,
                 })
               }
-              className="group inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold bg-accent text-background hover:bg-accent-hover transition-colors duration-300 cursor-pointer"
+              className="group inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold bg-accent text-white hover:bg-accent-hover transition-colors duration-300 cursor-pointer"
             >
               {service.ctaText}
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-300" />

@@ -41,8 +41,8 @@ function CategoryPills({ categories, active, onChange }) {
             "min-h-[44px] flex items-center",
             "focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-1 focus-visible:ring-offset-background",
             active === cat.id
-              ? "bg-gradient-to-r from-accent to-accent-secondary text-background border-transparent shadow-lg shadow-accent/20"
-              : "bg-white/30 border-border/30 text-muted-foreground hover:bg-white/4555 hover:text-foreground hover:border-border/50"
+              ? "bg-gradient-to-r from-accent to-accent-secondary text-white border-transparent shadow-lg shadow-accent/20"
+              : "bg-white/30 border-border/30 text-muted-foreground hover:bg-white/55 hover:text-foreground hover:border-border/50"
           )}
           aria-selected={active === cat.id}
           role="tab"
@@ -155,7 +155,7 @@ function ServiceDetailCard({ service, compact }) {
       )}>
         {!compact && (
           <div className="absolute top-0 right-0 w-48 h-48 rounded-full opacity-5 pointer-events-none" style={{
-            background: "radial-gradient(circle, rgba(180, 83, 9, 0.1), transparent 70%)",
+            background: "radial-gradient(circle, rgba(15, 118, 110, 0.1), transparent 70%)",
             filter: "blur(60px)",
           }} />
         )}
@@ -249,7 +249,7 @@ function ServiceDetailCard({ service, compact }) {
             href="#request-quote"
             className={cn(
               "group inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium transition-all duration-300",
-              "bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30",
+              "bg-gradient-to-r from-accent to-accent-secondary text-white shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30",
               "hover:scale-[1.02] active:scale-[0.98]",
               compact ? "w-full px-5 py-3" : "px-6 py-3 md:w-auto w-full"
             )}
@@ -296,11 +296,11 @@ export function InteractiveServiceDetails() {
     <section id="service-details" className="relative py-24 md:py-32 overflow-hidden bg-background pb-32 md:pb-40">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[40%] -right-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(160, 58, 30, 0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(14, 116, 144, 0.04), transparent 70%)",
           filter: "blur(120px)",
         }} />
       </div>

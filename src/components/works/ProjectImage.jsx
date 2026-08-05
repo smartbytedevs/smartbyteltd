@@ -10,12 +10,12 @@ function ProjectThumb({ project, priority }) {
 
   if (!src) {
     return (
-      <div className="relative w-full h-full flex flex-col items-center justify-center gap-4 rounded-[18px] bg-[#0D1117] border border-border/30 overflow-hidden">
+      <div className="relative w-full h-full flex flex-col items-center justify-center gap-4 rounded-[18px] bg-[#1C1917] border border-border/30 overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(135deg, rgba(180, 83, 9, 0.05), rgba(160, 58, 30, 0.03))",
+              "linear-gradient(135deg, rgba(15, 118, 110, 0.05), rgba(14, 116, 144, 0.03))",
           }}
         />
         <div className="relative z-10 w-16 h-16 rounded-2xl bg-white/45 border border-border/35 flex items-center justify-center font-display text-2xl font-bold text-accent/70">
@@ -71,7 +71,7 @@ export function ProjectImage({ project, index }) {
           isHovered ? "opacity-100" : ""
         }`}
         style={{
-          background: "linear-gradient(135deg, rgba(180, 83, 9, 0.12), rgba(160, 58, 30, 0.06))",
+          background: "linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(14, 116, 144, 0.06))",
           filter: "blur(8px)",
         }}
       />
@@ -116,7 +116,7 @@ export function ProjectImage({ project, index }) {
             animate={{ opacity: isHovered ? 0.4 : 0 }}
             transition={{ duration: 0.4 }}
             style={{
-              background: "linear-gradient(135deg, rgba(180, 83, 9, 0.08), rgba(11, 16, 32, 0.5))",
+              background: "linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(11, 16, 32, 0.5))",
             }}
           />
         </motion.div>

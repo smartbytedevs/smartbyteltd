@@ -93,7 +93,7 @@ export function TransformationJourney() {
       {/* ═══ Connected Flow ═══ */}
       <div className="relative mt-12">
         {/* Spine */}
-        <div className="absolute left-[27px] top-1 bottom-1 w-px bg-white/450" aria-hidden="true">
+        <div className="absolute left-[27px] top-1 bottom-1 w-px bg-white/50" aria-hidden="true">
           <motion.div
             className="w-full origin-top bg-gradient-to-b from-accent via-accent-secondary to-accent"
             style={{ scaleY: spineScale, height: "100%" }}
@@ -146,10 +146,10 @@ export function TransformationJourney() {
                     <motion.span
                       className="relative w-[11px] h-[11px] rounded-full"
                       style={{
-                        background: "linear-gradient(135deg, #B45309, #A03A1E)",
+                        background: "linear-gradient(135deg, #0F766E, #0E7490)",
                         boxShadow: isActive
-                          ? "0 0 18px rgba(180, 83, 9, 0.55)"
-                          : "0 0 10px rgba(180, 83, 9, 0.3)",
+                          ? "0 0 18px rgba(15, 118, 110, 0.55)"
+                          : "0 0 10px rgba(15, 118, 110, 0.3)",
                       }}
                       animate={{ scale: isActive ? 1.25 : 1 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -161,7 +161,7 @@ export function TransformationJourney() {
                     className={cn(
                       "group relative flex-1 min-w-0 rounded-2xl border p-5 sm:p-6 transition-all duration-500 overflow-hidden",
                       isActive
-                        ? "border-accent/40 bg-white/40 shadow-[0_0_40px_rgba(180,83,9,0.08)]"
+                        ? "border-accent/40 bg-white/40 shadow-[0_0_40px_rgba(15,118,110,0.08)]"
                         : "border-border/30 bg-white/25 hover:bg-white/35"
                     )}
                   >
@@ -172,13 +172,13 @@ export function TransformationJourney() {
                       )}
                       style={{
                         background:
-                          "radial-gradient(circle at 0% 0%, rgba(180, 83, 9, 0.06), transparent 70%)",
+                          "radial-gradient(circle at 0% 0%, rgba(15, 118, 110, 0.06), transparent 70%)",
                       }}
                     />
 
                     <div className="relative z-10 flex items-start gap-4">
                       <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center shadow-lg shadow-accent/20 flex-shrink-0">
-                        <Icon className="w-5 h-5 text-background" />
+                        <Icon className="w-5 h-5 text-white" />
                       </div>
 
                       <div className="flex-1 min-w-0">
@@ -210,7 +210,7 @@ export function TransformationJourney() {
             className="absolute inset-0 opacity-[0.6] pointer-events-none"
             style={{
               background:
-                "radial-gradient(circle at 100% 0%, rgba(160, 58, 30, 0.05), transparent 70%)",
+                "radial-gradient(circle at 100% 0%, rgba(14, 116, 144, 0.05), transparent 70%)",
             }}
           />
           <motion.div
@@ -223,7 +223,7 @@ export function TransformationJourney() {
           >
             <div className="flex items-center gap-3 mb-3">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center">
-                <ActiveIcon className="w-4 h-4 text-background" />
+                <ActiveIcon className="w-4 h-4 text-white" />
               </div>
               <span className="text-xs font-semibold tracking-label uppercase text-accent">
                 Stage {activeStage.number}

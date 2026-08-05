@@ -46,7 +46,7 @@ export function HeroBackground() {
         className="absolute top-1/4 left-1/3 w-[800px] h-[800px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(180, 83, 9, 0.1) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(15, 118, 110, 0.1) 0%, transparent 70%)",
           x: springX,
           y: springY,
         }}
@@ -56,7 +56,7 @@ export function HeroBackground() {
         className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(160, 58, 30, 0.08) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(14, 116, 144, 0.08) 0%, transparent 70%)",
           x: springX,
           y: springY,
         }}

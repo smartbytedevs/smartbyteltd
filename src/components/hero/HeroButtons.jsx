@@ -18,15 +18,15 @@ export function HeroButtons() {
           <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
           <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
             style={{
-              boxShadow: "0 0 30px rgba(180, 83, 9, 0.3), 0 0 60px rgba(160, 58, 30, 0.15)",
+              boxShadow: "0 0 30px rgba(15, 118, 110, 0.3), 0 0 60px rgba(14, 116, 144, 0.15)",
             }}
           />
-          <span className="relative z-10 text-background flex items-center gap-2">
+          <span className="relative z-10 text-white flex items-center gap-2">
             <Calendar className="w-4 h-4" />
             Book Free Consultation
           </span>
           <span className="relative z-10">
-            <ArrowRight className="w-4 h-4 text-background group-hover:translate-x-0.5 transition-transform duration-200" />
+            <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-0.5 transition-transform duration-200" />
           </span>
         </button>
       </SafeSlideUp>
@@ -34,7 +34,7 @@ export function HeroButtons() {
       <SafeSlideUp delay={1.95} viewportMargin="-100px">
         <a
           href="#work"
-          className="group inline-flex items-center gap-3 rounded-full border border-border/35 px-8 py-4 font-semibold text-sm tracking-nav text-foreground/80 hover:text-foreground transition-all duration-500 hover:border-border/50"
+          className="group inline-flex items-center gap-3 rounded-full border border-foreground/20 bg-white/40 px-8 py-4 font-semibold text-sm tracking-nav text-foreground/80 hover:text-foreground transition-all duration-500 hover:border-foreground/40 hover:bg-white/60"
         >
           <span className="flex items-center gap-2">
             View Portfolio

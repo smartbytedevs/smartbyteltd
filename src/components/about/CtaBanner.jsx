@@ -14,7 +14,7 @@ export function CtaBanner() {
       <div
         className="absolute inset-0 rounded-3xl border border-border/30"
         style={{
-          background: "rgba(255, 247, 236, 0.7)",
+          background: "rgba(255, 253, 246, 0.7)",
           backdropFilter: "blur(24px)",
           WebkitBackdropFilter: "blur(24px)",
         }}
@@ -25,7 +25,7 @@ export function CtaBanner() {
         className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full opacity-20"
         style={{
           background:
-            "radial-gradient(circle, rgba(180, 83, 9, 0.08), transparent 70%)",
+            "radial-gradient(circle, rgba(15, 118, 110, 0.08), transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -33,7 +33,7 @@ export function CtaBanner() {
         className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full opacity-15"
         style={{
           background:
-            "radial-gradient(circle, rgba(160, 58, 30, 0.05), transparent 70%)",
+            "radial-gradient(circle, rgba(14, 116, 144, 0.05), transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -43,7 +43,7 @@ export function CtaBanner() {
         className="absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(43,33,24,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.06) 1px, transparent 1px)",
+            "linear-gradient(rgba(28,25,23,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.06) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />

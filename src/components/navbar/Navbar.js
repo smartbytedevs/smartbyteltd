@@ -152,9 +152,9 @@ export function Navbar() {
             className="absolute inset-0"
             animate={{
               background: [
-                "linear-gradient(135deg, transparent, rgba(180,83,9,0.06), transparent)",
-                "linear-gradient(135deg, transparent, rgba(160,58,30,0.06), transparent)",
-                "linear-gradient(135deg, transparent, rgba(180,83,9,0.06), transparent)",
+                "linear-gradient(135deg, transparent, rgba(15,118,110,0.06), transparent)",
+                "linear-gradient(135deg, transparent, rgba(14,116,144,0.06), transparent)",
+                "linear-gradient(135deg, transparent, rgba(15,118,110,0.06), transparent)",
               ],
             }}
             transition={{
@@ -180,7 +180,7 @@ export function Navbar() {
           <div
             className="w-full h-full"
             style={{
-              background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(180, 83, 9, 0.08), transparent 60%)`,
+              background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(15, 118, 110, 0.08), transparent 60%)`,
             }}
           />
         </motion.div>
@@ -192,7 +192,7 @@ export function Navbar() {
             borderRadius: "inherit",
             opacity: scrolled,
             boxShadow: useTransform(si, (v) =>
-              `inset 0 0 0 1px rgba(43,33,24,${v * 0.1}), 0 8px 40px rgba(43,33,24,${v * 0.16})`
+              `inset 0 0 0 1px rgba(28,25,23,${v * 0.1}), 0 8px 40px rgba(28,25,23,${v * 0.16})`
             ),
           }}
         />

@@ -67,7 +67,7 @@ export function Panel({ item, index }) {
             className="absolute inset-0 rounded-3xl"
             style={{
               background:
-                "linear-gradient(135deg, rgba(180, 83, 9, 0.08), rgba(160, 58, 30, 0.04))",
+                "linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(14, 116, 144, 0.04))",
             }}
             animate={{
               clipPath: isHovered
@@ -88,7 +88,7 @@ export function Panel({ item, index }) {
             className="absolute inset-0 rounded-3xl pointer-events-none"
             animate={{
               boxShadow: isHovered
-                ? "inset 0 0 60px rgba(180, 83, 9, 0.06), 0 0 80px rgba(160, 58, 30, 0.04)"
+                ? "inset 0 0 60px rgba(15, 118, 110, 0.06), 0 0 80px rgba(14, 116, 144, 0.04)"
                 : "inset 0 0 0px transparent",
             }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -122,7 +122,7 @@ export function Panel({ item, index }) {
                   )}
                 >
                   <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center shadow-lg shadow-accent/20">
-                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-background" />
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                 </div>
               </motion.div>
@@ -216,7 +216,7 @@ export function Panel({ item, index }) {
           animate={{
             opacity: isHovered ? 1 : 0,
             boxShadow: isHovered
-              ? "0 0 30px rgba(180, 83, 9, 0.08), 0 0 60px rgba(160, 58, 30, 0.04)"
+              ? "0 0 30px rgba(15, 118, 110, 0.08), 0 0 60px rgba(14, 116, 144, 0.04)"
               : "0 0 0px transparent",
           }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}

@@ -32,7 +32,7 @@ export function TechStack() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
       </div>
@@ -67,7 +67,7 @@ export function TechStack() {
                         className={cn(
                           "rounded-xl p-3 text-center border transition-all duration-300 cursor-default",
                           "bg-white/30 border-border/30",
-                          "hover:bg-white/450 hover:border-accent/30 hover:shadow-md"
+                          "hover:bg-white/50 hover:border-accent/30 hover:shadow-md"
                         )}
                       >
                         <div className={cn("w-8 h-8 rounded-lg bg-gradient-to-br mx-auto mb-2 flex items-center justify-center", tech.color)}>

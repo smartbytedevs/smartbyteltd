@@ -41,9 +41,9 @@ function TemplatePreview({ template, gradient }) {
   const images = [...(thumbnail ? [thumbnail] : []), ...previewImages, ...gallery]
 
   return (
-    <div className="relative rounded-[28px] overflow-hidden border border-border/30 bg-[#0D1117]">
+    <div className="relative rounded-[28px] overflow-hidden border border-border/30 bg-[#1C1917]">
       <div className="absolute -inset-[2px] rounded-[28px] opacity-40 pointer-events-none" style={{
-        background: "linear-gradient(135deg, rgba(180, 83, 9, 0.12), rgba(160, 58, 30, 0.06))",
+        background: "linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(14, 116, 144, 0.06))",
         filter: "blur(8px)",
       }} />
       <div className="relative" style={{ aspectRatio: "16/10" }}>
@@ -70,7 +70,7 @@ function RelatedTemplateCard({ template, index }) {
     <SafeReveal delay={index * 0.08}>
       <Link
         href={`/templates/${template.slug}`}
-        className="group block rounded-2xl overflow-hidden bg-white/30 border border-border/30 hover:bg-white/4555 hover:border-accent/30 hover:-translate-y-1 transition-all duration-500 h-full"
+        className="group block rounded-2xl overflow-hidden bg-white/30 border border-border/30 hover:bg-white/55 hover:border-accent/30 hover:-translate-y-1 transition-all duration-500 h-full"
       >
         <div className={cn("relative h-40 overflow-hidden bg-gradient-to-br", gradient)}>
           <div className="absolute inset-0 flex items-center justify-center">
@@ -156,7 +156,7 @@ export function TemplateDetails({ template }) {
         <section className="relative py-10 md:py-16 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
             <div className="absolute top-[20%] -left-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-              background: "radial-gradient(circle, rgba(180, 83, 9, 0.04), transparent 70%)",
+              background: "radial-gradient(circle, rgba(15, 118, 110, 0.04), transparent 70%)",
               filter: "blur(120px)",
             }} />
           </div>
@@ -170,7 +170,7 @@ export function TemplateDetails({ template }) {
                         {template.badge}
                       </span>
                     )}
-                    <span className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-white/450 text-muted-foreground border border-border/30">{categoryLabel}</span>
+                    <span className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-white/50 text-muted-foreground border border-border/30">{categoryLabel}</span>
                     <span className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-accent/10 text-accent border border-accent/20">{industryLabel}</span>
                   </div>
                 </SafeSlideUp>
@@ -207,7 +207,7 @@ export function TemplateDetails({ template }) {
                           href={liveHref}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-gradient-to-r from-accent to-accent-secondary text-white shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
                         >
                           <Eye className="w-4 h-4" /> Live Preview <ArrowUpRight className="w-3.5 h-3.5" />
                         </a>
@@ -222,7 +222,7 @@ export function TemplateDetails({ template }) {
                       <button
                         type="button"
                         onClick={buyThisTemplate}
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-border/35 text-foreground hover:bg-white/455 hover:border-border/55 transition-all"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-border/35 text-foreground hover:bg-white/55 hover:border-border/55 transition-all"
                       >
                         <ShoppingCart className="w-4 h-4 text-accent" /> Get This Template
                       </button>
@@ -363,7 +363,7 @@ export function TemplateDetails({ template }) {
         <section className="relative py-20 md:py-28 overflow-hidden bg-background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
             <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+              backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
               backgroundSize: "60px 60px",
             }} />
           </div>
@@ -380,13 +380,13 @@ export function TemplateDetails({ template }) {
                 <button
                   type="button"
                   onClick={buyThisTemplate}
-                  className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-background font-semibold text-sm shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                  className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-white font-semibold text-sm shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
                 >
                   <ShoppingCart className="w-4 h-4" /> Get This Template
                 </button>
                 <Link
                   href="/templates"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border/35 text-foreground font-semibold text-sm hover:bg-white/455 hover:border-border/55 transition-all"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border/35 text-foreground font-semibold text-sm hover:bg-white/55 hover:border-border/55 transition-all"
                 >
                   Browse All Templates
                 </Link>

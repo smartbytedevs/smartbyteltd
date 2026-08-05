@@ -79,7 +79,7 @@ export function Services() {
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{
-                    background: "radial-gradient(600px at 50% 0%, rgba(180,83,9,0.08), transparent)",
+                    background: "radial-gradient(600px at 50% 0%, rgba(15,118,110,0.08), transparent)",
                   }}
                 />
 
@@ -106,7 +106,7 @@ export function Services() {
 
                 <div className="absolute -bottom-24 -right-24 w-48 h-48 rounded-full opacity-0 group-hover:opacity-10 transition-all duration-700 blur-3xl"
                   style={{
-                    background: "radial-gradient(circle, rgba(180,83,9,0.4), transparent)",
+                    background: "radial-gradient(circle, rgba(15,118,110,0.4), transparent)",
                   }}
                 />
               </motion.div>

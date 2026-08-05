@@ -197,7 +197,7 @@ export function ContactForm({
         className="pointer-events-none absolute -left-20 -top-20 h-60 w-60 rounded-full opacity-10"
         style={{
           background:
-            "radial-gradient(circle, rgba(160, 58, 30, 0.15), transparent 70%)",
+            "radial-gradient(circle, rgba(14, 116, 144, 0.15), transparent 70%)",
           filter: "blur(60px)",
         }}
         aria-hidden="true"
@@ -372,14 +372,14 @@ export function ContactForm({
                 type="submit"
                 disabled={formStatus === "submitting"}
                 onClick={addRipple}
-                className="group relative w-full overflow-hidden rounded-full py-4 text-sm font-semibold tracking-nav text-background transition-all duration-500 disabled:cursor-not-allowed disabled:opacity-60"
+                className="group relative w-full overflow-hidden rounded-full py-4 text-sm font-semibold tracking-nav text-white transition-all duration-500 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
                 <span
                   className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-700 group-hover:opacity-100"
                   style={{
                     boxShadow:
-                      "0 0 40px rgba(180, 83, 9, 0.3), 0 0 80px rgba(160, 58, 30, 0.15)",
+                      "0 0 40px rgba(15, 118, 110, 0.3), 0 0 80px rgba(14, 116, 144, 0.15)",
                   }}
                 />
                 {ripples.map((r) => (

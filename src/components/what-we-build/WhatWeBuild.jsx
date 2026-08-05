@@ -49,7 +49,7 @@ export function WhatWeBuild() {
       <motion.div
         className="absolute inset-0 pointer-events-none"
         animate={{
-          background: `radial-gradient(circle at ${mousePos.x * 100}% ${mousePos.y * 100}%, rgba(180, 83, 9, 0.02), transparent 60%)`,
+          background: `radial-gradient(circle at ${mousePos.x * 100}% ${mousePos.y * 100}%, rgba(15, 118, 110, 0.02), transparent 60%)`,
         }}
         transition={{ type: "spring", stiffness: 50, damping: 30 }}
       />
@@ -116,7 +116,7 @@ export function WhatWeBuild() {
                         className="absolute inset-0 rounded-lg"
                         animate={{
                           background: isActive
-                            ? "linear-gradient(to right, rgba(180, 83, 9, 0.08), transparent)"
+                            ? "linear-gradient(to right, rgba(15, 118, 110, 0.08), transparent)"
                             : "linear-gradient(to right, transparent, transparent)",
                         }}
                         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -126,7 +126,7 @@ export function WhatWeBuild() {
                       <span className="relative z-10 block px-5 py-3 text-base font-medium transition-colors duration-300">
                         <motion.span
                           animate={{
-                            color: isActive ? "#2B2118" : "#7A6A55",
+                            color: isActive ? "#1C1917" : "#4A453E",
                           }}
                           transition={{
                             type: "spring",

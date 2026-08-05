@@ -78,7 +78,7 @@ function StatGrid({ stats }) {
         <SafeReveal key={stat.label} delay={i * 0.06}>
           <div className="relative rounded-2xl p-5 sm:p-6 overflow-hidden">
             <div className="absolute inset-0 rounded-2xl border border-border/30 transition-colors duration-300 hover:border-accent/15" style={{
-              background: "rgba(255, 247, 236, 0.7)",
+              background: "rgba(255, 253, 246, 0.7)",
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
             }} />
@@ -104,7 +104,7 @@ function Testimonial({ testimonial }) {
         &ldquo;{testimonial.quote}&rdquo;
       </p>
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-background font-bold text-sm shrink-0">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-white font-bold text-sm shrink-0">
           {testimonial.author.charAt(0)}
         </div>
         <div>
@@ -122,7 +122,7 @@ function RelatedProjectCard({ project, index }) {
     <SafeReveal delay={index * 0.08}>
       <Link
         href={`/works/${project.slug}`}
-        className="group block rounded-2xl overflow-hidden bg-white/30 border border-border/30 hover:bg-white/4555 hover:border-accent/30 hover:-translate-y-1 transition-all duration-500 h-full"
+        className="group block rounded-2xl overflow-hidden bg-white/30 border border-border/30 hover:bg-white/55 hover:border-accent/30 hover:-translate-y-1 transition-all duration-500 h-full"
       >
         <div className={cn("relative h-40 overflow-hidden bg-gradient-to-br", gradient)}>
           <div className="absolute inset-0 flex items-center justify-center">
@@ -133,7 +133,7 @@ function RelatedProjectCard({ project, index }) {
         </div>
         <div className="p-5">
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-[10px] font-bold tracking-label uppercase px-2 py-0.5 rounded-full bg-white/450 text-muted-foreground border border-border/30">
+            <span className="text-[10px] font-bold tracking-label uppercase px-2 py-0.5 rounded-full bg-white/50 text-muted-foreground border border-border/30">
               {project.industry}
             </span>
             <span className="flex items-center gap-1 text-[10px] text-muted-foreground">
@@ -206,7 +206,7 @@ export function ProjectCaseStudy({ project }) {
         <section className="relative py-10 md:py-16 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
             <div className="absolute top-[20%] -right-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-              background: "radial-gradient(circle, rgba(160, 58, 30, 0.04), transparent 70%)",
+              background: "radial-gradient(circle, rgba(14, 116, 144, 0.04), transparent 70%)",
               filter: "blur(120px)",
             }} />
           </div>
@@ -218,7 +218,7 @@ export function ProjectCaseStudy({ project }) {
                     <span className={cn("inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-label uppercase border",   statusColors[project.status] || "bg-white/50 text-foreground border-border/50")}>
                       {project.status}
                     </span>
-                    <span className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-white/450 text-muted-foreground border border-border/30">{categoryLabel}</span>
+                    <span className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-white/50 text-muted-foreground border border-border/30">{categoryLabel}</span>
                     <span className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-accent/10 text-accent border border-accent/20">{industryLabel}</span>
                   </div>
                 </SafeSlideUp>
@@ -258,7 +258,7 @@ export function ProjectCaseStudy({ project }) {
                         href={liveHref}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-gradient-to-r from-accent to-accent-secondary text-white shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
                       >
                         Live Website <ArrowUpRight className="w-3.5 h-3.5" />
                       </a>
@@ -272,7 +272,7 @@ export function ProjectCaseStudy({ project }) {
                         href={githubHref}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-border/35 text-foreground hover:bg-white/455 hover:border-border/55 transition-all"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-border/35 text-foreground hover:bg-white/55 hover:border-border/55 transition-all"
                       >
                         <Code className="w-4 h-4 text-accent" /> View Source
                       </a>
@@ -280,7 +280,7 @@ export function ProjectCaseStudy({ project }) {
                     <button
                       type="button"
                       onClick={startSimilarProject}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-border/35 text-foreground hover:bg-white/455 hover:border-border/55 transition-all"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-border/35 text-foreground hover:bg-white/55 hover:border-border/55 transition-all"
                     >
                       Start a Similar Project
                     </button>
@@ -291,7 +291,7 @@ export function ProjectCaseStudy({ project }) {
               <SafeReveal delay={0.15}>
                 <div className="relative rounded-[28px] overflow-hidden border border-border/30">
                   <div className="absolute -inset-[2px] rounded-[28px] opacity-40 pointer-events-none" style={{
-                    background: "linear-gradient(135deg, rgba(180, 83, 9, 0.12), rgba(160, 58, 30, 0.06))",
+                    background: "linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(14, 116, 144, 0.06))",
                     filter: "blur(8px)",
                   }} />
                   <div className="relative" style={{ aspectRatio: "16/10" }}>
@@ -507,7 +507,7 @@ export function ProjectCaseStudy({ project }) {
                   {i < cs.timeline.length - 1 && (
                     <div className="absolute left-[15px] top-8 bottom-0 w-px bg-gradient-to-b from-accent/30 to-transparent" />
                   )}
-                  <div className="relative shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-[10px] font-bold text-background z-10">
+                  <div className="relative shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-[10px] font-bold text-white z-10">
                     {i + 1}
                   </div>
                   <div>
@@ -590,7 +590,7 @@ export function ProjectCaseStudy({ project }) {
         <section className="relative py-20 md:py-28 overflow-hidden bg-background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
             <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+              backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
               backgroundSize: "60px 60px",
             }} />
           </div>
@@ -606,14 +606,14 @@ export function ProjectCaseStudy({ project }) {
                 <button
                   type="button"
                   onClick={startSimilarProject}
-                  className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-background font-semibold text-sm shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                  className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-white font-semibold text-sm shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
                 >
                   {cs.CTA?.buttonText || "Let's Build Yours"}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </button>
                 <Link
                   href="/works"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border/35 text-foreground font-semibold text-sm hover:bg-white/455 hover:border-border/55 transition-all"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border/35 text-foreground font-semibold text-sm hover:bg-white/55 hover:border-border/55 transition-all"
                 >
                   <BookOpen className="w-4 h-4" /> View All Projects
                 </Link>

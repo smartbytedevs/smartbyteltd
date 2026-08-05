@@ -25,7 +25,7 @@ function FloatingCard({ step, index }) {
       style={{ width: 200 }}
     >
       <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center shrink-0`}>
-        <step.icon className="w-5 h-5 text-background" />
+        <step.icon className="w-5 h-5 text-white" />
       </div>
       <div>
         <p className="text-sm font-semibold text-foreground">{step.label}</p>
@@ -55,15 +55,15 @@ export function ServicesHero({ onExplore }) {
     <section ref={ref} className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[5%] -left-48 w-[700px] h-[700px] rounded-full opacity-20" style={{
-          background: "radial-gradient(circle, rgba(180, 83, 9, 0.07), transparent 70%)",
+          background: "radial-gradient(circle, rgba(15, 118, 110, 0.07), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute bottom-[10%] -right-48 w-[500px] h-[500px] rounded-full opacity-15" style={{
-          background: "radial-gradient(circle, rgba(160, 58, 30, 0.05), transparent 70%)",
+          background: "radial-gradient(circle, rgba(14, 116, 144, 0.05), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute inset-0 opacity-[0.015]" style={{
@@ -107,7 +107,7 @@ export function ServicesHero({ onExplore }) {
                   <button
                     type="button"
                     onClick={() => openQuoteModal({ source: "services" })}
-                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-white/455 hover:border-border/55 transition-all duration-300"
+                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-white/55 hover:border-border/55 transition-all duration-300"
                   >
                     Get Free Consultation
                   </button>
@@ -136,7 +136,7 @@ export function ServicesHero({ onExplore }) {
                     className="flex items-center gap-4"
                   >
                     <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg`}>
-                      <step.icon className="w-7 h-7 text-background" />
+                      <step.icon className="w-7 h-7 text-white" />
                     </div>
                     <div>
                       <p className="text-lg font-semibold text-foreground">{step.label}</p>

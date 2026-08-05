@@ -36,7 +36,7 @@ export function ServiceStats() {
           </div>
           <div className="absolute -inset-[1px] rounded-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
             style={{
-              background: "linear-gradient(135deg, rgba(180, 83, 9, 0.1), rgba(160, 58, 30, 0.05))",
+              background: "linear-gradient(135deg, rgba(15, 118, 110, 0.1), rgba(14, 116, 144, 0.05))",
             }}
           />
         </SafeSlideUp>

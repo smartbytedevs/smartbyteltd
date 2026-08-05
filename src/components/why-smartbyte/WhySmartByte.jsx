@@ -83,7 +83,7 @@ export function WhySmartByte() {
           className="absolute inset-0 opacity-[0.015]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+              "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -93,7 +93,7 @@ export function WhySmartByte() {
           className="absolute top-[5%] -left-48 w-[700px] h-[700px] rounded-full opacity-20"
           style={{
             background:
-              "radial-gradient(circle, rgba(180, 83, 9, 0.07), transparent 70%)",
+              "radial-gradient(circle, rgba(15, 118, 110, 0.07), transparent 70%)",
             filter: "blur(120px)",
           }}
         />
@@ -101,7 +101,7 @@ export function WhySmartByte() {
           className="absolute top-[30%] right-[-20%] w-[500px] h-[500px] rounded-full opacity-15"
           style={{
             background:
-              "radial-gradient(circle, rgba(160, 58, 30, 0.05), transparent 70%)",
+              "radial-gradient(circle, rgba(14, 116, 144, 0.05), transparent 70%)",
             filter: "blur(120px)",
           }}
         />
@@ -109,7 +109,7 @@ export function WhySmartByte() {
           className="absolute bottom-[15%] left-[20%] w-[400px] h-[400px] rounded-full opacity-10"
           style={{
             background:
-              "radial-gradient(circle, rgba(180, 83, 9, 0.04), transparent 70%)",
+              "radial-gradient(circle, rgba(15, 118, 110, 0.04), transparent 70%)",
             filter: "blur(120px)",
           }}
         />
@@ -119,14 +119,14 @@ export function WhySmartByte() {
           className="absolute top-0 left-[30%] w-px h-full opacity-[0.03]"
           style={{
             background:
-              "linear-gradient(to bottom, transparent, rgba(180, 83, 9, 0.3), transparent)",
+              "linear-gradient(to bottom, transparent, rgba(15, 118, 110, 0.3), transparent)",
           }}
         />
         <div
           className="absolute top-0 right-[25%] w-px h-full opacity-[0.02]"
           style={{
             background:
-              "linear-gradient(to bottom, transparent, rgba(160, 58, 30, 0.2), transparent)",
+              "linear-gradient(to bottom, transparent, rgba(14, 116, 144, 0.2), transparent)",
           }}
         />
 
@@ -166,7 +166,7 @@ export function WhySmartByte() {
                   }}
                   style={{
                     background:
-                      "radial-gradient(circle, rgba(180, 83, 9, 0.1), transparent 70%)",
+                      "radial-gradient(circle, rgba(15, 118, 110, 0.1), transparent 70%)",
                     filter: "blur(80px)",
                   }}
                 />

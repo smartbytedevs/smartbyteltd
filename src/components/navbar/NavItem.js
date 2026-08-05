@@ -23,8 +23,8 @@ export function NavItem({ href, label, isActive, onClick }) {
         animate={{
           background:
             isHovered || isActive
-              ? "rgba(43,33,24,0.05)"
-              : "rgba(43,33,24,0)",
+              ? "rgba(28,25,23,0.05)"
+              : "rgba(28,25,23,0)",
         }}
         transition={{ duration: 0.3 }}
       />
@@ -40,11 +40,11 @@ export function NavItem({ href, label, isActive, onClick }) {
                 scale: isHovered || isActive ? 1 : 0,
                 background:
                   isActive
-                    ? "#B45309"
-                    : "linear-gradient(135deg, #B45309, #A03A1E)",
+                    ? "#0F766E"
+                    : "linear-gradient(135deg, #0F766E, #0E7490)",
                 boxShadow:
                   isHovered || isActive
-                    ? "0 0 6px rgba(180, 83, 9, 0.5)"
+                    ? "0 0 6px rgba(15, 118, 110, 0.5)"
                     : "0 0 0px transparent",
               }
         }
@@ -80,12 +80,12 @@ export function NavItem({ href, label, isActive, onClick }) {
           className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text"
           animate={
             prefersReduced
-              ? { color: isActive ? "#B45309" : "rgb(95 82 64)" }
+              ? { color: isActive ? "#0F766E" : "rgb(107 101 89)" }
               : {
                   WebkitTextFillColor:
-                    isHovered ? "transparent" : isActive ? "#B45309" : "rgb(95 82 64)",
+                    isHovered ? "transparent" : isActive ? "#0F766E" : "rgb(107 101 89)",
                   color:
-                    isHovered ? "transparent" : isActive ? "#B45309" : "rgb(95 82 64)",
+                    isHovered ? "transparent" : isActive ? "#0F766E" : "rgb(107 101 89)",
                 }
           }
           transition={{ duration: 0.3 }}

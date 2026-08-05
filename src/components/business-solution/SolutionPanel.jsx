@@ -47,7 +47,7 @@ function PanelContent({ node }) {
               >
                 <path
                   d="M11.5 3.5L5.25 10.5L2.5 7.5"
-                  stroke="#B45309"
+                  stroke="#0F766E"
                   strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"

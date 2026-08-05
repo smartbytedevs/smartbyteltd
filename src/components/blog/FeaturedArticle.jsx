@@ -36,7 +36,7 @@ export function FeaturedArticle() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
       </div>
@@ -64,7 +64,7 @@ export function FeaturedArticle() {
                 {article.categories.slice(0, 2).map((catId) => {
                   const cat = categories.find((c) => c.id === catId)
                   return cat ? (
-                    <span key={catId} className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-white/450 text-muted-foreground border border-border/30">
+                    <span key={catId} className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-white/50 text-muted-foreground border border-border/30">
                       {cat.label}
                     </span>
                   ) : null
@@ -82,7 +82,7 @@ export function FeaturedArticle() {
               <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground mb-6">
                 {author && (
                   <span className="flex items-center gap-2">
-                    <span className="w-7 h-7 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-[10px] font-bold text-background">
+                    <span className="w-7 h-7 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-[10px] font-bold text-white">
                       {author.avatar}
                     </span>
                     {author.name}
@@ -101,14 +101,14 @@ export function FeaturedArticle() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href={`/blog/${article.slug}`}
-                  className="group/btn inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                  className="group/btn inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium bg-gradient-to-r from-accent to-accent-secondary text-white shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
                 >
                   Read Article
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
                 </a>
                 <button
                   type="button"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium border border-border/35 text-muted-foreground hover:text-foreground hover:bg-white/4555 hover:border-border/55 transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium border border-border/35 text-muted-foreground hover:text-foreground hover:bg-white/55 hover:border-border/55 transition-all"
                 >
                   <Share2 className="w-4 h-4" />
                   Share

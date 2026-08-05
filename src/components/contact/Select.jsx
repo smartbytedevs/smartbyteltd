@@ -30,20 +30,20 @@ export function Select({
       <div
         className={cn(
           "relative h-[64px] w-full rounded-[18px] transition-all duration-200",
-          "bg-[rgba(12,18,34,0.55)] backdrop-blur-xl",
+          "bg-white/60 backdrop-blur-xl",
           "border",
           focused
-            ? "border-accent/60 shadow-[0_0_40px_rgba(180,83,9,0.18)]"
+            ? "border-accent/60 shadow-[0_0_0_4px_rgba(15,118,110,0.08)]"
             : showError
               ? "border-red-500/50"
-              : "border-border/35 hover:border-border/55"
+              : "border-border/35 hover:border-border-hover"
         )}
       >
         {withIcon && (
           <div
             className={cn(
               "pointer-events-none absolute left-[20px] top-1/2 -translate-y-1/2 transition-colors duration-200",
-              focused ? "text-accent" : "text-[rgba(43,33,24,0.35)]"
+              focused ? "text-accent" : "text-muted-foreground"
             )}
             aria-hidden="true"
           >
@@ -71,7 +71,7 @@ export function Select({
               ? "text-foreground"
               : float
                 ? "text-transparent"
-                : "text-[rgba(43,33,24,0.35)]",
+                : "text-foreground",
             "caret-accent"
           )}
           aria-invalid={showError ? "true" : "false"}
@@ -92,7 +92,7 @@ export function Select({
             "pointer-events-none absolute right-[20px] top-1/2 -translate-y-1/2 h-[18px] w-[18px] transition-all duration-200",
             float
               ? "rotate-180 text-accent"
-              : "text-[rgba(43,33,24,0.35)]"
+              : "text-muted-foreground"
           )}
           aria-hidden="true"
         />
@@ -110,7 +110,7 @@ export function Select({
                     ? "text-accent"
                     : showError
                       ? "text-red-600"
-                      : "text-accent",
+                      : "text-muted-foreground",
                 ]
               : [
                   "top-1/2 -translate-y-1/2 text-sm opacity-0",

@@ -16,7 +16,7 @@ function FilterChip({ label, selected, onClick }) {
         "inline-flex items-center gap-2 h-11 px-5 rounded-full text-sm font-medium transition-all duration-300 outline-none",
         "focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-1 focus-visible:ring-offset-background",
         selected
-          ? "bg-gradient-to-r from-accent to-accent-secondary text-background shadow-md shadow-accent/20"
+          ? "bg-gradient-to-r from-accent to-accent-secondary text-white shadow-md shadow-accent/20"
           : "bg-white/45 border border-border/35 text-muted-foreground hover:bg-white/60 hover:text-foreground hover:border-accent/30"
       )}
       aria-pressed={selected}
@@ -113,14 +113,14 @@ export function BlogFilterDrawer({ open, onClose }) {
                 <button
                   type="button"
                   onClick={clearFilters}
-                  className="flex-1 px-5 py-2.5 rounded-xl text-sm font-medium border border-border/35 text-muted-foreground hover:text-foreground hover:bg-white/4555 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+                  className="flex-1 px-5 py-2.5 rounded-xl text-sm font-medium border border-border/35 text-muted-foreground hover:text-foreground hover:bg-white/55 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
                 >
                   Reset
                 </button>
                 <button
                   type="button"
                   onClick={onClose}
-                  className="flex-1 px-5 py-2.5 rounded-xl text-sm font-medium bg-gradient-to-r from-accent to-accent-secondary text-background shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+                  className="flex-1 px-5 py-2.5 rounded-xl text-sm font-medium bg-gradient-to-r from-accent to-accent-secondary text-white shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
                 >
                   Apply Filters
                 </button>

@@ -17,19 +17,19 @@ export function ContactHero({ onStartProject }) {
     <section ref={ref} className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[5%] -left-48 w-[700px] h-[700px] rounded-full opacity-20" style={{
-          background: "radial-gradient(circle, rgba(180, 83, 9, 0.07), transparent 70%)",
+          background: "radial-gradient(circle, rgba(15, 118, 110, 0.07), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute bottom-[10%] -right-48 w-[500px] h-[500px] rounded-full opacity-15" style={{
-          background: "radial-gradient(circle, rgba(160, 58, 30, 0.05), transparent 70%)",
+          background: "radial-gradient(circle, rgba(14, 116, 144, 0.05), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute top-[40%] right-[20%] w-[400px] h-[400px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(180, 83, 9, 0.03), transparent 70%)",
+          background: "radial-gradient(circle, rgba(15, 118, 110, 0.03), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <Particles />
@@ -67,7 +67,7 @@ export function ContactHero({ onStartProject }) {
                 </PremiumCTA>
                 <a
                   href="mailto:hello@smartbyte.dev"
-                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-white/455 hover:border-border/55 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-white/55 hover:border-border/55 transition-all duration-300"
                 >
                   hello@smartbyte.dev
                 </a>

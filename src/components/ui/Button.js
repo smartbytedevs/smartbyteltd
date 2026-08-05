@@ -9,12 +9,15 @@ const Button = forwardRef(function Button(
   ref
 ) {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium rounded-full transition-all duration-300 cursor-pointer"
+    "inline-flex items-center justify-center font-medium rounded-full transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
 
   const variants = {
-    primary: "bg-accent text-background hover:bg-accent-hover shadow-lg shadow-accent/10",
-    secondary: "border border-border/40 text-foreground hover:bg-white/455 hover:border-border/55",
-    ghost: "text-muted-foreground hover:text-foreground hover:bg-white/455",
+    primary:
+      "bg-gradient-to-r from-accent to-accent-secondary text-white shadow-lg shadow-accent/15 hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5",
+    secondary:
+      "border border-foreground/20 text-foreground hover:border-foreground/40 hover:bg-white/50 hover:-translate-y-0.5",
+    ghost:
+      "text-muted-foreground hover:text-foreground hover:bg-white/50",
   }
 
   const sizes = {

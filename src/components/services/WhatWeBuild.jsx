@@ -31,7 +31,7 @@ function ServiceCard({ service, index, onSelect }) {
       className={cn(
         "group relative rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer",
         "bg-white/30 border border-border/30",
-        "hover:bg-white/4555 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5"
+        "hover:bg-white/55 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5"
       )}
       onClick={() => onSelect(service.id)}
     >
@@ -66,7 +66,7 @@ function ServiceCard({ service, index, onSelect }) {
             </span>
           </div>
           <motion.div
-            className="w-8 h-8 rounded-lg bg-white/45 border border-border/35 flex items-center justify-center group-hover:bg-accent group-hover:border-accent group-hover:text-background transition-all duration-300"
+            className="w-8 h-8 rounded-lg bg-white/45 border border-border/35 flex items-center justify-center group-hover:bg-accent group-hover:border-accent group-hover:text-white transition-all duration-300"
           >
             <ArrowRight className="w-4 h-4" />
           </motion.div>
@@ -81,11 +81,11 @@ export function WhatWeBuild({ onSelectService }) {
     <section id="services-grid" className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[20%] -left-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(180, 83, 9, 0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(15, 118, 110, 0.04), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute inset-0 opacity-[0.015]" style={{

@@ -30,20 +30,20 @@ export function Textarea({
       <div
         className={cn(
           "relative w-full rounded-[18px] transition-all duration-200",
-          "bg-[rgba(12,18,34,0.55)] backdrop-blur-xl",
+          "bg-white/60 backdrop-blur-xl",
           "border",
           focused
-            ? "border-accent/60 shadow-[0_0_40px_rgba(180,83,9,0.18)]"
+            ? "border-accent/60 shadow-[0_0_0_4px_rgba(15,118,110,0.08)]"
             : showError
               ? "border-red-500/50"
-              : "border-border/35 hover:border-border/55"
+              : "border-border/35 hover:border-border-hover"
         )}
       >
         {withIcon && (
           <div
             className={cn(
               "pointer-events-none absolute left-[20px] top-[20px] transition-colors duration-200",
-              focused ? "text-accent" : "text-[rgba(43,33,24,0.35)]"
+              focused ? "text-accent" : "text-muted-foreground"
             )}
             aria-hidden="true"
           >
@@ -69,7 +69,7 @@ export function Textarea({
             withIcon ? "pl-[56px]" : "pl-[22px]",
             "pr-[22px]",
             "font-body text-sm text-foreground",
-            "placeholder:opacity-0",
+            "placeholder:opacity-0 placeholder:text-muted-foreground",
             "caret-accent"
           )}
           aria-invalid={showError ? "true" : "false"}
@@ -85,11 +85,11 @@ export function Textarea({
               ? [
                   "-top-[10px] translate-y-0 text-[12px] font-medium",
                   "bg-background px-2 rounded-full",
-                  focused ? "text-accent" : showError ? "text-red-600" : "text-accent",
+                  focused ? "text-accent" : showError ? "text-red-600" : "text-muted-foreground",
                 ]
               : [
                   "top-[20px] text-sm",
-                  showError ? "text-red-600/80" : "text-[rgba(43,33,24,0.35)]",
+                  showError ? "text-red-600/80" : "text-muted-foreground",
                 ]
           )}
         >

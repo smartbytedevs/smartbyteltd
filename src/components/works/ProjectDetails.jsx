@@ -14,7 +14,7 @@ function MetricCard({ value, label, delay }) {
       <div
         className="absolute inset-0 rounded-xl border border-border/30 transition-colors duration-300 group-hover/metric:border-accent/15"
         style={{
-          background: "rgba(255, 247, 236, 0.7)",
+          background: "rgba(255, 253, 246, 0.7)",
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
         }}
@@ -117,10 +117,10 @@ export function ProjectDetails({ project, index, isHovered }) {
             <span
               className="absolute inset-0 rounded-full opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700"
               style={{
-                boxShadow: "0 0 20px rgba(180, 83, 9, 0.2), 0 0 40px rgba(160, 58, 30, 0.1)",
+                boxShadow: "0 0 20px rgba(15, 118, 110, 0.2), 0 0 40px rgba(14, 116, 144, 0.1)",
               }}
             />
-            <span className="relative z-10 text-background flex items-center gap-1.5">
+            <span className="relative z-10 text-white flex items-center gap-1.5">
               {hasLiveLink ? "View Live" : "View Project"}
               <motion.span
                 className="inline-flex"

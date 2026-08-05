@@ -11,7 +11,7 @@ function FAQItem({ item, index, isOpen, onToggle }) {
       className={`rounded-2xl border transition-all duration-500 ${
         isOpen
           ? "border-accent/20 bg-white/45"
-          : "border-white/[0.05] bg-white/30"
+          : "border-border/40 bg-white/30"
       }`}
     >
       <button

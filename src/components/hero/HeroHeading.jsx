@@ -29,7 +29,7 @@ export function HeroHeading() {
                 className={`block ${textClasses} select-none`}
                 style={{
                   color: "transparent",
-                  WebkitTextStroke: "1.2px rgba(43, 33, 24, 0.6)",
+                  WebkitTextStroke: "1.2px rgba(28, 25, 23, 0.6)",
                 }}
               >
                 {line.text}

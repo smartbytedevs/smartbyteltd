@@ -15,7 +15,7 @@ function AccordionItem({ item, isOpen, onToggle, index }) {
         "rounded-2xl border transition-all duration-300 overflow-hidden",
         isOpen
           ? "border-accent/20 bg-accent/[0.02]"
-          : "border-border/30 bg-white/30 hover:bg-white/4555"
+          : "border-border/30 bg-white/30 hover:bg-white/55"
       )}>
         <button
           type="button"
@@ -71,7 +71,7 @@ export function ServicesFAQ() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
       </div>

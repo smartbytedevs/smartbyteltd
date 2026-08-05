@@ -42,14 +42,14 @@ function SelectableCard({ icon: Icon, label, description, selected, onClick, siz
         "focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         selected
           ? "bg-accent/[0.06] border-accent/40 shadow-lg shadow-accent/10"
-          : "bg-white/30 border-border/30 hover:bg-white/4555 hover:border-border/55 hover:shadow-md",
+          : "bg-white/30 border-border/30 hover:bg-white/55 hover:border-border/55 hover:shadow-md",
         size === "large" ? "p-5 md:p-6" : "p-4 md:p-5"
       )}
       aria-pressed={selected}
     >
       {selected && (
         <span className="absolute top-3 right-3 w-5 h-5 rounded-full bg-accent flex items-center justify-center">
-          <Check className="w-3 h-3 text-background" />
+          <Check className="w-3 h-3 text-white" />
         </span>
       )}
 
@@ -62,7 +62,7 @@ function SelectableCard({ icon: Icon, label, description, selected, onClick, siz
         )}>
           <Icon className={cn(
             "w-5 h-5 transition-colors duration-300",
-            selected ? "text-background" : "text-muted-foreground group-hover:text-accent"
+            selected ? "text-white" : "text-muted-foreground group-hover:text-accent"
           )} />
         </div>
 
@@ -95,7 +95,7 @@ function ProgressDots({ step, total }) {
           key={i}
           className={cn(
             "h-1.5 rounded-full transition-all duration-500",
-            i <= step ? "w-6 bg-gradient-to-r from-accent to-accent-secondary" : "w-1.5 bg-white/450"
+            i <= step ? "w-6 bg-gradient-to-r from-accent to-accent-secondary" : "w-1.5 bg-white/50"
           )}
         />
       ))}
@@ -178,11 +178,11 @@ export function SolutionFinder({ onFindSolution }) {
       <section id="solution-finder" className="relative py-24 md:py-32 overflow-hidden bg-background">
         <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <div className="absolute inset-0 opacity-[0.015]" style={{
-            backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+            backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }} />
           <div className="absolute top-1/3 -left-48 w-[500px] h-[500px] rounded-full opacity-15" style={{
-            background: "radial-gradient(circle, rgba(180, 83, 9, 0.06), transparent 70%)",
+            background: "radial-gradient(circle, rgba(15, 118, 110, 0.06), transparent 70%)",
             filter: "blur(120px)",
           }} />
           <div className="absolute inset-0 opacity-[0.015]" style={{
@@ -287,15 +287,15 @@ export function SolutionFinder({ onFindSolution }) {
     <section id="solution-finder" className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(43,33,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(43,33,24,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[10%] -left-48 w-[600px] h-[600px] rounded-full opacity-20" style={{
-          background: "radial-gradient(circle, rgba(180, 83, 9, 0.06), transparent 70%)",
+          background: "radial-gradient(circle, rgba(15, 118, 110, 0.06), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute bottom-[20%] -right-48 w-[400px] h-[400px] rounded-full opacity-15" style={{
-          background: "radial-gradient(circle, rgba(160, 58, 30, 0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(14, 116, 144, 0.04), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute inset-0 opacity-[0.015]" style={{
@@ -401,7 +401,7 @@ export function SolutionFinder({ onFindSolution }) {
                       animate={{ opacity: 1, scale: 1 }}
                       className={cn(
                         "inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300",
-                        "bg-gradient-to-r from-accent to-accent-secondary text-background",
+                        "bg-gradient-to-r from-accent to-accent-secondary text-white",
                         "shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30",
                         "hover:scale-[1.02] active:scale-[0.98]",
                         "focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"

@@ -76,13 +76,13 @@ export function QuoteModal({ isOpen, data, onClose }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 24 }}
             transition={{ type: "spring", stiffness: 300, damping: 28, mass: 0.9 }}
-            className="relative my-auto w-full max-w-2xl overflow-hidden rounded-3xl border border-border/35 bg-[rgba(255,247,236,0.97)] shadow-2xl backdrop-blur-2xl"
+            className="relative my-auto w-full max-w-2xl overflow-hidden rounded-3xl border border-border/35 bg-[rgba(255,253,246,0.97)] shadow-2xl backdrop-blur-2xl"
           >
             <div
               className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full opacity-10"
               style={{
                 background:
-                  "radial-gradient(circle, rgba(180, 83, 9, 0.15), transparent 70%)",
+                  "radial-gradient(circle, rgba(15, 118, 110, 0.15), transparent 70%)",
                 filter: "blur(60px)",
               }}
               aria-hidden="true"
@@ -91,7 +91,7 @@ export function QuoteModal({ isOpen, data, onClose }) {
               className="pointer-events-none absolute -bottom-24 -left-24 h-56 w-56 rounded-full opacity-10"
               style={{
                 background:
-                  "radial-gradient(circle, rgba(160, 58, 30, 0.12), transparent 70%)",
+                  "radial-gradient(circle, rgba(14, 116, 144, 0.12), transparent 70%)",
                 filter: "blur(60px)",
               }}
               aria-hidden="true"
@@ -101,7 +101,7 @@ export function QuoteModal({ isOpen, data, onClose }) {
               <div className="mb-6 flex items-start justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-accent to-accent-secondary shadow-lg shadow-accent/20">
-                    <Sparkles className="h-5 w-5 text-background" />
+                    <Sparkles className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <h3 className="font-display text-xl font-bold text-foreground sm:text-2xl">

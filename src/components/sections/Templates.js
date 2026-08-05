@@ -73,11 +73,11 @@ export function Templates() {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                       <div className="flex items-center gap-3">
-                        <span className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/50 backdrop-blur-sm text-white text-sm">
+                        <span className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-foreground text-sm shadow-lg">
                           <Eye className="w-4 h-4" />
                           Preview
                         </span>
-                        <span className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/50 backdrop-blur-sm text-white text-sm">
+                        <span className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-foreground text-sm shadow-lg">
                           <ExternalLink className="w-4 h-4" />
                           Live Demo
                         </span>
@@ -90,7 +90,7 @@ export function Templates() {
                   <span className="text-xs text-blue-600 font-medium uppercase tracking-wider">
                     {template.category}
                   </span>
-                  <h3 className="text-lg font-semibold text-white mt-2 mb-3">
+                  <h3 className="text-lg font-semibold text-foreground mt-2 mb-3">
                     {template.title}
                   </h3>
 
@@ -98,7 +98,7 @@ export function Templates() {
                     {template.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-1 text-xs rounded-md bg-white/45 text-zinc-400"
+                        className="px-2 py-1 text-xs rounded-md bg-foreground/5 text-muted-foreground"
                       >
                         {tag}
                       </span>

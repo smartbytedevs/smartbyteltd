@@ -48,7 +48,7 @@ export default function BlogArticlePage() {
             <p className="text-muted mb-8">The article you are looking for does not exist or has been removed.</p>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-background font-medium text-sm hover:scale-[1.02] transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-white font-medium text-sm hover:scale-[1.02] transition-all"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Blog
@@ -119,7 +119,7 @@ export default function BlogArticlePage() {
                 <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground pb-6 border-b border-border/30 mb-6">
                   {author && (
                     <span className="flex items-center gap-2">
-                      <span className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-[10px] font-bold text-background">
+                      <span className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-[10px] font-bold text-white">
                         {author.avatar}
                       </span>
                       <div>
@@ -180,7 +180,7 @@ export default function BlogArticlePage() {
                       <Link
                         key={related.id}
                         href={`/blog/${related.slug}`}
-                        className="group p-5 rounded-2xl border border-border/30 bg-white/30 hover:border-accent/30 hover:bg-white/4555 transition-all duration-300"
+                        className="group p-5 rounded-2xl border border-border/30 bg-white/30 hover:border-accent/30 hover:bg-white/55 transition-all duration-300"
                       >
                         <h3 className="font-display text-sm font-bold text-foreground group-hover:text-accent transition-colors line-clamp-2 mb-2">
                           {related.title}
