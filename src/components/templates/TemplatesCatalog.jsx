@@ -195,11 +195,19 @@ function TemplateCard({ template, index, highlight }) {
       )}
 
       <div className={cn("relative h-48 sm:h-56 overflow-hidden bg-gradient-to-br", gradient)}>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-16 h-16 rounded-2xl bg-white/45 border border-border/40 flex items-center justify-center">
-            <Layout className="w-8 h-8 text-foreground/40" />
+        {template.thumbnail ? (
+          <img
+            src={template.thumbnail}
+            alt={template.name}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-16 h-16 rounded-2xl bg-white/45 border border-border/40 flex items-center justify-center">
+              <Layout className="w-8 h-8 text-foreground/40" />
+            </div>
           </div>
-        </div>
+        )}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40 flex items-center justify-center">
           <div className="flex gap-3">
             <Link href={`/templates/${template.slug}`} className="p-3 rounded-xl bg-white/90 backdrop-blur-sm border border-white/60 text-foreground shadow-lg hover:bg-white transition-all hover:scale-105" aria-label={`Preview ${template.name} template`}>

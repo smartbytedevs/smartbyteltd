@@ -73,11 +73,15 @@ function RelatedTemplateCard({ template, index }) {
         className="group block rounded-2xl overflow-hidden bg-white/30 border border-border/30 hover:bg-white/55 hover:border-accent/30 hover:-translate-y-1 transition-all duration-500 h-full"
       >
         <div className={cn("relative h-40 overflow-hidden bg-gradient-to-br", gradient)}>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-14 h-14 rounded-2xl bg-white/45 border border-border/40 flex items-center justify-center">
-              <Layout className="w-7 h-7 text-foreground/40" />
+          {template.thumbnail ? (
+            <img src={template.thumbnail} alt={template.title} className="absolute inset-0 w-full h-full object-cover" />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-14 h-14 rounded-2xl bg-white/45 border border-border/40 flex items-center justify-center">
+                <Layout className="w-7 h-7 text-foreground/40" />
+              </div>
             </div>
-          </div>
+          )}
           {template.badge && (
             <div className="absolute top-3 left-3">
               <span className={cn("inline-block px-2 py-0.5 rounded-full text-[9px] font-bold tracking-label uppercase border", badgeStyles[template.badge] || "bg-white/50 text-foreground border-border/50")}>

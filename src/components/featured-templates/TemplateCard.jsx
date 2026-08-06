@@ -1,11 +1,14 @@
 "use client"
 
 import { memo, useState } from "react"
+import Link from "next/link"
 import { motion } from "motion/react"
 import { SafeSlideUp } from "@/components/common/SafeMotion"
 import { Check, ArrowRight } from "lucide-react"
 import { PreviewWindow } from "./PreviewWindow"
 import { CategoryBadge } from "./CategoryBadge"
+import { categories } from "@/data/templates"
+import { getTemplatePriceDisplay } from "@/lib/portfolio-data"
 
 const techColors = {
   "Next.js": "bg-white/50 text-foreground",
@@ -25,6 +28,9 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
   const [isHovered, setIsHovered] = useState(false)
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 })
 
+  const categoryLabel = categories.find((c) => c.id === template.category)?.label || template.category
+  const priceDisplay = getTemplatePriceDisplay(template)
+
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect()
     setMousePos({
@@ -41,8 +47,8 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
       data-card-root
       delay={index * 0.1}
       style={{
-        width: `min(${template.width}px, calc(100dvw - 4rem))`,
-        height: template.height,
+        width: `min(${template.width || 440}px, calc(100dvw - 4rem))`,
+        height: template.height || 580,
         perspective: "1000px",
       }}
       className="relative flex-shrink-0"
@@ -57,7 +63,8 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
         }}
         transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div
+        <Link
+          href={`/templates/${template.slug}`}
           className="group relative w-full h-full outline-none"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => {
@@ -67,14 +74,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
           onMouseMove={handleMouseMove}
           onFocus={() => setIsHovered(true)}
           onBlur={() => setIsHovered(false)}
-          tabIndex={0}
-          role="button"
-          aria-label={`${template.title} — ${template.category} template, starting at ${template.price}`}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault()
-            }
-          }}
+          aria-label={`${template.title} — ${categoryLabel} template, starting at ${priceDisplay}`}
         >
           {/* ── Card Body ── */}
           <motion.div
@@ -135,7 +135,15 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
                   damping: 25,
                 }}
               >
-                <PreviewWindow category={template.category} />
+                {template.thumbnail ? (
+                  <img
+                    src={template.thumbnail}
+                    alt={template.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <PreviewWindow category={template.category} />
+                )}
               </motion.div>
 
               {/* Gradient fade overlay at bottom of image */}
@@ -143,7 +151,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
 
               {/* Category badge */}
               <div className="absolute top-3 left-3 z-10">
-                <CategoryBadge category={template.category} />
+                <CategoryBadge category={categoryLabel} />
               </div>
 
               {/* Badge label */}
@@ -243,7 +251,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    {template.price}
+                    {priceDisplay}
                   </motion.span>
                   <span className="text-[9px] sm:text-[10px] text-muted ml-2 align-middle">
                     Delivery: {template.delivery}
@@ -272,7 +280,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
             {/* Focus ring */}
             <div className="absolute inset-0 rounded-2xl ring-2 ring-accent/50 opacity-0 focus-visible:opacity-100 transition-opacity pointer-events-none z-30" />
           </motion.div>
-        </div>
+        </Link>
       </motion.div>
     </SafeSlideUp>
   )

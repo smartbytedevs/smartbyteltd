@@ -125,55 +125,64 @@
   ],
   "templates": [
     {
-      "id": "restaurant-pro",
-      "slug": "restaurant-pro",
-      "title": "Restaurant Pro",
-      "category": "restaurant",
-      "industry": "restaurant",
-      "shortDescription": "Complete digital presence for restaurants with online ordering, reservation management, and dynamic menu displays.",
-      "fullDescription": "Restaurant Pro gives your restaurant a complete digital presence in days. It includes a fully-featured online ordering system, a table reservation portal with instant confirmation, dynamic menu management, and a gallery & events section — everything a modern food business needs to convert hungry visitors into loyal customers.",
-      "price": 1499,
-      "oldPrice": 1799,
-      "deliveryTime": "7 days",
+      "id": "sb-template-001",
+      "slug": "smartbyte-ecommerce-template",
+      "title": "SmartByte Ecommerce Template",
+      "category": "ecommerce",
+      "industry": "retail",
+      "shortDescription": "A premium reusable eCommerce template powered by JSON data.",
+      "fullDescription": "The SmartByte Ecommerce Template is a premium reusable eCommerce template powered by JSON data. Built on Next.js 16 (App Router), React 19, Tailwind CSS v4, and motion 12, it offers a fast, server-driven architecture. The checkout system is manual order-based, seamlessly supporting WhatsApp, email, and bank transfers without requiring a traditional payment gateway.",
+      "price": 49,
+      "oldPrice": 69,
+      "deliveryTime": "Instant Download",
       "rating": 4.9,
-      "purchaseCount": 186,
+      "purchaseCount": 142,
       "featured": true,
       "featuredOrder": 1,
       "technologies": [
-        "Next.js",
-        "Tailwind",
-        "Node",
-        "Stripe"
+        "Next.js 16",
+        "React 19",
+        "Tailwind CSS v4",
+        "motion (Framer Motion) 12",
+        "lucide-react"
       ],
       "features": [
-        "Online ordering system",
-        "Table reservation portal",
-        "Dynamic menu management",
-        "Gallery & events section"
+        "Manual order-based checkout via WhatsApp and email",
+        "All content managed via JSON data layer",
+        "Advanced product filtering and search system",
+        "360° drag-to-rotate product spin view",
+        "Dynamic light-first theme applied at runtime"
       ],
-      "thumbnail": "",
-      "gallery": [],
-      "previewImages": [],
+      "thumbnail": "/images/templates/ecom-template-01.png",
+      "gallery": [
+        "/images/templates/ecom-template-01.png",
+        "/images/templates/ecom-template-01.png"
+      ],
+      "previewImages": [
+        "/assets/previews/solstice-preview-1.png",
+        "/assets/previews/solstice-preview-2.png"
+      ],
       "status": "Live",
-      "liveLink": "",
+      "liveLink": "https://template-01-ecommerce.vercel.app/",
       "githubLink": "",
       "demoAvailable": true,
       "comingSoon": false,
-      "badge": "BEST SELLER",
-      "priceLabel": "Starter",
-      "createdAt": "2025-11-10",
+      "badge": "NEW",
+      "priceLabel": "Standard License",
+      "createdAt": "2026-08-06",
       "seo": {
-        "title": "Restaurant Pro — Restaurant Website Template | SmartByte",
-        "description": "Restaurant website template with online ordering, table reservations, and dynamic menu management. Launch ready in 7 days.",
+        "title": "Solstice Premium Ecommerce Template | SmartByte",
+        "description": "A premium reusable eCommerce template powered by JSON data featuring manual WhatsApp checkout.",
         "keywords": [
-          "restaurant website template",
-          "restaurant website",
-          "online ordering template"
+          "ecommerce template",
+          "Next.js 16 template",
+          "WhatsApp checkout",
+          "JSON data store"
         ],
-        "ogImage": ""
+        "ogImage": "/images/templates/ecom-template-01.png"
       },
       "popular": true,
-      "newest": false
+      "newest": true
     },
     {
       "id": "medicare",
@@ -190,12 +199,7 @@
       "purchaseCount": 142,
       "featured": true,
       "featuredOrder": 3,
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Tailwind",
-        "Postgres"
-      ],
+      "technologies": ["Next.js", "TypeScript", "Tailwind", "Postgres"],
       "features": [
         "Patient portal & profiles",
         "Appointment scheduling",
@@ -241,12 +245,7 @@
       "purchaseCount": 98,
       "featured": true,
       "featuredOrder": 6,
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Tailwind",
-        "Prisma"
-      ],
+      "technologies": ["Next.js", "TypeScript", "Tailwind", "Prisma"],
       "features": [
         "Course management system",
         "Student enrollment portal",
@@ -292,12 +291,7 @@
       "purchaseCount": 164,
       "featured": true,
       "featuredOrder": 2,
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Tailwind",
-        "Postgres"
-      ],
+      "technologies": ["Next.js", "TypeScript", "Tailwind", "Postgres"],
       "features": [
         "Team & leadership pages",
         "Investor relations portal",
@@ -343,11 +337,7 @@
       "purchaseCount": 121,
       "featured": false,
       "featuredOrder": 0,
-      "technologies": [
-        "Next.js",
-        "Tailwind",
-        "Motion"
-      ],
+      "technologies": ["Next.js", "Tailwind", "Motion"],
       "features": [
         "Project showcase grid",
         "Client gallery",
@@ -393,12 +383,7 @@
       "purchaseCount": 203,
       "featured": true,
       "featuredOrder": 4,
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Stripe",
-        "Tailwind"
-      ],
+      "technologies": ["Next.js", "TypeScript", "Stripe", "Tailwind"],
       "features": [
         "Product catalog management",
         "Shopping cart & checkout",
@@ -444,12 +429,7 @@
       "purchaseCount": 87,
       "featured": false,
       "featuredOrder": 0,
-      "technologies": [
-        "Next.js",
-        "Tailwind",
-        "Motion",
-        "Prisma"
-      ],
+      "technologies": ["Next.js", "Tailwind", "Motion", "Prisma"],
       "features": [
         "Case study portfolio",
         "Service showcase",
@@ -495,12 +475,7 @@
       "purchaseCount": 176,
       "featured": true,
       "featuredOrder": 5,
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Tailwind",
-        "Postgres"
-      ],
+      "technologies": ["Next.js", "TypeScript", "Tailwind", "Postgres"],
       "features": [
         "Property listing manager",
         "Virtual tour integration",
@@ -546,11 +521,7 @@
       "purchaseCount": 233,
       "featured": true,
       "featuredOrder": 7,
-      "technologies": [
-        "Next.js",
-        "Tailwind",
-        "Motion"
-      ],
+      "technologies": ["Next.js", "Tailwind", "Motion"],
       "features": [
         "Waitlist & early access",
         "Investor deck section",
@@ -596,11 +567,7 @@
       "purchaseCount": 154,
       "featured": false,
       "featuredOrder": 0,
-      "technologies": [
-        "Next.js",
-        "Tailwind",
-        "Motion"
-      ],
+      "technologies": ["Next.js", "Tailwind", "Motion"],
       "features": [
         "Lead capture forms",
         "A/B testing ready",
@@ -646,11 +613,7 @@
       "purchaseCount": 64,
       "featured": false,
       "featuredOrder": 0,
-      "technologies": [
-        "Next.js",
-        "Tailwind",
-        "Node"
-      ],
+      "technologies": ["Next.js", "Tailwind", "Node"],
       "features": [
         "Online reservation system",
         "Photo gallery",
@@ -696,12 +659,7 @@
       "purchaseCount": 112,
       "featured": false,
       "featuredOrder": 0,
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Tailwind",
-        "Postgres"
-      ],
+      "technologies": ["Next.js", "TypeScript", "Tailwind", "Postgres"],
       "features": [
         "Service & treatment pages",
         "Practitioner profiles",
@@ -747,12 +705,7 @@
       "purchaseCount": 79,
       "featured": false,
       "featuredOrder": 0,
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Tailwind",
-        "Prisma"
-      ],
+      "technologies": ["Next.js", "TypeScript", "Tailwind", "Prisma"],
       "features": [
         "Instructor dashboard",
         "Student review system",
@@ -798,12 +751,7 @@
       "purchaseCount": 45,
       "featured": false,
       "featuredOrder": 0,
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Tailwind",
-        "Postgres"
-      ],
+      "technologies": ["Next.js", "TypeScript", "Tailwind", "Postgres"],
       "features": [
         "Employee intranet",
         "Document management",
@@ -849,11 +797,7 @@
       "purchaseCount": 130,
       "featured": false,
       "featuredOrder": 0,
-      "technologies": [
-        "Next.js",
-        "Tailwind",
-        "Motion"
-      ],
+      "technologies": ["Next.js", "Tailwind", "Motion"],
       "features": [
         "Lightbox gallery",
         "Client proofing",
@@ -899,12 +843,7 @@
       "purchaseCount": 92,
       "featured": false,
       "featuredOrder": 0,
-      "technologies": [
-        "Next.js",
-        "Stripe",
-        "Tailwind",
-        "Postgres"
-      ],
+      "technologies": ["Next.js", "Stripe", "Tailwind", "Postgres"],
       "features": [
         "Inventory management",
         "Discount & promo codes",
@@ -950,12 +889,7 @@
       "purchaseCount": 108,
       "featured": true,
       "featuredOrder": 8,
-      "technologies": [
-        "Next.js",
-        "Tailwind",
-        "Motion",
-        "Prisma"
-      ],
+      "technologies": ["Next.js", "Tailwind", "Motion", "Prisma"],
       "features": [
         "Award showcase",
         "Process storytelling",
@@ -1001,12 +935,7 @@
       "purchaseCount": 58,
       "featured": false,
       "featuredOrder": 0,
-      "technologies": [
-        "Next.js",
-        "TypeScript",
-        "Tailwind",
-        "Postgres"
-      ],
+      "technologies": ["Next.js", "TypeScript", "Tailwind", "Postgres"],
       "features": [
         "Tenant portal",
         "Maintenance requests",
@@ -1250,11 +1179,7 @@
     }
   ],
   "featureKeywords": {
-    "cms": [
-      "cms",
-      "built-in cms",
-      "content management"
-    ],
+    "cms": ["cms", "built-in cms", "content management"],
     "authentication": [
       "authentication",
       "login",
@@ -1289,16 +1214,8 @@
       "rent payment",
       "multi-currency"
     ],
-    "inventory": [
-      "inventory",
-      "product catalog",
-      "product catalog management"
-    ],
-    "analytics": [
-      "analytics",
-      "analytics integration",
-      "property analytics"
-    ],
+    "inventory": ["inventory", "product catalog", "product catalog management"],
+    "analytics": ["analytics", "analytics integration", "property analytics"],
     "crm": [
       "crm",
       "client portal",
@@ -1313,11 +1230,7 @@
       "project showcase",
       "gallery & events section"
     ],
-    "blog": [
-      "blog",
-      "news & press room",
-      "health resources blog"
-    ],
+    "blog": ["blog", "news & press room", "health resources blog"],
     "waitlist": [
       "waitlist",
       "early access",
@@ -1344,10 +1257,7 @@
       "appointment scheduling",
       "online consultation booking"
     ],
-    "seo": [
-      "seo",
-      "seo optimized"
-    ]
+    "seo": ["seo", "seo optimized"]
   },
   "faqItems": [
     {
