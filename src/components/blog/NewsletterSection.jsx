@@ -91,7 +91,7 @@ export function NewsletterSection() {
                           "w-full px-5 py-3.5 rounded-xl text-sm bg-accent/[0.08] border outline-none transition-all duration-300",
                           "placeholder:text-muted-foreground/60 text-foreground",
                           "focus:ring-2 focus:ring-accent/50",
-                          error ? "border-red-500/50" : "border-border/35 hover:border-border/55"
+                          error ? "border-red-500/50" : "border-accent/15 hover:border-border/55"
                         )}
                         aria-label="Email address"
                         aria-invalid={!!error}

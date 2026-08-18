@@ -10,8 +10,8 @@ function FAQItem({ item, index, isOpen, onToggle }) {
     <div
       className={`rounded-2xl border transition-all duration-500 ${
         isOpen
-          ? "border-accent/20 bg-white/8"
-          : "border-border/40 bg-white/5"
+          ? "border-accent/20 bg-accent/[0.05]"
+          : "border-border/40 bg-accent/[0.04]"
       }`}
     >
       <button
@@ -24,7 +24,7 @@ function FAQItem({ item, index, isOpen, onToggle }) {
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/8"
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/[0.05]"
         >
           <ChevronDown className="h-4 w-4 text-accent" />
         </motion.div>

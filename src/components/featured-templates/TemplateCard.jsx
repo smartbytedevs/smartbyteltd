@@ -11,7 +11,7 @@ import { categories } from "@/data/templates"
 import { getTemplatePriceDisplay } from "@/lib/portfolio-data"
 
 const techColors = {
-  "Next.js": "bg-white/50 text-foreground",
+  "Next.js": "bg-accent/[0.09] text-foreground",
   React: "bg-sky-500/20 text-sky-700",
   Tailwind: "bg-cyan-500/20 text-cyan-700",
   Stripe: "bg-purple-500/20 text-purple-700",
@@ -228,7 +228,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
                   <span
                     key={tech}
                     className={`px-2 py-0.5 text-[9px] sm:text-[10px] font-semibold rounded-md ${
-                      techColors[tech] || "bg-white/45 text-foreground/70"
+                      techColors[tech] || "bg-accent/[0.08] text-foreground/70"
                     }`}
                   >
                     {tech}

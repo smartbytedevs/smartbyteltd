@@ -148,7 +148,7 @@ function SortDropdown({ value, onChange }) {
                 aria-selected={value === opt.value}
                 onClick={() => { onChange(opt.value); setOpen(false) }}
                 className={cn(
-                  "w-full text-left px-4 py-3 text-sm transition-colors hover:bg-white/55 flex items-center justify-between",
+                  "w-full text-left px-4 py-3 text-sm transition-colors hover:bg-accent/[0.12] flex items-center justify-between",
                   value === opt.value ? "text-accent" : "text-muted-foreground"
                 )}
               >
@@ -203,7 +203,7 @@ function TemplateCard({ template, index, highlight }) {
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-16 h-16 rounded-2xl bg-white/45 border border-border/40 flex items-center justify-center">
+            <div className="w-16 h-16 rounded-2xl bg-accent/[0.08] border border-accent/15 flex items-center justify-center">
               <Layout className="w-8 h-8 text-foreground/40" />
             </div>
           </div>
@@ -259,7 +259,7 @@ function TemplateCard({ template, index, highlight }) {
         </div>
 
         <div className="mt-4 grid grid-cols-2 gap-2">
-          <Link href={`/templates/${template.slug}`} className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all bg-accent/[0.08] border border-accent/15 text-muted-foreground hover:bg-white/60 hover:text-foreground hover:border-border/55 group-hover:scale-[1.02]">
+            <Link href={`/templates/${template.slug}`} className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all bg-accent/[0.08] border border-accent/15 text-muted-foreground hover:bg-accent/[0.12] hover:text-foreground hover:border-border/55 group-hover:scale-[1.02]">
             <Eye className="w-3.5 h-3.5" /> Preview
           </Link>
           <Link href={`/templates/${template.slug}`} className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all bg-gradient-to-r from-accent to-accent-secondary text-white shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98]">
@@ -453,7 +453,7 @@ export function TemplatesCatalog() {
                 <button
                   type="button"
                   onClick={clearFilters}
-                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium text-muted-foreground hover:text-foreground border border-border/30 hover:border-border/55 transition-all"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium text-muted-foreground hover:text-foreground border border-accent/15 hover:border-border/55 transition-all"
                 >
                   <RotateCcw className="w-3 h-3" />
                   Clear All

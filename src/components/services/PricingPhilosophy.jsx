@@ -35,7 +35,7 @@ export function PricingPhilosophy() {
 
         <SafeSlideUp delay={0.1}>
           <div className="max-w-3xl mx-auto mb-16">
-            <div className="relative rounded-2xl p-6 md:p-8 border border-border/30 bg-white/30">
+            <div className="relative rounded-2xl p-6 md:p-8 border border-accent/15 bg-accent/[0.06]">
               <p className="text-sm text-muted leading-relaxed mb-6">
                 Pricing depends on several factors that we discuss during your free consultation:
               </p>
@@ -68,8 +68,8 @@ export function PricingPhilosophy() {
                 whileHover={{ y: -6 }}
                 className={cn(
                   "relative rounded-2xl overflow-hidden transition-all duration-500",
-                  "bg-white/30 border border-border/30",
-                  "hover:bg-white/55 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5",
+                  "bg-accent/[0.06] border border-accent/15",
+                  "hover:bg-accent/[0.12] hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5",
                   tier.id === "growth" && "md:scale-105 border-accent/20"
                 )}
               >
@@ -108,7 +108,7 @@ export function PricingPhilosophy() {
                       "group flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-medium transition-all duration-300",
                       tier.id === "growth"
                         ? "bg-gradient-to-r from-accent to-accent-secondary text-white shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30"
-                        : "border border-border/35 text-muted-foreground hover:text-foreground hover:bg-white/55 hover:border-border/55"
+                        : "border border-accent/15 text-muted-foreground hover:text-foreground hover:bg-accent/[0.12] hover:border-border/55"
                     )}
                   >
                     Request Custom Quote

@@ -67,7 +67,7 @@ export function TechStack() {
                         className={cn(
                           "rounded-xl p-3 text-center border transition-all duration-300 cursor-default",
                           "bg-accent/[0.06] border-accent/15",
-                          "hover:bg-white/50 hover:border-accent/30 hover:shadow-md"
+                          "hover:bg-accent/[0.12] hover:border-accent/30 hover:shadow-md"
                         )}
                       >
                         <div className={cn("w-8 h-8 rounded-lg bg-gradient-to-br mx-auto mb-2 flex items-center justify-center", tech.color)}>

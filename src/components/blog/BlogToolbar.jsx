@@ -67,7 +67,7 @@ export function BlogToolbar() {
               className="w-full bg-transparent pl-10 pr-20 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none rounded-2xl"
               aria-label="Search articles"
             />
-            <span className="absolute right-4 text-[10px] font-medium text-muted-foreground/40 bg-white/45 px-1.5 py-0.5 rounded border border-border/30 pointer-events-none">
+            <span className="absolute right-4 text-[10px] font-medium text-muted-foreground/40 bg-accent/[0.08] px-1.5 py-0.5 rounded border border-border/30 pointer-events-none">
               {isMac ? "\u2318K" : "Ctrl+K"}
             </span>
           </div>

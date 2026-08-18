@@ -62,7 +62,7 @@ function ServiceNav({ services, activeId, onSelect, layout }) {
           if (!s) return null
           const isActive = activeId === s.id
           return (
-            <div key={s.id} className="rounded-xl border border-border/30 overflow-hidden transition-all duration-300">
+            <div key={s.id} className="rounded-xl border border-accent/15 overflow-hidden transition-all duration-300">
               <button
                 type="button"
                 onClick={() => onSelect(s.id)}

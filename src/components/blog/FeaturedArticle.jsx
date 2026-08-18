@@ -64,7 +64,7 @@ export function FeaturedArticle() {
                 {article.categories.slice(0, 2).map((catId) => {
                   const cat = categories.find((c) => c.id === catId)
                   return cat ? (
-                    <span key={catId} className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-white/50 text-muted-foreground border border-border/30">
+                    <span key={catId} className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-accent/[0.09] text-muted-foreground border border-border/30">
                       {cat.label}
                     </span>
                   ) : null

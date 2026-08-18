@@ -191,7 +191,7 @@ export function ContactForm({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className="relative overflow-hidden rounded-3xl border border-border/30 bg-white/5 p-6 backdrop-blur-xl sm:p-8 lg:p-10"
+      className="relative overflow-hidden rounded-3xl border border-border/30 bg-accent/[0.04] p-6 backdrop-blur-xl sm:p-8 lg:p-10"
     >
       <div
         className="pointer-events-none absolute -left-20 -top-20 h-60 w-60 rounded-full opacity-10"

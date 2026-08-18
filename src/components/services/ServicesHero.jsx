@@ -21,7 +21,7 @@ function FloatingCard({ step, index }) {
       initial={{ opacity: 0, x: 60, y: 20 }}
       animate={{ opacity: 1, x: 0, y: 0 }}
       transition={{ duration: 0.6, delay: 0.5 + index * 0.15, ease: [0.16, 1, 0.3, 1] }}
-      className="relative flex items-center gap-3 rounded-2xl border border-border/35 bg-white/40 p-4 backdrop-blur-xl"
+      className="relative flex items-center gap-3 rounded-2xl border border-accent/15 bg-accent/[0.07] p-4 backdrop-blur-xl"
       style={{ width: 200 }}
     >
       <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center shrink-0`}>
@@ -107,7 +107,7 @@ export function ServicesHero({ onExplore }) {
                   <button
                     type="button"
                     onClick={() => openQuoteModal({ source: "services" })}
-                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-white/55 hover:border-border/55 transition-all duration-300"
+                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-accent/[0.12] hover:border-border/55 transition-all duration-300"
                   >
                     Get Free Consultation
                   </button>

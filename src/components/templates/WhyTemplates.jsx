@@ -92,7 +92,7 @@ export function WhyTemplates() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative rounded-2xl p-6 md:p-8 bg-white/30 border border-border/30 hover:bg-white/55 hover:border-border/40 transition-all duration-300"
+                className="group relative rounded-2xl p-6 md:p-8 bg-accent/[0.06] border border-accent/15 hover:bg-accent/[0.12] hover:border-border/40 transition-all duration-300"
               >
                 <div className={cn(
                   "w-12 h-12 rounded-xl bg-gradient-to-br flex items-center justify-center mb-5",

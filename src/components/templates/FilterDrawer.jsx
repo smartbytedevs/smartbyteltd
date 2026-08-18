@@ -17,7 +17,7 @@ function FilterChip({ label, selected, onClick }) {
         "focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-1 focus-visible:ring-offset-background",
         selected
           ? "bg-gradient-to-r from-accent to-accent-secondary text-white shadow-md shadow-accent/20"
-          : "bg-accent/[0.08] border border-accent/15 text-muted-foreground hover:bg-white/60 hover:text-foreground hover:border-accent/30"
+          : "bg-accent/[0.08] border border-accent/15 text-muted-foreground hover:bg-accent/[0.12] hover:text-foreground hover:border-accent/30"
       )}
       aria-pressed={selected}
     >
@@ -113,7 +113,7 @@ export function FilterDrawer({ open, onClose }) {
               <button
                 type="button"
                 onClick={onClose}
-                className="p-2 rounded-xl bg-accent/[0.08] hover:bg-white/60 text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+                className="p-2 rounded-xl bg-accent/[0.08] hover:bg-accent/[0.12] text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
                 aria-label="Close filters"
               >
                 <X className="w-4 h-4" />

@@ -42,7 +42,7 @@ function SelectableCard({ icon: Icon, label, description, selected, onClick, siz
         "focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         selected
           ? "bg-accent/[0.06] border-accent/40 shadow-lg shadow-accent/10"
-          : "bg-white/30 border-border/30 hover:bg-white/55 hover:border-border/55 hover:shadow-md",
+          : "bg-accent/[0.06] border-accent/15 hover:bg-accent/[0.12] hover:border-border/55 hover:shadow-md",
         size === "large" ? "p-5 md:p-6" : "p-4 md:p-5"
       )}
       aria-pressed={selected}
@@ -58,7 +58,7 @@ function SelectableCard({ icon: Icon, label, description, selected, onClick, siz
           "shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300",
           selected
             ? "bg-gradient-to-br from-accent to-accent-secondary shadow-md shadow-accent/20"
-            : "bg-white/45 border border-border/35 group-hover:border-accent/30 group-hover:bg-accent/5"
+            : "bg-accent/[0.08] border border-accent/15 group-hover:border-accent/30 group-hover:bg-accent/5"
         )}>
           <Icon className={cn(
             "w-5 h-5 transition-colors duration-300",
@@ -95,7 +95,7 @@ function ProgressDots({ step, total }) {
           key={i}
           className={cn(
             "h-1.5 rounded-full transition-all duration-500",
-            i <= step ? "w-6 bg-gradient-to-r from-accent to-accent-secondary" : "w-1.5 bg-white/50"
+            i <= step ? "w-6 bg-gradient-to-r from-accent to-accent-secondary" : "w-1.5 bg-accent/[0.08]"
           )}
         />
       ))}
@@ -230,7 +230,7 @@ export function SolutionFinder({ onFindSolution }) {
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 className="glass rounded-2xl p-8 md:p-12"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-accent-secondary/20 border border-border/30 flex items-center justify-center mx-auto mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-accent-secondary/20 border border-accent/15 flex items-center justify-center mx-auto mb-6">
                   <Search className="w-6 h-6 text-accent" />
                 </div>
 

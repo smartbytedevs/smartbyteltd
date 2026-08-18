@@ -52,7 +52,7 @@ function TemplatePreview({ template, gradient }) {
         ) : (
           <div className={cn("absolute inset-0 bg-gradient-to-br", gradient)}>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 rounded-3xl bg-white/45 border border-border/40 flex items-center justify-center">
+              <div className="w-20 h-20 rounded-3xl bg-accent/[0.08] border border-accent/15 flex items-center justify-center">
                 <Layout className="w-10 h-10 text-foreground/40" />
               </div>
             </div>
@@ -77,14 +77,14 @@ function RelatedTemplateCard({ template, index }) {
             <img src={template.thumbnail} alt={template.title} className="absolute inset-0 w-full h-full object-cover" />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-14 h-14 rounded-2xl bg-white/45 border border-border/40 flex items-center justify-center">
+              <div className="w-14 h-14 rounded-2xl bg-accent/[0.08] border border-accent/15 flex items-center justify-center">
                 <Layout className="w-7 h-7 text-foreground/40" />
               </div>
             </div>
           )}
           {template.badge && (
             <div className="absolute top-3 left-3">
-              <span className={cn("inline-block px-2 py-0.5 rounded-full text-[9px] font-bold tracking-label uppercase border", badgeStyles[template.badge] || "bg-white/50 text-foreground border-border/50")}>
+              <span className={cn("inline-block px-2 py-0.5 rounded-full text-[9px] font-bold tracking-label uppercase border", badgeStyles[template.badge] || "bg-accent/[0.09] text-foreground border-border/50")}>
                 {template.badge}
               </span>
             </div>
@@ -170,11 +170,11 @@ export function TemplateDetails({ template }) {
                 <SafeSlideUp>
                   <div className="flex flex-wrap items-center gap-2 mb-5">
                     {template.badge && (
-                      <span className={cn("inline-block px-2.5 py-1 rounded-full text-[10px] font-bold tracking-label uppercase border", badgeStyles[template.badge] || "bg-white/50 text-foreground border-border/50")}>
+                      <span className={cn("inline-block px-2.5 py-1 rounded-full text-[10px] font-bold tracking-label uppercase border", badgeStyles[template.badge] || "bg-accent/[0.09] text-foreground border-border/50")}>
                         {template.badge}
                       </span>
                     )}
-                    <span className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-white/50 text-muted-foreground border border-border/30">{categoryLabel}</span>
+                    <span className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-accent/[0.08] text-muted-foreground border border-accent/15">{categoryLabel}</span>
                     <span className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-accent/10 text-accent border border-accent/20">{industryLabel}</span>
                   </div>
                 </SafeSlideUp>
@@ -218,7 +218,7 @@ export function TemplateDetails({ template }) {
                       ) : (
                         <span className={cn(
                           "inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border cursor-not-allowed",
-                          showComingSoon ? "bg-white/30 border-border/35 text-muted-foreground" : "bg-white/30 border-border/35 text-muted-foreground/60"
+                          showComingSoon ? "bg-accent/[0.06] border-accent/15 text-muted-foreground" : "bg-accent/[0.06] border-accent/15 text-muted-foreground/60"
                         )}>
                           <Eye className="w-4 h-4" /> {showComingSoon || showUnavailable ? "Coming Soon" : "Unavailable"}
                         </span>
@@ -226,7 +226,7 @@ export function TemplateDetails({ template }) {
                       <button
                         type="button"
                         onClick={buyThisTemplate}
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-border/35 text-foreground hover:bg-white/55 hover:border-border/55 transition-all"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-accent/15 text-foreground font-semibold text-sm hover:bg-accent/[0.12] hover:border-border/55 transition-all"
                       >
                         <ShoppingCart className="w-4 h-4 text-accent" /> Get This Template
                       </button>
@@ -257,17 +257,17 @@ export function TemplateDetails({ template }) {
                     {template.fullDescription}
                   </p>
                   <div className="grid sm:grid-cols-3 gap-4">
-                    <div className="rounded-2xl border border-border/30 bg-white/30 p-5">
+                    <div className="rounded-2xl border border-accent/15 bg-accent/[0.06] p-5">
                       <Clock className="w-5 h-5 text-accent mb-2" />
                       <p className="text-xs text-muted-foreground">Delivery</p>
                       <p className="text-sm font-semibold text-foreground">{template.deliveryTime}</p>
                     </div>
-                    <div className="rounded-2xl border border-border/30 bg-white/30 p-5">
+                    <div className="rounded-2xl border border-accent/15 bg-accent/[0.06] p-5">
                       <Zap className="w-5 h-5 text-accent mb-2" />
                       <p className="text-xs text-muted-foreground">Tech Stack</p>
                       <p className="text-sm font-semibold text-foreground">{template.technologies.length} technologies</p>
                     </div>
-                    <div className="rounded-2xl border border-border/30 bg-white/30 p-5">
+                    <div className="rounded-2xl border border-accent/15 bg-accent/[0.06] p-5">
                       <Check className="w-5 h-5 text-accent mb-2" />
                       <p className="text-xs text-muted-foreground">Features</p>
                       <p className="text-sm font-semibold text-foreground">{template.features.length} included</p>
@@ -293,7 +293,7 @@ export function TemplateDetails({ template }) {
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
                 {template.features.map((feat, i) => (
                   <SafeReveal key={feat} delay={i * 0.05}>
-                    <div className="flex items-start gap-3 rounded-2xl border border-border/30 bg-white/30 p-5 h-full hover:border-accent/25 transition-colors">
+                    <div className="flex items-start gap-3 rounded-2xl border border-accent/15 bg-accent/[0.06] p-5 h-full hover:border-accent/25 transition-colors">
                       <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent/20 to-accent-secondary/20 border border-accent/20 flex items-center justify-center shrink-0">
                         <Check className="w-4 h-4 text-accent" />
                       </span>
@@ -319,7 +319,7 @@ export function TemplateDetails({ template }) {
                 />
               <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
                 {template.technologies.map((tech) => (
-                  <span key={tech} className="px-4 py-2 text-xs font-medium rounded-full bg-white/45 border border-border/30 text-muted-foreground">
+                  <span key={tech} className="px-4 py-2 text-xs font-medium rounded-full bg-accent/[0.08] border border-accent/15 text-muted-foreground">
                     {tech}
                   </span>
                 ))}
@@ -390,7 +390,7 @@ export function TemplateDetails({ template }) {
                 </button>
                 <Link
                   href="/templates"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border/35 text-foreground font-semibold text-sm hover:bg-white/55 hover:border-border/55 transition-all"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-accent/15 text-foreground font-semibold text-sm hover:bg-accent/[0.12] hover:border-border/55 transition-all"
                 >
                   Browse All Templates
                 </Link>

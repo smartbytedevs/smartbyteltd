@@ -38,7 +38,7 @@ export function PopularTopics() {
             "focus-visible:ring-2 focus-visible:ring-accent/50",
             filters.topic === topic
               ? "bg-accent/10 text-accent border-accent/20 shadow-sm shadow-accent/10"
-              : "bg-white/30 border-border/30 text-muted-foreground hover:bg-white/55 hover:text-foreground hover:border-border/50"
+              : "bg-accent/[0.06] border-accent/15 text-muted-foreground hover:bg-accent/[0.12] hover:text-foreground hover:border-border/50"
           )}
           aria-pressed={filters.topic === topic}
         >
