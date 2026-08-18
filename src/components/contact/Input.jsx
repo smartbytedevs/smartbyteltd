@@ -30,10 +30,10 @@ export function Input({
       <div
         className={cn(
           "relative h-[64px] w-full rounded-[18px] transition-all duration-200",
-          "bg-white/60 backdrop-blur-xl",
+          "bg-white/5 backdrop-blur-xl",
           "border",
           focused
-            ? "border-accent/60 shadow-[0_0_0_4px_rgba(15,118,110,0.08)]"
+            ? "border-accent/60 shadow-[0_0_0_4px_rgba(0,240,255,0.08)]"
             : showError
               ? "border-red-500/50"
               : "border-border/35 hover:border-border-hover"

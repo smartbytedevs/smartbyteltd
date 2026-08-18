@@ -15,9 +15,9 @@ const Button = forwardRef(function Button(
     primary:
       "bg-gradient-to-r from-accent to-accent-secondary text-white shadow-lg shadow-accent/15 hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5",
     secondary:
-      "border border-foreground/20 text-foreground hover:border-foreground/40 hover:bg-white/50 hover:-translate-y-0.5",
+      "border border-foreground/20 text-foreground hover:border-foreground/40 hover:bg-foreground/[0.06] hover:-translate-y-0.5",
     ghost:
-      "text-muted-foreground hover:text-foreground hover:bg-white/50",
+      "text-muted-foreground hover:text-foreground hover:bg-foreground/[0.06]",
   }
 
   const sizes = {

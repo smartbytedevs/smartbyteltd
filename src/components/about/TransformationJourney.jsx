@@ -146,10 +146,10 @@ export function TransformationJourney() {
                     <motion.span
                       className="relative w-[11px] h-[11px] rounded-full"
                       style={{
-                        background: "linear-gradient(135deg, #0F766E, #0E7490)",
+                        background: "linear-gradient(135deg, #00F0FF, #8B5CF6)",
                         boxShadow: isActive
-                          ? "0 0 18px rgba(15, 118, 110, 0.55)"
-                          : "0 0 10px rgba(15, 118, 110, 0.3)",
+                          ? "0 0 18px rgba(0, 240, 255, 0.55)"
+                          : "0 0 10px rgba(0, 240, 255, 0.3)",
                       }}
                       animate={{ scale: isActive ? 1.25 : 1 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -161,8 +161,8 @@ export function TransformationJourney() {
                     className={cn(
                       "group relative flex-1 min-w-0 rounded-2xl border p-5 sm:p-6 transition-all duration-500 overflow-hidden",
                       isActive
-                        ? "border-accent/40 bg-white/40 shadow-[0_0_40px_rgba(15,118,110,0.08)]"
-                        : "border-border/30 bg-white/25 hover:bg-white/35"
+                        ? "border-accent/40 bg-accent/[0.06] shadow-[0_0_40px_rgba(0,240,255,0.08)]"
+                        : "border-accent/15 bg-accent/[0.04] hover:bg-accent/[0.08]"
                     )}
                   >
                     <div
@@ -172,7 +172,7 @@ export function TransformationJourney() {
                       )}
                       style={{
                         background:
-                          "radial-gradient(circle at 0% 0%, rgba(15, 118, 110, 0.06), transparent 70%)",
+                          "radial-gradient(circle at 0% 0%, rgba(0, 240, 255, 0.06), transparent 70%)",
                       }}
                     />
 
@@ -204,13 +204,13 @@ export function TransformationJourney() {
       </div>
 
       {/* ═══ Active Detail Panel ═══ */}
-      <div className="mt-10 sm:mt-12 rounded-2xl border border-border/30 bg-white/25 backdrop-blur-sm overflow-hidden">
+      <div className="mt-10 sm:mt-12 rounded-2xl border border-accent/15 bg-accent/[0.04] backdrop-blur-sm overflow-hidden">
         <div className="relative p-6 sm:p-7">
           <div
             className="absolute inset-0 opacity-[0.6] pointer-events-none"
             style={{
               background:
-                "radial-gradient(circle at 100% 0%, rgba(14, 116, 144, 0.05), transparent 70%)",
+                "radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.05), transparent 70%)",
             }}
           />
           <motion.div

@@ -17,7 +17,7 @@ function FilterChip({ label, selected, onClick }) {
         "focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-1 focus-visible:ring-offset-background",
         selected
           ? "bg-gradient-to-r from-accent to-accent-secondary text-white shadow-md shadow-accent/20"
-          : "bg-white/45 border border-border/35 text-muted-foreground hover:bg-white/60 hover:text-foreground hover:border-accent/30"
+          : "bg-accent/[0.08] border border-accent/15 text-muted-foreground hover:bg-accent/[0.12] hover:text-foreground hover:border-accent/30"
       )}
       aria-pressed={selected}
     >
@@ -80,7 +80,7 @@ export function WorksFilterDrawer({ open, onClose }) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-50"
-            style={{ backgroundColor: "rgba(5,8,20,0.65)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
+            style={{ backgroundColor: "rgba(6,6,14,0.65)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
             onClick={onClose}
             aria-hidden="true"
           />
@@ -91,17 +91,17 @@ export function WorksFilterDrawer({ open, onClose }) {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "-100%", opacity: 0 }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed top-0 left-0 z-50 h-full w-[400px] max-w-[90vw] bg-background border-r border-border/30 shadow-2xl flex flex-col"
+            className="fixed top-0 left-0 z-50 h-full w-[400px] max-w-[90vw] bg-background border-r border-accent/15 shadow-2xl flex flex-col"
             role="dialog"
             aria-modal="true"
             aria-label="Filter projects"
           >
-            <div className="flex items-center justify-between px-6 py-5 border-b border-border/30 shrink-0">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-accent/15 shrink-0">
               <h3 className="font-display text-lg font-bold text-foreground">Filters</h3>
               <button
                 type="button"
                 onClick={onClose}
-                className="p-2 rounded-xl bg-white/45 hover:bg-white/60 text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+                className="p-2 rounded-xl bg-accent/[0.08] hover:bg-accent/[0.12] text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
                 aria-label="Close filters"
               >
                 <X className="w-4 h-4" />
@@ -131,7 +131,7 @@ export function WorksFilterDrawer({ open, onClose }) {
               />
             </div>
 
-            <div className="shrink-0 border-t border-border/30 bg-background/80 backdrop-blur-xl px-6 py-4">
+            <div className="shrink-0 border-t border-accent/15 bg-background/80 backdrop-blur-xl px-6 py-4">
               <div className="text-xs text-muted-foreground mb-3">
                 {count} filter{count !== 1 ? "s" : ""} selected
               </div>
@@ -139,7 +139,7 @@ export function WorksFilterDrawer({ open, onClose }) {
                 <button
                   type="button"
                   onClick={clearFilters}
-                  className="flex-1 px-5 py-2.5 rounded-xl text-sm font-medium border border-border/35 text-muted-foreground hover:text-foreground hover:bg-white/55 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+                  className="flex-1 px-5 py-2.5 rounded-xl text-sm font-medium border border-accent/15 text-muted-foreground hover:text-foreground hover:bg-accent/[0.12] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
                 >
                   Reset
                 </button>

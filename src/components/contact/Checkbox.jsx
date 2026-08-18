@@ -36,8 +36,8 @@ export function Checkbox({
               checked
                 ? "border-accent bg-accent/20"
                 : showError
-                  ? "border-red-500/50 bg-white/60"
-                  : "border-border bg-white/60 group-hover:border-accent/40"
+                    ? "border-red-500/50 bg-white/5"
+                    : "border-border bg-white/5 group-hover:border-accent/40"
             )}
           >
             {checked && (

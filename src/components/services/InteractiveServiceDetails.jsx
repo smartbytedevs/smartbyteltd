@@ -42,7 +42,7 @@ function CategoryPills({ categories, active, onChange }) {
             "focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-1 focus-visible:ring-offset-background",
             active === cat.id
               ? "bg-gradient-to-r from-accent to-accent-secondary text-white border-transparent shadow-lg shadow-accent/20"
-              : "bg-white/30 border-border/30 text-muted-foreground hover:bg-white/55 hover:text-foreground hover:border-border/50"
+              : "bg-accent/[0.06] border-accent/15 text-muted-foreground hover:bg-accent/[0.12] hover:text-foreground hover:border-border/50"
           )}
           aria-selected={active === cat.id}
           role="tab"
@@ -69,7 +69,7 @@ function ServiceNav({ services, activeId, onSelect, layout }) {
                 className={cn(
                   "w-full text-left px-5 py-4 flex items-center justify-between gap-3 transition-all duration-200 outline-none min-h-[52px]",
                   "focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-inset",
-                  isActive ? "bg-accent/[0.03]" : "hover:bg-white/30"
+                  isActive ? "bg-accent/[0.03]" : "hover:bg-accent/[0.06]"
                 )}
                 aria-expanded={isActive}
                 aria-selected={isActive}
@@ -126,7 +126,7 @@ function ServiceNav({ services, activeId, onSelect, layout }) {
               "focus-visible:ring-2 focus-visible:ring-accent/50",
               activeId === s.id
                 ? "text-accent bg-accent/5 border-l-2 border-accent"
-                : "text-muted-foreground hover:text-foreground hover:bg-white/30 border-l-2 border-transparent"
+                : "text-muted-foreground hover:text-foreground hover:bg-accent/[0.06] border-l-2 border-transparent"
             )}
             aria-selected={activeId === s.id}
             role="tab"
@@ -150,12 +150,12 @@ function ServiceDetailCard({ service, compact }) {
   return (
     <motion.div {...(!compact ? animProps : {})}>
       <div className={cn(
-        "relative border border-border/30 bg-white/30",
+        "relative border border-accent/15 bg-accent/[0.06]",
         compact ? "rounded-b-xl border-t-0 p-5" : "rounded-2xl p-6 md:p-10"
       )}>
         {!compact && (
           <div className="absolute top-0 right-0 w-48 h-48 rounded-full opacity-5 pointer-events-none" style={{
-            background: "radial-gradient(circle, rgba(15, 118, 110, 0.1), transparent 70%)",
+            background: "radial-gradient(circle, rgba(0, 240, 255, 0.1), transparent 70%)",
             filter: "blur(60px)",
           }} />
         )}
@@ -185,7 +185,7 @@ function ServiceDetailCard({ service, compact }) {
               const Icon = item.icon
               const value = service[item.field]
               return (
-                <div key={item.key} className="rounded-xl bg-white/40 border border-border/30 p-3 md:p-4">
+                <div key={item.key} className="rounded-xl bg-accent/[0.07] border border-accent/15 p-3 md:p-4">
                   <Icon className="w-4 h-4 text-accent mb-2" />
                   <p className="text-[10px] md:text-xs text-muted-foreground mb-0.5">{item.label}</p>
                   <p className={cn(
@@ -212,7 +212,7 @@ function ServiceDetailCard({ service, compact }) {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: i * 0.03 }}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/45 border border-border/30 text-muted-foreground"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-accent/[0.08] border border-accent/15 text-muted-foreground"
                     >
                       <CheckCircle className="w-3 h-3 text-accent" />
                       {feat}
@@ -225,7 +225,7 @@ function ServiceDetailCard({ service, compact }) {
                 <h4 className="text-xs font-semibold tracking-label uppercase text-muted-foreground mb-3">Technologies</h4>
                 <div className="flex flex-wrap gap-2">
                   {service.technologies.map((tech) => (
-                    <span key={tech} className="px-3 py-1.5 rounded-full text-xs font-medium bg-white/45 border border-border/30 text-muted-foreground">
+                    <span key={tech} className="px-3 py-1.5 rounded-full text-xs font-medium bg-accent/[0.08] border border-accent/15 text-muted-foreground">
                       {tech}
                     </span>
                   ))}
@@ -296,11 +296,11 @@ export function InteractiveServiceDetails() {
     <section id="service-details" className="relative py-24 md:py-32 overflow-hidden bg-background pb-32 md:pb-40">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[40%] -right-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(14, 116, 144, 0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(139, 92, 246, 0.04), transparent 70%)",
           filter: "blur(120px)",
         }} />
       </div>

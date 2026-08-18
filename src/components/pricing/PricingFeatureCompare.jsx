@@ -65,7 +65,7 @@ export function PricingFeatureCompare() {
         <div
           className="relative rounded-2xl overflow-hidden border border-border/30"
           style={{
-            background: "rgba(11, 18, 40, 0.35)",
+            background: "rgba(13, 13, 24, 0.35)",
             backdropFilter: "blur(16px)",
             WebkitBackdropFilter: "blur(16px)",
           }}
@@ -108,7 +108,7 @@ export function PricingFeatureCompare() {
               transition={{ delay: i * 0.03, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center gap-3 px-4 py-3 rounded-xl border border-border/25"
               style={{
-                background: "rgba(11, 18, 40, 0.3)",
+                background: "rgba(13, 13, 24, 0.3)",
                 backdropFilter: "blur(12px)",
                 WebkitBackdropFilter: "blur(12px)",
               }}

@@ -18,7 +18,7 @@ function AccordionItem({ item, isOpen, onClick, index }) {
         "rounded-2xl border transition-all duration-300 overflow-hidden",
         isOpen
           ? "bg-accent/[0.03] border-accent/20"
-          : "bg-white/30 border-border/30 hover:border-border/50"
+          : "bg-accent/[0.06] border-accent/15 hover:border-border/50"
       )}
     >
       <button
@@ -70,11 +70,11 @@ export function TemplateFAQ() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[10%] -left-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(15, 118, 110, 0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(0, 240, 255, 0.04), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute inset-0 opacity-[0.015]" style={{

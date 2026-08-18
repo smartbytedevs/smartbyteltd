@@ -35,11 +35,11 @@ export function NewsletterSection() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[30%] left-[30%] w-[400px] h-[400px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(15, 118, 110, 0.05), transparent 70%)",
+          background: "radial-gradient(circle, rgba(0, 240, 255, 0.05), transparent 70%)",
           filter: "blur(100px)",
         }} />
       </div>
@@ -48,7 +48,7 @@ export function NewsletterSection() {
         <SafeSlideUp>
           <div className="relative rounded-3xl border border-border/30 bg-gradient-to-br from-accent/[0.02] to-accent-secondary/[0.02] p-8 sm:p-12 md:p-16 text-center overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 rounded-full opacity-10 pointer-events-none" style={{
-              background: "radial-gradient(circle, rgba(15, 118, 110, 0.15), transparent 70%)",
+              background: "radial-gradient(circle, rgba(0, 240, 255, 0.15), transparent 70%)",
               filter: "blur(60px)",
             }} />
 
@@ -88,7 +88,7 @@ export function NewsletterSection() {
                         onChange={(e) => { setEmail(e.target.value); setStatus("idle"); setError("") }}
                         placeholder="Enter your email"
                         className={cn(
-                          "w-full px-5 py-3.5 rounded-xl text-sm bg-white/45 border outline-none transition-all duration-300",
+                          "w-full px-5 py-3.5 rounded-xl text-sm bg-accent/[0.08] border outline-none transition-all duration-300",
                           "placeholder:text-muted-foreground/60 text-foreground",
                           "focus:ring-2 focus:ring-accent/50",
                           error ? "border-red-500/50" : "border-border/35 hover:border-border/55"

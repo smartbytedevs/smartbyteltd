@@ -28,7 +28,7 @@ export default function Error({ error, reset }) {
             </button>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border/40 text-foreground hover:bg-white/55 hover:border-border/55 transition-all text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border/40 text-foreground hover:bg-accent/[0.12] hover:border-border/55 transition-all text-sm"
             >
               Back to Home
             </Link>

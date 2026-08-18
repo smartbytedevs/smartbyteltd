@@ -32,7 +32,7 @@ export function TechStack() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
       </div>
@@ -51,7 +51,7 @@ export function TechStack() {
             const CategoryIcon = categoryIcons[category]
             return (
               <SafeSlideUp key={category} delay={catIdx * 0.08}>
-                <div className="relative rounded-2xl border border-border/30 bg-white/30 p-6 h-full hover:border-accent/20 transition-all duration-300">
+                <div className="relative rounded-2xl border border-accent/15 bg-accent/[0.06] p-6 h-full hover:border-accent/20 transition-all duration-300">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent/10 to-accent-secondary/10 border border-accent/10 flex items-center justify-center">
                       {CategoryIcon && <CategoryIcon className="w-5 h-5 text-accent" />}
@@ -66,7 +66,7 @@ export function TechStack() {
                         whileHover={{ y: -2, scale: 1.02 }}
                         className={cn(
                           "rounded-xl p-3 text-center border transition-all duration-300 cursor-default",
-                          "bg-white/30 border-border/30",
+                          "bg-accent/[0.06] border-accent/15",
                           "hover:bg-white/50 hover:border-accent/30 hover:shadow-md"
                         )}
                       >

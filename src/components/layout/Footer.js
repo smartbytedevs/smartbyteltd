@@ -93,11 +93,11 @@ function ServiceItem({ name }) {
     <SafeSlideUp className="group">
       <a
         href="#"
-        className="relative inline-flex items-center gap-2 text-sm text-slate-400 transition-all duration-300 hover:text-white"
+        className="relative inline-flex items-center gap-2 text-sm text-accent transition-all duration-300 hover:text-white"
       >
         <span className="relative">
           {name}
-          <span className="absolute -bottom-px left-0 h-px w-0 bg-gradient-to-r from-teal-300 to-sky-300 transition-all duration-300 group-hover:w-full" />
+          <span className="absolute -bottom-px left-0 h-px w-0 bg-gradient-to-r from-accent to-accent-secondary transition-all duration-300 group-hover:w-full" />
         </span>
       </a>
     </SafeSlideUp>
@@ -113,8 +113,8 @@ function CompanyLink({ name, href }) {
         href={isComingSoon ? "#" : href}
         className={`inline-flex items-center gap-1.5 text-sm transition-all duration-300 ${
           isComingSoon
-                ? "text-slate-500/70 cursor-not-allowed"
-                : "text-slate-400 hover:text-white"
+                ? "text-muted-foreground/70 cursor-not-allowed"
+                : "text-accent hover:text-white"
         }`}
       >
         <span>{name}</span>
@@ -134,11 +134,11 @@ function ContactRow({ icon: Icon, label, value, index }) {
       delay={index * 0.08}
       className="group flex items-start gap-3"
     >
-      <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/5 text-slate-400 transition-all duration-300 group-hover:bg-teal-400/10 group-hover:text-teal-300">
+      <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/[0.06] text-accent transition-all duration-300 group-hover:bg-accent/15 group-hover:text-accent">
         <Icon className="h-4 w-4" />
       </div>
       <div>
-        <p className="text-[11px] font-medium uppercase tracking-wider text-slate-500">
+        <p className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
           {label}
         </p>
         <p className="text-sm text-white/90">{value}</p>
@@ -155,7 +155,7 @@ function SocialIcon({ name, url, path, index }) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={name}
-        className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-400 backdrop-blur-xl transition-all duration-500 hover:scale-110 hover:border-teal-300/40 hover:text-teal-300 hover:shadow-[0_0_20px_rgba(45,212,191,0.15)]"
+        className="flex h-10 w-10 items-center justify-center rounded-full border border-accent/10 bg-accent/10 text-accent backdrop-blur-xl transition-all duration-500 hover:scale-110 hover:border-accent/40 hover:text-accent hover:shadow-[0_0_20px_rgba(0,240,255,0.15)]"
       >
         {path}
       </a>
@@ -169,7 +169,7 @@ export function Footer() {
   const { openQuoteModal } = useQuoteModal()
 
   return (
-    <footer className="relative overflow-hidden bg-[#1C1917]">
+    <footer className="relative overflow-hidden bg-card">
       {/* ═══ Background ═══ */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
         <div
@@ -185,7 +185,7 @@ export function Footer() {
           className="absolute -right-48 -top-48 h-[700px] w-[700px] rounded-full opacity-10"
           style={{
             background:
-              "radial-gradient(circle, rgba(45, 212, 191, 0.1), transparent 70%)",
+              "radial-gradient(circle, rgba(0, 240, 255, 0.1), transparent 70%)",
             filter: "blur(120px)",
           }}
         />
@@ -193,7 +193,7 @@ export function Footer() {
           className="absolute -bottom-48 -left-48 h-[600px] w-[600px] rounded-full opacity-10"
           style={{
             background:
-              "radial-gradient(circle, rgba(56, 189, 248, 0.08), transparent 70%)",
+              "radial-gradient(circle, rgba(139, 92, 246, 0.08), transparent 70%)",
             filter: "blur(120px)",
           }}
         />
@@ -213,12 +213,12 @@ export function Footer() {
           <h2 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
             Ready To Build
             <br />
-            <span className="bg-gradient-to-r from-teal-300 to-sky-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
               Something Amazing?
             </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             Let&apos;s turn your business into a modern digital brand.
           </p>
 
@@ -243,11 +243,11 @@ export function Footer() {
                 </span>
               </div>
               <span className="font-display text-lg font-bold tracking-tight text-white">
-                Smart<span className="text-teal-300">Byte</span>
+                Smart<span className="text-accent">Byte</span>
               </span>
             </a>
 
-            <p className="mb-6 text-sm leading-relaxed text-slate-400">
+            <p className="mb-6 text-sm leading-relaxed text-muted">
               We build high-performance websites, software, SaaS platforms and
               digital experiences that help businesses grow faster.
             </p>
@@ -299,22 +299,22 @@ export function Footer() {
         {/* ═══ Newsletter ═══ */}
         <SafeSlideUp
           delay={0.3}
-          className="relative mx-auto mt-20 max-w-2xl overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl sm:p-10 lg:mt-24"
+          className="relative mx-auto mt-20 max-w-2xl overflow-hidden rounded-3xl border border-accent/10 bg-accent/[0.04] p-8 backdrop-blur-xl sm:p-10 lg:mt-24"
         >
           <div
             className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full opacity-10"
             style={{
               background:
-                "radial-gradient(circle, rgba(15, 118, 110, 0.15), transparent 70%)",
+                "radial-gradient(circle, rgba(0, 240, 255, 0.15), transparent 70%)",
               filter: "blur(40px)",
             }}
           />
 
           <div className="text-center">
             <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
-              Stay <span className="bg-gradient-to-r from-teal-300 to-sky-300 bg-clip-text text-transparent">Updated</span>
+              Stay <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">Updated</span>
             </h3>
-            <p className="mx-auto mt-2 max-w-md text-sm text-slate-400">
+            <p className="mx-auto mt-2 max-w-md text-sm text-muted">
               Get design inspiration, business tips and product updates.
             </p>
           </div>
@@ -329,7 +329,7 @@ export function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email Address"
-                className="w-full rounded-full border border-white/10 bg-white/10 px-6 py-3 text-sm text-white outline-none backdrop-blur-xl transition-all duration-300 placeholder:text-slate-500 focus:border-teal-300/60 focus:shadow-[0_0_30px_rgba(45,212,191,0.15)]"
+                className="w-full rounded-full border border-accent/10 bg-accent/[0.06] px-6 py-3 text-sm text-white outline-none backdrop-blur-xl transition-all duration-300 placeholder:text-muted focus:border-accent/60 focus:shadow-[0_0_30px_rgba(0,240,255,0.15)]"
                 required
               />
             </div>
@@ -342,7 +342,7 @@ export function Footer() {
                 className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-700 group-hover:opacity-100"
                 style={{
                   boxShadow:
-                    "0 0 30px rgba(15, 118, 110, 0.3), 0 0 60px rgba(14, 116, 144, 0.15)",
+                    "0 0 30px rgba(0, 240, 255, 0.3), 0 0 60px rgba(139, 92, 246, 0.15)",
                 }}
               />
               <span className="relative z-10 flex items-center gap-2">
@@ -354,9 +354,9 @@ export function Footer() {
         </SafeSlideUp>
 
         {/* ═══ Bottom Bar ═══ */}
-        <div className="mt-16 border-t border-white/[0.05] py-8 sm:mt-20">
+        <div className="mt-16 border-t border-foreground/[0.05] py-8 sm:mt-20">
           <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
-            <p className="text-xs text-slate-500 sm:text-sm">
+            <p className="text-xs text-muted-foreground sm:text-sm">
               &copy; {year} SmartByte. All Rights Reserved.
             </p>
 
@@ -365,10 +365,10 @@ export function Footer() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="relative text-xs text-slate-500 transition-all duration-300 hover:text-slate-300 sm:text-sm"
+                  className="relative text-xs text-muted-foreground transition-all duration-300 hover:text-accent sm:text-sm"
                 >
                   {item.label}
-                  <span className="absolute -bottom-px left-0 h-px w-0 bg-gradient-to-r from-teal-300 to-sky-300 transition-all duration-300 hover:w-full" />
+                  <span className="absolute -bottom-px left-0 h-px w-0 bg-gradient-to-r from-accent to-accent-secondary transition-all duration-300 hover:w-full" />
                 </a>
               ))}
             </div>

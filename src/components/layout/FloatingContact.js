@@ -63,8 +63,8 @@ const getContactOptions = (openQuoteModal) => [
     title: "Book Consultation",
     subtitle: "Free 30-minute discussion.",
     action: () => openQuoteModal({ source: "floating" }),
-    gradient: "from-[#8B5CF6]/20 to-[#6366F1]/10",
-    iconColor: "text-[#8B5CF6]",
+    gradient: "from-accent-secondary/20 to-accent-secondary/10",
+    iconColor: "text-accent-secondary",
   },
 ]
 
@@ -96,7 +96,7 @@ function Orb({ icon: Icon, currentIndex, reducedMotion }) {
         className="absolute inset-[-2px] rounded-full"
         style={{
           background:
-            "conic-gradient(from 0deg, #0F766E, #0E7490, #0F766E, #0E7490, #0F766E)",
+            "conic-gradient(from 0deg, #00F0FF, #8B5CF6, #00F0FF, #8B5CF6, #00F0FF)",
           WebkitMask:
             "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 0.5px))",
           mask: "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 0.5px))",
@@ -108,9 +108,9 @@ function Orb({ icon: Icon, currentIndex, reducedMotion }) {
         className="absolute inset-[-6px] rounded-full"
         animate={{
           boxShadow: [
-            "0 0 0px rgba(15,118,110,0)",
-            "0 0 25px rgba(15,118,110,0.12)",
-            "0 0 0px rgba(15,118,110,0)",
+            "0 0 0px rgba(0,240,255,0)",
+            "0 0 25px rgba(0,240,255,0.12)",
+            "0 0 0px rgba(0,240,255,0)",
           ],
         }}
         transition={{
@@ -124,7 +124,7 @@ function Orb({ icon: Icon, currentIndex, reducedMotion }) {
         className="absolute inset-[-4px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle at 30% 30%, rgba(15,118,110,0.08), transparent 70%)",
+            "radial-gradient(circle at 30% 30%, rgba(0,240,255,0.08), transparent 70%)",
         }}
         animate={reducedMotion ? { scale: 1 } : { scale: [1, 1.08, 1] }}
         transition={{
@@ -141,7 +141,7 @@ function Orb({ icon: Icon, currentIndex, reducedMotion }) {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="relative flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-secondary p-[1.5px] shadow-lg"
       >
-        <div className="flex h-full w-full items-center justify-center rounded-full bg-foreground/90 backdrop-blur-sm">
+            <div className="flex h-full w-full items-center justify-center rounded-full bg-accent/[0.12] backdrop-blur-sm">
           <motion.div
             key={currentIndex}
             initial={{ scale: 1, rotate: 0 }}
@@ -169,7 +169,7 @@ function PanelContent({ onClose, openQuoteModal }) {
         className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full opacity-8"
         style={{
           background:
-            "radial-gradient(circle, rgba(15, 118, 110, 0.12), transparent 70%)",
+            "radial-gradient(circle, rgba(0, 240, 255, 0.12), transparent 70%)",
           filter: "blur(50px)",
         }}
       />
@@ -177,7 +177,7 @@ function PanelContent({ onClose, openQuoteModal }) {
         className="pointer-events-none absolute -bottom-16 -left-16 h-36 w-36 rounded-full opacity-8"
         style={{
           background:
-            "radial-gradient(circle, rgba(14, 116, 144, 0.1), transparent 70%)",
+            "radial-gradient(circle, rgba(139, 92, 246, 0.1), transparent 70%)",
           filter: "blur(50px)",
         }}
       />
@@ -197,7 +197,7 @@ function PanelContent({ onClose, openQuoteModal }) {
           <button
             onClick={onClose}
             aria-label="Close"
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border/35 bg-white/40 text-muted backdrop-blur-xl transition-all duration-300 hover:rotate-90 hover:border-accent/30 hover:text-accent"
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-accent/15 bg-accent/10 text-accent backdrop-blur-xl transition-all duration-300 hover:rotate-90 hover:bg-accent/20 hover:border-accent/40"
           >
             <X className="h-4 w-4" />
           </button>
@@ -218,13 +218,13 @@ function PanelContent({ onClose, openQuoteModal }) {
                 setTimeout(opt.action, 300)
               }}
               whileTap={{ scale: 0.98 }}
-              className="group relative w-full rounded-xl border border-border/30 bg-white/30 p-3.5 text-left backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              className="group relative w-full rounded-xl border border-accent/15 bg-accent/[0.06] p-3.5 text-left backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
             >
               <div
                 className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(15,118,110,0.03), rgba(14,116,144,0.03))",
+                    "linear-gradient(135deg, rgba(0,240,255,0.03), rgba(139,92,246,0.03))",
                 }}
               />
               <div className="relative flex items-center gap-3.5">
@@ -241,7 +241,7 @@ function PanelContent({ onClose, openQuoteModal }) {
                     {opt.subtitle}
                   </p>
                 </div>
-                <ArrowRight className="h-4 w-4 shrink-0 text-muted transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-accent" />
+                <ArrowRight className="h-4 w-4 shrink-0 text-accent transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-accent" />
               </div>
             </motion.button>
           ))}
@@ -351,7 +351,7 @@ export function FloatingContact() {
               damping: 28,
               mass: 0.9,
             }}
-            className="fixed inset-x-0 bottom-0 z-[9999] block overflow-hidden rounded-t-3xl border border-border/35 bg-white/90 shadow-2xl backdrop-blur-2xl md:hidden"
+            className="fixed inset-x-0 bottom-0 z-[9999] block overflow-hidden rounded-t-3xl border border-accent/15 bg-[#0D0D18]/90 shadow-2xl backdrop-blur-2xl md:hidden"
           >
             <PanelContent onClose={close} openQuoteModal={openQuoteModal} />
           </motion.div>
@@ -372,7 +372,7 @@ export function FloatingContact() {
                 damping: 28,
                 mass: 0.9,
               }}
-              className="hidden overflow-hidden rounded-3xl border border-border/35 bg-white/90 shadow-2xl backdrop-blur-2xl md:block md:w-[380px]"
+              className="hidden overflow-hidden rounded-3xl border border-accent/15 bg-[#0D0D18]/90 shadow-2xl backdrop-blur-2xl md:block md:w-[380px]"
               style={{ marginBottom: "calc(56px + 16px)" }}
             >
               <PanelContent onClose={close} openQuoteModal={openQuoteModal} />
@@ -420,8 +420,8 @@ export function FloatingContact() {
               </motion.div>
 
               <div
-                className="relative hidden h-[56px] items-center overflow-hidden rounded-full border border-border/35 px-4 backdrop-blur-xl md:flex"
-                style={{ background: "rgba(255, 255, 255, 0.85)" }}
+                className="relative hidden h-[56px] items-center overflow-hidden rounded-full border border-accent/15 px-4 backdrop-blur-xl md:flex"
+                style={{ background: "rgba(13, 13, 24, 0.85)" }}
               >
                 <motion.div
                   animate={

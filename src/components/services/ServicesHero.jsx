@@ -10,9 +10,9 @@ import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 const steps = [
   { icon: Globe, label: "Website", color: "from-accent to-accent-secondary" },
-  { icon: ArrowDownToLine, label: "Automation", color: "from-accent-secondary to-blue-400" },
-  { icon: TrendingUp, label: "Growth", color: "from-blue-400 to-purple-400" },
-  { icon: CheckCircle, label: "Success", color: "from-purple-400 to-accent" },
+  { icon: ArrowDownToLine, label: "Automation", color: "from-accent-secondary to-accent" },
+  { icon: TrendingUp, label: "Growth", color: "from-accent to-accent-secondary" },
+  { icon: CheckCircle, label: "Success", color: "from-accent-secondary to-accent" },
 ]
 
 function FloatingCard({ step, index }) {
@@ -55,15 +55,15 @@ export function ServicesHero({ onExplore }) {
     <section ref={ref} className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[5%] -left-48 w-[700px] h-[700px] rounded-full opacity-20" style={{
-          background: "radial-gradient(circle, rgba(15, 118, 110, 0.07), transparent 70%)",
+          background: "radial-gradient(circle, rgba(0, 240, 255, 0.07), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute bottom-[10%] -right-48 w-[500px] h-[500px] rounded-full opacity-15" style={{
-          background: "radial-gradient(circle, rgba(14, 116, 144, 0.05), transparent 70%)",
+          background: "radial-gradient(circle, rgba(139, 92, 246, 0.05), transparent 70%)",
           filter: "blur(120px)",
         }} />
         <div className="absolute inset-0 opacity-[0.015]" style={{

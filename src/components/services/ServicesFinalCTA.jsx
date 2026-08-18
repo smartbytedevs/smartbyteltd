@@ -17,7 +17,7 @@ export function ServicesFinalCTA() {
           animate={{ x: [0, 30, -20, 10, 0], y: [0, -20, 30, -10, 0] }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
           style={{
-            background: "radial-gradient(circle, rgba(15, 118, 110, 0.08), transparent 70%)",
+            background: "radial-gradient(circle, rgba(0, 240, 255, 0.08), transparent 70%)",
             filter: "blur(100px)",
           }}
         />
@@ -26,13 +26,13 @@ export function ServicesFinalCTA() {
           animate={{ x: [0, -30, 20, -10, 0], y: [0, 20, -30, 10, 0] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
           style={{
-            background: "radial-gradient(circle, rgba(14, 116, 144, 0.06), transparent 70%)",
+            background: "radial-gradient(circle, rgba(139, 92, 246, 0.06), transparent 70%)",
             filter: "blur(100px)",
           }}
         />
 
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
       </div>
@@ -68,7 +68,7 @@ export function ServicesFinalCTA() {
             <button
               type="button"
               onClick={() => openQuoteModal({ source: "services" })}
-              className="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-white/55 hover:border-border/55 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-accent/[0.12] hover:border-border/55 transition-all duration-300"
             >
               Book Free Consultation
               <ArrowRight className="w-4 h-4" />

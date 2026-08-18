@@ -14,7 +14,7 @@ function NavArrow({ direction, onClick, disabled }) {
     <motion.button
       className="relative w-[52px] h-[52px] rounded-2xl flex items-center justify-center outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
       style={{
-        background: "rgba(11, 16, 32, 0.4)",
+        background: "rgba(13, 13, 24, 0.4)",
         backdropFilter: "blur(24px)",
         WebkitBackdropFilter: "blur(24px)",
         border: "1px solid rgba(255, 255, 255, 0.06)",
@@ -29,9 +29,9 @@ function NavArrow({ direction, onClick, disabled }) {
       }}
       whileHover={{
         y: -3,
-        borderColor: "rgba(15, 118, 110, 0.3)",
-        boxShadow: "0 0 24px rgba(15, 118, 110, 0.1)",
-        background: "rgba(11, 16, 32, 0.55)",
+        borderColor: "rgba(0, 240, 255, 0.3)",
+        boxShadow: "0 0 24px rgba(0, 240, 255, 0.1)",
+        background: "rgba(13, 13, 24, 0.55)",
       }}
       whileTap={{ scale: 0.93, y: 0 }}
       transition={{ type: "spring", stiffness: 350, damping: 25 }}
@@ -40,7 +40,7 @@ function NavArrow({ direction, onClick, disabled }) {
       {/* Glow behind arrow on hover */}
       <motion.div
         className="absolute inset-0 rounded-2xl"
-        whileHover={{ boxShadow: "inset 0 0 20px rgba(15, 118, 110, 0.06)" }}
+        whileHover={{ boxShadow: "inset 0 0 20px rgba(0, 240, 255, 0.06)" }}
         transition={{ duration: 0.3 }}
       />
 

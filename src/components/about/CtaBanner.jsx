@@ -14,7 +14,7 @@ export function CtaBanner() {
       <div
         className="absolute inset-0 rounded-3xl border border-border/30"
         style={{
-          background: "rgba(255, 253, 246, 0.7)",
+          background: "rgba(13, 13, 24, 0.7)",
           backdropFilter: "blur(24px)",
           WebkitBackdropFilter: "blur(24px)",
         }}
@@ -25,7 +25,7 @@ export function CtaBanner() {
         className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full opacity-20"
         style={{
           background:
-            "radial-gradient(circle, rgba(15, 118, 110, 0.08), transparent 70%)",
+            "radial-gradient(circle, rgba(0, 240, 255, 0.08), transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -33,7 +33,7 @@ export function CtaBanner() {
         className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full opacity-15"
         style={{
           background:
-            "radial-gradient(circle, rgba(14, 116, 144, 0.05), transparent 70%)",
+            "radial-gradient(circle, rgba(139, 92, 246, 0.05), transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -43,7 +43,7 @@ export function CtaBanner() {
         className="absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(28,25,23,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.06) 1px, transparent 1px)",
+            "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -75,7 +75,7 @@ export function CtaBanner() {
             <button
               type="button"
               onClick={() => openQuoteModal({ source: "about" })}
-              className="group inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border/35 font-semibold text-sm tracking-nav text-muted hover:text-foreground hover:border-border/55 transition-all duration-500"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-full border border-accent/15 font-semibold text-sm tracking-nav text-accent hover:text-foreground hover:border-border/55 transition-all duration-500"
             >
               <MessageCircle className="w-4 h-4" />
               Let&apos;s Talk

@@ -60,7 +60,7 @@ export function HeroAnimation() {
         className="absolute inset-0 opacity-20"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+            "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
         initial={{ opacity: 0 }}
@@ -86,8 +86,8 @@ export function HeroAnimation() {
         ))}
         <defs>
           <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#0F766E" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#0E7490" stopOpacity="0" />
+            <stop offset="0%" stopColor="#00F0FF" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -97,7 +97,7 @@ export function HeroAnimation() {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(15, 118, 110, 0.08), transparent 70%)",
+            "radial-gradient(circle, rgba(0, 240, 255, 0.08), transparent 70%)",
           filter: "blur(40px)",
         }}
         initial={{ opacity: 0, scale: 0.8 }}
@@ -162,8 +162,8 @@ export function HeroAnimation() {
           <div className="w-2 h-2 rounded-full bg-accent/30" />
         </div>
         <div className="space-y-1.5">
-          <div className="h-1.5 w-3/4 rounded-full bg-white/45" />
-          <div className="h-1.5 w-1/2 rounded-full bg-white/45" />
+          <div className="h-1.5 w-3/4 rounded-full bg-foreground/45" />
+          <div className="h-1.5 w-1/2 rounded-full bg-foreground/45" />
         </div>
       </motion.div>
 

@@ -118,7 +118,7 @@ export function Navbar() {
             opacity: go,
             WebkitBackdropFilter: backDrop,
             backdropFilter: backDrop,
-            background: "rgba(255, 255, 255, 0.78)",
+            background: "rgba(13, 13, 24, 0.78)",
           }}
         />
 
@@ -152,9 +152,9 @@ export function Navbar() {
             className="absolute inset-0"
             animate={{
               background: [
-                "linear-gradient(135deg, transparent, rgba(15,118,110,0.06), transparent)",
-                "linear-gradient(135deg, transparent, rgba(14,116,144,0.06), transparent)",
-                "linear-gradient(135deg, transparent, rgba(15,118,110,0.06), transparent)",
+                "linear-gradient(135deg, transparent, rgba(0,240,255,0.06), transparent)",
+                "linear-gradient(135deg, transparent, rgba(139,92,246,0.06), transparent)",
+                "linear-gradient(135deg, transparent, rgba(0,240,255,0.06), transparent)",
               ],
             }}
             transition={{
@@ -180,7 +180,7 @@ export function Navbar() {
           <div
             className="w-full h-full"
             style={{
-              background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(15, 118, 110, 0.08), transparent 60%)`,
+              background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(0, 240, 255, 0.08), transparent 60%)`,
             }}
           />
         </motion.div>
@@ -192,7 +192,7 @@ export function Navbar() {
             borderRadius: "inherit",
             opacity: scrolled,
             boxShadow: useTransform(si, (v) =>
-              `inset 0 0 0 1px rgba(28,25,23,${v * 0.1}), 0 8px 40px rgba(28,25,23,${v * 0.16})`
+              `inset 0 0 0 1px rgba(255,255,255,${v * 0.1}), 0 8px 40px rgba(255,255,255,${v * 0.16})`
             ),
           }}
         />

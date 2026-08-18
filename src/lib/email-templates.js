@@ -3,7 +3,7 @@ const brand = {
   email: "hello@smartbyte.dev",
   website: "https://smartbyte.dev",
   logo: "S",
-  accent: "#00C2A8",
+  accent: "#00F0FF",
 }
 
 export function notificationTemplate(fields) {
@@ -33,17 +33,17 @@ export function notificationTemplate(fields) {
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8"></head>
-<body style="margin:0;padding:0;background-color:#0B1020;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#0B1020;">
+<body style="margin:0;padding:0;background-color:#06060E;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#06060E;">
     <tr>
       <td align="center" style="padding:40px 16px;">
         <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
           <tr>
-            <td style="background:linear-gradient(135deg,rgba(15,23,42,0.95),rgba(12,18,34,0.98));border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:40px;">
+            <td style="background:linear-gradient(135deg,rgba(13,13,24,0.95),rgba(6,6,14,0.98));border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:40px;">
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="text-align:center;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.06);">
-                    <div style="display:inline-block;width:40px;height:40px;line-height:40px;border-radius:10px;background:linear-gradient(135deg,${brand.accent},#38BDF8);color:#0B1020;font-size:20px;font-weight:800;text-align:center;">${brand.logo}</div>
+                    <div style="display:inline-block;width:40px;height:40px;line-height:40px;border-radius:10px;background:linear-gradient(135deg,${brand.accent},#8B5CF6);color:#06060E;font-size:20px;font-weight:800;text-align:center;">${brand.logo}</div>
                     <span style="font-size:20px;font-weight:700;color:#F8FAFC;margin-left:8px;">Smart<span style="color:${brand.accent};">Byte</span></span>
                   </td>
                 </tr>
@@ -62,7 +62,7 @@ export function notificationTemplate(fields) {
                 </tr>
                 <tr>
                   <td style="padding:24px 0 0;text-align:center;">
-                    <a href="mailto:${fields.email}" style="display:inline-block;padding:12px 32px;border-radius:999px;background:linear-gradient(135deg,${brand.accent},#38BDF8);color:#0B1020;font-size:14px;font-weight:600;text-decoration:none;">Reply to ${fields.fullName}</a>
+                    <a href="mailto:${fields.email}" style="display:inline-block;padding:12px 32px;border-radius:999px;background:linear-gradient(135deg,${brand.accent},#8B5CF6);color:#06060E;font-size:14px;font-weight:600;text-decoration:none;">Reply to ${fields.fullName}</a>
                   </td>
                 </tr>
               </table>
@@ -81,17 +81,17 @@ export function autoReplyTemplate(name) {
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8"></head>
-<body style="margin:0;padding:0;background-color:#0B1020;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#0B1020;">
+<body style="margin:0;padding:0;background-color:#06060E;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#06060E;">
     <tr>
       <td align="center" style="padding:40px 16px;">
         <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
           <tr>
-            <td style="background:linear-gradient(135deg,rgba(15,23,42,0.95),rgba(12,18,34,0.98));border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:40px;">
+            <td style="background:linear-gradient(135deg,rgba(13,13,24,0.95),rgba(6,6,14,0.98));border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:40px;">
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="text-align:center;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.06);">
-                    <div style="display:inline-block;width:40px;height:40px;line-height:40px;border-radius:10px;background:linear-gradient(135deg,${brand.accent},#38BDF8);color:#0B1020;font-size:20px;font-weight:800;text-align:center;">${brand.logo}</div>
+                    <div style="display:inline-block;width:40px;height:40px;line-height:40px;border-radius:10px;background:linear-gradient(135deg,${brand.accent},#8B5CF6);color:#06060E;font-size:20px;font-weight:800;text-align:center;">${brand.logo}</div>
                     <span style="font-size:20px;font-weight:700;color:#F8FAFC;margin-left:8px;">Smart<span style="color:${brand.accent};">Byte</span></span>
                   </td>
                 </tr>
@@ -109,11 +109,11 @@ export function autoReplyTemplate(name) {
                 </tr>
                 <tr>
                   <td style="padding:24px 0;">
-                    <table width="100%" cellpadding="0" cellspacing="0" style="background:rgba(0,194,168,0.05);border:1px solid rgba(0,194,168,0.15);border-radius:12px;padding:20px;">
+                    <table width="100%" cellpadding="0" cellspacing="0" style="background:rgba(0,240,255,0.05);border:1px solid rgba(139,92,246,0.15);border-radius:12px;padding:20px;">
                       <tr>
                         <td style="text-align:center;padding:8px;">
                           <p style="margin:0;font-size:13px;color:#64748B;margin-bottom:12px;">While you wait, explore what we can build for you:</p>
-                          <a href="${brand.website}/templates" style="display:inline-block;padding:10px 24px;border-radius:999px;background:linear-gradient(135deg,${brand.accent},#38BDF8);color:#0B1020;font-size:13px;font-weight:600;text-decoration:none;margin:4px;">Browse Templates</a>
+                          <a href="${brand.website}/templates" style="display:inline-block;padding:10px 24px;border-radius:999px;background:linear-gradient(135deg,${brand.accent},#8B5CF6);color:#06060E;font-size:13px;font-weight:600;text-decoration:none;margin:4px;">Browse Templates</a>
                           <a href="${brand.website}/services" style="display:inline-block;padding:10px 24px;border-radius:999px;border:1px solid rgba(255,255,255,0.15);color:#E2E8F0;font-size:13px;font-weight:600;text-decoration:none;margin:4px;">Explore Services</a>
                         </td>
                       </tr>

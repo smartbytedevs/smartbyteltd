@@ -21,11 +21,11 @@ export function FeaturedCaseStudy() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[30%] -right-48 w-[600px] h-[600px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(14, 116, 144, 0.05), transparent 70%)",
+          background: "radial-gradient(circle, rgba(139, 92, 246, 0.05), transparent 70%)",
           filter: "blur(120px)",
         }} />
       </div>
@@ -50,11 +50,11 @@ export function FeaturedCaseStudy() {
               <div
                 className="absolute -inset-[2px] rounded-[28px] opacity-40 pointer-events-none"
                 style={{
-                  background: "linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(14, 116, 144, 0.06))",
+                  background: "linear-gradient(135deg, rgba(0, 240, 255, 0.12), rgba(139, 92, 246, 0.06))",
                   filter: "blur(8px)",
                 }}
               />
-              <div className="relative rounded-[28px] overflow-hidden border border-border/30">
+              <div className="relative rounded-[28px] overflow-hidden border border-accent/15">
                 <div className="relative" style={{ aspectRatio: "16/10" }}>
                   {p.thumbnail || p.coverImage ? (
                     <Image
@@ -66,7 +66,7 @@ export function FeaturedCaseStudy() {
                       className="object-cover"
                     />
                   ) : (
-                    <div className="absolute inset-0 bg-[#1C1917] flex items-center justify-center">
+                    <div className="absolute inset-0 bg-[#0D0D18] flex items-center justify-center">
                       <span className="font-display text-2xl font-bold text-accent/70">
                         {p.title?.charAt(0)}
                       </span>
@@ -107,9 +107,9 @@ export function FeaturedCaseStudy() {
                     className="relative rounded-xl p-4 overflow-hidden group/metric"
                   >
                     <div
-                      className="absolute inset-0 rounded-xl border border-border/30 transition-colors duration-300 group-hover/metric:border-accent/15"
+                      className="absolute inset-0 rounded-xl border border-accent/15 transition-colors duration-300 group-hover/metric:border-accent/15"
                       style={{
-                        background: "rgba(255, 253, 246, 0.7)",
+                        background: "rgba(13, 13, 24, 0.7)",
                         backdropFilter: "blur(12px)",
                         WebkitBackdropFilter: "blur(12px)",
                       }}
@@ -128,10 +128,10 @@ export function FeaturedCaseStudy() {
             </SafeReveal>
 
             <SafeReveal delay={0.3}>
-              <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-border/30">
+              <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-accent/15">
                 <div className="flex flex-wrap gap-2">
                   {p.techStack.map((tech) => (
-                    <span key={tech} className="px-3 py-1 text-[10px] font-medium rounded-full bg-white/45 border border-border/30 text-muted-foreground">
+                    <span key={tech} className="px-3 py-1 text-[10px] font-medium rounded-full bg-accent/[0.08] border border-accent/15 text-muted-foreground">
                       {tech}
                     </span>
                   ))}
@@ -143,7 +143,7 @@ export function FeaturedCaseStudy() {
             </SafeReveal>
 
             <SafeReveal delay={0.35}>
-              <div className="relative rounded-2xl p-6 border border-border/30 bg-white/30">
+              <div className="relative rounded-2xl p-6 border border-accent/15 bg-accent/[0.06]">
                 <svg className="w-6 h-6 text-accent/30 mb-3" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z" />
                 </svg>
@@ -168,7 +168,7 @@ export function FeaturedCaseStudy() {
                 </Link>
                 <a
                   href="#portfolio-grid"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-border/35 text-muted hover:text-foreground hover:border-border/55 transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-accent/15 text-muted hover:text-foreground hover:border-border/55 transition-all"
                 >
                   View All Projects
                 </a>

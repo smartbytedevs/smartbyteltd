@@ -22,9 +22,9 @@ export function AboutValues({ values }) {
               className={`group relative overflow-hidden rounded-2xl p-6 ${offset}`}
             >
               <div
-                className="absolute inset-0 rounded-2xl border border-border/30 transition-colors duration-500"
+                className="absolute inset-0 rounded-2xl border border-accent/15 transition-colors duration-500"
                 style={{
-                  background: "rgba(255, 253, 246, 0.7)",
+                  background: "rgba(13, 13, 24, 0.7)",
                   backdropFilter: "blur(20px)",
                   WebkitBackdropFilter: "blur(20px)",
                 }}
@@ -32,14 +32,14 @@ export function AboutValues({ values }) {
 
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{
-                  background: "radial-gradient(circle at 50% 0%, rgba(15, 118, 110, 0.04), transparent 70%)",
+                  background: "radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.04), transparent 70%)",
                 }}
               />
 
               <div
                 className="absolute -inset-2 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{
-                  background: "linear-gradient(135deg, rgba(15, 118, 110, 0.06), rgba(14, 116, 144, 0.03))",
+                  background: "linear-gradient(135deg, rgba(0, 240, 255, 0.06), rgba(139, 92, 246, 0.03))",
                   filter: "blur(16px)",
                   zIndex: -1,
                 }}

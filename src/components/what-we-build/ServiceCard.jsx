@@ -69,7 +69,7 @@ export function ServiceCard({ service }) {
                   initial={{ opacity: 0, x: -6 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.25, delay: 0.05 * i }}
-                  className="px-2 py-0.5 text-[10px] font-semibold rounded-md bg-white/45 text-foreground/60 border border-border/25"
+                  className="px-2 py-0.5 text-[10px] font-semibold rounded-md bg-accent/[0.08] text-foreground/60 border border-accent/15"
                 >
                   {tech}
                 </motion.span>

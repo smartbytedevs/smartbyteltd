@@ -25,7 +25,7 @@ export const projects = [
       { value: "+200%", label: "Online Sales" },
       { value: "99%", label: "Uptime" },
     ],
-    accent: "from-accent-secondary to-blue-400",
+    accent: "from-accent-secondary to-accent",
   },
   {
     id: "inventory-system",
@@ -39,7 +39,7 @@ export const projects = [
       { value: "+35%", label: "Stock Accuracy" },
       { value: "12h", label: "Saved Weekly" },
     ],
-    accent: "from-teal-400 to-accent",
+    accent: "from-accent-soft to-accent",
   },
   {
     id: "school-system",
@@ -53,7 +53,7 @@ export const projects = [
       { value: "+50%", label: "Parent Engagement" },
       { value: "99%", label: "Staff Adoption" },
     ],
-    accent: "from-accent to-teal-400",
+    accent: "from-accent to-accent-soft",
   },
   {
     id: "ai-dashboard",
@@ -81,6 +81,6 @@ export const projects = [
       { value: "55%", label: "Lead Conversion" },
       { value: "4.8", label: "User Rating" },
     ],
-    accent: "from-blue-400 to-accent-secondary",
+    accent: "from-accent to-accent-secondary",
   },
 ]

@@ -46,7 +46,7 @@ export function CTAButton({ onClick, mobile }) {
         className="absolute inset-0 rounded-full"
         style={{
           background:
-            "linear-gradient(135deg, rgba(15, 118, 110, 0.16), rgba(14, 116, 144, 0.12))",
+            "linear-gradient(135deg, rgba(0, 240, 255, 0.16), rgba(139, 92, 246, 0.12))",
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
         }}
@@ -61,11 +61,11 @@ export function CTAButton({ onClick, mobile }) {
           className="w-full h-full rounded-full"
           animate={
             prefersReduced
-              ? { background: "linear-gradient(135deg, rgba(15,118,110,0.35), rgba(14,116,144,0.35))" }
+              ? { background: "linear-gradient(135deg, rgba(0,240,255,0.35), rgba(139,92,246,0.35))" }
               : {
                   background: isHovered
-                    ? "linear-gradient(135deg, rgba(15,118,110,0.6), rgba(14,116,144,0.6), rgba(15,118,110,0.6))"
-                    : "linear-gradient(135deg, rgba(15,118,110,0.35), rgba(14,116,144,0.35), rgba(15,118,110,0.35))",
+                    ? "linear-gradient(135deg, rgba(0,240,255,0.6), rgba(139,92,246,0.6), rgba(0,240,255,0.6))"
+                    : "linear-gradient(135deg, rgba(0,240,255,0.35), rgba(139,92,246,0.35), rgba(0,240,255,0.35))",
                   backgroundSize: "200% 200%",
                   backgroundPosition: isHovered ? "100% 50%" : "0% 50%",
                 }
@@ -85,7 +85,7 @@ export function CTAButton({ onClick, mobile }) {
         animate={{
           opacity: isHovered ? 1 : 0,
           background: isHovered
-            ? `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(15, 118, 110, 0.18), transparent 60%)`
+            ? `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(0, 240, 255, 0.18), transparent 60%)`
             : "transparent",
         }}
         transition={{ duration: 0.3 }}
@@ -97,7 +97,7 @@ export function CTAButton({ onClick, mobile }) {
         animate={{
           opacity: isHovered ? 1 : 0,
           boxShadow: isHovered
-            ? "0 0 30px rgba(15, 118, 110, 0.25), 0 0 60px rgba(14, 116, 144, 0.15)"
+            ? "0 0 30px rgba(0, 240, 255, 0.25), 0 0 60px rgba(139, 92, 246, 0.15)"
             : "0 0 0px transparent",
         }}
         transition={{ duration: 0.4 }}

@@ -49,8 +49,8 @@ export function BlogToolbar() {
         <div className={cn(
           "relative flex-1 rounded-2xl border transition-all duration-500",
           searchFocused
-            ? "bg-white/45 border-accent/40 shadow-lg shadow-accent/10"
-            : "bg-white/30 border-border/30 hover:bg-white/45 hover:border-border/50"
+            ? "bg-accent/[0.08] border-accent/40 shadow-lg shadow-accent/10"
+            : "bg-accent/[0.06] border-accent/15 hover:bg-accent/[0.12] hover:border-accent/30"
         )}>
           <div className="relative flex items-center">
             <Search className={cn(
@@ -79,7 +79,7 @@ export function BlogToolbar() {
             onClick={() => setDrawerOpen(true)}
             className={cn(
               "flex items-center gap-2 px-5 py-3.5 rounded-2xl text-sm font-medium transition-all duration-300",
-              "bg-white/30 border border-border/30 hover:bg-white/55 hover:border-border/50",
+              "bg-accent/[0.06] border border-accent/15 hover:bg-accent/[0.12] hover:border-accent/30",
               "focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
             )}
             aria-label="Open categories"
@@ -113,7 +113,7 @@ function SortDropdown({ value, onChange }) {
         onClick={() => setOpen(!open)}
         className={cn(
           "flex items-center gap-2 px-4 py-3.5 rounded-2xl text-sm font-medium transition-all duration-300",
-          "bg-white/30 border border-border/30 hover:bg-white/55 hover:border-border/50",
+          "bg-accent/[0.06] border border-accent/15 hover:bg-accent/[0.12] hover:border-accent/30",
           "focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50",
           open && "border-accent/30"
         )}
@@ -143,7 +143,7 @@ function SortDropdown({ value, onChange }) {
                 aria-selected={value === opt.value}
                 onClick={() => { onChange(opt.value); setOpen(false) }}
                 className={cn(
-                  "w-full text-left px-4 py-3 text-sm transition-colors hover:bg-white/55 flex items-center justify-between",
+                  "w-full text-left px-4 py-3 text-sm transition-colors hover:bg-accent/[0.12] flex items-center justify-between",
                   value === opt.value ? "text-accent" : "text-muted-foreground"
                 )}
               >

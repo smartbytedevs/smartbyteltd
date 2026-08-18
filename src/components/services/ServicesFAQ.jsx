@@ -15,7 +15,7 @@ function AccordionItem({ item, isOpen, onToggle, index }) {
         "rounded-2xl border transition-all duration-300 overflow-hidden",
         isOpen
           ? "border-accent/20 bg-accent/[0.02]"
-          : "border-border/30 bg-white/30 hover:bg-white/55"
+          : "border-accent/15 bg-accent/[0.06] hover:bg-accent/[0.12]"
       )}>
         <button
           type="button"
@@ -34,7 +34,7 @@ function AccordionItem({ item, isOpen, onToggle, index }) {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className={cn(
               "w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border transition-colors",
-              isOpen ? "bg-accent/10 border-accent/20 text-accent" : "bg-white/45 border-border/35 text-muted-foreground"
+              isOpen ? "bg-accent/10 border-accent/20 text-accent" : "bg-accent/[0.08] border-accent/15 text-muted-foreground"
             )}
           >
             <ChevronDown className="w-4 h-4" />
@@ -71,7 +71,7 @@ export function ServicesFAQ() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
       </div>

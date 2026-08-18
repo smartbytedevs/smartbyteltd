@@ -18,7 +18,7 @@ const features = [
     title: "Fast Delivery",
     description: "Agile methodology ensures rapid delivery without compromising quality.",
     icon: Zap,
-    color: "from-blue-500 to-cyan-500",
+    color: "from-accent to-accent-soft",
     gradient: "rgba(59,130,246,0.1)",
     size: "sm",
   },
@@ -27,7 +27,7 @@ const features = [
     title: "Modern Tech",
     description: "Cutting-edge technology stack for future-proof solutions.",
     icon: Cpu,
-    color: "from-purple-500 to-pink-500",
+    color: "from-accent-secondary to-pink-500",
     gradient: "rgba(139,92,246,0.1)",
     size: "sm",
   },
@@ -54,7 +54,7 @@ const features = [
     title: "AI Powered",
     description: "Intelligent automation and data-driven insights powered by advanced AI and machine learning.",
     icon: Brain,
-    color: "from-violet-500 to-purple-500",
+    color: "from-accent-secondary to-purple-500",
     gradient: "rgba(139,92,246,0.1)",
     size: "lg",
   },
@@ -63,7 +63,7 @@ const features = [
     title: "Responsive",
     description: "Flawless experiences across every device with pixel-perfect responsive design.",
     icon: Smartphone,
-    color: "from-cyan-500 to-blue-500",
+    color: "from-accent-soft to-accent",
     gradient: "rgba(6,182,212,0.1)",
     size: "md",
   },
@@ -79,7 +79,7 @@ function FeatureCard({ feature, index }) {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -5, scale: 1.01 }}
-      className="group relative overflow-hidden rounded-2xl border border-border/25 bg-card p-6 md:p-8 transition-all duration-500 hover:border-border/40 hover:shadow-2xl hover:shadow-blue-500/5"
+      className="group relative overflow-hidden rounded-2xl border border-border/25 bg-card p-6 md:p-8 transition-all duration-500 hover:border-border/40 hover:shadow-2xl hover:shadow-accent/5"
       style={{
         gridColumn:
           feature.size === "lg"

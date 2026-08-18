@@ -35,7 +35,7 @@ export function TestimonialCard({ testimonial, index, onHover, isDimmed }) {
         <div
           className="relative h-full rounded-2xl p-6 sm:p-7 border border-border/30 transition-all duration-500"
           style={{
-            background: "rgba(19, 26, 50, 0.4)",
+            background: "rgba(13, 13, 24, 0.4)",
             backdropFilter: "blur(20px)",
             WebkitBackdropFilter: "blur(20px)",
           }}
@@ -44,7 +44,7 @@ export function TestimonialCard({ testimonial, index, onHover, isDimmed }) {
           <div
             className="w-9 h-9 rounded-lg flex items-center justify-center mb-4"
             style={{
-              background: "rgba(15, 118, 110, 0.06)",
+              background: "rgba(0, 240, 255, 0.06)",
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
             }}
@@ -75,7 +75,7 @@ export function TestimonialCard({ testimonial, index, onHover, isDimmed }) {
             <div
               className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-foreground shrink-0"
               style={{
-                background: "linear-gradient(135deg, rgba(15, 118, 110, 0.2), rgba(14, 116, 144, 0.1))",
+                background: "linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(139, 92, 246, 0.1))",
               }}
             >
               {testimonial.initials}

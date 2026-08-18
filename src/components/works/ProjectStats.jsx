@@ -11,7 +11,7 @@ function AnimatedStat({ value, suffix, label, delay }) {
 
   return (
     <div ref={ref} className="relative group">
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/[0.03] to-accent-secondary/[0.02] border border-border/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/[0.03] to-accent-secondary/[0.02] border border-accent/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative rounded-2xl p-8 text-center">
         <div className="font-display text-5xl md:text-6xl font-bold mb-3">
           {isInView && (
@@ -79,11 +79,11 @@ export function ProjectStats() {
     <section className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[20%] -left-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(15, 118, 110, 0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(0, 240, 255, 0.04), transparent 70%)",
           filter: "blur(120px)",
         }} />
       </div>

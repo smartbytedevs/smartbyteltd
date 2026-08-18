@@ -17,7 +17,7 @@ const categoryGradients = {
   restaurant: "from-emerald-500/30 to-green-600/30",
   medical: "from-sky-500/30 to-blue-600/30",
   education: "from-violet-500/30 to-purple-600/30",
-  corporate: "from-slate-500/30 to-gray-600/30",
+  corporate: "from-indigo-500/30 to-violet-600/30",
   portfolio: "from-pink-500/30 to-rose-600/30",
   ecommerce: "from-amber-500/30 to-orange-600/30",
   agency: "from-indigo-500/30 to-blue-600/30",
@@ -41,9 +41,9 @@ function TemplatePreview({ template, gradient }) {
   const images = [...(thumbnail ? [thumbnail] : []), ...previewImages, ...gallery]
 
   return (
-    <div className="relative rounded-[28px] overflow-hidden border border-border/30 bg-[#1C1917]">
+    <div className="relative rounded-[28px] overflow-hidden border border-border/30 bg-[#0D0D18]">
       <div className="absolute -inset-[2px] rounded-[28px] opacity-40 pointer-events-none" style={{
-        background: "linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(14, 116, 144, 0.06))",
+        background: "linear-gradient(135deg, rgba(0, 240, 255, 0.12), rgba(139, 92, 246, 0.06))",
         filter: "blur(8px)",
       }} />
       <div className="relative" style={{ aspectRatio: "16/10" }}>
@@ -56,7 +56,7 @@ function TemplatePreview({ template, gradient }) {
                 <Layout className="w-10 h-10 text-foreground/40" />
               </div>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[rgba(11,16,32,0.6)] to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[rgba(13,13,24,0.6)] to-transparent" />
           </div>
         )}
       </div>
@@ -70,7 +70,7 @@ function RelatedTemplateCard({ template, index }) {
     <SafeReveal delay={index * 0.08}>
       <Link
         href={`/templates/${template.slug}`}
-        className="group block rounded-2xl overflow-hidden bg-white/30 border border-border/30 hover:bg-white/55 hover:border-accent/30 hover:-translate-y-1 transition-all duration-500 h-full"
+        className="group block rounded-2xl overflow-hidden bg-accent/[0.06] border border-accent/15 hover:bg-accent/[0.12] hover:border-accent/30 hover:-translate-y-1 transition-all duration-500 h-full"
       >
         <div className={cn("relative h-40 overflow-hidden bg-gradient-to-br", gradient)}>
           {template.thumbnail ? (
@@ -105,7 +105,7 @@ function RelatedTemplateCard({ template, index }) {
 function FaqItem({ item, index }) {
   return (
     <SafeReveal delay={index * 0.05}>
-      <div className="rounded-2xl border border-border/30 bg-white/30 p-5 sm:p-6 hover:border-accent/20 transition-colors">
+      <div className="rounded-2xl border border-accent/15 bg-accent/[0.06] p-5 sm:p-6 hover:border-accent/20 transition-colors">
         <h3 className="font-display text-sm sm:text-base font-bold text-foreground mb-2">{item.question}</h3>
         <p className="text-sm text-muted leading-relaxed">{item.answer}</p>
       </div>
@@ -160,7 +160,7 @@ export function TemplateDetails({ template }) {
         <section className="relative py-10 md:py-16 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
             <div className="absolute top-[20%] -left-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-              background: "radial-gradient(circle, rgba(15, 118, 110, 0.04), transparent 70%)",
+              background: "radial-gradient(circle, rgba(0, 240, 255, 0.04), transparent 70%)",
               filter: "blur(120px)",
             }} />
           </div>
@@ -367,7 +367,7 @@ export function TemplateDetails({ template }) {
         <section className="relative py-20 md:py-28 overflow-hidden bg-background">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
             <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+              backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
               backgroundSize: "60px 60px",
             }} />
           </div>

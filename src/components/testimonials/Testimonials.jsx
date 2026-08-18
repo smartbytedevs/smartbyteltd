@@ -47,7 +47,7 @@ export function Testimonials() {
           className="absolute inset-0 opacity-[0.015]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+              "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -57,7 +57,7 @@ export function Testimonials() {
           className="absolute top-[5%] -left-40 w-[600px] h-[600px] rounded-full opacity-20"
           style={{
             background:
-              "radial-gradient(circle, rgba(15, 118, 110, 0.06), transparent 70%)",
+              "radial-gradient(circle, rgba(0, 240, 255, 0.06), transparent 70%)",
             filter: "blur(120px)",
           }}
         />
@@ -65,7 +65,7 @@ export function Testimonials() {
           className="absolute bottom-[20%] -right-40 w-[500px] h-[500px] rounded-full opacity-15"
           style={{
             background:
-              "radial-gradient(circle, rgba(14, 116, 144, 0.04), transparent 70%)",
+              "radial-gradient(circle, rgba(139, 92, 246, 0.04), transparent 70%)",
             filter: "blur(120px)",
           }}
         />
@@ -73,7 +73,7 @@ export function Testimonials() {
           className="absolute top-[40%] left-[50%] w-[400px] h-[400px] rounded-full opacity-10"
           style={{
             background:
-              "radial-gradient(circle, rgba(15, 118, 110, 0.03), transparent 70%)",
+              "radial-gradient(circle, rgba(0, 240, 255, 0.03), transparent 70%)",
             filter: "blur(120px)",
           }}
         />
@@ -83,7 +83,7 @@ export function Testimonials() {
           className="absolute top-0 left-[40%] w-px h-full opacity-[0.02]"
           style={{
             background:
-              "linear-gradient(to bottom, transparent, rgba(15, 118, 110, 0.2), transparent)",
+              "linear-gradient(to bottom, transparent, rgba(0, 240, 255, 0.2), transparent)",
           }}
         />
 

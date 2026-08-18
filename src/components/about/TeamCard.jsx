@@ -53,7 +53,7 @@ function SocialIcon({ icon: Icon, label }) {
     <a
       href="#"
       aria-label={label}
-      className="w-8 h-8 rounded-full bg-white/45 border border-border/30 flex items-center justify-center text-muted/40 hover:text-accent hover:border-accent/30 hover:bg-accent/5 transition-colors duration-300"
+      className="w-8 h-8 rounded-full bg-accent/[0.06] border border-accent/15 flex items-center justify-center text-accent hover:bg-accent/10 hover:border-accent/30 hover:text-accent transition-colors duration-300"
     >
       <Icon />
     </a>
@@ -109,12 +109,12 @@ function ProfileImage({ index }) {
         className="absolute inset-0 opacity-[0.04] transition-opacity duration-700"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+            "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
           backgroundSize: "20px 20px",
         }}
       />
 
-      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[rgba(15,23,42,0.5)] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-background/50 to-transparent" />
     </div>
   )
 }
@@ -162,11 +162,11 @@ export function TeamCard({ member, index, featured }) {
             className="absolute inset-0 rounded-[24px] border transition-colors duration-500"
             style={{
               borderColor: isHovered
-                ? "rgba(15, 118, 110, 0.25)"
-                : "rgba(28, 25, 23, 0.08)",
+                ? "rgba(0, 240, 255, 0.25)"
+                : "rgba(255, 255, 255, 0.08)",
               background: isHovered
-                ? "rgba(255, 253, 246, 0.9)"
-                : "rgba(255, 253, 246, 0.7)",
+                ? "rgba(13, 13, 24, 0.9)"
+                : "rgba(13, 13, 24, 0.7)",
               backdropFilter: "blur(24px)",
               WebkitBackdropFilter: "blur(24px)",
             }}
@@ -176,7 +176,7 @@ export function TeamCard({ member, index, featured }) {
             className="absolute inset-0 rounded-[24px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
             style={{
               background:
-                "radial-gradient(circle at 50% 0%, rgba(15, 118, 110, 0.08), transparent 70%)",
+                "radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.08), transparent 70%)",
             }}
           />
 
@@ -184,7 +184,7 @@ export function TeamCard({ member, index, featured }) {
             className="absolute -inset-4 rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
             style={{
               background:
-                "linear-gradient(135deg, rgba(15, 118, 110, 0.1), rgba(14, 116, 144, 0.05))",
+                "linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(139, 92, 246, 0.05))",
               filter: "blur(24px)",
               zIndex: -1,
             }}
@@ -225,7 +225,7 @@ export function TeamCard({ member, index, featured }) {
                   className={`text-[10px] font-medium px-2 py-0.5 rounded-md border transition-colors duration-300 ${
                     isHovered
                       ? "bg-accent/10 border-accent/20 text-accent"
-                      : "bg-white/45 border-border/30 text-muted/60"
+                      : "bg-accent/[0.06] border-accent/15 text-accent/60"
                   }`}
                 >
                   {skill}

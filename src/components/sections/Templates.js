@@ -98,7 +98,7 @@ export function Templates() {
                     {template.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-1 text-xs rounded-md bg-foreground/5 text-muted-foreground"
+                        className="px-2 py-1 text-xs rounded-md bg-accent/[0.06] text-muted-foreground"
                       >
                         {tag}
                       </span>

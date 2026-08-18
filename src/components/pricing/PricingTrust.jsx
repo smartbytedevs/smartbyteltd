@@ -22,7 +22,7 @@ export function PricingTrust() {
       <div
         className="relative rounded-3xl border border-border/25 overflow-hidden"
         style={{
-          background: "rgba(11, 18, 40, 0.2)",
+          background: "rgba(13, 13, 24, 0.2)",
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
         }}

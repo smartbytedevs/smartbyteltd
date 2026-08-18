@@ -4,8 +4,8 @@ import { motion } from "motion/react"
 
 const backgrounds = {
   inventory: {
-    color1: "rgba(15, 118, 110, 0.06)",
-    color2: "rgba(14, 116, 144, 0.03)",
+    color1: "rgba(0, 240, 255, 0.06)",
+    color2: "rgba(139, 92, 246, 0.03)",
     label: "Inventory",
   },
   restaurant: {
@@ -24,8 +24,8 @@ const backgrounds = {
     label: "AI",
   },
   saas: {
-    color1: "rgba(15, 118, 110, 0.06)",
-    color2: "rgba(14, 116, 144, 0.03)",
+    color1: "rgba(0, 240, 255, 0.06)",
+    color2: "rgba(139, 92, 246, 0.03)",
     label: "SaaS",
   },
   website: {
@@ -44,8 +44,8 @@ const backgrounds = {
     label: "E-Commerce",
   },
   dashboard: {
-    color1: "rgba(15, 118, 110, 0.06)",
-    color2: "rgba(14, 116, 144, 0.03)",
+    color1: "rgba(0, 240, 255, 0.06)",
+    color2: "rgba(139, 92, 246, 0.03)",
     label: "Dashboard",
   },
 }
@@ -80,7 +80,7 @@ export function BackgroundEffects({ activeType }) {
         className="absolute inset-0 opacity-[0.015]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+            "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />

@@ -18,19 +18,19 @@ const services = [
     icon: Globe,
     title: "Web Development",
     description: "High-performance web applications built with modern frameworks and best-in-class engineering practices.",
-    gradient: "from-blue-500 to-cyan-500",
+    gradient: "from-accent to-accent-soft",
   },
   {
     icon: Smartphone,
     title: "Mobile Apps",
     description: "Native and cross-platform mobile experiences that delight users and drive engagement.",
-    gradient: "from-purple-500 to-pink-500",
+    gradient: "from-accent-secondary to-pink-500",
   },
   {
     icon: Brain,
     title: "AI & Automation",
     description: "Intelligent automation solutions powered by machine learning and advanced algorithms.",
-    gradient: "from-violet-500 to-purple-500",
+    gradient: "from-accent-secondary to-purple-500",
   },
   {
     icon: Palette,
@@ -42,7 +42,7 @@ const services = [
     icon: Cloud,
     title: "Cloud Infrastructure",
     description: "Scalable, secure cloud architecture designed for reliability and performance.",
-    gradient: "from-cyan-500 to-blue-500",
+    gradient: "from-accent-soft to-accent",
   },
   {
     icon: Sparkles,
@@ -79,7 +79,7 @@ export function Services() {
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{
-                    background: "radial-gradient(600px at 50% 0%, rgba(15,118,110,0.08), transparent)",
+                    background: "radial-gradient(600px at 50% 0%, rgba(0,240,255,0.08), transparent)",
                   }}
                 />
 
@@ -106,7 +106,7 @@ export function Services() {
 
                 <div className="absolute -bottom-24 -right-24 w-48 h-48 rounded-full opacity-0 group-hover:opacity-10 transition-all duration-700 blur-3xl"
                   style={{
-                    background: "radial-gradient(circle, rgba(15,118,110,0.4), transparent)",
+                    background: "radial-gradient(circle, rgba(0,240,255,0.4), transparent)",
                   }}
                 />
               </motion.div>

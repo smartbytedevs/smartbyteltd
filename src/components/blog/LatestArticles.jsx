@@ -22,7 +22,7 @@ const heroGradients = {
   mobile: "from-cyan-500/30 to-sky-600/30",
   ecommerce: "from-amber-500/30 to-yellow-600/30",
   branding: "from-violet-500/30 to-purple-600/30",
-  api: "from-slate-500/30 to-gray-600/30",
+  api: "from-cyan-500/30 to-teal-600/30",
   conversion: "from-emerald-500/30 to-teal-600/30",
   default: "from-accent/20 to-accent-secondary/20",
 }
@@ -68,11 +68,11 @@ export function LatestArticles() {
     <section id="latest-articles" className="relative py-24 md:py-32 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }} />
         <div className="absolute top-[20%] -left-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-          background: "radial-gradient(circle, rgba(15, 118, 110, 0.04), transparent 70%)",
+          background: "radial-gradient(circle, rgba(0, 240, 255, 0.04), transparent 70%)",
           filter: "blur(120px)",
         }} />
       </div>
@@ -107,8 +107,8 @@ export function LatestArticles() {
                   transition={{ duration: 0.4, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
                   className={cn(
                     "group relative rounded-2xl overflow-hidden transition-all duration-500",
-                    "bg-white/30 border border-border/30",
-                    "hover:bg-white/55 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5",
+                    "bg-accent/[0.06] border border-accent/15",
+                    "hover:bg-accent/[0.12] hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5",
                     "hover:-translate-y-1"
                   )}
                 >
@@ -173,7 +173,7 @@ export function LatestArticles() {
           </div>
         ) : (
           <div className="text-center py-24">
-            <div className="w-20 h-20 rounded-2xl bg-white/40 border border-border/30 flex items-center justify-center mx-auto mb-6">
+            <div className="w-20 h-20 rounded-2xl bg-accent/[0.07] border border-accent/15 flex items-center justify-center mx-auto mb-6">
               <BookOpen className="w-8 h-8 text-muted-foreground" />
             </div>
             <h3 className="font-display text-xl font-bold text-foreground mb-2">No articles found</h3>

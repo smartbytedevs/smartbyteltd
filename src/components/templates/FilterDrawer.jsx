@@ -17,7 +17,7 @@ function FilterChip({ label, selected, onClick }) {
         "focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-1 focus-visible:ring-offset-background",
         selected
           ? "bg-gradient-to-r from-accent to-accent-secondary text-white shadow-md shadow-accent/20"
-          : "bg-white/45 border border-border/35 text-muted-foreground hover:bg-white/60 hover:text-foreground hover:border-accent/30"
+          : "bg-accent/[0.08] border border-accent/15 text-muted-foreground hover:bg-white/60 hover:text-foreground hover:border-accent/30"
       )}
       aria-pressed={selected}
     >
@@ -90,7 +90,7 @@ export function FilterDrawer({ open, onClose }) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-50"
-            style={{ backgroundColor: "rgba(5,8,20,0.65)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
+            style={{ backgroundColor: "rgba(6,6,14,0.65)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
             onClick={onClose}
             aria-hidden="true"
           />
@@ -113,7 +113,7 @@ export function FilterDrawer({ open, onClose }) {
               <button
                 type="button"
                 onClick={onClose}
-                className="p-2 rounded-xl bg-white/45 hover:bg-white/60 text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+                className="p-2 rounded-xl bg-accent/[0.08] hover:bg-white/60 text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
                 aria-label="Close filters"
               >
                 <X className="w-4 h-4" />
@@ -176,7 +176,7 @@ export function FilterDrawer({ open, onClose }) {
                 <button
                   type="button"
                   onClick={clearFilters}
-                  className="flex-1 px-5 py-2.5 rounded-xl text-sm font-medium border border-border/35 text-muted-foreground hover:text-foreground hover:bg-white/55 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+                  className="flex-1 px-5 py-2.5 rounded-xl text-sm font-medium border border-accent/15 text-muted-foreground hover:text-foreground hover:bg-accent/[0.12] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
                 >
                   Reset
                 </button>

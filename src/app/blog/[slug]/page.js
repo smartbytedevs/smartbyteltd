@@ -26,7 +26,7 @@ const heroGradients = {
   mobile: "from-cyan-500/30 to-sky-600/30",
   ecommerce: "from-amber-500/30 to-yellow-600/30",
   branding: "from-violet-500/30 to-purple-600/30",
-  api: "from-slate-500/30 to-gray-600/30",
+  api: "from-cyan-500/30 to-teal-600/30",
   conversion: "from-emerald-500/30 to-teal-600/30",
   default: "from-accent/20 to-accent-secondary/20",
 }
@@ -142,7 +142,7 @@ export default function BlogArticlePage() {
                   <p className="text-base sm:text-lg text-muted leading-relaxed mb-8">
                     {article.excerpt}
                   </p>
-                  <div className="rounded-2xl border border-border/30 bg-white/30 p-6 sm:p-8 text-center">
+                  <div className="rounded-2xl border border-accent/15 bg-accent/[0.06] p-6 sm:p-8 text-center">
                     <BookOpen className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
                     <h3 className="font-display text-lg font-bold text-foreground mb-2">Full Article Coming Soon</h3>
                     <p className="text-sm text-muted max-w-md mx-auto">
@@ -159,7 +159,7 @@ export default function BlogArticlePage() {
                         <Link
                           key={tag}
                           href={`/blog?topic=${tag.toLowerCase()}`}
-                          className="text-xs font-medium px-3 py-1.5 rounded-full border border-border/30 bg-white/40 text-muted hover:text-foreground hover:border-accent/30 transition-colors"
+                          className="text-xs font-medium px-3 py-1.5 rounded-full border border-accent/15 bg-accent/[0.07] text-muted hover:text-foreground hover:border-accent/30 transition-colors"
                         >
                           {tag}
                         </Link>
@@ -180,7 +180,7 @@ export default function BlogArticlePage() {
                       <Link
                         key={related.id}
                         href={`/blog/${related.slug}`}
-                        className="group p-5 rounded-2xl border border-border/30 bg-white/30 hover:border-accent/30 hover:bg-white/55 transition-all duration-300"
+                        className="group p-5 rounded-2xl border border-accent/15 bg-accent/[0.06] hover:border-accent/30 hover:bg-accent/[0.12] transition-all duration-300"
                       >
                         <h3 className="font-display text-sm font-bold text-foreground group-hover:text-accent transition-colors line-clamp-2 mb-2">
                           {related.title}

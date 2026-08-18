@@ -25,15 +25,15 @@ export default function ContactPage() {
         <section id="contact-form-section" className="relative overflow-hidden bg-background py-[100px] sm:py-[120px]">
           <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
             <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: "linear-gradient(rgba(28,25,23,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.05) 1px, transparent 1px)",
+              backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
               backgroundSize: "60px 60px",
             }} />
             <div className="absolute -left-48 top-[5%] h-[700px] w-[700px] rounded-full opacity-20" style={{
-              background: "radial-gradient(circle, rgba(15, 118, 110, 0.06), transparent 70%)",
+              background: "radial-gradient(circle, rgba(0, 240, 255, 0.06), transparent 70%)",
               filter: "blur(120px)",
             }} />
             <div className="absolute -right-48 top-[25%] h-[500px] w-[500px] rounded-full opacity-15" style={{
-              background: "radial-gradient(circle, rgba(14, 116, 144, 0.04), transparent 70%)",
+              background: "radial-gradient(circle, rgba(139, 92, 246, 0.04), transparent 70%)",
               filter: "blur(120px)",
             }} />
           </div>

@@ -47,7 +47,7 @@ function PanelContent({ node }) {
               >
                 <path
                   d="M11.5 3.5L5.25 10.5L2.5 7.5"
-                  stroke="#0F766E"
+                  stroke="#00F0FF"
                   strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -61,7 +61,7 @@ function PanelContent({ node }) {
 
       {/* Meta grid */}
       <div className="grid grid-cols-2 gap-4 mb-6">
-        <div className="p-3.5 rounded-xl bg-white/30 border border-border/25">
+        <div className="p-3.5 rounded-xl bg-accent/[0.06] border border-accent/15">
           <span className="text-[10px] font-semibold tracking-label uppercase text-muted/60 block mb-1">
             Timeline
           </span>
@@ -69,7 +69,7 @@ function PanelContent({ node }) {
             {node.timeline}
           </span>
         </div>
-        <div className="p-3.5 rounded-xl bg-white/30 border border-border/25">
+        <div className="p-3.5 rounded-xl bg-accent/[0.06] border border-accent/15">
           <span className="text-[10px] font-semibold tracking-label uppercase text-muted/60 block mb-1">
             Starting Price
           </span>

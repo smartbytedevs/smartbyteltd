@@ -191,13 +191,13 @@ export function ContactForm({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className="relative overflow-hidden rounded-3xl border border-border/30 bg-white/30 p-6 backdrop-blur-xl sm:p-8 lg:p-10"
+      className="relative overflow-hidden rounded-3xl border border-border/30 bg-white/5 p-6 backdrop-blur-xl sm:p-8 lg:p-10"
     >
       <div
         className="pointer-events-none absolute -left-20 -top-20 h-60 w-60 rounded-full opacity-10"
         style={{
           background:
-            "radial-gradient(circle, rgba(14, 116, 144, 0.15), transparent 70%)",
+            "radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent 70%)",
           filter: "blur(60px)",
         }}
         aria-hidden="true"
@@ -379,7 +379,7 @@ export function ContactForm({
                   className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-700 group-hover:opacity-100"
                   style={{
                     boxShadow:
-                      "0 0 40px rgba(15, 118, 110, 0.3), 0 0 80px rgba(14, 116, 144, 0.15)",
+                      "0 0 40px rgba(0, 240, 255, 0.3), 0 0 80px rgba(139, 92, 246, 0.15)",
                   }}
                 />
                 {ripples.map((r) => (

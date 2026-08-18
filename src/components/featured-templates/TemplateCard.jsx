@@ -85,7 +85,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
               rotateY,
               scale: isHovered ? 1.02 : 1,
               boxShadow: isHovered
-                ? "0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(15,118,110,0.06)"
+                ? "0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(0,240,255,0.06)"
                 : "0 4px 20px rgba(0,0,0,0.2)",
             }}
             transition={{
@@ -101,7 +101,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
               animate={{
                 opacity: isHovered ? 1 : 0,
                 background: isHovered
-                  ? `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(15, 118, 110, 0.08), transparent 60%)`
+                  ? `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, rgba(0, 240, 255, 0.08), transparent 60%)`
                   : "transparent",
               }}
               transition={{ duration: 0.3 }}
@@ -113,7 +113,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
               animate={{
                 opacity: isHovered ? 1 : 0,
                 background: isHovered
-                  ? "linear-gradient(135deg, rgba(15,118,110,0.2), rgba(14,116,144,0.2), rgba(15,118,110,0.2))"
+                  ? "linear-gradient(135deg, rgba(0,240,255,0.2), rgba(139,92,246,0.2), rgba(0,240,255,0.2))"
                   : "transparent",
               }}
               transition={{
@@ -246,7 +246,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
                     className="text-base sm:text-lg font-bold text-foreground"
                     animate={{
                       textShadow: isHovered
-                        ? "0 0 20px rgba(15, 118, 110, 0.3)"
+                        ? "0 0 20px rgba(0, 240, 255, 0.3)"
                         : "0 0 0px transparent",
                     }}
                     transition={{ duration: 0.3 }}

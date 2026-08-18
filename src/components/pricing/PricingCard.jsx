@@ -78,8 +78,8 @@ export function PricingCard({ plan, index }) {
           }`}
           style={{
             background: plan.popular
-              ? "radial-gradient(circle at 50% 0%, rgba(15, 118, 110, 0.15), rgba(14, 116, 144, 0.08), transparent 70%)"
-              : "radial-gradient(circle at 50% 0%, rgba(15, 118, 110, 0.06), transparent 70%)",
+              ? "radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.15), rgba(139, 92, 246, 0.08), transparent 70%)"
+              : "radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.06), transparent 70%)",
             filter: "blur(30px)",
           }}
         />
@@ -97,7 +97,7 @@ export function PricingCard({ plan, index }) {
             }`}
             style={{
               padding: "1px",
-              background: `linear-gradient(135deg, rgba(15, 118, 110, ${isHovered ? 0.5 : 0.2}), rgba(14, 116, 144, ${isHovered ? 0.3 : 0.1}), transparent 60%)`,
+              background: `linear-gradient(135deg, rgba(0, 240, 255, ${isHovered ? 0.5 : 0.2}), rgba(139, 92, 246, ${isHovered ? 0.3 : 0.1}), transparent 60%)`,
               WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
               WebkitMaskComposite: "xor",
               maskComposite: "exclude",
@@ -109,16 +109,16 @@ export function PricingCard({ plan, index }) {
             className="absolute inset-0 rounded-[28px] transition-all duration-700"
             style={{
               background: isHovered
-                ? "rgba(255, 253, 246, 0.9)"
-                : "rgba(255, 253, 246, 0.7)",
+                ? "rgba(13, 13, 24, 0.9)"
+                : "rgba(13, 13, 24, 0.7)",
               backdropFilter: "blur(24px)",
               WebkitBackdropFilter: "blur(24px)",
               border: `1px solid ${
                 isHovered
-                  ? "rgba(15, 118, 110, 0.15)"
+                  ? "rgba(0, 240, 255, 0.15)"
                   : plan.popular
-                    ? "rgba(15, 118, 110, 0.12)"
-                    : "rgba(28, 25, 23, 0.08)"
+                    ? "rgba(0, 240, 255, 0.12)"
+                    : "rgba(255, 255, 255, 0.08)"
               }`,
             }}
           />
@@ -128,7 +128,7 @@ export function PricingCard({ plan, index }) {
             className="absolute w-48 h-48 rounded-full pointer-events-none transition-opacity duration-700"
             style={{
               background:
-                "radial-gradient(circle, rgba(15, 118, 110, 0.08), transparent 70%)",
+                "radial-gradient(circle, rgba(0, 240, 255, 0.08), transparent 70%)",
               filter: "blur(50px)",
               left: `calc(50% + ${orbX}px - 96px)`,
               top: `calc(50% + ${orbY}px - 96px)`,
@@ -142,7 +142,7 @@ export function PricingCard({ plan, index }) {
             className="absolute inset-0 opacity-[0.015] rounded-[28px] pointer-events-none"
             style={{
               backgroundImage:
-                "linear-gradient(rgba(28,25,23,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(28,25,23,0.06) 1px, transparent 1px)",
+                "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
               backgroundSize: "30px 30px",
             }}
           />
@@ -235,7 +235,7 @@ export function PricingCard({ plan, index }) {
                 onClick={() => openQuoteModal({ source: "pricing", heading: plan.cta })}
                 className={`group/btn relative flex items-center justify-center gap-2 overflow-hidden rounded-full px-5 py-3 font-semibold text-xs tracking-nav transition-all duration-500 cursor-pointer ${
                   plan.id === "custom"
-                    ? "border border-border/35 text-muted hover:text-foreground hover:border-border/55"
+                    ? "border border-accent/15 text-accent hover:text-foreground hover:border-border/55"
                     : ""
                 }`}
               >
@@ -246,7 +246,7 @@ export function PricingCard({ plan, index }) {
                       className="absolute inset-0 rounded-full opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700"
                       style={{
                         boxShadow:
-                          "0 0 20px rgba(15, 118, 110, 0.2), 0 0 40px rgba(14, 116, 144, 0.1)",
+                          "0 0 20px rgba(0, 240, 255, 0.2), 0 0 40px rgba(139, 92, 246, 0.1)",
                       }}
                     />
                     <span className="relative z-10 text-white">

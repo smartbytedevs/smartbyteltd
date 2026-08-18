@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from "motion/react"
 
 function BrowserFrame({ children }) {
   return (
-    <div className="w-full h-full rounded-lg bg-[#171310] border border-white/[0.06] overflow-hidden flex flex-col">
-      <div className="h-5 bg-[#292524] flex items-center px-3 gap-1.5 shrink-0 border-b border-white/[0.04]">
+    <div className="w-full h-full rounded-lg bg-[#0D0D18] border border-white/[0.06] overflow-hidden flex flex-col">
+      <div className="h-5 bg-[#1C1C32] flex items-center px-3 gap-1.5 shrink-0 border-b border-white/[0.04]">
         <div className="w-1.5 h-1.5 rounded-full bg-red-500/50" />
         <div className="w-1.5 h-1.5 rounded-full bg-yellow-500/50" />
         <div className="w-1.5 h-1.5 rounded-full bg-green-500/50" />
@@ -191,8 +191,8 @@ function RestaurantPreview() {
 
 function MobilePreview() {
   return (
-    <div className="w-auto h-[80%] aspect-[9/19] rounded-md border border-white/[0.08] bg-[#0d1117] overflow-hidden flex flex-col">
-      <div className="h-3 bg-[#292524] flex items-center justify-center">
+    <div className="w-auto h-[80%] aspect-[9/19] rounded-md border border-white/[0.08] bg-[#06060E] overflow-hidden flex flex-col">
+      <div className="h-3 bg-[#1C1C32] flex items-center justify-center">
         <div className="w-5 h-0.5 rounded-full bg-white/10" />
       </div>
       <div className="flex-1 p-1 space-y-0.5">

@@ -12,9 +12,9 @@ function MetricCard({ value, label, delay }) {
       className="relative rounded-xl p-3.5 overflow-hidden group/metric"
     >
       <div
-        className="absolute inset-0 rounded-xl border border-border/30 transition-colors duration-300 group-hover/metric:border-accent/15"
+        className="absolute inset-0 rounded-xl border border-accent/15 transition-colors duration-300 group-hover/metric:border-accent/15"
         style={{
-          background: "rgba(255, 253, 246, 0.7)",
+          background: "rgba(13, 13, 24, 0.7)",
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
         }}
@@ -37,7 +37,7 @@ function TechPill({ tech, isHovered }) {
       className={`text-[10px] font-medium px-2.5 py-1 rounded-full border transition-colors duration-300 ${
         isHovered
           ? "bg-accent/10 border-accent/20 text-accent"
-          : "bg-white/45 border-border/30 text-muted/60"
+          : "bg-accent/[0.08] border-accent/15 text-muted/60"
       }`}
     >
       {tech}
@@ -117,7 +117,7 @@ export function ProjectDetails({ project, index, isHovered }) {
             <span
               className="absolute inset-0 rounded-full opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700"
               style={{
-                boxShadow: "0 0 20px rgba(15, 118, 110, 0.2), 0 0 40px rgba(14, 116, 144, 0.1)",
+                boxShadow: "0 0 20px rgba(0, 240, 255, 0.2), 0 0 40px rgba(139, 92, 246, 0.1)",
               }}
             />
             <span className="relative z-10 text-white flex items-center gap-1.5">
@@ -136,7 +136,7 @@ export function ProjectDetails({ project, index, isHovered }) {
           {/* Secondary */}
           <Link
             href={caseStudyHref}
-            className="group/btn inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-border/35 font-semibold text-xs tracking-nav text-muted hover:text-foreground hover:border-border/55 transition-all duration-500"
+            className="group/btn inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-accent/15 font-semibold text-xs tracking-nav text-muted hover:text-foreground hover:border-border/55 transition-all duration-500"
           >
             <BookOpen className="w-3.5 h-3.5" />
             Case Study
