@@ -7,26 +7,13 @@ import { ArrowRight, BookOpen } from "lucide-react"
 
 function MetricCard({ value, label, delay }) {
   return (
-    <SafeSlideUp
-      delay={delay}
-      className="relative rounded-xl p-3.5 overflow-hidden group/metric"
-    >
-      <div
-        className="absolute inset-0 rounded-xl border border-accent/15 transition-colors duration-300 group-hover/metric:border-accent/15"
-        style={{
-          background: "rgba(13, 13, 24, 0.7)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-        }}
-      />
-      <div className="relative z-10">
-        <span className="font-display text-lg sm:text-xl font-bold text-accent block leading-none">
-          {value}
-        </span>
-        <span className="text-[10px] text-muted/60 mt-1 block leading-tight">
-          {label}
-        </span>
-      </div>
+    <SafeSlideUp delay={delay} className="rounded-xl p-3.5 bg-gray-50 border border-gray-200">
+      <span className="font-display text-lg sm:text-xl font-bold text-[#50FFAF] block leading-none">
+        {value}
+      </span>
+      <span className="text-[10px] text-gray-400 mt-1 block leading-tight">
+        {label}
+      </span>
     </SafeSlideUp>
   )
 }
@@ -36,8 +23,8 @@ function TechPill({ tech, isHovered }) {
     <span
       className={`text-[10px] font-medium px-2.5 py-1 rounded-full border transition-colors duration-300 ${
         isHovered
-          ? "bg-accent/10 border-accent/20 text-accent"
-          : "bg-accent/[0.08] border-accent/15 text-muted/60"
+          ? "bg-[#50FFAF]/10 border-[#50FFAF]/20 text-gray-700"
+          : "bg-gray-100 border-gray-200 text-gray-500"
       }`}
     >
       {tech}
@@ -58,30 +45,24 @@ export function ProjectDetails({ project, index, isHovered }) {
 
   return (
     <div className="flex flex-col justify-center h-full">
-      {/* Category */}
       <SafeSlideUp delay={containerDelay}>
-        <span className="text-[11px] font-semibold tracking-label uppercase text-accent mb-3 block">
+        <span className="text-[11px] font-semibold tracking-label uppercase text-[#50FFAF] mb-3 block">
           {project.industry || project.category}
         </span>
       </SafeSlideUp>
 
-      {/* Title */}
       <SafeSlideUp delay={containerDelay + stagger}>
-        <h3 className={`font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground leading-tight mb-3 transition-colors duration-300 ${
-          isHovered ? "text-accent" : ""
-        }`}>
+        <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-3">
           {project.title}
         </h3>
       </SafeSlideUp>
 
-      {/* Description */}
       <SafeSlideUp delay={containerDelay + stagger * 2}>
-        <p className="text-sm sm:text-base text-muted leading-relaxed mb-5 line-clamp-3">
+        <p className="text-sm sm:text-base text-gray-500 leading-relaxed mb-5 line-clamp-3">
           {project.description}
         </p>
       </SafeSlideUp>
 
-      {/* Tech Stack */}
       <SafeSlideUp delay={containerDelay + stagger * 3}>
         <div className="flex flex-wrap gap-1.5 mb-6">
           {(project.techStack || []).map((tech) => (
@@ -90,7 +71,6 @@ export function ProjectDetails({ project, index, isHovered }) {
         </div>
       </SafeSlideUp>
 
-      {/* Result Metrics */}
       <SafeSlideUp delay={containerDelay + stagger * 4}>
         <div className="grid grid-cols-3 gap-3 mb-6">
           {metrics.map((metric, i) => (
@@ -104,39 +84,27 @@ export function ProjectDetails({ project, index, isHovered }) {
         </div>
       </SafeSlideUp>
 
-      {/* Action Buttons */}
       <SafeSlideUp delay={containerDelay + stagger * 5}>
         <div className="flex flex-wrap items-center gap-3">
-          {/* Live link (falls back to case study so it is never empty) */}
           <a
             href={liveHref}
             {...(hasLiveLink ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-            className="group/btn relative inline-flex items-center gap-2 overflow-hidden rounded-full px-5 py-2.5 font-semibold text-xs tracking-nav transition-all duration-500"
+            className="group/btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-semibold text-xs tracking-nav bg-gray-900 text-white hover:bg-gray-800 transition-colors duration-300"
           >
-            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 group-hover/btn:opacity-100 transition-opacity duration-500" />
-            <span
-              className="absolute inset-0 rounded-full opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700"
-              style={{
-                boxShadow: "0 0 20px rgba(0, 240, 255, 0.2), 0 0 40px rgba(139, 92, 246, 0.1)",
-              }}
-            />
-            <span className="relative z-10 text-white flex items-center gap-1.5">
-              {hasLiveLink ? "View Live" : "View Project"}
-              <motion.span
-                className="inline-flex"
-                initial={{ x: 0 }}
-                whileHover={{ x: 3 }}
-                transition={{ duration: 0.2 }}
-              >
-                <ArrowRight className="w-3.5 h-3.5" />
-              </motion.span>
-            </span>
+            {hasLiveLink ? "View Live" : "View Project"}
+            <motion.span
+              className="inline-flex"
+              initial={{ x: 0 }}
+              whileHover={{ x: 3 }}
+              transition={{ duration: 0.2 }}
+            >
+              <ArrowRight className="w-3.5 h-3.5" />
+            </motion.span>
           </a>
 
-          {/* Secondary */}
           <Link
             href={caseStudyHref}
-            className="group/btn inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-accent/15 font-semibold text-xs tracking-nav text-muted hover:text-foreground hover:border-border/55 transition-all duration-500"
+            className="group/btn inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-gray-200 font-semibold text-xs tracking-nav text-gray-600 hover:text-gray-900 hover:border-gray-300 transition-all duration-300"
           >
             <BookOpen className="w-3.5 h-3.5" />
             Case Study

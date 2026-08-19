@@ -30,20 +30,20 @@ export function Textarea({
       <div
         className={cn(
           "relative w-full rounded-[18px] transition-all duration-200",
-          "bg-accent/[0.04] backdrop-blur-xl",
+          "bg-white",
           "border",
           focused
-            ? "border-accent/60 shadow-[0_0_0_4px_rgba(0,240,255,0.08)]"
+            ? "border-[#50FFAF]/60 shadow-[0_0_0_4px_rgba(80,255,175,0.08)]"
             : showError
               ? "border-red-500/50"
-              : "border-accent/15 hover:border-border-hover"
+              : "border-gray-200 hover:border-gray-300"
         )}
       >
         {withIcon && (
           <div
             className={cn(
               "pointer-events-none absolute left-[20px] top-[20px] transition-colors duration-200",
-              focused ? "text-accent" : "text-muted-foreground"
+              focused ? "text-[#50FFAF]" : "text-gray-400"
             )}
             aria-hidden="true"
           >
@@ -68,9 +68,9 @@ export function Textarea({
             "pt-[20px] pb-[8px]",
             withIcon ? "pl-[56px]" : "pl-[22px]",
             "pr-[22px]",
-            "font-body text-sm text-foreground",
-            "placeholder:opacity-0 placeholder:text-muted-foreground",
-            "caret-accent"
+            "font-body text-sm text-gray-900",
+            "placeholder:opacity-0 placeholder:text-gray-400",
+            "caret-[#50FFAF]"
           )}
           aria-invalid={showError ? "true" : "false"}
           aria-describedby={showError ? `${id}-error` : undefined}
@@ -84,17 +84,17 @@ export function Textarea({
             float
               ? [
                   "-top-[10px] translate-y-0 text-[12px] font-medium",
-                  "bg-background px-2 rounded-full",
-                  focused ? "text-accent" : showError ? "text-red-600" : "text-muted-foreground",
+                  "bg-white px-2 rounded-full",
+                  focused ? "text-[#50FFAF]" : showError ? "text-red-600" : "text-gray-400",
                 ]
               : [
                   "top-[20px] text-sm",
-                  showError ? "text-red-600/80" : "text-muted-foreground",
+                  showError ? "text-red-600/80" : "text-gray-400",
                 ]
           )}
         >
           {label}
-          {required && <span className="ml-0.5 text-accent">*</span>}
+          {required && <span className="ml-0.5 text-[#50FFAF]">*</span>}
         </label>
 
         {showSuccess && (
@@ -103,7 +103,7 @@ export function Textarea({
             animate={{ scale: 1, opacity: 1 }}
             className="absolute right-[16px] top-[20px]"
           >
-            <CheckCircle className="h-[18px] w-[18px] text-accent" />
+            <CheckCircle className="h-[18px] w-[18px] text-[#50FFAF]" />
           </motion.div>
         )}
         {showError && (

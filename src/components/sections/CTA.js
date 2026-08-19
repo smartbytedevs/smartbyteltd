@@ -4,10 +4,7 @@ import { motion } from "motion/react"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 import { AnimatedGradient } from "@/components/ui/AnimatedGradient"
-import { useQuoteModal } from "@/components/quote/QuoteModalContext"
-
 export function CTA() {
-  const { openQuoteModal } = useQuoteModal()
 
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">
@@ -65,7 +62,7 @@ export function CTA() {
               variant="primary"
               size="lg"
               className="gap-2 group"
-              onClick={() => openQuoteModal({ source: "home" })}
+              onClick={() => (window.location.href = "/contact")}
             >
               Start Your Project
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -73,7 +70,7 @@ export function CTA() {
             <Button
               variant="secondary"
               size="lg"
-              onClick={() => openQuoteModal({ source: "home" })}
+              onClick={() => (window.location.href = "/contact")}
             >
               Schedule a Call
             </Button>

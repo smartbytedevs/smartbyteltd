@@ -74,28 +74,25 @@ export function TransformationJourney() {
 
   return (
     <div ref={spineRef} className="relative">
-      {/* ═══ Heading ═══ */}
       <SafeReveal viewportMargin="-40px">
-        <span className="text-xs font-semibold tracking-label uppercase bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent mb-4 block">
+        <span className="text-xs font-semibold tracking-label uppercase text-[#50FFAF] mb-4 block">
           Our Approach
         </span>
-        <h3 className="font-display text-2xl sm:text-3xl lg:text-[2.5rem] font-bold tracking-[-0.03em] leading-[1.1] text-foreground">
+        <h3 className="font-display text-2xl sm:text-3xl lg:text-[2.5rem] font-bold tracking-[-0.03em] leading-[1.1] text-gray-900">
           A Complete Digital
-          <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
+          <span className="text-[#50FFAF]">
             {" "}Transformation.
           </span>
         </h3>
-        <p className="text-sm sm:text-base text-muted leading-relaxed mt-3">
+        <p className="text-sm sm:text-base text-gray-500 leading-relaxed mt-3">
           Every engagement follows a connected journey — from your first digital impression to fully automated, scalable operations.
         </p>
       </SafeReveal>
 
-      {/* ═══ Connected Flow ═══ */}
       <div className="relative mt-12">
-        {/* Spine */}
-        <div className="absolute left-[27px] top-1 bottom-1 w-px bg-white/50" aria-hidden="true">
+        <div className="absolute left-[27px] top-1 bottom-1 w-px bg-gray-200" aria-hidden="true">
           <motion.div
-            className="w-full origin-top bg-gradient-to-b from-accent via-accent-secondary to-accent"
+            className="w-full origin-top bg-[#50FFAF]"
             style={{ scaleY: spineScale, height: "100%" }}
           />
         </div>
@@ -113,9 +110,8 @@ export function TransformationJourney() {
                 className="relative"
               >
                 <div className="relative flex items-stretch pl-20">
-                  {/* Connector stub */}
                   <motion.div
-                    className="absolute left-[27px] top-[27px] w-[52px] h-px origin-left bg-gradient-to-r from-accent to-transparent"
+                    className="absolute left-[27px] top-[27px] w-[52px] h-px origin-left bg-[#50FFAF]/40"
                     animate={{
                       scaleX: isActive ? 1 : 0.25,
                       opacity: isActive ? 1 : 0.35,
@@ -124,7 +120,6 @@ export function TransformationJourney() {
                     aria-hidden="true"
                   />
 
-                  {/* Marker */}
                   <button
                     type="button"
                     onClick={() => setActive(i)}
@@ -134,63 +129,45 @@ export function TransformationJourney() {
                     aria-label={`Stage ${stage.number}: ${stage.title}`}
                     className="absolute left-0 top-0 w-[54px] h-[54px] flex items-center justify-center outline-none"
                   >
-                    <span className="absolute inset-0 rounded-full focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background" />
+                    <span className="absolute inset-0 rounded-full focus-visible:ring-2 focus-visible:ring-[#50FFAF]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F7F8]" />
                     {isActive && (
                       <motion.span
-                        className="absolute w-[18px] h-[18px] rounded-full border border-accent/40"
+                        className="absolute w-[18px] h-[18px] rounded-full border border-[#50FFAF]/40"
                         animate={{ scale: [1, 1.7], opacity: [0.6, 0] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
                         aria-hidden="true"
                       />
                     )}
                     <motion.span
-                      className="relative w-[11px] h-[11px] rounded-full"
-                      style={{
-                        background: "linear-gradient(135deg, #00F0FF, #8B5CF6)",
-                        boxShadow: isActive
-                          ? "0 0 18px rgba(0, 240, 255, 0.55)"
-                          : "0 0 10px rgba(0, 240, 255, 0.3)",
-                      }}
+                      className="relative w-[11px] h-[11px] rounded-full bg-[#50FFAF]"
                       animate={{ scale: isActive ? 1.25 : 1 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
                   </button>
 
-                  {/* Card */}
                   <div
                     className={cn(
                       "group relative flex-1 min-w-0 rounded-2xl border p-5 sm:p-6 transition-all duration-500 overflow-hidden",
                       isActive
-                        ? "border-accent/40 bg-accent/[0.06] shadow-[0_0_40px_rgba(0,240,255,0.08)]"
-                        : "border-accent/15 bg-accent/[0.04] hover:bg-accent/[0.08]"
+                        ? "border-[#50FFAF]/30 bg-white shadow-sm"
+                        : "border-gray-200 bg-white/60 hover:bg-white hover:shadow-sm"
                     )}
                   >
-                    <div
-                      className={cn(
-                        "absolute inset-0 pointer-events-none transition-opacity duration-500",
-                        isActive ? "opacity-100" : "opacity-0"
-                      )}
-                      style={{
-                        background:
-                          "radial-gradient(circle at 0% 0%, rgba(0, 240, 255, 0.06), transparent 70%)",
-                      }}
-                    />
-
                     <div className="relative z-10 flex items-start gap-4">
-                      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center shadow-lg shadow-accent/20 flex-shrink-0">
+                      <div className="w-11 h-11 rounded-xl bg-gray-900 flex items-center justify-center shadow-lg flex-shrink-0">
                         <Icon className="w-5 h-5 text-white" />
                       </div>
 
                       <div className="flex-1 min-w-0">
                         <div className="flex items-start justify-between gap-3">
-                          <h4 className="font-display text-lg font-bold tracking-[-0.02em] text-foreground">
+                          <h4 className="font-display text-lg font-bold tracking-[-0.02em] text-gray-900">
                             {stage.title}
                           </h4>
-                          <span className="font-display text-xl font-bold leading-none text-foreground/15 flex-shrink-0 select-none">
+                          <span className="font-display text-xl font-bold leading-none text-gray-200 flex-shrink-0 select-none">
                             {stage.number}
                           </span>
                         </div>
-                        <p className="text-sm text-muted leading-relaxed mt-1.5">
+                        <p className="text-sm text-gray-500 leading-relaxed mt-1.5">
                           {stage.short}
                         </p>
                       </div>
@@ -203,16 +180,8 @@ export function TransformationJourney() {
         </div>
       </div>
 
-      {/* ═══ Active Detail Panel ═══ */}
-      <div className="mt-10 sm:mt-12 rounded-2xl border border-accent/15 bg-accent/[0.04] backdrop-blur-sm overflow-hidden">
+      <div className="mt-10 sm:mt-12 rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
         <div className="relative p-6 sm:p-7">
-          <div
-            className="absolute inset-0 opacity-[0.6] pointer-events-none"
-            style={{
-              background:
-                "radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.05), transparent 70%)",
-            }}
-          />
           <motion.div
             key={activeStage.id}
             initial={{ opacity: 0, y: 14 }}
@@ -222,18 +191,18 @@ export function TransformationJourney() {
             className="relative z-10"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-gray-900 flex items-center justify-center">
                 <ActiveIcon className="w-4 h-4 text-white" />
               </div>
-              <span className="text-xs font-semibold tracking-label uppercase text-accent">
+              <span className="text-xs font-semibold tracking-label uppercase text-[#50FFAF]">
                 Stage {activeStage.number}
               </span>
             </div>
 
-            <h4 className="font-display text-xl sm:text-2xl font-bold text-foreground">
+            <h4 className="font-display text-xl sm:text-2xl font-bold text-gray-900">
               {activeStage.title}
             </h4>
-            <p className="text-sm sm:text-base text-muted leading-relaxed mt-2">
+            <p className="text-sm sm:text-base text-gray-500 leading-relaxed mt-2">
               {activeStage.description}
             </p>
 
@@ -241,7 +210,7 @@ export function TransformationJourney() {
               {activeStage.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs font-medium text-accent bg-accent/10 border border-accent/20 rounded-full px-3 py-1"
+                  className="text-xs font-medium text-gray-700 bg-gray-100 border border-gray-200 rounded-full px-3 py-1"
                 >
                   {tag}
                 </span>

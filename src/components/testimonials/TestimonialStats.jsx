@@ -5,10 +5,10 @@ import { SafeSlideUp, SafeCounter } from "@/components/common/SafeMotion"
 function AnimatedStat({ value, suffix, label, delay }) {
   return (
     <SafeSlideUp delay={delay}>
-      <div className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground tracking-tight">
+      <div className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight">
         <SafeCounter value={value} suffix={suffix} />
       </div>
-      <p className="text-sm text-muted mt-0.5 leading-snug">{label}</p>
+      <p className="text-sm text-gray-500 mt-0.5 leading-snug">{label}</p>
     </SafeSlideUp>
   )
 }

@@ -8,25 +8,25 @@ import { faqItems } from "./contactData"
 function FAQItem({ item, index, isOpen, onToggle }) {
   return (
     <div
-      className={`rounded-2xl border transition-all duration-500 ${
+      className={`rounded-2xl border transition-all duration-300 ${
         isOpen
-          ? "border-accent/20 bg-accent/[0.05]"
-          : "border-border/40 bg-accent/[0.04]"
+          ? "border-[#50FFAF]/30 bg-white shadow-sm"
+          : "border-gray-200 bg-white hover:border-gray-300"
       }`}
     >
       <button
         onClick={onToggle}
         className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
       >
-        <span className="text-sm font-medium text-foreground sm:text-base">
+        <span className="text-sm font-medium text-gray-900 sm:text-base">
           {item.question}
         </span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/[0.05]"
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gray-100"
         >
-          <ChevronDown className="h-4 w-4 text-accent" />
+          <ChevronDown className="h-4 w-4 text-gray-500" />
         </motion.div>
       </button>
       <AnimatePresence>
@@ -38,7 +38,7 @@ function FAQItem({ item, index, isOpen, onToggle }) {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            <p className="px-6 pb-5 text-sm leading-relaxed text-muted">
+            <p className="px-6 pb-5 text-sm leading-relaxed text-gray-500">
               {item.answer}
             </p>
           </motion.div>
@@ -58,7 +58,7 @@ export function FAQ() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-4 block text-xs font-semibold uppercase tracking-label text-accent sm:text-sm"
+          className="mb-4 block text-xs font-semibold uppercase tracking-label text-[#50FFAF] sm:text-sm"
         >
           FAQ
         </motion.span>
@@ -67,10 +67,10 @@ export function FAQ() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="font-display text-2xl font-bold sm:text-3xl lg:text-4xl"
+          className="font-display text-2xl font-bold text-gray-900 sm:text-3xl lg:text-4xl"
         >
           Frequently Asked{" "}
-          <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
+          <span className="text-[#50FFAF]">
             Questions
           </span>
         </motion.h3>

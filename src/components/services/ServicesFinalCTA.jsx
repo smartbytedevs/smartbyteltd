@@ -4,10 +4,7 @@ import { motion } from "motion/react"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
 import { SafeSlideUp } from "@/components/common/SafeMotion"
 import { ArrowRight } from "lucide-react"
-import { useQuoteModal } from "@/components/quote/QuoteModalContext"
-
 export function ServicesFinalCTA() {
-  const { openQuoteModal } = useQuoteModal()
 
   return (
     <section className="relative py-32 md:py-40 overflow-hidden bg-background">

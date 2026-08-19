@@ -60,41 +60,9 @@ export function Panel({ item, index }) {
           }
         }}
       >
-        {/* ── Panel Background ── */}
-        <div className="relative rounded-3xl border border-accent/15 bg-accent/[0.05] backdrop-blur-sm overflow-hidden">
-          {/* Liquid gradient overlay - expands from left */}
-          <motion.div
-            className="absolute inset-0 rounded-3xl"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(0, 240, 255, 0.08), rgba(139, 92, 246, 0.04))",
-            }}
-            animate={{
-              clipPath: isHovered
-                ? "inset(0 0% 0 0 round 24px)"
-                : "inset(0 100% 0 0 round 24px)",
-              opacity: isHovered ? 1 : 0,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 220,
-              damping: 30,
-              mass: 0.9,
-            }}
-          />
-
-          {/* Glass overlay glow */}
-          <motion.div
-            className="absolute inset-0 rounded-3xl pointer-events-none"
-            animate={{
-              boxShadow: isHovered
-                ? "inset 0 0 60px rgba(0, 240, 255, 0.06), 0 0 80px rgba(139, 92, 246, 0.04)"
-                : "inset 0 0 0px transparent",
-            }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          />
-
-          {/* ── Content ── */}
+        {/* Panel Background */}
+        <div className="relative rounded-3xl border border-gray-200 bg-white overflow-hidden transition-shadow duration-300 group-hover:shadow-md">
+          {/* Content */}
           <div className="relative z-10 p-8 sm:p-10 lg:p-12">
             <div
               className={cn(
@@ -117,11 +85,11 @@ export function Panel({ item, index }) {
               >
                 <div
                   className={cn(
-                    "w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-accent/15 to-accent-secondary/10 border border-border/30 flex items-center justify-center",
+                    "w-20 h-20 sm:w-24 sm:h-24 bg-[#50FFAF]/10 border border-[#50FFAF]/20 flex items-center justify-center",
                     shapes[index]
                   )}
                 >
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center shadow-lg shadow-accent/20">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-900 flex items-center justify-center shadow-lg">
                     <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                 </div>
@@ -133,7 +101,7 @@ export function Panel({ item, index }) {
                 <span
                   className={cn(
                     "font-display block text-[5rem] sm:text-[7rem] lg:text-[9rem] font-bold leading-[0.75] tracking-[-0.06em] select-none",
-                    "text-foreground/10"
+                    "text-gray-200"
                   )}
                 >
                   {item.number}
@@ -141,10 +109,7 @@ export function Panel({ item, index }) {
 
                 {/* Title */}
                 <h3
-                  className={cn(
-                    "font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-[-0.03em] mt-2",
-                    "text-foreground"
-                  )}
+                  className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-[-0.03em] mt-2 text-gray-900"
                 >
                   {item.title}
                 </h3>
@@ -152,7 +117,7 @@ export function Panel({ item, index }) {
                 {/* Description */}
                 <motion.p
                   className={cn(
-                    "text-sm sm:text-base text-muted leading-relaxed mt-3 max-w-md",
+                    "text-sm sm:text-base text-gray-500 leading-relaxed mt-3 max-w-md",
                     !isEven && "sm:ml-auto"
                   )}
                   animate={{
@@ -168,7 +133,7 @@ export function Panel({ item, index }) {
                 <motion.div
                   className={cn(
                     "inline-flex items-center gap-3 mt-5 text-sm font-semibold tracking-wide",
-                    "text-accent",
+                    "text-[#50FFAF]",
                     !isEven && "sm:flex-row-reverse sm:ml-auto"
                   )}
                   animate={{
@@ -210,20 +175,8 @@ export function Panel({ item, index }) {
           </div>
         </div>
 
-        {/* Glow border on hover */}
-        <motion.div
-          className="absolute -inset-[1px] rounded-3xl pointer-events-none"
-          animate={{
-            opacity: isHovered ? 1 : 0,
-            boxShadow: isHovered
-              ? "0 0 30px rgba(0, 240, 255, 0.08), 0 0 60px rgba(139, 92, 246, 0.04)"
-              : "0 0 0px transparent",
-          }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        />
-
         {/* Focus ring */}
-        <div className="absolute inset-0 rounded-3xl ring-2 ring-accent/50 opacity-0 focus-visible:opacity-100 transition-opacity pointer-events-none" />
+        <div className="absolute inset-0 rounded-3xl ring-2 ring-[#50FFAF]/50 opacity-0 focus-visible:opacity-100 transition-opacity pointer-events-none" />
       </div>
     </SafeReveal>
   )

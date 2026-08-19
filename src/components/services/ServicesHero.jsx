@@ -1,181 +1,130 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "motion/react"
-import { Particles } from "@/components/why-smartbyte/Particles"
-import { PremiumCTA } from "@/components/ui/PremiumCTA"
-import { SafeSlideUp } from "@/components/common/SafeMotion"
-import { ArrowDown, Globe, ArrowDownToLine, TrendingUp, CheckCircle, Sparkles } from "lucide-react"
-import { useQuoteModal } from "@/components/quote/QuoteModalContext"
+import { motion } from "motion/react"
 
-const steps = [
-  { icon: Globe, label: "Website", color: "from-accent to-accent-secondary" },
-  { icon: ArrowDownToLine, label: "Automation", color: "from-accent-secondary to-accent" },
-  { icon: TrendingUp, label: "Growth", color: "from-accent to-accent-secondary" },
-  { icon: CheckCircle, label: "Success", color: "from-accent-secondary to-accent" },
-]
-
-function FloatingCard({ step, index }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: 60, y: 20 }}
-      animate={{ opacity: 1, x: 0, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.5 + index * 0.15, ease: [0.16, 1, 0.3, 1] }}
-      className="relative flex items-center gap-3 rounded-2xl border border-accent/15 bg-accent/[0.07] p-4 backdrop-blur-xl"
-      style={{ width: 200 }}
-    >
-      <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center shrink-0`}>
-        <step.icon className="w-5 h-5 text-white" />
-      </div>
-      <div>
-        <p className="text-sm font-semibold text-foreground">{step.label}</p>
-        <p className="text-[10px] text-muted-foreground">Step {index + 1}</p>
-      </div>
-      {index < steps.length - 1 && (
-        <motion.div
-          className="absolute -bottom-6 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 3, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, delay: index * 0.3 }}
-        >
-          <ArrowDown className="w-4 h-4 text-accent/40" />
-        </motion.div>
-      )}
-    </motion.div>
-  )
+const fadeDown = {
+  initial: { opacity: 0, y: -20 },
+  animate: { opacity: 1, y: 0 },
 }
 
-export function ServicesHero({ onExplore }) {
-  const ref = useRef(null)
-  const { openQuoteModal } = useQuoteModal()
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] })
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
-  const y = useTransform(scrollYProgress, [0, 0.8], [0, 80])
-
+export function ServicesHero() {
   return (
-    <section ref={ref} className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }} />
-        <div className="absolute top-[5%] -left-48 w-[700px] h-[700px] rounded-full opacity-20" style={{
-          background: "radial-gradient(circle, rgba(0, 240, 255, 0.07), transparent 70%)",
-          filter: "blur(120px)",
-        }} />
-        <div className="absolute bottom-[10%] -right-48 w-[500px] h-[500px] rounded-full opacity-15" style={{
-          background: "radial-gradient(circle, rgba(139, 92, 246, 0.05), transparent 70%)",
-          filter: "blur(120px)",
-        }} />
-        <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-          backgroundSize: "256px 256px",
-        }} />
-        <Particles />
-      </div>
+    <section className="relative bg-[#F7F7F7] px-6 pt-28 pb-20 md:px-16 md:pt-36 md:pb-28">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
+          {/* ── Left Column ──────────────────────────────────── */}
+          <div className="lg:col-span-7">
+            {/* Sub-badge */}
+            <motion.div
+              {...fadeDown}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <span className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-4 py-1.5 text-xs font-medium text-neutral-700">
+                ⟶ Services
+              </span>
+            </motion.div>
 
-      <motion.div style={{ opacity, y }} className="relative z-10 w-full">
-        <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div>
-              <SafeSlideUp delay={0.2}>
-                <span className="text-xs sm:text-sm font-semibold tracking-label uppercase bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent mb-6 block">
-                  Our Services
-                </span>
-              </SafeSlideUp>
+            {/* Giant Heading */}
+            <motion.h1
+              {...fadeDown}
+              transition={{
+                duration: 0.6,
+                delay: 0.1,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="mt-4 text-6xl font-extrabold leading-[0.95] tracking-tight text-neutral-900 md:text-8xl"
+            >
+              What We Do
+            </motion.h1>
 
-              <SafeSlideUp delay={0.3}>
-                <h1 className="font-display text-hero font-bold tracking-display leading-[0.95]">
-                  Everything Your Business
-                  <br />
-                  <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
-                    Needs To Grow Online.
-                  </span>
-                </h1>
-              </SafeSlideUp>
+            {/* Bottom Row: Badge + Summary */}
+            <motion.div
+              {...fadeDown}
+              transition={{
+                duration: 0.6,
+                delay: 0.2,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-start"
+            >
+              <span className="inline-flex shrink-0 items-center rounded-full bg-[#50FFAF] px-4 py-2 text-sm font-semibold text-black">
+                Senior specialists
+              </span>
+              <p className="max-w-xl text-base leading-relaxed text-neutral-600">
+                Chittagong-born, globally trusted – we build custom web
+                platforms, scalable APIs, and high-converting UI/UX design
+                systems engineered to scale digital agencies and modern brands.
+              </p>
+            </motion.div>
+          </div>
 
-              <SafeSlideUp delay={0.4}>
-                <p className="mt-6 text-base sm:text-lg text-muted max-w-xl leading-relaxed">
-                  Whether you need a professional website, a powerful web application, or a complete business management system, SmartByte delivers modern digital solutions built for performance and growth.
-                </p>
-              </SafeSlideUp>
+          {/* ── Right Column ─────────────────────────────────── */}
+          <div className="relative lg:col-span-5">
+            {/* Floating Badge */}
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.7,
+                delay: 0.3,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="absolute -top-4 -left-4 z-10 rounded-full bg-[#50FFAF] px-5 py-2 text-sm font-semibold text-black shadow-md"
+            >
+              Engineering under one roof
+            </motion.div>
 
-              <SafeSlideUp delay={0.5}>
-                <div className="mt-10 flex flex-wrap gap-4">
-                  <PremiumCTA href="#services-grid" showArrow onClick={onExplore}>
-                    Explore Services
-                  </PremiumCTA>
-                  <button
-                    type="button"
-                    onClick={() => openQuoteModal({ source: "services" })}
-                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-accent/[0.12] hover:border-border/55 transition-all duration-300"
-                  >
-                    Get Free Consultation
-                  </button>
-                </div>
-              </SafeSlideUp>
-            </div>
-
-            <div className="hidden lg:flex flex-col items-center gap-8 relative">
-              <motion.div
-                className="absolute inset-0"
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                style={{ transformOrigin: "center center" }}
-              >
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full border border-accent/5" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-accent-secondary/5" />
-              </motion.div>
-
-              <div className="relative flex flex-col items-center gap-8">
-                {steps.map((step, i) => (
-                  <motion.div
-                    key={step.label}
-                    initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.8 + i * 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex items-center gap-4"
-                  >
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg`}>
-                      <step.icon className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-lg font-semibold text-foreground">{step.label}</p>
-                      <p className="text-xs text-muted-foreground">SmartByte delivers</p>
-                    </div>
-                    {i < steps.length - 1 && (
-                      <motion.div
-                        className="absolute -bottom-8 left-7"
-                        animate={{ y: [0, 4, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.3 }}
-                      >
-                        <ArrowDown className="w-5 h-5 text-accent/30" />
-                      </motion.div>
-                    )}
-                  </motion.div>
-                ))}
+            {/* Image Card */}
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.7,
+                delay: 0.2,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="overflow-hidden rounded-3xl shadow-lg"
+            >
+              <div className="aspect-4/3 bg-gradient-to-br from-neutral-200 to-neutral-300">
+                {/* Placeholder — replace src with actual team/workspace photo */}
+                <img
+                  src="/images/services-hero.jpg"
+                  alt="SmartByte team collaborating"
+                  className="h-full w-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none"
+                  }}
+                />
               </div>
+            </motion.div>
 
-              <motion.div
-                className="absolute -top-4 -right-4"
-                animate={{ y: [0, -8, 0], rotate: [0, 5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            {/* Contact Details */}
+            <motion.div
+              {...fadeDown}
+              transition={{
+                duration: 0.5,
+                delay: 0.5,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="mt-4 flex justify-end gap-4 text-sm text-neutral-500"
+            >
+              <a
+                href="mailto:hello@smartbyte.com"
+                className="underline underline-offset-4 transition-colors duration-300 hover:text-[#50FFAF]"
               >
-                <div className="rounded-2xl border border-accent/20 bg-accent/5 p-3 backdrop-blur-xl">
-                  <Sparkles className="w-6 h-6 text-accent" />
-                </div>
-              </motion.div>
-            </div>
+                hello@smartbyte.com
+              </a>
+              <span className="text-neutral-300">|</span>
+              <a
+                href="tel:+8801234567890"
+                className="underline underline-offset-4 transition-colors duration-300 hover:text-[#50FFAF]"
+              >
+                +880 1234 567890
+              </a>
+            </motion.div>
           </div>
         </div>
-      </motion.div>
-
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        animate={{ y: [0, 6, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <ArrowDown className="w-5 h-5 text-muted-foreground" />
-      </motion.div>
+      </div>
     </section>
   )
 }

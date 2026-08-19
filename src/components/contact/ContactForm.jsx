@@ -49,25 +49,6 @@ function validate(data) {
   return errors
 }
 
-function Ripple({ x, y, size, onComplete }) {
-  return (
-    <motion.span
-      initial={{ scale: 0, opacity: 0.5 }}
-      animate={{ scale: 3, opacity: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      onAnimationComplete={onComplete}
-      className="pointer-events-none absolute rounded-full bg-white/20"
-      style={{
-        left: x - size / 2,
-        top: y - size / 2,
-        width: size,
-        height: size,
-      }}
-    />
-  )
-}
-
 export function ContactForm({
   initialValues = {},
   title = "Send Us Your Project Details",
@@ -78,7 +59,6 @@ export function ContactForm({
   const [touched, setTouched] = useState({})
   const [formStatus, setFormStatus] = useState("idle")
   const [serverError, setServerError] = useState("")
-  const [ripples, setRipples] = useState([])
   const formRef = useRef(null)
   const announceRef = useRef(null)
 
@@ -173,36 +153,14 @@ export function ContactForm({
     [data, idPrefix, onSuccess]
   )
 
-  const addRipple = useCallback((e) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    const size = Math.max(rect.width, rect.height)
-    setRipples((prev) => [...prev, { id: Date.now(), x, y, size }])
-  }, [])
-
-  const removeRipple = useCallback((id) => {
-    setRipples((prev) => prev.filter((r) => r.id !== id))
-  }, [])
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className="relative overflow-hidden rounded-3xl border border-border/30 bg-accent/[0.04] p-6 backdrop-blur-xl sm:p-8 lg:p-10"
+      className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10"
     >
-      <div
-        className="pointer-events-none absolute -left-20 -top-20 h-60 w-60 rounded-full opacity-10"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent 70%)",
-          filter: "blur(60px)",
-        }}
-        aria-hidden="true"
-      />
-
       <div
         ref={announceRef}
         role="status"
@@ -210,7 +168,7 @@ export function ContactForm({
         className="sr-only"
       />
 
-      <h3 className="mb-8 font-display text-xl font-bold text-foreground sm:text-2xl">
+      <h3 className="mb-8 font-display text-xl font-bold text-gray-900 sm:text-2xl">
         {title}
       </h3>
 
@@ -227,14 +185,14 @@ export function ContactForm({
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="flex h-20 w-20 items-center justify-center rounded-full bg-accent/10"
+              className="flex h-20 w-20 items-center justify-center rounded-full bg-[#50FFAF]/10"
             >
-              <CheckCircle className="h-10 w-10 text-accent" />
+              <CheckCircle className="h-10 w-10 text-[#50FFAF]" />
             </motion.div>
-            <h4 className="mt-6 font-display text-2xl font-bold text-foreground">
+            <h4 className="mt-6 font-display text-2xl font-bold text-gray-900">
               Message Sent Successfully!
             </h4>
-            <p className="mt-2 text-sm text-muted">
+            <p className="mt-2 text-sm text-gray-500">
               We&apos;ve received your project inquiry and will review it shortly.
             </p>
           </motion.div>
@@ -250,7 +208,7 @@ export function ContactForm({
               <motion.div
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-start gap-3 rounded-2xl border border-red-500/20 bg-red-500/5 p-4"
+                className="flex items-start gap-3 rounded-2xl border border-red-500/20 bg-red-50 p-4"
                 role="alert"
               >
                 <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-600" />
@@ -371,26 +329,8 @@ export function ContactForm({
               <button
                 type="submit"
                 disabled={formStatus === "submitting"}
-                onClick={addRipple}
-                className="group relative w-full overflow-hidden rounded-full py-4 text-sm font-semibold tracking-nav text-white transition-all duration-500 disabled:cursor-not-allowed disabled:opacity-60"
+                className="group relative w-full overflow-hidden rounded-full bg-gray-900 py-4 text-sm font-semibold tracking-nav text-white transition-all duration-300 hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
-                <span
-                  className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-700 group-hover:opacity-100"
-                  style={{
-                    boxShadow:
-                      "0 0 40px rgba(0, 240, 255, 0.3), 0 0 80px rgba(139, 92, 246, 0.15)",
-                  }}
-                />
-                {ripples.map((r) => (
-                  <Ripple
-                    key={r.id}
-                    x={r.x}
-                    y={r.y}
-                    size={r.size}
-                    onComplete={() => removeRipple(r.id)}
-                  />
-                ))}
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   {formStatus === "submitting" ? (
                     <>

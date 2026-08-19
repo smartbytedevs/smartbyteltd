@@ -13,21 +13,27 @@ export function SectionHeading({
   className,
   asSafe = false,
   maxWidth = "640px",
-  labelGradient = true,
   as = "h2",
+  variant = "light",
 }) {
   const MotionWrapper = asSafe ? SafeSlideUp : motion.div
   const Tag = as
 
+  const isDark = variant === "dark"
+
   const labelClasses = cn(
     "text-xs sm:text-sm font-semibold tracking-label uppercase mb-5 block",
-    labelGradient
-      ? "bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent"
-      : "text-accent"
+    isDark ? "text-white/40" : "text-[#50FFAF]"
+  )
+
+  const titleClasses = cn(
+    "font-display text-section-title font-bold",
+    isDark ? "text-white" : "text-gray-900"
   )
 
   const descriptionClasses = cn(
-    "relative mt-6 text-base sm:text-lg text-muted leading-relaxed",
+    "relative mt-6 text-base sm:text-lg leading-relaxed",
+    isDark ? "text-gray-400" : "text-gray-500",
     align === "center" && "mx-auto"
   )
 
@@ -48,7 +54,7 @@ export function SectionHeading({
 
       {title && (
         <MotionWrapper {...(asSafe ? { delay: 0.1 } : fadeUpSimple(0.1))}>
-          <Tag className="font-display text-section-title font-bold">{title}</Tag>
+          <Tag className={titleClasses}>{title}</Tag>
         </MotionWrapper>
       )}
 

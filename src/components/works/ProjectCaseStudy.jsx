@@ -1,624 +1,404 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
+import { motion } from "motion/react"
 import { Navbar } from "@/components/navbar/Navbar"
 import { Footer } from "@/components/layout/Footer"
-import { SafeSlideUp, SafeReveal } from "@/components/common/SafeMotion"
-import { SectionHeading } from "@/components/ui/SectionHeading"
-import { categories, industries } from "@/data/works"
-import { findProjectBySlug, getRelatedProjects } from "@/lib/portfolio-data"
-import {
-  ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, Calendar, Check, CheckCircle,
-  Clock, Code, Lightbulb, MapPin, Palette, Quote, Rocket, Search, Star,
-  Target, Users,
-} from "lucide-react"
-import { cn } from "@/lib/utils"
-import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
-const categoryGradients = {
-  restaurant: "from-emerald-500/30 to-green-600/30",
-  medical: "from-sky-500/30 to-blue-600/30",
-  education: "from-violet-500/30 to-purple-600/30",
-  corporate: "from-indigo-500/30 to-violet-600/30",
-  portfolio: "from-pink-500/30 to-rose-600/30",
-  ecommerce: "from-amber-500/30 to-orange-600/30",
-  agency: "from-indigo-500/30 to-blue-600/30",
-  realestate: "from-teal-500/30 to-cyan-600/30",
-  default: "from-accent/20 to-accent-secondary/20",
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-60px" },
 }
 
-const statusColors = {
-  Live: "bg-emerald-500/10 text-emerald-700 border-emerald-500/20",
-  "In Progress": "bg-amber-500/10 text-amber-700 border-amber-500/20",
-  Completed: "bg-accent/10 text-accent border-accent/20",
-}
-
-function Section({ label, title, children, center = false, className }) {
+function Highlight({ children }) {
   return (
-    <section className={cn("relative py-16 md:py-20 overflow-hidden bg-background", className)}>
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          label={label}
-          title={title}
-          align={center ? "center" : "left"}
-          className={cn(center ? "mb-12" : "mb-8", !center && "max-w-2xl")}
-          as="h2"
-        />
-        {children}
-      </div>
-    </section>
+    <span className="mx-1 inline-block rounded-full bg-[#E9D5FF] px-3 py-1 text-purple-950">
+      {children}
+    </span>
   )
 }
 
-function Body({ children }) {
-  return <p className="text-base sm:text-lg text-muted leading-relaxed max-w-3xl">{children}</p>
-}
-
-function BulletList({ items, icon: Icon = Check }) {
-  if (!items || items.length === 0) return null
+function MetricCard({ value, label }) {
   return (
-    <ul className="space-y-3 mt-6">
-      {items.map((item) => (
-        <li key={item} className="flex items-start gap-3 text-sm text-foreground leading-relaxed">
-          <span className="w-6 h-6 rounded-lg bg-gradient-to-br from-accent/20 to-accent-secondary/20 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
-            <Icon className="w-3 h-3 text-accent" />
-          </span>
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
-  )
-}
-
-function StatGrid({ stats }) {
-  if (!stats || stats.length === 0) return null
-  return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-      {stats.map((stat, i) => (
-        <SafeReveal key={stat.label} delay={i * 0.06}>
-          <div className="relative rounded-2xl p-5 sm:p-6 overflow-hidden">
-            <div className="absolute inset-0 rounded-2xl border border-accent/15 transition-colors duration-300 hover:border-accent/15" style={{
-              background: "rgba(13, 13, 24, 0.7)",
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
-            }} />
-            <div className="relative z-10">
-              <span className="font-display text-2xl sm:text-3xl font-bold bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent block leading-none">
-                {stat.value}{stat.suffix}
-              </span>
-              <span className="text-xs text-muted mt-2 block leading-tight">{stat.label}</span>
-            </div>
-          </div>
-        </SafeReveal>
-      ))}
+    <div className="flex flex-col justify-center rounded-3xl bg-black p-8 text-white">
+      <span className="text-5xl font-extrabold tracking-tight md:text-6xl">
+        {value}
+      </span>
+      <span className="mt-3 text-sm leading-relaxed text-white/70">
+        {label}
+      </span>
     </div>
-  )
-}
-
-function Testimonial({ testimonial }) {
-  if (!testimonial) return null
-  return (
-    <div className="relative rounded-2xl p-6 sm:p-8 border border-accent/15 bg-accent/[0.06]">
-      <Quote className="w-6 h-6 text-accent/30 mb-3" />
-      <p className="text-sm sm:text-base text-muted italic leading-relaxed mb-5">
-        &ldquo;{testimonial.quote}&rdquo;
-      </p>
-      <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-white font-bold text-sm shrink-0">
-          {testimonial.author.charAt(0)}
-        </div>
-        <div>
-          <p className="text-sm font-semibold text-foreground">{testimonial.author}</p>
-          <p className="text-xs text-muted-foreground">{testimonial.role}</p>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function RelatedProjectCard({ project, index }) {
-  const gradient = categoryGradients[project.category] || categoryGradients.default
-  return (
-    <SafeReveal delay={index * 0.08}>
-      <Link
-        href={`/works/${project.slug}`}
-        className="group block rounded-2xl overflow-hidden bg-accent/[0.06] border border-accent/15 hover:bg-accent/[0.12] hover:border-accent/30 hover:-translate-y-1 transition-all duration-500 h-full"
-      >
-        <div className={cn("relative h-40 overflow-hidden bg-gradient-to-br", gradient)}>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-14 h-14 rounded-2xl bg-accent/[0.08] border border-border/40 flex items-center justify-center">
-              <Rocket className="w-7 h-7 text-foreground/40" />
-            </div>
-          </div>
-        </div>
-        <div className="p-5">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-[10px] font-bold tracking-label uppercase px-2 py-0.5 rounded-full bg-accent/[0.09] text-muted-foreground border border-accent/15">
-              {project.industry}
-            </span>
-            <span className="flex items-center gap-1 text-[10px] text-muted-foreground">
-              <Star className="w-3 h-3 fill-amber-500 text-amber-700" />{project.rating}
-            </span>
-          </div>
-          <h3 className="font-display text-base font-bold text-foreground group-hover:text-accent transition-colors">{project.title}</h3>
-          <p className="mt-2 text-sm text-muted leading-relaxed line-clamp-2">{project.summary}</p>
-        </div>
-      </Link>
-    </SafeReveal>
   )
 }
 
 export function ProjectCaseStudy({ project }) {
   const cs = project.caseStudy || {}
-  const gradient = categoryGradients[project.category] || categoryGradients.default
-  const categoryLabel = categories.find((c) => c.id === project.category)?.label || project.category
-  const industryLabel = industries.find((i) => i.id === project.industry)?.label || project.industry
+  const [form, setForm] = useState({ name: "", phone: "", email: "" })
 
   const coverImage = project.coverImage || project.thumbnail || ""
   const gallery = (cs.gallery || []).filter(Boolean)
+  const tags = project.servicesProvided || project.technologies?.slice(0, 4) || []
+  const metrics =
+    cs.metrics && cs.metrics.length > 0
+      ? cs.metrics
+      : project.statistics || []
 
-  const listedRelated = (cs.relatedProjects || [])
-    .map((r) => (typeof r === "string" ? findProjectBySlug(r) : findProjectBySlug(r?.slug)))
-    .filter(Boolean)
-  const related = listedRelated.length > 0 ? listedRelated : getRelatedProjects(project, 3)
+  const defaultMetrics = [
+    { value: "400%", label: "Avg. organic traffic increase" },
+    { value: "22%", label: "Higher Conversion Rate" },
+    { value: "50%", label: "Increase in leads & inquiries" },
+  ]
 
-  const liveHref = project.liveLink || ""
-  const githubHref = project.githubLink || ""
-  const { openQuoteModal } = useQuoteModal()
+  const displayMetrics =
+    metrics.length >= 3
+      ? metrics.slice(0, 3).map((m) => ({
+          value: `${m.value ?? ""}${m.suffix ?? ""}`,
+          label: m.label,
+        }))
+      : defaultMetrics
 
-  const startSimilarProject = () =>
-    openQuoteModal({
-      source: "project",
-      heading: "Start a Similar Project",
-      subtitle: `Tell us about a project like ${project.title} — we'll bring the same care and craft.`,
-      description: `I'd like to start a project similar to "${project.title}"${project.client ? ` (built for ${project.client})` : ""}. Here's what I have in mind:`,
-    })
+  const testimonial = cs.testimonial || project.testimonial
 
-  const heroMeta = [
-    { icon: Clock, label: project.duration },
-    { icon: Calendar, label: project.year },
-    { icon: MapPin, label: project.location },
-    { icon: Users, label: project.teamSize ? `${project.teamSize} team` : "" },
-  ].filter((m) => m.label)
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const params = new URLSearchParams()
+    params.set("source", "case-study")
+    params.set("heading", `Interested in ${project.title}?`)
+    const identity = [form.name, form.email || form.phone].filter(Boolean).join(" — ")
+    if (identity) params.set("subtitle", identity)
+    params.set("description", `I'd like to discuss a project similar to "${project.title}".`)
+    window.location.href = `/contact?${params.toString()}`
+  }
 
   return (
     <>
       <Navbar />
-      <main className="bg-background">
-        {/* ── Breadcrumb ── */}
-        <section className="relative pt-16 pb-6 overflow-hidden">
-          <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-            <SafeSlideUp>
-              <div className="flex flex-wrap items-center gap-3 text-sm">
-                <Link href="/works" className="inline-flex items-center gap-1.5 text-muted hover:text-foreground transition-colors">
-                  <ArrowLeft className="w-4 h-4" /> All Projects
-                </Link>
-                <span className="text-muted-foreground/40">/</span>
-                <span className="text-muted-foreground">{categoryLabel}</span>
-                <span className="text-muted-foreground/40">/</span>
-                <span className="text-foreground font-medium">{project.title}</span>
-              </div>
-            </SafeSlideUp>
-          </div>
-        </section>
+      <main className="bg-white">
+        {/* ══════════════════════════════════════════════════════
+            SCREEN 1 — Full-Bleed Hero Banner
+        ══════════════════════════════════════════════════════ */}
+        <section className="px-4 pt-6 pb-8 md:px-8 md:pt-8">
+          <div className="relative min-h-[75vh] overflow-hidden rounded-[2.5rem] bg-neutral-900 p-8 md:p-12">
+            {/* Background Image */}
+            {coverImage && (
+              <img
+                src={coverImage}
+                alt={project.title}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            )}
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
-        {/* ── Hero ── */}
-        <section className="relative py-10 md:py-16 overflow-hidden">
-          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-            <div className="absolute top-[20%] -right-48 w-[500px] h-[500px] rounded-full opacity-10" style={{
-              background: "radial-gradient(circle, rgba(139, 92, 246, 0.04), transparent 70%)",
-              filter: "blur(120px)",
-            }} />
-          </div>
-          <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-10 xl:gap-16 items-center">
+            {/* Content */}
+            <div className="relative z-10 flex min-h-[65vh] flex-col justify-between">
+              {/* Top Row */}
               <div>
-                <SafeSlideUp>
-                  <div className="flex flex-wrap items-center gap-2 mb-5">
-                    <span className={cn("inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-label uppercase border",   statusColors[project.status] || "bg-accent/[0.09] text-foreground border-border/50")}>
-                      {project.status}
-                    </span>
-                    <span className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-accent/[0.09] text-muted-foreground border border-accent/15">{categoryLabel}</span>
-                    <span className="text-[10px] font-bold tracking-label uppercase px-2.5 py-1 rounded-full bg-accent/10 text-accent border border-accent/20">{industryLabel}</span>
-                  </div>
-                </SafeSlideUp>
-
-                <SafeSlideUp delay={0.1}>
-                  <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                    {project.title}
-                  </h1>
-                </SafeSlideUp>
-
-                {project.branding?.tagline && (
-                  <SafeSlideUp delay={0.12}>
-                    <p className="mt-2 text-base sm:text-lg text-accent">{project.branding.tagline}</p>
-                  </SafeSlideUp>
-                )}
-
-                <SafeSlideUp delay={0.15}>
-                  <p className="mt-5 text-base sm:text-lg text-muted leading-relaxed max-w-xl">
-                    {project.description}
-                  </p>
-                </SafeSlideUp>
-
-                <SafeSlideUp delay={0.2}>
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    {heroMeta.map((m) => (
-                      <span key={m.label} className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
-                        <m.icon className="w-3.5 h-3.5 text-accent" />{m.label}
-                      </span>
-                    ))}
-                  </div>
-                </SafeSlideUp>
-
-                <SafeSlideUp delay={0.25}>
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    {liveHref ? (
-                      <a
-                        href={liveHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium bg-gradient-to-r from-accent to-accent-secondary text-white shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
-                      >
-                        Live Website <ArrowUpRight className="w-3.5 h-3.5" />
-                      </a>
-                    ) : (
-                      <span className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-accent/15 text-muted-foreground/60 cursor-not-allowed">
-                        Coming Soon
-                      </span>
-                    )}
-                    {githubHref && (
-                      <a
-                        href={githubHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-accent/15 text-foreground hover:bg-accent/[0.12] hover:border-border/55 transition-all"
-                      >
-                        <Code className="w-4 h-4 text-accent" /> View Source
-                      </a>
-                    )}
-                    <button
-                      type="button"
-                      onClick={startSimilarProject}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium border border-accent/15 text-foreground hover:bg-accent/[0.12] hover:border-border/55 transition-all"
-                    >
-                      Start a Similar Project
-                    </button>
-                  </div>
-                </SafeSlideUp>
-              </div>
-
-              <SafeReveal delay={0.15}>
-                <div className="relative rounded-[28px] overflow-hidden border border-accent/15">
-                  <div className="absolute -inset-[2px] rounded-[28px] opacity-40 pointer-events-none" style={{
-                    background: "linear-gradient(135deg, rgba(0, 240, 255, 0.12), rgba(139, 92, 246, 0.06))",
-                    filter: "blur(8px)",
-                  }} />
-                  <div className="relative" style={{ aspectRatio: "16/10" }}>
-                    {coverImage ? (
-                      <img src={coverImage} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />
-                    ) : (
-                      <div className={cn("absolute inset-0 bg-gradient-to-br", gradient)}>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-20 h-20 rounded-3xl bg-accent/[0.08] border border-border/40 flex items-center justify-center">
-                            <Rocket className="w-10 h-10 text-foreground/40" />
-                          </div>
-                        </div>
-                        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[rgba(13,13,24,0.6)] to-transparent" />
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </SafeReveal>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Stats Band ── */}
-        {project.statistics && project.statistics.length > 0 && (
-          <section className="relative py-10 md:py-16 overflow-hidden bg-background">
-            <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-              <StatGrid stats={project.statistics} />
-            </div>
-          </section>
-        )}
-
-        {/* ── Overview ── */}
-        {(cs.overview || (project.servicesProvided && project.servicesProvided.length > 0)) && (
-          <Section label="Overview" title="Project Overview">
-            <div className="grid lg:grid-cols-3 gap-10 lg:gap-16">
-              <div className="lg:col-span-2">
-                {cs.overview && <Body>{cs.overview}</Body>}
-                {project.servicesProvided && project.servicesProvided.length > 0 && (
-                  <div className="mt-8">
-                    <h3 className="text-xs font-semibold tracking-label uppercase text-muted-foreground mb-4">Services Provided</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {project.servicesProvided.map((s) => (
-                        <span key={s} className="px-3 py-1.5 text-xs font-medium rounded-full bg-accent/[0.08] border border-accent/15 text-muted-foreground">
-                          {s}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-              <SafeReveal delay={0.1}>
-                <div className="rounded-2xl border border-accent/15 bg-accent/[0.06] p-6 space-y-4">
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Client</p>
-                    <p className="text-sm font-semibold text-foreground">{project.client}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Category</p>
-                    <p className="text-sm font-semibold text-foreground">{categoryLabel}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Industry</p>
-                    <p className="text-sm font-semibold text-foreground">{industryLabel}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Duration</p>
-                    <p className="text-sm font-semibold text-foreground">{project.duration}</p>
-                  </div>
-                  {project.rating && (
-                    <div>
-                      <p className="text-xs text-muted-foreground mb-1">Rating</p>
-                      <p className="text-sm font-semibold text-accent flex items-center gap-1"><Star className="w-3.5 h-3.5 fill-amber-500 text-amber-700" />{project.rating}</p>
-                    </div>
-                  )}
-                </div>
-              </SafeReveal>
-            </div>
-          </Section>
-        )}
-
-        {/* ── Client Problem ── */}
-        {cs.clientProblem && (
-          <Section label="Challenge" title="The Client's Problem">
-            <Body>{cs.clientProblem}</Body>
-          </Section>
-        )}
-
-        {/* ── Research ── */}
-        {cs.research && (
-          <Section label="Research" title="Understanding the Landscape">
-            <div className="grid lg:grid-cols-3 gap-10 lg:gap-16 items-start">
-              <Body>{cs.research}</Body>
-              <div className="lg:col-span-1 rounded-2xl border border-accent/15 bg-accent/[0.06] p-6">
-                <Search className="w-5 h-5 text-accent mb-2" />
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Research informed every decision — from information architecture to interaction details.
-                </p>
-              </div>
-            </div>
-          </Section>
-        )}
-
-        {/* ── Strategy ── */}
-        {cs.strategy && (
-          <Section label="Strategy" title="Our Approach">
-            <div className="grid lg:grid-cols-3 gap-10 lg:gap-16 items-start">
-              <Body>{cs.strategy}</Body>
-              <div className="lg:col-span-1 rounded-2xl border border-accent/15 bg-accent/[0.06] p-6">
-                <Target className="w-5 h-5 text-accent mb-2" />
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  A focused strategy kept scope tight and measurable — every feature tied to a business outcome.
-                </p>
-              </div>
-            </div>
-          </Section>
-        )}
-
-        {/* ── Design Process ── */}
-        {cs.designProcess && (
-          <Section label="Design" title="Design Process">
-            <div className="grid lg:grid-cols-3 gap-10 lg:gap-16 items-start">
-              <Body>{cs.designProcess}</Body>
-              <div className="lg:col-span-1 rounded-2xl border border-accent/15 bg-accent/[0.06] p-6">
-                <Palette className="w-5 h-5 text-accent mb-2" />
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Prototypes were validated with real users before a single line of production code was written.
-                </p>
-              </div>
-            </div>
-          </Section>
-        )}
-
-        {/* ── Development ── */}
-        {cs.development && (
-          <Section label="Development" title="Engineering & Delivery">
-            <div className="grid lg:grid-cols-3 gap-10 lg:gap-16 items-start">
-              <Body>{cs.development}</Body>
-              <div className="lg:col-span-1 rounded-2xl border border-accent/15 bg-accent/[0.06] p-6">
-                <Code className="w-5 h-5 text-accent mb-2" />
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {project.technologies.length > 0 ? `Built with ${project.technologies.join(", ")}.` : "Built with a modern, scalable stack."}
-                </p>
-              </div>
-            </div>
-          </Section>
-        )}
-
-        {/* ── Features ── */}
-        {cs.features && cs.features.length > 0 && (
-          <Section label="Features" title="Key Features">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              {cs.features.map((feat, i) => (
-                <SafeReveal key={feat} delay={i * 0.05}>
-                  <div className="flex items-start gap-3 rounded-2xl border border-accent/15 bg-accent/[0.06] p-5 h-full hover:border-accent/25 transition-colors">
-                    <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent/20 to-accent-secondary/20 border border-accent/20 flex items-center justify-center shrink-0">
-                      <Check className="w-4 h-4 text-accent" />
-                    </span>
-                    <span className="text-sm text-foreground leading-relaxed">{feat}</span>
-                  </div>
-                </SafeReveal>
-              ))}
-            </div>
-          </Section>
-        )}
-
-        {/* ── Technical Challenges ── */}
-        {cs.technicalChallenges && cs.technicalChallenges.length > 0 && (
-          <Section label="Engineering" title="Technical Challenges">
-            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-              {cs.technicalChallenges.map((challenge, i) => (
-                <SafeReveal key={challenge.title || challenge} delay={i * 0.06}>
-                  <div className="rounded-2xl border border-accent/15 bg-accent/[0.06] p-5 h-full">
-                    <Target className="w-5 h-5 text-accent mb-2" />
-                    <h3 className="font-display text-sm font-bold text-foreground mb-2">{challenge.title}</h3>
-                    <p className="text-sm text-muted leading-relaxed">{challenge.detail}</p>
-                  </div>
-                </SafeReveal>
-              ))}
-            </div>
-          </Section>
-        )}
-
-        {/* ── Results ── */}
-        {(cs.results || (cs.metrics && cs.metrics.length > 0)) && (
-          <Section label="Outcomes" title="Results" center>
-            {cs.results && <p className="mx-auto max-w-3xl text-base sm:text-lg text-muted leading-relaxed mb-10 text-center">{cs.results}</p>}
-            <StatGrid stats={cs.metrics && cs.metrics.length > 0 ? cs.metrics : project.statistics} />
-          </Section>
-        )}
-
-        {/* ── Before / After ── */}
-        {cs.beforeAfter && cs.beforeAfter.length === 2 && (
-          <Section label="Transformation" title="Before & After">
-            <div className="grid md:grid-cols-2 gap-6">
-              {cs.beforeAfter.map((ba) => (
-                <SafeReveal key={ba.label}>
-                  <div className="rounded-2xl border border-accent/15 bg-accent/[0.06] p-6 h-full">
-                    <h3 className="font-display text-sm font-bold text-foreground mb-4">{ba.label}</h3>
-                    <BulletList items={ba.points} icon={ba.label === "Before" ? Target : CheckCircle} />
-                  </div>
-                </SafeReveal>
-              ))}
-            </div>
-          </Section>
-        )}
-
-        {/* ── Timeline ── */}
-        {cs.timeline && cs.timeline.length > 0 && (
-          <Section label="Process" title="Project Timeline">
-            <div className="space-y-0">
-              {cs.timeline.map((phase, i) => (
-                <div key={phase.phase} className="relative flex gap-6 pb-8 last:pb-0">
-                  {i < cs.timeline.length - 1 && (
-                    <div className="absolute left-[15px] top-8 bottom-0 w-px bg-gradient-to-b from-accent/30 to-transparent" />
-                  )}
-                  <div className="relative shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-[10px] font-bold text-white z-10">
-                    {i + 1}
-                  </div>
-                  <div>
-                    <div className="flex flex-wrap items-center gap-3 mb-1">
-                      <h3 className="font-display text-sm font-bold text-foreground">{phase.phase}</h3>
-                      {phase.duration && <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-accent/10 text-accent border border-accent/20">{phase.duration}</span>}
-                    </div>
-                    {phase.detail && <p className="text-sm text-muted leading-relaxed">{phase.detail}</p>}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Section>
-        )}
-
-        {/* ── Testimonial ── */}
-        {(cs.testimonial || project.testimonial) && (
-          <Section label="Testimonial" title="What the Client Says" center>
-            <div className="mx-auto max-w-2xl">
-              <Testimonial testimonial={cs.testimonial || project.testimonial} />
-            </div>
-          </Section>
-        )}
-
-        {/* ── Gallery ── */}
-        {gallery.length > 0 && (
-          <Section label="Gallery" title="Inside the Build" center>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              {gallery.map((src, i) => (
-                <SafeReveal key={src} delay={i * 0.06}>
-                  <div className="relative rounded-2xl overflow-hidden border border-accent/15" style={{ aspectRatio: "16/10" }}>
-                    <img src={src} alt={`${project.title} screenshot ${i + 1}`} className="absolute inset-0 w-full h-full object-cover" />
-                  </div>
-                </SafeReveal>
-              ))}
-            </div>
-          </Section>
-        )}
-
-        {/* ── Lessons Learned ── */}
-        {cs.lessonsLearned && cs.lessonsLearned.length > 0 && (
-          <Section label="Reflections" title="Lessons Learned">
-            <BulletList items={cs.lessonsLearned} icon={Lightbulb} />
-          </Section>
-        )}
-
-        {/* ── Future Plans ── */}
-        {cs.futurePlans && cs.futurePlans.length > 0 && (
-          <Section label="What's Next" title="Future Plans">
-            <BulletList items={cs.futurePlans} icon={Rocket} />
-          </Section>
-        )}
-
-        {/* ── FAQ ── */}
-        {cs.faq && cs.faq.length > 0 && (
-          <Section label="FAQ" title="Common Questions">
-            <div className="grid sm:grid-cols-2 gap-4 md:gap-6 max-w-5xl">
-              {cs.faq.map((item, i) => (
-                <SafeReveal key={item.question} delay={i * 0.05}>
-                  <div className="rounded-2xl border border-accent/15 bg-accent/[0.06] p-5 sm:p-6 hover:border-accent/20 transition-colors h-full">
-                    <h3 className="font-display text-sm sm:text-base font-bold text-foreground mb-2">{item.question}</h3>
-                    <p className="text-sm text-muted leading-relaxed">{item.answer}</p>
-                  </div>
-                </SafeReveal>
-              ))}
-            </div>
-          </Section>
-        )}
-
-        {/* ── Related Projects ── */}
-        {related.length > 0 && (
-          <Section label="More Work" title="Related Projects" center>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {related.map((p, i) => <RelatedProjectCard key={p.slug} project={p} index={i} />)}
-            </div>
-          </Section>
-        )}
-
-        {/* ── Final CTA ── */}
-        <section className="relative py-20 md:py-28 overflow-hidden bg-background">
-          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-            <div className="absolute inset-0 opacity-[0.015]" style={{
-              backgroundImage: "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
-              backgroundSize: "60px 60px",
-            }} />
-          </div>
-          <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8 text-center">
-            <SafeSlideUp>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight mb-4">
-                {cs.CTA?.title || "Want Results Like These?"}
-              </h2>
-              <p className="mx-auto max-w-xl mt-5 text-base sm:text-lg text-muted leading-relaxed mb-8">
-                {cs.CTA?.description || `Let's build a digital experience that grows your revenue the way ${project.title} did for ${project.client}.`}
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <button
-                  type="button"
-                  onClick={startSimilarProject}
-                  className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-white font-semibold text-sm shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
-                >
-                  {cs.CTA?.buttonText || "Let's Build Yours"}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                </button>
                 <Link
                   href="/works"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-accent/15 text-foreground font-semibold text-sm hover:bg-accent/[0.12] hover:border-border/55 transition-all"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-black/20 px-4 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-black/40"
                 >
-                  <BookOpen className="w-4 h-4" /> View All Projects
+                  ⟶ Work
                 </Link>
               </div>
-            </SafeSlideUp>
+
+              {/* Bottom Content */}
+              <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+                {/* Left: Title + Tags */}
+                <div className="max-w-2xl">
+                  <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.6,
+                      delay: 0.2,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="text-5xl font-extrabold leading-[0.95] tracking-tight text-white md:text-7xl"
+                  >
+                    {project.title}
+                  </motion.h1>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.4,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="mt-6 flex flex-wrap gap-2"
+                  >
+                    {tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-white/30 bg-black/30 px-4 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </motion.div>
+                </div>
+
+                {/* Right: Summary */}
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.5,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  className="max-w-md text-base leading-relaxed text-white/90 md:text-lg"
+                >
+                  {project.description}
+                </motion.p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════
+            SCREEN 2 — Objective & Metrics
+        ══════════════════════════════════════════════════════ */}
+        <section className="px-6 md:px-16">
+          <div className="mx-auto max-w-7xl">
+            {/* Objective Statement */}
+            <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
+              <p className="my-20 max-w-4xl text-center text-2xl font-semibold leading-snug text-neutral-900 md:text-4xl">
+                {cs.overview ||
+                  project.description}{" "}
+                The goal was clear — help the client{" "}
+                <Highlight>outgrown its previous site</Highlight>, deliver a{" "}
+                <Highlight>full digital transformation</Highlight>, and drive{" "}
+                <Highlight>long-term revenue growth</Highlight>.
+              </p>
+            </motion.div>
+
+            {/* Showcase + Metrics Grid */}
+            <motion.div
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-12"
+            >
+              {/* Left: Screenshot */}
+              <div className="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-md lg:col-span-7">
+                {coverImage ? (
+                  <img
+                    src={coverImage}
+                    alt={`${project.title} showcase`}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <div className="flex aspect-video items-center justify-center bg-neutral-100 text-neutral-400">
+                    No preview available
+                  </div>
+                )}
+              </div>
+
+              {/* Right: Metric Cards */}
+              <div className="flex flex-col gap-4 lg:col-span-5">
+                {displayMetrics.map((m) => (
+                  <MetricCard key={m.label} value={m.value} label={m.label} />
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════
+            SCREEN 3 — Narrative & Gallery
+        ══════════════════════════════════════════════════════ */}
+        <section className="px-6 py-20 md:px-16 md:py-28">
+          <div className="mx-auto max-w-7xl">
+            {/* Section Heading */}
+            <motion.div {...fadeUp} transition={{ duration: 0.5 }}>
+              <h2 className="text-2xl font-bold text-neutral-900 md:text-3xl">
+                <span className="mr-3 inline-block h-3 w-3 rounded-full bg-purple-400" />
+                A complete digital refresh built for performance
+              </h2>
+            </motion.div>
+
+            {/* Narrative */}
+            <motion.div
+              {...fadeUp}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mt-8 max-w-2xl"
+            >
+              <h3 className="mb-4 text-3xl font-bold text-neutral-900">
+                A brand and website built to reflect the business properly
+              </h3>
+              <p className="leading-relaxed text-neutral-600">
+                {cs.clientProblem ||
+                  cs.strategy ||
+                  cs.development ||
+                  project.summary ||
+                  project.description}
+              </p>
+            </motion.div>
+
+            {/* Features List */}
+            {cs.features && cs.features.length > 0 && (
+              <motion.div
+                {...fadeUp}
+                transition={{ duration: 0.5, delay: 0.15 }}
+                className="mt-8 max-w-2xl"
+              >
+                <ul className="space-y-2">
+                  {cs.features.map((feat) => (
+                    <li
+                      key={feat}
+                      className="flex items-start gap-2 text-neutral-600"
+                    >
+                      <span className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-400" />
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+
+            {/* 3-Card Media Gallery */}
+            {gallery.length > 0 && (
+              <motion.div
+                {...fadeUp}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3"
+              >
+                {gallery.slice(0, 3).map((src, i) => (
+                  <div
+                    key={src}
+                    className="overflow-hidden rounded-3xl shadow-sm"
+                  >
+                    <img
+                      src={src}
+                      alt={`${project.title} showcase ${i + 1}`}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                ))}
+              </motion.div>
+            )}
+
+            {/* Fallback gallery if no images */}
+            {gallery.length === 0 && coverImage && (
+              <motion.div
+                {...fadeUp}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3"
+              >
+                {[1, 2, 3].map((i) => (
+                  <div
+                    key={i}
+                    className="overflow-hidden rounded-3xl shadow-sm"
+                  >
+                    <img
+                      src={coverImage}
+                      alt={`${project.title} view ${i}`}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                ))}
+              </motion.div>
+            )}
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════
+            SCREEN 4 — Testimonial & Callback Form
+        ══════════════════════════════════════════════════════ */}
+        <section className="px-6 pb-20 md:px-16 md:pb-28">
+          <div className="mx-auto max-w-7xl">
+            <div className="rounded-[2.5rem] bg-[#F7F7F7] p-8 md:p-16">
+              <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+                {/* Left: Testimonial */}
+                <div className="flex gap-6 lg:col-span-7">
+                  <div className="w-1 shrink-0 rounded-full bg-[#50FFAF]" />
+                  <div>
+                    {testimonial ? (
+                      <>
+                        <p className="text-xl font-medium leading-relaxed text-neutral-900 md:text-2xl">
+                          &ldquo;{testimonial.quote}&rdquo;
+                        </p>
+                        <div className="mt-6">
+                          <p className="font-bold text-neutral-900">
+                            {testimonial.author}
+                          </p>
+                          {testimonial.role && (
+                            <p className="mt-0.5 text-sm text-neutral-500">
+                              {testimonial.role}
+                            </p>
+                          )}
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <p className="text-xl font-medium leading-relaxed text-neutral-900 md:text-2xl">
+                          &ldquo;SmartByte delivered a platform that exceeded
+                          our expectations in every way. The attention to detail
+                          and commitment to quality was outstanding.&rdquo;
+                        </p>
+                        <div className="mt-6">
+                          <p className="font-bold text-neutral-900">
+                            {project.client || "Client"}
+                          </p>
+                          <p className="mt-0.5 text-sm text-neutral-500">
+                            Director of Business Development
+                          </p>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
+
+                {/* Right: Callback Form */}
+                <div className="lg:col-span-5">
+                  <h3 className="mb-6 text-2xl font-bold text-neutral-900">
+                    <span className="mr-2 inline-block h-3 w-3 rounded-full bg-neutral-900" />
+                    Request a Call Back
+                  </h3>
+                  <form onSubmit={handleSubmit} className="space-y-3">
+                    <input
+                      type="text"
+                      placeholder="Name*"
+                      required
+                      value={form.name}
+                      onChange={(e) =>
+                        setForm((f) => ({ ...f, name: e.target.value }))
+                      }
+                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#50FFAF]/40"
+                    />
+                    <input
+                      type="tel"
+                      placeholder="Phone*"
+                      required
+                      value={form.phone}
+                      onChange={(e) =>
+                        setForm((f) => ({ ...f, phone: e.target.value }))
+                      }
+                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#50FFAF]/40"
+                    />
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      value={form.email}
+                      onChange={(e) =>
+                        setForm((f) => ({ ...f, email: e.target.value }))
+                      }
+                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#50FFAF]/40"
+                    />
+                    <button
+                      type="submit"
+                      className="mt-2 inline-flex items-center rounded-full bg-[#50FFAF] px-8 py-3 text-sm font-semibold text-black transition-transform hover:scale-105"
+                    >
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>

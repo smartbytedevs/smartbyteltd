@@ -4,7 +4,6 @@ import { useRef, useState, useCallback } from "react"
 import { motion } from "motion/react"
 import { Check } from "lucide-react"
 import { SafeScale, SafeSlideUp } from "@/components/common/SafeMotion"
-import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 function MagneticButton({ children, className }) {
   const ref = useRef(null)
@@ -38,136 +37,40 @@ function MagneticButton({ children, className }) {
 }
 
 export function PricingCard({ plan, index }) {
-  const cardRef = useRef(null)
   const [isHovered, setIsHovered] = useState(false)
-  const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 })
-  const { openQuoteModal } = useQuoteModal()
-
-  const handleMouseMove = useCallback((e) => {
-    const rect = cardRef.current?.getBoundingClientRect()
-    if (!rect) return
-    setMousePos({
-      x: (e.clientX - rect.left) / rect.width,
-      y: (e.clientY - rect.top) / rect.height,
-    })
-  }, [])
-
-  const handleMouseEnter = useCallback(() => setIsHovered(true), [])
-  const handleMouseLeave = useCallback(() => {
-    setIsHovered(false)
-    setMousePos({ x: 0.5, y: 0.5 })
-  }, [])
-
-  const orbX = (mousePos.x - 0.5) * 100
-  const orbY = (mousePos.y - 0.5) * 100
-
   return (
     <SafeScale delay={index * 0.1} viewportMargin="-60px">
       <div
-        ref={cardRef}
-        onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
         className="relative group/card"
-        style={{ perspective: "1000px" }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Glow behind card */}
-        <div
-          className={`absolute -inset-3 rounded-[32px] opacity-0 transition-all duration-700 pointer-events-none ${
-            isHovered ? "opacity-100" : ""
-          }`}
-          style={{
-            background: plan.popular
-              ? "radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.15), rgba(139, 92, 246, 0.08), transparent 70%)"
-              : "radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.06), transparent 70%)",
-            filter: "blur(30px)",
-          }}
-        />
-
-        {/* Card body */}
         <motion.div
           animate={isHovered ? { y: -8 } : { y: 0 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="relative rounded-[28px] overflow-hidden"
+          className={`relative rounded-[28px] overflow-hidden bg-white border transition-all duration-300 ${
+            plan.popular
+              ? "border-[#50FFAF]/40 shadow-md"
+              : "border-gray-200 shadow-sm hover:shadow-md hover:border-gray-300"
+          }`}
         >
-          {/* Gradient border */}
-          <div
-            className={`absolute inset-0 rounded-[28px] transition-all duration-700 ${
-              isHovered ? "opacity-100" : "opacity-0"
-            }`}
-            style={{
-              padding: "1px",
-              background: `linear-gradient(135deg, rgba(0, 240, 255, ${isHovered ? 0.5 : 0.2}), rgba(139, 92, 246, ${isHovered ? 0.3 : 0.1}), transparent 60%)`,
-              WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-              WebkitMaskComposite: "xor",
-              maskComposite: "exclude",
-            }}
-          />
-
-          {/* Glass background */}
-          <div
-            className="absolute inset-0 rounded-[28px] transition-all duration-700"
-            style={{
-              background: isHovered
-                ? "rgba(13, 13, 24, 0.9)"
-                : "rgba(13, 13, 24, 0.7)",
-              backdropFilter: "blur(24px)",
-              WebkitBackdropFilter: "blur(24px)",
-              border: `1px solid ${
-                isHovered
-                  ? "rgba(0, 240, 255, 0.15)"
-                  : plan.popular
-                    ? "rgba(0, 240, 255, 0.12)"
-                    : "rgba(255, 255, 255, 0.08)"
-              }`,
-            }}
-          />
-
-          {/* Orb that follows mouse */}
-          <div
-            className="absolute w-48 h-48 rounded-full pointer-events-none transition-opacity duration-700"
-            style={{
-              background:
-                "radial-gradient(circle, rgba(0, 240, 255, 0.08), transparent 70%)",
-              filter: "blur(50px)",
-              left: `calc(50% + ${orbX}px - 96px)`,
-              top: `calc(50% + ${orbY}px - 96px)`,
-              opacity: isHovered ? 1 : 0,
-              transform: "translate(-50%, -50%)",
-            }}
-          />
-
-          {/* Grid overlay */}
-          <div
-            className="absolute inset-0 opacity-[0.015] rounded-[28px] pointer-events-none"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
-              backgroundSize: "30px 30px",
-            }}
-          />
-
           {/* Popular badge */}
           {plan.popular && (
             <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
-              <SafeSlideUp className="px-4 py-1.5 rounded-b-xl text-[9px] font-bold tracking-label uppercase bg-gradient-to-r from-accent to-accent-secondary text-white shadow-lg shadow-accent/20">
+              <SafeSlideUp className="px-4 py-1.5 rounded-b-xl text-[9px] font-bold tracking-label uppercase bg-gray-900 text-white shadow-lg">
                 Most Popular
               </SafeSlideUp>
             </div>
           )}
 
-          {/* ═══ Content ═══ */}
+          {/* Content */}
           <div className="relative z-10 p-6 sm:p-7 lg:p-8">
             {/* Plan name + tagline */}
             <div className="mb-6">
-              <h3
-                className={`font-display text-lg sm:text-xl font-bold transition-colors duration-300 ${
-                  isHovered ? "text-accent" : "text-foreground"
-                }`}
-              >
+              <h3 className="font-display text-lg sm:text-xl font-bold text-gray-900">
                 {plan.name}
               </h3>
-              <p className="text-xs sm:text-sm text-muted/60 mt-1 leading-tight">
+              <p className="text-xs sm:text-sm text-gray-400 mt-1 leading-tight">
                 {plan.tagline}
               </p>
             </div>
@@ -175,22 +78,22 @@ export function PricingCard({ plan, index }) {
             {/* Price */}
             <div className="mb-6">
               {plan.priceLabel && (
-                <span className="text-[10px] font-medium text-muted/40 tracking-label uppercase block mb-1">
+                <span className="text-[10px] font-medium text-gray-400 tracking-label uppercase block mb-1">
                   {plan.priceLabel}
                 </span>
               )}
               {plan.price === "Custom Quote" ? (
                 <div className="space-y-1">
-                  <span className="text-[10px] font-medium text-muted/40 tracking-label uppercase block">
+                  <span className="text-[10px] font-medium text-gray-400 tracking-label uppercase block">
                     Custom Quote
                   </span>
-                  <span className="font-display text-2xl sm:text-3xl font-bold text-foreground block leading-tight">
+                  <span className="font-display text-2xl sm:text-3xl font-bold text-gray-900 block leading-tight">
                     {plan.tagline}
                   </span>
                 </div>
               ) : (
                 <motion.span
-                  className="font-display text-3xl sm:text-4xl font-bold text-foreground block"
+                  className="font-display text-3xl sm:text-4xl font-bold text-gray-900 block"
                   animate={isHovered ? { scale: 1.05 } : { scale: 1 }}
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 >
@@ -200,28 +103,16 @@ export function PricingCard({ plan, index }) {
             </div>
 
             {/* Divider */}
-            <div
-              className={`h-px mb-5 transition-all duration-500 ${
-                isHovered
-                  ? "bg-gradient-to-r from-accent/30 via-accent-secondary/20 to-transparent"
-                  : "bg-border/50"
-              }`}
-            />
+            <div className="h-px mb-5 bg-gray-100" />
 
             {/* Features */}
             <ul className="space-y-2.5 mb-8">
               {plan.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2.5">
-                  <span
-                    className={`shrink-0 w-4 h-4 rounded-full flex items-center justify-center transition-colors duration-300 ${
-                      isHovered
-                        ? "bg-accent/15 text-accent"
-                        : "bg-white/70 text-muted"
-                    }`}
-                  >
+                  <span className="shrink-0 w-4 h-4 rounded-full flex items-center justify-center bg-[#50FFAF]/15 text-[#50FFAF]">
                     <Check className="w-2.5 h-2.5" />
                   </span>
-                  <span className="text-xs sm:text-sm text-muted/80 leading-snug">
+                  <span className="text-xs sm:text-sm text-gray-600 leading-snug">
                     {feature}
                   </span>
                 </li>
@@ -232,36 +123,19 @@ export function PricingCard({ plan, index }) {
             <MagneticButton>
               <button
                 type="button"
-                onClick={() => openQuoteModal({ source: "pricing", heading: plan.cta })}
-                className={`group/btn relative flex items-center justify-center gap-2 overflow-hidden rounded-full px-5 py-3 font-semibold text-xs tracking-nav transition-all duration-500 cursor-pointer ${
-                  plan.id === "custom"
-                    ? "border border-accent/15 text-accent hover:text-foreground hover:border-border/55"
-                    : ""
+                onClick={() => {
+                  const params = new URLSearchParams()
+                  params.set("source", "pricing")
+                  params.set("heading", plan.cta)
+                  window.location.href = `/contact?${params.toString()}`
+                }}
+                className={`group/btn relative flex items-center justify-center gap-2 overflow-hidden rounded-full px-5 py-3 font-semibold text-xs tracking-nav transition-all duration-300 w-full cursor-pointer ${
+                  plan.popular
+                    ? "bg-gray-900 text-white hover:bg-gray-800"
+                    : "border border-gray-200 text-gray-700 hover:border-gray-300 hover:text-gray-900"
                 }`}
               >
-                {plan.id !== "custom" && (
-                  <>
-                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 group-hover/btn:opacity-100 transition-opacity duration-500" />
-                    <span
-                      className="absolute inset-0 rounded-full opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700"
-                      style={{
-                        boxShadow:
-                          "0 0 20px rgba(0, 240, 255, 0.2), 0 0 40px rgba(139, 92, 246, 0.1)",
-                      }}
-                    />
-                    <span className="relative z-10 text-white">
-                      {plan.cta}
-                    </span>
-                  </>
-                )}
-                {plan.id === "custom" && (
-                  <span className="relative z-10 flex items-center gap-2">
-                    {plan.cta}
-                    <span className="text-accent group-hover/btn:translate-x-0.5 transition-transform duration-300">
-                      →
-                    </span>
-                  </span>
-                )}
+                {plan.cta}
               </button>
             </MagneticButton>
           </div>

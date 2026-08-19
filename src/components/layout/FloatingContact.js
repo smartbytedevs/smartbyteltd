@@ -1,35 +1,19 @@
 "use client"
 
-import { useState, useEffect, useCallback, useSyncExternalStore } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { motion, AnimatePresence } from "motion/react"
-import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 import {
-  Rocket,
-  Globe,
-  Code2,
-  ShoppingCart,
-  Bot,
-  Lightbulb,
   MessageCircle,
   Phone,
   Mail,
   Calendar,
-  ArrowRight,
+  ArrowUpRight,
   X,
 } from "lucide-react"
 
-const messages = [
-  { text: "Launch Your Startup", icon: Rocket, keywords: ["Startup"] },
-  { text: "Build Your Website", icon: Globe, keywords: ["Website"] },
-  { text: "Need Custom Software?", icon: Code2, keywords: ["Custom Software"] },
-  { text: "Grow Your Online Store", icon: ShoppingCart, keywords: ["Online Store"] },
-  { text: "Automate Your Business", icon: Bot, keywords: ["Business"] },
-  { text: "Free Consultation", icon: Lightbulb, keywords: ["Consultation"] },
-]
+const circularText = "Say Hi • Hire Us • Contact Us • Drop a Line • "
 
-const DISPLAY_DURATION = 6000
-
-const getContactOptions = (openQuoteModal) => [
+const getContactOptions = () => [
   {
     icon: MessageCircle,
     title: "WhatsApp",
@@ -62,146 +46,55 @@ const getContactOptions = (openQuoteModal) => [
     icon: Calendar,
     title: "Book Consultation",
     subtitle: "Free 30-minute discussion.",
-    action: () => openQuoteModal({ source: "floating" }),
+    action: () => { window.location.href = "/contact" },
     gradient: "from-accent-secondary/20 to-accent-secondary/10",
     iconColor: "text-accent-secondary",
   },
 ]
 
-function HighlightedText({ text, keywords }) {
-  const escaped = keywords.map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-  const parts = text.split(new RegExp(`(${escaped.join("|")})`, "g"))
-  return (
-    <>
-      {parts.map((part, i) =>
-        keywords.includes(part) ? (
-          <span
-            key={i}
-            className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent"
-          >
-            {part}
-          </span>
-        ) : (
-          <span key={i}>{part}</span>
-        )
-      )}
-    </>
-  )
-}
-
-function Orb({ icon: Icon, currentIndex, reducedMotion }) {
-  return (
-    <div className="relative h-[56px] w-[56px] shrink-0">
-      <motion.div
-        className="absolute inset-[-2px] rounded-full"
-        style={{
-          background:
-            "conic-gradient(from 0deg, #00F0FF, #8B5CF6, #00F0FF, #8B5CF6, #00F0FF)",
-          WebkitMask:
-            "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 0.5px))",
-          mask: "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 0.5px))",
-        }}
-        animate={reducedMotion ? { rotate: 0 } : { rotate: 360 }}
-        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-      />
-      <motion.div
-        className="absolute inset-[-6px] rounded-full"
-        animate={{
-          boxShadow: [
-            "0 0 0px rgba(0,240,255,0)",
-            "0 0 25px rgba(0,240,255,0.12)",
-            "0 0 0px rgba(0,240,255,0)",
-          ],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          repeatDelay: 10,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute inset-[-4px] rounded-full"
-        style={{
-          background:
-            "radial-gradient(circle at 30% 30%, rgba(0,240,255,0.08), transparent 70%)",
-        }}
-        animate={reducedMotion ? { scale: 1 } : { scale: [1, 1.08, 1] }}
-        transition={{
-          duration: 4,
-          repeat: reducedMotion ? 0 : Infinity,
-          repeatDelay: 4,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        key={currentIndex}
-        initial={{ rotate: 0 }}
-        animate={reducedMotion ? { rotate: 0 } : { rotate: [0, 8, -8, 0] }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="relative flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-secondary p-[1.5px] shadow-lg"
-      >
-            <div className="flex h-full w-full items-center justify-center rounded-full bg-accent/[0.12] backdrop-blur-sm">
-          <motion.div
-            key={currentIndex}
-            initial={{ scale: 1, rotate: 0 }}
-            animate={
-              reducedMotion
-                ? { scale: 1 }
-                : { scale: [1, 1.15, 1], rotate: [0, 8, 0] }
-            }
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-          >
-            <Icon className="h-[22px] w-[22px] text-white" />
-          </motion.div>
-        </div>
-      </motion.div>
-    </div>
-  )
-}
-
-function PanelContent({ onClose, openQuoteModal }) {
-  const contactOptions = getContactOptions(openQuoteModal)
+function PanelContent({ onClose }) {
+  const contactOptions = getContactOptions()
 
   return (
     <div className="relative p-5">
+      {/* Ambient glows */}
       <div
-        className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full opacity-8"
+        className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full opacity-20"
         style={{
-          background:
-            "radial-gradient(circle, rgba(0, 240, 255, 0.12), transparent 70%)",
+          background: "radial-gradient(circle, rgba(80, 255, 175, 0.15), transparent 70%)",
           filter: "blur(50px)",
         }}
       />
       <div
-        className="pointer-events-none absolute -bottom-16 -left-16 h-36 w-36 rounded-full opacity-8"
+        className="pointer-events-none absolute -bottom-16 -left-16 h-36 w-36 rounded-full opacity-20"
         style={{
-          background:
-            "radial-gradient(circle, rgba(139, 92, 246, 0.1), transparent 70%)",
+          background: "radial-gradient(circle, rgba(139, 92, 246, 0.12), transparent 70%)",
           filter: "blur(50px)",
         }}
       />
+
       <div className="relative">
+        {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h3 className="font-display text-xl font-bold text-foreground">
+            <h3 className="font-display text-xl font-bold text-white">
               Let&apos;s Build{" "}
-              <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
-                Something Amazing
-              </span>
+              <span className="text-[#50FFAF]">Something Amazing</span>
             </h3>
-            <p className="mt-1.5 text-xs text-muted">
+            <p className="mt-1.5 text-sm text-slate-400">
               Choose how you&apos;d like to start your project.
             </p>
           </div>
           <button
             onClick={onClose}
             aria-label="Close"
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-accent/15 bg-accent/10 text-accent backdrop-blur-xl transition-all duration-300 hover:rotate-90 hover:bg-accent/20 hover:border-accent/40"
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-800 text-slate-300 transition-all duration-300 hover:bg-slate-700 hover:text-white"
           >
             <X className="h-4 w-4" />
           </button>
         </div>
+
+        {/* Options */}
         <div className="mt-5 space-y-3">
           {contactOptions.map((opt, idx) => (
             <motion.button
@@ -218,44 +111,37 @@ function PanelContent({ onClose, openQuoteModal }) {
                 setTimeout(opt.action, 300)
               }}
               whileTap={{ scale: 0.98 }}
-              className="group relative w-full rounded-xl border border-accent/15 bg-accent/[0.06] p-3.5 text-left backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              className="group relative w-full rounded-xl border border-slate-800 bg-slate-900 p-3.5 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-[#50FFAF]/40 hover:bg-slate-800 hover:shadow-lg"
             >
-              <div
-                className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(0,240,255,0.03), rgba(139,92,246,0.03))",
-                }}
-              />
               <div className="relative flex items-center gap-3.5">
-                <div
-                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${opt.gradient} transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-6deg]`}
-                >
-                  <opt.icon className={`h-[18px] w-[18px] ${opt.iconColor}`} />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#50FFAF]/10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-6deg]">
+                  <opt.icon className="h-[18px] w-[18px] text-[#50FFAF]" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-foreground">
+                  <p className="text-base font-semibold text-white">
                     {opt.title}
                   </p>
-                  <p className="mt-0.5 truncate text-[11px] text-muted">
+                  <p className="mt-0.5 truncate text-xs text-slate-400">
                     {opt.subtitle}
                   </p>
                 </div>
-                <ArrowRight className="h-4 w-4 shrink-0 text-accent transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-accent" />
+                <ArrowUpRight className="h-4 w-4 shrink-0 text-[#50FFAF] transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </div>
             </motion.button>
           ))}
         </div>
-        <div className="mt-4 border-t border-border/40 pt-3">
+
+        {/* Footer */}
+        <div className="mt-4 border-t border-slate-800 pt-3">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             </span>
-            <span className="text-[11px] font-medium text-accent">
+            <span className="text-xs font-medium text-emerald-400">
               Online Now
             </span>
-            <span className="ml-auto text-[11px] text-muted">
+            <span className="ml-auto text-xs text-slate-400">
               Avg. response: under 30 min
             </span>
           </div>
@@ -265,46 +151,108 @@ function PanelContent({ onClose, openQuoteModal }) {
   )
 }
 
-function useReducedMotion() {
-  const subscribe = useCallback((callback) => {
-    const mql = window.matchMedia("(prefers-reduced-motion: reduce)")
-    mql.addEventListener("change", callback)
-    return () => mql.removeEventListener("change", callback)
-  }, [])
+function CircularBadge({ onClick, isVisible }) {
+  const [isHovered, setIsHovered] = useState(false)
 
-  const getSnapshot = useCallback(
-    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-    []
+  return (
+    <motion.button
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{
+        opacity: isVisible ? 1 : 0,
+        scale: isVisible ? 1 : 0,
+      }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      onClick={onClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      className="relative flex h-24 w-24 md:h-32 md:w-32 cursor-pointer items-center justify-center outline-none"
+      aria-label="Open contact menu"
+    >
+      {/* Outer ring — dark purple */}
+      <div
+        className="absolute inset-0 rounded-full"
+        style={{
+          background: "#4C1D95",
+          boxShadow:
+            "0 0 40px rgba(76, 29, 149, 0.35), 0 8px 32px rgba(0,0,0,0.3)",
+        }}
+      />
+
+      {/* Rotating SVG circular text */}
+      <motion.div
+        className="absolute inset-0 overflow-visible"
+        animate={{ rotate: 360 }}
+        transition={{
+          duration: isHovered ? 6 : 12,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      >
+        <svg
+          viewBox="0 0 120 120"
+          className="w-full h-full overflow-visible"
+          aria-hidden="true"
+        >
+          <defs>
+            <path
+              id="textPath"
+              d="M 60, 60 m -42, 0 a 42,42 0 1,1 84,0 a 42,42 0 1,1 -84,0"
+              fill="none"
+            />
+          </defs>
+          <text
+            fill="#FFFFFF"
+            fontSize="9"
+            fontWeight="600"
+            letterSpacing="3.5"
+            className="uppercase"
+          >
+            <textPath href="#textPath" startOffset="0%">
+              SAY HI • HIRE US • CONTACT US • DROP A LINE •{" "}
+            </textPath>
+          </text>
+        </svg>
+      </motion.div>
+
+      {/* Inner white circle */}
+      <div className="relative z-10 flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-white shadow-lg">
+        <motion.div
+          animate={{ y: isHovered ? 3 : 0 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        >
+          <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-[#4C1D95]" />
+        </motion.div>
+      </div>
+
+      {/* Ambient glow */}
+      <div
+        className="absolute -inset-3 rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(76, 29, 149, 0.2), transparent 70%)",
+        }}
+      />
+    </motion.button>
   )
-
-  const getServerSnapshot = useCallback(() => false, [])
-
-  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
 }
 
 export function FloatingContact() {
   const [isOpen, setIsOpen] = useState(false)
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isHovered, setIsHovered] = useState(false)
-  const reducedMotion = useReducedMotion()
-  const { openQuoteModal } = useQuoteModal()
-
-  const isPaused = isHovered || isOpen
-  const currentMessage = messages[currentIndex]
-  const DynamicIcon = currentMessage.icon
-
+  const [isVisible, setIsVisible] = useState(false)
   const open = useCallback(() => setIsOpen(true), [])
   const close = useCallback(() => setIsOpen(false), [])
 
-  const advanceMessage = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % messages.length)
-  }, [])
-
+  // Scroll visibility: show after scrolling past ~400px
   useEffect(() => {
-    if (isPaused) return
-    const timer = setInterval(advanceMessage, DISPLAY_DURATION)
-    return () => clearInterval(timer)
-  }, [isPaused, advanceMessage])
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > 400)
+    }
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   useEffect(() => {
     if (!isOpen) return
@@ -317,13 +265,7 @@ export function FloatingContact() {
 
   return (
     <>
-      <style>{`
-        @keyframes progress-fill {
-          from { width: 0%; }
-          to { width: 100%; }
-        }
-      `}</style>
-
+      {/* Backdrop */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -338,6 +280,7 @@ export function FloatingContact() {
         )}
       </AnimatePresence>
 
+      {/* Mobile bottom sheet */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -351,14 +294,15 @@ export function FloatingContact() {
               damping: 28,
               mass: 0.9,
             }}
-            className="fixed inset-x-0 bottom-0 z-[9999] block overflow-hidden rounded-t-3xl border border-accent/15 bg-[#0D0D18]/90 shadow-2xl backdrop-blur-2xl md:hidden"
+            className="fixed inset-x-0 bottom-0 z-[9999] block overflow-hidden rounded-t-3xl border border-slate-800 bg-slate-950 shadow-2xl md:hidden"
           >
-            <PanelContent onClose={close} openQuoteModal={openQuoteModal} />
+            <PanelContent onClose={close} />
           </motion.div>
         )}
       </AnimatePresence>
 
-      <div className="fixed bottom-[20px] right-[16px] z-[9999] md:bottom-[32px] md:right-[32px]">
+      {/* Fixed bottom-right anchor */}
+      <div className="fixed bottom-6 right-6 z-[9999] md:bottom-8 md:right-8">
         <AnimatePresence mode="popLayout">
           {isOpen ? (
             <motion.div
@@ -372,122 +316,19 @@ export function FloatingContact() {
                 damping: 28,
                 mass: 0.9,
               }}
-              className="hidden overflow-hidden rounded-3xl border border-accent/15 bg-[#0D0D18]/90 shadow-2xl backdrop-blur-2xl md:block md:w-[380px]"
-              style={{ marginBottom: "calc(56px + 16px)" }}
+              className="hidden overflow-hidden rounded-3xl border border-slate-800 bg-slate-950 shadow-2xl md:block md:w-[380px]"
+              style={{ marginBottom: "calc(128px + 16px)" }}
             >
-              <PanelContent onClose={close} openQuoteModal={openQuoteModal} />
+              <PanelContent onClose={close} />
             </motion.div>
           ) : (
-            <motion.button
-              key="dock"
+            <motion.div
+              key="badge"
               layout
-              initial={{ opacity: 0, y: 80 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.8, y: 20 }}
-              transition={{
-                type: "spring",
-                stiffness: 200,
-                damping: 20,
-                mass: 1,
-              }}
-              onClick={open}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              whileHover={{ scale: 1.03, y: -8 }}
-              whileTap={{ scale: 0.98 }}
-              className="group flex cursor-pointer items-center gap-0 border-none bg-transparent outline-none"
+              className="flex justify-end"
             >
-              <motion.div
-                animate={
-                  reducedMotion
-                    ? {}
-                    : {
-                        y: [0, -2, 3, -3, 1, -1, 2, -2, 0],
-                      }
-                }
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="flex items-center"
-              >
-                <Orb
-                  icon={DynamicIcon}
-                  currentIndex={currentIndex}
-                  reducedMotion={reducedMotion}
-                />
-              </motion.div>
-
-              <div
-                className="relative hidden h-[56px] items-center overflow-hidden rounded-full border border-accent/15 px-4 backdrop-blur-xl md:flex"
-                style={{ background: "rgba(13, 13, 24, 0.85)" }}
-              >
-                <motion.div
-                  animate={
-                    reducedMotion
-                      ? {}
-                      : {
-                          y: [0, -2, 3, -3, 1, -1, 2, -2, 0],
-                        }
-                  }
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="flex w-[206px] flex-col justify-center"
-                >
-                  <div className="relative flex items-center gap-1.5">
-                    <div className="relative h-[22px] flex-1 overflow-hidden">
-                      <AnimatePresence mode="popLayout">
-                        <motion.span
-                          key={currentIndex}
-                          initial={{ y: 22, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          exit={
-                            reducedMotion
-                              ? { opacity: 0 }
-                              : { y: -22, opacity: 0 }
-                          }
-                          transition={
-                            reducedMotion
-                              ? { duration: 0 }
-                              : {
-                                  type: "spring",
-                                  stiffness: 180,
-                                  damping: 22,
-                                  mass: 1,
-                                }
-                          }
-                          className="inline-block whitespace-nowrap text-[16px] font-semibold leading-none text-foreground"
-                        >
-                          <HighlightedText
-                            text={currentMessage.text}
-                            keywords={currentMessage.keywords}
-                          />
-                        </motion.span>
-                      </AnimatePresence>
-                    </div>
-                  </div>
-                </motion.div>
-
-                <div className="absolute bottom-0 left-4 right-4 h-[2px] overflow-hidden rounded-full bg-foreground/10">
-                  <div
-                    key={currentIndex}
-                    className="h-full rounded-full bg-gradient-to-r from-accent to-accent-secondary"
-                    style={{
-                      width: "0%",
-                      animationName: "progress-fill",
-                      animationDuration: `${DISPLAY_DURATION}ms`,
-                      animationTimingFunction: "linear",
-                      animationFillMode: "forwards",
-                      animationPlayState: isPaused ? "paused" : "running",
-                    }}
-                  />
-                </div>
-              </div>
-            </motion.button>
+              <CircularBadge onClick={open} isVisible={isVisible} />
+            </motion.div>
           )}
         </AnimatePresence>
       </div>

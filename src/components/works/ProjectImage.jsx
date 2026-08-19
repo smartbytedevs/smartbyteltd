@@ -10,18 +10,11 @@ function ProjectThumb({ project, priority }) {
 
   if (!src) {
     return (
-      <div className="relative w-full h-full flex flex-col items-center justify-center gap-4 rounded-[18px] bg-[#0D0D18] border border-accent/15 overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(139, 92, 246, 0.03))",
-          }}
-        />
-        <div className="relative z-10 w-16 h-16 rounded-2xl bg-accent/[0.08] border border-accent/15 flex items-center justify-center font-display text-2xl font-bold text-accent/70">
+      <div className="relative w-full h-full flex flex-col items-center justify-center gap-4 rounded-[18px] bg-gray-100 border border-gray-200 overflow-hidden">
+        <div className="relative z-10 w-16 h-16 rounded-2xl bg-white border border-gray-200 flex items-center justify-center font-display text-2xl font-bold text-gray-400">
           {project.title?.charAt(0)}
         </div>
-        <span className="relative z-10 text-xs font-semibold text-muted/70 uppercase tracking-label">
+        <span className="relative z-10 text-xs font-semibold text-gray-400 uppercase tracking-label">
           {project.title}
         </span>
       </div>
@@ -65,36 +58,16 @@ export function ProjectImage({ project, index }) {
 
   return (
     <div className="relative w-full">
-      {/* Glass border glow behind */}
-      <div
-        className={`absolute -inset-[2px] rounded-[28px] opacity-0 transition-opacity duration-500 pointer-events-none ${
-          isHovered ? "opacity-100" : ""
-        }`}
-        style={{
-          background: "linear-gradient(135deg, rgba(0, 240, 255, 0.12), rgba(139, 92, 246, 0.06))",
-          filter: "blur(8px)",
-        }}
-      />
-
-      {/* Main container */}
       <div
         ref={containerRef}
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="relative rounded-[28px] overflow-hidden cursor-pointer"
+        className="relative rounded-[28px] overflow-hidden cursor-pointer border border-gray-200"
         style={{
           aspectRatio: "16/10",
         }}
       >
-        {/* Border */}
-        <div
-          className={`absolute inset-0 rounded-[28px] border transition-colors duration-500 z-10 pointer-events-none ${
-            isHovered ? "border-accent/25" : "border-accent/15"
-          }`}
-        />
-
-        {/* Image container with zoom */}
         <motion.div
           className="absolute inset-0"
           animate={{
@@ -109,43 +82,18 @@ export function ProjectImage({ project, index }) {
           }}
         >
           <ProjectThumb project={project} priority={index === 0} />
-
-          {/* Dark overlay on hover */}
-          <motion.div
-            className="absolute inset-0 pointer-events-none"
-            animate={{ opacity: isHovered ? 0.4 : 0 }}
-            transition={{ duration: 0.4 }}
-            style={{
-              background: "linear-gradient(135deg, rgba(0, 240, 255, 0.08), rgba(13, 13, 24, 0.5))",
-            }}
-          />
         </motion.div>
 
-        {/* Hover overlay text */}
         <motion.div
           className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none"
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/60 backdrop-blur-md border border-accent/15">
-            <span className="text-xs font-semibold text-foreground">View Project</span>
-            <ArrowRight className="w-3.5 h-3.5 text-accent" />
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm border border-gray-200 shadow-sm">
+            <span className="text-xs font-semibold text-gray-900">View Project</span>
+            <ArrowRight className="w-3.5 h-3.5 text-[#50FFAF]" />
           </div>
         </motion.div>
-
-        {/* Floating animation */}
-        <div className="absolute inset-0 pointer-events-none z-0">
-          <motion.div
-            className="absolute inset-0"
-            initial={false}
-            animate={{ y: [0, -4, 0] }}
-            transition={{
-              duration: 5 + (index % 3) * 0.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
       </div>
     </div>
   )

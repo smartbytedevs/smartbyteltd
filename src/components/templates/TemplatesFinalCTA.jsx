@@ -5,10 +5,8 @@ import { SafeSlideUp } from "@/components/common/SafeMotion"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
 import { Particles } from "@/components/why-smartbyte/Particles"
 import { MessageSquare, ArrowRight, Send } from "lucide-react"
-import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 export function TemplatesFinalCTA() {
-  const { openQuoteModal } = useQuoteModal()
 
   return (
     <section className="relative py-32 md:py-40 overflow-hidden bg-background">
@@ -62,25 +60,25 @@ export function TemplatesFinalCTA() {
               <PremiumCTA
                 icon={MessageSquare}
                 showArrow
-                onClick={() =>
-                  openQuoteModal({
-                    source: "templates",
-                    projectType: "Website Template",
-                    heading: "Book a Free Consultation",
-                  })
-                }
+                onClick={() => {
+                  const params = new URLSearchParams()
+                  params.set("source", "templates")
+                  params.set("projectType", "Website Template")
+                  params.set("heading", "Book a Free Consultation")
+                  window.location.href = `/contact?${params.toString()}`
+                }}
               >
                 Book Consultation
               </PremiumCTA>
               <button
                 type="button"
-                onClick={() =>
-                  openQuoteModal({
-                    source: "templates",
-                    projectType: "Website Template",
-                    heading: "Book a Free Consultation",
-                  })
-                }
+                onClick={() => {
+                  const params = new URLSearchParams()
+                  params.set("source", "templates")
+                  params.set("projectType", "Website Template")
+                  params.set("heading", "Book a Free Consultation")
+                  window.location.href = `/contact?${params.toString()}`
+                }}
                 className="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-accent/[0.12] hover:border-border/55 transition-all duration-300"
               >
                 <Send className="w-4 h-4" />

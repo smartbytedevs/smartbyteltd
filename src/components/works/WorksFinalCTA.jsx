@@ -3,10 +3,7 @@
 import { motion } from "motion/react"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
 import { SafeSlideUp } from "@/components/common/SafeMotion"
-import { useQuoteModal } from "@/components/quote/QuoteModalContext"
-
 export function WorksFinalCTA() {
-  const { openQuoteModal } = useQuoteModal()
 
   return (
     <section className="relative py-32 md:py-40 overflow-hidden bg-background">
@@ -62,7 +59,7 @@ export function WorksFinalCTA() {
 
         <SafeSlideUp delay={0.3}>
           <div className="flex flex-wrap justify-center gap-4">
-            <PremiumCTA showArrow size="lg" onClick={() => openQuoteModal({ source: "works" })}>
+            <PremiumCTA showArrow size="lg" onClick={() => (window.location.href = "/contact")}>
               Start Your Project
             </PremiumCTA>
             <a

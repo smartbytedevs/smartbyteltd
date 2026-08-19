@@ -15,7 +15,7 @@ export function Logo({ scale }) {
 
     const glow = animate(
       el,
-      { filter: ["brightness(1)", "brightness(1.08)", "brightness(1)"] },
+      { filter: ["brightness(1)", "brightness(1.05)", "brightness(1)"] },
       { duration: 4, repeat: Infinity, ease: "easeInOut" }
     )
 
@@ -26,7 +26,7 @@ export function Logo({ scale }) {
     <Link
       href="/"
       aria-label="SmartByte home"
-      className="relative block outline-none focus-visible:ring-2 focus-visible:ring-accent/50 rounded-md"
+      className="relative block outline-none focus-visible:ring-2 focus-visible:ring-gray-900/20 rounded-md"
       style={{ height: 40 }}
     >
       <span
@@ -34,15 +34,15 @@ export function Logo({ scale }) {
         className="flex items-center h-full tracking-[-0.03em] leading-none"
         style={{ scale }}
       >
-        <span className="font-display text-[20px] sm:text-[24px] lg:text-[28px] font-bold text-foreground">
+        <span className="font-display text-[20px] sm:text-[24px] lg:text-[28px] font-bold text-gray-900">
           Smart
         </span>
         <span
-          className="font-display text-[20px] sm:text-[24px] lg:text-[28px] font-bold bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent"
+          className="font-display text-[20px] sm:text-[24px] lg:text-[28px] font-bold text-gray-900"
           style={{
             transition: "filter 0.25s ease",
           }}
-          onMouseEnter={(e) => { e.currentTarget.style.filter = "brightness(1.1)" }}
+          onMouseEnter={(e) => { e.currentTarget.style.filter = "brightness(0.7)" }}
           onMouseLeave={(e) => { e.currentTarget.style.filter = "brightness(1)" }}
         >
           Byte

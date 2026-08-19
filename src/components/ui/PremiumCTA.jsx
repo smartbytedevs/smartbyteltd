@@ -11,10 +11,11 @@ const sizes = {
   lg: "px-10 py-4 text-sm",
 }
 
-const glowShadows = {
-  sm: "0 0 20px rgba(0, 240, 255, 0.2), 0 0 40px rgba(139, 92, 246, 0.1)",
-  md: "0 0 30px rgba(0, 240, 255, 0.3), 0 0 60px rgba(139, 92, 246, 0.15)",
-  lg: "0 0 40px rgba(0, 240, 255, 0.3), 0 0 80px rgba(139, 92, 246, 0.15)",
+const variants = {
+  primary:
+    "bg-gray-900 hover:bg-gray-800 text-white shadow-sm hover:shadow-md",
+  accent:
+    "bg-[#50FFAF] hover:bg-[#45E69D] text-gray-900 shadow-sm hover:shadow-md",
 }
 
 const PremiumCTA = forwardRef(function PremiumCTA(
@@ -25,11 +26,8 @@ const PremiumCTA = forwardRef(function PremiumCTA(
     icon: Icon,
     variant = "primary",
     size = "md",
-    glow = "md",
     showArrow = false,
     arrowMotion = false,
-    scaleOnHover = false,
-    extraGlow = false,
     className,
     ...props
   },
@@ -37,25 +35,7 @@ const PremiumCTA = forwardRef(function PremiumCTA(
 ) {
   const content = (
     <>
-      <span className="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-accent-secondary opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
-
-      <span
-        className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-        style={{ boxShadow: glowShadows[glow] }}
-      />
-
-      {extraGlow && (
-        <span
-          className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100"
-          style={{
-            boxShadow:
-              "0 0 60px rgba(0, 240, 255, 0.15), 0 0 100px rgba(139, 92, 246, 0.08)",
-            animation: "pulse-glow 3s ease-in-out infinite 1s",
-          }}
-        />
-      )}
-
-      <span className="relative z-10 text-white flex items-center gap-2">
+      <span className="relative z-10 flex items-center gap-2">
         {Icon && <Icon className="w-4 h-4 shrink-0" />}
         {children}
       </span>
@@ -67,30 +47,22 @@ const PremiumCTA = forwardRef(function PremiumCTA(
           whileHover={{ x: 4 }}
           transition={{ duration: 0.2 }}
         >
-          <ArrowRight className="w-4 h-4 text-white shrink-0" />
+          <ArrowRight className="w-4 h-4 shrink-0" />
         </motion.span>
       )}
 
       {showArrow && !arrowMotion && (
         <span className="relative z-10">
-          <ArrowRight className="w-4 h-4 text-white shrink-0 group-hover:translate-x-0.5 transition-transform duration-200" />
+          <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-0.5 transition-transform duration-200" />
         </span>
-      )}
-
-      {scaleOnHover && (
-        <motion.div
-          className="absolute inset-0 rounded-full"
-          whileHover={{ scale: 1.04 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          style={{ pointerEvents: "none" }}
-        />
       )}
     </>
   )
 
   const classes = cn(
-    "group relative inline-flex items-center gap-3 overflow-hidden rounded-full font-semibold tracking-nav transition-all duration-500 outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+    "group relative inline-flex items-center gap-3 overflow-hidden rounded-full font-semibold tracking-nav transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-[#50FFAF]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F7F8] hover:scale-[1.02] active:scale-[0.98]",
     sizes[size],
+    variants[variant],
     className
   )
 

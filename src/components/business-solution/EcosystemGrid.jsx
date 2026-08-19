@@ -32,32 +32,29 @@ export function EcosystemGrid({ activeNodeId, onNodeSelect, nodes }) {
                 whileHover={{ y: -4 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="group relative w-full flex flex-col items-center gap-3 rounded-2xl border px-4 py-5 text-center outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 transition-colors duration-300"
-                style={{
-                  borderColor: isActive ? "rgba(0, 240, 255, 0.45)" : "rgba(255, 255, 255, 0.12)",
-                  background: isActive ? "rgba(0, 240, 255, 0.07)" : "rgba(255, 255, 255, 0.04)",
-                  boxShadow: isActive
-                    ? "0 0 30px rgba(0, 240, 255, 0.12), inset 0 0 20px rgba(0, 240, 255, 0.03)"
-                    : "none",
-                }}
+                className={`group relative w-full flex flex-col items-center gap-3 rounded-2xl border px-4 py-5 text-center outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#50FFAF]/60 transition-all duration-300 ${
+                  isActive
+                    ? "border-[#50FFAF]/40 bg-[#50FFAF]/5 shadow-sm"
+                    : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm"
+                }`}
               >
                 <span
-                  className="flex items-center justify-center w-10 h-10 rounded-xl transition-colors duration-300"
-                  style={{
-                    background: isActive ? "rgba(0, 240, 255, 0.15)" : "rgba(0, 240, 255, 0.08)",
-                    border: `1px solid ${
-                      isActive ? "rgba(0, 240, 255, 0.3)" : "rgba(255, 255, 255, 0.12)"
-                    }`,
-                  }}
+                  className={`flex items-center justify-center w-10 h-10 rounded-xl transition-colors duration-300 ${
+                    isActive
+                      ? "bg-[#50FFAF]/15 border border-[#50FFAF]/30"
+                      : "bg-gray-100 border border-gray-200"
+                  }`}
                 >
                   <Icon
-                    className="w-5 h-5"
-                    style={{ color: isActive ? "#00F0FF" : "rgba(0, 240, 255, 0.8)" }}
+                    className={`w-5 h-5 transition-colors duration-300 ${
+                      isActive ? "text-[#50FFAF]" : "text-gray-400"
+                    }`}
                   />
                 </span>
                 <span
-                  className="text-xs sm:text-sm font-medium leading-snug transition-colors duration-300"
-                  style={{ color: isActive ? "#00F0FF" : "rgba(255, 255, 255, 0.65)" }}
+                  className={`text-xs sm:text-sm font-medium leading-snug transition-colors duration-300 ${
+                    isActive ? "text-gray-900" : "text-gray-500"
+                  }`}
                 >
                   {node.label}
                 </span>

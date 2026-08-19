@@ -3,7 +3,6 @@
 import { motion } from "motion/react"
 import { Mail, Phone, MapPin, Clock, Zap } from "lucide-react"
 import { contactInfo, quickResponse, socialLinks } from "./contactData"
-import { useMousePosition } from "@/hooks/useMousePosition"
 
 function ContactMethod({ icon: Icon, title, value, index }) {
   return (
@@ -12,17 +11,17 @@ function ContactMethod({ icon: Icon, title, value, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: 0.3 + index * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative overflow-hidden rounded-2xl border border-accent/15 bg-accent/[0.04] p-4 backdrop-blur-xl transition-all duration-500 hover:border-accent/20 hover:shadow-[0_0_30px_rgba(0,240,255,0.06)]"
+      className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:border-gray-300"
     >
       <div className="flex items-start gap-4">
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent/10 to-accent-secondary/10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-8deg]">
-          <Icon className="h-5 w-5 text-accent" />
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gray-50 transition-all duration-300 group-hover:scale-110">
+          <Icon className="h-5 w-5 text-[#50FFAF]" />
         </div>
         <div className="min-w-0">
-          <p className="text-xs font-medium uppercase tracking-wider text-muted">
+          <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
             {title}
           </p>
-          <p className="mt-0.5 truncate text-sm font-medium text-foreground">
+          <p className="mt-0.5 truncate text-sm font-medium text-gray-900">
             {value}
           </p>
         </div>
@@ -70,7 +69,7 @@ function SocialIcon({ name, url, index }) {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay: 0.5 + index * 0.08, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-accent/15 bg-accent/[0.04] text-accent backdrop-blur-xl transition-all duration-500 hover:scale-110 hover:border-accent/30 hover:text-accent hover:shadow-[0_0_20px_rgba(0,240,255,0.1)]"
+      className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 shadow-sm transition-all duration-300 hover:scale-110 hover:border-gray-300 hover:text-gray-900 hover:shadow-md"
     >
       {iconMap[name]}
     </motion.a>
@@ -92,21 +91,12 @@ export function ConversationPanel() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="relative overflow-hidden rounded-3xl border border-accent/15 bg-accent/[0.04] p-6 backdrop-blur-xl sm:p-8"
+        className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8"
       >
-        <div
-          className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full opacity-10"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(0, 240, 255, 0.2), transparent 70%)",
-            filter: "blur(40px)",
-          }}
-        />
-
-        <h3 className="font-display text-xl font-bold text-foreground sm:text-2xl">
+        <h3 className="font-display text-xl font-bold text-gray-900 sm:text-2xl">
           Ready to Start?
         </h3>
-        <p className="mt-3 text-sm leading-relaxed text-muted">
+        <p className="mt-3 text-sm leading-relaxed text-gray-500">
           Every successful business starts with a conversation. Tell us your
           idea and we&apos;ll help you turn it into reality.
         </p>
@@ -123,23 +113,23 @@ export function ConversationPanel() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="inline-flex items-center gap-3 rounded-2xl border border-accent/10 bg-accent/[0.03] px-5 py-3"
+        className="inline-flex items-center gap-3 rounded-2xl border border-gray-200 bg-white px-5 py-3 shadow-sm"
       >
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent/20 to-accent-secondary/10">
-          <Zap className="h-4 w-4 text-accent" />
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#50FFAF]/10">
+          <Zap className="h-4 w-4 text-[#50FFAF]" />
         </div>
         <div>
-          <p className="text-xs font-medium uppercase tracking-wider text-muted">
+          <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
             {quickResponse.label}
           </p>
-          <p className="text-sm font-semibold text-accent">
+          <p className="text-sm font-semibold text-gray-900">
             {quickResponse.value}
           </p>
         </div>
       </motion.div>
 
       <div className="pt-2">
-        <p className="mb-3 text-xs font-medium uppercase tracking-wider text-muted">
+        <p className="mb-3 text-xs font-medium uppercase tracking-wider text-gray-400">
           Follow Us
         </p>
         <div className="flex items-center gap-3">

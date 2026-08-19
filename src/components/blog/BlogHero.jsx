@@ -6,11 +6,8 @@ import { Particles } from "@/components/why-smartbyte/Particles"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
 import { SafeSlideUp } from "@/components/common/SafeMotion"
 import { ArrowDown } from "lucide-react"
-import { useQuoteModal } from "@/components/quote/QuoteModalContext"
-
 export function BlogHero({ onBrowse }) {
   const ref = useRef(null)
-  const { openQuoteModal } = useQuoteModal()
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] })
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
   const y = useTransform(scrollYProgress, [0, 0.8], [0, 80])
@@ -76,7 +73,7 @@ export function BlogHero({ onBrowse }) {
                 </PremiumCTA>
                 <button
                   type="button"
-                  onClick={() => openQuoteModal({ source: "blog" })}
+                  onClick={() => (window.location.href = "/contact")}
                   className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-accent/[0.12] hover:border-accent/30 transition-all duration-300"
                 >
                   Start Your Project

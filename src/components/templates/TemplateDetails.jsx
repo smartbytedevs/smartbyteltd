@@ -11,7 +11,6 @@ import {
   ArrowLeft, ArrowUpRight, Check, Clock, Eye, Layout, ShoppingCart, Star, Zap,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { useQuoteModal } from "@/components/quote/QuoteModalContext"
 
 const categoryGradients = {
   restaurant: "from-emerald-500/30 to-green-600/30",
@@ -119,16 +118,16 @@ export function TemplateDetails({ template }) {
   const industryLabel = industries.find((i) => i.value === template.industry)?.label || template.industry
   const price = getTemplatePriceDisplay(template)
   const related = getRelatedTemplates(template, 3)
-  const { openQuoteModal } = useQuoteModal()
 
-  const buyThisTemplate = () =>
-    openQuoteModal({
-      source: "template",
-      projectType: "Website Template",
-      template: template.title,
-      heading: "Get This Template",
-      subtitle: `Order "${template.title}" — we'll set it up and customize it for your business.`,
-    })
+  const buyThisTemplate = () => {
+    const params = new URLSearchParams()
+    params.set("source", "template")
+    params.set("projectType", "Website Template")
+    params.set("template", template.title)
+    params.set("heading", "Get This Template")
+    params.set("subtitle", `Order "${template.title}" — we'll set it up and customize it for your business.`)
+    window.location.href = `/contact?${params.toString()}`
+  }
 
   const liveHref = template.liveLink || ""
   const showLive = Boolean(liveHref)

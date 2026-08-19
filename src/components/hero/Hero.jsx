@@ -1,72 +1,90 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "motion/react"
-import { ChevronDown } from "lucide-react"
-import { HeroBackground } from "./HeroBackground"
+import { motion } from "motion/react"
+import { ArrowRight, Calendar } from "lucide-react"
 import { HeroHeading } from "./HeroHeading"
-import { HeroButtons } from "./HeroButtons"
-import { HeroTrust } from "./HeroTrust"
-import { HeroAnimation } from "./HeroAnimation"
-import { SafeFade, SafeSlideUp } from "@/components/common/SafeMotion"
-
+import { ClientTicker } from "./ClientTicker"
 export function Hero() {
-  const ref = useRef(null)
-  const { scrollY } = useScroll()
-  const opacity = useTransform(scrollY, [0, 300], [1, 0])
-  const scale = useTransform(scrollY, [0, 300], [1, 0.95])
 
   return (
-    <section
-      ref={ref}
-      id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-background"
-    >
-      <HeroBackground />
+    <section id="home" className="relative w-full bg-[#F7F7F8] overflow-hidden">
+      {/* Subtle background accents */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div
+          className="absolute top-[10%] right-[-10%] w-[600px] h-[600px] rounded-full opacity-[0.03]"
+          style={{
+            background: "radial-gradient(circle, rgba(80, 255, 175, 0.4), transparent 70%)",
+            filter: "blur(80px)",
+          }}
+        />
+        <div
+          className="absolute bottom-[20%] left-[-5%] w-[500px] h-[500px] rounded-full opacity-[0.02]"
+          style={{
+            background: "radial-gradient(circle, rgba(0, 0, 0, 0.1), transparent 70%)",
+            filter: "blur(80px)",
+          }}
+        />
+      </div>
 
-      <motion.div
-        className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-[104px] pb-16"
-        style={{ opacity, scale }}
-      >
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[calc(100vh-90px-64px)]">
-          {/* Left content */}
-          <div className="flex flex-col justify-center py-12 lg:py-0">
-            <HeroHeading />
-
-            <SafeSlideUp delay={1.2} className="mt-6 text-base sm:text-lg text-muted max-w-lg leading-relaxed">
-              We help startups and businesses transform their ideas into powerful
-              digital products, custom software, and scalable web experiences.
-            </SafeSlideUp>
-
-            <HeroButtons />
-            <HeroTrust />
-          </div>
-
-          {/* Right side animation */}
-          <div className="hidden lg:flex items-center justify-center">
-            <HeroAnimation />
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 3, duration: 0.8 }}
-      >
+      {/* Main content */}
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-[140px] md:pt-[160px] pb-12 md:pb-16">
+        {/* Top badge */}
         <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2 text-muted-foreground"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="mb-8 md:mb-10"
         >
-          <span className="text-[10px] font-semibold tracking-nav uppercase">
-            Scroll
+          <span className="inline-flex items-center gap-2 bg-white border border-gray-200/80 rounded-full px-4 py-2 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-[#50FFAF]" />
+            <span className="text-sm font-medium text-gray-600">
+              SmartByte Web Development Agency
+            </span>
+            <ArrowRight className="w-3.5 h-3.5 text-gray-400" />
           </span>
-          <ChevronDown className="w-4 h-4" />
         </motion.div>
-      </motion.div>
+
+        {/* Giant heading with inline media */}
+        <HeroHeading />
+
+        {/* Description + CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="mt-10 md:mt-14 max-w-xl"
+        >
+          <p className="text-base md:text-lg text-gray-500 leading-relaxed mb-8">
+            We help startups and businesses transform their ideas into powerful
+            digital products, custom software, and scalable web experiences.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <motion.button
+              type="button"
+              onClick={() => (window.location.href = "/contact")}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="group inline-flex items-center gap-3 bg-gray-900 hover:bg-gray-800 text-white rounded-full px-8 py-4 font-semibold text-sm transition-colors duration-300 shadow-lg shadow-gray-900/10"
+            >
+              <Calendar className="w-4 h-4" />
+              Book Free Consultation
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" />
+            </motion.button>
+
+            <a
+              href="#work"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-300 px-4 py-4"
+            >
+              View Portfolio
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </a>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Client logo ticker */}
+      <ClientTicker />
     </section>
   )
 }

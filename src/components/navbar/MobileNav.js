@@ -1,105 +1,79 @@
 "use client"
 
-import { useRef, useEffect, useCallback } from "react"
+import { useEffect, useCallback } from "react"
 import { motion, AnimatePresence } from "motion/react"
-import { SafeSlideUp } from "@/components/common/SafeMotion"
-import Link from "next/link"
-import { CTAButton } from "./CTAButton"
-
+import { X, ArrowRight } from "lucide-react"
+import { NavItem } from "./NavItem"
 export function MobileNav({ isOpen, onClose, links, activeHref }) {
-  const overlayRef = useRef(null)
+  const handleQuote = useCallback(() => {
+    onClose()
+    setTimeout(() => (window.location.href = "/contact"), 300)
+  }, [onClose])
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden"
-    } else {
+    if (!isOpen) return
+    const handleKey = (e) => {
+      if (e.key === "Escape") onClose()
+    }
+    window.addEventListener("keydown", handleKey)
+    document.body.style.overflow = "hidden"
+    return () => {
+      window.removeEventListener("keydown", handleKey)
       document.body.style.overflow = ""
     }
-    return () => { document.body.style.overflow = "" }
-  }, [isOpen])
-
-  const handleKeyDown = useCallback(
-    (e) => {
-      if (e.key === "Escape") onClose()
-    },
-    [onClose]
-  )
+  }, [isOpen, onClose])
 
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          ref={overlayRef}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.35 }}
-          className="fixed inset-0 z-40"
-          onKeyDown={handleKeyDown}
+          id="mobile-menu"
           role="dialog"
           aria-modal="true"
-          aria-label="Navigation menu"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          className="fixed inset-0 z-[9998] bg-white/95 backdrop-blur-xl md:hidden"
         >
-          {/* Dark overlay with blur */}
-          <div className="absolute inset-0 bg-background/95 backdrop-blur-3xl" />
-
-          {/* Menu content — slides downward */}
-          <motion.div
-            initial={{ y: "-100%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "-100%" }}
-            transition={{
-              type: "spring",
-              stiffness: 200,
-              damping: 30,
-              mass: 1,
-            }}
-            className="relative z-10 flex flex-col items-center justify-center h-full px-8"
-          >
-            {/* Navigation links */}
-            <nav
-              className="flex flex-col items-center gap-6 -mt-16"
-              role="navigation"
-              aria-label="Mobile navigation"
+          <div className="flex flex-col items-center justify-center h-full px-6">
+            <button
+              onClick={onClose}
+              aria-label="Close menu"
+              className="absolute top-20 right-6 w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
             >
-              {links.map((link, i) => {
-                const isActive = link.href === activeHref
-                return (
-                  <SafeSlideUp
-                    key={link.href}
-                    delay={i * 0.06}
-                  >
-                    <Link
-                      href={link.href}
-                      onClick={onClose}
-                      className={`block font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight transition-colors duration-300 outline-none focus-visible:ring-2 focus-visible:ring-accent/50 rounded-md px-2 ${
-                        isActive
-                          ? "text-accent"
-                          : "text-muted-foreground hover:text-foreground"
-                      }`}
-                      aria-current={isActive ? "page" : undefined}
-                    >
-                      {isActive ? (
-                        <motion.span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
-                          {link.label}
-                        </motion.span>
-                      ) : (
-                        link.label
-                      )}
-                    </Link>
-                  </SafeSlideUp>
-                )
-              })}
+              <X className="w-5 h-5" />
+            </button>
+
+            <nav className="flex flex-col items-center gap-2">
+              {links.map((link) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: links.indexOf(link) * 0.05 }}
+                >
+                  <NavItem
+                    href={link.href}
+                    label={link.label}
+                    isActive={activeHref === link.href}
+                    onClick={onClose}
+                  />
+                </motion.div>
+              ))}
             </nav>
 
-            {/* CTA fixed at bottom */}
-            <SafeSlideUp
-              delay={links.length * 0.06}
-              className="absolute bottom-10 left-8 right-8"
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              onClick={handleQuote}
+              className="mt-10 inline-flex items-center gap-2 bg-[#50FFAF] hover:bg-[#40E69D] text-gray-900 text-base font-semibold px-8 py-4 rounded-full transition-colors duration-300 shadow-sm"
             >
-              <CTAButton onClick={onClose} mobile />
-            </SafeSlideUp>
-          </motion.div>
+              Contact Us
+              <ArrowRight className="w-4 h-4" />
+            </motion.button>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

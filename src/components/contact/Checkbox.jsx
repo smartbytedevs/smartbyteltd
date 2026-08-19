@@ -34,10 +34,10 @@ export function Checkbox({
             className={cn(
               "flex h-[20px] w-[20px] items-center justify-center rounded-[6px] border transition-all duration-250",
               checked
-                ? "border-accent bg-accent/20"
+                ? "border-[#50FFAF] bg-[#50FFAF]/20"
                 : showError
-                    ? "border-red-500/50 bg-accent/[0.04]"
-                    : "border-border bg-accent/[0.04] group-hover:border-accent/40"
+                    ? "border-red-500/50 bg-gray-50"
+                    : "border-gray-200 bg-white group-hover:border-[#50FFAF]/40"
             )}
           >
             {checked && (
@@ -46,14 +46,14 @@ export function Checkbox({
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <Check className="h-[12px] w-[12px] text-accent" />
+                <Check className="h-[12px] w-[12px] text-[#50FFAF]" />
               </motion.div>
             )}
           </div>
         </div>
-        <span className="select-none text-sm text-muted transition-colors duration-250 group-hover:text-foreground/80">
+        <span className="select-none text-sm text-gray-500 transition-colors duration-250 group-hover:text-gray-700">
           {label}
-          <span className="ml-0.5 text-accent">*</span>
+          <span className="ml-0.5 text-[#50FFAF]">*</span>
         </span>
       </label>
 

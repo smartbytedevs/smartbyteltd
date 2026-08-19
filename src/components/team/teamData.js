@@ -1,36 +1,3 @@
-import { Lightbulb, ShieldCheck, HeartHandshake, TrendingUp } from "lucide-react"
-
-export const values = [
-  {
-    id: "innovation",
-    icon: Lightbulb,
-    title: "Innovation",
-    description:
-      "We stay ahead of technology trends to deliver solutions that give our clients a competitive edge.",
-  },
-  {
-    id: "quality",
-    icon: ShieldCheck,
-    title: "Quality",
-    description:
-      "Every line of code, every pixel, and every interaction is crafted with obsessive attention to detail.",
-  },
-  {
-    id: "transparency",
-    icon: HeartHandshake,
-    title: "Transparency",
-    description:
-      "Clear communication, honest timelines, and no hidden costs — because trust is the foundation of partnership.",
-  },
-  {
-    id: "partnership",
-    icon: TrendingUp,
-    title: "Long-Term Partnership",
-    description:
-      "We don't just deliver projects. We become your technology partner for the long haul.",
-  },
-]
-
 export const team = [
   {
     id: "hasib",
@@ -40,7 +7,8 @@ export const team = [
     skills: ["Next.js", "React", "Node.js", "MongoDB", "AI"],
     experience: "5+ Years · Full Stack",
     image: "/images/team/hasib.jpg",
-    available: true,
+    linkedin: "#",
+    portfolio: "#",
   },
   {
     id: "frontend-dev",
@@ -50,7 +18,8 @@ export const team = [
     skills: ["React", "Tailwind", "TypeScript", "Motion"],
     experience: "3+ Years · Frontend",
     image: "/images/team/frontend-dev.jpg",
-    available: true,
+    linkedin: "#",
+    portfolio: "#",
   },
   {
     id: "sales",
@@ -60,7 +29,8 @@ export const team = [
     skills: ["CRM", "Communication", "Strategy", "Negotiation"],
     experience: "4+ Years · Business Dev",
     image: "/images/team/sales.jpg",
-    available: true,
+    linkedin: "#",
+    portfolio: "#",
   },
   {
     id: "content",
@@ -70,7 +40,8 @@ export const team = [
     skills: ["Branding", "SEO", "Social Media", "Research"],
     experience: "3+ Years · Marketing",
     image: "/images/team/content.jpg",
-    available: true,
+    linkedin: "#",
+    portfolio: "#",
   },
   {
     id: "growth",
@@ -80,6 +51,7 @@ export const team = [
     skills: ["Ads", "Analytics", "Growth", "Community"],
     experience: "3+ Years · Growth",
     image: "/images/team/growth.jpg",
-    available: true,
+    linkedin: "#",
+    portfolio: "#",
   },
 ]

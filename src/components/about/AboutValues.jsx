@@ -5,7 +5,7 @@ import { SafeSlideUp, SafeReveal } from "@/components/common/SafeMotion"
 export function AboutValues({ values }) {
   return (
     <div className="mt-20">
-      <SafeSlideUp className="text-xs font-semibold tracking-label uppercase text-foreground/40 mb-6 block">
+      <SafeSlideUp className="text-xs font-semibold tracking-label uppercase text-gray-400 mb-6 block">
         Our Values
       </SafeSlideUp>
 
@@ -19,42 +19,18 @@ export function AboutValues({ values }) {
               key={item.id}
               delay={0.15 + i * 0.1}
               viewportMargin="-50px"
-              className={`group relative overflow-hidden rounded-2xl p-6 ${offset}`}
+              className={`group relative overflow-hidden rounded-2xl p-6 border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow duration-300 ${offset}`}
             >
-              <div
-                className="absolute inset-0 rounded-2xl border border-accent/15 transition-colors duration-500"
-                style={{
-                  background: "rgba(13, 13, 24, 0.7)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                }}
-              />
-
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{
-                  background: "radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.04), transparent 70%)",
-                }}
-              />
-
-              <div
-                className="absolute -inset-2 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{
-                  background: "linear-gradient(135deg, rgba(0, 240, 255, 0.06), rgba(139, 92, 246, 0.03))",
-                  filter: "blur(16px)",
-                  zIndex: -1,
-                }}
-              />
-
               <div className="relative z-10">
-                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-accent/15 to-accent-secondary/15 border border-border/25 flex items-center justify-center mb-4">
-                  <Icon className="w-4.5 h-4.5 text-accent" />
+                <div className="w-9 h-9 rounded-lg bg-[#50FFAF]/10 border border-[#50FFAF]/20 flex items-center justify-center mb-4">
+                  <Icon className="w-4.5 h-4.5 text-[#50FFAF]" />
                 </div>
 
-                <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                <h3 className="font-display text-lg font-bold text-gray-900 mb-2">
                   {item.title}
                 </h3>
 
-                <p className="text-sm text-muted leading-relaxed">
+                <p className="text-sm text-gray-500 leading-relaxed">
                   {item.description}
                 </p>
               </div>

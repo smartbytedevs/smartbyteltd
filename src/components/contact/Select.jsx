@@ -30,20 +30,20 @@ export function Select({
       <div
         className={cn(
           "relative h-[64px] w-full rounded-[18px] transition-all duration-200",
-          "bg-accent/[0.04] backdrop-blur-xl",
+          "bg-white",
           "border",
           focused
-            ? "border-accent/60 shadow-[0_0_0_4px_rgba(0,240,255,0.08)]"
+            ? "border-[#50FFAF]/60 shadow-[0_0_0_4px_rgba(80,255,175,0.08)]"
             : showError
               ? "border-red-500/50"
-              : "border-accent/15 hover:border-border-hover"
+              : "border-gray-200 hover:border-gray-300"
         )}
       >
         {withIcon && (
           <div
             className={cn(
               "pointer-events-none absolute left-[20px] top-1/2 -translate-y-1/2 transition-colors duration-200",
-              focused ? "text-accent" : "text-muted-foreground"
+              focused ? "text-[#50FFAF]" : "text-gray-400"
             )}
             aria-hidden="true"
           >
@@ -68,20 +68,20 @@ export function Select({
             "pr-[52px]",
             "font-body text-sm transition-colors duration-200",
             hasValue
-              ? "text-foreground"
+              ? "text-gray-900"
               : float
                 ? "text-transparent"
-                : "text-foreground",
-            "caret-accent"
+                : "text-gray-900",
+            "caret-[#50FFAF]"
           )}
           aria-invalid={showError ? "true" : "false"}
           aria-describedby={showError ? `${id}-error` : undefined}
         >
-          <option value="" disabled className="bg-background text-muted">
+          <option value="" disabled className="bg-white text-gray-400">
             {`Select ${label}`}
           </option>
           {options.map((opt) => (
-            <option key={opt} value={opt} className="bg-background text-foreground">
+            <option key={opt} value={opt} className="bg-white text-gray-900">
               {opt}
             </option>
           ))}
@@ -91,8 +91,8 @@ export function Select({
           className={cn(
             "pointer-events-none absolute right-[20px] top-1/2 -translate-y-1/2 h-[18px] w-[18px] transition-all duration-200",
             float
-              ? "rotate-180 text-accent"
-              : "text-muted-foreground"
+              ? "rotate-180 text-[#50FFAF]"
+              : "text-gray-400"
           )}
           aria-hidden="true"
         />
@@ -105,12 +105,12 @@ export function Select({
             float
               ? [
                   "-top-[10px] translate-y-0 text-[12px] font-medium opacity-100",
-                  "bg-background px-2 rounded-full",
+                  "bg-white px-2 rounded-full",
                   focused
-                    ? "text-accent"
+                    ? "text-[#50FFAF]"
                     : showError
                       ? "text-red-600"
-                      : "text-muted-foreground",
+                      : "text-gray-400",
                 ]
               : [
                   "top-1/2 -translate-y-1/2 text-sm opacity-0",
@@ -118,7 +118,7 @@ export function Select({
           )}
         >
           {label}
-          {required && <span className="ml-0.5 text-accent">*</span>}
+          {required && <span className="ml-0.5 text-[#50FFAF]">*</span>}
         </label>
 
         {showSuccess && (
@@ -127,7 +127,7 @@ export function Select({
             animate={{ scale: 1, opacity: 1 }}
             className="absolute right-[44px] top-1/2 -translate-y-1/2"
           >
-            <CheckCircle className="h-[18px] w-[18px] text-accent" />
+            <CheckCircle className="h-[18px] w-[18px] text-[#50FFAF]" />
           </motion.div>
         )}
         {showError && (

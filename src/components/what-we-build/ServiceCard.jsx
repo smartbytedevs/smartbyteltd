@@ -3,13 +3,10 @@
 import { motion, AnimatePresence } from "motion/react"
 import { Check, ArrowRight } from "lucide-react"
 import { CardPreview } from "./CardPreview"
-import { useQuoteModal } from "@/components/quote/QuoteModalContext"
-
 export function ServiceCard({ service }) {
-  const { openQuoteModal } = useQuoteModal()
 
   return (
-    <div className="h-[540px] rounded-2xl border border-border/30 bg-gradient-to-b from-white/[0.03] to-white/[0.01] backdrop-blur-sm overflow-hidden">
+    <div className="h-[540px] rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={service.id}
@@ -20,23 +17,23 @@ export function ServiceCard({ service }) {
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Browser Preview */}
-          <div className="h-24 shrink-0 rounded-xl overflow-hidden border border-border/25">
+          <div className="h-24 shrink-0 rounded-xl overflow-hidden border border-gray-100">
             <CardPreview type={service.previewType} />
           </div>
 
           {/* Service Name */}
-          <h3 className="font-display text-xl font-semibold text-foreground mt-4 shrink-0">
+          <h3 className="font-display text-xl font-semibold text-gray-900 mt-4 shrink-0">
             {service.title}
           </h3>
 
           {/* Description */}
-          <p className="text-sm text-muted leading-relaxed mt-3 shrink-0">
+          <p className="text-sm text-gray-500 leading-relaxed mt-3 shrink-0">
             {service.description}
           </p>
 
           {/* Key Benefits */}
           <div className="mt-4 shrink-0">
-            <p className="text-[10px] font-semibold tracking-label uppercase text-muted mb-2">
+            <p className="text-[10px] font-semibold tracking-label uppercase text-gray-400 mb-2">
               Key Benefits
             </p>
             <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
@@ -46,10 +43,10 @@ export function ServiceCard({ service }) {
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.25, delay: 0.04 * i }}
-                  className="flex items-center gap-2 text-xs text-muted"
+                  className="flex items-center gap-2 text-xs text-gray-600"
                 >
-                  <span className="flex-shrink-0 w-3.5 h-3.5 rounded-full bg-accent/15 flex items-center justify-center">
-                    <Check className="w-2 h-2 text-accent" />
+                  <span className="flex-shrink-0 w-3.5 h-3.5 rounded-full bg-[#50FFAF]/15 flex items-center justify-center">
+                    <Check className="w-2 h-2 text-[#50FFAF]" />
                   </span>
                   {benefit}
                 </motion.span>
@@ -59,7 +56,7 @@ export function ServiceCard({ service }) {
 
           {/* Technology Stack */}
           <div className="mt-3 shrink-0">
-            <p className="text-[10px] font-semibold tracking-label uppercase text-muted mb-1.5">
+            <p className="text-[10px] font-semibold tracking-label uppercase text-gray-400 mb-1.5">
               Technology Stack
             </p>
             <div className="flex items-center gap-1.5 flex-wrap">
@@ -69,7 +66,7 @@ export function ServiceCard({ service }) {
                   initial={{ opacity: 0, x: -6 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.25, delay: 0.05 * i }}
-                  className="px-2 py-0.5 text-[10px] font-semibold rounded-md bg-accent/[0.08] text-foreground/60 border border-accent/15"
+                  className="px-2 py-0.5 text-[10px] font-semibold rounded-md bg-gray-100 text-gray-600 border border-gray-200"
                 >
                   {tech}
                 </motion.span>
@@ -80,18 +77,18 @@ export function ServiceCard({ service }) {
           {/* Delivery + Price row */}
           <div className="flex items-center gap-6 mt-3 shrink-0">
             <div>
-              <p className="text-[10px] font-semibold tracking-label uppercase text-muted mb-0.5">
+              <p className="text-[10px] font-semibold tracking-label uppercase text-gray-400 mb-0.5">
                 Estimated Delivery
               </p>
-              <span className="text-sm font-medium text-foreground">
+              <span className="text-sm font-medium text-gray-900">
                 {service.delivery}
               </span>
             </div>
             <div>
-              <p className="text-[10px] font-semibold tracking-label uppercase text-muted mb-0.5">
+              <p className="text-[10px] font-semibold tracking-label uppercase text-gray-400 mb-0.5">
                 Starting Price
               </p>
-              <span className="text-sm font-bold bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent">
+              <span className="text-sm font-bold text-gray-900">
                 {service.price}
               </span>
             </div>
@@ -109,14 +106,14 @@ export function ServiceCard({ service }) {
           >
             <button
               type="button"
-              onClick={() =>
-                openQuoteModal({
-                  source: "home",
-                  heading: service.ctaText,
-                  subtitle: `Let's discuss your ${service.title.toLowerCase()} project.`,
-                })
-              }
-              className="group inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold bg-accent text-white hover:bg-accent-hover transition-colors duration-300 cursor-pointer"
+              onClick={() => {
+                const params = new URLSearchParams()
+                params.set("source", "home")
+                params.set("heading", service.ctaText)
+                params.set("subtitle", `Let's discuss your ${service.title.toLowerCase()} project.`)
+                window.location.href = `/contact?${params.toString()}`
+              }}
+              className="group inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold bg-gray-900 text-white hover:bg-gray-800 transition-colors duration-300 cursor-pointer"
             >
               {service.ctaText}
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-300" />

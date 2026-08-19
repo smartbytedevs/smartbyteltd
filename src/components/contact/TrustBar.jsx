@@ -6,12 +6,10 @@ import { trustStats } from "./contactData"
 function AnimatedStat({ value, suffix, label, delay }) {
   return (
     <SafeSlideUp delay={delay} className="text-center">
-      <div className="font-display text-3xl font-bold leading-none tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-        <span>
-          <SafeCounter value={value} suffix={suffix} />
-        </span>
+      <div className="font-display text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+        <SafeCounter value={value} suffix={suffix} className="text-[#50FFAF]" />
       </div>
-      <p className="mt-1.5 text-xs text-muted sm:text-sm">{label}</p>
+      <p className="mt-1.5 text-xs text-gray-400 sm:text-sm">{label}</p>
     </SafeSlideUp>
   )
 }
@@ -19,18 +17,11 @@ function AnimatedStat({ value, suffix, label, delay }) {
 export function TrustBar() {
   return (
     <SafeReveal className="mt-20 lg:mt-24">
-      <div
-        className="relative overflow-hidden rounded-3xl border border-border/25"
-        style={{
-          background: "rgba(13, 13, 24, 0.2)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-        }}
-      >
+      <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm">
         <div className="pointer-events-none absolute inset-0 grid grid-cols-2 lg:grid-cols-4">
-          <div className="border-r border-border/25" />
-          <div className="hidden border-r border-border/25 lg:block" />
-          <div className="hidden border-r border-border/25 lg:block" />
+          <div className="border-r border-gray-100" />
+          <div className="hidden border-r border-gray-100 lg:block" />
+          <div className="hidden border-r border-gray-100 lg:block" />
         </div>
 
         <div className="relative z-10 grid grid-cols-2 gap-8 px-8 py-10 lg:grid-cols-4 sm:px-12 sm:py-14">

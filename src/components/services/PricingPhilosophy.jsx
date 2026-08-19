@@ -6,10 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading"
 import { pricingTiers } from "@/data/services"
 import { cn } from "@/lib/utils"
 import { ArrowRight, CheckCircle, Clock, DollarSign, Users } from "lucide-react"
-import { useQuoteModal } from "@/components/quote/QuoteModalContext"
-
 export function PricingPhilosophy() {
-  const { openQuoteModal } = useQuoteModal()
 
   return (
     <section id="request-quote" className="relative py-24 md:py-32 overflow-hidden bg-background">
@@ -103,7 +100,7 @@ export function PricingPhilosophy() {
 
                   <button
                     type="button"
-                    onClick={() => openQuoteModal({ source: "services" })}
+                    onClick={() => (window.location.href = "/contact")}
                     className={cn(
                       "group flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-medium transition-all duration-300",
                       tier.id === "growth"

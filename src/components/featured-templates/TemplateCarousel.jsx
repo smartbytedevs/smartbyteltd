@@ -12,13 +12,7 @@ function NavArrow({ direction, onClick, disabled }) {
 
   return (
     <motion.button
-      className="relative w-[52px] h-[52px] rounded-2xl flex items-center justify-center outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
-      style={{
-        background: "rgba(13, 13, 24, 0.4)",
-        backdropFilter: "blur(24px)",
-        WebkitBackdropFilter: "blur(24px)",
-        border: "1px solid rgba(255, 255, 255, 0.06)",
-      }}
+      className="relative w-[52px] h-[52px] rounded-2xl flex items-center justify-center bg-white border border-gray-200 shadow-sm hover:shadow-md hover:border-gray-300 outline-none focus-visible:ring-2 focus-visible:ring-[#50FFAF]/50"
       onClick={onClick}
       disabled={disabled}
       initial={{ opacity: 0, scale: 0.9 }}
@@ -27,25 +21,13 @@ function NavArrow({ direction, onClick, disabled }) {
         scale: disabled ? 0.9 : 1,
         pointerEvents: disabled ? "none" : "auto",
       }}
-      whileHover={{
-        y: -3,
-        borderColor: "rgba(0, 240, 255, 0.3)",
-        boxShadow: "0 0 24px rgba(0, 240, 255, 0.1)",
-        background: "rgba(13, 13, 24, 0.55)",
-      }}
+      whileHover={{ y: -3 }}
       whileTap={{ scale: 0.93, y: 0 }}
       transition={{ type: "spring", stiffness: 350, damping: 25 }}
       aria-label={direction === "left" ? "Previous templates" : "Next templates"}
     >
-      {/* Glow behind arrow on hover */}
-      <motion.div
-        className="absolute inset-0 rounded-2xl"
-        whileHover={{ boxShadow: "inset 0 0 20px rgba(0, 240, 255, 0.06)" }}
-        transition={{ duration: 0.3 }}
-      />
-
       <motion.div whileHover={{ x: direction === "left" ? -2 : 2 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
-        <Icon className="w-4 h-4 text-muted group-hover:text-foreground" />
+        <Icon className="w-4 h-4 text-gray-500" />
       </motion.div>
     </motion.button>
   )
@@ -129,8 +111,8 @@ export function TemplateCarousel({ templates }) {
       aria-roledescription="carousel"
     >
       {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" aria-hidden="true" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" aria-hidden="true" />
+      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#F7F7F8] to-transparent z-10 pointer-events-none" aria-hidden="true" />
+      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#F7F7F8] to-transparent z-10 pointer-events-none" aria-hidden="true" />
 
       {/* Showcase row — clipped, no overflow scrolling */}
       <div className="overflow-hidden">
@@ -168,10 +150,10 @@ export function TemplateCarousel({ templates }) {
         {templates.map((_, i) => (
           <button
             key={i}
-            className={`h-1 rounded-full transition-all duration-500 outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
+            className={`h-1 rounded-full transition-all duration-500 outline-none focus-visible:ring-2 focus-visible:ring-[#50FFAF]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F7F8] ${
               i === activeIndex
-                ? "w-8 bg-gradient-to-r from-accent to-accent-secondary"
-                : "w-2 bg-accent/[0.08] hover:bg-accent/[0.12]"
+                ? "w-8 bg-[#50FFAF]"
+                : "w-2 bg-gray-300 hover:bg-gray-400"
             }`}
             onClick={() => goTo(i)}
             aria-label={`Go to template ${i + 1}`}
