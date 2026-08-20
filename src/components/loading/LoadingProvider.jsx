@@ -1,22 +1,35 @@
 "use client"
 
-import { useState, useCallback } from "react"
-import { usePathname } from "next/navigation"
+import { useState, useEffect, useCallback } from "react"
 import { SplashScreen } from "./SplashScreen"
+import { LoadingScreen } from "./LoadingScreen"
+
+const SPLASH_KEY = "smartbyte-splash-seen"
 
 export function LoadingProvider({ children }) {
-  const pathname = usePathname()
-  const [loadingKey, setLoadingKey] = useState(0)
-  const [showLoading, setShowLoading] = useState(true)
+  const [screenType, setScreenType] = useState(null)
 
-  const handleComplete = useCallback(() => {
-    setShowLoading(false)
+  useEffect(() => {
+    const hasSeenSplash = sessionStorage.getItem(SPLASH_KEY)
+    setScreenType(hasSeenSplash ? "loading" : "splash")
+  }, [])
+
+  const handleSplashComplete = useCallback(() => {
+    sessionStorage.setItem(SPLASH_KEY, "1")
+    setScreenType("none")
+  }, [])
+
+  const handleLoadingComplete = useCallback(() => {
+    setScreenType("none")
   }, [])
 
   return (
     <>
-      {showLoading && (
-        <SplashScreen key={loadingKey} onComplete={handleComplete} />
+      {screenType === "splash" && (
+        <SplashScreen onComplete={handleSplashComplete} />
+      )}
+      {screenType === "loading" && (
+        <LoadingScreen onComplete={handleLoadingComplete} />
       )}
       {children}
     </>

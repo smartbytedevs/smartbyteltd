@@ -26,7 +26,7 @@ export function WorkShowcase() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-80px" }}
-        className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+        className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch"
       >
         {projects.map((project) => (
           <motion.div key={project.slug} variants={card}>
@@ -34,14 +34,14 @@ export function WorkShowcase() {
               <motion.article
                 whileHover={{ y: -6 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="overflow-hidden rounded-3xl border border-neutral-200/60 bg-white shadow-sm"
+                className="h-full flex flex-col justify-between overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm group transition-all duration-300 hover:shadow-lg hover:border-neutral-700"
               >
                 {/* Image */}
-                <div className="relative h-72 overflow-hidden">
+                <div className="relative w-full aspect-[16/10] overflow-hidden bg-neutral-900">
                   <img
                     src={project.thumbnail || project.coverImage}
                     alt={project.title}
-                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
                     onError={(e) => {
                       e.currentTarget.style.display = "none"
                     }}
@@ -49,13 +49,20 @@ export function WorkShowcase() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-neutral-900">
-                    {project.title}
-                  </h3>
-                  <span className="mt-2 inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600">
-                    {project.category}
-                  </span>
+                <div className="p-6 flex flex-col flex-grow justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-neutral-900 line-clamp-1 group-hover:text-[#50FFAF] transition-colors">
+                      {project.title}
+                    </h3>
+                    <span className="mt-2.5 inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600">
+                      {project.category}
+                    </span>
+                  </div>
+                  {project.summary && (
+                    <p className="mt-4 text-sm text-neutral-500 leading-relaxed line-clamp-2">
+                      {project.summary}
+                    </p>
+                  )}
                 </div>
               </motion.article>
             </Link>
