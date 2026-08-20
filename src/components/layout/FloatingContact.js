@@ -17,38 +17,32 @@ const getContactOptions = () => [
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    subtitle: "Usually replies within 10 minutes.",
-    action: () => window.open("https://wa.me/8801XXXXXXXXX", "_blank"),
-    gradient: "from-[#25D366]/20 to-[#128C7E]/10",
-    iconColor: "text-[#25D366]",
+    subtitle: "Instant reply",
+    action: () => window.open("https://wa.me/8801234567890", "_blank"),
   },
   {
     icon: Phone,
     title: "Call Us",
-    subtitle: "Speak directly with our team.",
+    subtitle: "Direct phone line",
     action: () => {
-      window.location.href = "tel:+8801XXXXXXXXX"
+      window.location.href = "tel:+8801234567890"
     },
-    gradient: "from-accent-secondary/20 to-accent-secondary/5",
-    iconColor: "text-accent-secondary",
   },
   {
     icon: Mail,
     title: "Email",
-    subtitle: "Send project details.",
+    subtitle: "Send project brief",
     action: () => {
-      window.location.href = "mailto:hello@smartbyte.dev"
+      window.location.href = "mailto:hello@smartbyte.com"
     },
-    gradient: "from-accent/20 to-accent-secondary/10",
-    iconColor: "text-accent",
   },
   {
     icon: Calendar,
     title: "Book Consultation",
-    subtitle: "Free 30-minute discussion.",
-    action: () => { window.location.href = "/contact" },
-    gradient: "from-accent-secondary/20 to-accent-secondary/10",
-    iconColor: "text-accent-secondary",
+    subtitle: "Free 30-min strategy call",
+    action: () => {
+      window.location.href = "/contact"
+    },
   },
 ]
 
@@ -56,46 +50,30 @@ function PanelContent({ onClose }) {
   const contactOptions = getContactOptions()
 
   return (
-    <div className="relative p-5">
-      {/* Ambient glows */}
-      <div
-        className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full opacity-20"
-        style={{
-          background: "radial-gradient(circle, rgba(80, 255, 175, 0.15), transparent 70%)",
-          filter: "blur(50px)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute -bottom-16 -left-16 h-36 w-36 rounded-full opacity-20"
-        style={{
-          background: "radial-gradient(circle, rgba(139, 92, 246, 0.12), transparent 70%)",
-          filter: "blur(50px)",
-        }}
-      />
-
+    <div className="relative p-6">
       <div className="relative">
         {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h3 className="font-display text-xl font-bold text-white">
+            <h3 className="text-xl font-bold text-white">
               Let&apos;s Build{" "}
-              <span className="text-[#50FFAF]">Something Amazing</span>
+              <span className="text-[#50FFAF]">Something Great</span>
             </h3>
-            <p className="mt-1.5 text-sm text-slate-400">
-              Choose how you&apos;d like to start your project.
+            <p className="mt-1 text-xs text-neutral-400">
+              Select your preferred way to reach out.
             </p>
           </div>
           <button
             onClick={onClose}
             aria-label="Close"
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-800 text-slate-300 transition-all duration-300 hover:bg-slate-700 hover:text-white"
+            className="bg-neutral-900 text-neutral-400 hover:text-white hover:bg-neutral-800 w-8 h-8 rounded-full flex items-center justify-center transition-colors shrink-0"
           >
             <X className="h-4 w-4" />
           </button>
         </div>
 
         {/* Options */}
-        <div className="mt-5 space-y-3">
+        <div className="mt-5">
           {contactOptions.map((opt, idx) => (
             <motion.button
               key={opt.title}
@@ -111,40 +89,33 @@ function PanelContent({ onClose }) {
                 setTimeout(opt.action, 300)
               }}
               whileTap={{ scale: 0.98 }}
-              className="group relative w-full rounded-xl border border-slate-800 bg-slate-900 p-3.5 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-[#50FFAF]/40 hover:bg-slate-800 hover:shadow-lg"
+              className="group w-full bg-[#161616] hover:bg-[#222222] border border-neutral-800/80 hover:border-neutral-700 rounded-2xl p-3.5 transition-all flex items-center justify-between cursor-pointer mb-2.5 last:mb-0 text-left"
             >
-              <div className="relative flex items-center gap-3.5">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#50FFAF]/10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-6deg]">
-                  <opt.icon className="h-[18px] w-[18px] text-[#50FFAF]" />
+              <div className="flex items-center gap-3.5">
+                <div className="bg-neutral-900 p-2.5 rounded-xl border border-neutral-800 text-[#50FFAF] group-hover:scale-105 transition-transform">
+                  <opt.icon className="w-[18px] h-[18px]" />
                 </div>
-                <div className="min-w-0 flex-1">
-                  <p className="text-base font-semibold text-white">
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold text-white">
                     {opt.title}
                   </p>
-                  <p className="mt-0.5 truncate text-xs text-slate-400">
+                  <p className="text-xs text-neutral-400 mt-0.5">
                     {opt.subtitle}
                   </p>
                 </div>
-                <ArrowUpRight className="h-4 w-4 shrink-0 text-[#50FFAF] transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </div>
+              <ArrowUpRight className="w-4 h-4 shrink-0 text-[#50FFAF] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </motion.button>
           ))}
         </div>
 
         {/* Footer */}
-        <div className="mt-4 border-t border-slate-800 pt-3">
-          <div className="flex items-center gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-            </span>
-            <span className="text-xs font-medium text-emerald-400">
-              Online Now
-            </span>
-            <span className="ml-auto text-xs text-slate-400">
-              Avg. response: under 30 min
-            </span>
+        <div className="pt-3 mt-3 border-t border-neutral-900 flex items-center justify-between text-xs font-medium text-neutral-500">
+          <div className="flex items-center">
+            <span className="w-2 h-2 rounded-full bg-[#50FFAF] animate-pulse inline-block mr-2" />
+            Available for new projects
           </div>
+          <span>Avg reply: &lt; 15m</span>
         </div>
       </div>
     </div>
@@ -170,13 +141,13 @@ function CircularBadge({ onClick, isVisible }) {
       className="relative flex h-24 w-24 md:h-32 md:w-32 cursor-pointer items-center justify-center outline-none"
       aria-label="Open contact menu"
     >
-      {/* Outer ring — dark purple */}
+      {/* Outer ring — mint green */}
       <div
         className="absolute inset-0 rounded-full"
         style={{
-          background: "#40e69d",
+          background: "#50FFAF",
           boxShadow:
-            "0 0 40px rgba(76, 29, 149, 0.35), 0 8px 32px rgba(0,0,0,0.3)",
+            "0 0 40px rgba(80, 255, 175, 0.35), 0 8px 32px rgba(0,0,0,0.3)",
         }}
       />
 
@@ -210,19 +181,19 @@ function CircularBadge({ onClick, isVisible }) {
             className="uppercase"
           >
             <textPath href="#textPath" startOffset="0%">
-              SAY HI • HIRE US • CONTACT US • DROP A LINE •{" "}
+              {circularText}
             </textPath>
           </text>
         </svg>
       </motion.div>
 
-      {/* Inner white circle */}
-      <div className="relative z-10 flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-white shadow-lg">
+      {/* Inner dark circle */}
+      <div className="relative z-10 flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-[#0D0D0D] shadow-lg">
         <motion.div
           animate={{ y: isHovered ? 3 : 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-[#4C1D95]" />
+          <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-[#50FFAF]" />
         </motion.div>
       </div>
 
@@ -231,7 +202,7 @@ function CircularBadge({ onClick, isVisible }) {
         className="absolute -inset-3 rounded-full pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(76, 29, 149, 0.2), transparent 70%)",
+            "radial-gradient(circle, rgba(80, 255, 175, 0.2), transparent 70%)",
         }}
       />
     </motion.button>
@@ -294,7 +265,7 @@ export function FloatingContact() {
               damping: 28,
               mass: 0.9,
             }}
-            className="fixed inset-x-0 bottom-0 z-[9999] block overflow-hidden rounded-t-3xl border border-slate-800 bg-slate-950 shadow-2xl md:hidden"
+            className="fixed inset-x-0 bottom-0 z-[9999] block overflow-hidden rounded-t-3xl border border-neutral-800 bg-[#0D0D0D] shadow-2xl md:hidden"
           >
             <PanelContent onClose={close} />
           </motion.div>
@@ -316,7 +287,7 @@ export function FloatingContact() {
                 damping: 28,
                 mass: 0.9,
               }}
-              className="hidden overflow-hidden rounded-3xl border border-slate-800 bg-slate-950 shadow-2xl md:block md:w-[380px]"
+              className="hidden overflow-hidden rounded-3xl border border-neutral-800 bg-[#0D0D0D] shadow-2xl md:block md:w-[380px]"
               style={{ marginBottom: "calc(128px + 16px)" }}
             >
               <PanelContent onClose={close} />
