@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useRef } from "react"
 import { motion, useInView } from "motion/react"
@@ -11,13 +11,13 @@ const planLabels = ["Starter", "Business", "Software", "Custom"]
 function FeatureRow({ row, index, isInView }) {
   const statusIcon = (val) => {
     if (val === true)
-      return <Check className="w-3.5 h-3.5 text-[#50FFAF]" />
+      return <Check className="w-3.5 h-3.5 text-[#8ba4ff]" />
     if (val === "optional")
       return <span className="text-[9px] font-semibold text-gray-400 uppercase tracking-label">Opt</span>
     if (val === "basic")
       return <span className="text-[9px] font-semibold text-gray-400 uppercase tracking-label">Basic</span>
     if (val === "advanced")
-      return <span className="text-[9px] font-semibold text-[#50FFAF] uppercase tracking-label">Adv</span>
+      return <span className="text-[9px] font-semibold text-[#8ba4ff] uppercase tracking-label">Adv</span>
     return <Minus className="w-3 h-3 text-gray-200" />
   }
 
@@ -109,13 +109,13 @@ export function PricingFeatureCompare() {
                     </span>
                     <div className="flex justify-center">
                       {val === true ? (
-                        <Check className="w-3 h-3 text-[#50FFAF]" />
+                        <Check className="w-3 h-3 text-[#8ba4ff]" />
                       ) : val === "optional" ? (
                         <span className="text-[8px] font-semibold text-gray-400">Opt</span>
                       ) : val === "basic" ? (
                         <span className="text-[8px] font-semibold text-gray-400">Bsc</span>
                       ) : val === "advanced" ? (
-                        <span className="text-[8px] font-semibold text-[#50FFAF]">Adv</span>
+                        <span className="text-[8px] font-semibold text-[#8ba4ff]">Adv</span>
                       ) : (
                         <Minus className="w-2.5 h-2.5 text-gray-200" />
                       )}

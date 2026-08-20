@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import Link from "next/link"
@@ -315,7 +315,7 @@ export function ProjectCaseStudy({ project }) {
               <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
                 {/* Left: Testimonial */}
                 <div className="flex gap-6 lg:col-span-7">
-                  <div className="w-1 shrink-0 rounded-full bg-[#50FFAF]" />
+                  <div className="w-1 shrink-0 rounded-full bg-[#8ba4ff]" />
                   <div>
                     {testimonial ? (
                       <>
@@ -368,7 +368,7 @@ export function ProjectCaseStudy({ project }) {
                       onChange={(e) =>
                         setForm((f) => ({ ...f, name: e.target.value }))
                       }
-                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#50FFAF]/40"
+                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#8ba4ff]/40"
                     />
                     <input
                       type="tel"
@@ -378,7 +378,7 @@ export function ProjectCaseStudy({ project }) {
                       onChange={(e) =>
                         setForm((f) => ({ ...f, phone: e.target.value }))
                       }
-                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#50FFAF]/40"
+                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#8ba4ff]/40"
                     />
                     <input
                       type="email"
@@ -387,11 +387,11 @@ export function ProjectCaseStudy({ project }) {
                       onChange={(e) =>
                         setForm((f) => ({ ...f, email: e.target.value }))
                       }
-                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#50FFAF]/40"
+                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#8ba4ff]/40"
                     />
                     <button
                       type="submit"
-                      className="mt-2 inline-flex items-center rounded-full bg-[#50FFAF] px-8 py-3 text-sm font-semibold text-black transition-transform hover:scale-105"
+                      className="mt-2 inline-flex items-center rounded-full bg-[#8ba4ff] px-8 py-3 text-sm font-semibold text-black transition-transform hover:scale-105"
                     >
                       Submit
                     </button>

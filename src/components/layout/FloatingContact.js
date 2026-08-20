@@ -57,7 +57,7 @@ function PanelContent({ onClose }) {
           <div>
             <h3 className="text-xl font-bold text-white">
               Let&apos;s Build{" "}
-              <span className="text-[#50FFAF]">Something Great</span>
+              <span className="text-[#8ba4ff]">Something Great</span>
             </h3>
             <p className="mt-1 text-xs text-neutral-400">
               Select your preferred way to reach out.
@@ -92,7 +92,7 @@ function PanelContent({ onClose }) {
               className="group w-full bg-[#161616] hover:bg-[#222222] border border-neutral-800/80 hover:border-neutral-700 rounded-2xl p-3.5 transition-all flex items-center justify-between cursor-pointer mb-2.5 last:mb-0 text-left"
             >
               <div className="flex items-center gap-3.5">
-                <div className="bg-neutral-900 p-2.5 rounded-xl border border-neutral-800 text-[#50FFAF] group-hover:scale-105 transition-transform">
+                <div className="bg-neutral-900 p-2.5 rounded-xl border border-neutral-800 text-[#8ba4ff] group-hover:scale-105 transition-transform">
                   <opt.icon className="w-[18px] h-[18px]" />
                 </div>
                 <div className="min-w-0">
@@ -104,7 +104,7 @@ function PanelContent({ onClose }) {
                   </p>
                 </div>
               </div>
-              <ArrowUpRight className="w-4 h-4 shrink-0 text-[#50FFAF] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-4 h-4 shrink-0 text-[#8ba4ff] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </motion.button>
           ))}
         </div>
@@ -112,7 +112,7 @@ function PanelContent({ onClose }) {
         {/* Footer */}
         <div className="pt-3 mt-3 border-t border-neutral-900 flex items-center justify-between text-xs font-medium text-neutral-500">
           <div className="flex items-center">
-            <span className="w-2 h-2 rounded-full bg-[#50FFAF] animate-pulse inline-block mr-2" />
+            <span className="w-2 h-2 rounded-full bg-[#8ba4ff] animate-pulse inline-block mr-2" />
             Available for new projects
           </div>
           <span>Avg reply: &lt; 15m</span>
@@ -145,9 +145,9 @@ function CircularBadge({ onClick, isVisible }) {
       <div
         className="absolute inset-0 rounded-full"
         style={{
-          background: "#50FFAF",
+          background: "#8ba4ff",
           boxShadow:
-            "0 0 40px rgba(80, 255, 175, 0.35), 0 8px 32px rgba(0,0,0,0.3)",
+            "0 0 40px rgba(139, 164, 255, 0.35), 0 8px 32px rgba(0,0,0,0.3)",
         }}
       />
 
@@ -193,7 +193,7 @@ function CircularBadge({ onClick, isVisible }) {
           animate={{ y: isHovered ? 3 : 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-[#50FFAF]" />
+          <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 text-[#8ba4ff]" />
         </motion.div>
       </div>
 
@@ -202,7 +202,7 @@ function CircularBadge({ onClick, isVisible }) {
         className="absolute -inset-3 rounded-full pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(80, 255, 175, 0.2), transparent 70%)",
+            "radial-gradient(circle, rgba(139, 164, 255, 0.2), transparent 70%)",
         }}
       />
     </motion.button>

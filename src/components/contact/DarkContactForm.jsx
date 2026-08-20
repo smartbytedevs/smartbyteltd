@@ -166,9 +166,9 @@ export function DarkContactForm() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            className="flex h-20 w-20 items-center justify-center rounded-full bg-[#50FFAF]/10"
+            className="flex h-20 w-20 items-center justify-center rounded-full bg-[#8ba4ff]/10"
           >
-            <CheckCircle className="h-10 w-10 text-[#50FFAF]" />
+            <CheckCircle className="h-10 w-10 text-[#8ba4ff]" />
           </motion.div>
           <h4 className="mt-6 font-display text-2xl font-bold text-white">
             Message Sent!
@@ -279,7 +279,7 @@ export function DarkContactForm() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-[#50FFAF] px-8 py-3.5 text-sm font-semibold text-black transition-colors duration-200 hover:bg-[#45E69D] disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer shadow-lg shadow-[#50FFAF]/15"
+              className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-[#8ba4ff] px-8 py-3.5 text-sm font-semibold text-black transition-colors duration-200 hover:bg-[#7594e6] disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer shadow-lg shadow-[#8ba4ff]/15"
             >
               {formStatus === "submitting" ? (
                 <>

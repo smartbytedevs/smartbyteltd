@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { motion } from "motion/react"
 
@@ -47,7 +47,7 @@ export function WorksHero() {
               }}
               className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-start"
             >
-              <span className="inline-flex shrink-0 items-center rounded-full bg-[#50FFAF] px-4 py-2 text-sm font-semibold text-black">
+              <span className="inline-flex shrink-0 items-center rounded-full bg-[#8ba4ff] px-4 py-2 text-sm font-semibold text-black">
                 Trusted globally
               </span>
               <p className="max-w-xl text-base leading-relaxed text-neutral-600">
@@ -69,7 +69,7 @@ export function WorksHero() {
                 delay: 0.3,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="absolute -top-4 -left-4 z-10 rounded-full bg-[#50FFAF] px-5 py-2 text-sm font-semibold text-black shadow-md"
+              className="absolute -top-4 -left-4 z-10 rounded-full bg-[#8ba4ff] px-5 py-2 text-sm font-semibold text-black shadow-md"
             >
               Full-service agency
             </motion.div>
@@ -109,14 +109,14 @@ export function WorksHero() {
             >
               <a
                 href="mailto:hello@smartbyte.com"
-                className="underline underline-offset-4 transition-colors duration-300 hover:text-[#50FFAF]"
+                className="underline underline-offset-4 transition-colors duration-300 hover:text-[#8ba4ff]"
               >
                 hello@smartbyte.com
               </a>
               <span className="text-neutral-300">|</span>
               <a
                 href="tel:+8801234567890"
-                className="underline underline-offset-4 transition-colors duration-300 hover:text-[#50FFAF]"
+                className="underline underline-offset-4 transition-colors duration-300 hover:text-[#8ba4ff]"
               >
                 +880 1234 567890
               </a>

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import Link from "next/link"
 import { motion } from "motion/react"
@@ -8,7 +8,7 @@ import { ArrowRight, BookOpen } from "lucide-react"
 function MetricCard({ value, label, delay }) {
   return (
     <SafeSlideUp delay={delay} className="rounded-xl p-3.5 bg-gray-50 border border-gray-200">
-      <span className="font-display text-lg sm:text-xl font-bold text-[#50FFAF] block leading-none">
+      <span className="font-display text-lg sm:text-xl font-bold text-[#8ba4ff] block leading-none">
         {value}
       </span>
       <span className="text-[10px] text-gray-400 mt-1 block leading-tight">
@@ -23,7 +23,7 @@ function TechPill({ tech, isHovered }) {
     <span
       className={`text-[10px] font-medium px-2.5 py-1 rounded-full border transition-colors duration-300 ${
         isHovered
-          ? "bg-[#50FFAF]/10 border-[#50FFAF]/20 text-gray-700"
+          ? "bg-[#8ba4ff]/10 border-[#8ba4ff]/20 text-gray-700"
           : "bg-gray-100 border-gray-200 text-gray-500"
       }`}
     >
@@ -46,7 +46,7 @@ export function ProjectDetails({ project, index, isHovered }) {
   return (
     <div className="flex flex-col justify-center h-full">
       <SafeSlideUp delay={containerDelay}>
-        <span className="text-[11px] font-semibold tracking-label uppercase text-[#50FFAF] mb-3 block">
+        <span className="text-[11px] font-semibold tracking-label uppercase text-[#8ba4ff] mb-3 block">
           {project.industry || project.category}
         </span>
       </SafeSlideUp>

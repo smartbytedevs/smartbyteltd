@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useRef, useState, useEffect, useCallback } from "react"
 import { motion } from "motion/react"
@@ -12,7 +12,7 @@ function NavArrow({ direction, onClick, disabled }) {
 
   return (
     <motion.button
-      className="relative w-[52px] h-[52px] rounded-2xl flex items-center justify-center bg-white border border-gray-200 shadow-sm hover:shadow-md hover:border-gray-300 outline-none focus-visible:ring-2 focus-visible:ring-[#50FFAF]/50"
+      className="relative w-[52px] h-[52px] rounded-2xl flex items-center justify-center bg-white border border-gray-200 shadow-sm hover:shadow-md hover:border-gray-300 outline-none focus-visible:ring-2 focus-visible:ring-[#8ba4ff]/50"
       onClick={onClick}
       disabled={disabled}
       initial={{ opacity: 0, scale: 0.9 }}
@@ -150,9 +150,9 @@ export function TemplateCarousel({ templates }) {
         {templates.map((_, i) => (
           <button
             key={i}
-            className={`h-1 rounded-full transition-all duration-500 outline-none focus-visible:ring-2 focus-visible:ring-[#50FFAF]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F7F8] ${
+            className={`h-1 rounded-full transition-all duration-500 outline-none focus-visible:ring-2 focus-visible:ring-[#8ba4ff]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F7F8] ${
               i === activeIndex
-                ? "w-8 bg-[#50FFAF]"
+                ? "w-8 bg-[#8ba4ff]"
                 : "w-2 bg-gray-300 hover:bg-gray-400"
             }`}
             onClick={() => goTo(i)}

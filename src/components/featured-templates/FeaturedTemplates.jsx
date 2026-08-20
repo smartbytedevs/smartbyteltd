@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { motion } from "motion/react"
 import { Calendar } from "lucide-react"
@@ -23,7 +23,7 @@ export function FeaturedTemplates() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-xs sm:text-sm font-semibold tracking-label uppercase text-[#50FFAF] mb-5 block"
+              className="text-xs sm:text-sm font-semibold tracking-label uppercase text-[#8ba4ff] mb-5 block"
             >
               Ready to Launch
             </motion.span>

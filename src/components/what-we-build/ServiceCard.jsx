@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { motion, AnimatePresence } from "motion/react"
 import { Check, ArrowRight } from "lucide-react"
@@ -45,8 +45,8 @@ export function ServiceCard({ service }) {
                   transition={{ duration: 0.25, delay: 0.04 * i }}
                   className="flex items-center gap-2 text-xs text-gray-600"
                 >
-                  <span className="flex-shrink-0 w-3.5 h-3.5 rounded-full bg-[#50FFAF]/15 flex items-center justify-center">
-                    <Check className="w-2 h-2 text-[#50FFAF]" />
+                  <span className="flex-shrink-0 w-3.5 h-3.5 rounded-full bg-[#8ba4ff]/15 flex items-center justify-center">
+                    <Check className="w-2 h-2 text-[#8ba4ff]" />
                   </span>
                   {benefit}
                 </motion.span>

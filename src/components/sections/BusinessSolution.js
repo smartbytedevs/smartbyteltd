@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState, useCallback } from "react"
 import { ecosystemNodes } from "@/components/business-solution/ecosystemData"
@@ -29,7 +29,7 @@ export function BusinessSolution() {
               <>
                 Everything Your<br />
                 Business Needs.<br />
-                <span className="text-[#50FFAF]">
+                <span className="text-[#8ba4ff]">
                   One Partner.
                 </span>
               </>

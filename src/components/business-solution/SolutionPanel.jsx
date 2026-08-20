@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { SafeSlideUp } from "@/components/common/SafeMotion"
 import { ArrowRight } from "lucide-react"
@@ -8,10 +8,10 @@ function PanelContent({ node }) {
   return (
     <SafeSlideUp className="flex flex-col" key={node.id}>
       <div className="flex items-center gap-3 mb-5">
-        <div className="w-10 h-10 rounded-xl bg-[#50FFAF]/10 border border-[#50FFAF]/20 flex items-center justify-center shrink-0">
-          <Icon className="w-5 h-5 text-[#50FFAF]" />
+        <div className="w-10 h-10 rounded-xl bg-[#8ba4ff]/10 border border-[#8ba4ff]/20 flex items-center justify-center shrink-0">
+          <Icon className="w-5 h-5 text-[#8ba4ff]" />
         </div>
-        <span className="text-xs font-semibold tracking-label uppercase text-[#50FFAF]">
+        <span className="text-xs font-semibold tracking-label uppercase text-[#8ba4ff]">
           {node.label}
         </span>
       </div>
@@ -40,7 +40,7 @@ function PanelContent({ node }) {
               >
                 <path
                   d="M11.5 3.5L5.25 10.5L2.5 7.5"
-                  stroke="#50FFAF"
+                  stroke="#8ba4ff"
                   strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -85,7 +85,7 @@ function PanelContent({ node }) {
           params.set("subtitle", node.description)
           window.location.href = `/contact?${params.toString()}`
         }}
-        className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-[#50FFAF] transition-colors duration-300 cursor-pointer"
+        className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-[#8ba4ff] transition-colors duration-300 cursor-pointer"
       >
         Explore Service
         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />

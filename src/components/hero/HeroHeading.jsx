@@ -72,7 +72,7 @@ export function HeroHeading() {
           </p>
         </div>
 
-        <HeroFloatingBadgeFloat color="pink" delay={1.0} className="mb-2">
+        <HeroFloatingBadgeFloat color="purple" delay={1.0} className="mb-2">
           100M+ client revenue
         </HeroFloatingBadgeFloat>
 

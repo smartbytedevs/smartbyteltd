@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import { motion } from "motion/react"
@@ -33,7 +33,7 @@ export function Textarea({
           "bg-white",
           "border",
           focused
-            ? "border-[#50FFAF]/60 shadow-[0_0_0_4px_rgba(80,255,175,0.08)]"
+            ? "border-[#8ba4ff]/60 shadow-[0_0_0_4px_rgba(139, 164, 255,0.08)]"
             : showError
               ? "border-red-500/50"
               : "border-gray-200 hover:border-gray-300"
@@ -43,7 +43,7 @@ export function Textarea({
           <div
             className={cn(
               "pointer-events-none absolute left-[20px] top-[20px] transition-colors duration-200",
-              focused ? "text-[#50FFAF]" : "text-gray-400"
+              focused ? "text-[#8ba4ff]" : "text-gray-400"
             )}
             aria-hidden="true"
           >
@@ -70,7 +70,7 @@ export function Textarea({
             "pr-[22px]",
             "font-body text-sm text-gray-900",
             "placeholder:opacity-0 placeholder:text-gray-400",
-            "caret-[#50FFAF]"
+            "caret-[#8ba4ff]"
           )}
           aria-invalid={showError ? "true" : "false"}
           aria-describedby={showError ? `${id}-error` : undefined}
@@ -85,7 +85,7 @@ export function Textarea({
               ? [
                   "-top-[10px] translate-y-0 text-[12px] font-medium",
                   "bg-white px-2 rounded-full",
-                  focused ? "text-[#50FFAF]" : showError ? "text-red-600" : "text-gray-400",
+                  focused ? "text-[#8ba4ff]" : showError ? "text-red-600" : "text-gray-400",
                 ]
               : [
                   "top-[20px] text-sm",
@@ -94,7 +94,7 @@ export function Textarea({
           )}
         >
           {label}
-          {required && <span className="ml-0.5 text-[#50FFAF]">*</span>}
+          {required && <span className="ml-0.5 text-[#8ba4ff]">*</span>}
         </label>
 
         {showSuccess && (
@@ -103,7 +103,7 @@ export function Textarea({
             animate={{ scale: 1, opacity: 1 }}
             className="absolute right-[16px] top-[20px]"
           >
-            <CheckCircle className="h-[18px] w-[18px] text-[#50FFAF]" />
+            <CheckCircle className="h-[18px] w-[18px] text-[#8ba4ff]" />
           </motion.div>
         )}
         {showError && (

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import Image from "next/image"
@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils"
 
 const galleryCards = projects.slice(0, 3)
 
-const accentColors = ["#38BDF8", "#A78BFA", "#50FFAF"]
+const accentColors = ["#38BDF8", "#A78BFA", "#8ba4ff"]
 
 /* ────────────────────────────────────────────
    Card 1 — Vertical Typography Poster Style
@@ -376,7 +376,7 @@ export function Works() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-block text-xs sm:text-sm font-semibold tracking-[0.12em] uppercase text-[#50FFAF] mb-6"
+            className="inline-block text-xs sm:text-sm font-semibold tracking-[0.12em] uppercase text-[#8ba4ff] mb-6"
           >
             Our Work
           </motion.span>

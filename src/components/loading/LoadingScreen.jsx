@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "motion/react"
@@ -58,7 +58,7 @@ export function LoadingScreen({ onComplete }) {
             </span>
 
             <div className="bg-neutral-900 border border-neutral-800 rounded-full px-4 py-1.5 flex items-center gap-2 text-xs font-medium text-neutral-400">
-              <span className="w-2 h-2 rounded-full bg-[#50FFAF] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#8ba4ff] animate-pulse" />
               <span>Initializing System</span>
             </div>
           </div>
@@ -73,7 +73,7 @@ export function LoadingScreen({ onComplete }) {
             {/* Mint Green Pill Progress Bar */}
             <div className="relative w-64 h-3 bg-neutral-900 rounded-full border border-neutral-800 p-0.5 overflow-hidden">
               <motion.div
-                className="h-full bg-[#50FFAF] rounded-full shadow-[0_0_15px_rgba(80,255,175,0.6)]"
+                className="h-full bg-[#8ba4ff] rounded-full shadow-[0_0_15px_rgba(139, 164, 255,0.6)]"
                 style={{ width: `${progress}%` }}
                 transition={{ ease: "easeOut" }}
               />

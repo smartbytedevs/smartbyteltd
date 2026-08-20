@@ -74,7 +74,7 @@ export function TeamSection() {
                 href="#contact"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 bg-[#FF3B5C] hover:bg-[#E6334F] text-white text-sm font-semibold px-7 py-3.5 rounded-full transition-colors duration-300"
+                className="inline-flex items-center gap-2 bg-[#f5efab] hover:bg-[#f3f0d0] text-black text-sm font-semibold px-7 py-3.5 rounded-full transition-colors duration-300"
               >
                 Get Started
                 <ArrowIcon />

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { motion } from "motion/react"
 import { ArrowRight, Calendar } from "lucide-react"
@@ -13,7 +13,7 @@ export function Hero() {
         <div
           className="absolute top-[10%] right-[-10%] w-[600px] h-[600px] rounded-full opacity-[0.03]"
           style={{
-            background: "radial-gradient(circle, rgba(80, 255, 175, 0.4), transparent 70%)",
+            background: "radial-gradient(circle, rgba(139, 164, 255, 0.4), transparent 70%)",
             filter: "blur(80px)",
           }}
         />
@@ -36,7 +36,7 @@ export function Hero() {
           className="mb-8 md:mb-10"
         >
           <span className="inline-flex items-center gap-2 bg-white border border-gray-200/80 rounded-full px-4 py-2 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-[#50FFAF]" />
+            <span className="w-2 h-2 rounded-full bg-[#8ba4ff]" />
             <span className="text-sm font-medium text-gray-600">
               SmartByte Web Development Agency
             </span>

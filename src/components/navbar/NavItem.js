@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import Link from "next/link"
 import { motion } from "motion/react"
@@ -17,7 +17,7 @@ export function NavItem({ href, label, isActive, isFirst, onClick }) {
       {isActive && (
         <motion.div
           layoutId="nav-indicator"
-          className="absolute inset-0 bg-[#50FFAF] rounded-full shadow-xs"
+          className="absolute inset-0 bg-[#8ba4ff] rounded-full shadow-xs"
           transition={{ type: "spring", stiffness: 380, damping: 30 }}
         />
       )}

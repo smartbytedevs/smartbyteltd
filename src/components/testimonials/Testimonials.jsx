@@ -16,7 +16,7 @@ const floatingElements = [
     className: "hidden lg:flex -top-6 left-[8%]",
     delay: 0,
     duration: 4,
-    glow: "#50FFAF",
+    glow: "#8ba4ff",
   },
   // Top-center: pill badge
   {
@@ -25,7 +25,7 @@ const floatingElements = [
     className: "hidden sm:flex top-2 left-1/2 -translate-x-1/2",
     delay: 0.5,
     duration: 3.5,
-    glow: "#50FFAF",
+    glow: "#8ba4ff",
   },
   // Top-right: media thumbnail
   {
@@ -42,7 +42,7 @@ const floatingElements = [
     type: "thumbnail-dark",
     initials: testimonials[3]?.initials || "NI",
     name: testimonials[3]?.company || "",
-    className: "hidden lg:flex bottom-8 left-[5%]",
+    className: "hidden lg:flex left-[5%]",
     delay: 1.5,
     duration: 5,
     glow: "#A78BFA",
@@ -51,10 +51,10 @@ const floatingElements = [
   {
     type: "badge",
     text: "5.0 Rating Across Google",
-    className: "hidden sm:flex bottom-12 right-[6%]",
+    className: "hidden sm:flex right-[6%]",
     delay: 0.8,
     duration: 4,
-    glow: "#50FFAF",
+    glow: "#8ba4ff",
   },
   // Mid-left: small badge (tablet+)
   {
@@ -70,10 +70,10 @@ const floatingElements = [
     type: "thumbnail-sm",
     initials: testimonials[5]?.initials || "JC",
     name: testimonials[5]?.company || "",
-    className: "hidden md:flex top-[40%] right-[3%]",
+    className: "hidden md:flex top-[50%] right-[3%]",
     delay: 0.3,
     duration: 4.2,
-    glow: "#50FFAF",
+    glow: "#8ba4ff",
   },
 ]
 
@@ -113,7 +113,7 @@ function FloatingElement({ element }) {
             className="absolute -inset-2 rounded-full blur-xl opacity-30"
             style={{ backgroundColor: glow }}
           />
-          <div className="relative px-4 py-2 bg-[#50FFAF] text-black text-sm font-semibold rounded-full shadow-lg shadow-[#50FFAF]/20 whitespace-nowrap">
+          <div className="relative px-4 py-2 bg-[#8ba4ff] text-black text-sm font-semibold rounded-full shadow-lg shadow-[#8ba4ff]/20 whitespace-nowrap">
             {element.text}
           </div>
         </motion.div>
@@ -324,7 +324,7 @@ export function Testimonials() {
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute -bottom-1 sm:bottom-0 left-0 right-0 h-[3px] sm:h-1 bg-[#50FFAF] origin-left rounded-full"
+                  className="absolute -bottom-1 sm:bottom-0 left-0 right-0 h-[3px] sm:h-1 bg-[#8ba4ff] origin-left rounded-full"
                 />
               </span>{" "}
               reviews
@@ -358,7 +358,7 @@ export function Testimonials() {
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
             onClick={() => (window.location.href = "/contact")}
-            className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#50FFAF] hover:bg-[#45E69D] text-black text-sm font-semibold rounded-full transition-colors duration-200 cursor-pointer shadow-lg shadow-[#50FFAF]/15"
+            className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#8ba4ff] hover:bg-[#7594e6] text-black text-sm font-semibold rounded-full transition-colors duration-200 cursor-pointer shadow-lg shadow-[#8ba4ff]/15"
           >
             Contact Us
             <ArrowRight className="w-4 h-4" />

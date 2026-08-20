@@ -35,7 +35,7 @@ function SocialShareBar() {
         href="https://linkedin.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-neutral-400 transition-colors hover:text-[#50FFAF]"
+        className="text-neutral-400 transition-colors hover:text-[#8ba4ff]"
         aria-label="Share on LinkedIn"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
@@ -46,7 +46,7 @@ function SocialShareBar() {
         href="https://twitter.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-neutral-400 transition-colors hover:text-[#50FFAF]"
+        className="text-neutral-400 transition-colors hover:text-[#8ba4ff]"
         aria-label="Share on X"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
@@ -57,7 +57,7 @@ function SocialShareBar() {
         href="https://facebook.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-neutral-400 transition-colors hover:text-[#50FFAF]"
+        className="text-neutral-400 transition-colors hover:text-[#8ba4ff]"
         aria-label="Share on Facebook"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
@@ -85,7 +85,7 @@ function RelatedCard({ article }) {
             {dateLabel}
           </span>
           <div>
-            <h3 className="mb-2 text-sm font-bold text-white transition-colors group-hover:text-[#50FFAF] line-clamp-2">
+            <h3 className="mb-2 text-sm font-bold text-white transition-colors group-hover:text-[#8ba4ff] line-clamp-2">
               {article.title}
             </h3>
             <span className="mb-2 flex items-center gap-1 text-xs text-white/80">
@@ -147,7 +147,7 @@ export default function BlogArticlePage() {
             </p>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 rounded-full bg-[#50FFAF] px-6 py-3 text-sm font-semibold text-black"
+              className="inline-flex items-center gap-2 rounded-full bg-[#8ba4ff] px-6 py-3 text-sm font-semibold text-black"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Blog
@@ -292,7 +292,7 @@ export default function BlogArticlePage() {
                       "Positive EBITDA & strong pipeline growth",
                     ].map((item) => (
                       <div key={item} className="flex items-start gap-3">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#50FFAF]" />
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#8ba4ff]" />
                         <span className="text-sm text-neutral-800">
                           {item}
                         </span>
@@ -333,7 +333,7 @@ export default function BlogArticlePage() {
                   transition={{ duration: 0.6, delay: 0.15 }}
                   className="relative my-12 pl-6"
                 >
-                  <div className="absolute left-0 top-0 bottom-0 w-1.5 rounded-full bg-[#50FFAF]" />
+                  <div className="absolute left-0 top-0 bottom-0 w-1.5 rounded-full bg-[#8ba4ff]" />
                   <p className="text-xl font-medium leading-relaxed text-neutral-900 md:text-2xl">
                     &ldquo;SmartByte didn&apos;t just build us a website — they
                     engineered a platform that fundamentally changed how we
@@ -352,7 +352,7 @@ export default function BlogArticlePage() {
                   className="mt-16 rounded-3xl bg-[#F7F7F7] p-8"
                 >
                   <div className="flex items-start gap-5">
-                    <div className="h-20 w-20 shrink-0 overflow-hidden rounded-full bg-gradient-to-br from-[#50FFAF] to-emerald-400 shadow-sm">
+                    <div className="h-20 w-20 shrink-0 overflow-hidden rounded-full bg-gradient-to-br from-[#8ba4ff] to-emerald-400 shadow-sm">
                       <div className="flex h-full w-full items-center justify-center text-xl font-bold text-black">
                         {author?.avatar || "SB"}
                       </div>

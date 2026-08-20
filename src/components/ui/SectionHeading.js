@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { motion } from "motion/react"
 import { cn } from "@/lib/utils"
@@ -23,7 +23,7 @@ export function SectionHeading({
 
   const labelClasses = cn(
     "text-xs sm:text-sm font-semibold tracking-label uppercase mb-5 block",
-    isDark ? "text-white/40" : "text-[#50FFAF]"
+    isDark ? "text-white/40" : "text-[#8ba4ff]"
   )
 
   const titleClasses = cn(

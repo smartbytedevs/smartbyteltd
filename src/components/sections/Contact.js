@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { motion } from "motion/react"
 import { DarkContactForm } from "@/components/contact/DarkContactForm"
@@ -15,7 +15,7 @@ export function Contact() {
         <div
           className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full opacity-[0.03]"
           style={{
-            background: "radial-gradient(circle, #50FFAF, transparent 70%)",
+            background: "radial-gradient(circle, #8ba4ff, transparent 70%)",
           }}
         />
       </div>

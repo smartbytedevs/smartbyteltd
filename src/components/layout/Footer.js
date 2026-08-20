@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { motion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
@@ -39,19 +39,19 @@ export function Footer() {
       >
         SmartByte is a digital agency helping brands grow with smart,
         results-focused{" "}
-        <a href="/#services" className="underline underline-offset-4 transition-colors duration-300 hover:text-[#50FFAF]">
+        <a href="/#services" className="underline underline-offset-4 transition-colors duration-300 hover:text-[#8ba4ff]">
           Web Development
         </a>
         ,{" "}
-        <a href="/#services" className="underline underline-offset-4 transition-colors duration-300 hover:text-[#50FFAF]">
+        <a href="/#services" className="underline underline-offset-4 transition-colors duration-300 hover:text-[#8ba4ff]">
           UI/UX Design
         </a>
         ,{" "}
-        <a href="/#services" className="underline underline-offset-4 transition-colors duration-300 hover:text-[#50FFAF]">
+        <a href="/#services" className="underline underline-offset-4 transition-colors duration-300 hover:text-[#8ba4ff]">
           Full Stack Applications
         </a>
         , and{" "}
-        <a href="/#services" className="underline underline-offset-4 transition-colors duration-300 hover:text-[#50FFAF]">
+        <a href="/#services" className="underline underline-offset-4 transition-colors duration-300 hover:text-[#8ba4ff]">
           AI Solutions
         </a>
         .
@@ -76,13 +76,13 @@ export function Footer() {
       >
         <a
           href="mailto:hello@smartbyte.com"
-          className="underline underline-offset-4 transition-colors duration-300 hover:text-[#50FFAF]"
+          className="underline underline-offset-4 transition-colors duration-300 hover:text-[#8ba4ff]"
         >
           hello@smartbyte.com
         </a>
         <a
           href="tel:+8801234567890"
-          className="underline underline-offset-4 transition-colors duration-300 hover:text-[#50FFAF]"
+          className="underline underline-offset-4 transition-colors duration-300 hover:text-[#8ba4ff]"
         >
           +880 1234 567890
         </a>
@@ -99,7 +99,7 @@ export function Footer() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
           onClick={() => (window.location.href = "/contact")}
-          className="inline-flex items-center gap-2 rounded-full bg-[#50FFAF] px-8 py-3 text-sm font-semibold text-black transition-colors duration-300 hover:bg-[#50FFAF]/90"
+          className="inline-flex items-center gap-2 rounded-full bg-[#8ba4ff] px-8 py-3 text-sm font-semibold text-black transition-colors duration-300 hover:bg-[#8ba4ff]/90"
         >
           Start a Project
           <span aria-hidden="true">⟶</span>
@@ -130,9 +130,9 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="group inline-flex items-center gap-2 text-base font-medium text-gray-200 transition-all duration-300 hover:translate-x-1 hover:text-[#50FFAF]"
+                    className="group inline-flex items-center gap-2 text-base font-medium text-gray-200 transition-all duration-300 hover:translate-x-1 hover:text-[#8ba4ff]"
                   >
-                    <span className="text-gray-500 transition-colors duration-300 group-hover:text-[#50FFAF]">
+                    <span className="text-gray-500 transition-colors duration-300 group-hover:text-[#8ba4ff]">
                       →
                     </span>
                     {link.label}

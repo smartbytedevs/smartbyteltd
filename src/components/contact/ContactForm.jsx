@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState, useCallback, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
@@ -185,9 +185,9 @@ export function ContactForm({
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="flex h-20 w-20 items-center justify-center rounded-full bg-[#50FFAF]/10"
+              className="flex h-20 w-20 items-center justify-center rounded-full bg-[#8ba4ff]/10"
             >
-              <CheckCircle className="h-10 w-10 text-[#50FFAF]" />
+              <CheckCircle className="h-10 w-10 text-[#8ba4ff]" />
             </motion.div>
             <h4 className="mt-6 font-display text-2xl font-bold text-gray-900">
               Message Sent Successfully!

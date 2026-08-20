@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useRef, useState } from "react"
 import { motion, useScroll, useTransform } from "motion/react"
@@ -75,12 +75,12 @@ export function TransformationJourney() {
   return (
     <div ref={spineRef} className="relative">
       <SafeReveal viewportMargin="-40px">
-        <span className="text-xs font-semibold tracking-label uppercase text-[#50FFAF] mb-4 block">
+        <span className="text-xs font-semibold tracking-label uppercase text-[#8ba4ff] mb-4 block">
           Our Approach
         </span>
         <h3 className="font-display text-2xl sm:text-3xl lg:text-[2.5rem] font-bold tracking-[-0.03em] leading-[1.1] text-gray-900">
           A Complete Digital
-          <span className="text-[#50FFAF]">
+          <span className="text-[#8ba4ff]">
             {" "}Transformation.
           </span>
         </h3>
@@ -92,7 +92,7 @@ export function TransformationJourney() {
       <div className="relative mt-12">
         <div className="absolute left-[27px] top-1 bottom-1 w-px bg-gray-200" aria-hidden="true">
           <motion.div
-            className="w-full origin-top bg-[#50FFAF]"
+            className="w-full origin-top bg-[#8ba4ff]"
             style={{ scaleY: spineScale, height: "100%" }}
           />
         </div>
@@ -111,7 +111,7 @@ export function TransformationJourney() {
               >
                 <div className="relative flex items-stretch pl-20">
                   <motion.div
-                    className="absolute left-[27px] top-[27px] w-[52px] h-px origin-left bg-[#50FFAF]/40"
+                    className="absolute left-[27px] top-[27px] w-[52px] h-px origin-left bg-[#8ba4ff]/40"
                     animate={{
                       scaleX: isActive ? 1 : 0.25,
                       opacity: isActive ? 1 : 0.35,
@@ -129,17 +129,17 @@ export function TransformationJourney() {
                     aria-label={`Stage ${stage.number}: ${stage.title}`}
                     className="absolute left-0 top-0 w-[54px] h-[54px] flex items-center justify-center outline-none"
                   >
-                    <span className="absolute inset-0 rounded-full focus-visible:ring-2 focus-visible:ring-[#50FFAF]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F7F8]" />
+                    <span className="absolute inset-0 rounded-full focus-visible:ring-2 focus-visible:ring-[#8ba4ff]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F7F8]" />
                     {isActive && (
                       <motion.span
-                        className="absolute w-[18px] h-[18px] rounded-full border border-[#50FFAF]/40"
+                        className="absolute w-[18px] h-[18px] rounded-full border border-[#8ba4ff]/40"
                         animate={{ scale: [1, 1.7], opacity: [0.6, 0] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
                         aria-hidden="true"
                       />
                     )}
                     <motion.span
-                      className="relative w-[11px] h-[11px] rounded-full bg-[#50FFAF]"
+                      className="relative w-[11px] h-[11px] rounded-full bg-[#8ba4ff]"
                       animate={{ scale: isActive ? 1.25 : 1 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     />
@@ -149,7 +149,7 @@ export function TransformationJourney() {
                     className={cn(
                       "group relative flex-1 min-w-0 rounded-2xl border p-5 sm:p-6 transition-all duration-500 overflow-hidden",
                       isActive
-                        ? "border-[#50FFAF]/30 bg-white shadow-sm"
+                        ? "border-[#8ba4ff]/30 bg-white shadow-sm"
                         : "border-gray-200 bg-white/60 hover:bg-white hover:shadow-sm"
                     )}
                   >
@@ -194,7 +194,7 @@ export function TransformationJourney() {
               <div className="w-8 h-8 rounded-lg bg-gray-900 flex items-center justify-center">
                 <ActiveIcon className="w-4 h-4 text-white" />
               </div>
-              <span className="text-xs font-semibold tracking-label uppercase text-[#50FFAF]">
+              <span className="text-xs font-semibold tracking-label uppercase text-[#8ba4ff]">
                 Stage {activeStage.number}
               </span>
             </div>

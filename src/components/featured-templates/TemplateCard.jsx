@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { memo, useState } from "react"
 import Link from "next/link"
@@ -183,7 +183,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
                     key={f}
                     className="flex items-center gap-1 text-[10px] sm:text-xs text-gray-500"
                   >
-                    <Check className="w-3 h-3 text-[#50FFAF] shrink-0" />
+                    <Check className="w-3 h-3 text-[#8ba4ff] shrink-0" />
                     <span className="truncate max-w-[100px] sm:max-w-none">{f}</span>
                   </span>
                 ))}
@@ -222,7 +222,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
 
                 {/* CTA */}
                 <motion.span
-                  className="flex items-center gap-1.5 text-[10px] sm:text-xs font-semibold text-[#50FFAF]"
+                  className="flex items-center gap-1.5 text-[10px] sm:text-xs font-semibold text-[#8ba4ff]"
                   animate={{
                     opacity: isHovered ? 1 : 0.5,
                     x: isHovered ? 0 : 4,
@@ -240,7 +240,7 @@ export const TemplateCard = memo(function TemplateCard({ template, index, isActi
             </div>
 
             {/* Focus ring */}
-            <div className="absolute inset-0 rounded-2xl ring-2 ring-[#50FFAF]/50 opacity-0 focus-visible:opacity-100 transition-opacity pointer-events-none z-30" />
+            <div className="absolute inset-0 rounded-2xl ring-2 ring-[#8ba4ff]/50 opacity-0 focus-visible:opacity-100 transition-opacity pointer-events-none z-30" />
           </motion.div>
         </Link>
       </motion.div>

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
@@ -138,13 +138,13 @@ function ContactFormInner() {
             >
               <a
                 href="mailto:hello@smartbyte.com"
-                className="underline underline-offset-4 transition-colors hover:text-[#50FFAF]"
+                className="underline underline-offset-4 transition-colors hover:text-[#8ba4ff]"
               >
                 hello@smartbyte.com
               </a>
               <a
                 href="tel:+8801234567890"
-                className="transition-colors hover:text-[#50FFAF]"
+                className="transition-colors hover:text-[#8ba4ff]"
               >
                 +880 1234 567890
               </a>
@@ -190,7 +190,7 @@ function ContactFormInner() {
                   required
                   value={form.name}
                   onChange={handleChange("name")}
-                  className={`w-full rounded-2xl border bg-[#222222] px-5 py-4 text-white placeholder-neutral-400 transition-colors focus:outline-none focus:border-[#50FFAF] ${
+                  className={`w-full rounded-2xl border bg-[#222222] px-5 py-4 text-white placeholder-neutral-400 transition-colors focus:outline-none focus:border-[#8ba4ff] ${
                     errors.name && form.name
                       ? "border-red-500/50"
                       : "border-neutral-800"
@@ -207,7 +207,7 @@ function ContactFormInner() {
                   required
                   value={form.email}
                   onChange={handleChange("email")}
-                  className={`w-full rounded-2xl border bg-[#222222] px-5 py-4 text-white placeholder-neutral-400 transition-colors focus:outline-none focus:border-[#50FFAF] ${
+                  className={`w-full rounded-2xl border bg-[#222222] px-5 py-4 text-white placeholder-neutral-400 transition-colors focus:outline-none focus:border-[#8ba4ff] ${
                     errors.email && form.email
                       ? "border-red-500/50"
                       : "border-neutral-800"
@@ -226,14 +226,14 @@ function ContactFormInner() {
                 placeholder="Phone"
                 value={form.phone}
                 onChange={handleChange("phone")}
-                className="w-full rounded-2xl border border-neutral-800 bg-[#222222] px-5 py-4 text-white placeholder-neutral-400 transition-colors focus:outline-none focus:border-[#50FFAF]"
+                className="w-full rounded-2xl border border-neutral-800 bg-[#222222] px-5 py-4 text-white placeholder-neutral-400 transition-colors focus:outline-none focus:border-[#8ba4ff]"
               />
               <input
                 type="text"
                 placeholder="How did you hear about SmartByte?"
                 value={form.referral}
                 onChange={handleChange("referral")}
-                className="w-full rounded-2xl border border-neutral-800 bg-[#222222] px-5 py-4 text-white placeholder-neutral-400 transition-colors focus:outline-none focus:border-[#50FFAF]"
+                className="w-full rounded-2xl border border-neutral-800 bg-[#222222] px-5 py-4 text-white placeholder-neutral-400 transition-colors focus:outline-none focus:border-[#8ba4ff]"
               />
             </div>
 
@@ -245,7 +245,7 @@ function ContactFormInner() {
                 rows={4}
                 value={form.message}
                 onChange={handleChange("message")}
-                className={`w-full resize-none rounded-2xl border bg-[#222222] p-5 text-white placeholder-neutral-400 transition-colors focus:outline-none focus:border-[#50FFAF] ${
+                className={`w-full resize-none rounded-2xl border bg-[#222222] p-5 text-white placeholder-neutral-400 transition-colors focus:outline-none focus:border-[#8ba4ff] ${
                   errors.message && form.message
                     ? "border-red-500/50"
                     : "border-neutral-800"
@@ -261,7 +261,7 @@ function ContactFormInner() {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="mt-2 inline-flex items-center gap-2 rounded-full bg-[#50FFAF] px-10 py-3.5 text-sm font-bold text-black shadow-lg transition-all hover:scale-105 active:scale-95 disabled:opacity-60 disabled:hover:scale-100"
+                className="mt-2 inline-flex items-center gap-2 rounded-full bg-[#8ba4ff] px-10 py-3.5 text-sm font-bold text-black shadow-lg transition-all hover:scale-105 active:scale-95 disabled:opacity-60 disabled:hover:scale-100"
               >
                 {status === "submitting" ? (
                   <>

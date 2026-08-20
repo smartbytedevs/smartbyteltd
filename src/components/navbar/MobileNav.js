@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
@@ -108,7 +108,7 @@ export function MobileNav({ isOpen, onClose, links, activeHref }) {
                     >
                       {link.name}
                     </span>
-                    <div className="bg-[#50FFAF] text-black w-10 h-10 rounded-full flex items-center justify-center transition-transform group-hover:translate-x-1 shrink-0">
+                    <div className="bg-[#8ba4ff] text-black w-10 h-10 rounded-full flex items-center justify-center transition-transform group-hover:translate-x-1 shrink-0">
                       <ArrowRight className="w-5 h-5" />
                     </div>
                   </Link>

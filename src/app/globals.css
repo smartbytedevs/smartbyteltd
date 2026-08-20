@@ -42,15 +42,15 @@
   --color-border-hover: #D1D5DB;
 
   /* ── Brand ── */
-  --color-accent: #50FFAF;
-  --color-accent-hover: #45E69D;
+  --color-accent: #8ba4ff;
+  --color-accent-hover: #7594e6;
   --color-accent-coral: #FF3B5C;
 
   /* ── Semantic ── */
   --color-success: #10B981;
   --color-warning: #F59E0B;
   --color-danger: #EF4444;
-  --color-focus: rgba(80, 255, 175, 0.3);
+  --color-focus: rgba(139, 164, 255, 0.3);
 
   --font-display: "Raisonne", sans-serif;
   --font-body: "Raisonne", sans-serif;
@@ -99,7 +99,7 @@ body {
 }
 
 ::selection {
-  background: rgba(80, 255, 175, 0.25);
+  background: rgba(139, 164, 255, 0.25);
   color: #111111;
 }
 

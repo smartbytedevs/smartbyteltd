@@ -53,7 +53,7 @@ export function SplashScreen({ onComplete }) {
               transition={{ delay: 0.3 }}
               className="inline-flex items-center gap-2 border border-neutral-800 bg-neutral-900/80 px-5 py-2 rounded-full text-xs md:text-sm font-medium text-neutral-300 backdrop-blur-md"
             >
-              <Sparkles className="w-4 h-4 text-[#50FFAF]" />
+              <Sparkles className="w-4 h-4 text-[#8ba4ff]" />
               <span>Web Architecture • Digital Products • AI Systems</span>
             </motion.div>
 
@@ -75,7 +75,7 @@ export function SplashScreen({ onComplete }) {
             >
               <button
                 onClick={handleEnter}
-                className="group relative inline-flex items-center gap-3 bg-[#50FFAF] text-black font-bold text-base px-8 py-4 rounded-full hover:bg-[#3effa2] hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(80,255,175,0.3)] cursor-pointer mt-4"
+                className="group relative inline-flex items-center gap-3 bg-[#8ba4ff] text-black font-bold text-base px-8 py-4 rounded-full hover:bg-[#a0b8ff] hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(139, 164, 255,0.3)] cursor-pointer mt-4"
               >
                 <span>ENTER EXPERIENCE</span>
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1.5" />

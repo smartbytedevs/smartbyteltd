@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import { motion } from "motion/react"
@@ -28,7 +28,7 @@ export function DarkInput({
           "relative h-[60px] w-full rounded-xl transition-all duration-300",
           "bg-[#2A2A2A]",
           focused
-            ? "ring-2 ring-[#50FFAF]/40"
+            ? "ring-2 ring-[#8ba4ff]/40"
             : showError
               ? "ring-2 ring-red-500/40"
               : "ring-1 ring-white/[0.06]"
@@ -54,7 +54,7 @@ export function DarkInput({
             "px-5 pt-[20px] pb-[8px]",
             "text-sm text-white font-body",
             "placeholder:opacity-0 placeholder:text-gray-400",
-            "caret-[#50FFAF]"
+            "caret-[#8ba4ff]"
           )}
           aria-invalid={showError ? "true" : "false"}
           aria-describedby={showError ? `${id}-error` : undefined}
@@ -69,7 +69,7 @@ export function DarkInput({
                   "-top-[10px] translate-y-0 text-[11px] font-medium",
                   "bg-[#2A2A2A] px-2 rounded-full",
                   focused
-                    ? "text-[#50FFAF]"
+                    ? "text-[#8ba4ff]"
                     : showError
                       ? "text-red-400"
                       : "text-gray-400",
@@ -81,7 +81,7 @@ export function DarkInput({
           )}
         >
           {label}
-          {required && <span className="ml-0.5 text-[#50FFAF]">*</span>}
+          {required && <span className="ml-0.5 text-[#8ba4ff]">*</span>}
         </label>
       </div>
 

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { SafeSlideUp, SafeReveal } from "@/components/common/SafeMotion"
 
@@ -22,8 +22,8 @@ export function AboutValues({ values }) {
               className={`group relative overflow-hidden rounded-2xl p-6 border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow duration-300 ${offset}`}
             >
               <div className="relative z-10">
-                <div className="w-9 h-9 rounded-lg bg-[#50FFAF]/10 border border-[#50FFAF]/20 flex items-center justify-center mb-4">
-                  <Icon className="w-4.5 h-4.5 text-[#50FFAF]" />
+                <div className="w-9 h-9 rounded-lg bg-[#8ba4ff]/10 border border-[#8ba4ff]/20 flex items-center justify-center mb-4">
+                  <Icon className="w-4.5 h-4.5 text-[#8ba4ff]" />
                 </div>
 
                 <h3 className="font-display text-lg font-bold text-gray-900 mb-2">

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import Link from "next/link"
 import { motion } from "motion/react"
@@ -51,7 +51,7 @@ export function WorkShowcase() {
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow justify-between">
                   <div>
-                    <h3 className="text-xl font-bold text-neutral-900 line-clamp-1 group-hover:text-[#50FFAF] transition-colors">
+                    <h3 className="text-xl font-bold text-neutral-900 line-clamp-1 group-hover:text-[#8ba4ff] transition-colors">
                       {project.title}
                     </h3>
                     <span className="mt-2.5 inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600">

@@ -40,7 +40,7 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <Link
               href="/contact"
-              className="bg-[#50FFAF] text-black font-semibold text-xs px-4 py-2 rounded-full hover:bg-[#3effa2] transition-colors"
+              className="bg-[#8ba4ff] text-black font-semibold text-xs px-4 py-2 rounded-full hover:bg-[#a0b8ff] transition-colors"
             >
               Contact
             </Link>
@@ -49,7 +49,7 @@ export function Navbar() {
               className="bg-black text-white w-9 h-9 rounded-full flex items-center justify-center cursor-pointer"
               aria-label="Open menu"
             >
-              <Menu className="w-4 h-4 text-[#50FFAF]" />
+              <Menu className="w-4 h-4 text-[#8ba4ff]" />
             </button>
           </div>
         </div>

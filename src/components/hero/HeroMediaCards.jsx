@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import Image from "next/image"
@@ -38,7 +38,7 @@ export function HeroMediaCard({ src, alt, className = "", delay = 0 }) {
 
 export function HeroFloatingBadge({ children, className = "", delay = 0, color = "mint" }) {
   const colorClasses = {
-    mint: "bg-[#50FFAF] text-gray-900",
+    mint: "bg-[#8ba4ff] text-gray-900",
     pink: "bg-[#FF3B5C] text-white",
     dark: "bg-gray-900 text-white",
   }
@@ -58,9 +58,10 @@ export function HeroFloatingBadge({ children, className = "", delay = 0, color =
 
 export function HeroFloatingBadgeFloat({ children, className = "", delay = 0, color = "mint" }) {
   const colorClasses = {
-    mint: "bg-[#50FFAF] text-gray-900",
+    mint: "bg-[#8ba4ff] text-gray-900",
     pink: "bg-[#FF3B5C] text-white",
     dark: "bg-gray-900 text-white",
+    purple: "bg-[#f5efab] text-black",
   }
 
   return (

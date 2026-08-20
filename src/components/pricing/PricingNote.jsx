@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { Shield, Info } from "lucide-react"
 import { SafeReveal, SafeSlideUp } from "@/components/common/SafeMotion"
@@ -13,8 +13,8 @@ export function PricingNote() {
         <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
           {/* Icon */}
           <div className="shrink-0">
-            <div className="w-14 h-14 rounded-2xl flex items-center justify-center border border-[#50FFAF]/20 bg-[#50FFAF]/10">
-              <Shield className="w-6 h-6 text-[#50FFAF]" />
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center border border-[#8ba4ff]/20 bg-[#8ba4ff]/10">
+              <Shield className="w-6 h-6 text-[#8ba4ff]" />
             </div>
           </div>
 

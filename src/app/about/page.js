@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import Link from "next/link"
@@ -83,7 +83,7 @@ export default function AboutPage() {
                   }}
                   className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-start"
                 >
-                  <span className="inline-flex shrink-0 items-center rounded-full bg-[#50FFAF] px-4 py-2 text-sm font-semibold text-black">
+                  <span className="inline-flex shrink-0 items-center rounded-full bg-[#8ba4ff] px-4 py-2 text-sm font-semibold text-black">
                     Est. 2026
                   </span>
                   <p className="max-w-xl text-base leading-relaxed text-neutral-600">
@@ -105,7 +105,7 @@ export default function AboutPage() {
                     delay: 0.3,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className="absolute -top-4 -left-4 z-10 rounded-full bg-[#50FFAF] px-5 py-2 text-sm font-semibold text-black shadow-md"
+                  className="absolute -top-4 -left-4 z-10 rounded-full bg-[#8ba4ff] px-5 py-2 text-sm font-semibold text-black shadow-md"
                 >
                   Proudly from Chittagong
                 </motion.div>
@@ -144,14 +144,14 @@ export default function AboutPage() {
                 >
                   <a
                     href="mailto:hello@smartbyte.com"
-                    className="underline underline-offset-4 transition-colors duration-300 hover:text-[#50FFAF]"
+                    className="underline underline-offset-4 transition-colors duration-300 hover:text-[#8ba4ff]"
                   >
                     hello@smartbyte.com
                   </a>
                   <span className="text-neutral-300">|</span>
                   <a
                     href="tel:+8801234567890"
-                    className="underline underline-offset-4 transition-colors duration-300 hover:text-[#50FFAF]"
+                    className="underline underline-offset-4 transition-colors duration-300 hover:text-[#8ba4ff]"
                   >
                     +880 1234 567890
                   </a>
@@ -231,7 +231,7 @@ export default function AboutPage() {
                       onChange={(e) =>
                         setForm((f) => ({ ...f, name: e.target.value }))
                       }
-                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#50FFAF]/40"
+                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#8ba4ff]/40"
                     />
                     <input
                       type="tel"
@@ -241,7 +241,7 @@ export default function AboutPage() {
                       onChange={(e) =>
                         setForm((f) => ({ ...f, phone: e.target.value }))
                       }
-                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#50FFAF]/40"
+                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#8ba4ff]/40"
                     />
                     <input
                       type="email"
@@ -250,11 +250,11 @@ export default function AboutPage() {
                       onChange={(e) =>
                         setForm((f) => ({ ...f, email: e.target.value }))
                       }
-                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#50FFAF]/40"
+                      className="w-full rounded-2xl bg-neutral-100 p-4 text-sm text-neutral-900 outline-none placeholder-neutral-500 focus:ring-2 focus:ring-[#8ba4ff]/40"
                     />
                     <button
                       type="submit"
-                      className="mt-2 inline-flex items-center rounded-full bg-[#50FFAF] px-6 py-2.5 text-sm font-semibold text-black transition-transform hover:scale-105"
+                      className="mt-2 inline-flex items-center rounded-full bg-[#8ba4ff] px-6 py-2.5 text-sm font-semibold text-black transition-transform hover:scale-105"
                     >
                       Request Call Back
                     </button>
@@ -365,7 +365,7 @@ export default function AboutPage() {
                   className="lg:col-span-6"
                 >
                   <h2 className="text-3xl font-bold md:text-4xl">
-                    <span className="mr-3 inline-block h-3 w-3 rounded-full bg-[#50FFAF]" />
+                    <span className="mr-3 inline-block h-3 w-3 rounded-full bg-[#8ba4ff]" />
                     We let our results do the talking
                   </h2>
                   <p className="mt-6 max-w-lg text-base leading-relaxed text-white/70">
@@ -381,7 +381,7 @@ export default function AboutPage() {
                       { value: "5+", label: "Industries Served" },
                     ].map((stat) => (
                       <div key={stat.label}>
-                        <span className="text-3xl font-extrabold text-[#50FFAF]">
+                        <span className="text-3xl font-extrabold text-[#8ba4ff]">
                           {stat.value}
                         </span>
                         <span className="mt-1 block text-xs text-white/50">
@@ -429,7 +429,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="absolute top-10 right-[15%] z-10 rounded-full bg-[#50FFAF] px-5 py-2 text-sm font-semibold text-black shadow-lg"
+              className="absolute top-10 right-[15%] z-10 rounded-full bg-[#8ba4ff] px-5 py-2 text-sm font-semibold text-black shadow-lg"
             >
               Decades of experience
             </motion.div>
@@ -456,7 +456,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="absolute top-20 left-[25%] z-10 rounded-full bg-[#50FFAF] px-5 py-2 text-sm font-semibold text-black shadow-lg"
+              className="absolute top-20 left-[25%] z-10 rounded-full bg-[#8ba4ff] px-5 py-2 text-sm font-semibold text-black shadow-lg"
             >
               Clients in 10+ countries
             </motion.div>
@@ -473,7 +473,7 @@ export default function AboutPage() {
             </p>
             <Link
               href="/contact"
-              className="mt-4 inline-flex items-center rounded-full bg-[#50FFAF] px-6 py-2.5 text-sm font-semibold text-black transition-transform hover:scale-105"
+              className="mt-4 inline-flex items-center rounded-full bg-[#8ba4ff] px-6 py-2.5 text-sm font-semibold text-black transition-transform hover:scale-105"
             >
               Contact Us
             </Link>

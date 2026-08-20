@@ -43,7 +43,7 @@ export function WhySmartByte() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="text-xs font-mono tracking-widest text-[#50FFAF] uppercase mb-4 block"
+          className="text-xs font-mono tracking-widest text-[#8ba4ff] uppercase mb-4 block"
         >
           Why SmartByte
         </motion.span>
@@ -95,7 +95,7 @@ export function WhySmartByte() {
                   {card.description}
                 </p>
               </div>
-              <div className="bg-neutral-900/80 border border-neutral-800 rounded-full px-4 py-2 w-fit text-xs font-semibold text-[#50FFAF] mt-8">
+              <div className="bg-neutral-900/80 border border-neutral-800 rounded-full px-4 py-2 w-fit text-xs font-semibold text-[#8ba4ff] mt-8">
                 {card.stat}
               </div>
             </motion.div>
@@ -115,7 +115,7 @@ export function WhySmartByte() {
           </p>
           <Link
             href="/contact"
-            className="bg-[#50FFAF] text-black font-bold px-8 py-3.5 rounded-full hover:bg-[#3effa2] hover:scale-105 active:scale-95 transition-all inline-flex items-center gap-2 text-sm shrink-0"
+            className="bg-[#8ba4ff] text-black font-bold px-8 py-3.5 rounded-full hover:bg-[#a0b8ff] hover:scale-105 active:scale-95 transition-all inline-flex items-center gap-2 text-sm shrink-0"
           >
             Partner With Us
             <span aria-hidden="true">⟶</span>

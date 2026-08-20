@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { motion } from "motion/react"
 import { Mail, Phone, MapPin, Clock, Zap } from "lucide-react"
@@ -15,7 +15,7 @@ function ContactMethod({ icon: Icon, title, value, index }) {
     >
       <div className="flex items-start gap-4">
         <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gray-50 transition-all duration-300 group-hover:scale-110">
-          <Icon className="h-5 w-5 text-[#50FFAF]" />
+          <Icon className="h-5 w-5 text-[#8ba4ff]" />
         </div>
         <div className="min-w-0">
           <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
@@ -115,8 +115,8 @@ export function ConversationPanel() {
         transition={{ delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="inline-flex items-center gap-3 rounded-2xl border border-gray-200 bg-white px-5 py-3 shadow-sm"
       >
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#50FFAF]/10">
-          <Zap className="h-4 w-4 text-[#50FFAF]" />
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#8ba4ff]/10">
+          <Zap className="h-4 w-4 text-[#8ba4ff]" />
         </div>
         <div>
           <p className="text-xs font-medium uppercase tracking-wider text-gray-400">

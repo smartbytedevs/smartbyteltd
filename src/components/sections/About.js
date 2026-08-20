@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { values } from "@/components/about/aboutData"
 import { TransformationJourney } from "@/components/about/TransformationJourney"
@@ -21,7 +21,7 @@ export function About() {
               <>
                 More Than<br />
                 Developers.<br />
-                <span className="text-[#50FFAF]">
+                <span className="text-[#8ba4ff]">
                   We&apos;re Your Technology Partner.
                 </span>
               </>

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useEffect, useRef } from "react"
 import { motion, useInView, useSpring } from "motion/react"
@@ -24,7 +24,7 @@ export function AnimatedCounter({ value, suffix = "", label, variant = "light" }
         isDark ? "text-white" : "text-gray-900"
       )}>
         <motion.span>{springValue}</motion.span>
-        <span className="text-[#50FFAF]">{suffix}</span>
+        <span className="text-[#8ba4ff]">{suffix}</span>
       </motion.div>
       <p className={cn("text-lg", isDark ? "text-gray-400" : "text-gray-500")}>{label}</p>
     </div>

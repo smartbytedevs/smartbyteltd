@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useRef, useState, useCallback } from "react"
 import Image from "next/image"
@@ -91,7 +91,7 @@ export function ProjectImage({ project, index }) {
         >
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm border border-gray-200 shadow-sm">
             <span className="text-xs font-semibold text-gray-900">View Project</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#50FFAF]" />
+            <ArrowRight className="w-3.5 h-3.5 text-[#8ba4ff]" />
           </div>
         </motion.div>
       </div>

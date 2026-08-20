@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { motion } from "motion/react"
 import { PremiumCTA } from "@/components/ui/PremiumCTA"
@@ -16,7 +16,7 @@ export function FinalCTA() {
         >
           Ready To Turn
           <br />
-          <span className="text-[#50FFAF]">
+          <span className="text-[#8ba4ff]">
             Your Idea Into Reality?
           </span>
         </motion.h2>

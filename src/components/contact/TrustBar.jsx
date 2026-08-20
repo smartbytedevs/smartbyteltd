@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { SafeSlideUp, SafeCounter, SafeReveal } from "@/components/common/SafeMotion"
 import { trustStats } from "./contactData"
@@ -7,7 +7,7 @@ function AnimatedStat({ value, suffix, label, delay }) {
   return (
     <SafeSlideUp delay={delay} className="text-center">
       <div className="font-display text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
-        <SafeCounter value={value} suffix={suffix} className="text-[#50FFAF]" />
+        <SafeCounter value={value} suffix={suffix} className="text-[#8ba4ff]" />
       </div>
       <p className="mt-1.5 text-xs text-gray-400 sm:text-sm">{label}</p>
     </SafeSlideUp>

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import { motion } from "motion/react"
@@ -85,7 +85,7 @@ export function Panel({ item, index }) {
               >
                 <div
                   className={cn(
-                    "w-20 h-20 sm:w-24 sm:h-24 bg-[#50FFAF]/10 border border-[#50FFAF]/20 flex items-center justify-center",
+                    "w-20 h-20 sm:w-24 sm:h-24 bg-[#8ba4ff]/10 border border-[#8ba4ff]/20 flex items-center justify-center",
                     shapes[index]
                   )}
                 >
@@ -133,7 +133,7 @@ export function Panel({ item, index }) {
                 <motion.div
                   className={cn(
                     "inline-flex items-center gap-3 mt-5 text-sm font-semibold tracking-wide",
-                    "text-[#50FFAF]",
+                    "text-[#8ba4ff]",
                     !isEven && "sm:flex-row-reverse sm:ml-auto"
                   )}
                   animate={{
@@ -176,7 +176,7 @@ export function Panel({ item, index }) {
         </div>
 
         {/* Focus ring */}
-        <div className="absolute inset-0 rounded-3xl ring-2 ring-[#50FFAF]/50 opacity-0 focus-visible:opacity-100 transition-opacity pointer-events-none" />
+        <div className="absolute inset-0 rounded-3xl ring-2 ring-[#8ba4ff]/50 opacity-0 focus-visible:opacity-100 transition-opacity pointer-events-none" />
       </div>
     </SafeReveal>
   )

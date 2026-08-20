@@ -22,7 +22,7 @@ export function DesktopNav({ links, activeHref }) {
 
       <Link
         href="/contact"
-        className="ml-2 bg-[#50FFAF] text-black font-semibold text-sm px-6 py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-sm hover:bg-[#3effa2]"
+        className="ml-2 bg-[#8ba4ff] text-black font-semibold text-sm px-6 py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-sm hover:bg-[#a0b8ff]"
       >
         Contact
       </Link>

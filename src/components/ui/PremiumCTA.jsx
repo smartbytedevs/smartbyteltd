@@ -15,7 +15,7 @@ const variants = {
   primary:
     "bg-gray-900 hover:bg-gray-800 text-white shadow-sm hover:shadow-md",
   accent:
-    "bg-[#50FFAF] hover:bg-[#45E69D] text-gray-900 shadow-sm hover:shadow-md",
+    "bg-[#8ba4ff] hover:bg-[#7594e6] text-gray-900 shadow-sm hover:shadow-md",
 }
 
 const PremiumCTA = forwardRef(function PremiumCTA(
@@ -60,7 +60,7 @@ const PremiumCTA = forwardRef(function PremiumCTA(
   )
 
   const classes = cn(
-    "group relative inline-flex items-center gap-3 overflow-hidden rounded-full font-semibold tracking-nav transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-[#50FFAF]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F7F8] hover:scale-[1.02] active:scale-[0.98]",
+    "group relative inline-flex items-center gap-3 overflow-hidden rounded-full font-semibold tracking-nav transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-[#8ba4ff]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F7F8] hover:scale-[1.02] active:scale-[0.98]",
     sizes[size],
     variants[variant],
     className

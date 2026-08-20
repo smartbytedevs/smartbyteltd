@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "motion/react"
@@ -10,7 +10,7 @@ function FAQItem({ item, index, isOpen, onToggle }) {
     <div
       className={`rounded-2xl border transition-all duration-300 ${
         isOpen
-          ? "border-[#50FFAF]/30 bg-white shadow-sm"
+          ? "border-[#8ba4ff]/30 bg-white shadow-sm"
           : "border-gray-200 bg-white hover:border-gray-300"
       }`}
     >
@@ -58,7 +58,7 @@ export function FAQ() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-4 block text-xs font-semibold uppercase tracking-label text-[#50FFAF] sm:text-sm"
+          className="mb-4 block text-xs font-semibold uppercase tracking-label text-[#8ba4ff] sm:text-sm"
         >
           FAQ
         </motion.span>
@@ -70,7 +70,7 @@ export function FAQ() {
           className="font-display text-2xl font-bold text-gray-900 sm:text-3xl lg:text-4xl"
         >
           Frequently Asked{" "}
-          <span className="text-[#50FFAF]">
+          <span className="text-[#8ba4ff]">
             Questions
           </span>
         </motion.h3>

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { motion, AnimatePresence } from "motion/react"
 
@@ -25,12 +25,12 @@ function WebsitePreview() {
         <div className="h-1 w-6 rounded-full bg-gray-300" />
         <div className="h-1 w-6 rounded-full bg-gray-300" />
         <div className="h-1 w-6 rounded-full bg-gray-300" />
-        <div className="h-1 w-8 rounded-full bg-[#50FFAF]/40 ml-auto" />
+        <div className="h-1 w-8 rounded-full bg-[#8ba4ff]/40 ml-auto" />
       </div>
       <div className="flex flex-col items-center pt-2 space-y-1.5">
         <div className="h-1.5 w-20 rounded-full bg-gray-300" />
         <div className="h-1 w-14 rounded-full bg-gray-200" />
-        <div className="h-4 w-12 rounded-full bg-[#50FFAF]/30 mt-1" />
+        <div className="h-4 w-12 rounded-full bg-[#8ba4ff]/30 mt-1" />
       </div>
     </div>
   )
@@ -60,7 +60,7 @@ function SaaSPreview() {
           <div key={i} className="flex-1 h-5 rounded bg-gray-100 p-1">
             <div className="h-0.5 w-4 rounded-full bg-gray-300 mb-0.5" />
             <motion.div
-              className="h-1 rounded-full bg-[#50FFAF]/50"
+              className="h-1 rounded-full bg-[#8ba4ff]/50"
               animate={{ width: ["40%", "80%", "40%"] }}
               transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -73,7 +73,7 @@ function SaaSPreview() {
             {[30, 50, 40].map((h, j) => (
               <motion.div
                 key={j}
-                className="w-1 rounded-t bg-[#50FFAF]/40"
+                className="w-1 rounded-t bg-[#8ba4ff]/40"
                 style={{ height: h * 0.25 + "%" }}
                 animate={{ height: [h * 0.15 + "%", h * 0.35 + "%", h * 0.15 + "%"] }}
                 transition={{ duration: 2, repeat: Infinity, delay: j * 0.2 }}
@@ -92,7 +92,7 @@ function AIPreview() {
       {[0, 1, 2].map((i) => (
         <motion.div
           key={i}
-          className="absolute w-2 h-2 rounded-full border border-[#50FFAF]/30"
+          className="absolute w-2 h-2 rounded-full border border-[#8ba4ff]/30"
           style={{ left: `${30 + i * 20}%`, top: `${35 + (i % 2) * 30}%` }}
           animate={{ scale: [1, 1.4, 1], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 2 + i, repeat: Infinity, delay: i * 0.4 }}
@@ -100,7 +100,7 @@ function AIPreview() {
       ))}
       <div className="z-10 px-2 py-1 rounded bg-gray-100 border border-gray-200">
         <motion.div
-          className="h-1 w-12 rounded-full bg-[#50FFAF]/50"
+          className="h-1 w-12 rounded-full bg-[#8ba4ff]/50"
           animate={{ width: ["30%", "100%", "30%"] }}
           transition={{ duration: 3, repeat: Infinity }}
         />
@@ -116,7 +116,7 @@ function EcommercePreview() {
         <div className="h-3 rounded bg-gray-200" />
         <div className="h-0.5 w-8 rounded-full bg-gray-300" />
         <motion.div
-          className="h-1 w-6 rounded-full bg-[#50FFAF]/40"
+          className="h-1 w-6 rounded-full bg-[#8ba4ff]/40"
           animate={{ opacity: [0.3, 0.7, 0.3] }}
           transition={{ duration: 2, repeat: Infinity }}
         />
@@ -142,7 +142,7 @@ function InventoryPreview() {
           <div key={i} className="flex-1 h-4 rounded bg-gray-100 p-1">
             <div className="h-0.5 w-4 rounded-full bg-gray-300 mb-0.5" />
             <motion.div
-              className="h-0.5 w-6 rounded-full bg-[#50FFAF]/40"
+              className="h-0.5 w-6 rounded-full bg-[#8ba4ff]/40"
               animate={{ opacity: [0.3, 0.7, 0.3] }}
               transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.3 }}
             />
@@ -170,7 +170,7 @@ function RestaurantPreview() {
           <div key={i} className="h-3 rounded bg-gray-100 p-0.5 flex items-center">
             <div className="h-0.5 w-8 rounded-full bg-gray-300" />
             <motion.div
-              className="h-1 w-3 rounded-full bg-[#50FFAF]/40 ml-auto"
+              className="h-1 w-3 rounded-full bg-[#8ba4ff]/40 ml-auto"
               animate={{ opacity: [0.3, 0.7, 0.3] }}
               transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.2 }}
             />

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import { motion } from "motion/react"
@@ -33,7 +33,7 @@ export function Select({
           "bg-white",
           "border",
           focused
-            ? "border-[#50FFAF]/60 shadow-[0_0_0_4px_rgba(80,255,175,0.08)]"
+            ? "border-[#8ba4ff]/60 shadow-[0_0_0_4px_rgba(139, 164, 255,0.08)]"
             : showError
               ? "border-red-500/50"
               : "border-gray-200 hover:border-gray-300"
@@ -43,7 +43,7 @@ export function Select({
           <div
             className={cn(
               "pointer-events-none absolute left-[20px] top-1/2 -translate-y-1/2 transition-colors duration-200",
-              focused ? "text-[#50FFAF]" : "text-gray-400"
+              focused ? "text-[#8ba4ff]" : "text-gray-400"
             )}
             aria-hidden="true"
           >
@@ -72,7 +72,7 @@ export function Select({
               : float
                 ? "text-transparent"
                 : "text-gray-900",
-            "caret-[#50FFAF]"
+            "caret-[#8ba4ff]"
           )}
           aria-invalid={showError ? "true" : "false"}
           aria-describedby={showError ? `${id}-error` : undefined}
@@ -91,7 +91,7 @@ export function Select({
           className={cn(
             "pointer-events-none absolute right-[20px] top-1/2 -translate-y-1/2 h-[18px] w-[18px] transition-all duration-200",
             float
-              ? "rotate-180 text-[#50FFAF]"
+              ? "rotate-180 text-[#8ba4ff]"
               : "text-gray-400"
           )}
           aria-hidden="true"
@@ -107,7 +107,7 @@ export function Select({
                   "-top-[10px] translate-y-0 text-[12px] font-medium opacity-100",
                   "bg-white px-2 rounded-full",
                   focused
-                    ? "text-[#50FFAF]"
+                    ? "text-[#8ba4ff]"
                     : showError
                       ? "text-red-600"
                       : "text-gray-400",
@@ -118,7 +118,7 @@ export function Select({
           )}
         >
           {label}
-          {required && <span className="ml-0.5 text-[#50FFAF]">*</span>}
+          {required && <span className="ml-0.5 text-[#8ba4ff]">*</span>}
         </label>
 
         {showSuccess && (
@@ -127,7 +127,7 @@ export function Select({
             animate={{ scale: 1, opacity: 1 }}
             className="absolute right-[44px] top-1/2 -translate-y-1/2"
           >
-            <CheckCircle className="h-[18px] w-[18px] text-[#50FFAF]" />
+            <CheckCircle className="h-[18px] w-[18px] text-[#8ba4ff]" />
           </motion.div>
         )}
         {showError && (

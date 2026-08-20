@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { motion } from "motion/react"
 
@@ -32,22 +32,22 @@ export function EcosystemGrid({ activeNodeId, onNodeSelect, nodes }) {
                 whileHover={{ y: -4 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className={`group relative w-full flex flex-col items-center gap-3 rounded-2xl border px-4 py-5 text-center outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#50FFAF]/60 transition-all duration-300 ${
+                className={`group relative w-full flex flex-col items-center gap-3 rounded-2xl border px-4 py-5 text-center outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8ba4ff]/60 transition-all duration-300 ${
                   isActive
-                    ? "border-[#50FFAF]/40 bg-[#50FFAF]/5 shadow-sm"
+                    ? "border-[#8ba4ff]/40 bg-[#8ba4ff]/5 shadow-sm"
                     : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm"
                 }`}
               >
                 <span
                   className={`flex items-center justify-center w-10 h-10 rounded-xl transition-colors duration-300 ${
                     isActive
-                      ? "bg-[#50FFAF]/15 border border-[#50FFAF]/30"
+                      ? "bg-[#8ba4ff]/15 border border-[#8ba4ff]/30"
                       : "bg-gray-100 border border-gray-200"
                   }`}
                 >
                   <Icon
                     className={`w-5 h-5 transition-colors duration-300 ${
-                      isActive ? "text-[#50FFAF]" : "text-gray-400"
+                      isActive ? "text-[#8ba4ff]" : "text-gray-400"
                     }`}
                   />
                 </span>

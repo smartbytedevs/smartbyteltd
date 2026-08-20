@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { Calendar } from "lucide-react"
 import { plans } from "@/components/pricing/pricingData"
@@ -18,14 +18,14 @@ export function Pricing() {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 lg:mb-20">
           <div className="max-w-2xl">
-            <span className="text-xs sm:text-sm font-semibold tracking-label uppercase text-[#50FFAF] mb-5 block">
+            <span className="text-xs sm:text-sm font-semibold tracking-label uppercase text-[#8ba4ff] mb-5 block">
               Pricing
             </span>
 
             <h2 className="font-display text-section-title font-bold text-gray-900">
               Flexible Pricing
               <br />
-              <span className="text-[#50FFAF]">
+              <span className="text-[#8ba4ff]">
                 For Every Business.
               </span>
             </h2>

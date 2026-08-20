@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useRef, useState, useCallback } from "react"
 import { motion } from "motion/react"
@@ -50,7 +50,7 @@ export function PricingCard({ plan, index }) {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className={`relative rounded-[28px] overflow-hidden bg-white border transition-all duration-300 ${
             plan.popular
-              ? "border-[#50FFAF]/40 shadow-md"
+              ? "border-[#8ba4ff]/40 shadow-md"
               : "border-gray-200 shadow-sm hover:shadow-md hover:border-gray-300"
           }`}
         >
@@ -109,7 +109,7 @@ export function PricingCard({ plan, index }) {
             <ul className="space-y-2.5 mb-8">
               {plan.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2.5">
-                  <span className="shrink-0 w-4 h-4 rounded-full flex items-center justify-center bg-[#50FFAF]/15 text-[#50FFAF]">
+                  <span className="shrink-0 w-4 h-4 rounded-full flex items-center justify-center bg-[#8ba4ff]/15 text-[#8ba4ff]">
                     <Check className="w-2.5 h-2.5" />
                   </span>
                   <span className="text-xs sm:text-sm text-gray-600 leading-snug">
