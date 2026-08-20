@@ -1,14 +1,41 @@
 "use client"
 
-import { useEffect, useCallback } from "react"
+import { useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
-import { X, ArrowRight } from "lucide-react"
-import { NavItem } from "./NavItem"
+import { ArrowRight, X } from "lucide-react"
+import Link from "next/link"
+
+const mobileLinks = [
+  { name: "Services", href: "/services" },
+  { name: "Work", href: "/works" },
+  { name: "About", href: "/about" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/contact" },
+]
+
+const drawerVariants = {
+  initial: { x: "-100%" },
+  open: { x: 0 },
+  closed: { x: "100%" },
+}
+
+const listVariants = {
+  open: {
+    transition: { staggerChildren: 0.08, delayChildren: 0.15 },
+  },
+  closed: {
+    transition: { staggerChildren: 0.04, staggerDirection: -1 },
+  },
+}
+
+const itemVariants = {
+  initial: { opacity: 0, x: -20 },
+  open: { opacity: 1, x: 0 },
+  closed: { opacity: 0, x: -20 },
+}
+
 export function MobileNav({ isOpen, onClose, links, activeHref }) {
-  const handleQuote = useCallback(() => {
-    onClose()
-    setTimeout(() => (window.location.href = "/contact"), 300)
-  }, [onClose])
+  const allLinks = links.map((l) => ({ name: l.label, href: l.href }))
 
   useEffect(() => {
     if (!isOpen) return
@@ -30,49 +57,70 @@ export function MobileNav({ isOpen, onClose, links, activeHref }) {
           id="mobile-menu"
           role="dialog"
           aria-modal="true"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
+          initial="initial"
+          animate="open"
+          exit="closed"
+          variants={drawerVariants}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed inset-0 z-[9998] bg-white/95 backdrop-blur-xl md:hidden"
+          className="fixed inset-0 bg-white z-[60] flex flex-col justify-between p-8 md:hidden overflow-y-auto"
         >
-          <div className="flex flex-col items-center justify-center h-full px-6">
+          {/* Header Row */}
+          <div className="flex items-center justify-between pb-6 border-b border-neutral-100">
+            <Link
+              href="/"
+              onClick={onClose}
+              className="text-xl font-extrabold tracking-widest text-neutral-900 uppercase"
+            >
+              SMARTBYTE
+            </Link>
             <button
               onClick={onClose}
+              className="bg-black text-white w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
               aria-label="Close menu"
-              className="absolute top-20 right-6 w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
             >
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5 text-white" />
             </button>
+          </div>
 
-            <nav className="flex flex-col items-center gap-2">
-              {links.map((link) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: links.indexOf(link) * 0.05 }}
-                >
-                  <NavItem
+          {/* Link List */}
+          <motion.nav
+            className="my-auto divide-y divide-neutral-200/80"
+            variants={listVariants}
+            initial="initial"
+            animate="open"
+            exit="closed"
+          >
+            {allLinks.map((link) => {
+              const isActive = activeHref === link.href
+              return (
+                <motion.div key={link.href} variants={itemVariants}>
+                  <Link
                     href={link.href}
-                    label={link.label}
-                    isActive={activeHref === link.href}
                     onClick={onClose}
-                  />
+                    className="py-5 flex items-center justify-between group w-full"
+                  >
+                    <span
+                      className={`text-4xl font-extrabold tracking-tight transition-colors ${
+                        isActive
+                          ? "text-neutral-900"
+                          : "text-neutral-800 group-hover:text-black"
+                      }`}
+                    >
+                      {link.name}
+                    </span>
+                    <div className="bg-[#50FFAF] text-black w-10 h-10 rounded-full flex items-center justify-center transition-transform group-hover:translate-x-1 shrink-0">
+                      <ArrowRight className="w-5 h-5" />
+                    </div>
+                  </Link>
                 </motion.div>
-              ))}
-            </nav>
+              )
+            })}
+          </motion.nav>
 
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              onClick={handleQuote}
-              className="mt-10 inline-flex items-center gap-2 bg-[#50FFAF] hover:bg-[#40E69D] text-gray-900 text-base font-semibold px-8 py-4 rounded-full transition-colors duration-300 shadow-sm"
-            >
-              Contact Us
-              <ArrowRight className="w-4 h-4" />
-            </motion.button>
+          {/* Footer Contact Info */}
+          <div className="pt-6 border-t border-neutral-200 space-y-1 text-sm text-neutral-800 font-medium">
+            <p>hello@smartbyte.com</p>
+            <p>+880 1234 567890</p>
           </div>
         </motion.div>
       )}

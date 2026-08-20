@@ -55,7 +55,7 @@ function PosterCard({ project, accent, index }) {
           </div>
         )}
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
+        <div/>
       </div>
 
       {/* Accent glow */}
@@ -67,7 +67,7 @@ function PosterCard({ project, accent, index }) {
       />
 
       {/* Vertical title — left edge */}
-      <div className="absolute top-8 left-5 z-10">
+      {/* <div className="absolute top-8 left-5 z-10">
         <motion.span
           animate={{ rotate: isHovered ? -2 : 0 }}
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
@@ -75,7 +75,7 @@ function PosterCard({ project, accent, index }) {
         >
           {project.title}
         </motion.span>
-      </div>
+      </div> */}
 
       {/* Bottom content */}
       <div className="absolute bottom-0 left-0 right-0 z-10 p-6">

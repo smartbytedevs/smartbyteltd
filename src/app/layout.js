@@ -2,6 +2,7 @@ import { Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { FloatingContact } from "@/components/layout/FloatingContact"
 import { MotionProvider } from "@/components/common/MotionProvider"
+import { LoadingProvider } from "@/components/loading/LoadingProvider"
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -30,8 +31,10 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <MotionProvider>
-          {children}
-          <FloatingContact />
+          <LoadingProvider>
+            {children}
+            <FloatingContact />
+          </LoadingProvider>
         </MotionProvider>
       </body>
     </html>

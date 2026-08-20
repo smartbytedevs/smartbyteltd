@@ -174,7 +174,7 @@ function CircularBadge({ onClick, isVisible }) {
       <div
         className="absolute inset-0 rounded-full"
         style={{
-          background: "#4C1D95",
+          background: "#40e69d",
           boxShadow:
             "0 0 40px rgba(76, 29, 149, 0.35), 0 8px 32px rgba(0,0,0,0.3)",
         }}
@@ -203,7 +203,7 @@ function CircularBadge({ onClick, isVisible }) {
             />
           </defs>
           <text
-            fill="#FFFFFF"
+            fill="#000000"
             fontSize="9"
             fontWeight="600"
             letterSpacing="3.5"

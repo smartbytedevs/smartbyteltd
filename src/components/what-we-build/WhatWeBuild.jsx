@@ -127,7 +127,7 @@ function ServiceRow({ service, index }) {
           </div>
 
           {/* Description — mobile only */}
-          <p className="md:hidden text-sm text-gray-500 leading-relaxed mt-2 line-clamp-2">
+          <p className="md:hidden text-sm text-gray-900 leading-relaxed mt-2 line-clamp-2">
             {service.description}
           </p>
 
