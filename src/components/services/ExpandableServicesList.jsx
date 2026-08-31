@@ -4,89 +4,44 @@ import { motion } from "motion/react"
 
 const services = [
   {
-    title: "Branding & UI/UX",
+    title: "Website Development",
     description:
-      "Distinctive visual identities, component libraries, and intuitive interfaces built with clarity, character, and lasting conversion impact.",
+      "Modern, responsive websites built around your brand and business goals — from company websites and landing pages to e-commerce and industry-specific platforms.",
   },
   {
-    title: "Business Websites",
+    title: "Software Development",
     description:
-      "Professional brand-aligned websites that establish your online presence and drive business growth.",
+      "Custom software solutions built to streamline operations, automate workflows, manage data, and solve your unique business challenges.",
   },
   {
-    title: "E-Commerce",
+    title: "UI/UX Design",
     description:
-      "Full-featured online stores with payment processing, inventory management, and order fulfillment.",
+      "Clean, intuitive, and conversion-focused interfaces designed to create better digital experiences across websites, web apps, and business platforms.",
   },
   {
-    title: "Full-Stack Web Development",
+    title: "Digital Marketing",
     description:
-      "Scalable React, Next.js, and Node.js applications engineered for speed, clean architecture, and seamless integrations.",
+      "Data-driven digital marketing strategies designed to increase your online visibility, attract the right audience, generate leads, and grow your business.",
   },
   {
-    title: "Custom Web Apps",
+    title: "Content Creation",
     description:
-      "Tailored web applications built from scratch to solve your unique business challenges.",
+      "Engaging visual content including social media graphics, promotional videos, reels, ad creatives, thumbnails, and branded digital content.",
   },
   {
-    title: "Restaurant Systems",
+    title: "Business Research",
     description:
-      "Complete digital solutions for restaurants — online ordering, table management, and kitchen integration.",
+      "Strategic research into your business, competitors, customers, and opportunities to help you make smarter decisions before investing in growth.",
   },
   {
-    title: "Hospital Management",
+    title: "Market Research",
     description:
-      "Comprehensive healthcare platforms with patient portals, scheduling, telemedicine, and records management.",
+      "In-depth market and competitor research that reveals customer behavior, industry trends, demand, opportunities, and effective market positioning.",
   },
   {
-    title: "School Management",
+    title: "Page Boosting & Ad Running",
     description:
-      "Educational platforms covering admissions, attendance, grades, communication, and fee management.",
-  },
-  {
-    title: "Inventory Systems",
-    description:
-      "Real-time inventory tracking with barcode scanning, multi-warehouse support, and demand forecasting.",
-  },
-  {
-    title: "POS Software",
-    description:
-      "Point of sale systems with billing, inventory sync, customer management, and sales analytics.",
-  },
-  {
-    title: "ERP Systems",
-    description:
-      "Enterprise resource planning platforms integrating finance, HR, operations, and reporting.",
-  },
-  {
-    title: "Booking Platforms",
-    description:
-      "Appointment and reservation systems with real-time availability, payments, and calendar sync.",
-  },
-  {
-    title: "CRM Systems",
-    description:
-      "Customer relationship management platforms with lead tracking, pipeline management, and analytics.",
-  },
-  {
-    title: "Admin Dashboards",
-    description:
-      "Custom analytics and management dashboards with real-time data visualization and reporting.",
-  },
-  {
-    title: "AI & Automation Solutions",
-    description:
-      "Intelligent workflow automation, custom AI agent integrations, and dynamic data-driven web tools.",
-  },
-  {
-    title: "API Development",
-    description:
-      "RESTful and GraphQL APIs that connect your systems, services, and third-party platforms.",
-  },
-  {
-    title: "Maintenance & Support",
-    description:
-      "Ongoing technical maintenance, updates, security patches, and priority support for your digital products.",
+      "Targeted social media campaigns that increase reach, engagement, traffic, leads, and sales through strategic page promotion and paid advertising.",
   },
 ]
 

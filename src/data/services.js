@@ -1,375 +1,525 @@
 export const services = [
   {
-    id: "business-websites",
-    title: "Business Websites",
+    id: "website-development",
+    title: "Website Development",
     icon: "Globe",
-    description: "Professional brand-aligned websites that establish your online presence and drive business growth.",
-    deliverables: "Custom design, responsive development, CMS integration, SEO setup, contact forms, analytics",
-    timeline: "2–4 weeks",
+    description:
+      "Modern, high-performance websites built to represent your brand, attract customers, and grow your online business.",
+    deliverables:
+      "Business websites, e-commerce stores, restaurant websites, booking platforms, inventory systems, CMS integration, SEO setup",
+    timeline: "2–8 weeks",
     startingPrice: "$1,499",
-    features: ["Custom UI/UX Design", "Responsive Development", "CMS Integration", "SEO Optimization", "Contact Forms", "Analytics Setup"],
-    technologies: ["Next.js", "Tailwind", "Motion", "Prisma"],
-    perfectFor: "Startups, local businesses, professionals, and companies needing a modern web presence.",
-    overview: "We build professional websites that go beyond aesthetics — they're strategic assets designed to attract, engage, and convert visitors. Every site is responsive, fast, and optimized for search engines.",
+    features: [
+      "Business Websites",
+      "E-Commerce Stores",
+      "Restaurant Websites",
+      "Booking Platforms",
+      "Inventory Systems",
+      "Responsive Development",
+    ],
+    technologies: ["Next.js", "React", "Tailwind CSS", "Node.js", "MongoDB"],
+    perfectFor:
+      "Businesses, startups, restaurants, retailers, service providers, and brands that need a strong online presence.",
+    overview:
+      "We build fast, responsive, and conversion-focused websites tailored to your business. From professional company websites and e-commerce stores to restaurant, booking, and inventory platforms, we create digital experiences designed around your goals.",
   },
+
   {
-    id: "ecommerce",
-    title: "E-Commerce",
-    icon: "ShoppingCart",
-    description: "Full-featured online stores with payment processing, inventory management, and order fulfillment.",
-    deliverables: "Product catalog, cart & checkout, payment gateway, inventory system, order management, dashboard",
-    timeline: "4–8 weeks",
-    startingPrice: "$2,999",
-    features: ["Product Management", "Shopping Cart", "Payment Gateway", "Order Tracking", "Inventory Control", "Admin Dashboard"],
-    technologies: ["Next.js", "Stripe", "Postgres", "Tailwind"],
-    perfectFor: "Retailers, brands, wholesalers, and anyone selling products or services online.",
-    overview: "We create online stores that convert. From product catalogs to secure checkout, every component is optimized for sales, performance, and a seamless shopping experience.",
-  },
-  {
-    id: "restaurant-systems",
-    title: "Restaurant Systems",
-    icon: "UtensilsCrossed",
-    description: "Complete digital solutions for restaurants — online ordering, table management, and kitchen integration.",
-    deliverables: "QR menu system, online ordering, table booking, KDS integration, payment processing, reports",
-    timeline: "4–6 weeks",
-    startingPrice: "$1,999",
-    features: ["Online Ordering", "Table Reservation", "QR Menu System", "KDS Integration", "Payment Processing", "Sales Reports"],
-    technologies: ["Next.js", "Node", "Postgres", "Stripe"],
-    perfectFor: "Restaurants, cafes, pizzerias, cloud kitchens, and hospitality businesses.",
-    overview: "Transform your restaurant operations with digital ordering, table management, and kitchen display integration. Reduce wait times and increase order volume.",
-  },
-  {
-    id: "hospital-management",
-    title: "Hospital Management",
-    icon: "HeartPulse",
-    description: "Comprehensive healthcare platforms with patient portals, scheduling, telemedicine, and records management.",
-    deliverables: "Patient portal, appointment system, telemedicine, medical records, billing, dashboard",
-    timeline: "8–12 weeks",
-    startingPrice: "$3,999",
-    features: ["Patient Portal", "Appointment Scheduling", "Telemedicine", "Medical Records", "Billing System", "Admin Dashboard"],
-    technologies: ["Next.js", "TypeScript", "Postgres", "Prisma"],
-    perfectFor: "Hospitals, clinics, dental practices, and healthcare providers of all sizes.",
-    overview: "We build secure, HIPAA-compliant healthcare platforms that streamline operations, improve patient experience, and enable modern telemedicine capabilities.",
-  },
-  {
-    id: "school-management",
-    title: "School Management",
-    icon: "GraduationCap",
-    description: "Educational platforms covering admissions, attendance, grades, communication, and fee management.",
-    deliverables: "Student portal, attendance system, grade book, fee collection, parent communication, reports",
-    timeline: "6–10 weeks",
-    startingPrice: "$2,999",
-    features: ["Student Enrollment", "Attendance Tracking", "Grade Book", "Fee Collection", "Parent Portal", "Report Cards"],
-    technologies: ["Next.js", "TypeScript", "Postgres", "Prisma"],
-    perfectFor: "Schools, colleges, tutoring centers, and educational institutions.",
-    overview: "Modernize your educational institution with a comprehensive management system that connects students, teachers, and parents in one seamless platform.",
-  },
-  {
-    id: "inventory-systems",
-    title: "Inventory Systems",
-    icon: "Package",
-    description: "Real-time inventory tracking with barcode scanning, multi-warehouse support, and demand forecasting.",
-    deliverables: "Inventory tracking, barcode scanning, warehouse management, alerts, analytics, supplier portal",
-    timeline: "6–10 weeks",
-    startingPrice: "$2,499",
-    features: ["Real-time Tracking", "Barcode Scanning", "Multi-Warehouse", "Low Stock Alerts", "Demand Forecasting", "Supplier Portal"],
-    technologies: ["Next.js", "Node", "MongoDB", "Tailwind"],
-    perfectFor: "Retailers, distributors, manufacturers, and logistics companies.",
-    overview: "Gain complete control over your inventory with real-time tracking, automated alerts, and predictive analytics that prevent stockouts and overstocking.",
-  },
-  {
-    id: "pos-software",
-    title: "POS Software",
-    icon: "CreditCard",
-    description: "Point of sale systems with billing, inventory sync, customer management, and sales analytics.",
-    deliverables: "POS interface, billing system, inventory sync, customer profiles, sales reports, multi-device",
-    timeline: "6–8 weeks",
-    startingPrice: "$2,999",
-    features: ["POS Interface", "Billing & Invoicing", "Inventory Sync", "Customer Profiles", "Sales Analytics", "Multi-Device"],
-    technologies: ["Next.js", "Node", "Postgres", "Stripe"],
-    perfectFor: "Retail stores, restaurants, salons, and service-based businesses.",
-    overview: "Modern point of sale systems that combine beautiful interfaces with powerful features — inventory sync, customer management, and real-time sales analytics.",
-  },
-  {
-    id: "erp",
-    title: "ERP Systems",
-    icon: "Building2",
-    description: "Enterprise resource planning platforms integrating finance, HR, operations, and reporting.",
-    deliverables: "Finance module, HR management, operations dashboard, reporting, role-based access, integrations",
-    timeline: "12–20 weeks",
-    startingPrice: "$7,999",
-    features: ["Finance Management", "HR Module", "Operations Dashboard", "Custom Reports", "Role-Based Access", "Third-Party Integrations"],
-    technologies: ["Next.js", "TypeScript", "Postgres", "Prisma"],
-    perfectFor: "Medium to large enterprises needing integrated business management solutions.",
-    overview: "Comprehensive ERP platforms that unify your entire business — finance, HR, operations, and reporting — into a single, efficient system.",
-  },
-  {
-    id: "booking-platforms",
-    title: "Booking Platforms",
-    icon: "CalendarCheck",
-    description: "Appointment and reservation systems with real-time availability, payments, and calendar sync.",
-    deliverables: "Booking widget, availability calendar, payment processing, reminders, calendar sync, dashboard",
-    timeline: "3–6 weeks",
-    startingPrice: "$1,799",
-    features: ["Online Booking", "Availability Calendar", "Payment Processing", "Automated Reminders", "Calendar Sync", "Admin Dashboard"],
-    technologies: ["Next.js", "Node", "Postgres", "Stripe"],
-    perfectFor: "Salons, clinics, hotels, rental services, and appointment-based businesses.",
-    overview: "Eliminate double-bookings and no-shows with intelligent scheduling systems that sync across devices and send automated reminders.",
-  },
-  {
-    id: "crm",
-    title: "CRM Systems",
-    icon: "Users",
-    description: "Customer relationship management platforms with lead tracking, pipeline management, and analytics.",
-    deliverables: "Contact management, pipeline tracking, email integration, reporting, automation, team dashboard",
-    timeline: "6–10 weeks",
-    startingPrice: "$2,999",
-    features: ["Contact Management", "Pipeline Tracking", "Email Integration", "Sales Reports", "Task Automation", "Team Dashboard"],
-    technologies: ["Next.js", "TypeScript", "Postgres", "Prisma"],
-    perfectFor: "Sales teams, agencies, real estate agents, and service businesses.",
-    overview: "Never lose a lead again. Our CRM solutions help you track every interaction, manage your pipeline, and close deals faster with data-driven insights.",
-  },
-  {
-    id: "admin-dashboards",
-    title: "Admin Dashboards",
-    icon: "LayoutDashboard",
-    description: "Custom analytics and management dashboards with real-time data visualization and reporting.",
-    deliverables: "Data visualization, real-time analytics, report generator, user management, export tools, notifications",
-    timeline: "4–8 weeks",
-    startingPrice: "$2,499",
-    features: ["Data Visualization", "Real-time Analytics", "Report Generator", "User Management", "Export Tools", "Notifications"],
-    technologies: ["Next.js", "TypeScript", "Postgres", "Tailwind"],
-    perfectFor: "Businesses needing custom analytics, monitoring tools, or operational dashboards.",
-    overview: "Turn raw data into actionable insights with custom dashboards that visualize key metrics, generate reports, and keep your team informed in real time.",
-  },
-  {
-    id: "custom-web-apps",
-    title: "Custom Web Apps",
+    id: "software-development",
+    title: "Software Development",
     icon: "Code2",
-    description: "Tailored web applications built from scratch to solve your unique business challenges.",
-    deliverables: "Full-stack application, database design, API development, authentication, deployment, documentation",
-    timeline: "8–16 weeks",
-    startingPrice: "$4,999",
-    features: ["Full-Stack Development", "Database Design", "API Development", "Authentication", "Deployment", "Documentation"],
-    technologies: ["Next.js", "TypeScript", "Postgres", "Prisma"],
-    perfectFor: "Businesses with unique workflows, complex requirements, or specialized industry needs.",
-    overview: "When off-the-shelf software doesn't cut it, we build custom web applications tailored precisely to your workflows, requirements, and growth plans.",
+    description:
+      "Custom software solutions designed to automate operations, solve complex business problems, and scale with your company.",
+    deliverables:
+      "Custom web applications, business management systems, dashboards, CRM, ERP, POS, APIs, authentication, database architecture",
+    timeline: "4–16+ weeks",
+    startingPrice: "$2,999",
+    features: [
+      "Custom Web Applications",
+      "Business Management Systems",
+      "Admin Dashboards",
+      "CRM & ERP Systems",
+      "POS & Inventory Software",
+      "API Development",
+    ],
+    technologies: ["Next.js", "TypeScript", "Node.js", "MongoDB", "PostgreSQL"],
+    perfectFor:
+      "Businesses that need custom software, internal systems, automation, dashboards, or solutions that standard tools cannot provide.",
+    overview:
+      "We develop custom software around the way your business actually works. From internal management systems and dashboards to complete SaaS products, we build scalable solutions that improve efficiency and give you more control.",
   },
+
   {
-    id: "ai-integration",
-    title: "AI Integration",
-    icon: "Bot",
-    description: "Integrate AI capabilities into your existing systems — chatbots, predictions, automation, and more.",
-    deliverables: "AI model integration, chatbot setup, automation workflows, API endpoints, testing, documentation",
-    timeline: "4–10 weeks",
-    startingPrice: "$3,499",
-    features: ["Chatbot Integration", "Predictive Analytics", "Process Automation", "NLP Capabilities", "Image Recognition", "Custom AI Models"],
-    technologies: ["Python", "TensorFlow", "Node", "OpenAI"],
-    perfectFor: "Businesses looking to automate processes, gain insights, or add intelligent features to their products.",
-    overview: "Leverage the power of artificial intelligence to automate workflows, predict trends, personalize experiences, and give your business a competitive edge.",
-  },
-  {
-    id: "api-development",
-    title: "API Development",
-    icon: "Network",
-    description: "RESTful and GraphQL APIs that connect your systems, services, and third-party platforms.",
-    deliverables: "REST/GraphQL API, documentation, authentication, rate limiting, testing suite, deployment",
-    timeline: "3–8 weeks",
-    startingPrice: "$2,499",
-    features: ["RESTful & GraphQL", "API Documentation", "Authentication", "Rate Limiting", "Testing Suite", "Monitoring"],
-    technologies: ["Node", "TypeScript", "Postgres", "Redis"],
-    perfectFor: "Companies building integrations, mobile apps, or multi-system architectures.",
-    overview: "Robust, well-documented APIs that enable seamless integration between your systems, partners, and third-party services.",
-  },
-  {
-    id: "maintenance-support",
-    title: "Maintenance & Support",
-    icon: "Wrench",
-    description: "Ongoing technical maintenance, updates, security patches, and priority support for your digital products.",
-    deliverables: "Monthly updates, security patches, performance monitoring, priority support, backups, reporting",
+    id: "digital-marketing",
+    title: "Digital Marketing",
+    icon: "Megaphone",
+    description:
+      "Data-driven digital marketing strategies designed to increase your reach, generate leads, and grow your business online.",
+    deliverables:
+      "Marketing strategy, social media marketing, campaign management, paid advertising, audience targeting, analytics, performance reporting",
     timeline: "Ongoing",
     startingPrice: "$499/mo",
-    features: ["Monthly Updates", "Security Patches", "Performance Monitoring", "Priority Support", "Automated Backups", "Monthly Reports"],
-    technologies: ["Vercel", "AWS", "Cloudinary", "Resend"],
-    perfectFor: "Businesses with existing digital products that need reliable maintenance and support.",
-    overview: "Keep your digital products running smoothly with proactive maintenance, security updates, performance monitoring, and dedicated technical support.",
+    features: [
+      "Digital Marketing Strategy",
+      "Social Media Marketing",
+      "Paid Advertising",
+      "Campaign Management",
+      "Audience Targeting",
+      "Performance Analytics",
+    ],
+    technologies: [
+      "Meta Ads",
+      "Google Ads",
+      "Google Analytics",
+      "Meta Business Suite",
+    ],
+    perfectFor:
+      "Businesses, brands, startups, and online businesses looking to increase visibility, traffic, leads, and sales.",
+    overview:
+      "We combine strategy, creative content, audience targeting, and performance data to help businesses grow online. Every campaign is focused on measurable results rather than simply generating impressions.",
+  },
+
+  {
+    id: "content-creation",
+    title: "Content Creation",
+    icon: "Video",
+    description:
+      "Creative visual content that helps your brand communicate clearly, stand out online, and connect with your audience.",
+    deliverables:
+      "Social media graphics, promotional videos, short-form videos, reels, ad creatives, thumbnails, brand content",
+    timeline: "3–14 days",
+    startingPrice: "$199",
+    features: [
+      "Social Media Content",
+      "Promotional Videos",
+      "Short-Form Videos",
+      "Ad Creatives",
+      "Graphic Design",
+      "Thumbnail Design",
+    ],
+    technologies: [
+      "Adobe Photoshop",
+      "Adobe Premiere Pro",
+      "After Effects",
+      "Canva",
+    ],
+    perfectFor:
+      "Brands, businesses, creators, agencies, and organizations that need consistent and professional digital content.",
+    overview:
+      "We create engaging content designed for modern digital platforms. From social media graphics and reels to promotional videos and advertising creatives, we help your brand maintain a professional and recognizable presence.",
+  },
+
+  {
+    id: "ui-ux-design",
+    title: "UI/UX Design",
+    icon: "Palette",
+    description:
+      "Clean, intuitive, and conversion-focused interfaces designed to make digital products beautiful and easy to use.",
+    deliverables:
+      "User research, wireframes, user flows, UI design, interactive prototypes, responsive layouts, design systems",
+    timeline: "1–4 weeks",
+    startingPrice: "$499",
+    features: [
+      "User Research",
+      "Wireframing",
+      "UI Design",
+      "UX Design",
+      "Interactive Prototypes",
+      "Design Systems",
+    ],
+    technologies: ["Figma", "FigJam", "Framer", "Adobe XD"],
+    perfectFor:
+      "Startups, businesses, SaaS companies, agencies, and teams building or redesigning digital products.",
+    overview:
+      "We design digital experiences that balance aesthetics, usability, and business goals. From landing pages to complete web applications, we create interfaces that feel modern, intuitive, and purposeful.",
+  },
+
+  {
+    id: "business-research",
+    title: "Business Research",
+    icon: "BriefcaseBusiness",
+    description:
+      "Research and strategic insights that help you understand your business opportunity before investing time and resources.",
+    deliverables:
+      "Business analysis, competitor research, opportunity analysis, customer research, business model evaluation, strategic recommendations",
+    timeline: "1–3 weeks",
+    startingPrice: "$299",
+    features: [
+      "Business Analysis",
+      "Competitor Analysis",
+      "Opportunity Research",
+      "Customer Research",
+      "Business Model Analysis",
+      "Strategic Recommendations",
+    ],
+    technologies: ["Google Analytics", "Google Trends", "Notion", "Data Analysis"],
+    perfectFor:
+      "Entrepreneurs, startups, businesses entering new markets, and companies planning new digital products.",
+    overview:
+      "Good products start with good decisions. We research your business, competitors, customers, and opportunities to help you understand what to build, who to target, and how to position your business.",
+  },
+
+  {
+    id: "market-research",
+    title: "Market Research",
+    icon: "ChartNoAxesCombined",
+    description:
+      "Market intelligence that helps you understand your audience, competitors, trends, and opportunities.",
+    deliverables:
+      "Market analysis, competitor research, audience research, trend analysis, demand research, positioning insights",
+    timeline: "1–3 weeks",
+    startingPrice: "$399",
+    features: [
+      "Market Analysis",
+      "Competitor Research",
+      "Target Audience Research",
+      "Market Trend Analysis",
+      "Demand Research",
+      "Market Positioning",
+    ],
+    technologies: [
+      "Google Trends",
+      "Google Analytics",
+      "Meta Insights",
+      "Data Analysis",
+    ],
+    perfectFor:
+      "Startups, brands, businesses launching new products, and companies expanding into new markets.",
+    overview:
+      "We help you understand the market before making major decisions. Our research identifies competitors, customer behavior, market trends, demand, and opportunities so you can make decisions based on evidence.",
+  },
+
+  {
+    id: "page-boosting-ad-running",
+    title: "Page Boosting & Ad Running",
+    icon: "TrendingUp",
+    description:
+      "Targeted social media advertising and page growth campaigns designed to increase reach, engagement, traffic, and conversions.",
+    deliverables:
+      "Ad campaign setup, audience targeting, page boosting, creative testing, campaign optimization, retargeting, performance reports",
+    timeline: "Ongoing",
+    startingPrice: "$199/campaign",
+    features: [
+      "Page Boosting",
+      "Facebook & Instagram Ads",
+      "Audience Targeting",
+      "Ad Creative Testing",
+      "Campaign Optimization",
+      "Performance Reporting",
+    ],
+    technologies: [
+      "Meta Ads Manager",
+      "Facebook",
+      "Instagram",
+      "Meta Business Suite",
+    ],
+    perfectFor:
+      "Businesses and brands looking to increase social media reach, promote products, generate leads, or drive website traffic.",
+    overview:
+      "We plan, launch, monitor, and optimize paid campaigns across social platforms. Instead of simply boosting posts, we focus on the right audience, creative, budget, and campaign objective to achieve meaningful results.",
   },
 ]
 
 export const processSteps = [
-  { step: 1, title: "Discover", description: "We dive deep into your business, goals, and challenges to define project scope and success metrics.", icon: "Search" },
-  { step: 2, title: "Research", description: "Market analysis, competitor research, and user behavior studies inform our strategic direction.", icon: "BookOpen" },
-  { step: 3, title: "Planning", description: "Detailed project roadmap with milestones, timelines, resource allocation, and risk assessment.", icon: "ClipboardList" },
-  { step: 4, title: "UI Design", description: "Wireframes, interactive prototypes, and pixel-perfect designs aligned with your brand identity.", icon: "Palette" },
-  { step: 5, title: "Development", description: "Agile development with regular sprints, code reviews, and continuous integration & deployment.", icon: "Code" },
-  { step: 6, title: "Testing", description: "Rigorous QA including performance testing, security audits, and user acceptance testing.", icon: "CheckCircle" },
-  { step: 7, title: "Launch", description: "Smooth deployment with zero downtime, monitoring setup, and post-launch optimization.", icon: "Rocket" },
-  { step: 8, title: "Support", description: "Ongoing maintenance, updates, and dedicated support to ensure long-term success.", icon: "HeadphonesIcon" },
+  {
+    step: 1,
+    title: "Discover",
+    description:
+      "We understand your business, goals, audience, challenges, and what you want to achieve.",
+    icon: "Search",
+  },
+  {
+    step: 2,
+    title: "Research",
+    description:
+      "We analyze your market, competitors, audience, and opportunities to build the right strategy.",
+    icon: "BookOpen",
+  },
+  {
+    step: 3,
+    title: "Plan",
+    description:
+      "We define the project scope, strategy, features, timeline, deliverables, and execution roadmap.",
+    icon: "ClipboardList",
+  },
+  {
+    step: 4,
+    title: "Design",
+    description:
+      "We create the visual direction, user experience, content, and interfaces around your brand.",
+    icon: "Palette",
+  },
+  {
+    step: 5,
+    title: "Build",
+    description:
+      "Our team develops your website, software, campaigns, or digital assets with quality and scalability in mind.",
+    icon: "Code",
+  },
+  {
+    step: 6,
+    title: "Launch",
+    description:
+      "We test everything, deploy your product or campaign, and make sure everything is ready to perform.",
+    icon: "Rocket",
+  },
+  {
+    step: 7,
+    title: "Optimize",
+    description:
+      "We monitor performance, analyze results, and continuously improve what we built.",
+    icon: "TrendingUp",
+  },
+  {
+    step: 8,
+    title: "Support",
+    description:
+      "We provide ongoing support, maintenance, marketing, content, and improvements as your business grows.",
+    icon: "HeadphonesIcon",
+  },
 ]
 
-export const techStack = {
-  frontend: [
-    { name: "Next.js", icon: "NextJs", color: "from-white/60 to-white/40" },
-    { name: "React", icon: "React", color: "from-sky-400/20 to-sky-600/10" },
-    { name: "Tailwind CSS", icon: "Tailwind", color: "from-cyan-400/20 to-cyan-600/10" },
-    { name: "Framer Motion", icon: "Motion", color: "from-pink-400/20 to-pink-600/10" },
+export const serviceCategories = [
+  { id: "development", label: "Development" },
+  { id: "marketing", label: "Marketing" },
+  { id: "creative", label: "Creative" },
+  { id: "research", label: "Research" },
+]
+
+export const categoryServices = {
+  development: [
+    "website-development",
+    "software-development",
   ],
-  backend: [
-    { name: "Node.js", icon: "NodeJs", color: "from-green-400/20 to-green-600/10" },
-    { name: "Express", icon: "Express", color: "from-white/60 to-white/40" },
-    { name: "Prisma", icon: "Prisma", color: "from-emerald-400/20 to-emerald-600/10" },
-    { name: "NextAuth", icon: "Shield", color: "from-blue-400/20 to-blue-600/10" },
+  marketing: [
+    "digital-marketing",
+    "page-boosting-ad-running",
   ],
-  database: [
-    { name: "PostgreSQL", icon: "Postgres", color: "from-indigo-400/20 to-indigo-600/10" },
-    { name: "MongoDB", icon: "MongoDB", color: "from-emerald-400/20 to-emerald-600/10" },
-    { name: "Firebase", icon: "Firebase", color: "from-amber-400/20 to-amber-600/10" },
-    { name: "Redis", icon: "Redis", color: "from-red-400/20 to-red-600/10" },
+  creative: [
+    "content-creation",
+    "ui-ux-design",
   ],
-  cloud: [
-    { name: "Vercel", icon: "Vercel", color: "from-white/60 to-white/40" },
-    { name: "AWS", icon: "Aws", color: "from-orange-400/20 to-orange-600/10" },
-    { name: "Cloudinary", icon: "Cloud", color: "from-blue-400/20 to-blue-600/10" },
-    { name: "Resend", icon: "Mail", color: "from-black/20 to-black/10" },
+  research: [
+    "business-research",
+    "market-research",
   ],
-  payments: [
-    { name: "Stripe", icon: "Stripe", color: "from-purple-400/20 to-purple-600/10" },
-    { name: "SSLCommerz", icon: "Shield", color: "from-green-400/20 to-green-600/10" },
-    { name: "PayPal", icon: "DollarSign", color: "from-blue-400/20 to-blue-600/10" },
-    { name: "Square", icon: "CreditCard", color: "from-white/60 to-white/40" },
+}
+
+export const categoryServiceIds = {
+  development: [
+    "website-development",
+    "software-development",
   ],
-  auth: [
-    { name: "NextAuth", icon: "Shield", color: "from-blue-400/20 to-blue-600/10" },
-    { name: "JWT", icon: "Key", color: "from-rose-400/20 to-rose-600/10" },
-    { name: "OAuth 2.0", icon: "Fingerprint", color: "from-violet-400/20 to-violet-600/10" },
-    { name: "Magic Links", icon: "Mail", color: "from-accent/20 to-accent-secondary/10" },
+  marketing: [
+    "digital-marketing",
+    "page-boosting-ad-running",
   ],
-  analytics: [
-    { name: "Google Analytics", icon: "BarChart3", color: "from-orange-400/20 to-orange-600/10" },
-    { name: "Mixpanel", icon: "PieChart", color: "from-purple-400/20 to-purple-600/10" },
-    { name: "Hotjar", icon: "MousePointer2", color: "from-red-400/20 to-red-600/10" },
-    { name: "Sentry", icon: "Bug", color: "from-pink-400/20 to-pink-600/10" },
+  creative: [
+    "content-creation",
+    "ui-ux-design",
+  ],
+  research: [
+    "business-research",
+    "market-research",
   ],
 }
 
 export const whyChooseUs = [
-  { id: "fast-delivery", title: "Fast Delivery", description: "We deliver projects in weeks, not months, without compromising quality.", icon: "Zap" },
-  { id: "modern-ui", title: "Modern UI", description: "Pixel-perfect designs that follow the latest trends and best practices.", icon: "Palette" },
-  { id: "seo-ready", title: "SEO Ready", description: "Built with search engines in mind — proper semantics, speed, and meta tags.", icon: "Search" },
-  { id: "mobile-first", title: "Mobile First", description: "Every project is designed mobile-first and tested across all devices.", icon: "Smartphone" },
-  { id: "high-performance", title: "High Performance", description: "Lightning-fast load times with optimized code, images, and caching.", icon: "Zap" },
-  { id: "secure", title: "Secure", description: "Security best practices including HTTPS, CSRF protection, and data encryption.", icon: "Shield" },
-  { id: "scalable", title: "Scalable", description: "Architecture designed to grow with your business — from hundreds to millions of users.", icon: "TrendingUp" },
-  { id: "affordable", title: "Affordable", description: "Competitive pricing with transparent quotes and no hidden fees.", icon: "DollarSign" },
-  { id: "dedicated-support", title: "Dedicated Support", description: "Ongoing maintenance and priority support from your dedicated project team.", icon: "HeadphonesIcon" },
-]
-
-export const industries = [
-  { id: "restaurant", label: "Restaurant", icon: "UtensilsCrossed", description: "Digital ordering, table management, and kitchen integration systems." },
-  { id: "healthcare", label: "Healthcare", icon: "HeartPulse", description: "Patient portals, telemedicine, and practice management platforms." },
-  { id: "education", label: "Education", icon: "GraduationCap", description: "School management, LMS, and student engagement platforms." },
-  { id: "corporate", label: "Corporate", icon: "Building2", description: "Company websites, intranets, and enterprise applications." },
-  { id: "construction", label: "Construction", icon: "HardHat", description: "Project management, bid systems, and compliance tracking." },
-  { id: "realestate", label: "Real Estate", icon: "Home", description: "Property listings, virtual tours, and agent management platforms." },
-  { id: "legal", label: "Legal", icon: "Scale", description: "Case management, client portals, and document automation." },
-  { id: "beauty", label: "Beauty", icon: "Sparkles", description: "Booking systems, service catalogs, and client management." },
-  { id: "travel", label: "Travel", icon: "Plane", description: "Booking engines, itinerary management, and travel platforms." },
-  { id: "agency", label: "Agency", icon: "Briefcase", description: "Portfolio sites, client portals, and project management tools." },
-  { id: "manufacturing", label: "Manufacturing", icon: "Factory", description: "ERP integration, inventory tracking, and supply chain solutions." },
-  { id: "startup", label: "Startup", icon: "Rocket", description: "MVP development, landing pages, and investor-ready platforms." },
+  {
+    id: "business-first",
+    title: "Business First",
+    description:
+      "We focus on your business goals, not just the technology or design.",
+    icon: "BriefcaseBusiness",
+  },
+  {
+    id: "modern-solutions",
+    title: "Modern Solutions",
+    description:
+      "We use modern technologies, design principles, and digital strategies to build competitive solutions.",
+    icon: "Sparkles",
+  },
+  {
+    id: "research-driven",
+    title: "Research Driven",
+    description:
+      "We use business, market, and audience research to make better decisions.",
+    icon: "Search",
+  },
+  {
+    id: "custom-built",
+    title: "Custom Built",
+    description:
+      "Every project is tailored around your specific business requirements and goals.",
+    icon: "Wrench",
+  },
+  {
+    id: "performance-focused",
+    title: "Performance Focused",
+    description:
+      "We build and optimize digital experiences with speed, usability, and measurable performance in mind.",
+    icon: "Zap",
+  },
+  {
+    id: "growth-focused",
+    title: "Growth Focused",
+    description:
+      "Our websites, software, content, and marketing strategies are designed to support long-term growth.",
+    icon: "TrendingUp",
+  },
+  {
+    id: "transparent",
+    title: "Transparent",
+    description:
+      "Clear communication, defined deliverables, and straightforward pricing throughout the project.",
+    icon: "Eye",
+  },
+  {
+    id: "one-partner",
+    title: "One Digital Partner",
+    description:
+      "From research and design to development, content, and marketing, we can handle your complete digital journey.",
+    icon: "Users",
+  },
 ]
 
 export const pricingTiers = [
   {
     id: "starter",
     name: "Starter",
-    description: "For early-stage businesses and simple projects.",
-    range: "$1,499 — $2,999",
-    timeline: "2–4 weeks",
-    bestFor: "Business websites, landing pages, simple booking systems",
-    features: ["Custom Design", "Responsive Development", "Basic CMS", "Contact Forms", "SEO Setup", "30 Days Support"],
+    description:
+      "For small businesses and early-stage projects that need a strong digital foundation.",
+    range: "$299 — $1,999",
+    timeline: "1–4 weeks",
+    bestFor:
+      "UI/UX design, business research, market research, content creation, and business websites",
+    features: [
+      "Strategy & Consultation",
+      "Custom Design",
+      "Responsive Development",
+      "Research & Analysis",
+      "Basic SEO",
+      "30 Days Support",
+    ],
   },
   {
     id: "growth",
     name: "Growth",
-    description: "For established businesses needing advanced features.",
-    range: "$2,999 — $7,999",
-    timeline: "4–10 weeks",
-    bestFor: "E-commerce stores, management systems, web applications",
-    features: ["Everything in Starter", "Advanced CMS", "Payment Integration", "User Authentication", "Admin Dashboard", "API Development", "90 Days Support"],
+    description:
+      "For established businesses ready to improve their digital presence and operations.",
+    range: "$1,999 — $7,999",
+    timeline: "3–10 weeks",
+    bestFor:
+      "E-commerce, software systems, digital marketing, booking platforms, and business applications",
+    features: [
+      "Everything in Starter",
+      "Advanced Development",
+      "Custom Business Features",
+      "Marketing Integration",
+      "Analytics",
+      "Admin Dashboard",
+      "90 Days Support",
+    ],
   },
   {
-    id: "enterprise",
-    name: "Enterprise",
-    description: "For large organizations with complex requirements.",
-    range: "$7,999+",
-    timeline: "8–20 weeks",
-    bestFor: "ERP systems, hospital platforms, custom enterprise solutions",
-    features: ["Everything in Growth", "Custom Architecture", "Team Training", "Priority Support", "SLA Agreement", "Dedicated Team", "12 Months Support"],
+    id: "custom",
+    name: "Custom",
+    description:
+      "For businesses that need a complete digital solution built around their unique requirements.",
+    range: "Custom Quote",
+    timeline: "8+ weeks",
+    bestFor:
+      "Custom software, enterprise platforms, complete digital transformation, and long-term growth",
+    features: [
+      "Everything in Growth",
+      "Custom Architecture",
+      "Advanced Integrations",
+      "Business & Market Research",
+      "Dedicated Strategy",
+      "Priority Support",
+      "Long-Term Partnership",
+    ],
   },
 ]
 
 export const faqItems = [
   {
-    question: "How long does a typical project take?",
-    answer: "Project timelines vary based on complexity. Simple business websites take 2–4 weeks, while complex platforms like ERP systems or hospital management systems can take 8–20 weeks. We provide a detailed timeline during our initial consultation.",
+    question: "What services does SmartByte provide?",
+    answer:
+      "SmartByte provides website development, custom software development, digital marketing, content creation, UI/UX design, business research, market research, and social media page boosting and advertising.",
   },
   {
-    question: "Do you provide hosting after the project is complete?",
-    answer: "We recommend and can set up hosting on Vercel, AWS, or your preferred provider. Hosting setup and the first month of configuration are included with every project. Ongoing hosting management is available as part of our maintenance plans.",
+    question: "Can you handle my complete digital business setup?",
+    answer:
+      "Yes. We can support your business from research and strategy through UI/UX design, website or software development, content creation, marketing, advertising, and ongoing optimization.",
   },
   {
-    question: "Can you redesign an existing website or system?",
-    answer: "Absolutely. We frequently redesign and modernize existing websites and applications. We'll audit your current system, identify improvements, and create a migration plan that minimizes disruption to your business.",
+    question: "Do you build custom websites or use templates?",
+    answer:
+      "We primarily build custom solutions based on your brand, business requirements, audience, and goals. The technology and architecture are selected according to the project's needs.",
   },
   {
-    question: "Will I own the complete source code?",
-    answer: "Yes. You own 100% of the source code, design assets, and intellectual property. There are no licensing fees or lock-in agreements. We deliver everything on completion, and you're free to work with any developer in the future.",
+    question: "Can you develop custom business software?",
+    answer:
+      "Yes. We build custom software such as inventory systems, CRM platforms, POS systems, dashboards, booking platforms, management systems, and other business-specific applications.",
   },
   {
-    question: "Do you provide maintenance and support after launch?",
-    answer: "Yes. Every project includes a post-launch support period. We also offer ongoing maintenance plans that include security updates, performance monitoring, backups, and priority technical support.",
+    question: "Do you provide digital marketing after building a website?",
+    answer:
+      "Yes. We can continue supporting your business with digital marketing, content creation, social media campaigns, advertising, analytics, and ongoing optimization after your website or software launches.",
   },
   {
-    question: "Can I request custom features beyond the standard scope?",
-    answer: "Yes. Every project is tailored to your specific needs. During the planning phase, we'll define the full feature set. Additional features can be added at any time — we'll provide a transparent quote for any scope changes.",
+    question: "Can you run Facebook and Instagram ads?",
+    answer:
+      "Yes. We can set up, manage, monitor, and optimize paid advertising campaigns, including audience targeting, creative testing, page promotion, and performance tracking.",
   },
   {
-    question: "What technologies do you use?",
-    answer: "We specialize in modern technologies including Next.js, React, TypeScript, Node.js, PostgreSQL, MongoDB, Tailwind CSS, and Framer Motion. We choose the best tech stack for each project's specific requirements.",
+    question: "Do you provide market research before starting a project?",
+    answer:
+      "Yes. Market and business research can be included before development or marketing begins. This helps us understand your competitors, target audience, market opportunities, and positioning.",
   },
   {
-    question: "Do you offer payment plans?",
-    answer: "Yes. We offer flexible payment structures. Typically we work with a 50% deposit to start, 25% on milestone completion, and 25% on delivery. Custom payment plans are available for enterprise projects.",
+    question: "Can I request a completely custom package?",
+    answer:
+      "Absolutely. Our services can be combined into a custom package based on your business goals. We can combine research, design, development, content, and marketing into one complete solution.",
   },
 ]
 
-export const serviceCategories = [
-  { id: "website", label: "Website" },
-  { id: "web-app", label: "Web App" },
-  { id: "business-system", label: "Business System" },
-  { id: "ai", label: "AI" },
-  { id: "automation", label: "Automation" },
-  { id: "branding", label: "Branding" },
-  { id: "maintenance", label: "Maintenance" },
-]
-
-export const categoryServices = {
-  website: ["business-websites", "ecommerce", "restaurant-systems"],
-  "web-app": ["custom-web-apps", "admin-dashboards", "booking-platforms"],
-  "business-system": ["erp", "crm", "inventory-systems", "pos-software", "hospital-management", "school-management"],
-  ai: ["ai-integration"],
-  automation: ["api-development", "ai-integration"],
-  branding: ["business-websites"],
-  maintenance: ["maintenance-support"],
-}
-
-export const categoryServiceIds = {
-  website: ["business-websites", "ecommerce", "restaurant-systems"],
-  "web-app": ["custom-web-apps", "admin-dashboards", "booking-platforms", "api-development"],
-  "business-system": ["erp", "crm", "inventory-systems", "pos-software", "hospital-management", "school-management"],
-  ai: ["ai-integration"],
-  automation: ["ai-integration", "api-development"],
-  branding: ["business-websites"],
-  maintenance: ["maintenance-support"],
+export const techStack = {
+  frontend: [
+    { name: "Next.js", icon: "NextJs" },
+    { name: "React", icon: "React" },
+    { name: "Tailwind CSS", icon: "Tailwind" },
+    { name: "Framer Motion", icon: "Motion" },
+  ],
+  backend: [
+    { name: "Node.js", icon: "NodeJs" },
+    { name: "Express", icon: "Express" },
+    { name: "TypeScript", icon: "TypeScript" },
+    { name: "Prisma", icon: "Prisma" },
+  ],
+  database: [
+    { name: "MongoDB", icon: "MongoDB" },
+    { name: "PostgreSQL", icon: "Postgres" },
+    { name: "Firebase", icon: "Firebase" },
+    { name: "Redis", icon: "Redis" },
+  ],
+  cloud: [
+    { name: "Vercel", icon: "Vercel" },
+    { name: "AWS", icon: "Aws" },
+    { name: "Cloudinary", icon: "Cloud" },
+    { name: "Resend", icon: "Mail" },
+  ],
+  marketing: [
+    { name: "Meta Ads", icon: "Megaphone" },
+    { name: "Google Ads", icon: "BarChart3" },
+    { name: "Google Analytics", icon: "BarChart3" },
+    { name: "Meta Business Suite", icon: "Facebook" },
+  ],
+  design: [
+    { name: "Figma", icon: "Figma" },
+    { name: "Framer", icon: "Framer" },
+    { name: "Photoshop", icon: "Image" },
+    { name: "Premiere Pro", icon: "Video" },
+  ],
 }
