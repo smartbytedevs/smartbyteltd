@@ -91,7 +91,6 @@ export function SplashScreen({ onComplete }) {
             className="flex items-center justify-between text-xs text-neutral-600 font-medium pt-6 border-t border-neutral-900/80"
           >
             <span>SMARTBYTE LTD.</span>
-            <span>CLICK ANYWHERE OR ENTER TO CONTINUE</span>
           </motion.div>
         </motion.div>
       )}
