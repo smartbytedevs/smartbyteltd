@@ -19,7 +19,7 @@ export function SplashScreen({ onComplete }) {
           initial={{ opacity: 1, y: 0 }}
           exit={{
             y: "-100%",
-            transition: { duration: 0.9, ease: [0.87, 0, 0.13, 1] },
+            transition: { duration: 0.9, ease: [0.87, 0, 0.14, 1] },
           }}
           className="fixed inset-0 z-[110] bg-[#0A0A0A] text-white flex flex-col justify-between p-8 md:p-16 select-none overflow-hidden"
         >
