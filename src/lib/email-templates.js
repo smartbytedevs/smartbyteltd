@@ -1,7 +1,7 @@
 const brand = {
   name: "SmartByte",
-  email: "hello@smartbyte.dev",
-  website: "https://smartbyte.dev",
+  email: "hello@smartbyteltd.com",
+  website: "https://www.smartbyteltd.com",
   logo: "S",
   accent: "#00F0FF",
 }

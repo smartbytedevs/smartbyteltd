@@ -1,5 +1,5 @@
 export const contactInfo = {
-  email: "hello@smartbyte.com",
+  email: "hello@smartbyteltd.com",
   phone: "+8801XXXXXXXXX",
   location: "Chattogram, Bangladesh",
   hours: "Sat \u2013 Thu \u2022 10 AM \u2013 8 PM",

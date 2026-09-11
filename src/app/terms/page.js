@@ -2,7 +2,7 @@ import { Navbar } from "@/components/navbar/Navbar"
 import { Footer } from "@/components/layout/Footer"
 
 export const metadata = {
-  title: "Terms of Service | SmartByte",
+  title: { absolute: "Terms of Service | SmartByte" },
   description: "SmartByte's terms of service govern the use of our website and services.",
   openGraph: {
     title: "Terms of Service | SmartByte",
@@ -49,7 +49,7 @@ export default function TermsPage() {
 
             <section>
               <h2 className="font-display text-xl font-bold text-foreground mb-3">6. Contact</h2>
-              <p>For questions about these terms, contact us at <a href="mailto:hello@smartbyte.dev" className="text-accent hover:underline">hello@smartbyte.dev</a>.</p>
+              <p>For questions about these terms, contact us at <a href="mailto:hello@smartbyteltd.com" className="text-accent hover:underline">hello@smartbyteltd.com</a>.</p>
             </section>
           </div>
         </div>

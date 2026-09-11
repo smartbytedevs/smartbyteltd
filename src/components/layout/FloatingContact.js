@@ -33,7 +33,7 @@ const getContactOptions = () => [
     title: "Email",
     subtitle: "Send project brief",
     action: () => {
-      window.location.href = "mailto:hello@smartbyte.com"
+      window.location.href = "mailto:hello@smartbyteltd.com"
     },
   },
   {

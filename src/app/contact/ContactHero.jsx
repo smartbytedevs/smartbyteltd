@@ -66,10 +66,10 @@ export function ContactHero({ onStartProject }) {
                   Start Your Project
                 </PremiumCTA>
                 <a
-                  href="mailto:hello@smartbyte.dev"
+                  href="mailto:hello@smartbyteltd.com"
                   className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border/40 text-foreground hover:bg-accent/[0.12] hover:border-border/55 transition-all duration-300"
                 >
-                  hello@smartbyte.dev
+                  hello@smartbyteltd.com
                 </a>
               </div>
             </SafeSlideUp>

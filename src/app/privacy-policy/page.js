@@ -2,7 +2,7 @@ import { Navbar } from "@/components/navbar/Navbar"
 import { Footer } from "@/components/layout/Footer"
 
 export const metadata = {
-  title: "Privacy Policy | SmartByte",
+  title: { absolute: "Privacy Policy | SmartByte" },
   description: "SmartByte's privacy policy explains how we collect, use, and protect your personal information.",
   openGraph: {
     title: "Privacy Policy | SmartByte",
@@ -51,12 +51,12 @@ export default function PrivacyPolicyPage() {
 
             <section>
               <h2 className="font-display text-xl font-bold text-foreground mb-3">5. Your Rights</h2>
-              <p>You have the right to access, correct, update, or delete your personal information at any time. You may also object to or restrict certain processing of your data. To exercise these rights, please contact us at hello@smartbyte.dev.</p>
+              <p>You have the right to access, correct, update, or delete your personal information at any time. You may also object to or restrict certain processing of your data. To exercise these rights, please contact us at hello@smartbyteltd.com.</p>
             </section>
 
             <section>
               <h2 className="font-display text-xl font-bold text-foreground mb-3">6. Contact</h2>
-              <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:hello@smartbyte.dev" className="text-accent hover:underline">hello@smartbyte.dev</a>.</p>
+              <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:hello@smartbyteltd.com" className="text-accent hover:underline">hello@smartbyteltd.com</a>.</p>
             </section>
           </div>
         </div>

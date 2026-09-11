@@ -137,10 +137,10 @@ function ContactFormInner() {
               className="mt-8 mb-12 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-300 md:text-base"
             >
               <a
-                href="mailto:hello@smartbyte.com"
+                href="mailto:hello@smartbyteltd.com"
                 className="underline underline-offset-4 transition-colors hover:text-[#8ba4ff]"
               >
-                hello@smartbyte.com
+                hello@smartbyteltd.com
               </a>
               <a
                 href="tel:+8801234567890"

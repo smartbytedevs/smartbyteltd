@@ -75,10 +75,10 @@ export function Footer() {
         className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-300"
       >
         <a
-          href="mailto:hello@smartbyte.com"
+          href="mailto:hello@smartbyteltd.com"
           className="underline underline-offset-4 transition-colors duration-300 hover:text-[#8ba4ff]"
         >
-          hello@smartbyte.com
+          hello@smartbyteltd.com
         </a>
         <a
           href="tel:+8801234567890"

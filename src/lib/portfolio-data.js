@@ -1,7 +1,7 @@
 import templatesJson from "@/data/templates.json"
 import projectsJson from "@/data/projects.json"
 
-export const siteUrl = "https://smartbyte.agency"
+export const siteUrl = "https://www.smartbyteltd.com"
 
 // ── Generic helpers ──
 

@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { motion } from "motion/react"
+import { ExternalLink } from "lucide-react"
 import { Navbar } from "@/components/navbar/Navbar"
 import { Footer } from "@/components/layout/Footer"
 
@@ -79,7 +80,7 @@ export function ProjectCaseStudy({ project }) {
         {/* ══════════════════════════════════════════════════════
             SCREEN 1 — Full-Bleed Hero Banner
         ══════════════════════════════════════════════════════ */}
-        <section className="px-4 pt-6 pb-8 md:px-8 md:pt-8">
+        <section className="mt-20 px-4 pt-6 pb-8 md:px-8 md:pt-8">
           <div className="relative min-h-[75vh] overflow-hidden rounded-[2.5rem] bg-neutral-900 p-8 md:p-12">
             {/* Background Image */}
             {coverImage && (
@@ -90,7 +91,7 @@ export function ProjectCaseStudy({ project }) {
               />
             )}
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/70 to-black/80" />
 
             {/* Content */}
             <div className="relative z-10 flex min-h-[65vh] flex-col justify-between">
@@ -142,19 +143,46 @@ export function ProjectCaseStudy({ project }) {
                   </motion.div>
                 </div>
 
-                {/* Right: Summary */}
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.5,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="max-w-md text-base leading-relaxed text-white/90 md:text-lg"
-                >
-                  {project.description}
-                </motion.p>
+                {/* Right: Summary + Actions */}
+                <div className="flex flex-col items-start gap-8">
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.5,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="max-w-md text-base leading-relaxed text-white/90 md:text-lg"
+                  >
+                    {project.description}
+                  </motion.p>
+
+                  {/* Action Links */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.6,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="flex flex-wrap items-center gap-4 mt-8"
+                  >
+                    {/* Live Website Link */}
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2.5 bg-[#50FFAF] text-black font-bold text-sm px-6 py-3.5 rounded-full hover:bg-[#3effa2] hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(80,255,175,0.25)]"
+                      >
+                        <span>Live Preview</span>
+                        <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </a>
+                    )}
+                  </motion.div>
+                </div>
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import { Navbar } from "@/components/navbar/Navbar"
 import { Footer } from "@/components/layout/Footer"
 
 export const metadata = {
-  title: "404 — Page Not Found | SmartByte",
+  title: { absolute: "404 — Page Not Found | SmartByte" },
   description: "The page you are looking for does not exist or has been moved.",
 }
 

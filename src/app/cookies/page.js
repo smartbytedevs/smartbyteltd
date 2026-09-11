@@ -2,7 +2,7 @@ import { Navbar } from "@/components/navbar/Navbar"
 import { Footer } from "@/components/layout/Footer"
 
 export const metadata = {
-  title: "Cookies Policy | SmartByte",
+  title: { absolute: "Cookies Policy | SmartByte" },
   description: "SmartByte's cookies policy explains how we use cookies and similar tracking technologies.",
   openGraph: {
     title: "Cookies Policy | SmartByte",
@@ -52,7 +52,7 @@ export default function CookiesPage() {
 
             <section>
               <h2 className="font-display text-xl font-bold text-foreground mb-3">5. Contact</h2>
-              <p>If you have questions about our use of cookies, contact us at <a href="mailto:hello@smartbyte.dev" className="text-accent hover:underline">hello@smartbyte.dev</a>.</p>
+              <p>If you have questions about our use of cookies, contact us at <a href="mailto:hello@smartbyteltd.com" className="text-accent hover:underline">hello@smartbyteltd.com</a>.</p>
             </section>
           </div>
         </div>
