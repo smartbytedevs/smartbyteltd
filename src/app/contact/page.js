@@ -146,7 +146,7 @@ function ContactFormInner() {
                 href="tel:+8801234567890"
                 className="transition-colors hover:text-[#8ba4ff]"
               >
-                +880 1234 567890
+                +880 1997858226
               </a>
               <span>Chittagong, Bangladesh</span>
             </motion.div>

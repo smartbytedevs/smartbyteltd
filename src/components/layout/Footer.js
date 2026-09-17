@@ -84,9 +84,9 @@ export function Footer() {
           href="tel:+8801234567890"
           className="underline underline-offset-4 transition-colors duration-300 hover:text-[#8ba4ff]"
         >
-          +880 1234 567890
+          +880 1997858226
         </a>
-        <span>Chittagong, Bangladesh</span>
+        <span>112 Nur Ahmed Road, Kazir Dewri, Chattogram, Bangladesh.</span>
       </motion.div>
 
       {/* ── Primary CTA Button ────────────────────────────────── */}

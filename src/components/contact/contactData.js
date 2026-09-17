@@ -1,7 +1,7 @@
 export const contactInfo = {
   email: "hello@smartbyteltd.com",
-  phone: "+8801XXXXXXXXX",
-  location: "Chattogram, Bangladesh",
+  phone: "+8801997858226",
+  location: "112 Nur Ahmed Road, Kazir Dewri, Chattogram, Bangladesh.",
   hours: "Sat \u2013 Thu \u2022 10 AM \u2013 8 PM",
 }
 
@@ -11,11 +11,8 @@ export const quickResponse = {
 }
 
 export const socialLinks = [
-  { name: "GitHub", url: "https://github.com/smartbyte" },
-  { name: "LinkedIn", url: "https://linkedin.com/company/smartbyte" },
   { name: "Facebook", url: "https://facebook.com/smartbyte" },
   { name: "Instagram", url: "https://instagram.com/smartbyte" },
-  { name: "Behance", url: "https://behance.net/smartbyte" },
 ]
 
 export const faqItems = [

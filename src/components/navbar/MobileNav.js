@@ -120,7 +120,7 @@ export function MobileNav({ isOpen, onClose, links, activeHref }) {
           {/* Footer Contact Info */}
           <div className="pt-6 border-t border-neutral-200 space-y-1 text-sm text-neutral-800 font-medium">
             <p>hello@smartbyteltd.com</p>
-            <p>+880 1234 567890</p>
+            <p>+880 1997858226</p>
           </div>
         </motion.div>
       )}

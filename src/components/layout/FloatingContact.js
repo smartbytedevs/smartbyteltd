@@ -18,14 +18,14 @@ const getContactOptions = () => [
     icon: MessageCircle,
     title: "WhatsApp",
     subtitle: "Instant reply",
-    action: () => window.open("https://wa.me/8801234567890", "_blank"),
+    action: () => window.open("https://wa.me/8801997858226", "_blank"),
   },
   {
     icon: Phone,
     title: "Call Us",
     subtitle: "Direct phone line",
     action: () => {
-      window.location.href = "tel:+8801234567890"
+      window.location.href = "tel:+8801997858226"
     },
   },
   {

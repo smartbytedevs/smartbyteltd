@@ -1,22 +1,19 @@
-"use client"
+"use client";
 
 const logos = [
-  "Google",
-  "Spotify",
-  "Stripe",
-  "Vercel",
-  "Linear",
-  "Notion",
-  "Figma",
-  "Slack",
-]
+  "Taqwa",
+  "Levenverse",
+  "Gopis Tattoo Studio",
+  "Asta Bazar",
+  "Ayesha Corporation",
+];
 
 function LogoItem({ name }) {
   return (
     <span className="flex-shrink-0 px-8 text-xl font-semibold text-gray-300 select-none pointer-events-none tracking-tight">
       {name}
     </span>
-  )
+  );
 }
 
 export function ClientTicker() {
@@ -41,5 +38,5 @@ export function ClientTicker() {
         </div>
       </div>
     </div>
-  )
+  );
 }

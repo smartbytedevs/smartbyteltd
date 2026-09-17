@@ -7,11 +7,8 @@ export const siteName = "SmartByte"
 export const siteBrand = "SmartByte Digital Agency"
 
 export const socialProfiles = [
-  "https://github.com/smartbyte",
-  "https://linkedin.com/company/smartbyte",
-  "https://facebook.com/smartbyte",
-  "https://instagram.com/smartbyte",
-  "https://behance.net/smartbyte",
+  "https://www.facebook.com/share/1Hygnf3e6c/",
+  "https://www.instagram.com/smartbyte.ltd/?utm_source=ig_web_button_share_sheet",
 ]
 
 export function organizationSchema() {
@@ -29,7 +26,7 @@ export function organizationSchema() {
     description:
       "SmartByte is a premier full-stack software and web development agency in Bangladesh. We build ultra-fast Next.js applications, custom e-commerce platforms, and scalable web solutions for global brands.",
     email: "hello@smartbyteltd.com",
-    telephone: "+8801XXXXXXXXX",
+    telephone: "+8801997858226",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Chattogram",
@@ -41,7 +38,7 @@ export function organizationSchema() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      telephone: "+8801XXXXXXXXX",
+      telephone: "+8801997858226",
       email: "hello@smartbyteltd.com",
       availableLanguage: ["en", "bn"],
     },
