@@ -17,7 +17,7 @@ export const team = [
     bio: "Data-driven researcher specializing in market analysis and consumer insights. Passionate about turning data into actionable strategies.",
     skills: ["Research", "Analysis", "Strategy", "Communication"],
     experience: "1+ Years · Research",
-    image: "/images/team/tasfik.png",
+    image: "/images/team/tasfik.jpg",
     linkedin: "#",
     portfolio: "https://tasfik-portfolio.vercel.app/",
   },
