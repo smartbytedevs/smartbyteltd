@@ -47,7 +47,7 @@ export const team = [
     id: "ui-ux-designer",
     name: "Maisha Hossain Farabi",
     role: "UI/UX Designer",
-    bio: "User-centered designer who crafts intuitive, visually engaging digital experiences. Drives product success through strategic wireframing, prototyping, and user research.",
+    bio: "User-centered designer who crafts intuitive, visually engaging digital experiences. Drives product success through strategic wire-framing, prototyping, and user research.",
     skills: [
       "Figma",
       "User Research",
