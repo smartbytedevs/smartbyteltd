@@ -970,6 +970,277 @@
           "href": "https://rescume-mu.vercel.app/"
         }
       }
+    },
+    {
+      "id": "taqwa",
+      "slug": "taqwa",
+      "title": "Taqwa — Premium Modest Fashion E-Commerce",
+      "client": "Taqwa Abaya Shop",
+      "category": "e-commerce",
+      "industry": "Fashion & Modest Wear",
+      "description": "Modern e-commerce platform designed for Taqwa, a Chittagong-based modest fashion brand specializing in premium abayas and elegant everyday wear.",
+      "challenge": "Taqwa needed a modern digital storefront that could showcase its modest-fashion collections professionally, organize products by category, and provide customers with a smooth online shopping experience.",
+      "solution": "Designed and developed a modern responsive e-commerce website with structured product collections, category-based discovery, product pages, shopping functionality, customer account features, and order tracking.",
+      "result": "Delivered a polished online storefront that gives Taqwa a dedicated digital presence, improves product discovery, and provides customers with a streamlined way to browse and purchase its collections.",
+
+      "technologies": [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "MongoDB",
+        "Better Auth",
+        "Framer Motion",
+        "Lucide React"
+      ],
+
+      "servicesProvided": [
+        "E-Commerce Web Development",
+        "UI/UX Design",
+        "Product Catalog Development",
+        "Authentication Architecture",
+        "Database Integration",
+        "Responsive Design",
+        "Deployment & Optimization"
+      ],
+
+      "duration": "4 weeks",
+      "year": "2026",
+      "location": "Chittagong, Bangladesh",
+      "teamSize": "2",
+      "featured": true,
+
+      "thumbnail": "/images/works/taqwa.png",
+      "gallery": ["/images/works/taqwa.png"],
+      "coverImage": "/images/works/taqwa.png",
+
+      "statistics": [
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Responsive Experience"
+        },
+        {
+          "value": 4,
+          "suffix": "+",
+          "label": "Product Categories"
+        },
+        {
+          "value": 1,
+          "suffix": "",
+          "label": "Unified Online Store"
+        }
+      ],
+
+      "testimonial": {
+        "quote": "A modern online presence that brings Taqwa's modest fashion collections to customers through a clean and convenient shopping experience.",
+        "author": "Taqwa",
+        "role": "Taqwa Abaya Shop"
+      },
+
+      "branding": {
+        "tagline": "Timeless modest fashion"
+      },
+
+      "colors": {
+        "primary": "#000000",
+        "secondary": "#A67C52",
+        "background": "#F8F6F2"
+      },
+
+      "typography": {
+        "heading": "Inter",
+        "body": "Inter"
+      },
+
+      "seo": {
+        "title": "Taqwa Case Study | Premium Modest Fashion E-Commerce",
+        "description": "How SmartByte developed a modern e-commerce platform for Taqwa, a Chittagong-based modest fashion brand specializing in premium abayas and elegant everyday wear.",
+        "keywords": [
+          "Taqwa",
+          "Taqwa CTG",
+          "Taqwa Abaya",
+          "modest fashion",
+          "abaya shop Chittagong",
+          "e-commerce website",
+          "fashion e-commerce",
+          "Next.js e-commerce"
+        ],
+        "ogImage": "/images/works/taqwa.png"
+      },
+
+      "liveLink": "https://www.taqwactg.com/",
+      "githubLink": "",
+      "status": "Live",
+
+      "caseStudy": {
+        "overview": "Taqwa is a modern modest-fashion brand based in Chittagong, offering premium abayas and elegant everyday wear. The project focused on creating a polished e-commerce experience that reflects the brand's visual identity while making its collections easy to discover and purchase online.",
+
+        "clientProblem": "Taqwa needed a dedicated online storefront where customers could discover its collections, explore individual products, navigate categories, and complete their shopping journey through a modern responsive interface.",
+
+        "research": [
+          "Reviewed Taqwa's product categories and customer-facing shopping requirements",
+          "Studied modern fashion e-commerce patterns to create a clean and premium browsing experience",
+          "Structured product discovery around Taqwa's core modest-fashion collections"
+        ],
+
+        "strategy": [
+          "Create a premium visual identity that complements Taqwa's modest-fashion positioning",
+          "Organize products into clear categories for faster discovery",
+          "Build responsive shopping experiences across desktop and mobile devices",
+          "Create reusable product and collection components for scalable catalog management"
+        ],
+
+        "designProcess": [
+          "Designed a clean fashion-focused interface with generous spacing and strong product imagery",
+          "Created structured product cards for consistent browsing across collection pages",
+          "Designed dedicated product views for presenting product information clearly",
+          "Optimized layouts for mobile shoppers as well as desktop users"
+        ],
+
+        "development": [
+          "Developed the frontend using Next.js and React",
+          "Implemented responsive interfaces with Tailwind CSS",
+          "Integrated product and database functionality",
+          "Implemented customer authentication and account functionality",
+          "Added smooth interface interactions and transitions",
+          "Configured and deployed the production website"
+        ],
+
+        "features": [
+          "Modern E-Commerce Storefront",
+          "Product Catalog",
+          "Category-Based Product Discovery",
+          "Product Detail Pages",
+          "Shopping Cart",
+          "Customer Authentication",
+          "Order Tracking",
+          "Responsive Design"
+        ],
+
+        "technicalChallenges": [
+          {
+            "title": "Creating a Premium Fashion Shopping Experience",
+            "detail": "Balanced product-focused layouts, visual hierarchy, responsive behavior, and intuitive navigation to create a polished fashion e-commerce experience."
+          },
+          {
+            "title": "Responsive Product Discovery",
+            "detail": "Structured reusable product and category components so customers can browse Taqwa's collections efficiently across different screen sizes."
+          }
+        ],
+
+        "results": "Delivered a live modern e-commerce platform for Taqwa that provides a dedicated digital storefront for its modest-fashion collections and gives customers a streamlined shopping experience.",
+
+        "metrics": [
+          {
+            "value": 100,
+            "suffix": "%",
+            "label": "Responsive Experience"
+          },
+          {
+            "value": 4,
+            "suffix": "+",
+            "label": "Product Categories"
+          },
+          {
+            "value": 1,
+            "suffix": "",
+            "label": "Unified Online Store"
+          }
+        ],
+
+        "testimonial": {
+          "quote": "A modern online presence that brings Taqwa's modest fashion collections to customers through a clean and convenient shopping experience.",
+          "author": "Taqwa",
+          "role": "Taqwa Abaya Shop"
+        },
+
+        "gallery": ["taqwa.png"],
+
+        "beforeAfter": [
+          {
+            "label": "Before",
+            "points": [
+              "Limited dedicated online shopping experience",
+              "Product discovery depended heavily on social media",
+              "No centralized product catalog experience",
+              "Customers had limited access to structured product information online"
+            ]
+          },
+          {
+            "label": "After",
+            "points": [
+              "Dedicated branded e-commerce storefront",
+              "Structured product categories and collections",
+              "Modern product discovery and product pages",
+              "Responsive shopping experience across devices"
+            ]
+          }
+        ],
+
+        "timeline": [
+          {
+            "phase": "Discovery & Planning",
+            "duration": "Week 1",
+            "detail": "Defined the website structure, product categories, shopping flow, and visual direction."
+          },
+          {
+            "phase": "UI/UX Design",
+            "duration": "Week 1",
+            "detail": "Designed the storefront, collection layouts, product cards, product pages, and responsive experience."
+          },
+          {
+            "phase": "E-Commerce Development",
+            "duration": "Weeks 2–3",
+            "detail": "Developed the Next.js frontend, product catalog, shopping functionality, authentication, and database integration."
+          },
+          {
+            "phase": "Testing & Launch",
+            "duration": "Week 4",
+            "detail": "Performed responsive testing, refined the shopping experience, and deployed the production website."
+          }
+        ],
+
+        "lessonsLearned": [
+          "A strong visual hierarchy is especially important for fashion e-commerce because product presentation directly affects how customers explore collections.",
+          "Reusable product and category components make it easier to scale an online fashion catalog as the business grows.",
+          "Mobile-first responsive design is essential for creating a consistent shopping experience across devices."
+        ],
+
+        "futurePlans": [
+          "Expanded product filtering and sorting",
+          "Additional product media and gallery capabilities",
+          "More advanced customer account functionality",
+          "Additional e-commerce and marketing features"
+        ],
+
+        "faq": [
+          {
+            "question": "What type of website was built for Taqwa?",
+            "answer": "Taqwa's website is a modern e-commerce platform for its modest-fashion collections, including abayas and other contemporary modest wear."
+          },
+          {
+            "question": "Where is Taqwa located?",
+            "answer": "Taqwa is based at Shop #237/238 (Lift-2), AFMI Plaza, Proborttok Mor, Nasirabad, Chittagong, Bangladesh."
+          },
+          {
+            "question": "What technologies were used?",
+            "answer": "The project uses modern web technologies including Next.js, React, Tailwind CSS, MongoDB, Better Auth, Framer Motion, and Lucide React."
+          },
+          {
+            "question": "Is the Taqwa website live?",
+            "answer": "Yes. The production website is live at https://www.taqwactg.com/."
+          }
+        ],
+
+        "relatedProjects": [],
+
+        "CTA": {
+          "title": "Need a Custom E-Commerce Website?",
+          "description": "Let's build a modern online store designed around your products, customers, and business workflow.",
+          "buttonText": "Visit Taqwa Website",
+          "href": "https://www.taqwactg.com/"
+        }
+      }
     }
   ],
   "stats": [
