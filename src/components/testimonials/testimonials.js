@@ -56,14 +56,14 @@ export const testimonials = [
   },
   {
     id: "alpha-commerce",
-    name: "Jessica Chen",
-    company: "Alpha Commerce",
+    name: "Taqwa",
+    company: "Taqwa CTG",
     role: "CTO",
     project: "E-Commerce Platform",
     quote:
       "They built a custom e-commerce platform that handles our complex inventory, multi-currency pricing, and thousands of daily transactions without a single issue.",
     size: "md",
-    initials: "JC",
+    initials: "T",
   },
   {
     id: "greenleaf-agro",

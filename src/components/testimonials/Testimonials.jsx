@@ -21,7 +21,7 @@ const floatingElements = [
   // Top-center: pill badge
   {
     type: "badge",
-    text: "Decades of experience",
+    text: "100% Satisfied Clients",
     className: "hidden sm:flex top-2 left-1/2 -translate-x-1/2",
     delay: 0.5,
     duration: 3.5,
@@ -59,7 +59,7 @@ const floatingElements = [
   // Mid-left: small badge (tablet+)
   {
     type: "badge-sm",
-    text: "Clients in 30+ countries",
+    text: "Different clients from different fields",
     className: "hidden md:flex top-1/2 -translate-y-1/2 left-[2%]",
     delay: 1.2,
     duration: 3.8,
@@ -314,7 +314,7 @@ export function Testimonials() {
                 "text-[3.5rem] sm:text-7xl md:text-8xl lg:text-[9rem] xl:text-[10rem]"
               )}
             >
-              100+ verified
+              10+ verified
               <br />
               <span className="relative inline-block">
                 5-star
