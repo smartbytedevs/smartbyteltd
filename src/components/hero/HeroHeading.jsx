@@ -73,7 +73,7 @@ export function HeroHeading() {
         </div>
 
         <HeroFloatingBadgeFloat color="purple" delay={1.0} className="mb-2">
-          100M+ client revenue
+          100k+ client revenue
         </HeroFloatingBadgeFloat>
 
         <HeroMediaCard
